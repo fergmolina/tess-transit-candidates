@@ -9,6 +9,7 @@ authors:
 date-released: 2026-10-17
 version: "1.1"
 license: MIT
+doi: 10.5281/zenodo.23443245
 repository-code: "https://github.com/fergmolina/tess-transit-candidates"
 keywords:
   - TESS
