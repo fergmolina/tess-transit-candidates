@@ -1,0 +1,55 @@
+tic,src,name,P,depth_ppm,dur_h,n_cov,top_P,top_sde,cls
+16909043,CONF,GJ 682 b,17.478,,,88,11.199,6.8,"in-grid, >=3 transits: pipeline miss"
+16909043,CONF,GJ 682 c,57.32,,,26,11.199,6.8,period outside grid
+79748331,TOI,1064.01,6.4439,1121.95122750953,1.93094488736779,17,19.0165,25.8,recovered (top-3 peak incl. aliases)
+79748331,TOI,1064.02,12.2266,1206.36932928213,2.19043794259355,10,19.0165,25.8,"in-grid, >=3 transits: pipeline miss"
+80417903,CONF,GJ 27.1 b,15.819,,,108,0.5919,7.7,"in-grid, >=3 transits: pipeline miss"
+87989721,CONF,HD 166724 b,5144.0,,,0,0.6206,11.8,period outside grid
+100103200,CTOI,100103200.01,18.4462,,,92,13.8757,11.9,"in-grid, >=3 transits: pipeline miss"
+100103201,CTOI,100103201.01,14.5527,,,117,11.7413,11.4,"in-grid, >=3 transits: pipeline miss"
+100103201,CTOI,100103201.02,31.5519,,,54,11.7413,11.4,period outside grid
+100918213,CTOI,100918213.01,0.2564,,,6599,0.5129,53.8,recovered (top-3 peak incl. aliases)
+101948569,TOI,240.01,19.4723,1766.18283936967,4.28932990625027,8,19.4723,18.1,recovered (top-3 peak incl. aliases)
+118327550,TOI,244.01,7.3972,953.5477499073322,1.3164962270220637,18,7.3972,14.8,recovered (top-3 peak incl. aliases)
+118585685,CONF,L 363-38 b,8.781,,,194,19.7927,20.6,"in-grid, >=3 transits: pipeline miss"
+144327080,TOI,6806.01,23.2491,48641.0,3.914,7,11.6244,33.9,recovered (top-3 peak incl. aliases)
+179985715,TOI,249.01,6.6153,1341.37202241127,2.33458443381212,17,6.6154,19.7,recovered (top-3 peak incl. aliases)
+201248411,TOI,129.01,0.981,6178.39242097547,0.54050355175474,173,0.981,117.0,recovered (top-3 peak incl. aliases)
+206548902,CONF,GJ 3082 b,11.949,,,143,13.4965,12.1,"in-grid, >=3 transits: pipeline miss"
+218263393,CONF,GJ 674 b,4.6938,,,329,6.9676,7.3,"in-grid, >=3 transits: pipeline miss"
+219338557,TOI,133.01,8.1997,866.9104695683204,1.9288109762742351,24,8.1997,29.5,recovered (top-3 peak incl. aliases)
+220017951,CONF,GJ 86 b,15.7649,,,108,18.4922,7.3,"in-grid, >=3 transits: pipeline miss"
+220022156,CONF,HD 13808 c,53.753,,,31,18.958,9.6,period outside grid
+220022156,CONF,HD 13808 b,14.1815,,,120,18.958,9.6,"in-grid, >=3 transits: pipeline miss"
+231698181,CONF,eps Ind A b,25450.0,,,0,13.5111,8.9,period outside grid
+231704229,CONF,HD 211970 b,25.201,,,68,18.202,8.7,period outside grid
+234994474,TOI,134.01,1.4015,593.754092156108,1.15830613665695,83,1.4015,27.9,recovered (top-3 peak incl. aliases)
+254113311,TOI,1130.01,8.35,16680.0,1.836,14,8.3495,40.7,recovered (top-3 peak incl. aliases)
+254113311,TOI,1130.02,4.0686,2650.09500125057,1.83737294011667,24,8.3495,40.7,"in-grid, >=3 transits: pipeline miss"
+254113311,CONF,TOI-1130 b,4.0746,2650.09500125057,1.83737294011667,24,8.3495,40.7,"in-grid, >=3 transits: pipeline miss"
+254113311,CONF,TOI-1130 c,8.3502,16680.0,1.836,14,8.3495,40.7,recovered (top-3 peak incl. aliases)
+262530407,TOI,177.01,2.8531,1547.1068926532494,1.2637530394460368,44,2.8531,54.8,recovered (top-3 peak incl. aliases)
+262530407,CONF,GJ 3090 c,15.9407,,,107,2.8531,54.8,"in-grid, >=3 transits: pipeline miss"
+320264344,CONF,HD 185283 b,4060.0,,,0,19.8403,41.8,period outside grid
+320847025,TOI,6978.01,9.1258,169.721822252026,3.17301203013736,10,19.0157,43.1,"in-grid, >=3 transits: pipeline miss"
+322063810,TOI,253.01,3.5104,308.828598531612,2.00000000001473,32,3.5104,14.2,recovered (top-3 peak incl. aliases)
+325624908,CONF,GJ 680 b,17281.6651,,,0,19.5959,8.7,period outside grid
+326386495,TOI,4424.01,17.7425,880.0,3.082,5,0.679,13.1,recovered (top-3 peak incl. aliases)
+327301957,TOI,1074.01,13.9429,1015.39554295357,3.75227561609126,16,13.9429,28.5,recovered (top-3 peak incl. aliases)
+341405597,TOI,6699.01,5.322,955.0,3.193,34,5.32,37.3,recovered (top-3 peak incl. aliases)
+341405597,CONF,TOI-6699 b,5.3201,955.0,3.193,36,5.32,37.3,recovered (top-3 peak incl. aliases)
+351601843,TOI,1075.01,0.6047,1027.68334785876,1.04038470635233,241,0.6047,45.2,recovered (top-3 peak incl. aliases)
+367987991,CONF,HD 162020 b,8.4282,,,131,0.5513,7.6,"in-grid, >=3 transits: pipeline miss"
+369021303,CONF,GJ 676 A c,13921.423,,,0,15.8617,7.2,period outside grid
+369021303,CONF,GJ 676 A b,1051.4452,,,1,15.8617,7.2,period outside grid
+369021303,CONF,GJ 676 A e,35.4736,,,43,15.8617,7.2,period outside grid
+369021303,CONF,GJ 676 A d,3.6008,,,428,15.8617,7.2,"in-grid, >=3 transits: pipeline miss"
+370133522,TOI,1078.01,0.5182,831.892042362478,0.856524899839116,258,0.5182,60.9,recovered (top-3 peak incl. aliases)
+381856447,TOI,2206.01,1.769,10110.2139841288,1.01729533190574,72,1.769,71.8,recovered (top-3 peak incl. aliases)
+381897917,TOI,4565.01,19.786,1517.72127507937,2.557538294261206,7,19.7859,22.3,recovered (top-3 peak incl. aliases)
+405862830,TOI,1126.01,1.6269,1502.0,3.231,52,1.6269,30.3,recovered (top-3 peak incl. aliases)
+410399074,CONF,HD 181433 c,1018.5,,,1,13.0389,6.9,period outside grid
+410399074,CONF,HD 181433 d,6896.1,,,0,13.0389,6.9,period outside grid
+410399074,CONF,HD 181433 b,9.3745,,,138,13.0389,6.9,"in-grid, >=3 transits: pipeline miss"
+469943599,CONF,HD 215497 c,566.0,,,3,17.7477,8.3,period outside grid
+469943599,CONF,HD 215497 b,3.934,,,439,17.7477,8.3,"in-grid, >=3 transits: pipeline miss"

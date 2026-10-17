@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Multi-year TESS transit search: two planet candidates with pre-registered transit predictions (TIC 89247735, TIC 317134140)"
+authors:
+  - family-names: Molina
+    given-names: Fernando
+    affiliation: Independent researcher
+date-released: 2026-10-17
+version: "1.0"
+license: MIT
+repository-code: "https://github.com/fergmolina/tess-transit-candidates"
+keywords:
+  - TESS
+  - exoplanets
+  - transits
+  - planet candidates
+  - pre-registration
