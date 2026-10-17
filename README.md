@@ -1,6 +1,6 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
-**Author:** Fernando Molina (Independent researcher). Analysis performed with Claude (Anthropic) under the author's direction.
+**Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
 **Date:** 2026-10-17. **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
