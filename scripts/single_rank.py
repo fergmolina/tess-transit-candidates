@@ -119,7 +119,10 @@ if __name__ == "__main__":
             return k >= 1 and abs(dt - 13.7 * k) < 1.0 and abs((a_.get("t_since_orbit_start") or 0) - (b_.get("t_since_orbit_start") or 0)) < 0.7 and dt < 30
         evs = [evs[0]] + [e for e in evs[1:] if not orbit_sync(evs[0], e)]
         if len(evs) < 2: continue
-        allowed = [] if a.no_alias else alias_set(tic, evs, [e.to_dict() for _, e in g.iterrows()])
+        # alias exclusion uses the star's events that pass the EVENT cuts only (before the time-based field/coincidence controls), so a
+        # real transit removed by those controls still counts as a dip at its epoch (the reviewer's alias_89247735.py:22 lesson)
+        pre = df[(df.tic == tic) & df.pass_cuts & df.star_ok]
+        allowed = [] if a.no_alias else alias_set(tic, evs, [e.to_dict() for _, e in pre.iterrows()])
         duo.append(dict(tic=tic, n_events=len(evs), sectors=sorted(set(int(e["sector"]) for e in evs)), depth_ppm=round(float(np.mean([e["depth"] for e in evs]) * 1e6)), dur_h=round(float(np.mean([e["dur_h"] for e in evs])), 1),
                         snr_sum=round(float(np.sqrt(np.sum([e["snr"] ** 2 for e in evs]))), 1), dt_d=round(abs(evs[0]["tc"] - evs[1]["tc"]), 3), n_allowed=len(allowed), P_max=(allowed[0]["P"] if allowed else None), allowed=json.dumps(allowed[:12]),
                         tcs=json.dumps([round(e["tc"], 4) for e in evs]), max_frac_flagged=round(float(np.nanmax([e.get("frac_flagged") or 0 for e in evs])), 2), tmag=metas.get(tic, {}).get("tmag"), teff=metas.get(tic, {}).get("teff"), rad=metas.get(tic, {}).get("rad")))

@@ -436,14 +436,20 @@ after orbit start], 33.8, 41.3). Long-period TOIs with unmasked transits: TOI-68
 TOI-240.01 (1.8 ppt) 7 of 9; TOI-4565.01 (1.5 ppt) 6 of 9 (misses have 5–16 in-transit cadences or sit at the stage-1 threshold).
 TIC 89247735 also served as the regression test for the *ranking* chain: successive versions of the star-level and field controls first
 set it aside as "busy" and then field-flagged three of its four events, and the controls were revised with it as the positive control
-until all four events survived; the null comparison below was made with that final chain, so the controls were not fixed a priori.
-The duotransit matcher kept three of the four events (the pair-wise depth-consistency step starts from the strongest pair).
+until the three clean events survived; the null comparison below was made with that final chain, so the controls were not fixed a priori.
+**The final chain removes the fourth (ramp) event**: at BTJD 3830.35 three stars on the same CCD have events in the same 0.25-d bin and
+10 stars sector-wide have one within ±0.1 d (4.4 expected), so the per-CCD field control flags it — exactly what the 20 % end-to-end
+completeness in the first half-day of an orbit predicts. The candidate therefore enters the duotransit table with three events.
+Period aliases are tested against the star's events that pass the *event* cuts only (before the time-based controls), so the removed
+ramp event still counts as a dip at its epoch: 8 aliases of the 348.12-d strongest-pair separation survive (n = 1–6, 17 and 19, the last
+being 18.322 d); the first version of this step used the post-control list and wrongly excluded 18.32 d — the same error class the
+external review found in `alias_89247735.py` (coverage computed on filtered data), now fixed in `single_rank.py`.
 Injection–recovery on 293 random star-sectors (`single_injection.py`, batman transits 1–20 ppt, 2–8 h, random times including ramps),
 scored end to end by also asking whether the injected time falls in a window that the field or coincidence control flagged in the real
 run (27 % of injected times do; `results/single/summary/injection_recovery_end_to_end.csv`): detection 76 % at expected SNR 7–10, 87 % at
 10–15, 92–98 % above 15; after the event cuts 48–76 %; **end to end 38–59 %** (SNR 7–10: 38 %, 10–15: 59 %, 15–30: 58 %, > 30: 38 % —
 the deepest injections are limb-darkened and fail the flat-bottom/box-vs-V cuts). In the first 0.5 d of an orbit detection is 40 % and
-end-to-end completeness 20 %; at 0.5–2 d it is 20–40 %; beyond 2 d, 51 %. These are the completeness numbers that §5.2 lacked, and they
+end-to-end completeness 20 %; at 0.5–2 d it is 20–40 % (5–15 injections per bin, indicative only); beyond 2 d, 51 % (181 injections). These are the completeness numbers that §5.2 lacked, and they
 mean the fourth transit of TIC 89247735 came from exactly the data region where any FFI pipeline is least complete.
 
 **Result.** Raw: 151,010 events; 39,700 pass the event cuts; 2,120 survive all controls on 1,158 stars; 158 stars have ≥ 2 matched
