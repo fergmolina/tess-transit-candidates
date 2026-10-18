@@ -414,3 +414,40 @@ baseline slope moves ramp-affected times by 1–3 min — addressed in the v2 ep
 Cheapest next observations (reviewer's ranking): for TIC 89247735 — radial velocities now (K ≈ 30 m/s for 0.3 M_Jup, 100 m/s for 1 M_Jup,
 1.3 km/s for 13 M_Jup, 8 km/s for an M dwarf), the ASAS-SN fold when the service returns, speckle/AO imaging for a < 1″ companion, and the
 2027-06-25 / 2027-08-19 transits from Chile; for TIC 317134140 — S108–S110, then the archived CHEOPS visit.
+
+## 10. Single-transit search of the QLP pool (follow-up to the external review)
+Motivation: periodic pipelines (ours, QLP's, SPOC's) need two transits per sector and so miss P ≳ 13 d, and the review showed that our
+QUALITY == 0 mask deleted a real transit inside the orbit-start scattered-light ramp. `scripts/single_transit_search.py` therefore scans every
+QLP light curve of the Pool-B stars (3,397 with usable files) for individual box-shaped dips, keeping the flagged cadences.
+
+**Method.** Cadence policy: drop NaN flux, flux excursions > 50 % (data dropouts) and TESS bits 2/4/8/32/128; keep bit 2048 (stray light)
+and QLP bit 2^30 (ramp). Flux = raw SAP. Stage 1: 1-d biweight + sliding box at 1.5–8 h with local noise (SNR > 5). Stage 2: box + local
+linear baseline refit on the undetrended flux in ±3 durations (final SNR ≥ 7). Each event carries: pre/post baseline step, fraction of
+in-transit points below baseline, box-vs-V Δχ², bottom flatness, SAP_BKG in/out ratio, centroid shift, fraction of flagged cadences, time
+since orbit start, nearest momentum dump, camera/CCD. Known TOI/CTOI transits are masked. Controls (`single_rank.py`): event cuts; tier-1 star
+cuts (eclipsing binaries/variables with > 8 events per sector or > 30 total set aside, 266 stars); **field control** per CCD-sector and
+per sector (0.25-d bins, Poisson threshold, ±1 bin) and a **direct coincidence control** (other stars with an event within ±0.1 d, flagged
+above max(5, 3× chance)); tier-2 star cuts (≤ 3 surviving events per sector, ≤ 10 total); matching of ≥ 2 events with consistent depth (3σ)
+and duration (×1.6) in different sectors, at least one in unflagged data, orbit-synchronous repeats removed; allowed period aliases from the
+kept-cadence coverage. The identical chain was run on inverted light curves (`results/single_inverted/`) as the null.
+
+**Detector validation.** TIC 89247735: all four transits found (SNR 30.5, 26.5 [the flagged one, 0.48 d after orbit start], 33.8, 41.3).
+Long-period TOIs with unmasked transits: TOI-6806.01 (4.9 %, 23.2 d) 7 of 7 covered transits; TOI-240.01 (1.8 ppt) 7 of 9; TOI-4565.01
+(1.5 ppt) 6 of 9 (misses have 5–16 in-transit cadences or sit at the stage-1 threshold). Injection–recovery on 293 random star-sectors
+(`single_injection.py`, batman transits 1–20 ppt, 2–8 h, random times including ramps): detection 76 % at expected SNR 7–10, 87 % at
+10–15, 92–98 % above 15; of detected events 48–76 % also pass the event cuts (the cuts reject limb-darkened deep transits whose shape
+is between box and V, and ramp-embedded events: in the first 0.5 d of an orbit detection is 40 % and only 20 % pass cuts; in flagged
+cadences 62 % / 33 %). These are the completeness numbers that §5.2 lacked.
+
+**Result.** Raw: 151,010 events; 39,700 pass the event cuts; 2,120 survive all controls on 1,158 stars; 158 stars have ≥ 2 matched
+events — and the inverted null gives 2,455 events and 160 matched stars under the same chain. Across a grid of 54 stricter cut sets
+(`single_null_compare.py`, `results/single/summary/duo_cut_grid.json`) the real and inverted counts track each other everywhere;
+**the only star that exceeds the null in any cut set is TIC 89247735**, the unique real star with ≥ 3 consistent events in different
+sectors (null: 0). Single, unmatched events are more numerous in the inverted data than in the real data at every SNR threshold
+(e.g. SNR ≥ 15, ≤ 6 h: 27 real vs 72 inverted; flares and variability invert into dips), so no single event can be claimed; the 79
+flat, unflagged, SNR ≥ 12 real singles are listed without claim in `results/single/summary/single_events_of_interest.csv` for comparison
+with future sectors. Before the coincidence control was added, the real list showed an apparent excess of 2–27 stars over the null
+whose events shared identical times across 8–270 stars per sector: sector-wide systematics that a per-CCD bin test with proportional
+thresholds had let through. **Conclusion: no new candidate.** The single-event regime of QLP photometry at SNR 7–20 is dominated by
+red noise and scattered-light structure, and two-event depth consistency is too weak a constraint to beat it; a third event in a
+different sector, as for TIC 89247735, is what separates a candidate from the null.
