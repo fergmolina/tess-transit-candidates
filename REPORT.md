@@ -431,13 +431,20 @@ above max(5, 3× chance)); tier-2 star cuts (≤ 3 surviving events per sector, 
 and duration (×1.6) in different sectors, at least one in unflagged data, orbit-synchronous repeats removed; allowed period aliases from the
 kept-cadence coverage. The identical chain was run on inverted light curves (`results/single_inverted/`) as the null.
 
-**Detector validation.** TIC 89247735: all four transits found (SNR 30.5, 26.5 [the flagged one, 0.48 d after orbit start], 33.8, 41.3).
-Long-period TOIs with unmasked transits: TOI-6806.01 (4.9 %, 23.2 d) 7 of 7 covered transits; TOI-240.01 (1.8 ppt) 7 of 9; TOI-4565.01
-(1.5 ppt) 6 of 9 (misses have 5–16 in-transit cadences or sit at the stage-1 threshold). Injection–recovery on 293 random star-sectors
-(`single_injection.py`, batman transits 1–20 ppt, 2–8 h, random times including ramps): detection 76 % at expected SNR 7–10, 87 % at
-10–15, 92–98 % above 15; of detected events 48–76 % also pass the event cuts (the cuts reject limb-darkened deep transits whose shape
-is between box and V, and ramp-embedded events: in the first 0.5 d of an orbit detection is 40 % and only 20 % pass cuts; in flagged
-cadences 62 % / 33 %). These are the completeness numbers that §5.2 lacked.
+**Detector validation (re-run on the final code).** TIC 89247735: all four transits found (SNR 30.5, 26.5 [the flagged one, 0.48 d
+after orbit start], 33.8, 41.3). Long-period TOIs with unmasked transits: TOI-6806.01 (4.9 %, 23.2 d) 7 of 7 covered transits;
+TOI-240.01 (1.8 ppt) 7 of 9; TOI-4565.01 (1.5 ppt) 6 of 9 (misses have 5–16 in-transit cadences or sit at the stage-1 threshold).
+TIC 89247735 also served as the regression test for the *ranking* chain: successive versions of the star-level and field controls first
+set it aside as "busy" and then field-flagged three of its four events, and the controls were revised with it as the positive control
+until all four events survived; the null comparison below was made with that final chain, so the controls were not fixed a priori.
+The duotransit matcher kept three of the four events (the pair-wise depth-consistency step starts from the strongest pair).
+Injection–recovery on 293 random star-sectors (`single_injection.py`, batman transits 1–20 ppt, 2–8 h, random times including ramps),
+scored end to end by also asking whether the injected time falls in a window that the field or coincidence control flagged in the real
+run (27 % of injected times do; `results/single/summary/injection_recovery_end_to_end.csv`): detection 76 % at expected SNR 7–10, 87 % at
+10–15, 92–98 % above 15; after the event cuts 48–76 %; **end to end 38–59 %** (SNR 7–10: 38 %, 10–15: 59 %, 15–30: 58 %, > 30: 38 % —
+the deepest injections are limb-darkened and fail the flat-bottom/box-vs-V cuts). In the first 0.5 d of an orbit detection is 40 % and
+end-to-end completeness 20 %; at 0.5–2 d it is 20–40 %; beyond 2 d, 51 %. These are the completeness numbers that §5.2 lacked, and they
+mean the fourth transit of TIC 89247735 came from exactly the data region where any FFI pipeline is least complete.
 
 **Result.** Raw: 151,010 events; 39,700 pass the event cuts; 2,120 survive all controls on 1,158 stars; 158 stars have ≥ 2 matched
 events — and the inverted null gives 2,455 events and 160 matched stars under the same chain. Across a grid of 54 stricter cut sets
