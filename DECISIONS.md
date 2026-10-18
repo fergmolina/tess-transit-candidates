@@ -139,3 +139,10 @@
     cadence-aware. TODO from REVIEW 6: ffi_pixel_test.py background subtraction + PM correction + full-cutout PSF fit (adopt reviewer's
     pixel_review.py); known_nearby.py live VSX/Gaia-variability; 120444365 radius 0.76 Rsun (Rp 2.2 Re); blind test "4 of 5 years".
     Public deposit still withheld pending the user's review.
+
+39. **Public deposit v1.3 (2026-10-18, user decision "go with these two").** GitHub release v1.3 (commit 24cd0de) of fergmolina/tess-transit-
+    candidates: pre-registration v1+v2 files, pixel/extraction JSONs and figures for TIC 80387959 and TIC 120444365; external review and
+    literature survey; report section 12; class-A outcome and testable-soon tables; pipeline scripts. The third object (wounded, host
+    unresolved) is withheld: its TIC is replaced by "[withheld]" in every public copy (REPORT, DECISIONS, REVIEW, tables) and its review section
+    body removed. Zenodo archives the release automatically under the concept DOI 10.5281/zenodo.23443245 (new version DOI to be recorded).
+    Status wording everywhere: "planet candidate pending the pre-registered test"; not validated; not submitted to ExoFOP (requires a refereed paper).
