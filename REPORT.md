@@ -327,7 +327,7 @@ S13 orbit gap, so 2019 neither confirms nor contradicts the signal.
   10,235 ± 148 ppm with the transit-masked detrend; QLP SAP flux gives the same (10,434 ± 158). The three depths scatter at 2.5σ
   (χ² 8.5/2); our own TESScut 1-px photometry gives 7,980 ± 203, 8,418 ± 266, 8,729 ± 670 (consistent; diluted by the neighbours in the
   pixel), so the scatter is most likely QLP's sector-dependent crowding correction.
-* Shape (batman + emcee, QLP 10/3.3-min cadence): Rp/R★ = 0.0996 ± 0.0020, a/R★ = 30.9 ± 2.3, b = 0.44 (+0.12/−0.20); fitted
+* Shape (batman + emcee, QLP 200-s cadence): Rp/R★ = 0.0996 ± 0.0020, a/R★ = 30.9 ± 2.3, b = 0.44 (+0.12/−0.20); fitted
   ρ★ = 1.18 ρ☉ vs 1.43 ρ☉ from the TIC radius and mass — consistent. Expected central-transit duration for P = 18.32 d, 0.78 R☉: 4.4 h;
   observed 4.0 h.
 * Odd/even: 10,452 ± 191 vs 9,785 ± 259 ppm (2.1σ, with only 2 vs 1 events). Secondary at phase 0.5: 384 ± 160 ppm (2.4σ, not significant);
