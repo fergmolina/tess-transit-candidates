@@ -250,6 +250,8 @@ First ten Sector-110 events:
   null is unbiased. A 291-min CHEOPS visit of TOI-2514 on 2023-01-06 (CHATEAUX filler) exists on ExoFOP and has a ~46 % chance of containing
   a predicted 0.5719-d transit; requesting it is the cheapest independent test before S108.
 
+* **TRICERATOPS (run 2026-10-18, `scripts/triceratops_317134140.py`, SPOC S98 aperture, transit-masked 0.5-d biweight fold, no contrast curve): FPP = 0.051, NFPP = 0.008.** This does not meet the validation thresholds (FPP < 0.01, NFPP < 10⁻³) and, at SNR ≈ 10 per the §11 caveat, is informational only; it neither validates nor rejects the signal. Result in `results/vet/317134140/triceratops.json`.
+
 ## 7. Null calibration of the detection statistic (Pool A)
 The identical stitched search was run on inverted light curves (2 − F) of 400 randomly chosen Pool-A targets (`scripts/null_calibration.py`,
 `results/null/`). Transits cannot survive inversion; noise, gap systematics and stellar variability do.
