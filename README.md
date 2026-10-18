@@ -13,7 +13,7 @@ Full methods, results, rejected objects and null calibrations are in [REPORT.md]
 
 **TIC 89247735 (SCR J1820-4533)** — K dwarf, Tmag 11.1, 104 pc. Four flat-bottomed transits of 1.0 % depth and 4.0 h duration in
 2023, 2025 (two, consecutive) and 2026 at P = 18.323077 ± 0.000070 d; on-target by pixel-level tests; no secondary eclipse;
-no catalog entry. Radius 8.5 Earth radii if a planet; nature (planet, brown dwarf or late-M dwarf) requires radial velocities.
+no catalog entry. Radius 8.5 Earth radii (0.76 Jupiter radii): a giant planet or a brown dwarf (Gaia radial velocities bound the mass below about 25 Jupiter masses); the two cannot be separated without radial velocities, and no statistical-validation route exists at this radius. Status: transiting companion candidate.
 Predicted transit times through 2027 are frozen in `preregistration/TIC89247735/` (v1: three transits; v2: four transits).
 The first ground-observable full transits are 2027-06-25 and 2027-08-19 from Chile.
 
