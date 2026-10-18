@@ -239,9 +239,9 @@ First ten Sector-110 events:
   tension, not a rejection.
 * The per-sector depth test for a constant depth gives χ² = 16.1–18.5 for 5 d.o.f. (p ≈ 0.007), driven by S32 (56 ± 36 ppm where ≈185 was predicted).
 * Momentum dumps (literature-calibration action A7): removing ±1.5, ±3 or ±6 h around every momentum dump in S6/S87/S98/S107 leaves the
-  stacked depth unchanged (167 → 165/166/164 ± 23 ppm), so reaction-wheel events are not the origin; the dump recurrence (≈ 6.3 d) is not a
+  stacked depth unchanged (167 → 165/166/164 ± 23 ppm, measured without the TOI-2514.01 mask, hence slightly below the §6.3 value), so reaction-wheel events are not the origin; the dump recurrence (≈ 6.3 d) is not a
   multiple of 0.5719 d.
-* A TRICERATOPS false-positive probability is being computed as *supporting* evidence only: Giacalone et al. 2021 state that FPP is not a
+* A TRICERATOPS false-positive probability (run in a separate environment, `scripts/triceratops_317134140.py`; result in `results/vet/317134140/triceratops.json` when finished) is *supporting* evidence only: Giacalone et al. 2021 state that FPP is not a
   reliable predictor of disposition below SNR 15, and this signal's multi-sector SNR is ≈ 10. The published precedents at this depth and SNR
   (HD 93963 A b, 141 ppm, TESS SNR 6.7, confirmed by nine CHEOPS visits; TOI-561 b, 290 ppm, SNR 10 in one sector, RV-confirmed) were
   settled by independent data, which is what the pre-registered S108–S110 test provides.
@@ -355,16 +355,18 @@ S13 orbit gap, so 2019 neither confirms nor contradicts the signal.
 
 ### 8.4 What it is if real (revised after the literature calibration, §11)
 With R★ = 0.785 R☉: Rp = 8.5 ± 0.3 R⊕ (0.76 R_Jup); a = 0.113 AU; Teq ≈ 560 K (albedo 0, full redistribution); insolation 16 S⊕.
-**At this radius photometry cannot distinguish a giant planet from a brown dwarf**, and the prior is roughly even: Kepler FGK occurrence of
+**At this radius photometry cannot distinguish a giant planet from a brown dwarf**, and the prior is roughly even (rates as compiled by the literature survey, §11, not re-derived here): Kepler FGK occurrence of
 8–11 R⊕ planets at 12–25 d is ≈ 0.06 % (Kunimoto & Matthews 2020) against ≈ 0.2 % for close brown dwarfs (Csizmadia 2015), and 0.76 R_Jup
 matches both warm Saturns (NGTS-11 b, 0.34 M_Jup, 0.82 R_Jup) and old 40–70 M_Jup brown dwarfs (TOI-569 b, 64 M_Jup, 0.75 R_Jup).
 **The object is therefore labelled a transiting companion candidate (giant planet or brown dwarf), not a planet candidate.** No
 statistical-validation path exists above 8 R⊕: TRICERATOPS was calibrated only for Rp < 8 R⊕ because the planet/brown-dwarf/star
 degeneracy makes an FPP meaningless there (Giacalone et al. 2021). What the data do constrain: the secondary-eclipse limit (384 ± 160 ppm;
 2σ limit 700 ppm) bounds a thermally emitting companion to Teff < 2680 K in the TESS band, excluding all but the latest M dwarfs; Gaia DR3
-radial velocities (14 transits, error 0.544 km/s, RV χ² p = 0.52, renormalised GoF = −0.16: not variable) give, through the Katz et al. 2023
-error model, a per-epoch scatter of ≈ 1.6 km/s and hence K ≲ 2.2 km/s and **M₂ ≲ 25 M_Jup** (an analyst estimate, not a published
-threshold), which excludes M dwarfs and the upper half of the brown-dwarf range. Gaia astrometry (RUWE 1.10, no non-single-star solution)
+radial velocities (14 transits, error 0.544 km/s, RV χ² p = 0.52, renormalised GoF = −0.16: not variable; `rv_amplitude_robust` = 5.7 km/s,
+which for 14 epochs at ≈ 1.6 km/s per-epoch noise is the expected ≈ 3.4σ peak-to-peak range and would admit K up to ≈ 2.8 km/s) give, through
+the Katz et al. 2023 bright-star error model inverted for the per-epoch scatter (≈ 1.6 km/s) and a circular orbit sampled at random phases,
+K ≲ 2.2–2.8 km/s and **M₂ ≲ 25–30 M_Jup** (an analyst estimate, not a published threshold), which excludes M dwarfs and the upper half
+of the brown-dwarf range. Gaia astrometry (RUWE 1.10, no non-single-star solution)
 is *not* evidence here: DR3 astrometric orbits were searched only for P ≥ 10 d and the sensitivity peaks near 1000 d, so an 18-d companion
 of any mass would be invisible; the earlier text citing RUWE as support is withdrawn. Radial velocities remain the decisive test:
 K ≈ 30 m/s for 0.3 M_Jup, 100 m/s for 1 M_Jup, 1.3 km/s for 13 M_Jup.
@@ -503,7 +505,7 @@ source) was commissioned to calibrate the claims above. Findings applied to the 
   (§8.4). No validation route exists above 8 R⊕; only radial velocities decide. A QLP timing-error notice for Sectors 99–104 led to the
   timestamp verification and the v3 ephemeris with a 6-min Sector-104 systematic (§8.5).
 * **TIC 317134140:** FPP tools are not decisive at SNR ≈ 10; the momentum-dump test passes; the pre-registered S108–S110 test is the right
-  design and, given the ≈ 2.7-month product latency measured on Sector 104, will be decided in January–March 2027 rather than November 2026.
+  design. Product latency differs by product: SPOC 2-minute light curves for S104 and S107 appeared on MAST 23 and 18 days after each sector ended (file creation dates), whereas QLP FFI products lag 2–3 months. TIC 317134140 is a 2-minute target, so its S108 data are expected in late October 2026, S109 by late November and S110 by mid-December; the January–March 2027 estimate in an earlier draft applied the QLP latency and is withdrawn.
 * **Publication route:** since 2026-08-19 ExoFOP accepts community candidates only after refereed publication (RNAAS only if the methods were
   refereed), and every confirmed amateur-found TESS planet reached the TOI list through a refereed paper with a professional co-author. The
   Zenodo/GitHub record is pre-registration, not publication. The practical path for TIC 89247735 is a short refereed paper, then CTOI, then
