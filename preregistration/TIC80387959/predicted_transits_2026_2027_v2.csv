@@ -1,0 +1,27 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,sigma_min,tess_sector,status
+498,4371.55407,2461371.55407,2026-11-27 01:16,3.5,111,prediction
+499,4375.74624,2461375.74624,2026-12-01 05:53,3.5,111,prediction
+500,4379.93842,2461379.93842,2026-12-05 10:30,3.6,111,prediction
+501,4384.13059,2461384.13059,2026-12-09 15:06,3.6,"111 (span only, gap unknown)",prediction
+502,4388.32276,2461388.32276,2026-12-13 19:43,3.6,"111 (span only, gap unknown)",prediction
+503,4392.51493,2461392.51493,2026-12-18 00:20,3.6,"111 (span only, gap unknown)",prediction
+504,4396.70711,2461396.70711,2026-12-22 04:57,3.6,"111 (span only, gap unknown)",prediction
+505,4400.89928,2461400.89928,2026-12-26 09:33,3.6,"112 (span only, gap unknown)",prediction
+506,4405.09145,2461405.09145,2026-12-30 14:10,3.6,"112 (span only, gap unknown)",prediction
+507,4409.28362,2461409.28362,2027-01-03 18:47,3.6,"112 (span only, gap unknown)",prediction
+508,4413.4758,2461413.4758,2027-01-07 23:23,3.6,"112 (span only, gap unknown)",prediction
+509,4417.66797,2461417.66797,2027-01-12 04:00,3.6,"112 (span only, gap unknown)",prediction
+510,4421.86014,2461421.86014,2027-01-16 08:37,3.6,"112 (span only, gap unknown)",prediction
+511,4426.05231,2461426.05231,2027-01-20 13:14,3.7,"113 (span only, gap unknown)",prediction
+512,4430.24449,2461430.24449,2027-01-24 17:50,3.7,"113 (span only, gap unknown)",prediction
+513,4434.43666,2461434.43666,2027-01-28 22:27,3.7,"113 (span only, gap unknown)",prediction
+514,4438.62883,2461438.62883,2027-02-02 03:04,3.7,"113 (span only, gap unknown)",prediction
+515,4442.821,2461442.821,2027-02-06 07:41,3.7,"113 (span only, gap unknown)",prediction
+516,4447.01318,2461447.01318,2027-02-10 12:17,3.7,"113 (span only, gap unknown)",prediction
+517,4451.20535,2461451.20535,2027-02-14 16:54,3.7,"114 (span only, gap unknown)",prediction
+518,4455.39752,2461455.39752,2027-02-18 21:31,3.7,"114 (span only, gap unknown)",prediction
+519,4459.58969,2461459.58969,2027-02-23 02:08,3.7,"114 (span only, gap unknown)",prediction
+520,4463.78187,2461463.78187,2027-02-27 06:44,3.7,"114 (span only, gap unknown)",prediction
+521,4467.97404,2461467.97404,2027-03-03 11:21,3.7,"114 (span only, gap unknown)",prediction
+522,4472.16621,2461472.16621,2027-03-07 15:58,3.8,"114 (span only, gap unknown)",prediction
+523,4476.35838,2461476.35838,2027-03-11 20:34,3.8,"114 (span only, gap unknown)",prediction

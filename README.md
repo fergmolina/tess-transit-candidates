@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17. **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-18 (v1.3: two all-sky candidates). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -21,6 +21,23 @@ The first ground-observable full transits are 2027-06-25 and 2027-08-19 from Chi
 2018, 2020, 2024, 2025 and 2026. Plausible but unproven: the periodogram statistic alone is within the false-positive expectation,
 one 2020 sector does not show it and one sector's centroid is in tension. Transit times for TESS Sectors 108 to 110 are frozen in
 `preregistration/TIC317134140/`; those sectors decide the case.
+
+**TIC 80387959 (TYC 8203-2056-1)** — K dwarf, Tmag 10.5, 116 pc. A 4.192173-d, ≈ 700 ppm, 2.2-h transit seen 24 times in 2019–2026
+(QLP full-frame images; TESS-SPOC extraction agrees). Radius ≈ 2.4 Earth radii if on the target. On target by pixel tests (the only
+neighbours able to mimic it are excluded at ≈ 2.7σ and ≈ 4σ); no secondary eclipse; stellar density consistent; four of four blind holdout
+years recovered; TRICERATOPS FPP 0.047, NFPP 0.010 (indicative, not validated); no catalog entry within 60″. An external review
+([external_review_allsky/REVIEW.md](external_review_allsky/REVIEW.md)) found the apparent sector-to-sector depth change to be a QLP
+normalisation artefact. Status: planet candidate pending the pre-registered test. **Test of record: TESS Sector 111 (2026-11-26 to
+12-22)**; predictions in `preregistration/TIC80387959/` (v2 supersedes v1, which used only the 200-s sectors).
+
+**TIC 120444365** — K dwarf, Tmag 11.1. A 5.148171-d, ≈ 750 ppm transit seen 22 times in 2018–2026, in every year and in every
+independent extraction (SPOC 2-min, TESS-SPOC, TARS, fixed-aperture cutouts). Radius ≈ 2.2 Earth radii if on the target. Isolated star
+(nothing within 60″ can mimic it); on target by pixel tests; TRICERATOPS FPP 0.041, NFPP 0.000 ("likely planet" by the published
+criteria, not validated). Status: planet candidate pending the pre-registered test. **Test of record: TESS Sector 106** (observed
+2026-07-11 to 08-09; its light curves were not public when the predictions were frozen on 2026-10-18 and are expected in late
+October 2026); predictions in `preregistration/TIC120444365/`.
+
+A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground.
 
 ## Pre-registration
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.

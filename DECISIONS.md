@@ -34,3 +34,108 @@
 30. All-sky scale-up (scripts/allsky_targets.py, allsky_driver.py): TIC dwarfs Tmag<=11.5, Teff<=5300, R<0.85, lumclass DWARF (~64k), tess-point sectors 1-105 (QLP on MAST ends at S105 on 2026-10-18), >=2 years required; direct-URL downloads into data/qlp_allsky (flat), results in results/search_allsky + results/single_allsky; env overrides TSEARCH_LC_DIR/TSEARCH_OUT/TSEARCH_SUFFIX added to the pipeline scripts. Quality-policy test: keeping QLP bit-2^30 cadences in the PERIODIC search (DET_FLUX) was tried and rejected - ramp residuals up to 12%, known-signal recovery 22->5 of 40, TIC 89247735 periodogram swamped by a 15-d alias; the periodic search keeps QUALITY==0 (+ >50% dropout cut, results identical to Pool B), and ramp-embedded transits are covered by the single-transit pass run on every batch.
 31. Literature review flagged a QLP barycentric timing error for S99-S104 (MAST QLP page, not yet redelivered). Verified: QLP timestamps agree with a target-specific barycentric correction recomputed from FFI spacecraft times to 0.03 min (S66/S93) and <=1 min (S104). But the S104 transit TIME depends on the photometry: QLP TGLC-method 4196.8043 vs TESScut apertures 4196.8077-4196.8132 (5-13 min later); S93/S66 agree across methods to <=1.6 min. Ephemeris v3 (S104 midpoint +-6 min systematic): P=18.323172+-0.000042 d, chi2/dof 0.5/2; predictions +6.5..+8.6 min vs v2, within the +-15 min window. Also from the review: ExoFOP now accepts community candidates only after refereed publication (RNAAS acceptable only if the methodology is refereed) - CTOI submission is not available to us yet; QLP FFI product latency is ~2.7 months, but SPOC 2-min light curves appear ~3 weeks after a sector ends (S104: 23 d, S107: 18 d, file DATE headers), so the S108-S110 2-min test of TIC 317134140 runs late Oct-mid Dec 2026 as originally planned; inverted-light-curve nulls are known (Kepler DR25) to miss one-signed artefacts - use orbit-phase-preserving scrambles for the all-sky null.
 32. Literature calibration applied (results/research/RESEARCH.md; REPORT.md section 11): TIC 89247735 relabelled 'transiting companion candidate (giant planet or brown dwarf)'; planet/BD prior ~1:1; Gaia RUWE/non-single-star argument withdrawn (DR3 astrometric sensitivity is at P>=10 d with a peak near 1000 d, blind to 18 d); Gaia DR3 RV diagnostics (N=14, eps 0.544 km/s, p=0.52, GoF -0.16, not variable) -> per-epoch scatter 1.6 km/s, K<~2.2 km/s, M2<~25 MJ (analyst estimate). Depth scatter across QLP sectors attributed to the S94 FIPHOT->TGLC photometry change. TIC 317134140: momentum-dump removal (+-1.5..6 h) leaves the depth unchanged (167->164+-23 ppm); TRICERATOPS installed in .venv_tri (numpy<2) and run as supporting evidence only (FPP not decisive at SNR<15). ExoFOP CTOI route requires a refereed paper (policy 2026-08-19); S108-S110 (2-min) decision expected late Oct-mid Dec 2026; v3 ephemeris script added (final_ephemeris_89247735_v3.py reproduces the frozen SHA); Gaia rv_amplitude_robust 5.7 km/s noted (consistent with noise; bound quoted as M2 <~ 25-30 MJ).
+
+33. **Paper draft and co-author route (2026-10-18).** A refereed paper is the only door to CTOI/TOI/TFOP for TIC 89247735 (item 31). Drafted
+    `paper/main.tex` (AASTeX, AJ format, single object, no planet claim; co-author placeholder; AI assistance disclosed in the acknowledgments),
+    with figure and tables generated from the frozen v2/v3 JSON files by `paper/make_figure1.py`. Not compiled locally (no LaTeX), not
+    committed to `public_release`, not uploaded anywhere, per the user's instruction. References limited to entries with arXiv IDs/DOIs
+    fetched in the research memo plus canonical software papers marked `TODO verify`. Co-author channels and a draft e-mail in
+    `paper/COAUTHOR_OUTREACH.md` (TFOP general membership, Visual Survey Group, Planet Hunters TESS, duotransit/NGTS and TESS brown-dwarf
+    groups, QLP team). TRICERATOPS for TIC 317134140 finished (FPP 0.051, NFPP 0.008; informational only) and was recorded in REPORT §6.9.
+
+34. **All-sky run reprioritised to fields TESS will re-observe (2026-10-18).** Rationale: a candidate in a field with an upcoming sector gets
+    its pre-registered test from TESS itself (the Rabtsevich design), independent of any co-author. `scripts/allsky_future_sectors.py`
+    (tess-point, sectors > 105) -> `catalogs/allsky_tic2sectors_future.json`: 36,103 of 57,853 targets have a sector through S134; 13,947
+    have one in S109-S116 (`catalogs/allsky_priority_tics.txt`, sorted by earliest upcoming sector; 8,583 still unsearched at restart).
+    Driver killed mid-batch 12 and relaunched with `--first-tics catalogs/allsky_priority_tics.txt` (resumable; per-star JSONs kept).
+    Known gap: stars of the interrupted batch that have a periodic result but no single-transit result are skipped by the driver's `done`
+    set; run `single_transit_search.py` on that list at the end. Note: tess-point returns a spurious sector 1751 for some stars; ignore > 134.
+    Data-release deadline for freezing predictions: QLP ~2.7 months after sector end (e.g. S110 -> ~Feb 2027); 2-min ~3 weeks.
+
+35. **All-sky priority ranking and first vetting (2026-10-18 evening).** rank.py gained TSEARCH_PARAMS (all-sky TIC table; without it dur_ratio
+    was NaN for every non-Pool-B star). `scripts/allsky_testable.py` builds results/allsky_testable_soon.csv: SDE>=9 (1,238 of 36,981 stars),
+    period-density flag (one hot bin), shared-time flag = excess over chance (n > max(5, 3 x expected); a plain "any sharing star" flag rejected
+    606/615 because chance coincidences at 0.5 % period tolerance are ~12 per candidate), near-orbit flag, future coverage, predicted transits in
+    the next sector's orbit windows, 2-min flag (S108-S110 lists; S111+ not published yet), release deadline (+80 d QLP, +21 d 2-min).
+    615 candidates have a sector <= 116; 417 clean; 222 with >= 1 predicted transit in the test sector; class A (P >= 3 d, depth <= 5 ppt,
+    detected every year, odd/even < 3 sigma, not a Pool-B reject, not TIC 4206066 which appears at 11.13 d = Rabtsevich's second signal) = 28,
+    vetted by scripts/vet_runner.sh (vet.py, 3 parallel) -> results/vet_allsky/; one-line summaries by scripts/vet_summary_table.py.
+    Rejected so far: 127132777 (rprs 0.24, b 1.15, rho 0.03x: grazing EB), 75582311 (V-shaped, rho 0.02x, SAP/DET 1.66, sector depths chi2 93: blended EB).
+    TIC 30832104 (P 9.7141 d, 576 ppm, 2.2 Re, Tmag 9.7, K dwarf, next sector S110 with 3 transits, QLP release ~2027-02-14): SPOC 2-min S8+S9
+    (2019) at the QLP ephemeris give 676 +- 56 ppm (12 sigma) and a blind BLS of the 2-min data alone returns 9.7053 d as its top peak
+    (scripts/spoc_check_30832104.py) - independent-pipeline confirmation. No TOI/CTOI/TCE/ExoFOP entry. TIC 80387959 (4.1922 d, 757 ppm, 2.4 Re,
+    rho 1.06x, blind 4/4, no secondary) also promising. Sector-scrambled null running (scripts/null_scramble.py, 300 stars, cumulative random
+    per-sector time shifts 3-25 d -> results/null_scramble_allsky/). Single-transit all-sky ranking done: 1,504 duotransit pairs, inverted
+    comparison not yet run. ffi_pixel_test.py now falls back to catalogs/allsky_targets.csv for coordinates.
+    **Addendum (19:50 UTC): TIC 30832104 REJECTED** - ffi_pixel_test S62/S89: flux-loss centroid 2.17 / 2.02 px (45.5" / 42.3") from the target
+    (+-0.06-0.10 px), same sky direction in two sectors with different orientations; the target pixel shows no loss; depth rises from ~0 at r <= 1.5 px
+    to 530-590 ppm at r = 3 px. Source is a faint Gaia star ~40-46" NW (G 16.1 at 38.9" needs a 14 % eclipse; G 17.0 at 45.6" needs 33 %): a
+    background EB diluted into the QLP and SPOC apertures. LESSON: a SPOC 2-min recovery of a QLP signal is NOT independent evidence against
+    blending (both apertures contain the neighbour); only the pixel-level test discriminates. Run ffi_pixel_test BEFORE any 2-min cross-check or
+    pre-registration. TIC 80387959 pixel test: offsets 0.17 / 0.28 / 0.22 px (+-0.10) in S63/S90/S100, depth flat-to-declining with aperture:
+    on target. ffi_pixel_test writes to results/vet_qlp/<tic>/ regardless of TSEARCH_SUFFIX (copied to vet_allsky by hand).
+
+36. **TIC 80387959 pre-registered (v1, frozen 2026-10-18 19:40:16 UTC, SHA 4652f7a3...).** TYC 8203-2056-1, K dwarf (Teff 5220 K, R 0.80, Tmag 10.5,
+    116 pc, high PM). P = 4.192142 +- 0.000020 d, T0 = BTJD 4082.29250 +- 4.6 min (12 QLP transit times, chi2/dof 25.7/10, one +44-min outlier,
+    conservative +-20 min quoted), depth 757 +- 41 ppm, 2.2 h, Rp ~ 2.4 Re, rho_fit/rho_TIC 1.06, odd/even 0.7 sigma, no secondary, blind 4/4,
+    pixel test on target (8" G=17.3 neighbour excluded 4.8/2.8/4.3 sigma; 14" G=14.0 at 6.1/7.6/4.7 sigma), no TOI/CTOI/TCE within 60"
+    (scripts/known_nearby.py, position-based). Open weakness: two-level depth (850-990 ppm 2021-23 vs ~590 ppm 2025-26, chi2 19/4; same camera,
+    CCD mixed) - unexplained; quoted as x1.5 depth uncertainty. Test of record: Sector 111 (2026-11-26 to 12-22; 7 predicted transits, 3 in the
+    orbit windows the orbit table covers), then S112-S114; QLP release ~mid-March 2027; check the S111 2-min list in early November.
+    Tools: scripts/prereg_candidate.py (generic; restricts predictions to the star's tess-point sectors; sector spans from
+    catalogs/TESS_sector_dates_future.csv (MIT Year-9 table) where the orbit table ends, flagged "span only"). NOT deposited publicly yet
+    (advisor: wait for TESS-SPOC FFI depth check, the rest of class A, and the user's review). PREREGISTRATION.md wording "S110" -> "Sector 111"
+    corrected by hand after the freeze; the hashed CSV is untouched.
+    **Addendum: TIC 355658330 REJECTED** - pixel test S63/S89/S90: flux-loss centroid 2.24 / 2.43 / 2.07 px (43-51") from the target in all three
+    sectors, target-pixel depth consistent with zero; off-target EB diluted into the aperture (also explains the 9x density mismatch). Class-A
+    light-curve-only rejects: 113288623, 126526772, 127132777, 632483638 (grazing: rprs 0.24-0.30, b > 1.1, rho 0.02-0.04x), 75582311 (V-shaped blend),
+    73763470 (odd/even 4.2 sigma, depth chi2 122). Parked as noise-level (SNR < 9, blind tests fail/inconclusive): 13071480, 178130889, 234059307,
+    279787271, 398543433, 178155658; TIC radius missing: 12377308, 279370402. Pixel tests queued (scripts/pixel_runner.sh, bash) for the 11 that pass
+    the light-curve tests: 120444365, [withheld], 140017995, 36568378, 293857021, 33480523, 71096594, 284331183, 268688836, 32077129, 235283074.
+    **TIC 80387959 TESS-SPOC check (scripts/tessspoc_check.py):** independent FFI extraction (PDCSAP, S36/S37 at 600 s, S63 at 200 s) gives
+    810 +- 79, 905 +- 76, 803 +- 83 ppm at the QLP ephemeris (combined 831 +- 53 ppm, 16 sigma; QLP masked-detrend depth 757 +- 41); blind BLS on
+    the TESS-SPOC data alone: top period 4.19224 d, SDE 12.4. Pipeline artefact excluded; blend question rests on the pixel test (done, on target).
+    TESS-SPOC has no S90/S100 products, so the 2025-26 depth drop remains untested by a second extraction.
+    **Pixel-test outcomes (continued):** 140017995 REJECTED (loss centroid 1.71 / 1.43 px = 30-36" off target in S61/S88). 120444365 ON TARGET
+    (0.03 / 0.19 / 0.04 px in S96/S103/S105; isolated star: nearest Gaia source able to mimic the signal is 64" away and would need 58 %);
+    5.14808 d, 743 ppm, 2.45 Re, Tmag 11.06, K dwarf, seen 2018/2020/2023/2025/2026; only future coverage is S106 (observed Jul-Aug 2026, QLP
+    file not on MAST as of 2026-10-18, not on any 2-min list) -> pre-registered as "sector observed, data not public at freeze"; has SPOC 2-min
+    S29 and TESS-SPOC S2/S29/S69 for extraction checks. [withheld] ON TARGET by centroid (0.43 / 0.12 / 0.07 px) but a G=14.7 star 4.2" away
+    needing only 1 % cannot be excluded with 21" pixels; crowded field (105 TIC entries within 60"); pre-registered v1 with that caveat
+    (ephemeris test only; S111-S113).
+    **Pixel-test outcomes (continued 2):** 36568378 REJECTED (1.34 / 2.04 px off in S61/S88); 293857021 REJECTED (1.53 px off in S87).
+    [withheld] frozen v1 (SHA cbb409bb..., 2026-10-18 20:25:07 UTC; 16 times, chi2/dof 75/14, inflation 2.3; S111 test, 8 predicted transits).
+    120444365 extraction checks: TESS-SPOC S2/S29/S69 668 / 998 / 824 ppm and SPOC 2-min S29 1002 +- 116 ppm at the QLP ephemeris (blind BLS on
+    the single 2-min sector alone does not find it: SDE 3.2; red noise) -> freeze v1 launched with S106 as the test of record.
+    33480523 REJECTED (loss centroid 2.97 / 1.50 px off target in S89/S90; only 2 events per sector).
+    **120444365 frozen v1** (SHA 64b5b026..., 2026-10-18 20:26:00 UTC): P = 5.148082 +- 0.000037 d, T0 = BTJD 4213.82117 +- 4.6 min (epoch 555);
+    6 predicted transits in Sector 106 (2026-07-12 to 08-07), status "sector observed, data not public at freeze"; QLP S106 expected late Oct 2026.
+    Frozen local candidates so far (none deposited publicly): 80387959 (S111), 120444365 (S106, unreleased), [withheld] (S111; crowding caveat).
+    **Pixel-test outcomes (final for class A):** 71096594 REJECTED (0.91 / 1.24 / 1.31 px off in S89/S99/S100); 284331183 REJECTED (2.80 px, S87);
+    268688836 REJECTED (1.48 px, S87); 32077129 REJECTED (2.44 / 1.38 px, S61/S88); 235283074 UNRESOLVED (0.37 +- 0.1 px in the single testable
+    sector S87, 3 events; SNR 12.6, rho 0.17x, blind 2/4) - parked, re-test after S111. Tally: 12 stars pixel-tested, 3 on target (80387959,
+    120444365, [withheld]), 1 unresolved, 8 off-target blends at 20-60" (plus 30832104 = 9 of 12). Blends from faint EBs inside the large QLP
+    apertures of bright targets are the dominant false-positive mode of this sample; the light-curve tests (shape, density, odd/even, blind
+    years) do not catch them, only the pixel test does. For the all-sky ranking, run ffi_pixel_test BEFORE vet.py on every survivor.
+
+37. **Sector-scrambled null result (300 random all-sky stars, scripts/null_scramble.py; ranked with rank.py, SUFFIX _nullscr).** After the physical
+    cuts (198 stars): SDE 50/90/99th pct 7.2 / 8.1 / 11.3, max 23.3; 6.1 % >= 9, 1.0 % >= 12 (real search: 5.1 % and 1.5 %). The high-SDE null
+    entries at P < 3 d are the same stars' REAL signals (e.g. TIC 374608381 P 0.750 d SDE 23.3 in both): shifting whole sectors preserves
+    within-sector coherence, so for periods short relative to a sector the scramble is not a null (the Kepler DR25 caveat). Usable regime P > 7 d:
+    null 8.2 % >= 9, 0 % >= 12, max 11.1 (n = 49) vs real 11.3 % and 2.9 %; the null does reproduce the 13-20 d orbit-cadence cluster (4 of its
+    12 SDE >= 9 entries are at 13.5-19.9 d). Adopted: SDE >= 12 is above the null for P > 7 d; for P <= 7 d the periodogram statistic is not
+    calibrated by any scramble and reliability rests on the per-event vetting and the pixel test (which is what decided every class-A outcome).
+    A proper short-period null would need a within-sector shuffle (e.g. reversing or block-permuting cadences inside each sector) - not done.
+
+38. **External review of the three all-sky candidates applied (results/external_review_allsky/REVIEW.md + LITERATURE_SURVEY.md).** Verdicts:
+    80387959 SURVIVES, 120444365 SURVIVES (cleanest; TRICERATOPS NFPP 0.000, FPP 0.041), [withheld] WOUNDED (host not demonstrable; 4.2" G=14.7
+    star; NFPP 0.062). Findings adopted: (1) cross-sector QLP depths are not astrophysical (per-sector normalisation, S94 dilution change) -
+    the 80387959 x1.5 depth caveat is withdrawn (fixed-aperture 687 +- 36 ppm constant); (2) v1 ephemerides used 200-s sectors only (vet.py
+    min_pts=15 + len<1000 cut dropped every 600/1800-s event and all of S10) -> scripts/prereg_v2.py (one time offset per sector, all sectors,
+    cadence-aware batman, SPOC 2-min where present) -> v2 frozen for all three at 22:34 UTC (SHA 5d0e7651 / 32b5e085 / 0e6bd698); v1 kept on
+    record; [withheld] v1 S111 predictions were 22-45 min early and would have failed a real signal; (3) QLP S99-S105 timestamp error < 1.5 min
+    effect; (4) published pixel floors 7.5-15" - our 0.1-px centroid errors understate sector-to-sector scatter; exclusion of the 7.6" star
+    of 80387959 is ~2.7 sigma. Code fixed: vet.py transit_model exp_time = real cadence; sector cut cadence-aware; time_transits min_pts
+    cadence-aware. TODO from REVIEW 6: ffi_pixel_test.py background subtraction + PM correction + full-cutout PSF fit (adopt reviewer's
+    pixel_review.py); known_nearby.py live VSX/Gaia-variability; 120444365 radius 0.76 Rsun (Rp 2.2 Re); blind test "4 of 5 years".
+    Public deposit still withheld pending the user's review.

@@ -520,3 +520,92 @@ source) was commissioned to calibrate the claims above. Findings applied to the 
 * **Adopted for the all-sky ranking (actions B1–B6):** cross-match against Hawthorn et al. Table A3, the T16 Planet Hunt catalog (11,554
   candidates), the LEO-Vetter M-dwarf list and DIAmante; season-scrambled null; periodic-search injection test; duration-density alias
   likelihood; LEO-Vetter at triage; all Sector 99–104 event times tagged as uncertain until the QLP redelivery.
+
+## 12. All-sky QLP search, priority pass: fields TESS will re-observe (2026-10-18; run still in progress)
+Design change (DECISIONS 34): a candidate in a field with an upcoming TESS sector gets its pre-registered test from TESS itself, independent of any
+co-author or ground observer. `scripts/allsky_future_sectors.py` (tess-point, sectors 106–134) finds that 36,103 of the 57,853 all-sky targets
+are re-observed by S134 and 13,947 have a sector in S109–S116; the driver was restarted with those stars first (`catalogs/allsky_priority_tics.txt`;
+9 have no QLP files on MAST). The remaining 24,000 ordinary targets are being searched as this section is written.
+
+### 12.1 Ranking of the priority stars (`scripts/allsky_testable.py` → `results/allsky_testable_soon.csv`)
+`rank.py` gained a `TSEARCH_PARAMS` override (without it the duration filter was silently void outside Pool B). Of 36,981 stars ranked so far,
+24,131 pass the loose physical cuts and 1,238 have a top-peak SDE ≥ 9. Three systematics flags: (i) period-density (one over-dense log-period bin;
+27 candidates), (ii) shared-time — the number of other stars whose top-3 peak shares the period within 0.5 % *and* the transit phase within one
+duration, compared with the chance expectation from the local period density; flagged only if n > max(5, 3 × expected) (a naive "any sharing
+star" flag rejected 606 of 615 candidates because chance coincidences at this tolerance average ≈ 12 per candidate), (iii) proximity to the
+13.7-d orbit cadence. Coverage columns: next sector, predicted transits inside its science-orbit windows (orbit table through S111 orbit 233;
+sector spans from the MIT Year-9 table beyond that), 2-min-target flag (S106–S110 lists; S111+ unpublished), release deadline (+80 d QLP, +21 d
+2-min). Known-signal matching is TIC-keyed in `rank.py` and position-based within 60″ for survivors (`scripts/known_nearby.py`, TIC cone search).
+
+| stage | stars |
+|---|---|
+| SDE ≥ 9, physical cuts | 1,238 |
+| … with a sector ≤ 116 | 615 |
+| … systematics-clean | 417 |
+| … ≥ 1 predicted transit in the test sector | 222 |
+| class A: P ≥ 3 d, depth ≤ 5 ppt, detected every year, odd/even < 3σ, not a Pool-B reject | 28 |
+
+TIC 4206066 (Rabtsevich's star) appears in class A at 11.13 d, 709 ppm (his second, post-hoc signal); it is excluded from our list as a known
+public claim. The provisional significance bar is the Pool-B filtered inverted null (99th percentile 10.6); the sector-scrambled null (§12.4) replaces it.
+
+### 12.2 Vetting of class A (`scripts/vet_runner.sh`, `vet_summary_table.py`, `pixel_runner.sh`; table `results/allsky_classA_outcomes.csv`)
+All 28 went through `vet.py`; the 12 that passed the light-curve tests went through the TESScut per-pixel test. **Nine of the twelve are
+off-target blends** — flux-loss centroid 0.9–3.0 px (20–60″) from the target, in every sector tested, with the depth rising with aperture
+radius: 30832104, 355658330, 140017995, 36568378, 293857021, 33480523, 71096594, 284331183, 268688836, 32077129. Five more were grazing or
+V-shaped eclipsing binaries by shape (Rp/R★ 0.17–0.30, b > 1.1, fitted density 2–4 % of the catalog value); one failed odd/even at 4.2σ; eight
+are noise-level (SNR < 9, blind tests fail or inconclusive) or lack a TIC radius and are parked.
+
+**Lesson (DECISIONS 35):** TIC 30832104 (9.71 d, 646 ppm, Tmag 9.7) passed every light-curve test, and its 2019 SPOC 2-min data reproduced the
+transit at 12σ with a blind BLS returning the same period — and it is a blend 44″ away. A 2-min recovery is *not* a blend test, because the
+SPOC aperture contains the same neighbour. Faint eclipsing binaries inside the large QLP apertures of bright stars are the dominant
+false-positive mode of this sample, and only the pixel test catches them; it now runs before `vet.py` on every survivor.
+
+### 12.3 Survivors after the external review (`results/external_review_allsky/REVIEW.md`; all frozen locally, **not deposited publicly**)
+An independent review (same design as §9: outside data, own pixel code, TRICERATOPS, literature) returned SURVIVES / SURVIVES / WOUNDED and twelve
+corrections (REVIEW §6), all applied. Two cut across every candidate: (i) **cross-sector QLP depths are not an astrophysical test** — QLP normalises
+each sector separately and changed dilution system at Sector 94, so a fixed-aperture TESScut extraction is the right comparison; (ii) **the v1
+ephemerides were biased** because `vet.py` timed single transits with a 15-point minimum that silently discarded every 600-s and 1800-s event,
+leaving only the 200-s sectors (2023–2026). v2 ephemerides (`scripts/prereg_v2.py`, one common time offset per sector fitted to all transits of that
+sector with a cadence-aware model, all QLP sectors plus SPOC 2-min where present) replace v1; v1 files stay on record. The QLP S99–S105 timestamp
+error moves these ephemerides by < 1.5 min. Published TESS pixel-localisation floors are 7.5″ (SPOC's 3σ floor) to 15″ (LEO-Vetter), so no pixel
+test reaches a neighbour inside ≈ 0.35 px, and our per-sector centroid errors (≈ 0.1 px) understate the sector-to-sector scatter (REVIEW §2.2: χ² 52/10).
+
+* **TIC 80387959** (TYC 8203-2056-1; K dwarf, Teff 5220 K, R 0.80 R☉, Tmag 10.5, 116 pc). **Survives.** v2: P = 4.192173 ± 0.000007 d,
+  T0 = BTJD 4086.48634 ± 2.9 min (6 sector times incl. S10 at 1800 s; χ² 3.3/4; SHA 5d0e7651…, frozen 2026-10-18 22:34:41 UTC; v1 P was
+  1.5σ lower). Rp ≈ 2.4 R⊕. Shape: ρ★ 1.06× catalog, b 0.39; odd/even 0.7σ; secondary −68 ± 34 ppm; blind holdout 4/4. **The two-level depth is
+  withdrawn:** the reviewer's fixed-aperture, background-subtracted TESScut photometry gives 687 ± 36 ppm constant over six sectors (χ² 10.2/5;
+  early-vs-late 32 ± 73 ppm); the QLP (and raw SAP) per-sector values 712–961 ppm reflect QLP's per-sector apertures and normalisation. TESS-SPOC
+  (S10/S36/S37/S63) 831 ± 53 ppm combined, blind period 4.19224 d. Pixel: loss position combined over six sectors 2.0 ± 1.1″ from the target;
+  the G = 17.3 star at 7.6″ (needs 22–28 %) is excluded at ≈ 2.7σ (not the 4.8/2.8/4.3σ first quoted), the G = 14.0 star at 13.7″ at ≈ 4σ.
+  TRICERATOPS FPP 0.047, NFPP 0.010 (indicative; below the 0.015 / 10⁻³ validation thresholds). Gaia RVs exclude a stellar companion. Test of
+  record Sector 111 (7 predicted transits from 2026-11-27 21:13 UTC, formal σ ≈ 3 min, conservative ±20 min), then S112–S114.
+* **TIC 120444365** (K dwarf, Teff 4951 K; TIC v8.2 / Gaia radius 0.76 R☉, so Rp ≈ 2.2 R⊕, not the 2.45 from the QLP-header radius; Tmag 11.1).
+  **Survives, cleanest of the three.** v2: P = 5.148171 ± 0.000005 d, T0 = BTJD 4218.97007 ± 2.1 min (7 sector times incl. S2 at 1800 s, S29
+  QLP and SPOC 2-min; χ² 6.5/5; SHA 32b5e085…, 22:34:49 UTC; v1 P was 2.4σ low and placed the 2018–2023 transits 50–90 min early, harmless for
+  S106). Isolated (nearest possible mimic 64″, 58 % needed). Pixel 0.03/0.19/0.04 px. Independent products at the corrected ephemeris: SPOC 2-min
+  S29 892 ± 129 ppm, TESS-SPOC S2/S29/S69 681/955/894, TARS 832–1008, fixed-aperture cutouts 674–1176 ppm; blind holdout 4 of 5 years (the 2018
+  holdout had no covered transit). TRICERATOPS FPP 0.041, **NFPP 0.000** — "likely planet" by the Giacalone et al. criteria, not validated. Gaia DR3
+  flags the star VARIABLE (rotation ≈ 13 d, not a harmonic of 5.148 d). Test of record Sector 106 (6 transits, 2026-07-12 to 08-07; QLP file absent
+  from MAST at both freezes), expected late October 2026; no further coverage through S134.
+* A third signal (3.28 d, 0.8 ppt, crowded field) is real and stable but its host star cannot be assigned from TESS pixels (a star 4.2″ away
+  needs only ≈ 1 %); it is withheld from this public copy pending seeing-limited photometry.
+* TIC 235283074 (9.31 d, 1.65 ppt): unresolved (0.37 ± 0.1 px in the one testable sector; ρ 0.17×; blind 2/4); re-test after S111.
+
+Reviewer's ranked next observations: 120444365 — the S106 test (QLP and a TESScut fixed-aperture extraction), one ground transit at ≈ 1 mmag,
+speckle imaging, reconnaissance spectroscopy; 80387959 — the S111 test extracted from TESScut, one ground transit with apertures separating the
+13.7″ star; [withheld] — SG1-style photometry of every Gaia star within 2.5′ (the 4.2″ star needs ≈ 1.5″ seeing). Code fixes applied from REVIEW §6:
+`vet.py` cadence-aware sector and in-transit thresholds and real-cadence exposure time; `prereg_v2.py`. Still open: background subtraction, proper-motion
+correction and a full-cutout PSF fit in `ffi_pixel_test.py` (the reviewer's `pixel_review.py` does these), and live VSX/Gaia-variability queries in `known_nearby.py`.
+
+### 12.4 Calibration and remaining work
+Sector-scrambled null (`scripts/null_scramble.py`: each sector shifted by a cumulative random 3–25 d, preserving within-sector structure and
+destroying cross-sector coherence; 300 random stars; DECISIONS 37). After the physical cuts: 99th-percentile SDE 11.3; 6.1 % above 9 and 1.0 %
+above 12, against 5.1 % and 1.5 % in the real search. The scramble reproduces the 13–20 d orbit-cadence cluster (4 of its 12 entries above SDE 9
+are at 13.5–19.9 d), which the inverted null never did. Its highest entries (SDE 17–23 at 0.75 and 2.4 d) are the same stars' real signals, because a
+whole-sector shift leaves within-sector coherence intact: the scramble is a valid null only for periods long relative to a sector. For P > 7 d it
+gives 0 of 49 above SDE 12 (max 11.1) against 2.9 % in the real search, so SDE ≥ 12 is above the null there; for P ≤ 7 d — where all three
+survivors lie — no scramble calibrates the statistic, and reliability rests on the per-event tests and the pixel test, which is what decided every
+class-A outcome. Single-transit pass on the all-sky files: 1.11 M events, 18,039 pass event cuts, 1,504 duotransit pairs — an
+inverted comparison is needed before any pair is believed (Pool B showed two-event matches are noise-equivalent). When the full run ends
+(≈ 08:00 UTC 2026-10-19): re-rank all 57,853 stars, cross-match the published candidate lists (Hawthorn 2024 Table A3, T16, LEO-Vetter, DIAmante),
+pixel-test before vetting, and extend the frozen set.

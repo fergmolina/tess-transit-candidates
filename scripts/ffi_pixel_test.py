@@ -3,7 +3,7 @@ For each listed sector: download an NxN cutout, build a per-pixel transit depth 
 differences (each transit uses its own +-3 duration baseline, so slow scattered-light trends cancel), locate the
 flux-loss centroid, compare with the target and Gaia neighbour positions, and measure relative depth vs aperture radius.
 Usage: python -I ffi_pixel_test.py TIC P T0 DUR_H --sectors 66 93 --size 11"""
-import sys, os, json, argparse, warnings; warnings.filterwarnings("ignore"); sys.path.insert(0, "/Users/fernando/Desktop/NASA/scripts")
+import os, sys, os, json, argparse, warnings; warnings.filterwarnings("ignore"); sys.path.insert(0, "/Users/fernando/Desktop/NASA/scripts")
 import numpy as np, pandas as pd, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 import lightkurve as lk
 from astropy.coordinates import SkyCoord; import astropy.units as u
@@ -86,7 +86,8 @@ def run(tic, P, T0, dur_d, sector, size, ra, dec, gaia, out):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("period", type=float); ap.add_argument("t0", type=float); ap.add_argument("dur_h", type=float)
     ap.add_argument("--sectors", type=int, nargs="+", required=True); ap.add_argument("--size", type=int, default=11); a = ap.parse_args()
-    pool = pd.read_csv("/Users/fernando/Desktop/NASA/catalogs/qlp/s104_dwarf_pool.csv", usecols=["ID", "ra", "dec"]).set_index("ID")
+    pool = pd.read_csv(os.environ.get("TSEARCH_PARAMS") or "/Users/fernando/Desktop/NASA/catalogs/qlp/s104_dwarf_pool.csv", usecols=["ID", "ra", "dec"], low_memory=False).set_index("ID")
+    if a.tic not in pool.index: pool = pd.read_csv("/Users/fernando/Desktop/NASA/catalogs/allsky_targets.csv", usecols=["ID", "ra", "dec"]).set_index("ID")
     ra, dec = [float(x) for x in pool.loc[a.tic, ["ra", "dec"]]]
     gaia = gaia_list(ra, dec)
     out = f"/Users/fernando/Desktop/NASA/results/vet_qlp/{a.tic}"; os.makedirs(out, exist_ok=True)

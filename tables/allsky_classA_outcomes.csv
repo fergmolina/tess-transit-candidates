@@ -1,0 +1,29 @@
+tic,period_d,depth_ppm,rp_re,lc_vetting,pixel_test,outcome,frozen,test_sector
+80387959,4.19218,757,2.4,pass,on target (0.17/0.28/0.22 px),candidate,v1 2026-10-18 19:40 UTC,111
+120444365,5.14808,743,2.45,pass,on target (0.03/0.19/0.04 px),candidate,v1 2026-10-18 20:26 UTC,106 (unreleased)
+[withheld],3.28228,803,2.5,pass,on target by centroid; 4" G=14.7 companion not excludable,candidate (crowding caveat),v1 2026-10-18 20:25 UTC,111
+235283074,9.31381,1652,3.3,weak (rho 0.17 blind 2/4),0.37 px one sector,unresolved,,111
+30832104,9.71412,646,2.3,pass,off target 2.1 px (44"),rejected blend,,
+355658330,7.89971,1434,3.0,rho 9x,off target 2.1-2.4 px,rejected blend,,
+140017995,4.83688,880,2.5,pass,off target 1.4-1.7 px,rejected blend,,
+36568378,3.66164,653,2.1,pass,off target 1.3-2.0 px,rejected blend,,
+293857021,8.24965,552,1.9,pass,off target 1.5 px,rejected blend,,
+33480523,17.30726,773,2.0,pass,off target 1.5-3.0 px,rejected blend,,
+71096594,5.62997,492,1.1,rho 0.26,off target 0.9-1.3 px,rejected blend,,
+284331183,6.03085,2000,3.4,depth chi2 61,off target 2.8 px,rejected blend,,
+268688836,4.89610,906,1.4,odd/even 3.0,off target 1.5 px,rejected blend,,
+32077129,17.36820,1507,3.0,depth chi2 42,off target 1.4-2.4 px,rejected blend,,
+113288623,8.94168,4233,23,grazing (b 1.21 rho 0.02),,rejected EB,,
+126526772,8.61996,3905,20,grazing (b 1.19 rho 0.04),,rejected EB,,
+127132777,4.86518,3620,20,grazing (b 1.15 rho 0.03),,rejected EB,,
+75582311,11.53027,3498,15,V-shaped rho 0.02 SAP/DET 1.66,,rejected EB/blend,,
+632483638,11.60086,1243,14,grazing (b 1.16),,rejected EB,,
+73763470,4.34266,383,1.5,odd/even 4.2 depth chi2 122,,rejected,,
+13071480,10.40607,772,2.1,SNR 6.5 blind 0/1,,parked noise-level,,
+178130889,3.90674,1391,3.3,SNR 6.9 rho 15,,parked noise-level,,
+234059307,3.07777,1397,3.0,SNR 6.4 blind 0/4,,parked noise-level,,
+279787271,5.19148,667,1.9,SNR 5.4 rho 32,,parked noise-level,,
+398543433,4.27205,366,1.6,SNR 6.3 blind 0/3,,parked noise-level,,
+178155658,5.36720,480,1.4,SNR 8.0 blind 0/2,,parked noise-level,,
+12377308,9.13669,1127,,TIC radius missing,,parked,,
+279370402,7.97315,574,,TIC radius missing,,parked,,

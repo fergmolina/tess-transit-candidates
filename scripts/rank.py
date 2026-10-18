@@ -3,10 +3,10 @@ import json, glob, os, numpy as np, pandas as pd
 import os
 SOURCE = os.environ.get("TSEARCH_SOURCE", "spoc")
 R = "/Users/fernando/Desktop/NASA/results"; B = "/Users/fernando/Desktop/NASA/catalogs"
-SEARCH_DIR = f"{R}/search" if SOURCE == "spoc" else f"{R}/search_qlp"
-SUFFIX = "" if SOURCE == "spoc" else "_qlp"
+SEARCH_DIR = os.environ.get("TSEARCH_OUT") or (f"{R}/search" if SOURCE == "spoc" else f"{R}/search_qlp")
+SUFFIX = os.environ.get("TSEARCH_SUFFIX", "" if SOURCE == "spoc" else "_qlp")
 known = pd.read_csv(f"{B}/known_signals.csv", low_memory=False)
-tp = pd.read_csv(f"{B}/s107_multiyear_tic_params.csv" if SOURCE == "spoc" else f"{B}/qlp/s104_dwarf_pool.csv").set_index("ID")
+tp = pd.read_csv(os.environ.get("TSEARCH_PARAMS") or (f"{B}/s107_multiyear_tic_params.csv" if SOURCE == "spoc" else f"{B}/qlp/s104_dwarf_pool.csv"), low_memory=False).set_index("ID")
 def expected_duration_h(P, tic):
     """Central-transit duration for circular orbit: T = (P/pi) * asin(R*/a) ~ 13 h (P/365)^(1/3) rho^(-1/3) ; rho in solar units."""
     r = tp.loc[tic] if tic in tp.index else None

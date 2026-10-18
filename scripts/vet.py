@@ -32,7 +32,7 @@ def load_all(tic, P, T0, dur_d, flux_col="PDCSAP_FLUX"):
         else:
             from tsearch import load_qlp_lc
             t, f, fe, m = load_qlp_lc(fp, flux_col=("SAP_FLUX" if flux_col == "SAP_FLUX" else "DET_FLUX"))
-        if len(t) < 1000: continue
+        if len(t) < 1000 and (t.max() - t.min()) < 10: continue   # cadence-aware (review: a 1800-s sector has ~1,100 points and was dropped)
         if str(m["sector"]) in os.environ.get("EXCLUDE_SECTORS", "").split(","): print(f"  excluding sector {m['sector']} (EXCLUDE_SECTORS)"); continue
         flat, ok, _ = masked_detrend(t, f, P, T0, dur_d)
         if MASK_KNOWN is not None:
@@ -54,8 +54,9 @@ def box_depth(t, f, P, T0, dur_d, phase=0.0):
     sig = np.std(f[oot]) if oot.sum() > 10 else np.std(f)
     return float(d), float(sig / np.sqrt(intr.sum())), int(intr.sum())
 
-def transit_model(params, t, P, u=(0.4, 0.25), exp_time=120 / 86400):
+def transit_model(params, t, P, u=(0.4, 0.25), exp_time=None):
     T0, rprs, ars, b = params
+    if exp_time is None: exp_time = float(np.median(np.diff(np.sort(t)))) if len(t) > 3 else 120 / 86400   # real cadence (review 2026-10-18: 120 s was hard-coded for 200/600/1800-s QLP data)
     inc = np.degrees(np.arccos(np.clip(b / ars, 0, 1)))
     p = batman.TransitParams(); p.t0 = T0; p.per = P; p.rp = rprs; p.a = ars; p.inc = inc; p.ecc = 0; p.w = 90; p.u = list(u); p.limb_dark = "quadratic"
     m = batman.TransitModel(p, t, supersample_factor=3, exp_time=exp_time)
@@ -127,7 +128,8 @@ def time_transits(T, F, E, P, T0, dur_d, rprs, ars, b, min_pts=15):
         tc0 = T0 + n * P
         w = np.abs(T - tc0) < 2.5 * dur_d
         intr = np.abs(T - tc0) < dur_d / 2
-        if intr.sum() < min_pts or w.sum() < 3 * min_pts: continue
+        cad = float(np.median(np.diff(T))) if len(T) > 3 else 120 / 86400; mp = max(4, min(min_pts, int(0.6 * dur_d / cad)))   # cadence-aware (review 2026-10-18: min_pts=15 dropped every 600/1800-s transit)
+        if intr.sum() < mp or w.sum() < 3 * mp: continue
         tt, ff, ee = T[w], F[w], E[w]
         grid = tc0 + np.linspace(-0.6 * dur_d, 0.6 * dur_d, 121)
         chi = np.array([np.sum(((ff - transit_model([g, rprs, ars, b], tt, P)) / ee)**2) for g in grid])
@@ -246,7 +248,7 @@ def centroid_shift(tic, P, T0, dur_d):
             cx = np.asarray(d["MOM_CENTR1"], float); cy = np.asarray(d["MOM_CENTR2"], float); f = np.asarray(d["PDCSAP_FLUX"], float)
         m = np.isfinite(t) & np.isfinite(cx) & np.isfinite(cy) & np.isfinite(f) & (q == 0) & trim_edges(t)
         t, cx, cy = t[m], cx[m], cy[m]
-        if len(t) < 1000: continue
+        if len(t) < 1000 and (t.max() - t.min()) < 10: continue   # cadence-aware (review: a 1800-s sector has ~1,100 points and was dropped)
         mask = transit_mask(time=t, period=P, duration=2 * dur_d, T0=T0)
         res = {}
         for name, c in (("x", cx), ("y", cy)):
@@ -366,7 +368,7 @@ def main():
     global MASK_KNOWN
     if a.mask:
         mp, mt0, mdh = [float(x) for x in a.mask.split(",")]; MASK_KNOWN = (mp, mt0 - 2457000 if mt0 > 2457000 else mt0, mdh / 24); print(f"  masking known signal P={mp} T0={MASK_KNOWN[1]:.4f} dur={mdh} h", flush=True)
-    OUT = f"/Users/fernando/Desktop/NASA/results/vet{'' if SOURCE == 'spoc' else '_qlp'}/{tic}"; os.makedirs(OUT, exist_ok=True)
+    OUT = f"/Users/fernando/Desktop/NASA/results/vet{os.environ.get('TSEARCH_SUFFIX', '' if SOURCE == 'spoc' else '_qlp')}/{tic}"; os.makedirs(OUT, exist_ok=True)
     rep = dict(tic=tic, input=dict(period=P, t0=T0, dur_h=a.dur_h))
     secs = load_all(tic, P, T0, dur_d); meta = next(iter(secs.values()))["meta"]; rep["meta"] = meta
     T, F, E = stitch(secs)
