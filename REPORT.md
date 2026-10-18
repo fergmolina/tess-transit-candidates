@@ -312,7 +312,7 @@ S66 (2023), S93 (2025), S104 (2026); QLP FFI light curves only (no 2-min data); 
 ### 8.2 Detection (Pool B search)
 Stitched BLS top peak P = 18.3230 d, depth 8,239 ppm (QLP DET_FLUX, unmasked spline), duration 4.0 h, SDE 26.9, 3 events — one per
 sector in S66, S93 and S104 *in the quality-filtered data*. **The external review (§9) found a fourth, fully covered transit** at epoch 118
-(S93, BTJD 3830.347, 0.49 d after the sector start) whose 72 in-transit cadences all carry QLP quality bit 2^30 (scattered-light ramp) and
+(S93, BTJD 3830.347, 0.49 d after the sector start) whose 72 in-transit cadences all carry QLP quality bit 2^30 (bit 31, QLP's internal poor-quality flag, documented only on MIT's QLP page; empirically the orbit-start ramp) and
 were discarded by the pipeline's QUALITY == 0 mask. In the raw SAP flux it is a 10,500 ± 360 ppm, 4-h, flat-bottomed box with no background
 or centroid excursion, and it falls +3.4 min from the three-transit v1 prediction (1σ ≈ 3 min) — an out-of-sample confirmation that was
 sitting in our own data. The two S93 events are consecutive, so the period is now measured directly within one sector:
