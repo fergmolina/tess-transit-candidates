@@ -1,0 +1,40 @@
+{
+ "T0_btjd": 4196.809831806599,
+ "T0_err_d": 0.001391058373291132,
+ "P_d": 18.32317247633275,
+ "P_err_d": 4.1774286193461017e-05,
+ "epoch_ref": 138,
+ "chi2": 0.462312995458856,
+ "dof": 2,
+ "inflation": 1,
+ "corr": 0.8491271181873679,
+ "transit_times": [
+  {
+   "epoch": 79,
+   "tc": 3115.7425526666666,
+   "tc_err": 0.0014999999998508429,
+   "sector": 66
+  },
+  {
+   "epoch": 118,
+   "tc": 3830.347133333333,
+   "tc_err": 0.0014166666665005323,
+   "sector": 93
+  },
+  {
+   "epoch": 119,
+   "tc": 3848.6692593333332,
+   "tc_err": 0.0010833333333266637,
+   "sector": 93
+  },
+  {
+   "epoch": 138,
+   "tc": 4196.8085,
+   "tc_err": 0.004166666666666667,
+   "sector": 104
+  }
+ ],
+ "sha256_csv": "b5338c90e0ac8edb80f01f6018217382602975b26806f1423bc0c87ff9408f04",
+ "frozen": "2026-10-18 03:20:13 UTC",
+ "note": "S104 transit time set to the midpoint of the QLP (TGLC-method photometry, 4196.8043) and TESScut aperture photometry (4196.8077-4196.8132) determinations with a 6-min systematic error; S66/S93 timings agree across all methods to <=1.6 min"
+}

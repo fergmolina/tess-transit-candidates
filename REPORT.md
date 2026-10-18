@@ -376,6 +376,18 @@ inflation 2.29 — per-event timing errors on the ramps are still ~2× underesti
 Predictions move by ≤ 2 min relative to v1 (epoch 146: 2026-10-29 21:21 UTC). Files: `predicted_transits_2026_2027_v2.csv`
 (SHA-256 8a2b1ccadd1b820cf36f180b1cc83fe2e978c05e8637b7b566d14233b96f5869), `PREREGISTRATION_v2.md`, `final_ephemeris_v2.json`.
 
+**v3 (frozen 2026-10-18 03:20:13 UTC; timing systematics).** Prompted by a QLP notice of a barycentric timing error in Sectors 99–104 (found by the
+literature review, §11), the timestamps were verified against a barycentric correction recomputed for the target from the FFI spacecraft
+times: QLP agrees to 0.03 min in S66/S93 and to ≤ 1 min in S104, so the timestamps are not the problem. The *photometric* timing of the S104
+event is: QLP (TGLC-method extraction, used since Sector 94) gives BTJD 4196.8043 ± 1.5 min, whereas TESScut aperture photometry gives
+4196.8077–4196.8132 depending on aperture (1–2.5 px), i.e. 5–13 min later, with the same shape and baseline model; the S93 and S66 events
+agree across all extractions to ≤ 1.6 min. The S104 window contains 140 QLP-flagged cadences and the extractions differ in how they treat
+that scattered light. v3 uses the S104 midpoint with a 6-min systematic error; the four-point χ²/dof falls from 10.5/2 to 0.5/2, confirming
+that S104 was the outlier. **T0 = BTJD 4196.80983 ± 2.0 min, P = 18.323172 ± 0.000042 d.** Predictions move +6.5 min (epoch 146) to
++8.6 min (epoch 162) relative to v2 — inside the ±15 min window, which is unchanged. Files: `predicted_transits_2026_2027_v3.csv`
+(SHA-256 b5338c90e0ac8edb80f01f6018217382602975b26806f1423bc0c87ff9408f04), `PREREGISTRATION_v3.md`, `final_ephemeris_v3.json`. First full ground transits: epoch 159 2027-06-25 02:17 UTC,
+epoch 162 2027-08-19 01:33 UTC.
+
 **Observability (external review, `results/external_review/observability_89247735.csv`):** epochs 147–151 (2026-11-17 to 2027-01-29) are
 unobservable from any southern site (target too close to the Sun); epoch 146 is partial from SAAO only. The first full ground-based transits
 are epoch 159 (2027-06-25 02:12 UTC) and 162 (2027-08-19 01:28 UTC) from Chile. Radial velocities need no transit and can start now.
