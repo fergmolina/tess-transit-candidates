@@ -66,7 +66,7 @@ The first commit of this repository is the public timestamp. The files are not e
 Data are public (MAST). Commands are listed in the header of [REPORT.md](REPORT.md) section 3 and in `scripts/*.py` docstrings.
 
 ## Related Zenodo records (2026-10-19)
-* Preprint (research note on TIC 80387959 and TIC 120444365): [10.5281/zenodo.23462434](https://doi.org/10.5281/zenodo.23462434)
+* Preprint (research note on TIC 80387959 and TIC 120444365): concept DOI [10.5281/zenodo.23462433](https://doi.org/10.5281/zenodo.23462433) (v1.0 23462434, v1.1 23462857)
 * Supporting data and code (all objects; checksummed bundle): [10.5281/zenodo.23462438](https://doi.org/10.5281/zenodo.23462438)
 * Pre-registration protocol v1 and frozen prediction bundle: [10.5281/zenodo.23462442](https://doi.org/10.5281/zenodo.23462442)
 * This repository's releases (concept DOI 10.5281/zenodo.23443244): v1.1 = 23443245, v1.2 = 23445705, v1.3 = 23460915, v1.4 = pending archive.
