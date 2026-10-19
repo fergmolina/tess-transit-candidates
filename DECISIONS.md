@@ -246,10 +246,42 @@
 48. **All-sky round 2 (2026-10-19 11:00-11:50 UTC): 169 new class-A -> pixel test first: 95 off-target blends, 20 ambiguous (0.5-0.9 px), 26
     unique on-target (7 no data). Full vetting of the 26 (results/allsky_classA_round2_outcomes.csv).** New CANDIDATES: TIC 183374279 (11.738 d,
     ~970 ppm, 2.5 Re, isolated K dwarf, blind 4/4, rho 1.45x, SPOC 2-min S29 1380 +- 235 ppm; nothing in the sweep corpus; v2 frozen 11:44 UTC,
-    SHA 069d8298, test S106 unreleased - same timing as 120444365) and TIC [withheld-2] (16.538 d, ~1,140 ppm, 2.7 Re, isolated, SPOC 2-min S22+S45
+    SHA 069d8298, test S106 unreleased - same timing as 120444365) and TIC 61310956 (16.538 d, ~1,140 ppm, 2.7 Re, isolated, SPOC 2-min S22+S45
     1068 +- 95 ppm = 11 sigma; no TESS coverage through S134, ground-based only; not frozen). TIC 258006047 (10.022 d, 920 ppm, 2.3 Re) passes
     everything but (a) a G=15.95 star 2.6" away (needs 7 %) is unresolvable and (b) scripts/prior_grep.py found it listed on 2026-10-08 in
     B. Murray's Zenodo 23230562 bundle ("2.1 Re on a 10.0-d orbit") -> REDISCOVERY; v2 frozen (SHA 48805ca7) as an ephemeris-only S114 test,
     note added to its PREREGISTRATION_v2.md. Eight further on-target stars are eumemic/ahrazzle rediscoveries (parked), four rejected on
     density (rho 10-30x), four on odd/even, the rest weak (SNR < 9) or marginal. Lesson: run prior_grep.py on every survivor BEFORE freezing
     (258006047 was frozen 40 min before its prior listing was found). Nothing published.
+
+49. **v1.6 deposited (user: "Go with 279").** GitHub release v1.6 (1ba1f67): TIC 183374279 pre-registration (v2 CSV with geocentric UTC,
+    ephemeris JSON, pixel and 2-min checks, vetting report, figures), README dossier, REPORT section 12.5, round-2 outcome table and
+    testable table with the two withheld IDs masked ([withheld] = crowded 3.28-d object; [withheld-2] = the isolated 16.5-d candidate without
+    TESS coverage, not deposited at the user's choice). Pre-registration protocol v1.2 (five objects) published as a new Zenodo version.
+    TRICERATOPS (scripts/triceratops_qlp.py, 2.5-px aperture, QLP DET_FLUX fold, no contrast curve): TIC 183374279 FPP 0.031, NFPP 0.000
+    ("likely planet" by the Giacalone+2021 categories, not validated). TIC 61310956 ephemeris with the SPOC 2-min S22/S45 transit times:
+    P = 16.537975 +- 0.000111 d, T0 = BTJD 3262.56581 +- 10.3 min (6 sector times, chi2/dof 8.8/4) - ground-based predictions sigma ~20-25
+    min in 2027 (QLP-only was ~45 min). Full prior-detection sweep for both running (results/prior_search_round2/).
+    TRICERATOPS TIC 61310956 (sectors 72, 45, 22; S46 has no TESScut product): FPP 0.020, NFPP 0.000 - the lowest FPP of any object in the
+    project, just above the 0.015 validation threshold and without a contrast curve; "likely planet" category.
+
+50. **Round-2 freezes (user: "do everyone", 2026-10-19 12:45-12:52 UTC).** v2 predictions frozen locally for all 19 round-2 on-target objects
+    that are not rejected on density or odd/even: 183374279 (11:44), 258006047 (11:44), 61310956 (12:45, --ground, 2-min times included),
+    333735955, 203381983, 366047768, 3367979, 383617106 (12:46-12:47), 70441745, 467959906, 249813122, 376225363, 50514263, 245503256,
+    36694943, 332709057, 65575657, 371421714, 91617711 (12:51). prereg_v2.py extended: --ground mode; 1-2 sector times -> period held at the
+    BLS value with sigma_P = (T14/4)/baseline cycles; future sectors without published dates -> every transit listed as "undated". Seven
+    objects rejected by light-curve vetting (261562226, 135425484, 92134828: rho 10-30x; 185296189, 428079143, 164661702, 124609967:
+    odd/even) were NOT frozen. known_nearby: 26/26 clean. Full prior-detection sweep of all 26 running (results/prior_search_round2/).
+    Public deposit of the set awaits the user's confirmation of the tiered list (candidate / credited rediscovery / marginal / weak).
+
+51. **Round-2 referee review (results/referee_round2/REFEREE_REPORT.md, 2026-10-19 ~13:30 UTC): both objects "revise, keep as candidate".**
+    Findings accepted: (a) 61310956 "independent SPOC 2-min detection, 11 sigma" was wrong - the 2-min data do not detect the period blind
+    (SDE 2.9 at P); the depth at the QLP ephemeris is 1068 +- 240 ppm empirical (4.5 sigma); the v2 ephemeris double-counted S22 and S45 (QLP
+    + SPOC rows) -> prereg_v2.py now keeps one time per sector (SPOC replaces QLP) and takes --version; v3 frozen for 61310956 with ground-based
+    outcome rules (+-3 sigma_min, no 30-min cap, reference depth/T14 stated). (b) 61310956 was NOT "never public": its period and depth sat in
+    tables/allsky_testable_soon.csv at v1.3-v1.5 (2026-10-18 23:24 to 10-19 12:16 UTC); public text must say so. (c) 183374279: quote the depth
+    range 1.0-1.4 ppt and radius 2.3-2.9 Re (TIC v8.2 R 0.708), blind holdout "4 of 4 testable years" (2018 untestable), pixel offsets with
+    calibrated errors (0.16-0.22 px), third S106 transit is half covered (orbit 224 ends 09:10 UTC) -> addendum appended to its
+    PREREGISTRATION_v2.md (hashed CSV untouched), "data not public" verified for QLP only. (d) TRICERATOPS wording: give the 0.015 threshold,
+    drop "likely planet". Public README (v1.6) carries the old 183374279 wording -> corrected in v1.7. DOSSIERS.md and the outcome table updated.
+    v3 frozen 2026-10-19 14:09:02 UTC (SHA 76e89296): 4 sector times (SPOC S22/S45, QLP S46/S72), P 16.537966 +- 0.000150 d, chi2/dof 7.2/2, sigma 27.7 min at epoch 147 (reproduces the referee's refit). prereg_v2.py now reads cached SPOC files before querying MAST.

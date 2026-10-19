@@ -1,0 +1,4 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,utc_tdb_scale_only,sigma_min,tess_sector,status
+284,4456.62026,2461456.62026,2027-02-20 02:52,2027-02-20 02:52,4.7,"114 (span only, gap unknown)",prediction
+285,4466.64251,2461466.64251,2027-03-02 03:23,2027-03-02 03:24,4.7,"114 (span only, gap unknown)",prediction
+286,4476.66475,2461476.66475,2027-03-12 03:54,2027-03-12 03:56,4.8,"114 (span only, gap unknown)",prediction

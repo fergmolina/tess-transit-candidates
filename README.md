@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17, updated 2026-10-19 (v1.6: TIC 183374279 pre-registered; all-sky round-2 outcomes). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-19 (v1.7: TIC 61310956 and all round-2 frozen objects; referee corrections). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -39,15 +39,47 @@ October 2026); predictions in `preregistration/TIC120444365/`.
 
 A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground (it too is listed in eumemic/exoplanets).
 
-**TIC 183374279** — K dwarf, Tmag 11.3, isolated (the nearest star able to mimic the signal is 72″ away and would need a 22 % eclipse).
-An 11.737984-d, ≈ 970 ppm, 2.9-h transit seen in every year from 2018 to 2026 (QLP; SPOC 2-min Sector 29 gives 1380 ± 235 ppm at the same
-ephemeris). Radius ≈ 2.5 Earth radii if on the target. Stellar density from the shape 1.45× catalog, odd/even 0.4σ, no secondary, four of
-four blind holdout years recovered, dip on the target in all three 200-s sectors tested (0.16–0.35 px). No TOI/CTOI/TCE within 60″ and no
-listing in any of the 101 repositories and 157 Zenodo records of the prior-detection corpus. Status: planet candidate pending the
-pre-registered test. **Test of record: TESS Sector 106** (observed 2026-07-11 to 08-09; its light curves were not public when the predictions
-were frozen on 2026-10-19 11:44 UTC); predictions in `preregistration/TIC183374279/` (v2 tooling: all-sector ephemeris, geocentric UTC).
+**TIC 183374279** — K dwarf (TIC v8.2: Teff 4518 K, R = 0.708 R_sun, Tmag 11.40), isolated: the nearest star able to mimic the signal is 72″ away and would need a 22 % eclipse, and no Gaia DR3 source within 60″ can produce the depth. An 11.737984-d transit of 2.8-h duration and 1.0–1.4 ppt depth (QLP detrended 970 ppm; raw SAP 1090 ± 90; SPOC 2-min S29 1380 ± 290; sky-subtracted cutouts 1200–1540), present at 3–10σ in each of the five observed years (2018, 2020, 2023, 2025, 2026). Radius 2.3–2.9 Earth radii if on the target (the range follows the depth range). Stellar density from the shape consistent with the catalogue (1.4 +0.6/−0.9), odd/even 0.4σ, secondary at phase 0.5 45 ± 82 ppm. The signal is recovered in each of the four testable blind-holdout years (2020, 2023, 2025, 2026 at 4.6, 3.2, 3.7 and 8.1σ; the 2018 holdout had no covered transit). Flux-loss centroid consistent with the target in all three 200-s sectors (0.1–0.4 px, calibrated errors 0.16–0.22 px; combined offset 3 ± 2″): this excludes blends 20–60″ away but not an unresolved companion inside ~1 px. The single SPOC 2-min transit of Sector 29 gives 1380 ± 290 ppm (empirical error) at the QLP ephemeris; the 2-min data alone do not yield the period and the aperture contains the same stars, so this is an extraction check, not a blend test. TRICERATOPS FPP 0.031, NFPP 0.000 (no contrast curve; above the 0.015 validation threshold; indicative at SNR 12). Gaia DR3: RUWE 1.12, not a duplicated source, no non-single-star solution, RV constant over 16 epochs. No TOI/CTOI/TCE within 60″; round-2 prior-detection sweep: no prior report. Status: planet candidate pending the pre-registered test. **Test of record: TESS Sector 106** (2026-07-11 to 08-09). Two predicted transits (2026-07-16 21:14 and 07-28 14:56 UTC, σ 2.7 min) fall inside the science orbits; the third (08-09 08:38 UTC) is cut by the end of orbit 224 at 09:10 UTC and will be partial, so the test rests on two events. The QLP light curve had not been released at the freeze (2026-10-19 11:44 UTC) and no Sector 106 data of any kind were examined before it; whether FFIs were already retrievable through TESScut was not checked. Predictions in `preregistration/TIC183374279/` (v2 ephemeris, geocentric UTC; addendum of 2026-10-19 in the frozen record).
 
-A further signal from the same search is withheld: an isolated-star candidate with no TESS revisit through Sector 134 (ground-based test only).
+**TIC 61310956** — K dwarf (TYC 1428-1096-1, Tmag 10.6; Gaia DR3 / VSX rotational variable), isolated: the nearest star able to mimic the
+signal is 82″ away and would need 20 %, and no Gaia DR3 source within 60″ can produce the depth. A 16.538-d transit of 3.3-h duration and
+1.0–1.5 ppt depth: six events in QLP FFI data (Sectors 22 ×2, 45, 46, 72 ×2). The three 2020–2021 events are also recovered in the SPOC 2-min
+light curves at the QLP ephemeris (1068 ± 240 ppm, 4.5σ empirical); the 2-min data alone do not yield the period, so this is an extraction check,
+not an independent detection. Radius 2.5–3.2 Earth radii if on the target. Density from the shape consistent with the catalogue (1.4 +0.6/−0.8),
+secondary −29 ± 102 ppm, odd/even 1.2σ, blind holdout recovered in both testable years, flux-loss centroid consistent with the target in Sectors
+22, 45 and 72 (0.1–0.3 px, calibrated errors 0.14–0.24 px). TRICERATOPS FPP 0.020, NFPP 0.000 (no contrast curve; above the 0.015 validation
+threshold). No TOI/CTOI/TCE within 60″; round-2 prior-detection sweep: no prior report. Its period and depth were public as a row of our own
+`tables/allsky_testable_soon.csv` at releases v1.3–v1.5 (2026-10-18 23:24 to 2026-10-19 12:16 UTC) and masked at v1.6. Status: planet candidate.
+**No TESS revisit through Sector 134; the test of record is ground-based.** Predictions v3 (frozen 2026-10-19 14:09 UTC, σ ≈ 28 min through 2027,
+one timing per sector) supersede v2, which counted Sectors 22 and 45 twice (found by the round-2 referee review, `referee_round2/`). A test needs
+≈ 1 mmag photometry over ≈ 7 h around two predicted transits.
+
+### All-sky round 2: every frozen object (v1.7)
+All 26 stars whose transit was on target after the pixel test were checked against the full prior-detection sweep (`prior_search_round2/`).
+Predictions are frozen for the 18 below; the other eight are listed in `tables/allsky_classA_round2_outcomes.csv` only (seven failed the
+stellar-density or odd/even test; TIC 3367979 is an eumemic rediscovery with a marginal density). Only the two objects above are claimed as
+candidates. Marginal and weak objects are frozen so that any later report can be checked against a dated ephemeris; most are expected to fail.
+
+| TIC | P (d) | tier | prior report | test |
+|---|---|---|---|---|
+| 183374279 | 11.73798 | candidate | none | TESS S106 |
+| 61310956 | 16.53797 | candidate | none | ground |
+| 258006047 | 10.02224 | credited rediscovery (crowded: 2.6″ companion) | B. Murray, Zenodo 23230562, 2026-10-08 | TESS S114 |
+| 333735955 | 11.22618 | credited rediscovery; density 4× | Murray 2026-10-08; eumemic/exoplanets 2026-10-09 | TESS S114 |
+| 366047768 | 9.49897 | credited rediscovery | eumemic/exoplanets 2026-10-09 | TESS S121 |
+| 65575657 | 5.18788 | credited rediscovery | eumemic/exoplanets 2026-10-09 | ground |
+| 383617106 | 9.49916 | credited rediscovery | eumemic/exoplanets 2026-10-09 | ground |
+| 249813122 | 4.17615 | marginal (density 5×) | none | TESS S122 |
+| 70441745 | 15.85190 | marginal (density 5×; one sector time) | none | TESS S106 |
+| 203381983 | 9.73639 | marginal (density 4×) | none | TESS S115 |
+| 36694943 | 12.89889 | marginal (density 3×) | none | TESS S134 |
+| 376225363 | 3.44662 | weak (SNR 8) | none | TESS S122 |
+| 467959906 | 7.80014 | weak (SNR 8) | none | TESS S114 |
+| 50514263 | 14.59315 | weak (SNR 7) | none | TESS S124 |
+| 245503256 | 14.58187 | weak (SNR 8) | none | TESS S124 |
+| 332709057 | 12.56298 | weak (SNR 8) | none | ground |
+| 371421714 | 11.68257 | weak (SNR 5) | none | ground |
+| 91617711 | 15.07141 | weak (two sectors) | none | ground |
 
 
 

@@ -635,9 +635,18 @@ pixel-tested *first*: 95 are off-target blends (20–60″), 20 ambiguous (0.5�
 (`results/allsky_classA_round2_outcomes.csv`). Full vetting and a grep of the prior-detection corpus (`scripts/prior_grep.py`: 101 cloned
 repositories and 157 Zenodo deposits) leave: **TIC 183374279** (P = 11.737984 ± 0.000025 d, ≈ 970 ppm, 2.5 R⊕, isolated K dwarf, blind 4/4,
 ρ 1.45×, SPOC 2-min Sector 29 1380 ± 235 ppm, nothing in the corpus; frozen v2 2026-10-19 11:44 UTC, SHA 069d8298…, test Sector 106 whose data
-were not public at the freeze) — deposited as v1.6; one further isolated candidate with no TESS revisit through S134 (withheld, ground-based
+were not public at the freeze) — deposited as v1.6; TIC 61310956 (isolated, no TESS revisit through S134; ground-based
 test only); and TIC 258006047 (10.022 d, 920 ppm, 2.3 R⊕), which passes every test but has a G = 15.95 star 2.6″ away that TESS cannot resolve
 and was **listed earlier** (2026-10-08) in the candidate bundle of Zenodo record 23230562 (B. Murray) — an independent rediscovery, frozen as an
 ephemeris-only Sector-114 test. Eight further on-target stars are rediscoveries of eumemic/exoplanets listings (parked), four fail the
 stellar-density test (ρ 10–30× off), four fail odd/even, the rest are below SNR 9. The blend fraction among light-curve-clean candidates is
 again ≈ 60 %. Procedural lesson: the prior-detection corpus must be grepped before, not after, a freeze.
+
+### 12.6 Round-2 referee review, prior-detection sweep and deposit (2026-10-19, v1.7)
+An adversarial referee review of the two candidate dossiers (`referee_round2/REFEREE_REPORT.md`) kept both as candidates and corrected them:
+TIC 183374279 depth 1.0–1.4 ppt and radius 2.3–2.9 R⊕ (TIC v8.2 radius), third Sector-106 transit only half covered (dated addendum to the
+frozen record; hashed file unchanged); TIC 61310956's SPOC 2-min recovery is 4.5σ at the known ephemeris, not an independent 11σ detection, and
+its v2 ephemeris counted Sectors 22 and 45 twice (v3 frozen 2026-10-19 14:09 UTC, σ 28 min, ground-based outcome rules; `prereg_v2.py` now keeps
+one time per sector). The round-2 prior-detection sweep of all 26 on-target stars (`prior_search_round2/`) found no prior report for either
+candidate; seven of the 26 were listed earlier by B. Murray (Zenodo 23230562, 2026-10-08) and/or eumemic/exoplanets (2026-10-07 to 10-09).
+Release v1.7 publishes frozen predictions for 18 objects in four labelled tiers (README); only two are claimed as candidates.

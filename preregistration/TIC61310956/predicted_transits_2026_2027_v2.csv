@@ -1,0 +1,100 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,utc_tdb_scale_only,sigma_min,tess_sector,status
+83,3279.10379,2460279.10379,2023-11-30 14:27,2023-11-30 14:28,10.4,none (ground-based),"retrodiction: before freeze, untested"
+84,3295.64176,2460295.64176,2023-12-17 03:20,2023-12-17 03:22,10.6,none (ground-based),"retrodiction: before freeze, untested"
+85,3312.17974,2460312.17974,2024-01-02 16:12,2024-01-02 16:17,10.7,none (ground-based),"retrodiction: before freeze, untested"
+86,3328.71771,2460328.71771,2024-01-19 05:05,2024-01-19 05:12,10.9,none (ground-based),"retrodiction: before freeze, untested"
+87,3345.25569,2460345.25569,2024-02-04 17:59,2024-02-04 18:07,11.0,none (ground-based),"retrodiction: before freeze, untested"
+88,3361.79366,2460361.79366,2024-02-21 06:53,2024-02-21 07:01,11.2,none (ground-based),"retrodiction: before freeze, untested"
+89,3378.33164,2460378.33164,2024-03-08 19:48,2024-03-08 19:56,11.3,none (ground-based),"retrodiction: before freeze, untested"
+90,3394.86961,2460394.86961,2024-03-25 08:43,2024-03-25 08:51,11.5,none (ground-based),"retrodiction: before freeze, untested"
+91,3411.40758,2460411.40758,2024-04-10 21:39,2024-04-10 21:45,11.6,none (ground-based),"retrodiction: before freeze, untested"
+92,3427.94556,2460427.94556,2024-04-27 10:36,2024-04-27 10:40,11.8,none (ground-based),"retrodiction: before freeze, untested"
+93,3444.48353,2460444.48353,2024-05-13 23:33,2024-05-13 23:35,11.9,none (ground-based),"retrodiction: before freeze, untested"
+94,3461.02151,2460461.02151,2024-05-30 12:30,2024-05-30 12:29,12.1,none (ground-based),"retrodiction: before freeze, untested"
+95,3477.55948,2460477.55948,2024-06-16 01:27,2024-06-16 01:24,12.2,none (ground-based),"retrodiction: before freeze, untested"
+96,3494.09746,2460494.09746,2024-07-02 14:23,2024-07-02 14:19,12.4,none (ground-based),"retrodiction: before freeze, untested"
+97,3510.63543,2460510.63543,2024-07-19 03:20,2024-07-19 03:13,12.5,none (ground-based),"retrodiction: before freeze, untested"
+98,3527.17341,2460527.17341,2024-08-04 16:16,2024-08-04 16:08,12.7,none (ground-based),"retrodiction: before freeze, untested"
+99,3543.71138,2460543.71138,2024-08-21 05:11,2024-08-21 05:03,12.8,none (ground-based),"retrodiction: before freeze, untested"
+100,3560.24936,2460560.24936,2024-09-06 18:06,2024-09-06 17:57,13.0,none (ground-based),"retrodiction: before freeze, untested"
+101,3576.78733,2460576.78733,2024-09-23 07:00,2024-09-23 06:52,13.2,none (ground-based),"retrodiction: before freeze, untested"
+102,3593.32531,2460593.32531,2024-10-09 19:53,2024-10-09 19:47,13.3,none (ground-based),"retrodiction: before freeze, untested"
+103,3609.86328,2460609.86328,2024-10-26 08:46,2024-10-26 08:41,13.5,none (ground-based),"retrodiction: before freeze, untested"
+104,3626.40125,2460626.40125,2024-11-11 21:38,2024-11-11 21:36,13.6,none (ground-based),"retrodiction: before freeze, untested"
+105,3642.93923,2460642.93923,2024-11-28 10:31,2024-11-28 10:31,13.8,none (ground-based),"retrodiction: before freeze, untested"
+106,3659.4772,2460659.4772,2024-12-14 23:23,2024-12-14 23:26,13.9,none (ground-based),"retrodiction: before freeze, untested"
+107,3676.01518,2460676.01518,2024-12-31 12:16,2024-12-31 12:20,14.1,none (ground-based),"retrodiction: before freeze, untested"
+108,3692.55315,2460692.55315,2025-01-17 01:09,2025-01-17 01:15,14.2,none (ground-based),"retrodiction: before freeze, untested"
+109,3709.09113,2460709.09113,2025-02-02 14:02,2025-02-02 14:10,14.4,none (ground-based),"retrodiction: before freeze, untested"
+110,3725.6291,2460725.6291,2025-02-19 02:56,2025-02-19 03:04,14.5,none (ground-based),"retrodiction: before freeze, untested"
+111,3742.16708,2460742.16708,2025-03-07 15:51,2025-03-07 15:59,14.7,none (ground-based),"retrodiction: before freeze, untested"
+112,3758.70505,2460758.70505,2025-03-24 04:46,2025-03-24 04:54,14.9,none (ground-based),"retrodiction: before freeze, untested"
+113,3775.24303,2460775.24303,2025-04-09 17:42,2025-04-09 17:48,15.0,none (ground-based),"retrodiction: before freeze, untested"
+114,3791.781,2460791.781,2025-04-26 06:39,2025-04-26 06:43,15.2,none (ground-based),"retrodiction: before freeze, untested"
+115,3808.31898,2460808.31898,2025-05-12 19:36,2025-05-12 19:38,15.3,none (ground-based),"retrodiction: before freeze, untested"
+116,3824.85695,2460824.85695,2025-05-29 08:33,2025-05-29 08:32,15.5,none (ground-based),"retrodiction: before freeze, untested"
+117,3841.39492,2460841.39492,2025-06-14 21:30,2025-06-14 21:27,15.6,none (ground-based),"retrodiction: before freeze, untested"
+118,3857.9329,2460857.9329,2025-07-01 10:26,2025-07-01 10:22,15.8,none (ground-based),"retrodiction: before freeze, untested"
+119,3874.47087,2460874.47087,2025-07-17 23:23,2025-07-17 23:16,15.9,none (ground-based),"retrodiction: before freeze, untested"
+120,3891.00885,2460891.00885,2025-08-03 12:19,2025-08-03 12:11,16.1,none (ground-based),"retrodiction: before freeze, untested"
+121,3907.54682,2460907.54682,2025-08-20 01:14,2025-08-20 01:06,16.2,none (ground-based),"retrodiction: before freeze, untested"
+122,3924.0848,2460924.0848,2025-09-05 14:09,2025-09-05 14:00,16.4,none (ground-based),"retrodiction: before freeze, untested"
+123,3940.62277,2460940.62277,2025-09-22 03:03,2025-09-22 02:55,16.6,none (ground-based),"retrodiction: before freeze, untested"
+124,3957.16075,2460957.16075,2025-10-08 15:56,2025-10-08 15:50,16.7,none (ground-based),"retrodiction: before freeze, untested"
+125,3973.69872,2460973.69872,2025-10-25 04:49,2025-10-25 04:45,16.9,none (ground-based),"retrodiction: before freeze, untested"
+126,3990.2367,2460990.2367,2025-11-10 17:42,2025-11-10 17:39,17.0,none (ground-based),"retrodiction: before freeze, untested"
+127,4006.77467,2461006.77467,2025-11-27 06:34,2025-11-27 06:34,17.2,none (ground-based),"retrodiction: before freeze, untested"
+128,4023.31265,2461023.31265,2025-12-13 19:26,2025-12-13 19:29,17.3,none (ground-based),"retrodiction: before freeze, untested"
+129,4039.85062,2461039.85062,2025-12-30 08:19,2025-12-30 08:23,17.5,none (ground-based),"retrodiction: before freeze, untested"
+130,4056.38859,2461056.38859,2026-01-15 21:12,2026-01-15 21:18,17.7,none (ground-based),"retrodiction: before freeze, untested"
+131,4072.92657,2461072.92657,2026-02-01 10:05,2026-02-01 10:13,17.8,none (ground-based),"retrodiction: before freeze, untested"
+132,4089.46454,2461089.46454,2026-02-17 22:59,2026-02-17 23:07,18.0,none (ground-based),"retrodiction: before freeze, untested"
+133,4106.00252,2461106.00252,2026-03-06 11:54,2026-03-06 12:02,18.1,none (ground-based),"retrodiction: before freeze, untested"
+134,4122.54049,2461122.54049,2026-03-23 00:49,2026-03-23 00:57,18.3,none (ground-based),"retrodiction: before freeze, untested"
+135,4139.07847,2461139.07847,2026-04-08 13:45,2026-04-08 13:51,18.4,none (ground-based),"retrodiction: before freeze, untested"
+136,4155.61644,2461155.61644,2026-04-25 02:42,2026-04-25 02:46,18.6,none (ground-based),"retrodiction: before freeze, untested"
+137,4172.15442,2461172.15442,2026-05-11 15:39,2026-05-11 15:41,18.7,none (ground-based),"retrodiction: before freeze, untested"
+138,4188.69239,2461188.69239,2026-05-28 04:36,2026-05-28 04:35,18.9,none (ground-based),"retrodiction: before freeze, untested"
+139,4205.23037,2461205.23037,2026-06-13 17:32,2026-06-13 17:30,19.1,none (ground-based),"retrodiction: before freeze, untested"
+140,4221.76834,2461221.76834,2026-06-30 06:29,2026-06-30 06:25,19.2,none (ground-based),"retrodiction: before freeze, untested"
+141,4238.30632,2461238.30632,2026-07-16 19:26,2026-07-16 19:19,19.4,none (ground-based),"retrodiction: before freeze, untested"
+142,4254.84429,2461254.84429,2026-08-02 08:22,2026-08-02 08:14,19.5,none (ground-based),"retrodiction: before freeze, untested"
+143,4271.38226,2461271.38226,2026-08-18 21:17,2026-08-18 21:09,19.7,none (ground-based),"retrodiction: before freeze, untested"
+144,4287.92024,2461287.92024,2026-09-04 10:12,2026-09-04 10:03,19.8,none (ground-based),"retrodiction: before freeze, untested"
+145,4304.45821,2461304.45821,2026-09-20 23:06,2026-09-20 22:58,20.0,none (ground-based),"retrodiction: before freeze, untested"
+146,4320.99619,2461320.99619,2026-10-07 11:59,2026-10-07 11:53,20.2,none (ground-based),"retrodiction: before freeze, untested"
+147,4337.53416,2461337.53416,2026-10-24 00:52,2026-10-24 00:48,20.3,none (ground-based),prediction
+148,4354.07214,2461354.07214,2026-11-09 13:45,2026-11-09 13:42,20.5,none (ground-based),prediction
+149,4370.61011,2461370.61011,2026-11-26 02:37,2026-11-26 02:37,20.6,none (ground-based),prediction
+150,4387.14809,2461387.14809,2026-12-12 15:30,2026-12-12 15:32,20.8,none (ground-based),prediction
+151,4403.68606,2461403.68606,2026-12-29 04:22,2026-12-29 04:26,20.9,none (ground-based),prediction
+152,4420.22404,2461420.22404,2027-01-14 17:15,2027-01-14 17:21,21.1,none (ground-based),prediction
+153,4436.76201,2461436.76201,2027-01-31 06:08,2027-01-31 06:16,21.3,none (ground-based),prediction
+154,4453.29999,2461453.29999,2027-02-16 19:02,2027-02-16 19:10,21.4,none (ground-based),prediction
+155,4469.83796,2461469.83796,2027-03-05 07:57,2027-03-05 08:05,21.6,none (ground-based),prediction
+156,4486.37593,2461486.37593,2027-03-21 20:52,2027-03-21 21:00,21.7,none (ground-based),prediction
+157,4502.91391,2461502.91391,2027-04-07 09:48,2027-04-07 09:54,21.9,none (ground-based),prediction
+158,4519.45188,2461519.45188,2027-04-23 22:45,2027-04-23 22:49,22.0,none (ground-based),prediction
+159,4535.98986,2461535.98986,2027-05-10 11:41,2027-05-10 11:44,22.2,none (ground-based),prediction
+160,4552.52783,2461552.52783,2027-05-27 00:38,2027-05-27 00:38,22.4,none (ground-based),prediction
+161,4569.06581,2461569.06581,2027-06-12 13:35,2027-06-12 13:33,22.5,none (ground-based),prediction
+162,4585.60378,2461585.60378,2027-06-29 02:32,2027-06-29 02:28,22.7,none (ground-based),prediction
+163,4602.14176,2461602.14176,2027-07-15 15:29,2027-07-15 15:22,22.8,none (ground-based),prediction
+164,4618.67973,2461618.67973,2027-08-01 04:25,2027-08-01 04:17,23.0,none (ground-based),prediction
+165,4635.21771,2461635.21771,2027-08-17 17:20,2027-08-17 17:12,23.1,none (ground-based),prediction
+166,4651.75568,2461651.75568,2027-09-03 06:15,2027-09-03 06:07,23.3,none (ground-based),prediction
+167,4668.29366,2461668.29366,2027-09-19 19:09,2027-09-19 19:01,23.5,none (ground-based),prediction
+168,4684.83163,2461684.83163,2027-10-06 08:03,2027-10-06 07:56,23.6,none (ground-based),prediction
+169,4701.3696,2461701.3696,2027-10-22 20:56,2027-10-22 20:51,23.8,none (ground-based),prediction
+170,4717.90758,2461717.90758,2027-11-08 09:48,2027-11-08 09:45,23.9,none (ground-based),prediction
+171,4734.44555,2461734.44555,2027-11-24 22:40,2027-11-24 22:40,24.1,none (ground-based),prediction
+172,4750.98353,2461750.98353,2027-12-11 11:33,2027-12-11 11:35,24.3,none (ground-based),prediction
+173,4767.5215,2461767.5215,2027-12-28 00:25,2027-12-28 00:29,24.4,none (ground-based),prediction
+174,4784.05948,2461784.05948,2028-01-13 13:18,2028-01-13 13:24,24.6,none (ground-based),prediction
+175,4800.59745,2461800.59745,2028-01-30 02:11,2028-01-30 02:19,24.7,none (ground-based),prediction
+176,4817.13543,2461817.13543,2028-02-15 15:05,2028-02-15 15:13,24.9,none (ground-based),prediction
+177,4833.6734,2461833.6734,2028-03-03 04:00,2028-03-03 04:08,25.0,none (ground-based),prediction
+178,4850.21138,2461850.21138,2028-03-19 16:55,2028-03-19 17:03,25.2,none (ground-based),prediction
+179,4866.74935,2461866.74935,2028-04-05 05:51,2028-04-05 05:57,25.4,none (ground-based),prediction
+180,4883.28733,2461883.28733,2028-04-21 18:47,2028-04-21 18:52,25.5,none (ground-based),prediction
+181,4899.8253,2461899.8253,2028-05-08 07:44,2028-05-08 07:47,25.7,none (ground-based),prediction

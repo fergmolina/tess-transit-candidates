@@ -1,0 +1,313 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,utc_tdb_scale_only,sigma_min,tess_sector,status
+445,3599.48693,2460599.48693,2024-10-15 23:35,2024-10-15 23:40,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+446,3603.66307,2460603.66307,2024-10-20 03:48,2024-10-20 03:53,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+447,3607.83922,2460607.83922,2024-10-24 08:02,2024-10-24 08:07,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+448,3612.01536,2460612.01536,2024-10-28 12:16,2024-10-28 12:20,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+449,3616.19151,2460616.19151,2024-11-01 16:30,2024-11-01 16:34,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+450,3620.36766,2460620.36766,2024-11-05 20:44,2024-11-05 20:48,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+451,3624.5438,2460624.5438,2024-11-10 00:57,2024-11-10 01:01,2.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+452,3628.71995,2460628.71995,2024-11-14 05:11,2024-11-14 05:15,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+453,3632.8961,2460632.8961,2024-11-18 09:25,2024-11-18 09:29,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+454,3637.07224,2460637.07224,2024-11-22 13:39,2024-11-22 13:42,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+455,3641.24839,2460641.24839,2024-11-26 17:53,2024-11-26 17:56,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+456,3645.42454,2460645.42454,2024-11-30 22:07,2024-11-30 22:10,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+457,3649.60068,2460649.60068,2024-12-05 02:21,2024-12-05 02:23,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+458,3653.77683,2460653.77683,2024-12-09 06:35,2024-12-09 06:37,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+459,3657.95298,2460657.95298,2024-12-13 10:49,2024-12-13 10:51,2.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+460,3662.12912,2460662.12912,2024-12-17 15:03,2024-12-17 15:04,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+461,3666.30527,2460666.30527,2024-12-21 19:17,2024-12-21 19:18,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+462,3670.48142,2460670.48142,2024-12-25 23:31,2024-12-25 23:32,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+463,3674.65756,2460674.65756,2024-12-30 03:45,2024-12-30 03:45,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+464,3678.83371,2460678.83371,2025-01-03 07:59,2025-01-03 07:59,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+465,3683.00986,2460683.00986,2025-01-07 12:13,2025-01-07 12:13,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+466,3687.186,2460687.186,2025-01-11 16:27,2025-01-11 16:26,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+467,3691.36215,2460691.36215,2025-01-15 20:41,2025-01-15 20:40,2.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+468,3695.5383,2460695.5383,2025-01-20 00:55,2025-01-20 00:53,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+469,3699.71444,2460699.71444,2025-01-24 05:09,2025-01-24 05:07,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+470,3703.89059,2460703.89059,2025-01-28 09:23,2025-01-28 09:21,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+471,3708.06674,2460708.06674,2025-02-01 13:37,2025-02-01 13:34,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+472,3712.24288,2460712.24288,2025-02-05 17:51,2025-02-05 17:48,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+473,3716.41903,2460716.41903,2025-02-09 22:05,2025-02-09 22:02,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+474,3720.59518,2460720.59518,2025-02-14 02:19,2025-02-14 02:15,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+475,3724.77132,2460724.77132,2025-02-18 06:33,2025-02-18 06:29,2.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+476,3728.94747,2460728.94747,2025-02-22 10:47,2025-02-22 10:43,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+477,3733.12361,2460733.12361,2025-02-26 15:01,2025-02-26 14:56,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+478,3737.29976,2460737.29976,2025-03-02 19:15,2025-03-02 19:10,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+479,3741.47591,2460741.47591,2025-03-06 23:28,2025-03-06 23:24,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+480,3745.65205,2460745.65205,2025-03-11 03:42,2025-03-11 03:37,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+481,3749.8282,2460749.8282,2025-03-15 07:56,2025-03-15 07:51,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+482,3754.00435,2460754.00435,2025-03-19 12:10,2025-03-19 12:05,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+483,3758.18049,2460758.18049,2025-03-23 16:23,2025-03-23 16:18,3.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+484,3762.35664,2460762.35664,2025-03-27 20:37,2025-03-27 20:32,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+485,3766.53279,2460766.53279,2025-04-01 00:51,2025-04-01 00:46,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+486,3770.70893,2460770.70893,2025-04-05 05:04,2025-04-05 04:59,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+487,3774.88508,2460774.88508,2025-04-09 09:18,2025-04-09 09:13,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+488,3779.06123,2460779.06123,2025-04-13 13:32,2025-04-13 13:27,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+489,3783.23737,2460783.23737,2025-04-17 17:45,2025-04-17 17:40,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+490,3787.41352,2460787.41352,2025-04-21 21:59,2025-04-21 21:54,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+491,3791.58967,2460791.58967,2025-04-26 02:12,2025-04-26 02:07,3.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+492,3795.76581,2460795.76581,2025-04-30 06:26,2025-04-30 06:21,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+493,3799.94196,2460799.94196,2025-05-04 10:39,2025-05-04 10:35,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+494,3804.11811,2460804.11811,2025-05-08 14:52,2025-05-08 14:48,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+495,3808.29425,2460808.29425,2025-05-12 19:06,2025-05-12 19:02,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+496,3812.4704,2460812.4704,2025-05-16 23:19,2025-05-16 23:16,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+497,3816.64655,2460816.64655,2025-05-21 03:33,2025-05-21 03:29,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+498,3820.82269,2460820.82269,2025-05-25 07:46,2025-05-25 07:43,3.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+499,3824.99884,2460824.99884,2025-05-29 11:59,2025-05-29 11:57,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+500,3829.17499,2460829.17499,2025-06-02 16:13,2025-06-02 16:10,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+501,3833.35113,2460833.35113,2025-06-06 20:26,2025-06-06 20:24,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+502,3837.52728,2460837.52728,2025-06-11 00:39,2025-06-11 00:38,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+503,3841.70342,2460841.70342,2025-06-15 04:53,2025-06-15 04:51,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+504,3845.87957,2460845.87957,2025-06-19 09:06,2025-06-19 09:05,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+505,3850.05572,2460850.05572,2025-06-23 13:19,2025-06-23 13:19,3.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+506,3854.23186,2460854.23186,2025-06-27 17:32,2025-06-27 17:32,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+507,3858.40801,2460858.40801,2025-07-01 21:46,2025-07-01 21:46,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+508,3862.58416,2460862.58416,2025-07-06 01:59,2025-07-06 02:00,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+509,3866.7603,2460866.7603,2025-07-10 06:12,2025-07-10 06:13,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+510,3870.93645,2460870.93645,2025-07-14 10:26,2025-07-14 10:27,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+511,3875.1126,2460875.1126,2025-07-18 14:39,2025-07-18 14:40,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+512,3879.28874,2460879.28874,2025-07-22 18:52,2025-07-22 18:54,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+513,3883.46489,2460883.46489,2025-07-26 23:06,2025-07-26 23:08,3.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+514,3887.64104,2460887.64104,2025-07-31 03:19,2025-07-31 03:21,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+515,3891.81718,2460891.81718,2025-08-04 07:32,2025-08-04 07:35,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+516,3895.99333,2460895.99333,2025-08-08 11:46,2025-08-08 11:49,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+517,3900.16948,2460900.16948,2025-08-12 15:59,2025-08-12 16:02,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+518,3904.34562,2460904.34562,2025-08-16 20:12,2025-08-16 20:16,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+519,3908.52177,2460908.52177,2025-08-21 00:26,2025-08-21 00:30,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+520,3912.69792,2460912.69792,2025-08-25 04:39,2025-08-25 04:43,3.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+521,3916.87406,2460916.87406,2025-08-29 08:53,2025-08-29 08:57,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+522,3921.05021,2460921.05021,2025-09-02 13:06,2025-09-02 13:11,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+523,3925.22636,2460925.22636,2025-09-06 17:20,2025-09-06 17:24,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+524,3929.4025,2460929.4025,2025-09-10 21:33,2025-09-10 21:38,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+525,3933.57865,2460933.57865,2025-09-15 01:47,2025-09-15 01:52,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+526,3937.7548,2460937.7548,2025-09-19 06:00,2025-09-19 06:05,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+527,3941.93094,2460941.93094,2025-09-23 10:14,2025-09-23 10:19,3.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+528,3946.10709,2460946.10709,2025-09-27 14:27,2025-09-27 14:33,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+529,3950.28324,2460950.28324,2025-10-01 18:41,2025-10-01 18:46,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+530,3954.45938,2460954.45938,2025-10-05 22:55,2025-10-05 23:00,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+531,3958.63553,2460958.63553,2025-10-10 03:08,2025-10-10 03:14,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+532,3962.81167,2460962.81167,2025-10-14 07:22,2025-10-14 07:27,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+533,3966.98782,2460966.98782,2025-10-18 11:36,2025-10-18 11:41,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+534,3971.16397,2460971.16397,2025-10-22 15:50,2025-10-22 15:54,3.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+535,3975.34011,2460975.34011,2025-10-26 20:03,2025-10-26 20:08,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+536,3979.51626,2460979.51626,2025-10-31 00:17,2025-10-31 00:22,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+537,3983.69241,2460983.69241,2025-11-04 04:31,2025-11-04 04:35,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+538,3987.86855,2460987.86855,2025-11-08 08:45,2025-11-08 08:49,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+539,3992.0447,2460992.0447,2025-11-12 12:59,2025-11-12 13:03,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+540,3996.22085,2460996.22085,2025-11-16 17:13,2025-11-16 17:16,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+541,4000.39699,2461000.39699,2025-11-20 21:27,2025-11-20 21:30,3.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+542,4004.57314,2461004.57314,2025-11-25 01:41,2025-11-25 01:44,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+543,4008.74929,2461008.74929,2025-11-29 05:55,2025-11-29 05:57,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+544,4012.92543,2461012.92543,2025-12-03 10:09,2025-12-03 10:11,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+545,4017.10158,2461017.10158,2025-12-07 14:23,2025-12-07 14:25,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+546,4021.27773,2461021.27773,2025-12-11 18:37,2025-12-11 18:38,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+547,4025.45387,2461025.45387,2025-12-15 22:51,2025-12-15 22:52,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+548,4029.63002,2461029.63002,2025-12-20 03:05,2025-12-20 03:06,3.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+549,4033.80617,2461033.80617,2025-12-24 07:19,2025-12-24 07:19,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+550,4037.98231,2461037.98231,2025-12-28 11:33,2025-12-28 11:33,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+551,4042.15846,2461042.15846,2026-01-01 15:47,2026-01-01 15:47,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+552,4046.33461,2461046.33461,2026-01-05 20:01,2026-01-05 20:00,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+553,4050.51075,2461050.51075,2026-01-10 00:15,2026-01-10 00:14,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+554,4054.6869,2461054.6869,2026-01-14 04:29,2026-01-14 04:27,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+555,4058.86305,2461058.86305,2026-01-18 08:43,2026-01-18 08:41,4.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+556,4063.03919,2461063.03919,2026-01-22 12:57,2026-01-22 12:55,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+557,4067.21534,2461067.21534,2026-01-26 17:11,2026-01-26 17:08,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+558,4071.39148,2461071.39148,2026-01-30 21:25,2026-01-30 21:22,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+559,4075.56763,2461075.56763,2026-02-04 01:39,2026-02-04 01:36,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+560,4079.74378,2461079.74378,2026-02-08 05:53,2026-02-08 05:49,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+561,4083.91992,2461083.91992,2026-02-12 10:07,2026-02-12 10:03,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+562,4088.09607,2461088.09607,2026-02-16 14:21,2026-02-16 14:17,4.1,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+563,4092.27222,2461092.27222,2026-02-20 18:34,2026-02-20 18:30,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+564,4096.44836,2461096.44836,2026-02-24 22:48,2026-02-24 22:44,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+565,4100.62451,2461100.62451,2026-03-01 03:02,2026-03-01 02:58,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+566,4104.80066,2461104.80066,2026-03-05 07:16,2026-03-05 07:11,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+567,4108.9768,2461108.9768,2026-03-09 11:30,2026-03-09 11:25,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+568,4113.15295,2461113.15295,2026-03-13 15:44,2026-03-13 15:39,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+569,4117.3291,2461117.3291,2026-03-17 19:57,2026-03-17 19:52,4.2,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+570,4121.50524,2461121.50524,2026-03-22 00:11,2026-03-22 00:06,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+571,4125.68139,2461125.68139,2026-03-26 04:25,2026-03-26 04:20,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+572,4129.85754,2461129.85754,2026-03-30 08:38,2026-03-30 08:33,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+573,4134.03368,2461134.03368,2026-04-03 12:52,2026-04-03 12:47,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+574,4138.20983,2461138.20983,2026-04-07 17:06,2026-04-07 17:01,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+575,4142.38598,2461142.38598,2026-04-11 21:19,2026-04-11 21:14,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+576,4146.56212,2461146.56212,2026-04-16 01:33,2026-04-16 01:28,4.3,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+577,4150.73827,2461150.73827,2026-04-20 05:46,2026-04-20 05:41,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+578,4154.91442,2461154.91442,2026-04-24 10:00,2026-04-24 09:55,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+579,4159.09056,2461159.09056,2026-04-28 14:13,2026-04-28 14:09,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+580,4163.26671,2461163.26671,2026-05-02 18:27,2026-05-02 18:22,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+581,4167.44286,2461167.44286,2026-05-06 22:40,2026-05-06 22:36,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+582,4171.619,2461171.619,2026-05-11 02:54,2026-05-11 02:50,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+583,4175.79515,2461175.79515,2026-05-15 07:07,2026-05-15 07:03,4.4,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+584,4179.9713,2461179.9713,2026-05-19 11:20,2026-05-19 11:17,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+585,4184.14744,2461184.14744,2026-05-23 15:34,2026-05-23 15:31,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+586,4188.32359,2461188.32359,2026-05-27 19:47,2026-05-27 19:44,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+587,4192.49973,2461192.49973,2026-06-01 00:00,2026-05-31 23:58,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+588,4196.67588,2461196.67588,2026-06-05 04:14,2026-06-05 04:12,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+589,4200.85203,2461200.85203,2026-06-09 08:27,2026-06-09 08:25,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+590,4205.02817,2461205.02817,2026-06-13 12:40,2026-06-13 12:39,4.5,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+591,4209.20432,2461209.20432,2026-06-17 16:54,2026-06-17 16:53,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+592,4213.38047,2461213.38047,2026-06-21 21:07,2026-06-21 21:06,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+593,4217.55661,2461217.55661,2026-06-26 01:20,2026-06-26 01:20,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+594,4221.73276,2461221.73276,2026-06-30 05:34,2026-06-30 05:34,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+595,4225.90891,2461225.90891,2026-07-04 09:47,2026-07-04 09:47,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+596,4230.08505,2461230.08505,2026-07-08 14:00,2026-07-08 14:01,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+597,4234.2612,2461234.2612,2026-07-12 18:13,2026-07-12 18:14,4.6,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+598,4238.43735,2461238.43735,2026-07-16 22:27,2026-07-16 22:28,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+599,4242.61349,2461242.61349,2026-07-21 02:40,2026-07-21 02:42,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+600,4246.78964,2461246.78964,2026-07-25 06:53,2026-07-25 06:55,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+601,4250.96579,2461250.96579,2026-07-29 11:07,2026-07-29 11:09,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+602,4255.14193,2461255.14193,2026-08-02 15:20,2026-08-02 15:23,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+603,4259.31808,2461259.31808,2026-08-06 19:33,2026-08-06 19:36,4.7,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+604,4263.49423,2461263.49423,2026-08-10 23:47,2026-08-10 23:50,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+605,4267.67037,2461267.67037,2026-08-15 04:00,2026-08-15 04:04,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+606,4271.84652,2461271.84652,2026-08-19 08:13,2026-08-19 08:17,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+607,4276.02267,2461276.02267,2026-08-23 12:27,2026-08-23 12:31,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+608,4280.19881,2461280.19881,2026-08-27 16:40,2026-08-27 16:45,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+609,4284.37496,2461284.37496,2026-08-31 20:54,2026-08-31 20:58,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+610,4288.55111,2461288.55111,2026-09-05 01:07,2026-09-05 01:12,4.8,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+611,4292.72725,2461292.72725,2026-09-09 05:21,2026-09-09 05:26,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+612,4296.9034,2461296.9034,2026-09-13 09:34,2026-09-13 09:39,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+613,4301.07954,2461301.07954,2026-09-17 13:48,2026-09-17 13:53,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+614,4305.25569,2461305.25569,2026-09-21 18:01,2026-09-21 18:07,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+615,4309.43184,2461309.43184,2026-09-25 22:15,2026-09-25 22:20,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+616,4313.60798,2461313.60798,2026-09-30 02:29,2026-09-30 02:34,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+617,4317.78413,2461317.78413,2026-10-04 06:42,2026-10-04 06:47,4.9,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+618,4321.96028,2461321.96028,2026-10-08 10:56,2026-10-08 11:01,5.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+619,4326.13642,2461326.13642,2026-10-12 15:10,2026-10-12 15:15,5.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+620,4330.31257,2461330.31257,2026-10-16 19:23,2026-10-16 19:28,5.0,"undated (future sectors [122, 128, 129])","retrodiction: before freeze, untested"
+621,4334.48872,2461334.48872,2026-10-20 23:37,2026-10-20 23:42,5.0,"undated (future sectors [122, 128, 129])",prediction
+622,4338.66486,2461338.66486,2026-10-25 03:51,2026-10-25 03:56,5.0,"undated (future sectors [122, 128, 129])",prediction
+623,4342.84101,2461342.84101,2026-10-29 08:05,2026-10-29 08:09,5.0,"undated (future sectors [122, 128, 129])",prediction
+624,4347.01716,2461347.01716,2026-11-02 12:19,2026-11-02 12:23,5.0,"undated (future sectors [122, 128, 129])",prediction
+625,4351.1933,2461351.1933,2026-11-06 16:33,2026-11-06 16:37,5.1,"undated (future sectors [122, 128, 129])",prediction
+626,4355.36945,2461355.36945,2026-11-10 20:46,2026-11-10 20:50,5.1,"undated (future sectors [122, 128, 129])",prediction
+627,4359.5456,2461359.5456,2026-11-15 01:00,2026-11-15 01:04,5.1,"undated (future sectors [122, 128, 129])",prediction
+628,4363.72174,2461363.72174,2026-11-19 05:14,2026-11-19 05:18,5.1,"undated (future sectors [122, 128, 129])",prediction
+629,4367.89789,2461367.89789,2026-11-23 09:28,2026-11-23 09:31,5.1,"undated (future sectors [122, 128, 129])",prediction
+630,4372.07404,2461372.07404,2026-11-27 13:42,2026-11-27 13:45,5.1,"undated (future sectors [122, 128, 129])",prediction
+631,4376.25018,2461376.25018,2026-12-01 17:56,2026-12-01 17:59,5.2,"undated (future sectors [122, 128, 129])",prediction
+632,4380.42633,2461380.42633,2026-12-05 22:10,2026-12-05 22:12,5.2,"undated (future sectors [122, 128, 129])",prediction
+633,4384.60248,2461384.60248,2026-12-10 02:24,2026-12-10 02:26,5.2,"undated (future sectors [122, 128, 129])",prediction
+634,4388.77862,2461388.77862,2026-12-14 06:38,2026-12-14 06:40,5.2,"undated (future sectors [122, 128, 129])",prediction
+635,4392.95477,2461392.95477,2026-12-18 10:52,2026-12-18 10:53,5.2,"undated (future sectors [122, 128, 129])",prediction
+636,4397.13092,2461397.13092,2026-12-22 15:06,2026-12-22 15:07,5.2,"undated (future sectors [122, 128, 129])",prediction
+637,4401.30706,2461401.30706,2026-12-26 19:20,2026-12-26 19:21,5.2,"undated (future sectors [122, 128, 129])",prediction
+638,4405.48321,2461405.48321,2026-12-30 23:34,2026-12-30 23:34,5.3,"undated (future sectors [122, 128, 129])",prediction
+639,4409.65936,2461409.65936,2027-01-04 03:48,2027-01-04 03:48,5.3,"undated (future sectors [122, 128, 129])",prediction
+640,4413.8355,2461413.8355,2027-01-08 08:02,2027-01-08 08:01,5.3,"undated (future sectors [122, 128, 129])",prediction
+641,4418.01165,2461418.01165,2027-01-12 12:16,2027-01-12 12:15,5.3,"undated (future sectors [122, 128, 129])",prediction
+642,4422.18779,2461422.18779,2027-01-16 16:30,2027-01-16 16:29,5.3,"undated (future sectors [122, 128, 129])",prediction
+643,4426.36394,2461426.36394,2027-01-20 20:44,2027-01-20 20:42,5.3,"undated (future sectors [122, 128, 129])",prediction
+644,4430.54009,2461430.54009,2027-01-25 00:58,2027-01-25 00:56,5.3,"undated (future sectors [122, 128, 129])",prediction
+645,4434.71623,2461434.71623,2027-01-29 05:12,2027-01-29 05:10,5.4,"undated (future sectors [122, 128, 129])",prediction
+646,4438.89238,2461438.89238,2027-02-02 09:26,2027-02-02 09:23,5.4,"undated (future sectors [122, 128, 129])",prediction
+647,4443.06853,2461443.06853,2027-02-06 13:40,2027-02-06 13:37,5.4,"undated (future sectors [122, 128, 129])",prediction
+648,4447.24467,2461447.24467,2027-02-10 17:54,2027-02-10 17:51,5.4,"undated (future sectors [122, 128, 129])",prediction
+649,4451.42082,2461451.42082,2027-02-14 22:08,2027-02-14 22:04,5.4,"undated (future sectors [122, 128, 129])",prediction
+650,4455.59697,2461455.59697,2027-02-19 02:22,2027-02-19 02:18,5.4,"undated (future sectors [122, 128, 129])",prediction
+651,4459.77311,2461459.77311,2027-02-23 06:36,2027-02-23 06:32,5.5,"undated (future sectors [122, 128, 129])",prediction
+652,4463.94926,2461463.94926,2027-02-27 10:50,2027-02-27 10:45,5.5,"undated (future sectors [122, 128, 129])",prediction
+653,4468.12541,2461468.12541,2027-03-03 15:04,2027-03-03 14:59,5.5,"undated (future sectors [122, 128, 129])",prediction
+654,4472.30155,2461472.30155,2027-03-07 19:17,2027-03-07 19:13,5.5,"undated (future sectors [122, 128, 129])",prediction
+655,4476.4777,2461476.4777,2027-03-11 23:31,2027-03-11 23:26,5.5,"undated (future sectors [122, 128, 129])",prediction
+656,4480.65385,2461480.65385,2027-03-16 03:45,2027-03-16 03:40,5.5,"undated (future sectors [122, 128, 129])",prediction
+657,4484.82999,2461484.82999,2027-03-20 07:59,2027-03-20 07:54,5.5,"undated (future sectors [122, 128, 129])",prediction
+658,4489.00614,2461489.00614,2027-03-24 12:12,2027-03-24 12:07,5.6,"undated (future sectors [122, 128, 129])",prediction
+659,4493.18229,2461493.18229,2027-03-28 16:26,2027-03-28 16:21,5.6,"undated (future sectors [122, 128, 129])",prediction
+660,4497.35843,2461497.35843,2027-04-01 20:40,2027-04-01 20:34,5.6,"undated (future sectors [122, 128, 129])",prediction
+661,4501.53458,2461501.53458,2027-04-06 00:53,2027-04-06 00:48,5.6,"undated (future sectors [122, 128, 129])",prediction
+662,4505.71073,2461505.71073,2027-04-10 05:07,2027-04-10 05:02,5.6,"undated (future sectors [122, 128, 129])",prediction
+663,4509.88687,2461509.88687,2027-04-14 09:20,2027-04-14 09:15,5.6,"undated (future sectors [122, 128, 129])",prediction
+664,4514.06302,2461514.06302,2027-04-18 13:34,2027-04-18 13:29,5.7,"undated (future sectors [122, 128, 129])",prediction
+665,4518.23917,2461518.23917,2027-04-22 17:48,2027-04-22 17:43,5.7,"undated (future sectors [122, 128, 129])",prediction
+666,4522.41531,2461522.41531,2027-04-26 22:01,2027-04-26 21:56,5.7,"undated (future sectors [122, 128, 129])",prediction
+667,4526.59146,2461526.59146,2027-05-01 02:14,2027-05-01 02:10,5.7,"undated (future sectors [122, 128, 129])",prediction
+668,4530.7676,2461530.7676,2027-05-05 06:28,2027-05-05 06:24,5.7,"undated (future sectors [122, 128, 129])",prediction
+669,4534.94375,2461534.94375,2027-05-09 10:41,2027-05-09 10:37,5.7,"undated (future sectors [122, 128, 129])",prediction
+670,4539.1199,2461539.1199,2027-05-13 14:55,2027-05-13 14:51,5.7,"undated (future sectors [122, 128, 129])",prediction
+671,4543.29604,2461543.29604,2027-05-17 19:08,2027-05-17 19:05,5.8,"undated (future sectors [122, 128, 129])",prediction
+672,4547.47219,2461547.47219,2027-05-21 23:22,2027-05-21 23:18,5.8,"undated (future sectors [122, 128, 129])",prediction
+673,4551.64834,2461551.64834,2027-05-26 03:35,2027-05-26 03:32,5.8,"undated (future sectors [122, 128, 129])",prediction
+674,4555.82448,2461555.82448,2027-05-30 07:48,2027-05-30 07:46,5.8,"undated (future sectors [122, 128, 129])",prediction
+675,4560.00063,2461560.00063,2027-06-03 12:02,2027-06-03 11:59,5.8,"undated (future sectors [122, 128, 129])",prediction
+676,4564.17678,2461564.17678,2027-06-07 16:15,2027-06-07 16:13,5.8,"undated (future sectors [122, 128, 129])",prediction
+677,4568.35292,2461568.35292,2027-06-11 20:28,2027-06-11 20:27,5.8,"undated (future sectors [122, 128, 129])",prediction
+678,4572.52907,2461572.52907,2027-06-16 00:41,2027-06-16 00:40,5.9,"undated (future sectors [122, 128, 129])",prediction
+679,4576.70522,2461576.70522,2027-06-20 04:55,2027-06-20 04:54,5.9,"undated (future sectors [122, 128, 129])",prediction
+680,4580.88136,2461580.88136,2027-06-24 09:08,2027-06-24 09:08,5.9,"undated (future sectors [122, 128, 129])",prediction
+681,4585.05751,2461585.05751,2027-06-28 13:21,2027-06-28 13:21,5.9,"undated (future sectors [122, 128, 129])",prediction
+682,4589.23366,2461589.23366,2027-07-02 17:35,2027-07-02 17:35,5.9,"undated (future sectors [122, 128, 129])",prediction
+683,4593.4098,2461593.4098,2027-07-06 21:48,2027-07-06 21:48,5.9,"undated (future sectors [122, 128, 129])",prediction
+684,4597.58595,2461597.58595,2027-07-11 02:01,2027-07-11 02:02,6.0,"undated (future sectors [122, 128, 129])",prediction
+685,4601.7621,2461601.7621,2027-07-15 06:15,2027-07-15 06:16,6.0,"undated (future sectors [122, 128, 129])",prediction
+686,4605.93824,2461605.93824,2027-07-19 10:28,2027-07-19 10:29,6.0,"undated (future sectors [122, 128, 129])",prediction
+687,4610.11439,2461610.11439,2027-07-23 14:41,2027-07-23 14:43,6.0,"undated (future sectors [122, 128, 129])",prediction
+688,4614.29054,2461614.29054,2027-07-27 18:54,2027-07-27 18:57,6.0,"undated (future sectors [122, 128, 129])",prediction
+689,4618.46668,2461618.46668,2027-07-31 23:08,2027-07-31 23:10,6.0,"undated (future sectors [122, 128, 129])",prediction
+690,4622.64283,2461622.64283,2027-08-05 03:21,2027-08-05 03:24,6.0,"undated (future sectors [122, 128, 129])",prediction
+691,4626.81898,2461626.81898,2027-08-09 07:34,2027-08-09 07:38,6.1,"undated (future sectors [122, 128, 129])",prediction
+692,4630.99512,2461630.99512,2027-08-13 11:48,2027-08-13 11:51,6.1,"undated (future sectors [122, 128, 129])",prediction
+693,4635.17127,2461635.17127,2027-08-17 16:01,2027-08-17 16:05,6.1,"undated (future sectors [122, 128, 129])",prediction
+694,4639.34742,2461639.34742,2027-08-21 20:15,2027-08-21 20:19,6.1,"undated (future sectors [122, 128, 129])",prediction
+695,4643.52356,2461643.52356,2027-08-26 00:28,2027-08-26 00:32,6.1,"undated (future sectors [122, 128, 129])",prediction
+696,4647.69971,2461647.69971,2027-08-30 04:41,2027-08-30 04:46,6.1,"undated (future sectors [122, 128, 129])",prediction
+697,4651.87585,2461651.87585,2027-09-03 08:55,2027-09-03 09:00,6.2,"undated (future sectors [122, 128, 129])",prediction
+698,4656.052,2461656.052,2027-09-07 13:08,2027-09-07 13:13,6.2,"undated (future sectors [122, 128, 129])",prediction
+699,4660.22815,2461660.22815,2027-09-11 17:22,2027-09-11 17:27,6.2,"undated (future sectors [122, 128, 129])",prediction
+700,4664.40429,2461664.40429,2027-09-15 21:36,2027-09-15 21:41,6.2,"undated (future sectors [122, 128, 129])",prediction
+701,4668.58044,2461668.58044,2027-09-20 01:49,2027-09-20 01:54,6.2,"undated (future sectors [122, 128, 129])",prediction
+702,4672.75659,2461672.75659,2027-09-24 06:03,2027-09-24 06:08,6.2,"undated (future sectors [122, 128, 129])",prediction
+703,4676.93273,2461676.93273,2027-09-28 10:16,2027-09-28 10:21,6.2,"undated (future sectors [122, 128, 129])",prediction
+704,4681.10888,2461681.10888,2027-10-02 14:30,2027-10-02 14:35,6.3,"undated (future sectors [122, 128, 129])",prediction
+705,4685.28503,2461685.28503,2027-10-06 18:44,2027-10-06 18:49,6.3,"undated (future sectors [122, 128, 129])",prediction
+706,4689.46117,2461689.46117,2027-10-10 22:57,2027-10-10 23:02,6.3,"undated (future sectors [122, 128, 129])",prediction
+707,4693.63732,2461693.63732,2027-10-15 03:11,2027-10-15 03:16,6.3,"undated (future sectors [122, 128, 129])",prediction
+708,4697.81347,2461697.81347,2027-10-19 07:25,2027-10-19 07:30,6.3,"undated (future sectors [122, 128, 129])",prediction
+709,4701.98961,2461701.98961,2027-10-23 11:39,2027-10-23 11:43,6.3,"undated (future sectors [122, 128, 129])",prediction
+710,4706.16576,2461706.16576,2027-10-27 15:52,2027-10-27 15:57,6.3,"undated (future sectors [122, 128, 129])",prediction
+711,4710.34191,2461710.34191,2027-10-31 20:06,2027-10-31 20:11,6.4,"undated (future sectors [122, 128, 129])",prediction
+712,4714.51805,2461714.51805,2027-11-05 00:20,2027-11-05 00:24,6.4,"undated (future sectors [122, 128, 129])",prediction
+713,4718.6942,2461718.6942,2027-11-09 04:34,2027-11-09 04:38,6.4,"undated (future sectors [122, 128, 129])",prediction
+714,4722.87035,2461722.87035,2027-11-13 08:48,2027-11-13 08:52,6.4,"undated (future sectors [122, 128, 129])",prediction
+715,4727.04649,2461727.04649,2027-11-17 13:02,2027-11-17 13:05,6.4,"undated (future sectors [122, 128, 129])",prediction
+716,4731.22264,2461731.22264,2027-11-21 17:16,2027-11-21 17:19,6.4,"undated (future sectors [122, 128, 129])",prediction
+717,4735.39879,2461735.39879,2027-11-25 21:30,2027-11-25 21:33,6.5,"undated (future sectors [122, 128, 129])",prediction
+718,4739.57493,2461739.57493,2027-11-30 01:44,2027-11-30 01:46,6.5,"undated (future sectors [122, 128, 129])",prediction
+719,4743.75108,2461743.75108,2027-12-04 05:58,2027-12-04 06:00,6.5,"undated (future sectors [122, 128, 129])",prediction
+720,4747.92723,2461747.92723,2027-12-08 10:12,2027-12-08 10:14,6.5,"undated (future sectors [122, 128, 129])",prediction
+721,4752.10337,2461752.10337,2027-12-12 14:26,2027-12-12 14:27,6.5,"undated (future sectors [122, 128, 129])",prediction
+722,4756.27952,2461756.27952,2027-12-16 18:40,2027-12-16 18:41,6.5,"undated (future sectors [122, 128, 129])",prediction
+723,4760.45566,2461760.45566,2027-12-20 22:54,2027-12-20 22:55,6.5,"undated (future sectors [122, 128, 129])",prediction
+724,4764.63181,2461764.63181,2027-12-25 03:08,2027-12-25 03:08,6.6,"undated (future sectors [122, 128, 129])",prediction
+725,4768.80796,2461768.80796,2027-12-29 07:22,2027-12-29 07:22,6.6,"undated (future sectors [122, 128, 129])",prediction
+726,4772.9841,2461772.9841,2028-01-02 11:36,2028-01-02 11:35,6.6,"undated (future sectors [122, 128, 129])",prediction
+727,4777.16025,2461777.16025,2028-01-06 15:50,2028-01-06 15:49,6.6,"undated (future sectors [122, 128, 129])",prediction
+728,4781.3364,2461781.3364,2028-01-10 20:04,2028-01-10 20:03,6.6,"undated (future sectors [122, 128, 129])",prediction
+729,4785.51254,2461785.51254,2028-01-15 00:18,2028-01-15 00:16,6.6,"undated (future sectors [122, 128, 129])",prediction
+730,4789.68869,2461789.68869,2028-01-19 04:32,2028-01-19 04:30,6.7,"undated (future sectors [122, 128, 129])",prediction
+731,4793.86484,2461793.86484,2028-01-23 08:46,2028-01-23 08:44,6.7,"undated (future sectors [122, 128, 129])",prediction
+732,4798.04098,2461798.04098,2028-01-27 13:00,2028-01-27 12:57,6.7,"undated (future sectors [122, 128, 129])",prediction
+733,4802.21713,2461802.21713,2028-01-31 17:14,2028-01-31 17:11,6.7,"undated (future sectors [122, 128, 129])",prediction
+734,4806.39328,2461806.39328,2028-02-04 21:28,2028-02-04 21:25,6.7,"undated (future sectors [122, 128, 129])",prediction
+735,4810.56942,2461810.56942,2028-02-09 01:42,2028-02-09 01:38,6.7,"undated (future sectors [122, 128, 129])",prediction
+736,4814.74557,2461814.74557,2028-02-13 05:56,2028-02-13 05:52,6.7,"undated (future sectors [122, 128, 129])",prediction
+737,4818.92172,2461818.92172,2028-02-17 10:10,2028-02-17 10:06,6.8,"undated (future sectors [122, 128, 129])",prediction
+738,4823.09786,2461823.09786,2028-02-21 14:23,2028-02-21 14:19,6.8,"undated (future sectors [122, 128, 129])",prediction
+739,4827.27401,2461827.27401,2028-02-25 18:37,2028-02-25 18:33,6.8,"undated (future sectors [122, 128, 129])",prediction
+740,4831.45016,2461831.45016,2028-02-29 22:51,2028-02-29 22:47,6.8,"undated (future sectors [122, 128, 129])",prediction
+741,4835.6263,2461835.6263,2028-03-05 03:05,2028-03-05 03:00,6.8,"undated (future sectors [122, 128, 129])",prediction
+742,4839.80245,2461839.80245,2028-03-09 07:19,2028-03-09 07:14,6.8,"undated (future sectors [122, 128, 129])",prediction
+743,4843.9786,2461843.9786,2028-03-13 11:32,2028-03-13 11:28,6.9,"undated (future sectors [122, 128, 129])",prediction
+744,4848.15474,2461848.15474,2028-03-17 15:46,2028-03-17 15:41,6.9,"undated (future sectors [122, 128, 129])",prediction
+745,4852.33089,2461852.33089,2028-03-21 20:00,2028-03-21 19:55,6.9,"undated (future sectors [122, 128, 129])",prediction
+746,4856.50704,2461856.50704,2028-03-26 00:14,2028-03-26 00:08,6.9,"undated (future sectors [122, 128, 129])",prediction
+747,4860.68318,2461860.68318,2028-03-30 04:27,2028-03-30 04:22,6.9,"undated (future sectors [122, 128, 129])",prediction
+748,4864.85933,2461864.85933,2028-04-03 08:41,2028-04-03 08:36,6.9,"undated (future sectors [122, 128, 129])",prediction
+749,4869.03547,2461869.03547,2028-04-07 12:55,2028-04-07 12:49,6.9,"undated (future sectors [122, 128, 129])",prediction
+750,4873.21162,2461873.21162,2028-04-11 17:08,2028-04-11 17:03,7.0,"undated (future sectors [122, 128, 129])",prediction
+751,4877.38777,2461877.38777,2028-04-15 21:22,2028-04-15 21:17,7.0,"undated (future sectors [122, 128, 129])",prediction
+752,4881.56391,2461881.56391,2028-04-20 01:35,2028-04-20 01:30,7.0,"undated (future sectors [122, 128, 129])",prediction
+753,4885.74006,2461885.74006,2028-04-24 05:49,2028-04-24 05:44,7.0,"undated (future sectors [122, 128, 129])",prediction
+754,4889.91621,2461889.91621,2028-04-28 10:02,2028-04-28 09:58,7.0,"undated (future sectors [122, 128, 129])",prediction
+755,4894.09235,2461894.09235,2028-05-02 14:16,2028-05-02 14:11,7.0,"undated (future sectors [122, 128, 129])",prediction
+756,4898.2685,2461898.2685,2028-05-06 18:29,2028-05-06 18:25,7.1,"undated (future sectors [122, 128, 129])",prediction
