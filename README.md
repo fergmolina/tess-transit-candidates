@@ -65,5 +65,11 @@ The first commit of this repository is the public timestamp. The files are not e
 `scripts/` contains the full pipeline (Python 3.12; lightkurve, astropy, wotan, batman, emcee, transitleastsquares, tess-point).
 Data are public (MAST). Commands are listed in the header of [REPORT.md](REPORT.md) section 3 and in `scripts/*.py` docstrings.
 
+## Related Zenodo records (2026-10-19)
+* Preprint (research note on TIC 80387959 and TIC 120444365): [10.5281/zenodo.23462434](https://doi.org/10.5281/zenodo.23462434)
+* Supporting data and code (all objects; checksummed bundle): [10.5281/zenodo.23462438](https://doi.org/10.5281/zenodo.23462438)
+* Pre-registration protocol v1 and frozen prediction bundle: [10.5281/zenodo.23462442](https://doi.org/10.5281/zenodo.23462442)
+* This repository's releases (concept DOI 10.5281/zenodo.23443244): v1.1 = 23443245, v1.2 = 23445705, v1.3 = 23460915, v1.4 = pending archive.
+
 ## Cite
 Molina, F. (2026). Multi-year TESS transit search: two planet candidates with pre-registered transit predictions (TIC 89247735, TIC 317134140). Zenodo. https://doi.org/10.5281/zenodo.23443245 — machine-readable form in [CITATION.cff](CITATION.cff). Code is MIT-licensed; text and tables may be reused with attribution.
