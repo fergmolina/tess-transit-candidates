@@ -185,3 +185,32 @@
     "Prior and concurrent reports" section in public README, REPORT (before section 12), dataset README, note, protocol; sweep copied to
     public_release/prior_search/ (third object's ID withheld); TESS-SPOC TCE hosts appended to catalogs/known_signals.csv (source TESSSPOC_TCE,
     period NaN). Novelty claims now read "independent rediscovery" for 120444365 and 317134140. To publish as v1.4.
+
+44. **Three Zenodo records published 2026-10-19 (scripts/zenodo_deposit.py; result in zenodo_upload/DEPOSIT_RESULT.json):** preprint note
+    10.5281/zenodo.23462434; supporting data and code 10.5281/zenodo.23462438; pre-registration protocol v1 + bundle 10.5281/zenodo.23462442.
+    All CC BY 4.0, linked to the concept DOI 10.5281/zenodo.23443244 and the v1.4 release. README updated with the links. v1.4 release
+    (535519a) archives automatically. Token stored by the user in ~/.zenodo_token (never echo it). DDT proposal and the two e-mails remain
+    with the user (ddt_80387959/README.md, zenodo_upload/EMAIL_zarco_draft.md, paper/COAUTHOR_OUTREACH.md).
+    **2026-10-19:** DDT proposal e-mailed by the user to tess-ddt@mit.edu (proposal.pdf + target_list.csv; TIC 80387959, S111-S114).
+    Courtesy notice to the concurrent TIC 89247735 author filed as GitHub issue
+    https://github.com/alejandrozarco/tess-candidates-2026/issues/1 (no e-mail address exists for him). The prior-detection sweep agent was
+    stopped by the user with its last background job (Zenodo content grep, 32 of 157 records) unfinished; PRIOR_SEARCH.md stands as written.
+    2026-10-19: TFOP general-member application e-mailed by the user to the TFOP chair.
+    Note v1.1 (e-mail added) published as 10.5281/zenodo.23462857; preprint concept DOI 10.5281/zenodo.23462433.
+
+45. **Referee review of the TIC 89247735 manuscript (results/referee_89247735/REFEREE_REPORT.md): MAJOR REVISION.** Ten major points.
+    M1 is a project-wide error: every prediction file's UTC column was Time(BJD_TDB).utc without the light-travel term (geocentric arrival
+    differs by up to +-8 min; e.g. 89247735 epoch 159 is 02:09 UTC, not 02:17). BJD_TDB/BTJD and all hashes unaffected; TESS tests
+    unaffected; e-mailed documents (DDT, TFOP) carry dates only. Fixed: scripts/prereg_utc_fix.py produced *_utcfix.csv for all seven
+    frozen files (originals untouched); prereg_candidate.py / prereg_v2.py now write geocentric UTC; public_release/preregistration/
+    CORRECTION_UTC_2026-10-19.md; clock times corrected in README, REPORT, STATUS, protocol, note, manuscript. Other majors to apply in the
+    manuscript: M2 (2P twin-EB not closed by the 4th transit; it is closed by flux/shape on the target and by the pixel test for the
+    neighbour), M3 (depth/dilution/radius: fit on DET_FLUX vs raw depths; dilution never stated; R* error; T14 4.57 h vs "4.0"; LD coefficients),
+    M4 (pixel exclusion overstated; neighbour needs 37-40 % not 23 %; calibrate centroid errors on off-transit windows; published floors),
+    M5 (S104 event is 4.8 d into orbit 220, not an orbit-start ramp; flagged cadences after egress + RW-calibration windows; 6-min systematic
+    ad hoc), M6 (search context: 763/3,411 SDE>12 raw, 165 pass filters, candidate rank 3; two 18.09-d look-alikes), M7 (secondary limit
+    empirical scatter 298 ppm -> 2-sigma ~1,000 ppm, Teff < 2850 K), M8 (bit 31 facts: present since S56 EM2 products, 19 % in S66; MAST
+    documents it as bit 13 "low precision points"), M9 (RV bound arithmetic: 2.2 km/s = 22 MJ; priors' period ranges; Gaia astrometric
+    table; <1" channel quantified), M10 (4th-transit narrative: found within hours from already-downloaded data). Minor: abstract 286 words,
+    UAT 2119 wrong, deluxetable* for Table 1, Figure 2 remake, TARS/Boyle bib entry, 5 wrong bib identifiers (refs_corrected.bib provided).
+    Referee's own tectonic compile warmed the bundle cache: tectonic now compiles paper/main.tex locally (AASTeX, 7 pages).

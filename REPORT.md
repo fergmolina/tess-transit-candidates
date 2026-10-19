@@ -407,8 +407,8 @@ agree across all extractions to ≤ 1.6 min. The S104 window contains 140 QLP-fl
 that scattered light. v3 uses the S104 midpoint with a 6-min systematic error; the four-point χ²/dof falls from 10.5/2 to 0.5/2, confirming
 that S104 was the outlier. **T0 = BTJD 4196.80983 ± 2.0 min, P = 18.323172 ± 0.000042 d.** Predictions move +6.5 min (epoch 146) to
 +8.6 min (epoch 162) relative to v2 — inside the ±15 min window, which is unchanged. Files: `predicted_transits_2026_2027_v3.csv`
-(SHA-256 b5338c90e0ac8edb80f01f6018217382602975b26806f1423bc0c87ff9408f04), `PREREGISTRATION_v3.md`, `final_ephemeris_v3.json`. First full ground transits: epoch 159 2027-06-25 02:17 UTC,
-epoch 162 2027-08-19 01:33 UTC.
+(SHA-256 b5338c90e0ac8edb80f01f6018217382602975b26806f1423bc0c87ff9408f04), `PREREGISTRATION_v3.md`, `final_ephemeris_v3.json`. First full ground transits: epoch 159 2027-06-25 02:09 UTC,
+epoch 162 2027-08-19 01:28 UTC.
 
 **Observability (external review, `results/external_review/observability_89247735.csv`):** epochs 147–151 (2026-11-17 to 2027-01-29) are
 unobservable from any southern site (target too close to the Sun); epoch 146 is partial from SAAO only. The first full ground-based transits

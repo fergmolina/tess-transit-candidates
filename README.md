@@ -58,6 +58,8 @@ Statements elsewhere in this record that an object has "no catalog entry" refer 
 remain true; they are not claims of priority over the listings above.
 
 ## Pre-registration
+**Correction 2026-10-19:** the UTC columns of all prediction files published before this date lacked the barycentric light-travel term (up to ±8 min); `tc_bjd_tdb` and all hashes are unaffected. Corrected copies (`*_utcfix.csv`) and the details are in `preregistration/CORRECTION_UTC_2026-10-19.md`.
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 The first commit of this repository is the public timestamp. The files are not edited after freezing; corrections are new versions.
 
