@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17, updated 2026-10-18 (v1.3: two all-sky candidates). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-19 (v1.4: prior-detection sweep; prior and concurrent reports credited). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -27,17 +27,35 @@ one 2020 sector does not show it and one sector's centroid is in tension. Transi
 neighbours able to mimic it are excluded at ≈ 2.7σ and ≈ 4σ); no secondary eclipse; stellar density consistent; four of four blind holdout
 years recovered; TRICERATOPS FPP 0.047, NFPP 0.010 (indicative, not validated); no catalog entry within 60″. An external review
 ([external_review_allsky/REVIEW.md](external_review_allsky/REVIEW.md)) found the apparent sector-to-sector depth change to be a QLP
-normalisation artefact. Status: planet candidate pending the pre-registered test. **Test of record: TESS Sector 111 (2026-11-26 to
+normalisation artefact. Status: planet candidate pending the pre-registered test (an unpromoted TESS-SPOC Sector-63 pipeline alert at the same period exists, see below). **Test of record: TESS Sector 111 (2026-11-26 to
 12-22)**; predictions in `preregistration/TIC80387959/` (v2 supersedes v1, which used only the 200-s sectors).
 
 **TIC 120444365** — K dwarf, Tmag 11.1. A 5.148171-d, ≈ 750 ppm transit seen 22 times in 2018–2026, in every year and in every
 independent extraction (SPOC 2-min, TESS-SPOC, TARS, fixed-aperture cutouts). Radius ≈ 2.2 Earth radii if on the target. Isolated star
 (nothing within 60″ can mimic it); on target by pixel tests; TRICERATOPS FPP 0.041, NFPP 0.000 ("likely planet" by the published
-criteria, not validated). Status: planet candidate pending the pre-registered test. **Test of record: TESS Sector 106** (observed
+criteria, not validated). Status: planet candidate pending the pre-registered test; **independently listed earlier by eumemic/exoplanets (2026-10-09), see below**. **Test of record: TESS Sector 106** (observed
 2026-07-11 to 08-09; its light curves were not public when the predictions were frozen on 2026-10-18 and are expected in late
 October 2026); predictions in `preregistration/TIC120444365/`.
 
-A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground.
+A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground (it too is listed in eumemic/exoplanets).
+
+## Prior and concurrent reports (prior-detection sweep of 2026-10-18/19, `prior_search/`)
+A documented sweep of 32 services (1,585 logged queries; 558,074 automated pipeline alerts scanned: 341,351 SPOC TCE rows and 216,723
+TESS-SPOC FFI DV targets; 101 GitHub repositories and 157 Zenodo records grepped by content) found:
+* **TIC 89247735**: no prior report of any kind. A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
+  posted at github.com/alejandrozarco/tess-candidates-2026 on 2026-10-18 19:22 UTC, about twenty hours after this record's first public
+  release (GitHub v1.0 2026-10-17 23:01 UTC; Zenodo 2026-10-17 23:05 UTC). It does not cite this record.
+* **TIC 80387959**: no human-reported candidate anywhere, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
+  unpromoted threshold-crossing event at the same signal (P = 4.1905 ± 0.0012 d, 869 ± 107 ppm, 2.4 R⊕, MES 7.6), never a TOI or CTOI. Our
+  known-signal cross-match had covered SPOC 2-min TCEs only; TESS-SPOC TCEs are now included.
+* **TIC 120444365**: **listed earlier** by an independent, pseudonymous, non-refereed search (github.com/eumemic/exoplanets, tier-C candidate at
+  P = 5.148151 d, 856 ppm, first public commit 2026-10-09 03:34 UTC), nine days before our deposit. Ours is an independent rediscovery with
+  deeper vetting (pixel localisation, extraction cross-checks, TRICERATOPS NFPP 0.000, external review, Sector 106 pre-registration); priority
+  of the listing is theirs.
+* **TIC 317134140 (0.5719-d second signal)**: **listed earlier** by the same repository as a tier-A candidate (first commit 2026-10-08 03:14 UTC)
+  with Sector 109/110 predictions; again an independent rediscovery on our side.
+Statements elsewhere in this record that an object has "no catalog entry" refer to the TOI, CTOI, Exoplanet Archive and SPOC TCE tables and
+remain true; they are not claims of priority over the listings above.
 
 ## Pre-registration
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.

@@ -146,3 +146,42 @@
     unresolved) is withheld: its TIC is replaced by "[withheld]" in every public copy (REPORT, DECISIONS, REVIEW, tables) and its review section
     body removed. Zenodo archives the release automatically under the concept DOI 10.5281/zenodo.23443245 (new version DOI to be recorded).
     Status wording everywhere: "planet candidate pending the pre-registered test"; not validated; not submitted to ExoFOP (requires a refereed paper).
+    **Zenodo check (23:30 UTC):** v1.3 archived as record 23460915 (DOI 10.5281/zenodo.23460915), v1.2 = 23445705, v1.1 = 23443245; concept
+    DOI 10.5281/zenodo.23443244 (the README cites the v1.1 version DOI 23443245 as "the DOI" - acceptable, but the concept DOI is the
+    version-independent one; fix in the next release). GitHub webhook last response 409 (duplicate delivery), archive nevertheless complete.
+
+41. **Parity package with Rabtsevich's record (user request, 2026-10-18 night).** His set: (1) preprint PDF on Zenodo (RNAAS-style, "No
+    statistical validation is claimed"), (2) supporting data+code dataset record with README and md5 (3 zips, 18 MB), (3) separate
+    pre-registration record (protocol PDF full+short, SHA256SUMS, frozen code zip, four-outcome rules computed by frozen code), (4) DDT
+    program 100, (5) a documented prior-detection sweep ("30+ sources, 550+ searches, 340k+ alerts"). Ours now: (1) note_allsky/note.pdf
+    (research-note manuscript on 80387959 + 120444365) and paper/main.tex (AJ draft, 89247735; needs Overleaf), (2) dataset_v1/ bundle with
+    README, SHA256SUMS, MD5SUMS, frozen scripts, environments, reviews (third object withheld), (3) prereg_protocol/PREREG_PROTOCOL.pdf +
+    scripts/prereg_test.py (frozen evaluator; retrodiction test on 80387959 S100 -> RECOVERED, 870 +- 104 ppm, offset -6 min), (4)
+    ddt_80387959/ (user to send), (5) prior-detection sweep running (results/prior_search/). PDFs rendered with scripts/tex2pdf_lite.py
+    (reportlab) because tectonic cannot download its bundle on this machine and no TeX is installed. NOTHING new uploaded until the
+    prior-detection sweep is in and the user has reviewed.
+
+42. **Prior-detection sweep, interim (2026-10-19 00:xx UTC; results/prior_search/).** (a) github.com/eumemic/exoplanets (pseudonymous,
+    Claude-Code-built Rabtsevich-style search; first commit 2026-10-07) lists TIC 317134140's 0.5719-d second signal (first commit 2026-10-08
+    03:14 UTC, tier A, with S109/S110 predictions), TIC 120444365 at 5.148151 d (2026-10-09 03:34 UTC, tier C, MES 9.0) and TIC [withheld]
+    at 3.282292 d (2026-10-09, tier N "neighbour < 15 arcsec"). Neither TIC 89247735 nor TIC 80387959 appears there. Our public record must
+    credit these prior listings (README, REPORT 6/12, note, dataset README) -> v1.4 before any further upload. (b) TIC 80387959 has an
+    UNPROMOTED TESS-SPOC FFI TCE in the Sector 63 single-sector DV run (P 4.19050 +- 0.0012 d, depth 869 +- 107 ppm, Rp 2.40 Re, MES 7.57,
+    SNR 8.0; dvr.xml verified) - an automated alert, never a TOI/CTOI. Our known-signal table covered SPOC 2-min TCEs only; TESS-SPOC FFI
+    TCEs must be added to catalogs/known_signals.csv for the all-sky ranking (the sweep is downloading the 51 bulk lists). Honest wording for
+    80387959: "no prior candidate report; a TESS-SPOC S63 TCE at the same period exists on MAST". (c) Zenodo file contents are not indexed;
+    the sweep is grepping the files of every recent independent TESS-candidate deposit (Tovar Contreras 23134068, Ozturk 23118499, 23249265, ...).
+    (d) CONCURRENT (not prior) report of TIC 89247735: github.com/alejandrozarco/tess-candidates-2026, commit 5537855 at 2026-10-18 19:22 UTC
+    (repo created 14:21 UTC with two other stars), same four transits, P 18.323173 +- 0.000031 d, T0 4196.80899, TRICERATOPS, Gaia limits,
+    predictions to 2027-10, catalogue table; "Zenodo DOI: to be added"; does not cite our record. Our record is earlier: GitHub v1.0 2026-10-17
+    23:01 UTC, Zenodo v1.1 (23443245) 2026-10-17 23:05 UTC, v1.2 2026-10-18 03:48 UTC. Priority stands on timestamps; note the concurrent
+    report in the public record and consider a courteous e-mail pointing to our DOI.
+
+43. **Prior-detection sweep final (results/prior_search/PRIOR_SEARCH.md, VERDICTS.md, query_log_all.csv): 32 services, 1,585 logged queries,
+    558,074 automated alerts (341,351 SPOC TCE rows + 216,723 TESS-SPOC DV targets), 101 GitHub repos and 157 Zenodo records grepped by content.**
+    Verdicts: 89247735 no prior report (concurrent Zarco report 20 h after ours); 80387959 unpromoted TESS-SPOC S63 TCE only; 120444365 listed
+    earlier by eumemic (2026-10-09, tier C); 317134140 second signal listed earlier by eumemic (2026-10-08, tier A); [withheld] listed by eumemic
+    (2026-10-09) and brahle (2026-10-18). Ecosystem: at least eight independent Rabtsevich-style amateur deposits in October 2026. Applied: a
+    "Prior and concurrent reports" section in public README, REPORT (before section 12), dataset README, note, protocol; sweep copied to
+    public_release/prior_search/ (third object's ID withheld); TESS-SPOC TCE hosts appended to catalogs/known_signals.csv (source TESSSPOC_TCE,
+    period NaN). Novelty claims now read "independent rediscovery" for 120444365 and 317134140. To publish as v1.4.

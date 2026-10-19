@@ -521,6 +521,24 @@ source) was commissioned to calibrate the claims above. Findings applied to the 
   candidates), the LEO-Vetter M-dwarf list and DIAmante; season-scrambled null; periodic-search injection test; duration-density alias
   likelihood; LEO-Vetter at triage; all Sector 99–104 event times tagged as uncertain until the QLP redelivery.
 
+## Prior and concurrent reports (prior-detection sweep of 2026-10-18/19, `results/prior_search/PRIOR_SEARCH.md`)
+A documented sweep of 32 services (1,585 logged queries; 558,074 automated pipeline alerts scanned: 341,351 SPOC TCE rows and 216,723
+TESS-SPOC FFI DV targets; 101 GitHub repositories and 157 Zenodo records grepped by content) found:
+* **TIC 89247735**: no prior report of any kind. A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
+  posted at github.com/alejandrozarco/tess-candidates-2026 on 2026-10-18 19:22 UTC, about twenty hours after this record's first public
+  release (GitHub v1.0 2026-10-17 23:01 UTC; Zenodo 2026-10-17 23:05 UTC). It does not cite this record.
+* **TIC 80387959**: no human-reported candidate anywhere, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
+  unpromoted threshold-crossing event at the same signal (P = 4.1905 ± 0.0012 d, 869 ± 107 ppm, 2.4 R⊕, MES 7.6), never a TOI or CTOI. Our
+  known-signal cross-match had covered SPOC 2-min TCEs only; TESS-SPOC TCEs are now included.
+* **TIC 120444365**: **listed earlier** by an independent, pseudonymous, non-refereed search (github.com/eumemic/exoplanets, tier-C candidate at
+  P = 5.148151 d, 856 ppm, first public commit 2026-10-09 03:34 UTC), nine days before our deposit. Ours is an independent rediscovery with
+  deeper vetting (pixel localisation, extraction cross-checks, TRICERATOPS NFPP 0.000, external review, Sector 106 pre-registration); priority
+  of the listing is theirs.
+* **TIC 317134140 (0.5719-d second signal)**: **listed earlier** by the same repository as a tier-A candidate (first commit 2026-10-08 03:14 UTC)
+  with Sector 109/110 predictions; again an independent rediscovery on our side.
+Statements elsewhere in this record that an object has "no catalog entry" refer to the TOI, CTOI, Exoplanet Archive and SPOC TCE tables and
+remain true; they are not claims of priority over the listings above.
+
 ## 12. All-sky QLP search, priority pass: fields TESS will re-observe (2026-10-18; run still in progress)
 Design change (DECISIONS 34): a candidate in a field with an upcoming TESS sector gets its pre-registered test from TESS itself, independent of any
 co-author or ground observer. `scripts/allsky_future_sectors.py` (tess-point, sectors 106–134) finds that 36,103 of the 57,853 all-sky targets
