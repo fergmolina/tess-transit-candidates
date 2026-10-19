@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17, updated 2026-10-19 (v1.4: prior-detection sweep; prior and concurrent reports credited). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-19 (v1.6: TIC 183374279 pre-registered; all-sky round-2 outcomes). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -38,6 +38,18 @@ criteria, not validated). Status: planet candidate pending the pre-registered te
 October 2026); predictions in `preregistration/TIC120444365/`.
 
 A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground (it too is listed in eumemic/exoplanets).
+
+**TIC 183374279** — K dwarf, Tmag 11.3, isolated (the nearest star able to mimic the signal is 72″ away and would need a 22 % eclipse).
+An 11.737984-d, ≈ 970 ppm, 2.9-h transit seen in every year from 2018 to 2026 (QLP; SPOC 2-min Sector 29 gives 1380 ± 235 ppm at the same
+ephemeris). Radius ≈ 2.5 Earth radii if on the target. Stellar density from the shape 1.45× catalog, odd/even 0.4σ, no secondary, four of
+four blind holdout years recovered, dip on the target in all three 200-s sectors tested (0.16–0.35 px). No TOI/CTOI/TCE within 60″ and no
+listing in any of the 101 repositories and 157 Zenodo records of the prior-detection corpus. Status: planet candidate pending the
+pre-registered test. **Test of record: TESS Sector 106** (observed 2026-07-11 to 08-09; its light curves were not public when the predictions
+were frozen on 2026-10-19 11:44 UTC); predictions in `preregistration/TIC183374279/` (v2 tooling: all-sector ephemeris, geocentric UTC).
+
+A further signal from the same search is withheld: an isolated-star candidate with no TESS revisit through Sector 134 (ground-based test only).
+
+
 
 ## Prior and concurrent reports (prior-detection sweep of 2026-10-18/19, `prior_search/`)
 A documented sweep of 32 services (1,585 logged queries; 558,074 automated pipeline alerts scanned: 341,351 SPOC TCE rows and 216,723

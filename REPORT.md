@@ -627,3 +627,17 @@ class-A outcome. Single-transit pass on the all-sky files: 1.11 M events, 18,039
 inverted comparison is needed before any pair is believed (Pool B showed two-event matches are noise-equivalent). When the full run ends
 (≈ 08:00 UTC 2026-10-19): re-rank all 57,853 stars, cross-match the published candidate lists (Hawthorn 2024 Table A3, T16, LEO-Vetter, DIAmante),
 pixel-test before vetting, and extend the frozen set.
+
+### 12.5 Full-run round 2 (2026-10-19)
+With all 57,835 stars searched and the known-signal table extended to the TESS-SPOC FFI alerts (§11), 169 new class-A candidates (SDE ≥ 9,
+P ≥ 3 d, depth ≤ 5 ppt, detected every year, odd/even < 3σ, not near the orbit cadence, no catalog entry, not previously vetted) were
+pixel-tested *first*: 95 are off-target blends (20–60″), 20 ambiguous (0.5–0.9 px) and 26 unique stars have the dip on the target
+(`results/allsky_classA_round2_outcomes.csv`). Full vetting and a grep of the prior-detection corpus (`scripts/prior_grep.py`: 101 cloned
+repositories and 157 Zenodo deposits) leave: **TIC 183374279** (P = 11.737984 ± 0.000025 d, ≈ 970 ppm, 2.5 R⊕, isolated K dwarf, blind 4/4,
+ρ 1.45×, SPOC 2-min Sector 29 1380 ± 235 ppm, nothing in the corpus; frozen v2 2026-10-19 11:44 UTC, SHA 069d8298…, test Sector 106 whose data
+were not public at the freeze) — deposited as v1.6; one further isolated candidate with no TESS revisit through S134 (withheld, ground-based
+test only); and TIC 258006047 (10.022 d, 920 ppm, 2.3 R⊕), which passes every test but has a G = 15.95 star 2.6″ away that TESS cannot resolve
+and was **listed earlier** (2026-10-08) in the candidate bundle of Zenodo record 23230562 (B. Murray) — an independent rediscovery, frozen as an
+ephemeris-only Sector-114 test. Eight further on-target stars are rediscoveries of eumemic/exoplanets listings (parked), four fail the
+stellar-density test (ρ 10–30× off), four fail odd/even, the rest are below SNR 9. The blend fraction among light-curve-clean candidates is
+again ≈ 60 %. Procedural lesson: the prior-detection corpus must be grepped before, not after, a freeze.

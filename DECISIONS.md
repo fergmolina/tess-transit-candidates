@@ -214,3 +214,42 @@
     table; <1" channel quantified), M10 (4th-transit narrative: found within hours from already-downloaded data). Minor: abstract 286 words,
     UAT 2119 wrong, deluxetable* for Table 1, Figure 2 remake, TARS/Boyle bib entry, 5 wrong bib identifiers (refs_corrected.bib provided).
     Referee's own tectonic compile warmed the bundle cache: tectonic now compiles paper/main.tex locally (AASTeX, 7 pages).
+
+46. **TIC 89247735 manuscript revised per the referee (paper/main.tex; AASTeX-compiled 9 pp via tectonic, cache warmed by the referee).**
+    New computations: scripts/refit_89247735_raw.py (joint raw-SAP fit, LD 0.52/0.18: rprs 0.0977 +0.0018/-0.0012, a/R* 33.0, b 0.27 +- 0.17,
+    T14 4.52 h, T23 3.66 h, rho 1.43 = TIC 1.43, model depth 11,740 ppm, Rp 8.4 +- 0.7 Re (TIC R*) / 7.9 +- 0.4 (SED R*); secondary 229 +- 127
+    ppm formal, random-phase scatter 331 ppm, p = 0.14 -> 2-sigma ~900 ppm, Teff < ~2800 K); scripts/pixel_calib_89247735.py (injection of
+    the real depth into 60 off-transit windows: per-window centroid scatter 0.16/0.17/0.19 px; relative formulation; chi2 target 4.0 vs
+    neighbour 9.7 for 6 dof -> neighbour disfavoured at ~2.4 sigma by pixels alone; pure-noise windows give 0.5-0.7 px and are the wrong
+    calibration); fig2_pixel_89247735.py (1x3 significance maps). Text: abstract <= 250 words, UAT fixed, deluxetable*, M2 twin-EB logic,
+    M5 S104 description + RW windows + uniform-inflation alternative fit, M6 search context, M8 bit-31 facts, M9 RV-bound arithmetic + Gaia
+    astrometric diagnostics + <1" channel, M10 narrative, TARS/QLP HLSP citations, refs_corrected.bib adopted. Required-neighbour eclipse
+    37-40 %. Second referee pass launched (results/referee_89247735/REFEREE_REPORT_round2.md). Preprint NOT deposited; rev1 PDF staged.
+    **Round-2 referee (REFEREE_REPORT_round2.md): MINOR REVISION, 14 required edits, all applied:** uniform-inflation fit = v2 (18.323077
+    +- 0.000070, 1.2 sigma, 8 min at epoch 159); neighbour separation 7.1-7.5" at TESS epochs (8.0" at 2016.0), not 8-9.5"; centroid rms
+    described as rms about the WCS target (random part 0.09-0.11 px); peak-pixel S/N 11-21; "consistent with the target"; dilution arithmetic
+    (host >= 56 % of light; diluting companion >~ 1.2 mag fainter); like-for-like k comparison with Zarco (0.0977 vs 0.1075; 7.9 vs 8.7 Re on
+    the SED radius; difference unexplained); Zarco cited (zarco2026, Zenodo 10.5281/zenodo.23453967); sweep stats to a footnote; Sec 6 UTC
+    statement + single concept DOI; stale 0.76 RJup / 16 S / 540-560 K / 4-h fixed; per-window secondary values (+51, +320, +236 ppm);
+    refs (kunimoto2025 AJ 170, 280; boyle2026 authors; claret2017; gaiadr3docs; kunimoto2022faint for TOI promotion); Figure 1 replotted
+    with the raw-flux fit (legends on all panels); acknowledgments environment -> \section* (AASTeX line-number glitch). Compiled: 9 pp.
+    Staged as zenodo_upload/Molina2026_TIC89247735_preprint_rev2.pdf; NOT deposited pending the user's reading.
+
+47. **All-sky run complete (2026-10-19 ~10:40 UTC): 57,835 of 57,853 stars searched (periodic + single-transit passes).** Re-ranked with the
+    TESS-SPOC-inclusive known list: known-host recovery 384/764 (50 %); 36,388 pass physical cuts; 1,737 at SDE >= 9. Testable-soon
+    (S <= 116): 656, 446 clean, 253 with a predicted transit in the test sector. Round-2 class A (SDE >= 9, P >= 3 d, depth <= 5 ppt, every year,
+    odd/even < 3, not near-orbit, no known source, not previously vetted): 94 near-term + 39 later (S117-134) + 36 with no future sector = 169,
+    of which 18 already listed by eumemic (queued last). Pixel test FIRST via scripts/pixel_runner2.sh (two parallel queues, 3 latest 200-s
+    sectors each); scripts/pixel_collect.py classifies ON/OFF/AMBIGUOUS; vet.py only for ON_TARGET. Scheduled cron for the continuation deleted
+    (work started directly on the driver's completion notice).
+
+48. **All-sky round 2 (2026-10-19 11:00-11:50 UTC): 169 new class-A -> pixel test first: 95 off-target blends, 20 ambiguous (0.5-0.9 px), 26
+    unique on-target (7 no data). Full vetting of the 26 (results/allsky_classA_round2_outcomes.csv).** New CANDIDATES: TIC 183374279 (11.738 d,
+    ~970 ppm, 2.5 Re, isolated K dwarf, blind 4/4, rho 1.45x, SPOC 2-min S29 1380 +- 235 ppm; nothing in the sweep corpus; v2 frozen 11:44 UTC,
+    SHA 069d8298, test S106 unreleased - same timing as 120444365) and TIC [withheld-2] (16.538 d, ~1,140 ppm, 2.7 Re, isolated, SPOC 2-min S22+S45
+    1068 +- 95 ppm = 11 sigma; no TESS coverage through S134, ground-based only; not frozen). TIC 258006047 (10.022 d, 920 ppm, 2.3 Re) passes
+    everything but (a) a G=15.95 star 2.6" away (needs 7 %) is unresolvable and (b) scripts/prior_grep.py found it listed on 2026-10-08 in
+    B. Murray's Zenodo 23230562 bundle ("2.1 Re on a 10.0-d orbit") -> REDISCOVERY; v2 frozen (SHA 48805ca7) as an ephemeris-only S114 test,
+    note added to its PREREGISTRATION_v2.md. Eight further on-target stars are eumemic/ahrazzle rediscoveries (parked), four rejected on
+    density (rho 10-30x), four on odd/even, the rest weak (SNR < 9) or marginal. Lesson: run prior_grep.py on every survivor BEFORE freezing
+    (258006047 was frozen 40 min before its prior listing was found). Nothing published.
