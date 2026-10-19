@@ -301,3 +301,13 @@
     S105 is ALSO affected (QLP times lack the barycentric correction; not in MAST's S99–104 notice). Corrected predictions shift by
     −0.04 to +3.9 min (≤1.1σ); no outcome rule changes; dated addendum only. RULE: clock-check any S99+ QLP test data (including S106)
     against TESScut before running prereg_test.py.
+55. 2026-10-19 — v1.8 published (user: "1 go"). Corrections only: GitHub c4e5594, release v1.8, Zenodo 10.5281/zenodo.23482865. The revised
+    TIC 89247735 manuscript is held for a fresh review round.
+56. 2026-10-19 ~20:30 UTC — Round-4 external review (Codex): major revision, all repairable. Confirmed: TESScut TIMECORR is an
+    FFI-reference correction, not target-specific, so v1.8's +8.02 min was mis-derived. New method qlp_clock_v2.py (JPL Horizons TESS
+    vectors): S104 correction +7.533 min; v5 ephemeris P 18.323174 ± 0.000040 d (frozen 19:57:20 UTC, SHA 216e7a4c…); revised addendum b for
+    all 8 objects (shifts ≤1.2σ). Manuscript fixes applied (neighbour depth 28–31 %, flag counts, SIMBAD, etc.). Pending: v1.9 public
+    correction (user approval) and a format decision (RNAAS vs AJ).
+57. 2026-10-19 — Round-5 external review: minor revision; v1.9 held for 4 release-summary errors (≤1.2σ excluded 89247735; S102 grouping
+    and cause; overstated round-4 response; no manifest). All fixed; qlp_clock_v2.py hardened (spacecraft-time LTT, unique controls,
+    S74–79 excluded, cadence check; corrections change <0.01 s). v1.9 published on the user's prior go, conditional on this review.
