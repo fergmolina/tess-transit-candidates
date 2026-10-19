@@ -163,7 +163,7 @@
 
 42. **Prior-detection sweep, interim (2026-10-19 00:xx UTC; results/prior_search/).** (a) github.com/eumemic/exoplanets (pseudonymous,
     Claude-Code-built Rabtsevich-style search; first commit 2026-10-07) lists TIC 317134140's 0.5719-d second signal (first commit 2026-10-08
-    03:14 UTC, tier A, with S109/S110 predictions), TIC 120444365 at 5.148151 d (2026-10-09 03:34 UTC, tier C, MES 9.0) and TIC [withheld]
+    03:14 UTC, tier A, with S109/S110 predictions), TIC 120444365 at 5.148151 d (2026-10-09 03:34 UTC, tier C, MES 9.0) and [withheld]
     at 3.282292 d (2026-10-09, tier N "neighbour < 15 arcsec"). Neither TIC 89247735 nor TIC 80387959 appears there. Our public record must
     credit these prior listings (README, REPORT 6/12, note, dataset README) -> v1.4 before any further upload. (b) TIC 80387959 has an
     UNPROMOTED TESS-SPOC FFI TCE in the Sector 63 single-sector DV run (P 4.19050 +- 0.0012 d, depth 869 +- 107 ppm, Rp 2.40 Re, MES 7.57,
@@ -285,3 +285,19 @@
     PREREGISTRATION_v2.md (hashed CSV untouched), "data not public" verified for QLP only. (d) TRICERATOPS wording: give the 0.015 threshold,
     drop "likely planet". Public README (v1.6) carries the old 183374279 wording -> corrected in v1.7. DOSSIERS.md and the outcome table updated.
     v3 frozen 2026-10-19 14:09:02 UTC (SHA 76e89296): 4 sector times (SPOC S22/S45, QLP S46/S72), P 16.537966 +- 0.000150 d, chi2/dof 7.2/2, sigma 27.7 min at epoch 147 (reproduces the referee's refit). prereg_v2.py now reads cached SPOC files before querying MAST.
+
+52. **v1.7 deposited (user: "all tiers", 2026-10-19 ~15:10 UTC).** GitHub release v1.7 (b944812): TIC 61310956 dossier and v3 predictions,
+    corrected TIC 183374279 text, 18 round-2 frozen objects in four labelled tiers, referee_round2/, prior_search_round2/ (sweep agent hit
+    a usage limit at 14:54; GitHub counts filled by the lead from the logs, completion note in LIMITATIONS_round2.md). Protocol v1.3 on
+    Zenodo 10.5281/zenodo.23477866. [withheld] stays withheld.
+
+53. 2026-10-19 ~19:30 UTC — Round-3 external review (Codex) of the TIC 89247735 manuscript: major revision. Two factual errors confirmed:
+    (a) QLP S104 timestamps are early by 8.02 min (the MAST S99–S104 barycentric issue; our earlier "≤1 min" check was wrong), and
+    (b) the contact columns in *_utcfix.csv were not light-time corrected. Fixes: v4 ephemeris (P 18.323176 ± 0.000040 d, frozen
+    19:19:21 UTC, SHA 4f6aba63…); *_utcfix2.csv; shape refit plus LD/baseline sensitivity runs; manuscript rewritten (centroid significance,
+    neighbour-EB exclusion and Gaia mass limit withdrawn). v1 stays the test of record (v4 is +4.4 to +5.6 min, about 1.3σ). Nothing published;
+    the utcfix2 files and the v4 freeze still need to go to the public repository on the user's go. Response: results/referee_89247735/RESPONSE_round3_external.md.
+54. 2026-10-19 ~20:00 UTC — QLP clock check of all frozen ephemerides using QLP S99+ (scripts/qlp_clock_check.py; results/qlp_clock_check/).
+    S105 is ALSO affected (QLP times lack the barycentric correction; not in MAST's S99–104 notice). Corrected predictions shift by
+    −0.04 to +3.9 min (≤1.1σ); no outcome rule changes; dated addendum only. RULE: clock-check any S99+ QLP test data (including S106)
+    against TESScut before running prereg_test.py.

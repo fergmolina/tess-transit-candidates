@@ -1,0 +1,54 @@
+{
+ "T0_btjd": 4196.809977056287,
+ "T0_err_d": 0.001317947416901956,
+ "P_d": 18.32317618016753,
+ "P_err_d": 4.0203308513763786e-05,
+ "epoch_ref": 138,
+ "chi2": 0.34841106299139346,
+ "dof": 2,
+ "inflation": 1,
+ "corr": 0.8359353336519837,
+ "residual_min": [
+  -0.04285401948436629,
+  0.9790277716820128,
+  -0.5332316696149064,
+  -0.12377162463963032
+ ],
+ "s104_error_terms_min": {
+  "statistical_min": 1.4399999996385304,
+  "clock_min": 0.2,
+  "extraction_systematic_min": 3.959999999497086
+ },
+ "s104_clock_correction_min": 8.022389427471133,
+ "s104_minus_v1_min": 3.703739039192442,
+ "T14_h": 4.524342298818725,
+ "transit_times": [
+  {
+   "epoch": 79,
+   "tc": 3115.7425526666666,
+   "tc_err": 0.0014999999998508429,
+   "sector": 66
+  },
+  {
+   "epoch": 118,
+   "tc": 3830.347133333333,
+   "tc_err": 0.0014166666665005323,
+   "sector": 93
+  },
+  {
+   "epoch": 119,
+   "tc": 3848.6692593333332,
+   "tc_err": 0.0010833333333266637,
+   "sector": 93
+  },
+  {
+   "epoch": 138,
+   "tc": 4196.80989110377,
+   "tc_err": 0.0029294692558608456,
+   "sector": 104
+  }
+ ],
+ "sha256_csv": "4f6aba63e252c4b205ac2c9ddd8d5c9545600d3f1ff17e215e85632f6a514d88",
+ "frozen": "2026-10-19 19:19:21 UTC",
+ "note": "v1 remains the test of record; v4 is the refined ephemeris after the S104 QLP clock correction"
+}

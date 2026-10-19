@@ -1,0 +1,188 @@
+{
+ "tic": 80387959,
+ "ephemeris_file": "results/vet_allsky/80387959/final_ephemeris_v2.json",
+ "control": [
+  90,
+  {
+   "median_min": 0.10920379081653664,
+   "min_min": 0.020548879328998737,
+   "max_min": 0.19793909326836,
+   "mode": "elementwise",
+   "timecorr_min": 5.360843181610107
+  }
+ ],
+ "sectors": {
+  "100": {
+   "median_min": -0.97167756062845,
+   "min_min": -1.8328548841236625,
+   "max_min": 0.05615618036244996,
+   "mode": "elementwise",
+   "timecorr_min": 3.5473132133483887,
+   "correction_min": 1.0808813514449866
+  }
+ },
+ "refit_reproduces_frozen": {
+  "dP_d": 7.105427357601002e-15,
+  "note": "check only; P/T0 frames may differ from the frozen reference epoch"
+ },
+ "P_old": 4.192172509531732,
+ "P_new": 4.192173335759266,
+ "prediction_shifts": [
+  {
+   "epoch": 498,
+   "sector": "111",
+   "shift_min": 0.4852019807731267,
+   "sigma_min": 3.5
+  },
+  {
+   "epoch": 499,
+   "sector": "111",
+   "shift_min": 0.48639175001881085,
+   "sigma_min": 3.5
+  },
+  {
+   "epoch": 500,
+   "sector": "111",
+   "shift_min": 0.4875815153354779,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 501,
+   "sector": "111 (span only, gap unknown)",
+   "shift_min": 0.48877128458116204,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 502,
+   "sector": "111 (span only, gap unknown)",
+   "shift_min": 0.48996105120750144,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 503,
+   "sector": "111 (span only, gap unknown)",
+   "shift_min": 0.4911508204531856,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 504,
+   "sector": "111 (span only, gap unknown)",
+   "shift_min": 0.492340587079525,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 505,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.49353035501553677,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 506,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.49472012295154855,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 507,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.4959098908875603,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 508,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.49709965751389973,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 509,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.4982894254499115,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 510,
+   "sector": "112 (span only, gap unknown)",
+   "shift_min": 0.4994791933859233,
+   "sigma_min": 3.6
+  },
+  {
+   "epoch": 511,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.5006689600122627,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 512,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.5018587279482745,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 513,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.5030484958842862,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 514,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.504238263820298,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 515,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.5054280317563098,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 516,
+   "sector": "113 (span only, gap unknown)",
+   "shift_min": 0.5066177996923216,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 517,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5078075676283333,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 518,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5089973355643451,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 519,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5101871021906845,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 520,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5113768701266963,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 521,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5125666367530357,
+   "sigma_min": 3.7
+  },
+  {
+   "epoch": 522,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5137564046890475,
+   "sigma_min": 3.8
+  },
+  {
+   "epoch": 523,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 0.5149461713153869,
+   "sigma_min": 3.8
+  }
+ ]
+}

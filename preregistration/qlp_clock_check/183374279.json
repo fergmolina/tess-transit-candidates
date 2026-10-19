@@ -1,0 +1,58 @@
+{
+ "tic": 183374279,
+ "ephemeris_file": "results/vet_allsky/183374279/final_ephemeris_v2.json",
+ "control": [
+  96,
+  {
+   "median_min": 0.279825653633452,
+   "min_min": 0.09631204622564837,
+   "max_min": 0.44854963387479074,
+   "mode": "elementwise",
+   "timecorr_min": 6.638355255126953
+  }
+ ],
+ "sectors": {
+  "103": {
+   "median_min": 3.1494103583099786,
+   "min_min": 1.8088778070523404,
+   "max_min": 4.284520372602856,
+   "mode": "elementwise",
+   "timecorr_min": -3.201720714569092,
+   "correction_min": -2.8695847046765266
+  },
+  "105": {
+   "median_min": -3.704306010113214,
+   "min_min": -4.334254934656201,
+   "max_min": -3.020906900492264,
+   "mode": "gap-edge (3 gaps)",
+   "timecorr_min": 3.663189172744751,
+   "correction_min": 3.984131663746666
+  }
+ },
+ "refit_reproduces_frozen": {
+  "dP_d": -1.0658141036401503e-14,
+  "note": "check only; P/T0 frames may differ from the frozen reference epoch"
+ },
+ "P_old": 11.737983537356467,
+ "P_new": 11.73798964849308,
+ "prediction_shifts": [
+  {
+   "epoch": 245,
+   "sector": 106,
+   "shift_min": 1.3881341599335428,
+   "sigma_min": 2.7
+  },
+  {
+   "epoch": 246,
+   "sector": 106,
+   "shift_min": 1.3969341969641391,
+   "sigma_min": 2.8
+  },
+  {
+   "epoch": 247,
+   "sector": 106,
+   "shift_min": 1.4057342339947354,
+   "sigma_min": 2.8
+  }
+ ]
+}

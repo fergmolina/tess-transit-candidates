@@ -1,0 +1,74 @@
+{
+ "tic": 258006047,
+ "ephemeris_file": "results/vet_allsky/258006047/final_ephemeris_v2.json",
+ "control": [
+  65,
+  {
+   "median_min": 0.26494705518416595,
+   "min_min": 0.16763638050178997,
+   "max_min": 0.34813765763828997,
+   "mode": "elementwise",
+   "timecorr_min": 5.40141487121582
+  }
+ ],
+ "sectors": {
+  "99": {
+   "median_min": -0.03849286091281101,
+   "min_min": -0.11417298803280573,
+   "max_min": 0.06691305585263763,
+   "mode": "elementwise",
+   "timecorr_min": -2.7776663303375244,
+   "correction_min": 0.30343991609697696
+  },
+  "100": {
+   "median_min": -0.6987984875013353,
+   "min_min": -2.1028774010483176,
+   "max_min": 0.5975736611435423,
+   "mode": "elementwise",
+   "timecorr_min": -1.386078119277954,
+   "correction_min": 0.9637455426855013
+  },
+  "101": {
+   "median_min": -4.148151809640694,
+   "min_min": -5.403349865373457,
+   "max_min": -2.7685120223031845,
+   "mode": "elementwise",
+   "timecorr_min": 2.063275098800659,
+   "correction_min": 4.41309886482486
+  },
+  "102": {
+   "median_min": -3.6509262140316423,
+   "min_min": -4.121759852569085,
+   "max_min": -3.1808385622571222,
+   "mode": "gap-edge (2 gaps)",
+   "timecorr_min": 3.6009554862976074,
+   "correction_min": 3.9158732692158083
+  }
+ },
+ "refit_reproduces_frozen": {
+  "dP_d": 2.6645352591003757e-14,
+  "note": "check only; P/T0 frames may differ from the frozen reference epoch"
+ },
+ "P_old": 10.022244003055528,
+ "P_new": 10.022257804763706,
+ "prediction_shifts": [
+  {
+   "epoch": 284,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 3.900813579093665,
+   "sigma_min": 4.7
+  },
+  {
+   "epoch": 285,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 3.920688038051594,
+   "sigma_min": 4.7
+  },
+  {
+   "epoch": 286,
+   "sector": "114 (span only, gap unknown)",
+   "shift_min": 3.940562497009523,
+   "sigma_min": 4.8
+  }
+ ]
+}
