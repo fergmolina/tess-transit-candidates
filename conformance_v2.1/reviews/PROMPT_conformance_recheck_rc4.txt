@@ -1,0 +1,34 @@
+Third focused re-check. You wrote results/REVIEW_conformance_v21_rc3.md (verdict: publish after listed fixes; blockers F1-F5). The
+authors produced conformance-v2.1-rc4. Work from /Users/fernando/Desktop/NASA and verify everything yourself.
+
+WHERE THE CHANGES ARE
+- logs/DECISIONS.md items 91 and 93. Item 91 corrects item 88's "31/31".
+- scripts/prereg_conformance.py (rc4). The rc3 copy is results/conformance_v21/prereg_conformance_rc3_579d50ac.py; diff them.
+- scripts/test_conformance_inputs.py and scripts/test_conformance.py: hardened runners. The rc3 copies are in results/conformance_v21/.
+- results/GOVERNANCE_S106_TESTS_DRAFT.md (F3), results/CONFORMANCE_PROCEDURE_v2.1_DRAFT.md, scripts/conformance_calib_report.py (F5).
+- configs/conformance/*_S106.json, results/conformance_v21/REGISTRATION_AMENDMENTS_DRAFT.md, results/conformance_v21/README.md.
+- results/conformance_v21/holdout_calibration_rc4_{runs.csv,report.md}: the re-run on rc4.
+
+CHECK
+1) F1-F5: rate each resolved / partially resolved / not resolved, with evidence. Re-run your override_end_to_end, stale_probe and
+   extra_checks probes (synthetic or permitted in-sample data only).
+2) Re-run both suites. Confirm that a deliberately crashing case would now fail; for example, temporarily point a copy of the
+   runner at a broken evaluator copy under /tmp.
+3) The rc3 -> rc4 diff changes nothing beyond the declared items, and the joint RECOVERED/INCONSISTENT/split/EXCLUDED calculations
+   are unchanged.
+4) rc4 calibration provenance: every result's SHA equals the configs; only the declared holdout pairs; outcomes match rc3.
+5) Are the seven amendment drafts, the procedure and the governance final apart from publication dates and filenames? Is anything
+   still blocking publication?
+
+RULES
+Same as before:
+- Edit nothing except your report.
+- No publishing or contact.
+- Temporary files only under /tmp.
+- Do NOT download or open any Sector 106 (or later) photometry, cutouts or TESScut data for the seven test targets, and do not
+  run the clock tool with --declared-test.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_conformance_v21_rc4.md with the verdict, a status table and any new findings. When finished, print only the report
+path and a one-line verdict.

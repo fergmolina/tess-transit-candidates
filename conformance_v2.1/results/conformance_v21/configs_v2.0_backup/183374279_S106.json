@@ -1,0 +1,16 @@
+{
+ "tic": 183374279,
+ "sector": 106,
+ "test_of_record": "v2 (predicted_transits_2026_2027_v2.csv)",
+ "product": "QLP",
+ "flux_col": "SAP_FLUX",
+ "pred_csv": "/Users/fernando/Desktop/NASA/results/vet_allsky/183374279/predicted_transits_2026_2027_v2.csv",
+ "pred_sha256": "069d82980645e2adb5bc81895b187de8654dc880205574a50af764b79b04d621",
+ "ref_depth_ppm": 1090.0,
+ "ref_dur_h": 2.84,
+ "reference_source": "PREREGISTRATION_v2.md reference-values line (frozen)",
+ "timing_rule": "max(3 mean sigma_min, 30 min) adopted (CLARIFICATION_TIMING_RULE_2026-10-20.md); min(3 sigma, 30 min) reading also reported",
+ "evaluator": "scripts/prereg_conformance.py (conformance-v2.0) plus the frozen scripts/prereg_test.py (literal output also reported)",
+ "data_status": "sector already observed; public data products existed at freeze; authors attest target-sector photometry not examined (ERRATUM_S106)",
+ "locked_utc": "2026-10-20 02:22:37 UTC"
+}

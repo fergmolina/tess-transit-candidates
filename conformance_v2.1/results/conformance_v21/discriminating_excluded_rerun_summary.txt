@@ -1,0 +1,23 @@
+o                   AMBIGUOUS  EXCLUDED  INCONSISTENT  RECOVERED
+tic       case                                                  
+70441745  null             40         0             0          0
+          ontime            2         0             0         38
+          opposite         34         0             3          3
+115692561 null             40         0             0          0
+          ontime           40         0             0          0
+          opposite         40         0             0          0
+120444365 null             40         0             0          0
+          ontime            6         0             0         34
+          opposite         37         0             0          3
+122522485 null             40         0             0          0
+          ontime           12         0             0         28
+          opposite         40         0             0          0
+183374279 null             39         1             0          0
+          ontime            1         0             0         39
+          opposite         25         0             3         12
+206620592 null             40         0             0          0
+          ontime           19         0             0         21
+          opposite         40         0             0          0
+253931796 null              1        39             0          0
+          ontime            0         0             0         40
+          opposite         39         0             1          0

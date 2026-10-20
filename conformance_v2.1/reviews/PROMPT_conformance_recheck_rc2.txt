@@ -1,0 +1,45 @@
+You reviewed conformance-v2.1-rc1 and wrote results/REVIEW_conformance_v21.md (verdict: publish after listed fixes). The authors
+have produced rc2. This is a FOCUSED RE-CHECK of your findings R1-R13, not a new full review. Work from /Users/fernando/Desktop/NASA.
+Verify everything yourself.
+
+WHERE THE CHANGES ARE
+- logs/DECISIONS.md item 86, plus the later item that reports the rc2 re-calibration. Item 86 also corrects items 76, 81, 83 and 84.
+- scripts/prereg_conformance.py (rc2). The rc1 copy is results/conformance_v21/prereg_conformance_rc1_59050267.py; diff them.
+- scripts/test_conformance_inputs.py: 9 new regression cases, including your R3 probe.
+- scripts/make_conformance_configs.py and configs/conformance/*_S106.json: release_of_record, strict_epochs, provenance labels.
+- scripts/qlp_clock_test_sector.py: docstring only.
+- scripts/conformance_calibrate_holdout.py: R8 masking and placement. The rc1 copy is in results/conformance_v21/.
+- scripts/conformance_calib_report.py and scripts/conformance_summarise.py: R2.
+- results/conformance_v21/holdout_calibration_rc2_{runs.csv,report.md}: the re-calibration.
+- results/CONFORMANCE_PROCEDURE_v2.1_DRAFT.md (rc2; the rc1 text is in results/conformance_v21/CONFORMANCE_PROCEDURE_v2.1_rc1_reviewed.md),
+  results/GOVERNANCE_S106_TESTS_DRAFT.md, results/conformance_v21/REGISTRATION_AMENDMENTS_DRAFT.md, results/conformance_v21/README.md.
+- Note: while checking R3 the authors re-ran your probes704.py, which rewrote /tmp/conformance_v21_review/probes704/result.json.
+
+CHECK
+1) For each of R1-R13, rate it: resolved / partially resolved / not resolved, with evidence and how you verified it.
+2) Re-run the logic suite, the input suite, and your R3 probe. Re-run a small holdout subset with the rc2 harness.
+3) Check that rc2 changed nothing beyond the declared items. In particular, the RECOVERED/INCONSISTENT/split logic must be unchanged
+   from rc1.
+4) Check the re-calibration provenance: the evaluator SHA in every result equals the configs' evaluator_sha256, and only the
+   declared holdout sectors were used.
+5) Check the new wording for remaining overclaims: power, family-wise rates, the edge criterion, the split, and integrity.
+6) Name any NEW problem the fixes introduced, for example: the strict-epoch check's window definition; INSUFFICIENT on no usable data;
+   the release-of-record rule if v01 is withdrawn; the clock-warning refusal.
+
+RULES
+Same as before:
+- Edit nothing except your report.
+- No publishing or contact.
+- Temporary files only under /tmp.
+- Do NOT download or open any Sector 106 (or later) photometry, cutouts or TESScut data for the seven test targets, and do not
+  run the clock tool with --declared-test.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_conformance_v21_rc2.md with:
+- the verdict (publish as declared procedure / publish after listed fixes / do not publish);
+- an R1-R13 status table;
+- new findings;
+- your reproduction results.
+
+When finished, print only the report path and a one-line verdict.

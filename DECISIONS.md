@@ -356,3 +356,266 @@
     88407114 withdrawal, process-fix status); manifest results/ERRATUM_S106_MANIFEST.csv; dated availability notes on 11 current
     registrations + withdrawal on 88407114 v2; clarification scope/aggregation fixed; prereg_v2.py: pre-read/pre-download holdout guard
     for QLP and SPOC (dry-run verified), endpoint through 2027-12-31, explicit --reason for v>2, honest status label.
+70. 2026-10-20 — v1.10 published (user: 'Do 1'): GitHub 87a9c15, release v1.10, Zenodo v1.10 10.5281/zenodo.23487718. Erratum + manifest, clarification, round-3 freezes (15 objects; 162304222 v3), dated notes, reviews. Pending (separate go): new Zenodo versions of the protocol and the two-candidate preprint; evaluator conformance procedure.
+71. 2026-10-20 — Conformance evaluator v2 (user: "Go evaluator v2"). scripts/prereg_conformance.py (joint common-offset/duration box fit
+    over fully covered events; dips only; per-event depth consistency; red-noise beta; duration via delta-chi2 <= 4; timing gate
+    max(3σ,30) plus min() reading; precedence INSUFFICIENT > RECOVERED > INCONSISTENT > EXCLUDED > AMBIGUOUS; clock gate refuses QLP >= 99
+    without a record). Design iterated on evidence: per-event-only matching failed real injections (1/3) -> joint fit; gate-confined
+    search let a 20-min-late transit pass the 6.3-min gate -> local search + point-estimate timing; partial-overlap false INCONSISTENT ->
+    global best. Final: synthetic 15/15; real in-sample transits 3/3 RECOVERED, nulls 0/3, injections 3/3. Calibration (60 nulls + 60
+    injections) running. qlp_clock_test_sector.py (CADENCENO anchor). Locked configs configs/conformance/*_S106.json; dated amendments:
+    reference values for 120444365 (855 ppm, 2.0 h) and 70441745 (1829 ppm, 1.5 h); 183374279 TESScut fallback withdrawn (test deferred
+    if QLP S106 not out by 11-15). Observed: 120444365 in-sample transits +10..+18 min from v2 (sigma 2.1) - min() reading would fail.
+72. 2026-10-20 — Calibration 1 (seed 2026; 3 in-sample LCs x 20 null + 20 injection phases): of runs with >=2 eligible events,
+    injections RECOVERED 44/49 (90%), nulls RECOVERED 1/49 (2%), nulls INCONSISTENT 6/49 (12%), nulls EXCLUDED 11/49; 22 INSUFFICIENT
+    (183374279 S105 has 2-3 transits). False INCONSISTENT came from (a) per-event "displaced" noise peaks at unrelated offsets and (b)
+    look-elsewhere in the +-0.3 d joint search (SNR 5.1-5.7). Changed (before any test data): per-event displaced route removed
+    (information only); INCONSISTENT requires joint SNR >= 7. Synthetic opposite50 expectation INCONSISTENT -> AMBIGUOUS (declared in
+    test file). RECOVERED threshold kept at the protocol's SNR >= 5 (2% false rate disclosed, not tuned). Independent re-check with fresh
+    phases (seed 7777) launched. Review prompt: results/PROMPT_conformance_review.txt.
+73. 2026-10-20 — Independent re-check (seed 7777): injections RECOVERED 46/51 (90%); nulls RECOVERED 1/51 (2%), INCONSISTENT 0/51, EXCLUDED 9/51; min() reading recovers 31/51 injections. Procedure document completed with hashes and rates; awaiting external review before publication.
+74. 2026-10-20 — Internal adversarial review of evaluator v2.0 (workflow, 112 agents; results/REVIEW_conformance_internal_findings.json
+    is the complete record: 52 upheld blocker/major findings, none refuted; the synthesis file *_TRUNCATED.md saw only part of its input).
+    DECISION: conformance-v2.0 (prereg_conformance.py SHA 0520ea58...) is WITHDRAWN as the declared procedure before publication; it was
+    never published. Pure bugs being fixed now (v2.1): clock tool equal-length branch could never pass (TESScut CADENCENO is always 0);
+    unequal-length branch measured a globbed file, not --qlp; clock record not validated; --allow-no-clock untraced; CSV path skips
+    checks; product (ORIGIN) not enforced; no clock prior for 70441745; validation injected in raw (uncorrected) time.
+    Design questions put to the user (not decided): post-gap ramp/edge policy (locked S106 epochs fall in ramp zones; 6/8 calibration
+    false nulls edge-adjacent); EXCLUDED definition (displaced real transit can read EXCLUDED); operating-SNR validation (suite ran at
+    ~10x real SNR; opposite +-50 min and 0.6x/1.5x durations are RECOVERED in 5-50% of realisations at real noise); out-of-sample,
+    per-config calibration; declare 115692561/122522485 low-power in advance; governance statement + protocol erratum (tex:35 gives
+    v1 sigma 4.7 min for 120444365; the hashed v2 CSV gives 2.1). CORRECTION to item 71: "120444365 in-sample transits +10..+18 min from
+    v2" is estimator scatter (injection rms 8-12 min), not ephemeris error; the registration's S96 O-C is +0.2 +- 1.8 min.
+    Holdout check after the review: no S106+ file for any test TIC was created (all agent FITS are S105 in-sample derivatives).
+75. 2026-10-20 — Pure-bug fixes applied (conformance-v2.1-dev; not published; v2.0 copies kept in results/qlp_clock_v2/*_v2.0*.py):
+    - qlp_clock_test_sector.py v2.1 (SHA 2e6595b0...): integer cadence alignment (TESScut spacecraft-time grid vs QLP CADENCENO; best shift
+      must beat all others by >= 2 matched cadences; TIME steps must agree with CADENCENO steps; offset must not jump; >= 80% matched);
+      reads only --qlp (no glob); camera/CCD-matched cutout; records config/pred/QLP/TESScut/prior hashes and an offset-state label;
+      refuses sectors >= 106 without --declared-test. Reproduces all 21 published clock corrections (S99-S105) to < 1e-8 min;
+      misregistered-gap file now correct (v2.0 biased +1.3/+2.6 min); no-gap and one-gap files refused.
+    - results/qlp_clock_v2/70441745.json: c0 +0.0328 min from control sectors S96, S68 (run with a <= 98 guard).
+    - prereg_conformance.py (SHA 9bffdd2f...): clock record must match TIC, sector, light-curve SHA-256, prediction-CSV SHA-256 and the
+      event list, with finite corrections (else CLOCK_UNVERIFIED); --allow-no-clock removed; CSV only for product 'synthetic'; product
+      QLP enforced (HLSP file name, ORIGIN MIT/QLP, TIMESYS TDB, BJDREFI 2457000, TICID present); header provenance, script SHA and
+      software versions recorded; no-prediction sector -> INVALID_INPUT; sector rule = leading integer; median-baseline error uses
+      pi/2; stale comment fixed. test_conformance.py 15/15 still pass (high-SNR suite; design caveat stands);
+      new test_conformance_inputs.py 18/18 (in-sample S105 only).
+    - validate_conformance_real.py v2.1: production path (FITS copies + clock tool), locked depth/T14/sigma per test, injections at
+      tc - corr(tc), time-since-segment-start recorded. CONFORMANCE_PROCEDURE draft marked superseded (not for publication).
+    Addendum to 75 (same day): clock record gains a "warning" when the median QLP - spacecraft offset is >= 0.5 cadence and within 10 s
+    of a whole number of cadences (label error vs row misregistration indistinguishable; inspect before reporting); evaluator copies it.
+    Current SHAs: prereg_conformance.py fb0cba17..., qlp_clock_test_sector.py c016ad7a...; test_conformance_inputs.py 18/18 re-run.
+76. 2026-10-20 — User accepted design decisions 1-6 as recommended ("Go"). SECTOR PARTITION, declared before any further run (200-s
+    sectors only; 30-min S1-26 and 10-min S27-55 QLP are a different noise regime and are not used for design or calibration):
+    - DESIGN (used for the edge rule, the discriminating test and the operating-SNR suite; S96/S105 were already used in v2.0 work):
+      183374279 S96 S105 | 120444365 S96 S105 | 70441745 S96 | 206620592 S96 | 122522485 S97 | 253931796 S96 | 115692561 S96.
+    - HOLDOUT (calibration only, not looked at for design): 183374279 S69 S103 | 120444365 S69 S103 | 70441745 S68 | 206620592 S68 |
+      122522485 S105 | 253931796 S68 | 115692561 S69. 70441745/206620592/253931796/115692561 have no holdout sector >= 99 (calibration
+      runs without the clock-tool path there; stated, not simulated). S68 was used only to measure 70441745's clock constant c0.
+    EDGE RULE (decision 1), derived on DESIGN sectors (scripts/conformance_edge_profile.py; results/conformance_v21/edge_profile_*):
+    evaluator box depth at reference T14 on a 0.02-d grid away from known transits, z = depth/err normalised by each target's robust
+    scale beyond 3 d from any edge. Declared criterion: smallest X such that every 0.25-d bin beyond X has pooled fraction |z| > 3
+    <= 0.03 (interior level 0.02). Result: AFTER a data resume following a gap > 0.5 d (sector start counts) X = 1.5 d (pooled
+    |z|>3 fraction 0.31, 0.25, 0.07, 0.09, 0.09, 0.06 in the 0.25-d bins to 1.5 d; 0.02-0.03 after; worst 183374279 S96/S105: z up to
+    +26 in the first 0.1 d, overshoot to -5.6 at 0.3-0.4 d); BEFORE any gap > 0.1 d or the data end X = 0.5 d (0.12, 0.17 in the
+    first two bins; 0.02 after; 115692561 S96 worst). After short (< 0.5 d) downlink gaps no excess (0.006, 0.000). Implementation:
+    those cadences are removed before detrending; events then fail coverage/baselines by the existing rule, and the +-0.3 d search
+    cannot use edge data. QLP S106 is not on MAST (2026-10-20 directory listing ends at s0105); S106 data gaps are therefore
+    estimated from catalogs/TESS_orbit_times.csv (SHA 40ed1f99...) plus in-sample QLP gap patterns, never from test-target files.
+77. 2026-10-20 — DISCRIMINATING TEST (decision 3), declared before running. Design sectors only (S96; S97 for 122522485; no clock path
+    needed, all < 99). Per target, 40 realisations, each at a random phase in [0.2, 0.8] (seed 77 + TIC), back-projected predictions with
+    the test's own mean S106 sigma_min, locked depth/T14. Five cases: null (no injection); on-time reference box; opposite offsets
+    (+(gate+20) min on even epochs, -(gate+20) min on odd epochs, so every event lies 20 min outside its gate); 0.6 x T14; 1.5 x T14
+    (reference depth, on time). Edge rule (item 76) in force.
+    ADD-ON (timing split), defined now: when the joint rule gives RECOVERED, split the eligible events by epoch parity; for each half,
+    stack (inverse variance) at the joint duration over the same local offset window and take its best offset; the add-on requires both
+    halves non-empty and both best offsets |o| <= gate. Otherwise the outcome becomes AMBIGUOUS. Reported as outcome_with_split.
+    Claimed behaviour to restore (v2.0 document): opposite offsets and 0.6x/1.5x durations are not RECOVERED; on-time reference
+    transits are. Judged per target: false RECOVERED (null, opposite, 0.6x, 1.5x) and on-time RECOVERED rates with Clopper-Pearson 95%.
+    Decision rule: if with the add-on every target has opposite-offset RECOVERED <= 10% and on-time RECOVERED loses <= 10 points vs
+    without, the add-on is adopted; durations are judged separately (the protocol band 0.7-1.3 cannot be resolved at per-event SNR ~1,
+    so their rates are disclosed rather than "restored"). Otherwise a literal per-event evaluator is proposed to the user.
+78. 2026-10-20 — Other v2.1 changes made while item 77 ran (none alters an outcome rule beyond items 76-77):
+    - per_event_min_reading added (secondary readout honouring the published CLARIFICATION promise of an individual-event min()
+      assessment): an eligible event matches if its own best box has SNR >= 3, depth 0.5-1.5x, duration 0.7-1.3x, |offset| <= min gate;
+      met if >= 2 match. (Edited while item-77 runs were in progress; it adds an output field only.)
+    - test_conformance.py relabelled LOGIC TESTS (about 10x operating SNR; not performance evidence); span widened to BTJD 97-108 so the
+      edge rule does not remove the BTJD-100 event (new noise realisation, same seed and expectations).
+    - S106 has no 2-min data for any of the seven targets (catalogs/target_lists/all_targets_S106_v1.csv SHA dc8eb3f1...,
+      catalogs/tesscurl_sector_106_lc.sh 42daeac2...): QLP is the product under the protocol's own rule; SAP vs DET_FLUX is a departure.
+    - Environment lock: results/conformance_v21/requirements_venv_locked.txt (80 packages; numpy 2.5.4, scipy 1.18.1, pandas 2.3.3,
+      astropy 8.0.2, wotan 2.0). The published requirements_venv.txt files are empty (to be replaced at the next release).
+    - S106 edge forecast (scripts/conformance_s106_forecast.py; results/conformance_v21/s106_forecast.*; no S106 photometry used; 7
+      in-sample QLP gap templates mapped onto S106 orbit breaks): eligible events min/median/max and joint SNR (median):
+      70441745 1/2/2, 10.7 | 115692561 16/19/23, 2.8 | 120444365 2/2/3, 4.8 | 122522485 6/7/10, 3.5 | 183374279 1/1/2, 4.2 (2 events
+      in 2/7 templates) | 206620592 13/16/20, 5.5 | 253931796 0/1/1 (INSUFFICIENT in every template: epoch 173 falls 0.2 d before the
+      mid-sector downlink break, inside the 0.5-d pre-gap zone; epoch 172 within 1.66 d of the sector start).
+79. 2026-10-20 — DISCRIMINATING TEST RESULT (item 77; 1400 runs, evaluator SHA c6fdfa41... plus a readout-only edit mid-run, harness
+    4807c5ec...; results/conformance_v21/discriminating_{raw,runs,summary}.*). RECOVERED, scored runs, CP 95%:
+      on-time   70441745 38/40 | 120444365 34/40 | 122522485 28/40 | 183374279 39/40 | 206620592 21/40 | 253931796 40/40 | 115692561 0/40
+      opposite  3/40 | 3/40 | 0 | 12/40 | 0 | 0 | 0           null 0/40 everywhere
+      0.6xT14   19 | 16 | 10 | 21 | 5 | 1 | 0 (of 40)       1.5xT14  0 | 9 | 14 | 6 | 15 | 1 | 2
+    With the timing-split add-on: opposite 0,0,0,1,0,0,0; on-time 38, 28 (-6 runs = -15 points), 28, 37 (-5 pts), 21, 39, 0.
+    Literal per-event alternative (>= 2 events each with own best box SNR >= 3, depth/duration in band, within gate): on-time 29, 10,
+    0, 26, 0, 40, 0 - power collapses for four tests.
+    By the declared rule (on-time loss <= 10 points for every target) the add-on FAILS on 120444365 (-15 points; CIs overlap), so per
+    item 77 the literal per-event evaluator is put to the author - with the recommendation to adopt the add-on anyway, because the
+    literal alternative is far worse on every target and the add-on removes the opposite-offset failure (30% -> 2% on 183374279).
+    Duration: 0.6x/1.5x T14 cannot be separated from the 0.7-1.3x band at these SNRs (up to 52% RECOVERED); disclosed, not claimed.
+    EXCLUDED (old rule): displaced real transits read EXCLUDED (70441745 opposite 33/40, 206620592 5/40).
+    EXCLUDED v2.1 (decision 2) implemented now: (a) max over |o| <= gate at D = ref of stacked depth + 3 err < 0.3 x ref; (b) per-event
+    chi2 p >= 0.01 at the prediction; (c) no VALID fit with SNR >= 5 and depth >= 0.5 x ref anywhere within +-0.3 d. Logic suite 15/15,
+    input suite 18/18 after the change. Re-run of null/on-time/opposite under the new rule launched (same seeds, so same placements).
+80. 2026-10-20 — Provenance of item 79: the 1400 discriminating runs record evaluator SHA c6fdfa41... (481 runs, as launched) and
+    4858c3b6... (919 runs, after the readout-only per_event_min edit); outcome logic identical. EXCLUDED re-run under the v2.1 rule
+    (same seeds; results/conformance_v21/discriminating_excluded_rerun*): displaced transits read EXCLUDED 0/280 (was 70441745 33/40,
+    206620592 5/40); nulls read EXCLUDED only for 253931796 (39/40) and 183374279 (1/40); 70441745 nulls 30/40 -> 0/40 because condition
+    (a) (depth + 3 err below 0.3 x ref everywhere in the +-130-min gate) fails (median ratio 1.39). Kept: excluding a transit whose time
+    is uncertain by +-130 min requires excluding it across that window; without (a) alternating displacements read EXCLUDED. Stated in
+    advance: EXCLUDED is effectively reachable only for 253931796. Note: pandas reads the case label "null" as NaN; summaries now use
+    keep_default_na=False (an interim tally that dropped null rows was not used for any decision).
+    EDGE RULE OPTIONS for the author (no S106 data used): A (declared, item 76) pooled noise criterion: 1.5 d after resume, 0.5 d
+    before any gap > 0.1 d. B (same 0.03 criterion, counted per target, only positions with |z| > 3 AND |depth| > 0.3 x ref): per target
+    (after / before long gap or end / before short gap, d) 183374279 2.25/3.0/2.25, 120444365 1.0/0.5/0, 70441745 2.0/1.0/0.5,
+    206620592 1.75/0.75/0.5, 122522485 0/1.75/1.75, 253931796 0/0/0, 115692561 0.5/0.75/1.75 (10-65 positions per 0.25-d bin).
+    Forecast eligible events (min/median/max), B vs A: 183374279 0/0/0 vs 1/1/2; 253931796 0/1/2 vs 0/1/1; 120444365 3/3/4 vs 2/2/3;
+    others similar. Pooled, criterion B gives the same 1.5/0.5 d as A (and 1.75 d before short gaps). Per-target noise criterion
+    (|z| only) was also computed: 253931796 2.5/2.5 d, no help. Recommendation: A (pooled, larger samples); B trades one test for another.
+81. 2026-10-20 — Add-on cost pinned (results/conformance_v21/discriminating_{ontime160,randsign,extra_summary}*): on-time RECOVERED,
+    160 realisations: 120444365 119/160 (0.74) -> 103/160 (0.64) with the split; 183374279 151/160 (0.94) -> 137/160 (0.86). Cost ~10
+    and ~9 points: at the declared 10-point limit (the 40-run figure of -15 was noise). Random-sign displacements (+-(gate+20) min, sign
+    random per event; the split by epoch parity defeats only alternating patterns): false RECOVERED 183374279 8/40 -> 5/40, 120444365
+    3/40 -> 1/40 (8/40 and 1/40 INCONSISTENT). Disclose: the split check does not catch random-sign displacements reliably.
+    STATUS: design paused for two author decisions (add-on vs literal per-event evaluator; edge rule A vs B). Holdout calibration
+    (scripts/conformance_calibrate_holdout.py, ready, not run) waits for the final design. Drafts: results/GOVERNANCE_S106_TESTS_DRAFT.md
+    (hierarchy, departures, tex:35 erratum sigma 4.7 -> 2.1), results/conformance_v21/requirements_venv_locked.txt. Nothing published.
+82. 2026-10-20 — AUTHOR DECISIONS: keep the timing-split check (A) and the pooled edge rule (B, option A of item 80). Implemented as
+    conformance-v2.1-rc1 (prereg_conformance.py SHA 590502679b335e8b93f7f30612dda58894112fbbf83f0fb62f8b0acbaf5ac684): the split check is now part of the outcome of record (joint-only outcomes
+    kept as readouts); odd/even depth diagnostic added (information only); docstring updated (edge rule, split, EXCLUDED). Logic suite
+    15/15, input suite 18/18. Configs regenerated (reference values unchanged; evaluator string v2.1, evaluator_sha256, both frozen-
+    evaluator commands locked (SAP_FLUX = same inputs; DET_FLUX = protocol column), edge rule, 183374279 stricter clause recorded);
+    v2.0 configs kept in results/conformance_v21/configs_v2.0_backup/. Holdout calibration launched on this SHA (N = 40 per case, cases
+    null/ontime/displaced, 9 holdout sector-target pairs). The evaluator is not edited while it runs.
+83. 2026-10-20 — Pre-review packaging: GOVERNANCE draft corrected (raw-SAP wording: reference depths are raw SAP, ephemerides also
+    use SPOC 2-min; 183374279 values come from the post-freeze addendum; T14 rule: shape fit has no T14 field so BLS 2.0/1.5 h were used,
+    shape-implied 2.18/1.97 h; superseded 120444365 v1 S106 file; changes from earlier commitments; TESScut cross-check withdrawn for
+    all seven). New results/CONFORMANCE_PROCEDURE_v2.1_DRAFT.md and results/PROMPT_conformance_review_v21.txt (the v2.0 prompt is stale).
+    Holdout integrity: 907 S106 files on disk (other stars' SPOC 2-min, withdrawn 88407114, third-party sweep files); none is, or
+    mentions, any of the seven test TICs (file names and text grep only; no file opened as photometry).
+84. 2026-10-20 — HOLDOUT CALIBRATION done (1080 runs, all on evaluator SHA 59050267..., the SHA in the regenerated configs;
+    results/conformance_v21/holdout_calibration_{runs.csv,report.md}; scripts/conformance_calib_report.py). Nulls falsely RECOVERED
+    0/352 scored (N_eff 25 in total; 95% upper bound 0.14 per test; family-wise rate not constrained beyond that). On-time RECOVERED:
+    70441745 37/40 | 120444365 32/72 (S69 4/36, S103 28/36) | 183374279 45/80 (S69 8/40, S103 37/40) | 206620592 15/40 |
+    122522485 0/40 (design S97, a double sector, gave 28/40) | 253931796 38/40 | 115692561 0/40. Displaced -> INCONSISTENT: 31/40,
+    12/72, 31/80, 0, 0, 37/40, 0. Nulls -> EXCLUDED: 253931796 37/40, 183374279 7/80, 120444365 1/72, others 0. Holdout power is lower
+    and more sector-dependent than design power; the procedure draft and the amendment drafts
+    (results/conformance_v21/REGISTRATION_AMENDMENTS_DRAFT.md, not appended) state the holdout figures. Package ready for external review.
+85. 2026-10-20 — Provenance and packaging (advisor check before review): evaluator SHA of the item-80/81 runs: EXCLUDED re-run 840
+    runs, 160-run on-time and random-sign runs 400 runs, all 17c6ca71... (after the EXCLUDED rule, before the split promotion; their
+    "outcome" is joint-only, "outcome_with_split" carries the split). Holdout calibration: 59050267... (= configs). Harnesses now also
+    record outcome_joint_only; scripts/conformance_disc_analyse.py added. Procedure draft: edge-rule wording, other uses of holdout
+    sectors (clock validation S103/S105 timestamps only; S68 c0), "INSUFFICIENT = no TESS test" for 183374279/253931796 (no sector
+    through S134), clock warnings 0/360. Manifest: results/conformance_v21/README.md.
+86. 2026-10-20 — EXTERNAL REVIEW of v2.1-rc1 (results/REVIEW_conformance_v21.md; OpenAI Codex; verdict "publish after listed fixes").
+    CORRECTIONS TO THIS LOG: (i) item 81's "the 40-run figure of -15 was noise" is withdrawn: the declared item-77 rule (40 runs, <= 10
+    points) FAILED for 120444365 (-15); the 160-run sample reuses those 40 phases and is an exploratory refinement, not a pass. The
+    author kept the split by overriding the declared rule on its trade-off against the alternatives (item 82). (ii) Item 76's edge rule
+    does not meet its own literal criterion in every later bin (1.75-2.0 d after resume 7/229 = 0.031; before gaps > 0.1 d, 0.5-1.25 d
+    bins 0.043, 0.035, 0.051): 1.5 d / 0.5 d is an author-selected pooled rule chosen after inspecting the design profiles. (iii) Item
+    76's "holdout ... not looked at for design" is too broad: 120444365 S69 had evaluator/timing fits in the v2.0 development (internal
+    critic), and the S106 forecast uses QUALITY/timing metadata of S68/S69/S105. (iv) Item 83's integrity statement is narrowed: one
+    S106 1x1 TESScut cutout of 206620592 exists in the session scratch (scratchpad/s106/), disclosed earlier in the S106 erratum and
+    never opened as data here; filename searches cannot prove non-examination. (v) The item-84 "N_eff 25 / 0.14 per test" bound is
+    withdrawn (invalid). Running the reviewer's probe script to check the fix rewrote its result file under /tmp/conformance_v21_review/
+    probes704/ (its original output is quoted in the review).
+    FIXES (conformance-v2.1-rc2, prereg_conformance.py SHA 000b0dfb16e0cc7080ff5645885babd859806ae0de40645b07a93cfe5c5d3cb7; rc1 kept as results/conformance_v21/prereg_conformance_rc1_59050267.py):
+    R3 EXCLUDED requires every eligible event measured at every gate offset; R6 config strict_epochs (183374279: 245, 246) enforced
+    deterministically -> INSUFFICIENT, procedure outcome kept as outcome_before_override; R7 release_of_record v01 enforced, a clock-record
+    whole-cadence warning now refuses scoring (CLOCK_UNVERIFIED); R13 config/prediction invariants, duplicate times refused, evaluator
+    SHA in the config enforced, no usable data after the edge rule -> INSUFFICIENT. Input suite 27/27 (9 new regression cases incl. the
+    reviewer's R3 probe), logic suite 15/15. Configs regenerated (reference values unchanged; provenance labels corrected; 183374279
+    "post-freeze dated addendum"; amendment T14 label "BLS duration (shape fit has no T14 field)"). Clock tool docstring corrected
+    ("one gap is not enough" -> margin-dependent; SHA 0b768374328ba9dc...). R8 calibration harness: no masking for P > 6 d (placements >= 0.3 d + 7.5
+    T14 from real transits); P <= 6 d masked +-(T14/2 + 10 min) in clock-corrected time. R2 reports: raw counts, all categories,
+    conditional CP only; no effective-N or family-wise bound. Holdout re-calibration launched on rc2 (the holdout sectors are now
+    already-seen development evidence; disclosed).
+87. 2026-10-20 — rc2 HOLDOUT RE-CALIBRATION (1080 runs, all evaluator 000b0dfb16e0cc70... = configs; results/conformance_v21/holdout_calibration_rc2_
+    {runs.csv,report.md}). Nulls falsely RECOVERED 0/346 scored; on-time RECOVERED 70441745 40/40 | 120444365 30/71 (S69 3/35, S103 27/36)
+    | 183374279 46/80 (S69 9/40, S103 37/40) | 206620592 11/40 | 122522485 0/35 | 253931796 40/40 | 115692561 0/40; displaced ->
+    INCONSISTENT 33/40, 12/71, 26/80, 0, 0, 40/40, 0; nulls EXCLUDED 253931796 39/40, 183374279 6/80, 120444365 1/71; not scored:
+    120444365 27 INSUFFICIENT, 122522485 15 INSUFFICIENT (122522485 masks trigger the pre-gap trim; disclosed); clock warnings 0/360.
+    Procedure draft rc2 filled in; amendments regenerated (conditional wording, rc2 SHA, enforced strict epochs); manifest refreshed.
+    Focused re-check prompt for the external reviewer: results/PROMPT_conformance_recheck_rc2.txt. Nothing published.
+88. 2026-10-20 — RE-CHECK of rc2 (results/REVIEW_conformance_v21_rc2.md; verdict "publish after listed fixes"; R1-R5, R7, R8, R11,
+    R12 resolved; R6, R9, R10, R13 partial). Fixes as conformance-v2.1-rc3 (SHA 579d50acbcaba7ec67e64ec20868c8322497a30c2f0f7c4b4fd31467f0522bbd; rc2 kept as
+    results/conformance_v21/prereg_conformance_rc2_000b0dfb.py): N1 strict-epoch check now catches a single missing cadence (spacing >
+    1.5 cadences; window edges > 1.05 cadences; rows with non-finite TIME count as missing); N2 docstring/governance wording (amended
+    operational test; Delta-chi2 is a nominal score rule, not a likelihood or 2-sigma interval; the parity split reduces but does not
+    eliminate timing failures); N3 rc2 sector rates corrected, per-offset EXCLUDED event counts now emitted, the 1/160 on-time
+    INCONSISTENT design result stated; N4 all-flagged product -> INSUFFICIENT like an edge-emptied one (classified before the clock
+    gate, documented), TIMEUNIT/TIMEREF/BJDREFF validated, epochs must be finite integers. Input suite 31/31 (4 new), logic 15/15.
+    RECOVERED/INCONSISTENT/split/EXCLUDED logic unchanged from rc2. Configs regenerated (evaluator SHA only). Holdout re-run on rc3 so
+    every calibration result carries the final SHA.
+89. 2026-10-20 — rc3 HOLDOUT CALIBRATION (1080 runs, all on evaluator 579d50ac... = configs; results/conformance_v21/
+    holdout_calibration_rc3_{runs.csv,report.md}): outcomes identical to rc2 for all 1080 runs (scoring logic unchanged); 0/346 null
+    false RECOVERED; clock warnings 0/360. Procedure draft, amendment drafts (rc3 evaluator and config SHAs) and manifest refreshed.
+    Second focused re-check prompt: results/PROMPT_conformance_recheck_rc3.txt. Dossier review prompt (results/referee_89247735/
+    PROMPT_dossiers_review.txt) updated with the S106 holdout rule and the 61310956 observability note before sending (original kept as
+    *_2026-10-19.txt). Nothing published.
+90. 2026-10-20 — External dossier referee (results/referee_round2/REFEREE_REPORT_dossiers_external.md; OpenAI Codex): both
+    candidates "revise; retain candidate status" (61310956 with a photometric-systematics caveat). No S106 data used. Key items:
+    183374279 - pixel "excludes blends" and "RV constant" overstated, density ratio convention (1.24 with the adopted TIC M/R, not
+    1.45), contaminant fraction band/aperture, radius range is illustrative, availability text stale vs the S106 erratum, S106 outlook
+    must be conditional, holdouts are retrospective. 61310956 - DOSSIERS.md still shows superseded v2 and the "independent 11 sigma
+    SPOC" claim; frozen v3 reference T14 is 2.70 h while prose says 3.3 h (needs a dated clarification BEFORE any ground observation);
+    odd/even is baseline-sensitive (global SAP 3.75 sigma, local-linear 1.76 sigma, DET 1.20 sigma); sigma 28-33 min through 2027;
+    "likely planet" label must go; S72 raw-aperture figure unexplained; epoch-83 CSV status note. Shared: pixel calibration is not
+    source-localisation validation; NFPP = 0 is structural; "empirical sigma" is not Gaussian; Gaia gives no mass limit; VERDICTS
+    placeholders. CORRECTION (my error): the 61310956 observing note used the time-scale-only UTC column; the geocentric epoch-151
+    mid-time is 2026-12-29 04:21:53 UTC, and "fully observable" overstated nominal-transit access. STATUS corrected.
+91. 2026-10-20 — SECOND RE-CHECK of rc3 (results/REVIEW_conformance_v21_rc3.md; "publish after listed fixes; blockers remain").
+    CORRECTION: item 88's "input suite 31/31" was a false pass. Every case wrote to one output file and exit codes were ignored, so the
+    crashed all-flagged case read the previous case's INSUFFICIENT (reviewer F2). Fixes as conformance-v2.1-rc4 (SHA a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f; rc3 kept as
+    results/conformance_v21/prereg_conformance_rc3_579d50ac.py):
+    - F1: an all-flagged input no longer crashes (edge rule skipped when no usable cadences remain) and returns INSUFFICIENT.
+    - F4: TIMEUNIT d and TIMEREF SOLARSYSTEM are required; a non-numeric BJDREFF returns INVALID_INPUT.
+    - F2: test runners hardened (fresh output path per case, exit code required, the result must match the requested light-curve
+      and config hashes; a crash fails the case); the logic suite also checks exit codes.
+    - Input suite 35/35 (4 new cases), logic 15/15.
+    - F3: the governance strict-clause text now matches the code (> 1.5 cadences; edges > 1.05; non-finite TIME rows discarded).
+    - F5: the calibration report takes a version label; the rc3 report is relabelled.
+    Procedure wording: rc3/rc4 changed the strict override and input handling, not the joint calculations. Configs regenerated
+    (evaluator SHA and locked_utc only). Holdout calibration re-run on rc4.
+92. 2026-10-20 — Dossier referee corrections applied locally (user: "Yes"); nothing published or committed.
+    - results/round2_dossiers/DOSSIERS.md rewritten for both objects; the 2026-10-19 text is kept as DOSSIERS_2026-10-19.md, and the
+      frozen excerpts are verbatim, with the 61310956 v2 excerpt marked SUPERSEDED. Corrected: conditional pixel and RV wording,
+      density ratio 1.24 with the adopted TIC M/R, band- and aperture-dependent contaminant fractions, an illustrative radius range,
+      retrospective holdouts, SPOC as an extraction check, the "likely planet" label withdrawn, NFPP 0 called structural, the
+      baseline-sensitive odd/even caveat for 61310956, sigma 28-33 min, the S72 figure caveat, S106 conditional eligibility and the
+      erratum link.
+    - Dated clarification appended to results/vet_allsky/61310956/PREREGISTRATION_v3.md (CSV bytes unchanged): the frozen 2.70-h
+      reference governs (band 1.89-3.51 h); planning uses 3.3 h + +-3 sigma + 1-h baselines (about 8.1-8.2 h); epoch 83 is a training
+      event; geocentric times; odd/even reporting.
+    - public_release/README.md working copy updated with the same corrections (uncommitted; goes into the next release with the user's
+      go; the v1.10 text is kept in the session scratch).
+93. 2026-10-20 — rc4 HOLDOUT CALIBRATION (1080 runs, all on evaluator a864b07ace8d3220... = configs; results/conformance_v21/holdout_calibration_
+    rc4_{runs.csv,report.md}): outcomes identical to rc3 (and rc2) for all 1080 runs; 0/346 null false RECOVERED; clock warnings 0/360.
+    Procedure draft, amendment drafts (rc4 evaluator and config SHAs) and manifest refreshed. Third focused re-check prompt:
+    results/PROMPT_conformance_recheck_rc4.txt. Nothing published.
+94. 2026-10-20 — THIRD RE-CHECK of rc4 (results/REVIEW_conformance_v21_rc4.md): "Publish as declared procedure; no remaining
+    publication blockers found" (F1-F5 resolved; suites reject crashes and stale results; provenance of all 1080 rc4 results checked).
+    Editorial items applied: procedure intro cites items 70-93 and the four reviews; governance names the rc4 evaluator SHA. Not acted
+    on (cosmetic, per reviewer): NumPy "mean of empty slice" warning on empty inputs. The evaluator bytes are frozen at rc4 (a864b07a...);
+    publication dates and dated filenames are filled at release. AWAITING THE AUTHOR'S GO TO PUBLISH; no S106 photometry of any test
+    target is examined before that release.
+95. 2026-10-20 — Reviewer update to the rc4 report: approval stands; two manifest hashes were stale (procedure and governance, changed
+    by the item-94 editorial edits). Manifest regenerated (80 files incl. the rc4 review and prompt) and every entry re-verified.
+96. 2026-10-20 — RELEASE v1.11 (user: "go"). Content: conformance_v2.1/ (procedure CONFORMANCE_PROCEDURE_v2.1.md, governance
+    GOVERNANCE_S106_TESTS_2026-10-20.md, ERRATUM_PROTOCOL_2026-10-20.md (tex:35 sigma 4.7 -> 2.1), evaluator rc4 a864b07a... + clock tool
+    + frozen prereg_test.py 630815cc..., locked configs, all conformance scripts, results/conformance_v21 outputs, the seven clock priors
+    as cited, all review reports and prompts incl. the masked internal findings JSON); dated 2026-10-20 amendments appended to the seven
+    S106 registrations (the three earlier unpublished 2026-10-20 amendments are published as written; their v2.0 citation is superseded);
+    61310956 v3 clarification; README corrections from the dossier referee and a v1.11 note; dossier referee report; environment lock;
+    DECISIONS public copy (items 1-96, withheld object masked); MANIFEST_v1.11.md; CITATION 1.11. Zenodo: the repository record
+    versions automatically via the GitHub integration; the protocol record gets v1.4 (unchanged v1.3 PDF + erratum + governance +
+    procedure) by script. Not in this release (pending a separate go): the dataset_v1 bundle and the two-candidate preprint.

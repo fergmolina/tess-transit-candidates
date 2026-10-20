@@ -1,0 +1,33 @@
+Second focused re-check. You wrote results/REVIEW_conformance_v21_rc2.md (verdict: publish after listed fixes). The authors produced
+conformance-v2.1-rc3 to address N1-N4 and the partial items R6, R9, R10 and R13. Work from /Users/fernando/Desktop/NASA and verify
+everything yourself.
+
+WHERE THE CHANGES ARE
+- logs/DECISIONS.md items 88-89.
+- scripts/prereg_conformance.py (rc3). The rc2 copy is results/conformance_v21/prereg_conformance_rc2_000b0dfb.py; diff them.
+- scripts/test_conformance_inputs.py: 4 new cases.
+- configs/conformance/*_S106.json: the evaluator SHA only.
+- results/CONFORMANCE_PROCEDURE_v2.1_DRAFT.md, results/GOVERNANCE_S106_TESTS_DRAFT.md,
+  results/conformance_v21/REGISTRATION_AMENDMENTS_DRAFT.md, results/conformance_v21/README.md.
+- results/conformance_v21/holdout_calibration_rc3_{runs.csv,report.md}: the re-run on rc3.
+
+CHECK
+1) N1-N4 and R6, R9, R10, R13: rate each resolved / partially resolved / not resolved, with evidence. Re-run your strict_probe and
+   override_end_to_end tests (synthetic only).
+2) The rc2 -> rc3 diff changes nothing beyond the declared items, and the RECOVERED/INCONSISTENT/split/EXCLUDED logic is unchanged.
+3) rc3 calibration provenance: every result's SHA equals the configs; only the declared holdout pairs are used; rc3 outcomes match
+   rc2 for the same runs (expected, since the scoring logic is unchanged).
+4) Are the seven amendment drafts final apart from the date? Is anything else still blocking publication?
+
+RULES
+Same as before:
+- Edit nothing except your report.
+- No publishing or contact.
+- Temporary files only under /tmp.
+- Do NOT download or open any Sector 106 (or later) photometry, cutouts or TESScut data for the seven test targets, and do not
+  run the clock tool with --declared-test.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_conformance_v21_rc3.md with the verdict, a status table and any new findings. When finished, print only the report
+path and a one-line verdict.

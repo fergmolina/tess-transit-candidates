@@ -1,0 +1,4 @@
+disc_ot160.csv 120444365 n 160 joint REC 119 0.67-0.81 | +split REC 103 0.56-0.72 | INCONSISTENT 0
+disc_ot160.csv 183374279 n 160 joint REC 151 0.90-0.97 | +split REC 137 0.79-0.91 | INCONSISTENT 1
+disc_rs.csv 120444365 n 40 joint REC 3 0.02-0.20 | +split REC 1 0.00-0.13 | INCONSISTENT 1
+disc_rs.csv 183374279 n 40 joint REC 8 0.09-0.36 | +split REC 5 0.04-0.27 | INCONSISTENT 8

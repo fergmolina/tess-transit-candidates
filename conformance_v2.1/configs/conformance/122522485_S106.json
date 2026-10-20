@@ -1,0 +1,26 @@
+{
+ "tic": 122522485,
+ "sector": 106,
+ "test_of_record": "v2 (predicted_transits_2026_2027_v2.csv)",
+ "product": "QLP",
+ "flux_col": "SAP_FLUX",
+ "pred_csv": "/Users/fernando/Desktop/NASA/results/vet_allsky/122522485/predicted_transits_2026_2027_v2.csv",
+ "pred_sha256": "47ce36bcb863acc218fdc62c5d61ab9dc411ae7678734a3c09392f596e477d58",
+ "ref_depth_ppm": 229.0,
+ "ref_dur_h": 2.2,
+ "reference_source": "PREREGISTRATION_v2.md reference-values line (frozen text)",
+ "timing_rule": "max(3 mean sigma_min, 30 min) adopted (CLARIFICATION_TIMING_RULE_2026-10-20.md); min(3 sigma, 30 min) reading also reported",
+ "evaluator": "scripts/prereg_conformance.py (conformance-v2.1) plus the frozen scripts/prereg_test.py (literal output also reported)",
+ "evaluator_sha256": "a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f",
+ "frozen_evaluator_commands": [
+  "python -I scripts/prereg_test.py --lc <QLP S106 HLSP FITS> --flux-col SAP_FLUX --pred results/vet_allsky/122522485/predicted_transits_2026_2027_v2.csv --depth-ppm 229.0 --dur-h 2.2 --sector 106",
+  "python -I scripts/prereg_test.py --lc <QLP S106 HLSP FITS> --flux-col DET_FLUX --pred results/vet_allsky/122522485/predicted_transits_2026_2027_v2.csv --depth-ppm 229.0 --dur-h 2.2 --sector 106"
+ ],
+ "frozen_evaluator_note": "SAP_FLUX = same source FITS and flux column as the conformance procedure (the frozen evaluator applies its own preprocessing and no clock correction); DET_FLUX = the protocol's column (PREREG_PROTOCOL.tex). Both literal outputs are reported.",
+ "release_of_record": "v01",
+ "strict_epochs": null,
+ "edge_rule": "drop 1.5 d after data start / resume (gap > 0.5 d) and 0.5 d before any gap > 0.1 d or data end (author-selected pooled rule; DECISIONS 76, 82, 86)",
+ "object_specific_clauses": null,
+ "data_status": "sector already observed; public data products existed at freeze; authors attest target-sector photometry not examined (ERRATUM_S106)",
+ "locked_utc": "2026-10-20 17:36:50 UTC"
+}

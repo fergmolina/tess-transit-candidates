@@ -1,0 +1,76 @@
+You are an independent, adversarial reviewer. Work from /Users/fernando/Desktop/NASA. This review decides whether conformance-v2.1
+can be PUBLISHED as the declared scoring procedure for seven pre-registered TESS Sector 106 transit tests, BEFORE any Sector 106
+photometry of those targets is examined. Verify everything yourself; do not trust the authors' summaries.
+
+HISTORY
+- v2.0 was withdrawn before publication after an internal adversarial review: 100 distinct findings, all in
+  results/REVIEW_conformance_internal_findings.json. Read that file. For every blocker and major finding, decide whether v2.1 fixes
+  it, discloses it, or neither.
+- The design log is logs/DECISIONS.md, items 74-82.
+- The author made two choices after seeing design-sector results:
+  - keep the timing-split check (item 82), although its declared acceptance rule was borderline (item 81);
+  - keep the pooled edge rule (option A of item 80).
+  Judge whether these choices, and the order in which things were declared and run, are sound.
+
+FILES
+- scripts/prereg_conformance.py: the evaluator. Its docstring is the procedure.
+- scripts/qlp_clock_test_sector.py and scripts/qlp_clock_v2.py: the clock tool.
+- configs/conformance/*_S106.json and scripts/make_conformance_configs.py.
+- scripts/test_conformance.py: logic tests. scripts/test_conformance_inputs.py: input refusal tests.
+- scripts/conformance_edge_profile.py, scripts/conformance_discriminating_test.py, scripts/conformance_calibrate_holdout.py,
+  scripts/conformance_summarise.py, scripts/conformance_s106_forecast.py.
+- results/conformance_v21/: all outputs.
+- results/CONFORMANCE_PROCEDURE_v2.1_DRAFT.md: the public document.
+- results/GOVERNANCE_S106_TESTS_DRAFT.md: precedence, departures, and the PREREG_PROTOCOL.tex:35 erratum.
+- results/conformance_v21/REGISTRATION_AMENDMENTS_DRAFT.md: the seven amendments, to be appended at publication. Check each against
+  its config and the calibration results.
+- results/conformance_v21/holdout_calibration_report.md and holdout_calibration_runs.csv: the holdout calibration.
+- prereg_protocol/PREREG_PROTOCOL.tex, results/CLARIFICATION_TIMING_RULE_2026-10-20.md, and the seven
+  results/vet_allsky/<TIC>/PREREGISTRATION_v2.md files with their prediction CSVs.
+
+CHECK
+1) Faithfulness. Is every departure from the protocol and the registrations listed, justified, and not tilted toward passing? Look for
+   undisclosed ones. Is the precedence statement complete and internally consistent? Is the tex:35 erratum correct?
+2) Code. Read it all:
+   - edge_trim: off-by-one at boundaries, and which gaps count;
+   - the timing split: parity, empty halves, the window;
+   - EXCLUDED (a)/(b)/(c): units, the gate window, NaN handling;
+   - promotion of the split check into the outcome of record; the odd/even diagnostic;
+   - input and clock validation; outcome precedence.
+   Report bugs and silent failures.
+3) Edge rule. Re-derive it from results/conformance_v21/edge_profile_*.csv. Was the criterion declared before use? Is the pooled
+   choice defensible? Does the forecast correctly predict that TIC 253931796 (and probably 183374279) will be INSUFFICIENT? Does the
+   forecast use only orbit times and in-sample gap patterns?
+4) Discriminating test and the add-on decision. Reproduce a subset (for example one target, 10 realisations per case). Is the
+   item-77 rule applied honestly in item 81, given that 40 runs gave -15 points and 160 runs gave -10? The test alternates the
+   opposite-offset injection by epoch parity, and the split also uses parity; is that disclosed adequately? Try displacement patterns
+   the split misses.
+5) Holdout calibration. Was it run only on the declared holdout sectors, on the final evaluator SHA, after the design was fixed?
+   Check:
+   - effective-N handling;
+   - the real-transit holes (they trigger the edge rule for 183374279 and 253931796);
+   - per-target rates with Clopper-Pearson intervals;
+   - the family-wise false-RECOVERED rate across the seven tests;
+   - INCONSISTENT power.
+6) Advance statements. Are the power and INSUFFICIENT forecasts, the "EXCLUDED effectively unreachable" statements and the duration
+   caveat accurate and sufficient? What else should be declared before S106?
+7) Open limitations the authors chose not to fix (procedure section 7): beta, the high-SNR consistency gate, idealised injections,
+   the baseline, the thresholds. Is any of them a blocker?
+8) Holdout integrity. Confirm that no file of Sector 106 or later for any of the seven test TICs exists anywhere in the project
+   (check data/, data/lk_cache/, scratch directories referenced in the logs). List file names only.
+
+RULES
+- Edit nothing in the project except your report. Do not publish, push, upload or contact anyone. Write temporary files only under
+  /tmp.
+- Do NOT download or open any Sector 106 (or later) photometry, cutouts or TESScut data for the seven test targets. Do not run
+  qlp_clock_test_sector.py with --declared-test.
+- Every factual claim must say how you verified it. If you cannot verify something, say so.
+
+OUTPUT
+Write results/REVIEW_conformance_v21.md with:
+- a verdict: publish as declared procedure / publish after listed fixes / do not publish;
+- a findings table (severity, issue, evidence, exact fix);
+- a status for every blocker/major finding from the internal review (fixed / disclosed / open);
+- your reproduction results;
+- limits.
+When finished, print only the report path and a one-line verdict.
