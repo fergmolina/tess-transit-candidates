@@ -91,7 +91,7 @@
     light-curve-only rejects: 113288623, 126526772, 127132777, 632483638 (grazing: rprs 0.24-0.30, b > 1.1, rho 0.02-0.04x), 75582311 (V-shaped blend),
     73763470 (odd/even 4.2 sigma, depth chi2 122). Parked as noise-level (SNR < 9, blind tests fail/inconclusive): 13071480, 178130889, 234059307,
     279787271, 398543433, 178155658; TIC radius missing: 12377308, 279370402. Pixel tests queued (scripts/pixel_runner.sh, bash) for the 11 that pass
-    the light-curve tests: 120444365, [withheld], 140017995, 36568378, 293857021, 33480523, 71096594, 284331183, 268688836, 32077129, 235283074.
+    the light-curve tests: 120444365, 120517801, 140017995, 36568378, 293857021, 33480523, 71096594, 284331183, 268688836, 32077129, 235283074.
     **TIC 80387959 TESS-SPOC check (scripts/tessspoc_check.py):** independent FFI extraction (PDCSAP, S36/S37 at 600 s, S63 at 200 s) gives
     810 +- 79, 905 +- 76, 803 +- 83 ppm at the QLP ephemeris (combined 831 +- 53 ppm, 16 sigma; QLP masked-detrend depth 757 +- 41); blind BLS on
     the TESS-SPOC data alone: top period 4.19224 d, SDE 12.4. Pipeline artefact excluded; blend question rests on the pixel test (done, on target).
@@ -100,21 +100,21 @@
     (0.03 / 0.19 / 0.04 px in S96/S103/S105; isolated star: nearest Gaia source able to mimic the signal is 64" away and would need 58 %);
     5.14808 d, 743 ppm, 2.45 Re, Tmag 11.06, K dwarf, seen 2018/2020/2023/2025/2026; only future coverage is S106 (observed Jul-Aug 2026, QLP
     file not on MAST as of 2026-10-18, not on any 2-min list) -> pre-registered as "sector observed, data not public at freeze"; has SPOC 2-min
-    S29 and TESS-SPOC S2/S29/S69 for extraction checks. [withheld] ON TARGET by centroid (0.43 / 0.12 / 0.07 px) but a G=14.7 star 4.2" away
+    S29 and TESS-SPOC S2/S29/S69 for extraction checks. 120517801 ON TARGET by centroid (0.43 / 0.12 / 0.07 px) but a G=14.7 star 4.2" away
     needing only 1 % cannot be excluded with 21" pixels; crowded field (105 TIC entries within 60"); pre-registered v1 with that caveat
     (ephemeris test only; S111-S113).
     **Pixel-test outcomes (continued 2):** 36568378 REJECTED (1.34 / 2.04 px off in S61/S88); 293857021 REJECTED (1.53 px off in S87).
-    [withheld] frozen v1 (SHA cbb409bb..., 2026-10-18 20:25:07 UTC; 16 times, chi2/dof 75/14, inflation 2.3; S111 test, 8 predicted transits).
+    120517801 frozen v1 (SHA cbb409bb..., 2026-10-18 20:25:07 UTC; 16 times, chi2/dof 75/14, inflation 2.3; S111 test, 8 predicted transits).
     120444365 extraction checks: TESS-SPOC S2/S29/S69 668 / 998 / 824 ppm and SPOC 2-min S29 1002 +- 116 ppm at the QLP ephemeris (blind BLS on
     the single 2-min sector alone does not find it: SDE 3.2; red noise) -> freeze v1 launched with S106 as the test of record.
     33480523 REJECTED (loss centroid 2.97 / 1.50 px off target in S89/S90; only 2 events per sector).
     **120444365 frozen v1** (SHA 64b5b026..., 2026-10-18 20:26:00 UTC): P = 5.148082 +- 0.000037 d, T0 = BTJD 4213.82117 +- 4.6 min (epoch 555);
     6 predicted transits in Sector 106 (2026-07-12 to 08-07), status "sector observed, data not public at freeze"; QLP S106 expected late Oct 2026.
-    Frozen local candidates so far (none deposited publicly): 80387959 (S111), 120444365 (S106, unreleased), [withheld] (S111; crowding caveat).
+    Frozen local candidates so far (none deposited publicly): 80387959 (S111), 120444365 (S106, unreleased), 120517801 (S111; crowding caveat).
     **Pixel-test outcomes (final for class A):** 71096594 REJECTED (0.91 / 1.24 / 1.31 px off in S89/S99/S100); 284331183 REJECTED (2.80 px, S87);
     268688836 REJECTED (1.48 px, S87); 32077129 REJECTED (2.44 / 1.38 px, S61/S88); 235283074 UNRESOLVED (0.37 +- 0.1 px in the single testable
     sector S87, 3 events; SNR 12.6, rho 0.17x, blind 2/4) - parked, re-test after S111. Tally: 12 stars pixel-tested, 3 on target (80387959,
-    120444365, [withheld]), 1 unresolved, 8 off-target blends at 20-60" (plus 30832104 = 9 of 12). Blends from faint EBs inside the large QLP
+    120444365, 120517801), 1 unresolved, 8 off-target blends at 20-60" (plus 30832104 = 9 of 12). Blends from faint EBs inside the large QLP
     apertures of bright targets are the dominant false-positive mode of this sample; the light-curve tests (shape, density, odd/even, blind
     years) do not catch them, only the pixel test does. For the all-sky ranking, run ffi_pixel_test BEFORE vet.py on every survivor.
 
@@ -128,12 +128,12 @@
     A proper short-period null would need a within-sector shuffle (e.g. reversing or block-permuting cadences inside each sector) - not done.
 
 38. **External review of the three all-sky candidates applied (results/external_review_allsky/REVIEW.md + LITERATURE_SURVEY.md).** Verdicts:
-    80387959 SURVIVES, 120444365 SURVIVES (cleanest; TRICERATOPS NFPP 0.000, FPP 0.041), [withheld] WOUNDED (host not demonstrable; 4.2" G=14.7
+    80387959 SURVIVES, 120444365 SURVIVES (cleanest; TRICERATOPS NFPP 0.000, FPP 0.041), 120517801 WOUNDED (host not demonstrable; 4.2" G=14.7
     star; NFPP 0.062). Findings adopted: (1) cross-sector QLP depths are not astrophysical (per-sector normalisation, S94 dilution change) -
     the 80387959 x1.5 depth caveat is withdrawn (fixed-aperture 687 +- 36 ppm constant); (2) v1 ephemerides used 200-s sectors only (vet.py
     min_pts=15 + len<1000 cut dropped every 600/1800-s event and all of S10) -> scripts/prereg_v2.py (one time offset per sector, all sectors,
     cadence-aware batman, SPOC 2-min where present) -> v2 frozen for all three at 22:34 UTC (SHA 5d0e7651 / 32b5e085 / 0e6bd698); v1 kept on
-    record; [withheld] v1 S111 predictions were 22-45 min early and would have failed a real signal; (3) QLP S99-S105 timestamp error < 1.5 min
+    record; 120517801 v1 S111 predictions were 22-45 min early and would have failed a real signal; (3) QLP S99-S105 timestamp error < 1.5 min
     effect; (4) published pixel floors 7.5-15" - our 0.1-px centroid errors understate sector-to-sector scatter; exclusion of the 7.6" star
     of 80387959 is ~2.7 sigma. Code fixed: vet.py transit_model exp_time = real cadence; sector cut cadence-aware; time_transits min_pts
     cadence-aware. TODO from REVIEW 6: ffi_pixel_test.py background subtraction + PM correction + full-cutout PSF fit (adopt reviewer's
@@ -163,7 +163,7 @@
 
 42. **Prior-detection sweep, interim (2026-10-19 00:xx UTC; results/prior_search/).** (a) github.com/eumemic/exoplanets (pseudonymous,
     Claude-Code-built Rabtsevich-style search; first commit 2026-10-07) lists TIC 317134140's 0.5719-d second signal (first commit 2026-10-08
-    03:14 UTC, tier A, with S109/S110 predictions), TIC 120444365 at 5.148151 d (2026-10-09 03:34 UTC, tier C, MES 9.0) and [withheld]
+    03:14 UTC, tier A, with S109/S110 predictions), TIC 120444365 at 5.148151 d (2026-10-09 03:34 UTC, tier C, MES 9.0) and TIC 120517801
     at 3.282292 d (2026-10-09, tier N "neighbour < 15 arcsec"). Neither TIC 89247735 nor TIC 80387959 appears there. Our public record must
     credit these prior listings (README, REPORT 6/12, note, dataset README) -> v1.4 before any further upload. (b) TIC 80387959 has an
     UNPROMOTED TESS-SPOC FFI TCE in the Sector 63 single-sector DV run (P 4.19050 +- 0.0012 d, depth 869 +- 107 ppm, Rp 2.40 Re, MES 7.57,
@@ -180,7 +180,7 @@
 43. **Prior-detection sweep final (results/prior_search/PRIOR_SEARCH.md, VERDICTS.md, query_log_all.csv): 32 services, 1,585 logged queries,
     558,074 automated alerts (341,351 SPOC TCE rows + 216,723 TESS-SPOC DV targets), 101 GitHub repos and 157 Zenodo records grepped by content.**
     Verdicts: 89247735 no prior report (concurrent Zarco report 20 h after ours); 80387959 unpromoted TESS-SPOC S63 TCE only; 120444365 listed
-    earlier by eumemic (2026-10-09, tier C); 317134140 second signal listed earlier by eumemic (2026-10-08, tier A); [withheld] listed by eumemic
+    earlier by eumemic (2026-10-09, tier C); 317134140 second signal listed earlier by eumemic (2026-10-08, tier A); 120517801 listed by eumemic
     (2026-10-09) and brahle (2026-10-18). Ecosystem: at least eight independent Rabtsevich-style amateur deposits in October 2026. Applied: a
     "Prior and concurrent reports" section in public README, REPORT (before section 12), dataset README, note, protocol; sweep copied to
     public_release/prior_search/ (third object's ID withheld); TESS-SPOC TCE hosts appended to catalogs/known_signals.csv (source TESSSPOC_TCE,
@@ -289,7 +289,7 @@
 52. **v1.7 deposited (user: "all tiers", 2026-10-19 ~15:10 UTC).** GitHub release v1.7 (b944812): TIC 61310956 dossier and v3 predictions,
     corrected TIC 183374279 text, 18 round-2 frozen objects in four labelled tiers, referee_round2/, prior_search_round2/ (sweep agent hit
     a usage limit at 14:54; GitHub counts filled by the lead from the logs, completion note in LIMITATIONS_round2.md). Protocol v1.3 on
-    Zenodo 10.5281/zenodo.23477866. [withheld] stays withheld.
+    Zenodo 10.5281/zenodo.23477866. TIC 120517801 stays withheld.
 
 53. 2026-10-19 ~19:30 UTC — Round-3 external review (Codex) of the TIC 89247735 manuscript: major revision. Two factual errors confirmed:
     (a) QLP S104 timestamps are early by 8.02 min (the MAST S99–S104 barycentric issue; our earlier "≤1 min" check was wrong), and
@@ -713,3 +713,32 @@
 106. 2026-10-20 — Final re-check (results/REVIEW_v1.13_final_recheck.md): v1.13 yes, dataset v1.1 yes, preprint yes, no remaining fixes.
     Publishing (author's standing instruction: publish when all three are cleared): GitHub v1.13; Zenodo dataset v1.1 (record 23462438);
     preprint as v1.3 (the latest existing preprint version is v1.2, 23463582; I called it "v1.2" earlier by mistake).
+107. 2026-10-20 — PUBLISHED: GitHub v1.13 (1620a8b; Zenodo 10.5281/zenodo.23512921, automatic); dataset v1.1 10.5281/zenodo.23512928
+    (zip of dataset_v1.1, 212 members, rescanned clean before upload; md5 665d8021...); preprint v1.3 10.5281/zenodo.23512950 (md5
+    4666ac0b...; the version note replaces "all code and data are public"). All via draft -> inspect -> publish; no session links.
+    The old Zenodo token was used again; the author should revoke it. Everything from the full-repo review is now published.
+108. 2026-10-20 — AUTHOR DECISION ("Go 2", confirmed "go" after the auto-mode classifier paused the first unmasking step): publish the
+    previously withheld object TIC 120517801 openly, as a likely blend with the host unresolved and an independent rediscovery (eumemic
+    2026-10-09; Rahle 2026-10-18). Pre-registration chain: the v1 (cbb409bb...) and v2 (0e6bd698...) hash prefixes have been public
+    in DECISIONS.md since v1.3 (commit 24cd0de, 2026-10-18 23:24:45 UTC); the full freeze times are local attestations; its tests are
+    S111-S113 (S111 starts 2026-11-26), not yet observed. Actions (v1.14, local until reviewed):
+    - preregistration/TIC120517801/: v1 and v2 files, with UTC-fix derivatives generated now (prereg_utc_fix.py; originals unchanged).
+    - Clock priors 120517801.json published; clock addenda rows unmasked.
+    - Tables and 2026-10-20 reviews restored from the local originals (mask-only differences).
+    - Round-1 prior search restored to its v1.11 content with the TIC named, plus a dated note; round-2 sweep unmasked.
+    - external_review_allsky/REVIEW.md restored, including section 4, with historical labels.
+    - The public decision log no longer masks the TIC.
+    - README/REPORT paragraph to follow. A short reviewer check comes before release.
+109. 2026-10-20 — Review of staged v1.14 (results/REVIEW_v1.14_TIC120517801.md: fixes needed; all numerical checks passed - hashes,
+    refits, UTC derivatives, clock propagation, restoration fidelity, the 29-file manifest, 56 prior CSVs unchanged). Fixes:
+    - CORRECTION to the decision log around item 36 and to the REPORT: "the v1 test would have failed a real signal" is overstated. v2 is
+      27.4-30.9 min later than v1 over S111-S113, all inside the written v1 3-sigma windows; the historical 22-45-min range is not that
+      comparison. Dated correction appended to REPORT and the v2 registration, and folded into the review erratum.
+    - Restored review section 4 erratum: Giacalone "likely planet" needs NFPP < 0.001 (not 0.1), so FPP 0.088 / NFPP 0.062 meets neither
+      category; the Gaia RV summary gives no companion exclusion or mass bound.
+    - Public qlp_clock_v2/shifts.csv: the object's 24 rows restored (public = local minus those rows before).
+    - Provenance paragraph (8-character prefixes in commit 24cd0de and the v1.3 Zenodo zip created 23:24:53 UTC; prefixes do not
+      authenticate full bytes; the published dataset v1 had exposed v1 ephemeris values under a masked label; freeze times attested) added
+      to the README and both registrations; VERDICTS "never in public copies" annotated.
+    - 4.2" = about 0.20 TESS pixel (current prose); "our TESS analyses do not assign the eclipse to either star".
+110. 2026-10-20 — Final re-check (results/REVIEW_v1.14_final_recheck.md): ready to publish v1.14, all five findings resolved. Author: "go".

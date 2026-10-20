@@ -7,7 +7,7 @@ authors:
     affiliation: Independent researcher
     orcid: "https://orcid.org/0009-0002-2872-3406"
 date-released: 2026-10-20
-version: "1.13"
+version: "1.14"
 license: MIT
 doi: 10.5281/zenodo.23443244
 repository-code: "https://github.com/fergmolina/tess-transit-candidates"

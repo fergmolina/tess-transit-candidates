@@ -1,0 +1,52 @@
+# Pre-registered transit predictions v2 - TIC 120517801
+Frozen: 2026-10-18 22:34:41 UTC. Author: Fernando Molina (Independent researcher, ORCID 0009-0002-2872-3406). Analysis with Claude (Anthropic) under the author's direction.
+Supersedes v1 (PREREGISTRATION.md, SHA cbb409bb...), which is kept unchanged on record. Reason (external review 2026-10-18,
+results/external_review_allsky/REVIEW.md): v1 timed only the 200-s sectors (vet.py min_pts cut), ignoring 2018-2021 data; v2 fits one time offset per
+sector from ALL sectors (raw SAP flux, cadence-aware model, local baselines; SPOC 2-min sectors where they exist) on top of the all-data BLS ephemeris.
+Ephemeris: T0 = BTJD 4086.82546 +- 13.4 min (epoch 549), P = 3.282292 +- 0.000024 d (chi2/dof 25.9/5, inflation x2.28); v1 P = 3.282184, all-data BLS P = 3.282280.
+Sector times used: S10 QLP SAP (6 ev, O-C +4.7 +- 13.8 min), S36 QLP SAP (6 ev, O-C -25.5 +- 8.4 min), S37 QLP SAP (6 ev, O-C -2.9 +- 16.2 min), S63 QLP SAP (7 ev, O-C +24.5 +- 6.6 min), S64 QLP SAP (8 ev, O-C +8.7 +- 21.6 min), S90 QLP SAP (7 ev, O-C -2.3 +- 9.0 min), S100 QLP SAP (5 ev, O-C -12.5 +- 7.8 min).
+Depth per sector (fixed shape, local baseline, raw SAP): S10 893, S36 1294, S37 984, S63 749, S64 694, S90 1001, S100 776 ppm.
+External review (2026-10-18): WOUNDED - signal real and stable (fixed-aperture depth 759 +- 59 ppm, chi2 10.3/6, present in 2019 S10) but the host is probably, not demonstrably, this star: TRICERATOPS on-target probability 0.94, FPP 0.088, NFPP 0.062; pixel test inconclusive (loss-position floor ~10 arcsec in this field; sky-combined loss position 5.4 +- 1.3 arcsec from the target and 1.7 arcsec from the G=14.7 star at 4.2 arcsec). v1 frozen predictions were 22-45 min early at Sector 111; this v2 corrects the period. Ephemeris test only; host assignment needs seeing-limited photometry.
+SHA-256 of predicted_transits_2026_2027_v2.csv: 0e6bd698e1f45283a6d12ba9aac174cd1b0e7c3eaf44deb1463185062e5225a4
+**Test of record: next TESS sector(s).** Predicted mid-transits (conservative window +-20 min):
+ epoch   tc_bjd_tdb              utc  sigma_min                  tess_sector     status
+   636 2.461372e+06 2026-11-27 21:13       15.9                          111 prediction
+   637 2.461376e+06 2026-12-01 03:59       15.9                          111 prediction
+   638 2.461379e+06 2026-12-04 10:46       16.0                          111 prediction
+   639 2.461382e+06 2026-12-07 17:32       16.0                          111 prediction
+   640 2.461386e+06 2026-12-11 00:19       16.0 111 (span only, gap unknown) prediction
+   641 2.461389e+06 2026-12-14 07:05       16.1 111 (span only, gap unknown) prediction
+   642 2.461392e+06 2026-12-17 13:52       16.1 111 (span only, gap unknown) prediction
+   643 2.461395e+06 2026-12-20 20:38       16.1 111 (span only, gap unknown) prediction
+   644 2.461399e+06 2026-12-24 03:25       16.1 112 (span only, gap unknown) prediction
+   645 2.461402e+06 2026-12-27 10:11       16.2 112 (span only, gap unknown) prediction
+   646 2.461405e+06 2026-12-30 16:58       16.2 112 (span only, gap unknown) prediction
+   647 2.461408e+06 2027-01-02 23:44       16.2 112 (span only, gap unknown) prediction
+   648 2.461412e+06 2027-01-06 06:31       16.3 112 (span only, gap unknown) prediction
+   649 2.461415e+06 2027-01-09 13:17       16.3 112 (span only, gap unknown) prediction
+   650 2.461418e+06 2027-01-12 20:04       16.3 112 (span only, gap unknown) prediction
+   651 2.461422e+06 2027-01-16 02:50       16.4 112 (span only, gap unknown) prediction
+   652 2.461425e+06 2027-01-19 09:37       16.4 113 (span only, gap unknown) prediction
+   653 2.461428e+06 2027-01-22 16:23       16.4 113 (span only, gap unknown) prediction
+   654 2.461431e+06 2027-01-25 23:10       16.5 113 (span only, gap unknown) prediction
+   655 2.461435e+06 2027-01-29 05:56       16.5 113 (span only, gap unknown) prediction
+   656 2.461438e+06 2027-02-01 12:43       16.5 113 (span only, gap unknown) prediction
+   657 2.461441e+06 2027-02-04 19:29       16.5 113 (span only, gap unknown) prediction
+   658 2.461445e+06 2027-02-08 02:16       16.6 113 (span only, gap unknown) prediction
+   659 2.461448e+06 2027-02-11 09:02       16.6 113 (span only, gap unknown) prediction
+Outcomes defined in advance (QLP or SPOC light curve of the test sector, or a TESScut fixed-aperture extraction, transit-masked biweight detrend): (1) recovered - a box of
+depth 0.5-1.5x and duration 0.7-1.3x the values above within +-3 sigma_min (and in any case within +-30 min) of >= 2 predicted times, stacked SNR >= 5;
+(2) inconsistent - a comparable dip exists but its times differ by > 30 min from every prediction; (3) excluded - stacked depth at the predicted phase
+< 0.3x at 3 sigma with >= 2 transits fully covered; (4) insufficient - fewer than 2 predicted transits covered. The QLP S99-S105 timestamp error shifts
+these ephemerides by < 1.5 min (review, timing_propagation.json). Generated by scripts/prereg_v2.py 120517801 --freeze.
+
+
+**Addendum 2026-10-20 (timing rule):** the phrase "and in any case within +-30 min" above misstates the rule. The governing rule is the public protocol's (Zenodo 10.5281/zenodo.23462442): stacked timing offset within max(3 sigma_pred, 30 min), as implemented in the frozen evaluator scripts/prereg_test.py. No prediction, CSV or checksum is changed. See CLARIFICATION_TIMING_RULE_2026-10-20.md.
+
+
+**Status note 2026-10-20 (publication of a previously withheld object; no prediction, CSV byte or checksum is changed):** This object was withheld from public copies until repository release v1.14 because its host star cannot be assigned from TESS pixels. It is now published by author decision. Current status: **likely blend, host unresolved** - a G = 14.7 star 4.2 arcsec away needs only about a 1 % eclipse, and the sky-combined loss position lies 1.7 arcsec from that star. TRICERATOPS FPP 0.088 and NFPP 0.062 are well above the validation thresholds (0.015, 0.001). "Blind 4/4" above means retrospective leave-one-year-out consistency checks, not prospective confirmations. It is an **independent rediscovery**: the signal was listed earlier by eumemic/exoplanets (2026-10-09) and by Rahle (2026-10-18). Pre-registration chain: the SHA-256 prefixes of v1 (cbb409bb...) and v2 (0e6bd698...) have been public in the repository decision log since 2026-10-18 23:24:45 UTC (commit 24cd0de); the full freeze times above are the author's attestation. The tests of record are TESS Sectors 111-113, not yet observed; they test the ephemeris only, and their scoring procedure will be stated before those data are examined. Corrected geocentric UTC columns are in the `_utcfix.csv` copies.
+
+
+**Provenance (2026-10-20):** The decision-log commit 24cd0de, dated 2026-10-18 23:24:45 UTC, contains the eight-character v1/v2 SHA-256 prefixes; the independently archived v1.3 ZIP also contains them (Zenodo record created 23:24:53.814353 UTC). These abbreviated anchors do not authenticate the complete CSV bytes. The original published supporting dataset also exposed v1 ephemeris values and a 24-row test-time summary under a masked label. This release intentionally supplies the named full registrations, original CSVs and full SHA-256 digests. The earlier local freeze times and non-examination statements remain the author's attestations.
+
+**Correction, 2026-10-20:** The frozen v2 predictions are 27.4–28.4 minutes later than v1 in S111, and 27.4–30.9 minutes later over S111–113. All these differences lie inside the corresponding written v1 3σ timing windows. Timing alone therefore does not establish that v1 would fail a real signal. The historical 22–45-minute range is not the frozen v1-to-v2 comparison reproduced here. The prospective test outcome remains unmeasured.

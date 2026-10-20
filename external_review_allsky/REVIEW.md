@@ -1,4 +1,7 @@
-# External review of the three all-sky QLP candidates (TIC 80387959, TIC 120444365, TIC [withheld])
+# External review of the three all-sky QLP candidates (TIC 80387959, TIC 120444365, TIC 120517801)
+
+> **Note 2026-10-20 (v1.14).** Until v1.13 the public copy of this review withheld the third object (TIC 120517801) and its section 4. Both are restored by author decision. Section 4 is historical review text from 2026-10-18; current status is in README.md and `preregistration/TIC120517801/` (likely blend, host unresolved; independent rediscovery).
+
 
 Reviewer: independent external referee (not part of the project). Date: 2026-10-18 (UTC evening).
 Scope: REPORT.md section 12 claims for the three frozen candidates; the vetting chain in `scripts/vet.py`, `ffi_pixel_test.py`,
@@ -14,12 +17,12 @@ plots in `plots/`, downloaded data in `data/` (TESScut 15x15 cubes for every sec
 |---|---|---|
 | **TIC 80387959** (P = 4.1921 d, ~700 ppm) | **SURVIVES** as a planet candidate; the "two-level depth" weakness is removed; the pixel case is weaker than stated | Independent 15x15 TESScut photometry with per-cadence background and a fixed 1.5-px aperture gives 687 +- 36 ppm with chi2 = 10.2 for 5 d.o.f. across six sectors (2019-2026) and **no early/late difference (32 +- 73 ppm)**: the QLP two-level depth is a QLP normalisation artefact, not astrophysics. Loss position combined over six sectors in sky coordinates is 2.0 +- 1.1 arcsec from the target (1.9 sigma formal, ~0.8 sigma after the per-sector scatter is accounted for); TRICERATOPS FPP = 0.047, NFPP = 0.010. Gaia DR3 RVs (26 transits, chisq p = 0.18) exclude a stellar-mass companion on the target. Signal confirmed in TESS-SPOC (S10/S36/S37/S63), TARS, ELEANOR-LITE, TGLC. |
 | **TIC 120444365** (P = 5.1481 d, ~750 ppm) | **SURVIVES**, and is the cleanest of the three; but the **frozen ephemeris has the wrong period** (fixable, harmless for S106) | Isolated (nearest star able to mimic it is 64 arcsec away and would need 58 %), TRICERATOPS at the all-data ephemeris FPP = 0.041, **NFPP = 0.000** (0.049 / 0.000 at the frozen ephemeris); "likely planet" by the Giacalone et al. criteria, not validated (FPP threshold 0.015). Signal present in every independent product once the correct period is used: SPOC 2-min S29 892 +- 129 ppm, TESS-SPOC S2/S29/S69 681/955/894 ppm, TARS S2/S29/S69/S96 1001/832/930/1008 ppm, fixed-aperture cutouts 751/766/747/1176/995/674 ppm. The frozen P = 5.148082 d (from 2023-2026 times only) disagrees with the all-data BLS period 5.148179 d by 9.7e-5 d = 2.6 sigma of its own error; at that P the 2018-2023 transits fall 50-90 min early. The S106 predictions are only 4-9 epochs from T0 so they move by < 1.3 min; later predictions would not. |
-| **TIC [withheld]** (P = 3.2823 d, ~760 ppm) | **WOUNDED**: the signal is real and stable, and the host is probably but not demonstrably TIC [withheld] (TRICERATOPS on-target probability 0.94, pixel test inconclusive in a crowded field), and the **frozen ephemeris is biased by 22-45 min at Sector 111**, so the pre-registered test as frozen would probably fail even if the signal is real | At the project's own all-data BLS ephemeris (not the frozen one) the transit is present in every sector 2019-2026 in every product, with a constant fixed-aperture depth of 759 +- 59 ppm (chi2 10.3 / 6). The frozen P = 3.282184 d (200-s sectors only) is 3.6 sigma short of the all-data 3.282280 d and 4.6 sigma short of a seven-sector refit (3.282305 d); it places the 2019/2021 transits 66-96 min late and the S111 predictions 22-25 min (BLS) to 40-45 min (refit) early, outside the +-20 min window. TRICERATOPS at the all-data ephemeris: **FPP = 0.088, NFPP = 0.062** (the frozen-ephemeris fold gave 0.54 / 0.47 because it smeared the 2021 sectors); 29.8 % contamination, G = 14.7 star at 4.2 arcsec = 0.18 px needing 1.0-1.8 %; PSF-fit loss positions have a ~0.5 px sector-to-sector floor and a sky-combined mean 5.4 +- 1.3 arcsec from the target, 1.7 arcsec from the G = 14.7 star (not significant after the scatter). The pixel test cannot assign the host; REPORT's "pixel centroid on target" should go. |
+| **TIC 120517801** (P = 3.2823 d, ~760 ppm) | **WOUNDED**: the signal is real and stable, and the host is probably but not demonstrably TIC 120517801 (TRICERATOPS on-target probability 0.94, pixel test inconclusive in a crowded field), and the **frozen ephemeris is biased by 22-45 min at Sector 111**, so the pre-registered test as frozen would probably fail even if the signal is real | At the project's own all-data BLS ephemeris (not the frozen one) the transit is present in every sector 2019-2026 in every product, with a constant fixed-aperture depth of 759 +- 59 ppm (chi2 10.3 / 6). The frozen P = 3.282184 d (200-s sectors only) is 3.6 sigma short of the all-data 3.282280 d and 4.6 sigma short of a seven-sector refit (3.282305 d); it places the 2019/2021 transits 66-96 min late and the S111 predictions 22-25 min (BLS) to 40-45 min (refit) early, outside the +-20 min window. TRICERATOPS at the all-data ephemeris: **FPP = 0.088, NFPP = 0.062** (the frozen-ephemeris fold gave 0.54 / 0.47 because it smeared the 2021 sectors); 29.8 % contamination, G = 14.7 star at 4.2 arcsec = 0.18 px needing 1.0-1.8 %; PSF-fit loss positions have a ~0.5 px sector-to-sector floor and a sky-combined mean 5.4 +- 1.3 arcsec from the target, 1.7 arcsec from the G = 14.7 star (not significant after the scatter). The pixel test cannot assign the host; REPORT's "pixel centroid on target" should go. |
 
 The three findings I would put first:
 
 1. **The TIC 80387959 depth change is not real.** It is present in QLP (and in TARS) but absent in a fixed-aperture, background-subtracted extraction of the same FFIs across all six sectors. QLP normalises each sector independently and switched to TGLC-method light curves at Sector 94 (https://archive.stsci.edu/hlsp/qlp); cross-sector QLP depths should not be used as an astrophysical test for any candidate in this project. The x1.5 depth uncertainty in the pre-registration can be dropped; the depth on the target is 690-830 ppm depending on dilution treatment (2.4 R_Earth).
-2. **The project's ephemeris procedure can be biased when early sectors have few points per transit.** `vet.py:122` (`min_pts=15` in-transit points) silently discards every 600-s and 1800-s transit, so `prereg_candidate.py:13` builds the ephemeris from 200-s sectors only. For TIC 120444365 that is 2023-2026 and the resulting period is off by 2.6 sigma; the global BLS/ephemeris fit in the same `report.json` (`bls_refine.period`, `ephemeris.P`) already had the right value. The same restriction biases **TIC [withheld]**: frozen P = 3.282184 vs all-data 3.282280 d (3.6 sigma), and the frozen Sector 111 predictions are 22-45 min early, i.e. outside the pre-registered +-20 min window (section 4.1); a v2 freeze is required before S111 data exist. For TIC 80387959 I checked the same thing: frozen 4.192142 vs BLS 4.192178 d (1.8 sigma), the S36/S37 box fits sit at 0 to -6 min on the frozen ephemeris, and the S111 predictions differ by 11-12 min between the two, inside the window. Separately, `vet.py:35` (`len(t) < 1000`) drops Sector 10 (2019) entirely for both southern stars, so the "detected every year" statements and the per-sector tables omit 2019; TESS-SPOC S10 (953 +- 94 ppm) is in `tessspoc_check.json` but not in REPORT.md.
+2. **The project's ephemeris procedure can be biased when early sectors have few points per transit.** `vet.py:122` (`min_pts=15` in-transit points) silently discards every 600-s and 1800-s transit, so `prereg_candidate.py:13` builds the ephemeris from 200-s sectors only. For TIC 120444365 that is 2023-2026 and the resulting period is off by 2.6 sigma; the global BLS/ephemeris fit in the same `report.json` (`bls_refine.period`, `ephemeris.P`) already had the right value. The same restriction biases **TIC 120517801**: frozen P = 3.282184 vs all-data 3.282280 d (3.6 sigma), and the frozen Sector 111 predictions are 22-45 min early, i.e. outside the pre-registered +-20 min window (section 4.1); a v2 freeze is required before S111 data exist. For TIC 80387959 I checked the same thing: frozen 4.192142 vs BLS 4.192178 d (1.8 sigma), the S36/S37 box fits sit at 0 to -6 min on the frozen ephemeris, and the S111 predictions differ by 11-12 min between the two, inside the window. Separately, `vet.py:35` (`len(t) < 1000`) drops Sector 10 (2019) entirely for both southern stars, so the "detected every year" statements and the per-sector tables omit 2019; TESS-SPOC S10 (953 +- 94 ppm) is in `tessspoc_check.json` but not in REPORT.md.
 3. **The QLP S99-S105 timing error is real but harmless here.** Flux-matched cadence comparison of QLP TIME against the SPOC-calibrated TESScut TIME shows QLP times drifting to -2.3 min by the end of S100, +3 to +4 min in S103, and -1 to -3.5 min in S105 (S105 is outside the range MAST lists as affected). Propagated through the frozen transit-time fits, T0 moves by 0.05, -0.8 and +1.3 min and P by < 0.1 sigma for the three stars (`timing_propagation.json`), well inside the quoted +-20 min windows. MAST has not redelivered v02 files for S99-S104 as of today (HEAD requests return 404; `mast_products.json`).
 
 ---
@@ -174,8 +177,100 @@ does not contain it, confirmed.
 
 ---
 
-## 4. [Third object withheld]
-The review's section on a third signal, in a crowded field whose host star could not be assigned from TESS pixels, is withheld from this public copy pending ground-based host assignment. Its verdict was WOUNDED (signal real, host undetermined).
+## 4. TIC 120517801
+> *Historical review text (2026-10-18), restored 2026-10-20. Its "probably, but not demonstrably" host wording is superseded by the current, more cautious status: host unresolved, likely blend.*
+
+### 4.1 The frozen ephemeris is wrong at the level that matters for the Sector 111 test
+`final_ephemeris.json`: 16 QLP times from S63/S64/S90/S100 (2023-2026) only (S10/S36/S37 discarded by `vet.py:122`), P = 3.2821840 +- 0.0000264 d,
+chi2/dof 75/14. The project's all-data BLS in the same `report.json` gives P = 3.2822796 d (`bls_refine`), T0 = 2284.851168. The two
+differ by 9.6e-5 d = 3.6 sigma of the frozen error. Checked against the data: at the frozen ephemeris every 2019-2021 product shows the
+transit 65-100 min early (S36/S37 box fits dt = -81/-84 min; S10 deepest dips at -80 to -100 min); at the BLS ephemeris the same fits give
+dt = +6 (S10), -21/-18 (S36/S37), +12 (S63/S64), +9 (S90), +18 (S100) min. A weighted linear fit of these seven sector-level offsets on top of the
+BLS ephemeris gives P = 3.2823045 +- 0.000014 d (chi2 5.4 / 5), 4.6 sigma from the frozen value. Consequences at the Sector 111 epochs
+(636-660): the frozen predictions are 22-25 min early relative to the BLS ephemeris and 40-45 min early relative to the refit. The
+pre-registered outcome rule ("within +-3 sigma_min, and in any case within +-60 min, of >= 2 predicted times"; sigma_min = 10 min) would then
+classify a real, on-time signal as "inconsistent", or at best recover it only through the +-60 min fallback. **A v2 freeze from all seven
+sectors is required before the S111 data exist** (same for the sentence in `PREREGISTRATION.md` "conservative +-20 min window").
+
+### 4.2 Independent extractions at the all-data ephemeris (`hlsp_depths_bls_120517801.json`, `s10_scan_120517801_bls.json`, `per_event_120517801_bls.json`)
+
+| sector (year) | QLP SAP / DET | TARS | other | review fixed aperture r = 1.5 px (clean events) | dt (min) |
+|---|---|---|---|---|---|
+| S10 (2019, 1800 s) | 486 +- 214 | 513 +- 300 | ELEANOR-LITE 538 +- 183, TGLC 974 +- 405, T16-EPD2 339 +- 146 | 614 +- 258 (box scan: 664 +- 244 at dt 0, best 813 +- 249 at +10 min; QLP 531 +- 184 at -10; TARS 929 +- 224 at +10) | +6 |
+| S36 (2021, 600 s) | 874 +- 213 | 769 +- 188 | - | 864 +- 151 | -21 |
+| S37 (2021, 600 s) | 1003 +- 205 | 1115 +- 195 | - | 791 +- 152 | -18 |
+| S63 (2023, 200 s) | 615 +- 185 / 650 +- 184 | 670 +- 196 | - | 819 +- 133 | +12 |
+| S64 (2023) | 635 +- 188 / 620 +- 187 | 333 +- 182 | - | 442 +- 119 | +12 |
+| S90 (2025) | 1064 +- 189 / 1114 +- 188 | 833 +- 189 | - | 978 +- 125 | +9 |
+| S100 (2026) | 866 +- 121 / 894 +- 120 | not delivered | - | 563 +- 156 | +18 |
+
+Fixed-aperture mean 759 +- 59 ppm, chi2 = 10.3 for 6 d.o.f.; before 2024 vs after 739 +- 71 vs 801 +- 103 ppm (0.5 sigma). The 2019 Sector 10
+transit, never examined by the project (`vet.py:35`), is present at 2.7-3.6 sigma in the cutout, QLP and TARS at the all-data ephemeris and
+absent at the frozen one. The signal is therefore stable in depth and phase over 2019-2026 and is not a sector-dependent systematic. (TESS-SPOC
+produced no light curve at all for this star in any sector, which for a Tmag 11.4 target indicates crowding-based exclusion.) Per-event
+aperture-vs-annulus checks: the dimming is confined to the aperture; S90 e452 and S100 e553 have background jumps and were excluded.
+
+### 4.3 Crowding and what TRICERATOPS says (`triceratops_bls_120517801.json` = reference run; `triceratops_120517801.json` = frozen-ephemeris run)
+TIC v8.2 contamination ratio 0.298; 629 Gaia sources within 150 arcsec, 343 of them bright enough to produce the signal with a < 100 % eclipse;
+within the 2.5-px aperture TRICERATOPS counts the target at 67 % of the flux, TIC 936944659 (= Gaia G = 14.69 at 4.09 arcsec) at 4.7 %, and
+eight further stars at 0.2-1.2 % each. Two runs. (a) Fold at the frozen ephemeris (which places the 2021 transits 66 min late and so smears the S36/S37 contribution):
+FPP = 0.54, NFPP = 0.47, nearby-star probability spread over a dozen faint stars. (b) Fold at the all-data ephemeris (reference):
+**FPP = 0.088, NFPP = 0.062**; TP 0.72, PTP 0.16, DTP 0.028, STP 0.021, NTP on TIC 936944659 (the G = 14.7 star) 0.011, NEB on
+TIC 120517800 / 936944647 / 120517845 / 120517809 0.003-0.006 each; on-target scenarios sum to 0.94. The 8x drop between (a) and (b) is the
+shape term: a correctly folded, flat-bottomed 2.2-h event disfavours the diluted deep eclipses the NEB scenarios need, and I was wrong to
+expect the flux ratios alone to fix the answer. Run (b) meets Giacalone et al.'s "likely planet" criteria (FPP < 0.5, NFPP < 0.1) but not the
+validation thresholds (FPP < 0.015, NFPP < 1e-3), and the residual 6 % nearby-star probability is split between the 4.2-arcsec star and four
+stars at 15-40 arcsec. Caveats: 2.5-px circle, not QLP's aperture; no contrast curve; fold SNR ~12 (< 15, where FPP is a weak predictor).
+
+### 4.4 Pixel-level (`pixel_review_120517801_bls.json`, `pixel_combine_120517801_bls.csv`, `per_event_psf_120517801_bls.json`, `plots/pixel_review_120517801_bls.png`)
+
+| sector | loss-fit offset (px) | chi2(target) - chi2(free) | G = 14.7 at 0.18 px: dchi2 vs target / implied eclipse | per-event mean offset (px, sigma; event-scatter chi2/dof) | pixels > 4 sigma beyond 2 px |
+|---|---|---|---|---|---|
+| 10 (2019, 1800 s) | 1.02 +- 0.46 | 10.3 | -0.6 / 1.0 % | - | 4 (one hot pixel at 4.5 px dominates the map) |
+| 36 | 0.46 +- 0.19 | 9.7 | +1.7 / 0.95 % | 0.56 (5.2; 37/14) | 0 |
+| 37 | 0.38 +- 0.18 | 9.3 | -2.3 / 1.4 % | 0.49 (4.3; 13/14) | 0 |
+| 63 | 0.33 +- 0.23 | 4.6 | -3.7 / 1.1 % | 0.23 (1.9; 52/14) | 0 |
+| 64 | 0.70 +- 0.36 | 5.5 | +1.2 / 0.46 % | 0.45 (2.7; 98/14) | 1 |
+| 90 | 0.65 +- 0.17 | 70.4 | -30.3 / 1.8 % | 0.36 (3.6; 34/16) | 10 (extended 5x5 loss blob) |
+| 100 | 0.09 +- 0.28 | 0.2 | +0.2 / 0.95 % | 0.72 (6.4; 88/14) | 0 |
+
+* The loss position is offset by 0.3-0.7 px in six of seven sectors, in different directions (S36 +x, S37 +y, S90 +y, S100 -y, S64 +x+y), with
+  per-event scatter chi2 of 2-7x the degrees of freedom in S63/S64/S100. There is a ~0.5 px (10 arcsec) systematic floor in this field, as
+  expected for a target that supplies only 67 % of the aperture flux and a PSF (sigma 0.7-0.8 px) that contains a dozen G = 15-19 stars.
+* Sky-combined mean: 5.4 +- 1.3 arcsec from the target (4.2 sigma formal; scatter chi2 44 / 12, so ~2.2 sigma) and 1.7 arcsec (1.4 sigma formal)
+  from the G = 14.7 star, which lies 3.6 arcsec north of the target; joint dchi2 (neighbour minus target) = -34, dominated by S90 (-30). The
+  neighbour is mildly favoured by position, not significantly. S64, which the team quotes as "0.43 px on target", has one event with
+  negative amplitude and a per-event chi2 of 98/14: it is a non-detection at pixel level.
+* No far neighbour is indicated: nothing beyond 2 px reaches 4 sigma except the S90 extended blob (centred 0.65 px north of the target,
+  not on any specific star) and a hot pixel in S10. An EB 20-60 arcsec away is excluded; anything within ~10 arcsec is not.
+* Flux-weighted centroid shifts are 0.0-0.4 +- 0.15 mpx, 10x too small to separate the two stars (expected difference ~0.15 mpx).
+
+### 4.5 The G = 14.7 star at 4.2 arcsec
+Gaia DR3 5359600666906791424: G = 14.69, BP-RP 0.78, parallax 0.54 mas (1.85 kpc), RUWE 1.01, ipd_frac_multi_peak 1; GSP-Phot Teff 5883 K,
+logg 4.12, R = 1.53 R_sun; FLAME M = 1.14, R = 1.76. An eclipse of 1.0-1.8 % on it is an M-dwarf companion (R ~ 0.15-0.2 R_sun) or a
+Jupiter-sized body on a 1.5-R_sun G star at 3.28 d: both are common configurations. It is 0.18 px from the target; nothing TESS can do
+separates them. The target: G = 11.99, parallax 5.561 +- 0.011 (179.8 pc), RUWE 0.93, RV 1.36 +- 0.83 km/s from 15 transits
+(rv_chisq_pvalue 0.71, no stellar companion at 3.28 d), GSP-Phot Teff 5067 K, R 0.844, FLAME M 0.80 -> rho 1.33; expected T14(b = 0.45) 2.2-2.3 h
+(observed 2.2 h), Rp = 2.5 R_Earth if on target and undiluted; with the 30 % contamination ratio, ~2.8 R_Earth.
+
+### 4.6 Catalogues, phase tests (all-data ephemeris, `phase_tests_bls.json`)
+VSX within 3 arcmin: Gaia DR3 5359601315431877888 (EB, P = 0.2918 d, 135 arcsec, G = 17.9, needs 19 %; 3.2823/0.2918 = 11.25, not an alias),
+a delta Scuti/gamma Dor candidate at 149 arcsec, a 0.036-d variable at 167 arcsec; 915 TIC entries within 3 arcmin, no TOI/CTOI/TCE among
+them. Phase tests: depth 775 +- 73 ppm; odd/even 783 +- 108 vs 768 +- 100 (0.1 sigma); secondary -29 +- 74 ppm; harmonics < 17 +- 19 ppm;
+box vs sinusoid dchi2 104.
+
+### 4.7 Ephemeris and pre-registration
+The frozen fit itself was reproduced exactly (three 3-sigma outliers, epochs 225/229/547; S100 timing error -0.65 to -2.07 min at the five
+S100 epochs; corrected fit T0 +1.3 min, P +0.1 sigma). tess-point: S111 (cam 4 CCD 3), S112, S113. The problem is 4.1, not arithmetic.
+Required: re-freeze (v2) from all seven sectors including S10 and the 600-s sectors, with the all-data period; keep v1 on record. The right
+wording for this object is "transit-like signal in a crowded field, host probably but not demonstrably TIC 120517801 (TRICERATOPS on-target
+probability 0.94, pixel test inconclusive)"; it should not be counted as a planet candidate on TIC 120517801 in any public text until
+seeing-limited photometry (section 7) assigns it.
+
+---
+
+
+> **Correction, 2026-10-20:** Section 4.3 misstated the Giacalone et al. “likely planet” NFPP threshold: it is 0.001, not 0.1. With FPP = 0.088 and NFPP = 0.062, this run meets neither their likely-planet nor validation criteria. Section 4.5's Gaia summary-RV probability does not exclude a stellar companion or provide a calibrated mass bound. The current interpretation is a likely blend with the host unresolved. Section 4.1's 22–45-minute v1/v2 timing range is also corrected: The frozen v2 predictions are 27.4–28.4 minutes later than v1 in S111, and 27.4–30.9 minutes later over S111–113. All these differences lie inside the corresponding written v1 3σ timing windows. Timing alone therefore does not establish that v1 would fail a real signal. The historical 22–45-minute range is not the frozen v1-to-v2 comparison reproduced here. The prospective test outcome remains unmeasured.
 
 ## 5. Methods audit against the literature (sources I fetched)
 
@@ -184,14 +279,14 @@ The review's section on a third signal, in a crowded field whose host star could
 | Pixel-level localisation by PRF/PSF fit to difference images, with a quality metric, and a stated off-target criterion | LEO-Vetter (Kunimoto et al. 2025, https://arxiv.org/html/2509.10619v1, sec. IV.5): PRF fit to in-minus-out images, centroid accurate to ~0.2 px (5.2 arcsec) at high SNR, fails TCEs at offset > 15 arcsec, "prfFitQuality < 0.3 means that the fit results should not be trusted"; two known NEB TOIs survived its pixel test. Twicken et al. 2018 (https://arxiv.org/html/1803.04526v2, III.4.1): PRF centroiding, difference images used only when a quality metric exceeds ~0.7, out-of-transit centroid "subject to aperture crowding". Bryson et al. 2013 (https://arxiv.org/html/1303.0052v2): false positive declared when the source is offset by more than three standard deviations; "PRF model error and crowding contribute systematic errors"; the methods "cannot detect all background transit sources", e.g. a source "extremely close to the target star on the sky". | Flux-weighted positive-pixel centroid within 3.5 px, no PSF fit, no quality metric, bootstrap error only, J2000 positions, no background subtraction. Adequate for 20-60 arcsec blends (it caught nine); not adequate to claim sub-pixel exclusions. This review adds the PSF fit, the sky-coordinate combination and the per-event consistency check; the team should adopt them. |
 | Depth vs aperture; centroid moving to a star >= 1 px away | Guerrero et al. 2021 (https://arxiv.org/html/2103.12538v2): QLP diagnostics are "centroid information, difference image comparison, multi-aperture comparison"; "Movement of the centroid in the difference images to a star 1 pixel away or more" and "If the transit depth increases with aperture size, the TCE signal usually comes from a nearby source"; 565/2241 TOIs (25 %) were false positives after follow-up. | Done (depth vs radius), but on raw, background-included apertures, where the decline with radius is dominated by sky and neighbours; not diagnostic for sources inside 1 px. |
 | QLP apertures and normalisation | Kunimoto et al. 2022 (https://arxiv.org/html/2211.04386): QLP delivers an "optimal aperture" plus one smaller and one larger; global background via nebuliser/fitsh plus local background; no published per-sector aperture in the HLSP files (confirmed: no aperture keywords in the headers). MAST QLP page (https://archive.stsci.edu/hlsp/qlp): "As of Sector 94, QLP is now using the TESS-Gaia Light Curve (TGLC) methodology"; timing error orbits 210-220, sectors 99-104 "have not yet been redelivered" (page updated 2026-08-12; my HEAD checks confirm no v02 today). MIT QLP page (https://tess.mit.edu/qlp/): S74-79 timing error "up to roughly +-3.0 minutes", fixed in v02; bit 31 = QLP quality flag. | The project used QLP sector depths as an astrophysical depth test (REPORT 12.3 "two-level depth"), which this review shows is a normalisation effect. The project knew about the timing error (RESEARCH.md) but did not propagate it; now done here (harmless). |
-| Second pipeline, all sectors | TESS-SPOC (https://archive.stsci.edu/hlsp/tess-spoc): delivered through Sector 85; Tmag <= 13.5 or H <= 10 or 2-min targets, max 10,000 per CCD per sector. TARS (https://archive.stsci.edu/hlsp/tars): S1-96, "unpopular causal pixel model", a rotation survey, no aperture/dilution description. | TESS-SPOC checked for S36/S37/S63 (S10 computed but unreported); TARS, TGLC, ELEANOR-LITE, T16 not used. TESS-SPOC has no product at all for TIC [withheld] (not selected; crowding), which the project did not note. |
-| Statistical validation thresholds and limits | Giacalone et al. 2021 (https://arxiv.org/abs/2002.00691): validated if FPP < 0.015 and NFPP < 1e-3; (SNR < 15 caveat and Rp < 8 R_Earth range: earlier survey, RESEARCH.md items 1 and 5). | Not run for these three before this review. Results above: 80387959 FPP 0.047 / NFPP 0.010 and 120444365 FPP 0.041 / NFPP 0.000 ("likely planet", not validated); [withheld] FPP 0.088 / NFPP 0.062 at the all-data ephemeris (0.54 / 0.47 at the frozen one, which smears the 2021 sectors). |
-| Ground-based NEB clearing | TFOP SG1 purpose: "identify false positives due to nearby eclipsing binaries" (https://tess.mit.edu/followup/). The 2.5-arcmin Gaia-star search and the "cleared / NEB" disposition scheme appear in a 2019 SG1 talk and in TFOP tables found by web search (Collins 2019 talk, arXiv:2202.00042) that I did not fetch; I cite them as unverified. | Not possible from TESS; the right next step for [withheld] and, at lower priority, for the G = 17.3 star near 80387959. |
+| Second pipeline, all sectors | TESS-SPOC (https://archive.stsci.edu/hlsp/tess-spoc): delivered through Sector 85; Tmag <= 13.5 or H <= 10 or 2-min targets, max 10,000 per CCD per sector. TARS (https://archive.stsci.edu/hlsp/tars): S1-96, "unpopular causal pixel model", a rotation survey, no aperture/dilution description. | TESS-SPOC checked for S36/S37/S63 (S10 computed but unreported); TARS, TGLC, ELEANOR-LITE, T16 not used. TESS-SPOC has no product at all for TIC 120517801 (not selected; crowding), which the project did not note. |
+| Statistical validation thresholds and limits | Giacalone et al. 2021 (https://arxiv.org/abs/2002.00691): validated if FPP < 0.015 and NFPP < 1e-3; (SNR < 15 caveat and Rp < 8 R_Earth range: earlier survey, RESEARCH.md items 1 and 5). | Not run for these three before this review. Results above: 80387959 FPP 0.047 / NFPP 0.010 and 120444365 FPP 0.041 / NFPP 0.000 ("likely planet", not validated); 120517801 FPP 0.088 / NFPP 0.062 at the all-data ephemeris (0.54 / 0.47 at the frozen one, which smears the 2021 sectors). |
+| Ground-based NEB clearing | TFOP SG1 purpose: "identify false positives due to nearby eclipsing binaries" (https://tess.mit.edu/followup/). The 2.5-arcmin Gaia-star search and the "cleared / NEB" disposition scheme appear in a 2019 SG1 talk and in TFOP tables found by web search (Collins 2019 talk, arXiv:2202.00042) that I did not fetch; I cite them as unverified. | Not possible from TESS; the right next step for 120517801 and, at lower priority, for the G = 17.3 star near 80387959. |
 | Gaia DR3 blend diagnostics | Gaia DR3 columns queried directly (ipd_frac_multi_peak, ipd_gof_harmonic_amplitude, RUWE, astrometric_excess_noise, non_single_star, phot_variable_flag, vari_* tables, RV variability statistics). | `vet.py:218` stores G, BP-RP, parallax, RUWE only. Added here; the RV-variability statistics are the one Gaia product that constrains the target-EB scenario at these periods, and they clear all three targets of stellar-mass companions. |
 
 Not done by either the project or this review, and required before any public "candidate" claim beyond the ephemeris test: seeing-limited
 photometry of a predicted transit in a small aperture (SG1-style NEB clearing of every Gaia star within 2.5 arcmin that could produce the
-depth; for [withheld] that is ~340 stars, for 80387959 the G = 14.0 and G = 17.3 stars, for 120444365 none), speckle/AO imaging for companions
+depth; for 120517801 that is ~340 stars, for 80387959 the G = 14.0 and G = 17.3 stars, for 120444365 none), speckle/AO imaging for companions
 inside 1 arcsec, and reconnaissance spectroscopy. The citations above are pages I fetched myself; the commissioned literature sub-survey
 arrived after the data work was finished and is reproduced in full in `LITERATURE_SURVEY.md` (all URLs fetched 2026-10-18). Its points that
 bear on the three candidates:
@@ -201,8 +296,8 @@ bear on the three candidates:
   https://arxiv.org/pdf/2103.12538); LEO-Vetter fails only Delta-theta > 15 arcsec and quotes ~0.2 px (5.2 arcsec) accuracy at high SNR
   (https://arxiv.org/pdf/2509.10619); Transit-APP (Bryson & Kunimoto 2025, https://ntrs.nasa.gov/api/citations/20250003461/downloads/transitApp.pdf)
   distinguishes sources ~0.2 px apart only at high SNR. My sector-to-sector floors (0.1-0.2 px for 80387959 and 120444365; ~0.5 px for
-  [withheld]) and the 2-5 arcsec combined positions are consistent with that literature; no pixel method reaches the 4.2-arcsec star of
-  TIC [withheld], as section 4 says. DAVE (Kostov et al. 2019, https://arxiv.org/pdf/1901.07459) warns that bright field stars in the
+  120517801) and the 2-5 arcsec combined positions are consistent with that literature; no pixel method reaches the 4.2-arcsec star of
+  TIC 120517801, as section 4 says. DAVE (Kostov et al. 2019, https://arxiv.org/pdf/1901.07459) warns that bright field stars in the
   aperture can "capture the out-of-transit PRF fit and thus result in a false centroid offset", which is the right reading of the S90 blob.
 * **QLP apertures and dilution.** QLP uses five circular apertures of 1.75, 2.5, 3.0, 3.5 and 8.0 px, chosen per magnitude bin, and deblends
   with the TIC constant flux and difference-image variability (Guerrero et al. 2021); from Sector 94 the dilution system is TGLC/Gaia
@@ -215,12 +310,12 @@ bear on the three candidates:
   https://archive.stsci.edu/missions/tess/doc/tess_drn/tess_sector_100_drn137_v01.pdf):** a new attitude control algorithm was tested in the
   last 27 h of Sector 100 and reaction wheels were calibrated in the first ~1 h, with elevated pointing scatter. Checked against the cutout
   time span (BTJD 4073.99-4100.47): no TIC 80387959 transit falls in either window (epochs 428-433 at 4078.10-4099.06; the next at 4073.91 is
-  before the data start); TIC [withheld] epoch 553 (4099.95) is inside the last-27-h window and is the S100 event my per-event filter already
+  before the data start); TIC 120517801 epoch 553 (4099.95) is inside the last-27-h window and is the S100 event my per-event filter already
   excluded for its background jump (section 4.2). TIC 120444365 has no S100 data. Sector 104 ACS 5.11 windows (DRN 142) do not concern these
   stars (no S104 data).
 * **SG1 practice at < 1 ppt** (Collins 2019 SG1 talk, https://tsc.mit.edu/2019/talks/Karen%20Collins.pdf): search all Gaia stars within
   2.5 arcmin with ~1.5-arcsec apertures; the achievable disposition at this depth is "cleared planet candidate" (no NEB found), not an
-  on-target detection; ground sensitivity threshold ~1 ppt. This sets what section 7 can deliver: for [withheld] a CPC/PNEB/NEB outcome on
+  on-target detection; ground sensitivity threshold ~1 ppt. This sets what section 7 can deliver: for 120517801 a CPC/PNEB/NEB outcome on
   the 4.2-arcsec star is realistic only under good seeing with small apertures; a 750-ppm on-target detection is at the limit.
 * **Gaia blind zone** (Penoyre et al. 2022, https://arxiv.org/pdf/2202.06963; VaTEST III, https://arxiv.org/pdf/2311.00688): Gaia resolves
   pairs at >~ 2 arcsec, the IPD flags act from ~1 arcsec down to ~0.18 arcsec, and ipd_frac_multi_peak <= 2 is treated as single. All three
@@ -246,7 +341,7 @@ bear on the three candidates:
 2. **REPORT.md 12.3 (80387959):** "G = 17.3 neighbour at 8 arcsec excluded at 4.8/2.8/4.3 sigma". The sector-to-sector scatter of the loss
    position (chi2 52/10 here; the team's own three sectors differ by 0.1-0.3 px) is 2.3x the bootstrap error; the exclusion is ~2.7 sigma
    combined. The G = 14.0 star is excluded at ~4 sigma. State both.
-3. **REPORT.md 12.3 ([withheld]):** "Pixel centroid on target (0.07-0.43 px)". S64 is a non-detection at pixel level (per-event chi2 98/14,
+3. **REPORT.md 12.3 (120517801):** "Pixel centroid on target (0.07-0.43 px)". S64 is a non-detection at pixel level (per-event chi2 98/14,
    one event with negative amplitude); S90 is 0.65 +- 0.17 px off in my PSF fit with an extended loss map; offsets of 0.3-0.7 px in different
    directions in six of seven sectors. Replace with: "pixel test inconclusive; loss-position systematic floor ~10 arcsec in this field; the
    G = 14.7 star at 4.2 arcsec is mildly favoured by position (1.4 sigma)". Add: TRICERATOPS NFPP = 0.062 at the all-data ephemeris (0.47 at
@@ -257,7 +352,7 @@ bear on the three candidates:
 5. **`scripts/vet.py:122`** (`min_pts = 15` in-transit points) and **`scripts/prereg_candidate.py:13`**: transit times exist only for 200-s
    sectors, so the frozen ephemerides ignore 2018-2021 data. For TIC 120444365 this yields P = 5.148082 d vs the all-data 5.148179 d (2.6 sigma;
    the 2018-2023 transits sit 50-90 min early on the frozen ephemeris). Re-freeze a v2 from all sectors plus the SPOC 2-min S29 times. For
-   TIC [withheld] it yields P = 3.282184 d vs the all-data 3.282280 d (3.6 sigma) and a seven-sector refit 3.282305 d (4.6 sigma); the frozen
+   TIC 120517801 it yields P = 3.282184 d vs the all-data 3.282280 d (3.6 sigma) and a seven-sector refit 3.282305 d (4.6 sigma); the frozen
    S111 predictions are 22-45 min early, outside the +-20 min window: re-freeze v2 now. For TIC 80387959 the two periods agree at 1.8 sigma
    (11-12 min at S111); fix the same way.
 6. **`scripts/vet.py:57`** (`exp_time = 120 / 86400` in `transit_model`): the batman supersampling uses the 2-min exposure for QLP data at 200,
@@ -300,7 +395,7 @@ bear on the three candidates:
    observation settles the only remaining blend scenarios with > 1e-3 probability.
 3. Speckle imaging for sub-arcsecond companions; spectroscopy.
 
-**TIC [withheld]**
+**TIC 120517801**
 1. Seeing-limited photometry of a predicted transit (Tmag 11.4, P = 3.28 d, 2.2 h, Dec -53) with light curves of every Gaia star within 2.5 arcmin
    brighter than G ~ 18.5 (SG1 NEB-check style). The G = 14.7 star at 4.2 arcsec needs ~1.5 arcsec seeing and a small aperture to separate;
    a 1-2 % eclipse on it would be obvious. This is the only observation that can turn the object into a candidate on a specific star.
@@ -327,10 +422,10 @@ bear on the three candidates:
 * `scripts/gaia_retry.py`, `catalogs_vizier.py` -> `gaia_dr3.json`, `gaia_<tic>_150as.csv`, `catalogs_vizier.json`, `tic_<tic>_180as.csv`
 * `scripts/mast_products.py` -> `mast_products.json` (all MAST products per star; QLP v01/v02 URL checks)
 * `scripts/tesscut_fetch.py` -> `data/tesscut/` (15x15 cubes, all sectors)
-* `scripts/hlsp_depths2.py`, `hlsp_depths_bls.py`, `hlsp_depths_bls_[withheld].py` -> `hlsp_depths.json`, `hlsp_depths_bls_120444365.json`, `hlsp_depths_bls_[withheld].json`
+* `scripts/hlsp_depths2.py`, `hlsp_depths_bls.py`, `hlsp_depths_bls_120517801.py` -> `hlsp_depths.json`, `hlsp_depths_bls_120444365.json`, `hlsp_depths_bls_120517801.json`
 * `scripts/pixel_review.py`, `pixel_combine.py`, `per_event.py`, `per_event_psf.py` -> `pixel_review_<tic>[_bls].json`, `pixel_combine_<tic>[_bls].csv/json`, `per_event_<tic>.json`, `per_event_psf_<tic>.json`, `plots/pixel_review_<tic>[_bls].png`
-* `scripts/phase_tests.py`, `phase_tests_bls.py` -> `phase_tests.json`, `phase_tests_bls.json` ([withheld] at the all-data ephemeris)
-* `scripts/s10_scan_[withheld].py`, `s10_scan_[withheld]_bls.py` -> `s10_scan_[withheld].json` (frozen ephemeris), `s10_scan_[withheld]_bls.json` (all-data ephemeris)
+* `scripts/phase_tests.py`, `phase_tests_bls.py` -> `phase_tests.json`, `phase_tests_bls.json` (120517801 at the all-data ephemeris)
+* `scripts/s10_scan_120517801.py`, `s10_scan_120517801_bls.py` -> `s10_scan_120517801.json` (frozen ephemeris), `s10_scan_120517801_bls.json` (all-data ephemeris)
 * `scripts/stellar_summary.py` (prints the stellar/catalogue/TRICERATOPS summary used in sections 2.4, 3.4, 4.3)
 * `LITERATURE_SURVEY.md`: the commissioned literature sub-survey (verbatim)
 * `scripts/triceratops_review.py`, `triceratops_review_bls.py`, `triceratops_review_bls_120444365.py` (run in `.venv_tri`; the `_bls` runs fold at the all-data ephemeris and are the reference numbers) -> `triceratops_<tic>.json`, `triceratops_bls_<tic>.json`, `*_probs.csv`, `*_stars.csv`; the `*_gaia_background.csv` files are TRICERATOPS working files

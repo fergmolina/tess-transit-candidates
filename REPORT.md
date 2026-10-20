@@ -632,13 +632,20 @@ test reaches a neighbour inside ≈ 0.35 px, and our per-sector centroid errors 
   holdout had no covered transit). TRICERATOPS FPP 0.041 (above the 0.015 validation threshold), NFPP 0.000 (structural in this setup); not validated (category label withdrawn 2026-10-20). Gaia DR3
   flags the star VARIABLE (rotation ≈ 13 d, not a harmonic of 5.148 d). Test of record Sector 106 (6 transits, 2026-07-12 to 08-07; QLP file absent
   from MAST at both freezes), expected late October 2026; no further coverage through S134.
-* A third signal (3.28 d, 0.8 ppt, crowded field) is real and stable but its host star cannot be assigned from TESS pixels (a star 4.2″ away
-  needs only ≈ 1 %); it is withheld from this public copy pending seeing-limited photometry.
+* **TIC 120517801** (K dwarf, Tmag 11.4). **Wounded.** The signal is real and stable (fixed-aperture 759 ± 59 ppm, χ² 10.3/6, present in 2019 S10),
+  but the host is probably, not demonstrably, this star: a G = 14.7 star 4.2″ (0.18 px) away needs only ≈ 1 % and no TESS pixel test resolves it;
+  the reviewer's sky-combined loss position is 5.4 ± 1.3″ from the target and 1.7″ from that star, S64 is a pixel-level non-detection, and the
+  earlier "pixel centroid on target" wording is withdrawn. TRICERATOPS at the all-data ephemeris: on-target probability 0.94, FPP 0.088, NFPP 0.062
+  (0.47 at the biased v1 ephemeris — TRICERATOPS depends strongly on folding at the right period). v2: P = 3.282292 ± 0.000024 d, T0 = BTJD
+  4086.82546 ± 13.4 min (7 sector times; χ² 25.9/5, inflation 2.3; SHA 0e6bd698…, 22:34:41 UTC); **v1 was 3.0σ low and its Sector 111 predictions
+  22–45 min early**, i.e. the v1 test would have failed a real signal. Ephemeris test only (S111–S113); host assignment needs seeing-limited
+  photometry of every Gaia star within 2.5′ (TFOP SG1 practice at < 1 ppt). *Restored to the public copy on 2026-10-20 (v1.14, author decision). Current status: likely blend, host unresolved; FPP and NFPP are above the validation thresholds; the "blind" year checks were retrospective; independent rediscovery (listed earlier by eumemic/exoplanets 2026-10-09 and Rahle 2026-10-18).*
+  **Correction, 2026-10-20:** The frozen v2 predictions are 27.4–28.4 minutes later than v1 in S111, and 27.4–30.9 minutes later over S111–113. All these differences lie inside the corresponding written v1 3σ timing windows. Timing alone therefore does not establish that v1 would fail a real signal. The historical 22–45-minute range is not the frozen v1-to-v2 comparison reproduced here. The prospective test outcome remains unmeasured. (Angular note: 4.2″ is about 0.20 TESS pixel at 21″/pixel; the 0.18 px above is the historical value.)
 * TIC 235283074 (9.31 d, 1.65 ppt): unresolved (0.37 ± 0.1 px in the one testable sector; ρ 0.17×; blind 2/4); re-test after S111.
 
 Reviewer's ranked next observations: 120444365 — the S106 test (QLP and a TESScut fixed-aperture extraction), one ground transit at ≈ 1 mmag,
 speckle imaging, reconnaissance spectroscopy; 80387959 — the S111 test extracted from TESScut, one ground transit with apertures separating the
-13.7″ star; [withheld] — SG1-style photometry of every Gaia star within 2.5′ (the 4.2″ star needs ≈ 1.5″ seeing). Code fixes applied from REVIEW §6:
+13.7″ star; 120517801 — SG1-style photometry of every Gaia star within 2.5′ (the 4.2″ star needs ≈ 1.5″ seeing). Code fixes applied from REVIEW §6:
 `vet.py` cadence-aware sector and in-transit thresholds and real-cadence exposure time; `prereg_v2.py`. Still open: background subtraction, proper-motion
 correction and a full-cutout PSF fit in `ffi_pixel_test.py` (the reviewer's `pixel_review.py` does these), and live VSX/Gaia-variability queries in `known_nearby.py`.
 

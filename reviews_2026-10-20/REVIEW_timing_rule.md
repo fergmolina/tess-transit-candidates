@@ -81,8 +81,8 @@ In this table, **A** means correctly targeted addendum present and every byte of
 | `results/vet_allsky/115692561/PREREGISTRATION_v2.md` | 2026-10-20 00:44:10 | not found | B |
 | `results/vet_allsky/120444365/PREREGISTRATION.md` | 2026-10-18 20:26:00 | 24cd0de | X; public prefix preserved |
 | `results/vet_allsky/120444365/PREREGISTRATION_v2.md` | 2026-10-18 22:34:49 | 24cd0de | A |
-| `results/vet_allsky/[withheld]/PREREGISTRATION.md` | 2026-10-18 20:25:07 | not found | X; historical prefix unverified |
-| `results/vet_allsky/[withheld]/PREREGISTRATION_v2.md` | 2026-10-18 22:34:41 | not found | B |
+| `results/vet_allsky/120517801/PREREGISTRATION.md` | 2026-10-18 20:25:07 | not found | X; historical prefix unverified |
+| `results/vet_allsky/120517801/PREREGISTRATION_v2.md` | 2026-10-18 22:34:41 | not found | B |
 | `results/vet_allsky/122522485/PREREGISTRATION_v2.md` | 2026-10-20 00:33:06 | not found | B |
 | `results/vet_allsky/159033763/PREREGISTRATION_v2.md` | 2026-10-20 00:43:55 | not found | B |
 | `results/vet_allsky/160330868/PREREGISTRATION_v2.md` | 2026-10-20 00:43:17 | not found | B |
@@ -119,7 +119,7 @@ In this table, **A** means correctly targeted addendum present and every byte of
 | `results/vet_allsky/88407114/PREREGISTRATION_v2.md` | 2026-10-20 00:44:14 | not found | B |
 | `results/vet_allsky/91617711/PREREGISTRATION_v2.md` | 2026-10-19 12:51:37 | b944812 | A |
 
-The **three X entries** are `results/vet_allsky/{80387959,120444365,[withheld]}/PREREGISTRATION.md`. Each original says `within +-3 sigma_min (and in any case within +-60 min)`, requires depth **0.6–1.5×**, and sets the inconsistent threshold to **60 minutes**. Its generator is `scripts/prereg_candidate.py`, not `prereg_v2.py`. The appended statement that “the phrase ... +-30 min above misstates the rule” is false in all three. Correct these addenda explicitly rather than extending a v2-specific clarification retroactively. [L: each file's Outcomes and final generator sentence]
+The **three X entries** are `results/vet_allsky/{80387959,120444365,120517801}/PREREGISTRATION.md`. Each original says `within +-3 sigma_min (and in any case within +-60 min)`, requires depth **0.6–1.5×**, and sets the inconsistent threshold to **60 minutes**. Its generator is `scripts/prereg_candidate.py`, not `prereg_v2.py`. The appended statement that “the phrase ... +-30 min above misstates the rule” is false in all three. Correct these addenda explicitly rather than extending a v2-specific clarification retroactively. [L: each file's Outcomes and final generator sentence]
 
 The original 22 public-backed local Markdown prefixes are byte-preserved; the other 18 cannot be independently compared with a pre-change public original in the material located. None of the 37 actual local 30-minute originals was missed. The absence of an addendum on TIC 61310956 **v3** and on TIC 89247735's original records is appropriate: those are different rules, not instances of this wording defect. TIC 61310956 **v2** does contain it and is correctly annotated as a historical superseded record. [L,G]
 
@@ -213,7 +213,7 @@ Each primary row below names the directory and version: the tested file is `pred
 |---|---|---|---|
 | `results/vet_allsky/115692561` | v2 | d8fe193dfce2 | match / match |
 | `results/vet_allsky/120444365` | v2 | 32b5e0857265 | match / match |
-| `results/vet_allsky/[withheld]` | v2 | 0e6bd698e1f4 | match / match |
+| `results/vet_allsky/120517801` | v2 | 0e6bd698e1f4 | match / match |
 | `results/vet_allsky/122522485` | v2 | 47ce36bcb863 | match / match |
 | `results/vet_allsky/159033763` | v2 | c45eb808cb65 | match / match |
 | `results/vet_allsky/160330868` | v2 | fa72f33be927 | match / match |
@@ -282,9 +282,9 @@ All rows below are computed from the named frozen v2 CSVs, not rounded ephemeris
 |---|---|---|---|---|---|---|---|
 | 115692561 | 106 | 3386–3417 | 3.4 | 10.2 | 10.2 | 30.0 | 30.00 |
 | 120444365 | 106 | 559–564 | 2.1 | 6.3 | 6.3 | 30.0 | 30.00 |
-| [withheld] | 111 | 636–643 | 15.9–16.1 | 47.7–48.3 | 30.0 | 47.7–48.3 | 48.04 |
-| [withheld] | 112 | 644–651 | 16.1–16.4 | 48.3–49.2 | 30.0 | 48.3–49.2 | 48.75 |
-| [withheld] | 113 | 652–659 | 16.4–16.6 | 49.2–49.8 | 30.0 | 49.2–49.8 | 49.50 |
+| 120517801 | 111 | 636–643 | 15.9–16.1 | 47.7–48.3 | 30.0 | 47.7–48.3 | 48.04 |
+| 120517801 | 112 | 644–651 | 16.1–16.4 | 48.3–49.2 | 30.0 | 48.3–49.2 | 48.75 |
+| 120517801 | 113 | 652–659 | 16.4–16.6 | 49.2–49.8 | 30.0 | 49.2–49.8 | 49.50 |
 | 122522485 | 106 | 1227–1238 | 15.9–16.1 | 47.7–48.3 | 30.0 | 47.7–48.3 | 48.05 |
 | 159033763 | 111 | 2836–2861 | 2.0–2.1 | 6.0–6.3 | 6.0–6.3 | 30.0 | 30.00 |
 | 160330868 | 107 | 187–188 | 11.7–11.9 | 35.1–35.7 | 30.0 | 35.1–35.7 | 35.40 |

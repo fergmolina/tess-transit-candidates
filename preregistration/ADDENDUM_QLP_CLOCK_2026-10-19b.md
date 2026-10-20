@@ -21,7 +21,7 @@ The frozen files are unchanged.
 | TIC 258006047 | S99 0.00, S100 +1.33, S101 +3.75, S102 +3.80 | +3.6 min (S114) | 4.7 min |
 | TIC 333735955 | S100 +1.07, S101 +2.78 | +3.2 min (S114) | 2.7 min |
 | TIC 467959906 | S103 +3.87 | +3.9 min (S114) | 4.1 min |
-| [withheld] | S100 +1.03 | +0.7 min (S111) | 15.9 min |
+| TIC 120517801 | S100 +1.03 | +0.7 min (S111) | 15.9 min |
 
 Observations (for the products checked; not a rule for every star in a sector):
 - TIC 89247735 S104 and both S103/S105 products checked: QLP time equals spacecraft time to within about 5 s (5.1 s for TIC 89247735),

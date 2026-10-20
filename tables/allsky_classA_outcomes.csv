@@ -1,7 +1,7 @@
 tic,period_d,depth_ppm,rp_re,lc_vetting,pixel_test,outcome,frozen,test_sector
 80387959,4.19218,757,2.4,pass,on target (0.17/0.28/0.22 px),candidate,v1 2026-10-18 19:40 UTC,111
 120444365,5.14808,743,2.45,pass,on target (0.03/0.19/0.04 px),candidate,v1 2026-10-18 20:26 UTC,106 (unreleased)
-[withheld],3.28228,803,2.5,pass,on target by centroid; 4" G=14.7 companion not excludable,candidate (crowding caveat),v1 2026-10-18 20:25 UTC,111
+120517801,3.28228,803,2.5,pass,on target by centroid; 4" G=14.7 companion not excludable,candidate (crowding caveat),v1 2026-10-18 20:25 UTC,111
 235283074,9.31381,1652,3.3,weak (rho 0.17 blind 2/4),0.37 px one sector,unresolved,,111
 30832104,9.71412,646,2.3,pass,off target 2.1 px (44"),rejected blend,,
 355658330,7.89971,1434,3.0,rho 9x,off target 2.1-2.4 px,rejected blend,,

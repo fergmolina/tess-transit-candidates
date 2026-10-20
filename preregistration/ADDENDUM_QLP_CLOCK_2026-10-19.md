@@ -19,7 +19,7 @@ the same way before any test is run.
 | TIC 258006047 | S99 (+0.30), S100 (+0.96), S101 (+4.41), S102 (+3.92) | +3.9 min (S114) | 4.7 min |
 | TIC 333735955 | S100 (+1.60), S101 (+2.67) | +3.1 min (S114) | 2.7 min |
 | TIC 467959906 | S103 (+3.59) | +3.6 min (S114) | 4.1 min |
-| [withheld] | S100 (+1.02) | +0.7 min (S111) | 15.9 min |
+| TIC 120517801 | S100 (+1.02) | +0.7 min (S111) | 15.9 min |
 
 Every shift is at most about 1.1 times the frozen 1σ, far inside the ±3σ / ±30-min windows of the frozen outcome rules. No outcome rule
 changes. Each test will report both the frozen and the clock-corrected prediction, and the test data themselves will be clock-checked
