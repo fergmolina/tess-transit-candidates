@@ -1,0 +1,11 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,utc_tdb_scale_only,sigma_min,tess_sector,status
+1099,4293.40727,2461293.40727,2026-09-09 21:39,2026-09-09 21:45,2.6,108,"retrodiction: before freeze, untested"
+1100,4296.02881,2461296.02881,2026-09-12 12:34,2026-09-12 12:40,2.7,108,"retrodiction: before freeze, untested"
+1101,4298.65035,2461298.65035,2026-09-15 03:29,2026-09-15 03:35,2.7,108,"retrodiction: before freeze, untested"
+1102,4301.2719,2461301.2719,2026-09-17 18:23,2026-09-17 18:30,2.7,108,"retrodiction: before freeze, untested"
+1103,4303.89344,2461303.89344,2026-09-20 09:18,2026-09-20 09:25,2.7,108,"retrodiction: before freeze, untested"
+1104,4306.51499,2461306.51499,2026-09-23 00:13,2026-09-23 00:20,2.7,108,"retrodiction: before freeze, untested"
+1105,4309.13653,2461309.13653,2026-09-25 15:08,2026-09-25 15:15,2.7,108,"retrodiction: before freeze, untested"
+1106,4311.75808,2461311.75808,2026-09-28 06:03,2026-09-28 06:10,2.7,108 (gap),"retrodiction: before freeze, untested"
+1107,4314.37962,2461314.37962,2026-09-30 20:58,2026-09-30 21:05,2.7,108,"retrodiction: before freeze, untested"
+1108,4317.00116,2461317.00116,2026-10-03 11:53,2026-10-03 12:00,2.7,108,"retrodiction: before freeze, untested"

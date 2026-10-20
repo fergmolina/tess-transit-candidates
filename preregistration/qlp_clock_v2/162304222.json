@@ -1,0 +1,25 @@
+{
+ "c0_source": "fallback +0.033 min (no clean control sector)",
+ "tic": 162304222,
+ "ephemeris_file": "results/vet_allsky/162304222/final_ephemeris_v2.json",
+ "ra": 169.134817067,
+ "dec": -43.2515719245,
+ "control": [],
+ "c0_min": 0.033,
+ "sectors": {
+  "99": {
+   "mode": "elementwise",
+   "event_btjd": 4058.0437068720644,
+   "qlp_minus_spacecraft_min": 1.6517881246392614,
+   "target_ltt_min": 1.614748131386855,
+   "correction_min": -0.004039993252406449
+  },
+  "100": {
+   "mode": "elementwise",
+   "event_btjd": 4085.39753949857,
+   "qlp_minus_spacecraft_min": 2.969142903094093,
+   "target_ltt_min": 4.127267620672009,
+   "correction_min": 1.191124717577916
+  }
+ }
+}

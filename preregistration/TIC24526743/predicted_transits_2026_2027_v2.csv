@@ -1,0 +1,5 @@
+epoch,tc_btjd,tc_bjd_tdb,utc,utc_tdb_scale_only,sigma_min,tess_sector,status
+191,4270.01197,2461270.01197,2026-08-17 12:17,2026-08-17 12:16,7.8,107,"prediction (sector observed, data not public at freeze)"
+192,4284.79874,2461284.79874,2026-09-01 07:09,2026-09-01 07:09,8.0,107,"prediction (sector observed, data not public at freeze)"
+193,4299.5855,2461299.5855,2026-09-16 02:01,2026-09-16 02:01,8.2,108,"retrodiction: before freeze, untested"
+194,4314.37227,2461314.37227,2026-09-30 20:53,2026-09-30 20:54,8.3,108,"retrodiction: before freeze, untested"

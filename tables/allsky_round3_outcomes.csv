@@ -1,0 +1,16 @@
+tic,period_d,depth_ppm,sap_depth_ppm,rp_re,snr,years,next_sector,fpp,nfpp,prior_report,outcome,sha256_v2,red_noise_snr
+122522485,2.322125,193,229,1.05,10.0,4/4,106,0.0746,0.0082,none found,"marginal (unvalidated: NFPP 0.008, FPP 0.075; red-noise SNR ~7; timing scatter from underestimated errors)",47ce36bcb863acc2,7.3
+206620592,1.085671,275,287,0.99,10.1,3/3,106,0.0324,0.0,none found,candidate (unvalidated: FPP 0.032 > 0.015; red-noise SNR ~7; blend not excluded),75b6ea732c2db970,7.1
+253931796,12.579156,2617,4172,3.7,16.2,2/2,106,0.0845,0.0492,none found,"marginal (3 transits; loose ephemeris, sigma ~45 min)",7ac1b3519df00914,
+115692561,0.85032,140,143,1.04,7.6,3/4,106,,,eumemic/exoplanets,credited rediscovery (weak),d8fe193dfce20339,
+88407114,1.497514,185,158,1.05,8.4,3/4,106,,,killercatfish/tess-hunt,credited rediscovery (weak); S106 TEST WITHDRAWN (frozen fit included S106 SPOC data; see erratum),751ec316080ae4a6,
+160330868,14.935467,1252,1631,3.02,10.9,3/3,107,0.3767,0.0716,none found,weak (TRICERATOPS FPP 0.38),fa72f33be927e011,
+24526743,14.786767,1445,1547,2.53,8.8,2/3,107,,,none found,weak (SNR<9),5a39b787e00b3d22,
+53825235,0.586599,190,245,1.16,7.5,4/6,108,,,none found,weak (SNR<9); v2 has NO eligible prediction rows (generator horizon defect) - no valid test; not refrozen,6924d7b6140d569f,
+408110117,2.621544,521,513,1.37,7.2,3/3,108,,,Zenodo 23289478,credited rediscovery (weak); v2 has NO eligible prediction rows - no valid test; not refrozen,bc55f95639e29746,
+196514928,2.392124,591,593,2.07,12.2,4/4,109,0.0427,0.0068,none found,"marginal (centroid offsets aligned S62/S88 ~2.8 sigma; depth grows with aperture; RUWE 2.09; G17 star at 2""; NFPP 0.007)",1fa2a7e068d35809,11.8
+283913390,2.481107,465,495,1.77,9.4,3 sectors,111,0.0446,0.0252,none found,"weak (only 3 sectors - earlier ""5/5 years"" double-counted sectors crossing New Year; SDE 8.4; RUWE 2.05; NFPP 0.025)",fe3ad4669d29c5a3,11.2
+159033763,1.023262,346,374,1.45,7.8,4/6,111,,,none found,weak (SNR<9),c45eb808cb65ed1e,
+162304222,0.52329,239,235,0.85,6.3,3/3,111,,,none found,weak (SNR<9); v2 had no prediction rows - superseded by v3 (S111),742f2b162856cdbe (v3: 445f1dd701470764),
+333661705,1.383225,696,705,2.2,14.5,4/4,111,,,brahle,credited rediscovery,e7752bf76ab70b92,
+19119739,2.237697,427,402,1.69,8.8,4/5,111,,,eumemic/exoplanets,credited rediscovery (weak),5aafcdd96fd6ac16,

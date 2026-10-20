@@ -115,7 +115,7 @@ period (12 of 14 hosts in the first 269 targets processed), and all of them pass
 TIC 317134140 = TOI-2514 (ExoFOP: TOI-2514.01, P = 6.395 d, 2.1 R⊕, planet candidate; 5 imaging, 4 spectroscopic and 2 time-series
 follow-up entries exist). TIC v8.2: Tmag 10.667, Teff 5563 K, R★ = 0.977 R☉, log g 4.45, contamination ratio 0.034, Gaia G = 11.14,
 RA 05:46:52.69, Dec −17:01:44.7. TESS coverage: 2-min SPOC in S6 (2018-12/2019-01), S87 (2024-12/2025-01), S98 (2025-10/11),
-S107 (2026-06/07); FFI only in S32 and S33 (2020-11 to 2021-01); being observed now in S108 (2026-09/10, data not yet public),
+S107 (2026-06/07); FFI only in S32 and S33 (2020-11 to 2021-01); being observed now in S108 (2026-09/10; target light curves not yet public when written on 2026-10-17 — public S108 image products existed by 2026-10-19; availability before the 2026-10-17 freeze not established, see ERRATUM_S106),
 S109 (current) and S110 (2026-11).
 
 ### 6.2 Detection (Pool A search)
@@ -171,7 +171,7 @@ Ephemeris (all six sectors, shape fixed to the MCMC medians, TOI-2514.01 masked)
 expected depth ≈ 185 ppm (per-sector range 56–220 ppm). Formal propagated 1σ at Sectors 108–110 = 2.0 min; the season-jackknife
 spread of P (±8.5e-07 d) implies a conservative **1σ ≈ 6 min**. Use ±6 min.
 Full table: `results/vet/317134140/predicted_transits_S108_S109_S110.csv` (SHA-256 `63e98fc87ebc6ce65198e066028d7f9ea58d24b51b35771d9fc551c41f59deb3`), 136 mid-transit times inside the
-science orbits of S108 (observed 2026-09-07 to 10-04, data not yet public), S109 (in progress) and S110 (2026-11-01 to 11-25).
+science orbits of S108 (observed 2026-09-07 to 10-04; target light curves not yet public when written — see ERRATUM_S106 for product-specific availability), S109 (in progress) and S110 (2026-11-01 to 11-25).
 
 | sector | transits in science orbits | first (UTC) | last (UTC) | first tc (BJD_TDB) | last tc (BJD_TDB) |
 |---|---|---|---|---|---|
@@ -635,7 +635,7 @@ pixel-tested *first*: 95 are off-target blends (20–60″), 20 ambiguous (0.5�
 (`results/allsky_classA_round2_outcomes.csv`). Full vetting and a grep of the prior-detection corpus (`scripts/prior_grep.py`: 101 cloned
 repositories and 157 Zenodo deposits) leave: **TIC 183374279** (P = 11.737984 ± 0.000025 d, ≈ 970 ppm, 2.5 R⊕, isolated K dwarf, blind 4/4,
 ρ 1.45×, SPOC 2-min Sector 29 1380 ± 235 ppm, nothing in the corpus; frozen v2 2026-10-19 11:44 UTC, SHA 069d8298…, test Sector 106 whose data
-were not public at the freeze) — deposited as v1.6; TIC 61310956 (isolated, no TESS revisit through S134; ground-based
+were not public at the freeze — corrected 2026-10-20: QLP light curves were not yet released, but other public S106 data products existed; see ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md) — deposited as v1.6; TIC 61310956 (isolated, no TESS revisit through S134; ground-based
 test only); and TIC 258006047 (10.022 d, 920 ppm, 2.3 R⊕), which passes every test but has a G = 15.95 star 2.6″ away that TESS cannot resolve
 and was **listed earlier** (2026-10-08) in the candidate bundle of Zenodo record 23230562 (B. Murray) — an independent rediscovery, frozen as an
 ephemeris-only Sector-114 test. Eight further on-target stars are rediscoveries of eumemic/exoplanets listings (parked), four fail the

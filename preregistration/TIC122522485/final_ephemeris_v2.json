@@ -1,0 +1,73 @@
+{
+ "tic": 122522485,
+ "version": 2,
+ "T0_btjd": 4218.536412964841,
+ "T0_err_d": 0.010993744193857104,
+ "P_d": 2.3221254457381137,
+ "P_err_d": 1.2533269917214537e-05,
+ "epoch_ref": 1220.0,
+ "chi2": 93.26790857042435,
+ "dof": 3,
+ "inflation": 5.575778228804309,
+ "bls_P": 2.322111055213702,
+ "bls_T0": 1385.5607370862203,
+ "sector_times": [
+  {
+   "sector": 3,
+   "source": "SPOC 2-min",
+   "mean_epoch": 4.571428571428571,
+   "tc": 1396.147768576721,
+   "tc_err": 0.002083333333333333,
+   "n_events": 7,
+   "depth_ppm": 341.17789106385175,
+   "clock_correction_min": NaN,
+   "oc_min": -15.884923261510266
+  },
+  {
+   "sector": 4,
+   "source": "SPOC 2-min",
+   "mean_epoch": 16.11111111111111,
+   "tc": 1422.9591929757744,
+   "tc_err": 0.004166666666666666,
+   "n_events": 9,
+   "depth_ppm": 201.44071761544572,
+   "clock_correction_min": NaN,
+   "oc_min": 5.475947338709375
+  },
+  {
+   "sector": 30,
+   "source": "SPOC 2-min",
+   "mean_epoch": 320.0,
+   "tc": 2128.6379414212715,
+   "tc_err": 0.002083333333333333,
+   "n_events": 10,
+   "depth_ppm": 210.82101343707916,
+   "clock_correction_min": NaN,
+   "oc_min": 20.77865385574114
+  },
+  {
+   "sector": 97,
+   "source": "QLP SAP",
+   "mean_epoch": 1109.5882352941176,
+   "tc": 3962.13701166442,
+   "tc_err": 0.0025000000000000022,
+   "n_events": 17,
+   "depth_ppm": 243.03771584357872,
+   "clock_correction_min": NaN,
+   "oc_min": -13.583473980324925
+  },
+  {
+   "sector": 105,
+   "source": "QLP SAP",
+   "mean_epoch": 1220.125,
+   "tc": 4218.830993708886,
+   "tc_err": 0.0029166666666666646,
+   "n_events": 8,
+   "depth_ppm": 300.19130447328513,
+   "clock_correction_min": -1.9122527315885616,
+   "oc_min": 6.213691192679107
+  }
+ ],
+ "sha256_csv": "47ce36bcb863acc218fdc62c5d61ab9dc411ae7678734a3c09392f596e477d58",
+ "frozen": "2026-10-20 00:33:06 UTC"
+}

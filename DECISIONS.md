@@ -311,3 +311,48 @@
 57. 2026-10-19 — Round-5 external review: minor revision; v1.9 held for 4 release-summary errors (≤1.2σ excluded 89247735; S102 grouping
     and cause; overstated round-4 response; no manifest). All fixed; qlp_clock_v2.py hardened (spacecraft-time LTT, unique controls,
     S74–79 excluded, cadence check; corrections change <0.01 s). v1.9 published on the user's prior go, conditional on this review.
+    v1.9 published: GitHub d995a1f, Zenodo 10.5281/zenodo.23483639.
+58. 2026-10-19 — RNAAS note drafted (paper/rnaas/note.tex, aastex701, ~1,340 words, 131-word abstract, Figure 1). Not submitted; the user submits via aas.msubmit.net after review.
+59. 2026-10-19 — RNAAS note revised per external review (paper/rnaas/REVIEW_note_external.md): all 17 findings applied; new 2x2+fold figure (paper/rnaas/make_fig_rnaas.py); refs: Zarco v1.1 title/DOI, MAST notice, Horizons, Lightkurve, Kovacs, Boyle; doubled-comma fix (misc howpublished->publisher in rnaas/refs.bib). Not submitted.
+60. 2026-10-19 — RNAAS note re-check (Codex): submit after minor fixes; applied (TARS -> ApJS 284, 75; caption; 200-s exposure in drawn curves; stray brace; corporate-author citation spacing; NASA SMD credit). Ready for the user to submit.
+61. 2026-10-19 — Internal final review of RNAAS note: submit after minor polish, no must-fix. Applied: TARS initials (now 'Boyle et al. 2026a,b'), qlphlsp per DataCite (Huang, C. X.; official title; STScI/MAST), k and BTJD defined, 'The Astropy Collaboration', legend 'joint-fit shape'. Draft header left (AAS builds its own). Ready to submit.
+62. 2026-10-19 ~18:10 EDT — RNAAS note on TIC 89247735 SUBMITTED by the user via aas.msubmit.net (manuscript AAS82560 (internal ms_id 159131); corridor: Solar System, Exoplanets, and Astrobiology; files note.tex, refs.bib, fig1_rnaas.pdf, author PDF). Awaiting editor decision (RNAAS typically publishes within ~72 h).
+63. 2026-10-19 — Round 3 (user: "go with 1"): previously unvetted testable-soon signals. From allsky_testable_soon.csv (1,737 at SDE>=9) minus
+    the 197 class-A vetted in rounds 1-2: clean, no known source, odd/even and secondary <3 sigma, >=1 predicted transit in the next sector
+    -> 190 (results/allsky_round3.csv; excluded from class A for P<3 d [119], not seen every year [~137], depth >5 ppt [9]).
+    Next sectors: S106 60, S107 17, S108 25, S109 22, S110 22, S111 44. URGENT: S106 predictions must be frozen before QLP S106 release
+    (late Oct). Pixel test first (pixel_runner2.sh, two queues, launched ~22:20 UTC). Several stars at P = 18.42 d -> likely systematic.
+64. 2026-10-20 ~00:45 UTC — Round 3 results. 190 -> pixel ON_TARGET 84 (TIC 4206066 = Rabtsevich's 11.13-d signal, excluded/credited) -> vet.py 83
+    -> triage (scripts/triage_round3.py) 7 PASS / 8 WEAK / 68 FAIL. Prior-report grep: 115692561, 19119739 (eumemic), 333661705 (brahle),
+    408110117 (Zenodo 23289478), 88407114 (killercatfish/tess-hunt). prereg_v2.py gained --clock (method-2 QLP S99+ corrections applied before
+    the fit; CLOCK_NOTE in the frozen text); qlp_clock_v2.py gained a +0.033-min fallback convention when no clean control sector exists.
+    15 v2 freezes made locally 2026-10-20 00:33-00:44 UTC (S106: 122522485, 206620592, 253931796, 115692561, 88407114). TRICERATOPS on the 6
+    unlisted passes. Outcomes: results/allsky_round3_outcomes.csv. Issue: 253931796 sigma 45 min > the frozen 30-min cap. Nothing published.
+65. 2026-10-20 — Found: the per-object TESS rule text ('within +-3 sigma (and in any case within +-30 min)', 40 files) contradicts the public protocol and the frozen evaluator (max(3 sigma, 30 min)). Protocol governs; dated clarification results/CLARIFICATION_TIMING_RULE_2026-10-20.md; template fixed. No v3 for 253931796 needed (tolerance 135 min under the protocol).
+66. 2026-10-20 — Dated timing-rule addendum appended (not rewritten) to every PREREGISTRATION*.md containing the misstated phrase (40 files). Public copies follow in v2.0.
+67. 2026-10-20 ~01:30 UTC — Two external/internal reviews in. (a) S106 test-procedure review (Codex): evaluator NOT READY (mean-offset
+    cancellation, no duration check, brightening accepted, coverage-based false EXCLUDED, check order, undefined AMBIGUOUS, flux-column choice,
+    no S106 clock gate, 120444365 reference depth/duration not locked). Its claim that prereg_test.py was never public is FALSE (in Zenodo
+    protocol records 23462442/23474138/23477866 bundles). Its min(3σ,30) reading conflicts with the protocol's max(); pending timing-rule review.
+    (b) Round-3 candidate review: no prior reports for 206620592, 122522485, 283913390, 196514928 (TOI/CTOI/TCE/GitHub/Zenodo); verdicts
+    206620592 candidate, 122522485 marginal/candidate, 283913390 weak (5/5 years was a New-Year double count), 196514928 marginal (centroid,
+    aperture-depth, RUWE 2.09, G17 star at 2"). Per-sector timing errors 2-10x too small.
+    CRITICAL: S106 data were PUBLIC before every S106 freeze: SPOC 2-min S106 files downloaded 2026-10-17 12:45 local for other stars; FFIs on
+    TESScut. Freezes of 120444365 (10-18), 183374279 (10-19), round 3 (10-20) all say "data not public at freeze" - false; correct wording is
+    "public but not examined by us". Public files affected: README, TIC120444365 v1/v2, TIC183374279 v2, TIC70441745 v2. TIC 88407114 frozen
+    fit INCLUDES S106 SPOC data (prereg_v2 fetches all 2-min sectors) -> its S106 test is invalid. No other frozen fit contains S106+ data.
+68. 2026-10-20 — Timing-rule review (Codex, results/REVIEW_timing_rule.md): handled with fixes needed. Applied locally: clarification
+    rewritten (true chronology: 80387959/120444365 v2 predate the protocol; impact differs whenever sigma != 10 min; scope = 37 v2 TESS files;
+    evaluator limitations stated); dated corrections appended to the 3 v1 files (60-min rules) that wrongly received the addendum; generator
+    template wording fixed; generator horizon bug fixed (range(1,400) left 162304222, 408110117, 53825235 with no future predictions -> need v3);
+    status label no longer claims "data not public"; SPOC 2-min test sectors (unreleased list, future sectors, >=106) are never fitted.
+    Draft erratum results/ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md awaiting review + user go.
+69. 2026-10-20 — Erratum/clarification review (Codex, results/REVIEW_erratum_and_clarification.md): both "publish after listed fixes".
+    Corrections to earlier entries (not rewriting them): item 66's "40 files" = 37 correctly affected v2 originals + 3 v1 files corrected
+    later; item 67's "No other frozen fit contains S106+ data" should read "only TIC 88407114 overlaps its declared test sectors; TIC
+    317134140 intentionally uses S107 training data (its tests are S108-S110)". S106 FFIs were public by mid-August 2026 (MAST S106 FFI
+    script Last-Modified 2026-08-13; TICA notice 2026-08-14); S107 SPOC/FFI also public before the Oct-20 S107 freezes. Applied: erratum
+    rewritten (product-specific availability, all 11 affected records incl. S107, attestation wording, 206620592 cutout disclosure,
+    88407114 withdrawal, process-fix status); manifest results/ERRATUM_S106_MANIFEST.csv; dated availability notes on 11 current
+    registrations + withdrawal on 88407114 v2; clarification scope/aggregation fixed; prereg_v2.py: pre-read/pre-download holdout guard
+    for QLP and SPOC (dry-run verified), endpoint through 2027-12-31, explicit --reason for v>2, honest status label.

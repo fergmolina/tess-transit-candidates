@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17, updated 2026-10-19 (v1.9: corrections only — QLP clock correction recomputed with JPL spacecraft vectors; TIC 89247735 v5 ephemeris supersedes v4; see MANIFEST_v1.9.md). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-20 (v1.10: data-availability erratum, timing-rule clarification, all-sky round 3 frozen predictions; see below). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -34,7 +34,7 @@ normalisation artefact. Status: planet candidate pending the pre-registered test
 independent extraction (SPOC 2-min, TESS-SPOC, TARS, fixed-aperture cutouts). Radius ≈ 2.2 Earth radii if on the target. Isolated star
 (nothing within 60″ can mimic it); on target by pixel tests; TRICERATOPS FPP 0.041, NFPP 0.000 ("likely planet" by the published
 criteria, not validated). Status: planet candidate pending the pre-registered test; **independently listed earlier by eumemic/exoplanets (2026-10-09), see below**. **Test of record: TESS Sector 106** (observed
-2026-07-11 to 08-09; its light curves were not public when the predictions were frozen on 2026-10-18 and are expected in late
+2026-07-11 to 08-09; its QLP light curves were not yet released when the predictions were frozen on 2026-10-18, but other public S106 data products, including image data, existed; the authors attest they did not examine this star's S106 photometry before the freeze. See `ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md`. QLP light curves are expected in late
 October 2026); predictions in `preregistration/TIC120444365/`.
 
 A third signal from the same search, in a crowded field, is withheld until its host star can be assigned from the ground (it too is listed in eumemic/exoplanets).
@@ -110,6 +110,24 @@ remain true; they are not claims of priority over the listings above.
 3. The ingress and egress columns of the TIC 89247735 `*_utcfix.csv` files were not light-time corrected. `*_utcfix2.csv` fixes them; details are in `CORRECTION_UTC_2026-10-19b.md`.
 
 **Correction 2026-10-19 (v1.9), found by a further external review:** v1.8's clock corrections wrongly treated TESScut `TIMECORR` as specific to the target (it refers to a reference position in the image). Recomputed with JPL Horizons TESS vectors, the TIC 89247735 Sector-104 correction is +7.53 min, not +8.02 min. The new version-5 ephemeris (`preregistration/TIC89247735/PREREGISTRATION_v5.md`) supersedes v4, and version 1 remains the test of record. The revised clock addendum (`preregistration/ADDENDUM_QLP_CLOCK_2026-10-19b.md`) supersedes v1.8's. Shifts of the frozen predictions are at most 1.2σ for the seven other objects and 1.25–1.38σ for TIC 89247735's v5 refinement, and no outcome rule changes. `MANIFEST_v1.9.md` lists which files are current and which are superseded.
+
+**Erratum and clarification 2026-10-20 (v1.10):**
+1. **Data availability.** Several pre-registrations said TESS Sector 106 (and, for three local round-3 records, Sector 107) was "observed, data not public at freeze". That was wrong. Target QLP light curves were not yet released, but other public data products for those sectors existed, including image data available since mid-August 2026. We attest that we did not examine the target-sector photometry before the freezes. These tests are therefore held-out checks of already-observed data, not prospective predictions. One test, TIC 88407114 Sector 106, is withdrawn because its frozen fit included S106 data. See `preregistration/ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md` and `ERRATUM_S106_MANIFEST.csv`.
+2. **Timing rule.** The per-object registration text ("within +-3 sigma (and in any case within +-30 min)") conflicted with the published protocol and frozen evaluator (max(3 sigma, 30 min)). We adopt the protocol rule as a dated precedence decision, and will also report the narrower per-event reading. See `preregistration/CLARIFICATION_TIMING_RULE_2026-10-20.md`.
+3. **Evaluator limitations.** Independent reviews (`reviews_2026-10-20/`) found that the frozen evaluator `prereg_test.py` does not check transit duration, averages timing offsets, and can return EXCLUDED without full transit coverage. Its literal output will be kept, but no TESS outcome will be reported until a separately versioned conformance procedure has been published.
+4. **Notes on the registrations.** Dated notes are appended to the affected registrations; original texts, prediction CSVs and their hashes are unchanged.
+
+**All-sky round 3 (2026-10-20):** 190 previously unvetted signals with an upcoming TESS sector were run through the same pipeline: pixel test, then vetting, triage, prior-report check, TRICERATOPS and an independent review. 15 objects have frozen predictions in `preregistration/TIC<id>/`; the outcome table is `tables/allsky_round3_outcomes.csv`.
+- **Labels:**
+  - 1 candidate, TIC 206620592 (unvalidated);
+  - 3 marginal (122522485, 196514928, 253931796);
+  - weak signals;
+  - 5 credited rediscoveries (eumemic/exoplanets, brahle, killercatfish/tess-hunt and Zenodo 23289478).
+- **Not validated:** none of these passes statistical validation thresholds, and all are small (~1–4 Earth radii).
+- **Excluded from the test record:**
+  - **TIC 53825235 and TIC 408110117:** their v2 files contain no eligible predictions (a generator defect, since fixed), so they carry no valid test.
+  - **TIC 162304222:** superseded by a v3 freeze for Sector 111.
+
 
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 The first commit of this repository is the public timestamp. The files are not edited after freezing; corrections are new versions.

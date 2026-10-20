@@ -58,8 +58,8 @@ for s in sorted(set(s for s in qlp_secs if 56 <= s <= 98 and not 74 <= s <= 79),
     m = qlp_minus_sc(tic, s)
     if m is None: continue
     t, dt, mode, tsc = m; idx = np.linspace(0, len(t) - 1, 6).astype(int); c = dt[idx] - ltt(tsc[idx], ra, dec); ctrl.append(dict(sector=s, mode=mode, c0_min=[float(x) for x in c]))
-c0 = float(np.median(np.concatenate([x["c0_min"] for x in ctrl]))) if ctrl else np.nan
-res = dict(tic=tic, ephemeris_file=os.path.relpath(eph, ROOT), ra=ra, dec=dec, control=ctrl, c0_min=c0, sectors={})
+c0 = float(np.median(np.concatenate([x["c0_min"] for x in ctrl]))) if ctrl else 0.033   # fallback: c0 = +0.032-0.033 min for every star measured (all-sky QLP convention); flagged below
+res = dict(c0_source=("control sectors" if ctrl else "fallback +0.033 min (no clean control sector)"), tic=tic, ephemeris_file=os.path.relpath(eph, ROOT), ra=ra, dec=dec, control=ctrl, c0_min=c0, sectors={})
 for r in rows:
     s = r["sector"]; src = r.get("source", "QLP SAP")
     if not (src.startswith("QLP") and s >= 99): continue

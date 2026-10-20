@@ -1,0 +1,12 @@
+{
+ "tic": 160330868,
+ "FPP": 0.376653736452376,
+ "NFPP": 0.07159785694527165,
+ "depth_used": 0.001257328462712981,
+ "sectors": [
+  33,
+  87,
+  98
+ ],
+ "note": "2.5-px circular aperture from TESScut WCS; QLP DET_FLUX masked 0.7-d biweight fold; no contrast curve"
+}
