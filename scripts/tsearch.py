@@ -42,7 +42,14 @@ def load_qlp_lc(path, flux_col="DET_FLUX", quality_zero=True):
                     rad=hdr0.get("RADIUS"), logg=hdr0.get("LOGG"), ra=hdr0.get("RA_OBJ"), dec=hdr0.get("DEC_OBJ"),
                     crowdsap=None, flfrcsap=None, camera=hdr0.get("CAMERA"), ccd=hdr0.get("CCD"), source="QLP")
     m = np.isfinite(t) & np.isfinite(f) & np.isfinite(fe) & (fe > 0)
+    # Quality policy for the PERIODIC search: QUALITY == 0. Keeping the QLP bit-2^30 (orbit-start ramp) cadences was tested on
+    # 2026-10-18 (results/search_qlp_v2): DET_FLUX there carries ramp residuals of up to 12 % (the QLP spline is fit on unflagged
+    # data), known-signal recovery fell from 22 to 5 of 40 and the TIC 89247735 periodogram was swamped by a 15-d ramp alias.
+    # Transits inside ramps are instead covered by the single-transit pass (single_transit_search.py, SAP flux + local baseline).
+    # Flux excursions > 50 % of the median (data dropouts) are dropped in any case.
     if quality_zero: m &= (q == 0)
+    med0 = np.nanmedian(f[m]) if m.any() else np.nan
+    if np.isfinite(med0): m &= np.abs(f / med0 - 1) < 0.5
     t, f, fe = t[m], f[m], fe[m]
     med = np.nanmedian(f)
     return t, f / med, fe / med, meta

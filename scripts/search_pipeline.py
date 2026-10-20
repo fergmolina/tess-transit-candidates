@@ -19,8 +19,8 @@ def bin_lc(t, f, fe, dt):
     sw = np.bincount(inv, w); st = np.bincount(inv, w * t); sf = np.bincount(inv, w * f)
     return st / sw, sf / sw, 1 / np.sqrt(sw)
 
-LC = "/Users/fernando/Desktop/NASA/data/lc" if SOURCE == "spoc" else "/Users/fernando/Desktop/NASA/data/qlp"
-OUT = "/Users/fernando/Desktop/NASA/results/search" if SOURCE == "spoc" else "/Users/fernando/Desktop/NASA/results/search_qlp"
+LC = os.environ.get("TSEARCH_LC_DIR") or ("/Users/fernando/Desktop/NASA/data/lc" if SOURCE == "spoc" else "/Users/fernando/Desktop/NASA/data/qlp")
+OUT = os.environ.get("TSEARCH_OUT") or ("/Users/fernando/Desktop/NASA/results/search" if SOURCE == "spoc" else "/Users/fernando/Desktop/NASA/results/search_qlp")
 os.makedirs(OUT, exist_ok=True)
 
 def sector_files(tic):

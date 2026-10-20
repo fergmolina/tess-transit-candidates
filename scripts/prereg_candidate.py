@@ -6,9 +6,16 @@ catalogs/TESS_orbit_times.csv) and through 2027; CSV + SHA-256 + PREREGISTRATION
 Usage: python -I prereg_candidate.py TIC [--freeze] [--no-2min] [--depth-ppm D] [--desc "text"]"""
 import os, sys, json, hashlib, datetime, argparse, numpy as np, pandas as pd; sys.path.insert(0, "/Users/fernando/Desktop/NASA/scripts"); os.environ["TSEARCH_SOURCE"] = "qlp"
 import lightkurve as lk; from wotan import flatten, transit_mask; from astropy.time import Time
+
+def geocentric_utc(jd_tdb, ra_deg, dec_deg):
+    """UTC of arrival at the geocentre: BJD_TDB minus the barycentric light-travel time toward the target (referee finding 2026-10-19:
+    Time(jd, scale='tdb').utc alone only changes the time SCALE and is off by up to +-8 min)."""
+    from astropy.coordinates import SkyCoord, EarthLocation; import astropy.units as u
+    t = Time(jd_tdb, format="jd", scale="tdb"); ltt = t.light_travel_time(SkyCoord(ra_deg, dec_deg, unit="deg"), kind="barycentric", location=EarthLocation.from_geocentric(0, 0, 0, unit=u.m))
+    return (t - ltt).utc
 from vet import transit_model
 ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("--freeze", action="store_true"); ap.add_argument("--no-2min", action="store_true"); ap.add_argument("--depth-ppm", type=float, default=0); ap.add_argument("--desc", default=""); ap.add_argument("--unreleased-sectors", default="", help="comma list of sectors already observed whose data are not yet public (checked today)"); a = ap.parse_args()
-TIC = a.tic; OUT = f"/Users/fernando/Desktop/NASA/results/vet_allsky/{TIC}"; rep = json.load(open(f"{OUT}/report.json"))
+TIC = a.tic; OUT = f"/Users/fernando/Desktop/NASA/results/vet_allsky/{TIC}"; rep = json.load(open(f"{OUT}/report.json")); RA_DEG, DEC_DEG = rep["meta"]["ra"], rep["meta"]["dec"]
 P0, T00 = rep["ephemeris"]["P"], rep["ephemeris"]["T0"]; rprs, ars, b = rep["shape_mcmc"]["median"][1:4]; dur_d = rep["bls_refine"]["duration_h"] / 24
 times = [(x["epoch"], x["tc"], x["tc_err"], f"S{x['sector']} QLP") for x in rep["transit_times"] if x["dchi2"] > 4]
 # 2019 SPOC 2-min events
@@ -52,10 +59,14 @@ for k in range(1, 130):
     t = T0 + k * P; sig = np.sqrt(cov[0, 0] + k * k * cov[1, 1] + 2 * k * cov[0, 1]); jd = t + 2457000
     if jd > 2461900: break
     sec = next((s for s, ws in win.items() if any(x <= t <= y for x, y in ws)), None); isapprox = any((x, y) in approx_win for ws in win.values() for x, y in ws if x <= t <= y); insec = next((s for s, ws in win.items() if min(x for x, _ in ws) <= t <= max(y for _, y in ws)), None)
-    rows.append(dict(epoch=e0 + k, tc_btjd=round(t, 5), tc_bjd_tdb=round(jd, 5), utc=Time(jd, format="jd", scale="tdb").utc.iso[:16], sigma_min=round(sig * 1440, 1), tess_sector=(f"{sec} (span only, gap unknown)" if isapprox else sec) if sec else (f"{insec} (gap)" if insec else ""), status=("prediction (sector observed, data not public at freeze)" if (sec in unrel or insec in unrel) else ("retrodiction: before freeze, untested" if jd < freeze.jd else "prediction"))))
-df = pd.DataFrame(rows); csv = f"{OUT}/predicted_transits_2026_2027.csv"; df.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
+    rows.append(dict(epoch=e0 + k, tc_btjd=round(t, 5), tc_bjd_tdb=round(jd, 5), utc=geocentric_utc(jd, RA_DEG, DEC_DEG).iso[:16], utc_tdb_scale_only=Time(jd, format="jd", scale="tdb").utc.iso[:16], sigma_min=round(sig * 1440, 1), tess_sector=(f"{sec} (span only, gap unknown)" if isapprox else sec) if sec else (f"{insec} (gap)" if insec else ""), status=("prediction (sector observed, data not public at freeze)" if (sec in unrel or insec in unrel) else ("retrodiction: before freeze, untested" if jd < freeze.jd else "prediction"))))
+df = pd.DataFrame(rows); csv = f"{OUT}/predicted_transits_2026_2027.csv"
+# v1.12 (review F14): never overwrite a frozen v1; a run without --freeze writes only to OUT/_dryrun/
+if os.path.exists(f"{OUT}/PREREGISTRATION.md") or (a.freeze and os.path.exists(csv)): raise SystemExit(f"refused: v1 of TIC {TIC} is already frozen; use prereg_v2.py with a new --version")
+if not a.freeze: os.makedirs(f"{OUT}/_dryrun", exist_ok=True); csv = f"{OUT}/_dryrun/predicted_transits_2026_2027.csv"
+df.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
 print(df[df.status.str.startswith("prediction") & df.tess_sector.astype(str).str.match(r"^\d+")].to_string(index=False)); print("SHA-256", sha, "frozen", stamp)
-json.dump(dict(tic=TIC, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, transit_times=[dict(epoch=int(x[0]), tc=x[1], tc_err=x[2], source=x[3], oc_min=float(r * 1440)) for x, r in zip(times, res)], sha256_csv=sha, frozen=stamp), open(f"{OUT}/final_ephemeris.json", "w"), indent=1)
+json.dump(dict(tic=TIC, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, transit_times=[dict(epoch=int(x[0]), tc=x[1], tc_err=x[2], source=x[3], oc_min=float(r * 1440)) for x, r in zip(times, res)], sha256_csv=sha, frozen=stamp), open(f"{OUT}/" + ("" if a.freeze else "_dryrun/") + "final_ephemeris.json", "w"), indent=1)
 if a.freeze:
     s110 = df[df.status.str.startswith("prediction") & df.tess_sector.astype(str).str.match(r"^\d+")]
     open(f"{OUT}/PREREGISTRATION.md", "w").write(f"""# Pre-registered transit predictions - TIC {TIC} (all-sky QLP search candidate)

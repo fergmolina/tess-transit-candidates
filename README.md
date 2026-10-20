@@ -1,7 +1,7 @@
 # TESS multi-year transit search: two planet candidates with pre-registered predictions
 
 **Author:** Fernando Molina (Independent researcher, ORCID [0009-0002-2872-3406](https://orcid.org/0009-0002-2872-3406)). Analysis performed with Claude (Anthropic) under the author's direction.
-**Date:** 2026-10-17, updated 2026-10-20 (v1.11: conformance procedure for the Sector 106 tests, protocol erratum, dossier corrections; v1.10: data-availability erratum, timing-rule clarification, all-sky round 3 frozen predictions; see below). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
+**Date:** 2026-10-17, updated 2026-10-20 (v1.12: corrections after an independent full-repository review - masking of a withheld object, superseded claims marked, code fixes, scripts synced; v1.11: conformance procedure for the Sector 106 tests, protocol erratum, dossier corrections; v1.10: data-availability erratum, timing-rule clarification, all-sky round 3 frozen predictions; see below). **DOI:** [10.5281/zenodo.23443245](https://doi.org/10.5281/zenodo.23443245) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23443245.svg)](https://doi.org/10.5281/zenodo.23443245) **Status of every object here: candidate pending confirmation. Nothing in this repository is a validated planet.**
 
 A search of public NASA TESS photometry (SPOC 2-min light curves for 1,637 dwarfs and QLP full-frame-image light curves for
 3,411 dwarfs, sectors 1 to 107, 2018 to 2026) for periodic transit-like signals that repeat with the same period and phase in
@@ -11,11 +11,9 @@ Full methods, results, rejected objects and null calibrations are in [REPORT.md]
 
 ## Candidates
 
-**TIC 89247735 (SCR J1820-4533)** — K dwarf, Tmag 11.1, 104 pc. Four flat-bottomed transits of 1.0 % depth and 4.0 h duration in
-2023, 2025 (two, consecutive) and 2026 at P = 18.323077 ± 0.000070 d; on-target by pixel-level tests; no secondary eclipse;
-no catalog entry. Radius 8.5 Earth radii (0.76 Jupiter radii): a giant planet or a brown dwarf (Gaia radial velocities bound the mass below about 25 Jupiter masses); the two cannot be separated without radial velocities, and no statistical-validation route exists at this radius. Status: transiting companion candidate.
-Predicted transit times through 2027 are frozen in `preregistration/TIC89247735/` (v1: three transits; v2: four transits).
-The first ground-observable full transits are 2027-06-25 and 2027-08-19 from Chile.
+**TIC 89247735 (SCR J1820-4533)** — K dwarf, Tmag 11.1, ≈ 105 pc. Four approximately 1.1 %-deep, 4.54-h transit-like events in 2023, 2025 (two, consecutive) and 2026 follow the clock-corrected v5 ephemeris, P = 18.323174 ± 0.000040 d. No secondary eclipse was detected, and there is no catalogue entry. Conditional on the target hosting the signal and the adopted deblending, Rp ≈ 7.9–8.4 Earth radii. A G = 15.5 neighbour about 7″ away remains a possible eclipsing-binary host, and the companion mass is unconstrained. The four event times do not exclude a binary at twice the period with alternating primary and secondary eclipses. *(Corrected 2026-10-20: earlier text claimed on-target pixel tests and a Gaia mass bound below about 25 Jupiter masses; both are withdrawn.)* Status: transiting companion candidate, not validated.
+Predicted transit times are frozen in `preregistration/TIC89247735/`. Version 1 (three transits) remains the test of record; v5 is the current timing refinement.
+With v5 and geocentric UTC, the next full ground transits have midpoints 2027-06-25 02:10 and 2027-08-19 01:29 UTC. At CTIO, epoch 159 qualifies, and epoch 162 is marginal (it narrowly fails the stated ingress darkness cut).
 
 **TIC 317134140 (TOI-2514 host)** — a second, 0.571863-d, ~185 ppm signal (1.4 Earth radii if on target) recovered in data from
 2018, 2020, 2024, 2025 and 2026. Plausible but unproven: the periodogram statistic alone is within the false-positive expectation,
@@ -32,8 +30,8 @@ normalisation artefact. Status: planet candidate pending the pre-registered test
 
 **TIC 120444365** — K dwarf, Tmag 11.1. A 5.148171-d, ≈ 750 ppm transit seen 22 times in 2018–2026, in every year and in every
 independent extraction (SPOC 2-min, TESS-SPOC, TARS, fixed-aperture cutouts). Radius ≈ 2.2 Earth radii if on the target. Isolated star
-(nothing within 60″ can mimic it); on target by pixel tests; TRICERATOPS FPP 0.041, NFPP 0.000 ("likely planet" by the published
-criteria, not validated). Status: planet candidate pending the pre-registered test; **independently listed earlier by eumemic/exoplanets (2026-10-09), see below**. **Test of record: TESS Sector 106** (observed
+(nothing within 60″ can mimic it); consistent with the target under the tested pixel estimator; TRICERATOPS FPP 0.041, above the 0.015 validation
+threshold (NFPP 0 is structural in this setup); not validated. Status: planet candidate pending the pre-registered test; **independently listed earlier by eumemic/exoplanets (2026-10-09), see below**. **Test of record: TESS Sector 106** (observed
 2026-07-11 to 08-09; its QLP light curves were not yet released when the predictions were frozen on 2026-10-18, but other public S106 data products, including image data, existed; the authors attest they did not examine this star's S106 photometry before the freeze. See `ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md`. QLP light curves are expected in late
 October 2026); predictions in `preregistration/TIC120444365/`.
 
@@ -76,10 +74,10 @@ candidates. Marginal and weak objects are frozen so that any later report can be
 ## Prior and concurrent reports (prior-detection sweep of 2026-10-18/19, `prior_search/`)
 A documented sweep of 32 services (1,585 logged queries; 558,074 automated pipeline alerts scanned: 341,351 SPOC TCE rows and 216,723
 TESS-SPOC FFI DV targets; 101 GitHub repositories and 157 Zenodo records grepped by content) found:
-* **TIC 89247735**: no prior report of any kind. A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
+* **TIC 89247735**: no earlier matching report was found in the sources searched by this dated sweep; its coverage and indexing limits apply. A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
   posted at github.com/alejandrozarco/tess-candidates-2026 on 2026-10-18 19:22 UTC, about twenty hours after this record's first public
   release (GitHub v1.0 2026-10-17 23:01 UTC; Zenodo 2026-10-17 23:05 UTC). It does not cite this record.
-* **TIC 80387959**: no human-reported candidate anywhere, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
+* **TIC 80387959**: no human-reported candidate found in the searched sources, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
   unpromoted threshold-crossing event at the same signal (P = 4.1905 ± 0.0012 d, 869 ± 107 ppm, 2.4 R⊕, MES 7.6), never a TOI or CTOI. Our
   known-signal cross-match had covered SPOC 2-min TCEs only; TESS-SPOC TCEs are now included.
 * **TIC 120444365**: **listed earlier** by an independent, pseudonymous, non-refereed search (github.com/eumemic/exoplanets, tier-C candidate at
@@ -107,6 +105,19 @@ remain true; they are not claims of priority over the listings above.
 3. **Evaluator limitations.** Independent reviews (`reviews_2026-10-20/`) found that the frozen evaluator `prereg_test.py` does not check transit duration, averages timing offsets, and can return EXCLUDED without full transit coverage. Its literal output will be kept, but no TESS outcome will be reported until a separately versioned conformance procedure has been published.
 4. **Notes on the registrations.** Dated notes are appended to the affected registrations; original texts, prediction CSVs and their hashes are unchanged.
 
+**Corrections 2026-10-20 (v1.12), after an independent full-repository review** (`reviews_full_repo/REVIEW_full_repo_v1.11.md`):
+1. **Masking.** From v1.4 to v1.11 the public prior-search record still carried the withheld object's coordinates and catalogue identifiers. They are removed now. Earlier releases are not rewritten, because their public timestamps are part of the pre-registration record. See the note at the top of `prior_search/PRIOR_SEARCH.md`.
+2. **Superseded claims** are marked in REPORT.md and corrected here:
+   - the TIC 89247735 mass bound and on-target conclusion are withdrawn;
+   - its fourth event is a post-hoc recovery that does not exclude a 2P eclipsing binary;
+   - the TRICERATOPS values are above, not below, the validation thresholds;
+   - Gaia summaries give no mass limit;
+   - "blind" tests were retrospective;
+   - the S104 clock verification was incorrect;
+   - novelty statements are bounded to the searched sources.
+3. **Code.** Fixes in `vet.py` (exposure inferred from folded times; per-event holdout depths), geocentric UTC in the remaining producers, and freeze scripts that now refuse to overwrite. Public scripts are synced to the versions that ran, four missing producers are added, and the TRICERATOPS environment is pinned. No frozen prediction file changed.
+4. **Dated clarifications** are appended to `preregistration/TIC80387959/PREREGISTRATION_v2.md` and `preregistration/CORRECTION_UTC_2026-10-19.md`.
+
 **Conformance procedure for the Sector 106 tests (2026-10-20, v1.11):** published before any Sector 106 photometry of a test target was examined. See `conformance_v2.1/`.
 1. **Scoring.** The seven S106 tests (TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561) are scored with the separately versioned conformance procedure (`conformance_v2.1/CONFORMANCE_PROCEDURE_v2.1.md`). Its evaluator SHA-256 is locked in each test's config. The frozen `prereg_test.py` output is reported alongside, but it is not the outcome of record. The procedure is an amended operational test; every departure from the protocol is listed in `conformance_v2.1/GOVERNANCE_S106_TESTS_2026-10-20.md`.
 2. **Review.** The procedure was reviewed externally four times (rc1 to rc4, `conformance_v2.1/reviews/`). An earlier version (v2.0) was withdrawn before publication after an internal adversarial review.
@@ -131,11 +142,22 @@ remain true; they are not claims of priority over the listings above.
 
 
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
-The first commit of this repository is the public timestamp. The files are not edited after freezing; corrections are new versions.
+Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 
 ## Reproduce
-`scripts/` contains the full pipeline (Python 3.12; lightkurve, astropy, wotan, batman, emcee, transitleastsquares, tess-point).
-Data are public (MAST). Commands are listed in the header of [REPORT.md](REPORT.md) section 3 and in `scripts/*.py` docstrings.
+`scripts/` contains the main pipeline stages (Python 3.12; lightkurve, astropy, wotan, batman, emcee, transitleastsquares, tess-point; pinned in `environment/requirements_venv_locked.txt`). Data are public (MAST). Commands are in the header of [REPORT.md](REPORT.md) section 3 and in the `scripts/*.py` docstrings.
+**Limits (2026-10-20, after an independent full-repository review):**
+- The scripts were written for the authors' workspace and contain absolute local paths, so they do not run unchanged from a clean clone.
+- Producers added in v1.12: `prior_grep.py` (prior-search corpus grep), `triceratops_qlp.py` (TRICERATOPS runner), `refit_89247735_raw.py` (raw TIC 89247735 refit) and `pixel_calib_89247735.py` (its pixel calibration).
+- The end-to-end injection scoring behind `tables/single_transit_search/injection_recovery_end_to_end.csv` was an ad hoc calculation; its producer was not kept and cannot be recovered. Those numbers can be checked against the table, but not regenerated.
+- In v1.12 the public scripts were synced to the versions that actually ran. Earlier public copies of `search_pipeline.py`, `tsearch.py`, `prereg_candidate.py`, `qlp_clock_v2.py`, `single_transit_search.py` and `triage.py` had drifted; the older copies remain in the git history.
+- Code fixes in v1.12, none of which changes a frozen prediction file:
+  - `vet.py` built its fixed-shape ephemeris model with an exposure inferred from folded times, so the `ephemeris` entries in `report.json` and the retrospective holdout numbers are affected.
+  - The per-event holdout depths repeated the stacked value.
+  - Several producers wrote mislabelled UTC.
+  - The freeze scripts could overwrite a frozen version; they now refuse.
+- The TRICERATOPS runs used a separate environment (numpy < 2), pinned in `environment/requirements_triceratops_locked.txt` (triceratops 1.1.0, numpy 1.26.4, scipy 1.13.1). The `requirements_venv.txt` files in the older Zenodo bundles (dataset v1, pre-registration bundles) are empty; use the two lock files here instead.
+- `conformance_v2.1/` is the one fully self-contained package (all scripts, configs, outputs and hashes).
 
 ## Related Zenodo records (2026-10-19)
 * Preprint (research note on TIC 80387959 and TIC 120444365): concept DOI [10.5281/zenodo.23462433](https://doi.org/10.5281/zenodo.23462433) (v1.0 23462434, v1.1 23462857)

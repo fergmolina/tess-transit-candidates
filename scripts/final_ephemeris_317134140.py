@@ -10,6 +10,8 @@ from tsearch import load_spoc_lc, trim_edges
 from search_pipeline import sector_files, year_of, bin_lc
 import vet
 from vet import transit_model, box_depth, sector_window_jd, sector_orbits
+from time_utils import geocentric_utc   # v1.12 (review F5): utc fields were the BJD number read as a UTC date
+RA_DEG, DEC_DEG = (lambda r: (r['meta']['ra'], r['meta']['dec']))(json.load(open('/Users/fernando/Desktop/NASA/results/vet/317134140/report.json')))
 OUT = "/Users/fernando/Desktop/NASA/results/vet/317134140"
 tic = 317134140; P0, T00, dur = 0.571864, 1468.67525, 1.5 / 24
 rprs, ars, b = 0.0131, 2.6666, 0.4024
@@ -87,8 +89,8 @@ for sec in (108, 109, 110):
     lo, hi = sector_window_jd(sec); n0 = int(np.ceil((lo - 2457000 - T0f) / Pf)); n1 = int(np.floor((hi - 2457000 - T0f) / Pf))
     for n in range(n0, n1 + 1):
         tc = T0f + n * Pf; var = cov[1, 1] + 2 * n * cov[0, 1] + n * n * cov[0, 0]
-        preds.append(dict(sector=sec, epoch=n, tc_btjd=float(tc), tc_bjd_tdb=float(tc + 2457000), utc=Time(tc + 2457000, format="jd").iso[:19],
-                          sigma_min=float(np.sqrt(var) * 1440), in_science_orbit=any(a <= tc + 2457000 <= b_ for a, b_ in orbits.get(sec, [])), ingress_utc=Time(tc + 2457000 - dur / 2, format="jd").iso[11:16], egress_utc=Time(tc + 2457000 + dur / 2, format="jd").iso[11:16]))
+        preds.append(dict(sector=sec, epoch=n, tc_btjd=float(tc), tc_bjd_tdb=float(tc + 2457000), utc=geocentric_utc(tc + 2457000, RA_DEG, DEC_DEG).iso[:19],
+                          sigma_min=float(np.sqrt(var) * 1440), in_science_orbit=any(a <= tc + 2457000 <= b_ for a, b_ in orbits.get(sec, [])), ingress_utc=geocentric_utc(tc + 2457000 - dur / 2, RA_DEG, DEC_DEG).iso[11:16], egress_utc=geocentric_utc(tc + 2457000 + dur / 2, RA_DEG, DEC_DEG).iso[11:16]))
 print(f"\nPredictions generated {now.iso} UTC; ephemeris T0(BTJD)={T0f:.5f}+-{full['T0_err_cov']:.5f}, P={Pf:.7f}+-{full['P_err_cov']:.7f} d, duration {dur*24:.2f} h, depth ~185 ppm")
 for sec in (108, 109, 110):
     ps = [p for p in preds if p["sector"] == sec and p["in_science_orbit"]]

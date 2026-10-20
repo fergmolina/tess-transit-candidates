@@ -3,8 +3,32 @@
 Author: Fernando Molina (Independent researcher). Analysis performed with Claude (Anthropic) under the author's direction.
 Date: 2026-10-17. All code, data lists, logs and intermediate products are in `/Users/fernando/Desktop/NASA/`.
 Status line for every object in this report: **candidate pending confirmation; no object here is a validated planet.**
+> **Historical snapshot, with current-status corrections (2026-10-20, v1.12).** This report was written progressively from 2026-10-17.
+> Earlier sections are kept for the record; statements marked *Superseded* or *Corrected* below are no longer claimed. No object is
+> validated; individual dispositions and test types are explicitly labelled. Current status is in README.md and the dated registrations.
+> Corrections applied after an independent full-repository review (`reviews_full_repo/REVIEW_full_repo_v1.11.md`):
+> 1. **TIC 89247735:** four approximately 1.1 %-deep, 4.54-h events follow the clock-corrected v5 ephemeris, P = 18.323174 ± 0.000040 d.
+>    Conditional on the target hosting the signal and the adopted deblending, Rp ≈ 7.9–8.4 R⊕. The 7″ neighbour remains a possible
+>    eclipsing-binary host, and the companion mass is unconstrained. The earlier Gaia mass limit (M₂ ≲ 25–30 M_Jup), the giant-planet/
+>    brown-dwarf odds and the on-target conclusion are withdrawn. Version 1 remains the test of record; v5 is the current timing refinement.
+> 2. The fourth TIC 89247735 event is a **post-hoc recovery** from quality-flagged observations already on disk, not a prediction of new
+>    observations. It does not exclude a 2P eclipsing binary with alternating primary and secondary eclipses.
+> 3. "Blind" year/season tests are **retrospective leave-one-year-out consistency checks**, with disclosed shape, alias and detrending
+>    dependencies (and a silent all-data shape fallback when a training fit fails, `vet.py`). They are not prospective confirmations.
+> 4. **TIC 80387959:** TRICERATOPS FPP 0.047 and NFPP 0.010 are both **above** the validation thresholds (FPP < 0.015, NFPP < 0.001), so
+>    they do not validate the candidate. Gaia DR3 shows RUWE 0.83 and no significant RV variability; no companion-mass exclusion has been
+>    calibrated from these summaries.
+> 5. The S104 clock "verification" in §8.5 (v3) was incorrect. The current target-projected correction is +7.533 min (v5).
+> 6. A log-period grid fraction (§6) is a geometric fraction, not a calibrated chance probability.
+> 7. Novelty statements mean that no earlier matching report was found in the sources searched by the dated prior-detection sweep; its
+>    coverage and indexing limits apply.
+> 8. Paths written as `results/...` or `/Users/...` refer to the authors' workspace, not to this repository. Release locations: control
+>    summary → `CONTROL_TIC4206066.md`; pool-B recovery → `tables/poolb_known_recovery.csv`; duo grid →
+>    `tables/single_transit_search/duo_cut_grid.json`; prior-search summary → `prior_search/PRIOR_SEARCH.md`. Producers that are not
+>    published are listed in README "Reproduce".
+
 Outcome in one line: two candidates survive — TIC 317134140 (0.5719 d, ~185 ppm, §6; plausible but unproven, decisive test S108–S110) and
-TIC 89247735 (18.32 d, 1.0 %, §8; four unambiguous on-target transits in 2023/2025/2026; a giant planet or a brown dwarf, M₂ ≲ 25 M_Jup from Gaia RVs; not validatable without radial velocities). Everything else was rejected (§5, §7).
+TIC 89247735 (18.32 d, 1.0 %, §8; four unambiguous on-target transits in 2023/2025/2026; a giant planet or a brown dwarf, M₂ ≲ 25 M_Jup from Gaia RVs; not validatable without radial velocities). Everything else was rejected (§5, §7). *[Superseded 2026-10-20: see correction 1 above; the mass limit and the on-target conclusion are withdrawn.]*
 
 ## 1. Objective
 Search public TESS photometry for periodic transit-like dimming (0.01–0.5 % deep, hours long) that (a) repeats with the same
@@ -103,7 +127,7 @@ period (12 of 14 hosts in the first 269 targets processed), and all of them pass
 | 119221437 | 1.5913 | 760 | 2019–2026 | **rejected: likely off-target blend** | depth map S66: loss centroid 1.15 px (24″) from target, depth rises with aperture (314 → 560 ppm, 1 → 3 px) |
 | 120707329 | 2.0622 | 135 | 2019–2025, absent 2026 | **rejected** | per-year depths 266, 239, 179, 218 ppm then −1 ± 21 ppm in 2026 (S103+S104, same noise level): a strictly periodic transit cannot vanish |
 | 364788827 | 2.9369 | 1609 | 2019–2026 | **rejected: variable-dilution blend** | per-year depths 225, 3664, 3020, 1528, 683 ppm (±90–150); TIC contamination ratio 0.50 |
-| **89247735** | **18.3231** | **10,235** | **2023, 2025, 2026** | **candidate — see §8** | three individually 34–41σ flat-bottomed transits, on-target by pixel test, no TOI/CTOI/TCE/ExoFOP entry |
+| **89247735** | **18.3231** | **10,235** | **2023, 2025, 2026** | **candidate — see §8** | three individually 34–41σ flat-bottomed transits, on-target by pixel test *(withdrawn 2026-10-20: host not established, see the correction block at the top)*, no TOI/CTOI/TCE/ExoFOP entry |
 
 * The remaining ~100 clean SDE > 9 survivors are mostly 3–8-event signals at 11–20 d with depths 1–20 ppt whose per-year depths disagree
   or whose events sit at sector edges; they were not vetted individually and are listed in `results/candidates_physical_qlp_clean.csv`.
@@ -143,6 +167,7 @@ no TOI/CTOI at 0.5719 d or its aliases; no entry in `pscomppars`.
 | independent code path | fresh lightkurve downloads + Savitzky–Golay flatten + lightkurve BLS: top peak 0.57191 d in S98 alone (SDE 14.3) and 0.57173 d in S107 alone (SDE 11.3); TLS on S98 returns the 2× alias 1.1432 d |
 
 ### 6.4 Multi-year and blind tests
+> *Note 2026-10-20:* "blind" here means retrospective leave-one-season-out checks on data already in hand, with the dependencies disclosed below; not predictions of new observations.
 * **Season-holdout blind test** (`blind_seasons.json`): for each season, (P, T0) were fitted to the other seasons only and an independent
   full BLS was run on them; the held-out season was then measured at the predicted phase:
 
@@ -222,7 +247,7 @@ First ten Sector-110 events:
   their periods scatter across 0.569–0.574 d with no concentration at 0.57186 d and no common camera/CCD. No evidence of a
   spacecraft-related period.
 * **Archival-recovery significance:** the S33 single-sector blind BLS grid (0.5–13 d, log-uniform) has ≈1.2 % of its range within ±1 % of the
-  candidate period or its 2× alias; the probability that an unrelated sector's top peak lands there by chance is therefore ≈1 %, and the
+  candidate period or its 2× alias; this geometric fraction is not a calibrated chance probability for the strongest peak in structured TESS noise (corrected 2026-10-20; earlier text: "≈1 % by chance"), and the
   depth at the predicted phase in that sector is 5.2σ.
 * **Dependencies in the blind test (disclosed):** the transit shape (Rp/R★, a/R★, b) used to time the training data was fixed from the all-data
   MCMC, and the holdout detrending masked the predicted transit windows. Neither can create a dip in the holdout; both are what a
@@ -262,7 +287,7 @@ The identical stitched search was run on inverted light curves (2 − F) of 400 
   (3/400), above 14.3 = 0.2 % (1/400).
 * Implication: across 1,637 stars, ≈4 filtered false positives at SDE ≥ 14.3 and ≈12 at SDE ≥ 13.2 are expected from noise/systematics
   alone. **The periodogram statistic by itself therefore does not establish the TIC 317134140 signal** (SDE 14.3 in the search, 13.2 with
-  TOI-2514.01 masked); it only makes it worth testing. What distinguishes it from the null population is the out-of-sample evidence:
+  TOI-2514.01 masked); it only makes it worth testing. What distinguishes it from the null population is the retrospective holdout evidence (not prospective; dependencies disclosed below; wording corrected 2026-10-20):
   the period is the top peak of an independent search of every training subset, the withheld seasons show the dip at the predicted phase
   (5.0σ, 2.8σ, 7.6σ, 5.4σ; 1.7σ in S6) against random-phase nulls, and a sector never used in the search (S33) returns the period blind.
   The 17 other SDE > 9 survivors in Pool A are consistent with this null expectation and none passed triage/vetting.
@@ -316,8 +341,8 @@ Stitched BLS top peak P = 18.3230 d, depth 8,239 ppm (QLP DET_FLUX, unmasked spl
 sector in S66, S93 and S104 *in the quality-filtered data*. **The external review (§9) found a fourth, fully covered transit** at epoch 118
 (S93, BTJD 3830.347, 0.49 d after the sector start) whose 72 in-transit cadences all carry QLP quality bit 2^30 (bit 31, QLP's internal poor-quality flag, documented only on MIT's QLP page; empirically the orbit-start ramp) and
 were discarded by the pipeline's QUALITY == 0 mask. In the raw SAP flux it is a 10,500 ± 360 ppm, 4-h, flat-bottomed box with no background
-or centroid excursion, and it falls +3.4 min from the three-transit v1 prediction (1σ ≈ 3 min) — an out-of-sample confirmation that was
-sitting in our own data. The two S93 events are consecutive, so the period is now measured directly within one sector:
+or centroid excursion, and it falls +3.4 min from the three-transit v1 prediction (1σ ≈ 3 min) — a post-hoc recovery from quality-flagged observations already on disk, consistent with the locally frozen ephemeris, not a prediction of new observations (wording corrected 2026-10-20; earlier text: "an out-of-sample confirmation that was
+sitting in our own data"). The two S93 events are consecutive, so the period is now measured directly within one sector:
 18.3221 ± 0.0018 d, against 18.3231 d from the stitched search. The per-sector searches saw them only as single events (top peaks at unrelated periods), which is why a
 ≥2-transits-per-sector pipeline does not flag this star. The 2019 sector's only predicted transit (epoch 0, BTJD 1668.21) falls in the
 S13 orbit gap, so 2019 neither confirms nor contradicts the signal.
@@ -339,7 +364,7 @@ S13 orbit gap, so 2019 neither confirms nor contradicts the signal.
   flat-bottomed 1 % depth with Rp/R★ = 0.10, b = 0.44 is not a grazing twin geometry). On a faint neighbour it is *not* excluded on flux
   grounds — a star with ~2 % of the aperture flux and 50 % eclipses gives exactly 1 %, and the G = 15.49 neighbour supplies ~3.6 % — so
   this scenario collapses onto the neighbour hypothesis and is excluded only to the extent the flux-loss centroid excludes that star.
-  **With the fourth transit (epochs 79, 118, 119, 138) every period longer than 18.32 d, including this one, is excluded by data.** Momentum dumps are
+  **With the fourth transit (epochs 79, 118, 119, 138) every period longer than 18.32 d, including this one, is excluded by data.** *[Corrected 2026-10-20: P is the longest common recurrence period only if the four events are of the same type; with epoch parity odd/even/odd/even, a 2P binary with alternating primary and secondary eclipses is not excluded by these times, and the neighbour-hosted version remains open.]* Momentum dumps are
   ≥ 33 h from the three original events and 11.7 h from the fourth. Inverted-light-curve search: top SDE 9.7 vs 28.8 real.
 * Pixel test (`ffi_pixel_test.py`, S66/S93/S104 TESScut 11×11): flux-loss centroid 0.18, 0.04, 0.16 px (3.7″, 0.8″, 3.3″) from the
   target's WCS position, 0.03–0.04 px statistical error, plus a TESScut WCS systematic of order 0.1 px. The only neighbour able to mimic
@@ -356,6 +381,7 @@ S13 orbit gap, so 2019 neither confirms nor contradicts the signal.
   residuals −1.3, +2.1, −1.9 min (χ² 3.15 for 1 degree of freedom).
 
 ### 8.4 What it is if real (revised after the literature calibration, §11)
+> *Superseded 2026-10-20:* the radius, the Gaia mass limit and the giant-planet/brown-dwarf odds below are withdrawn. Currently: conditional on the target hosting the signal and the adopted deblending, Rp ≈ 8.4 ± 0.7 R⊕ (TIC radius) or 7.9 ± 0.45 R⊕ (SED radius), a ≈ 0.12 AU, Teq ≈ 540 K. The companion mass is unconstrained by the Gaia summaries, and the 7″ neighbour remains a possible eclipsing-binary host. The historical 4-h search box differs from the fitted 4.54-h contact duration.
 With R★ = 0.785 R☉: Rp = 8.5 ± 0.3 R⊕ (0.76 R_Jup); a = 0.113 AU; Teq ≈ 560 K (albedo 0, full redistribution); insolation 16 S⊕.
 **At this radius photometry cannot distinguish a giant planet from a brown dwarf**, and the prior is roughly even (rates as compiled by the literature survey, §11, not re-derived here): Kepler FGK occurrence of
 8–11 R⊕ planets at 12–25 d is ≈ 0.06 % (Kunimoto & Matthews 2020) against ≈ 0.2 % for close brown dwarfs (Csizmadia 2015), and 0.76 R_Jup
@@ -400,7 +426,7 @@ Predictions move by ≤ 2 min relative to v1 (epoch 146: 2026-10-29 21:21 UTC). 
 
 **v3 (frozen 2026-10-18 03:20:13 UTC; timing systematics).** Prompted by a QLP notice of a barycentric timing error in Sectors 99–104 (found by the
 literature review, §11), the timestamps were verified against a barycentric correction recomputed for the target from the FFI spacecraft
-times: QLP agrees to 0.03 min in S66/S93 and to ≤ 1 min in S104, so the timestamps are not the problem. The *photometric* timing of the S104
+times: QLP agrees to 0.03 min in S66/S93 and to ≤ 1 min in S104, so the timestamps are not the problem. *[Superseded 2026-10-20: this S104 clock verification was incorrect; the current target-projected correction is +7.533 min (ADDENDUM_QLP_CLOCK_2026-10-19b, PREREGISTRATION_v5). v5 supersedes v3/v4 as the timing refinement; v1 remains the test of record.]* The *photometric* timing of the S104
 event is: QLP (TGLC-method extraction, used since Sector 94) gives BTJD 4196.8043 ± 1.5 min, whereas TESScut aperture photometry gives
 4196.8077–4196.8132 depending on aperture (1–2.5 px), i.e. 5–13 min later, with the same shape and baseline model; the S93 and S66 events
 agree across all extractions to ≤ 1.6 min. The S104 window contains 140 QLP-flagged cadences and the extractions differ in how they treat
@@ -412,7 +438,7 @@ epoch 162 2027-08-19 01:28 UTC.
 
 **Observability (external review, `results/external_review/observability_89247735.csv`):** epochs 147–151 (2026-11-17 to 2027-01-29) are
 unobservable from any southern site (target too close to the Sun); epoch 146 is partial from SAAO only. The first full ground-based transits
-are epoch 159 (2027-06-25 02:12 UTC) and 162 (2027-08-19 01:28 UTC) from Chile. Radial velocities need no transit and can start now.
+are epoch 159 (2027-06-25 02:12 UTC) and 162 (2027-08-19 01:28 UTC) from Chile. *[Corrected 2026-10-20: with v5 and geocentric UTC the midpoints are 2027-06-25 02:10 and 2027-08-19 01:29 UTC; at CTIO epoch 159 qualifies and epoch 162 is marginal (it narrowly fails the stated ingress darkness cut). This is one site's calculation, not worldwide visibility.]* Radial velocities need no transit and can start now.
 
 TESS will not re-observe this field through at least S134, so the falsification route is ground-based: a 1 % deep, 4-h transit on a
 V ≈ 12.5 southern star is within reach of 30–40 cm telescopes; a single timed transit at the predicted time to within ±15 min, with the
@@ -420,6 +446,7 @@ same depth in a different bandpass, would confirm the ephemeris and an achromati
 `results/vet_qlp/89247735/PREREGISTRATION.md`.
 
 ### 8.6 Status
+> *Superseded 2026-10-20:* see correction 1 at the top. The fourth event was a post-hoc recovery, the span is about 3 years, and the target assignment is not established (the 7″ neighbour remains a possible host).
 **Transiting companion candidate (giant planet or brown dwarf) pending confirmation.** Strengths: four unambiguous, consistent, flat-bottomed events over 3.5 years, two of them consecutive;
 the fourth confirmed the three-event ephemeris out of sample; on-target by pixel test and by the reviewer's PSF fit (Δχ² 83–214 against the neighbour); ρ★ consistent; no secondary; absent from every catalog checked. Weaknesses: only four events, all from TESS FFIs (QLP, the independent TARS pipeline and our own cutout photometry of the same frames); a 9.5″ neighbour cannot be fully excluded with 21″ pixels (seeing-limited
 imaging or a ground-based transit in a small aperture would settle it); nature (planet vs brown dwarf vs M dwarf) requires RV.
@@ -480,7 +507,7 @@ being 18.322 d); the first version of this step used the post-control list and w
 external review found in `alias_89247735.py` (coverage computed on filtered data), now fixed in `single_rank.py`.
 Injection–recovery on 293 random star-sectors (`single_injection.py`, batman transits 1–20 ppt, 2–8 h, random times including ramps),
 scored end to end by also asking whether the injected time falls in a window that the field or coincidence control flagged in the real
-run (27 % of injected times do; `results/single/summary/injection_recovery_end_to_end.csv`): detection 76 % at expected SNR 7–10, 87 % at
+run (27 % of injected times do; `results/single/summary/injection_recovery_end_to_end.csv`; the end-to-end scoring producer is not published, see README "Reproduce"): detection 76 % at expected SNR 7–10, 87 % at
 10–15, 92–98 % above 15; after the event cuts 48–76 %; **end to end 38–59 %** (SNR 7–10: 38 %, 10–15: 59 %, 15–30: 58 %, > 30: 38 % —
 the deepest injections are limb-darkened and fail the flat-bottom/box-vs-V cuts). In the first 0.5 d of an orbit detection is 40 % and
 end-to-end completeness 20 %; at 0.5–2 d it is 20–40 % (5–15 injections per bin, indicative only); beyond 2 d, 51 % (181 injections). These are the completeness numbers that §5.2 lacked, and they
@@ -503,7 +530,7 @@ different sector, as for TIC 89247735, is what separates a candidate from the nu
 An independent literature survey (papers, mission documentation, software, community practice, 2019–2026, every claim tied to a fetched
 source) was commissioned to calibrate the claims above. Findings applied to the two existing runs:
 * **TIC 89247735 relabelled** from "planet candidate" to "transiting companion candidate (giant planet or brown dwarf)"; the planet/brown-dwarf
-  prior is ≈ 1:1; Gaia astrometry is uninformative at 18 d and its use as evidence is withdrawn; the Gaia RV error model gives M₂ ≲ 25 M_Jup
+  prior is ≈ 1:1; Gaia astrometry is uninformative at 18 d and its use as evidence is withdrawn; the Gaia RV error model gives M₂ ≲ 25 M_Jup *[withdrawn 2026-10-20: no calibrated mass limit]*
   (§8.4). No validation route exists above 8 R⊕; only radial velocities decide. A QLP timing-error notice for Sectors 99–104 led to the
   timestamp verification and the v3 ephemeris with a 6-min Sector-104 systematic (§8.5).
 * **TIC 317134140:** FPP tools are not decisive at SNR ≈ 10; the momentum-dump test passes; the pre-registered S108–S110 test is the right
@@ -524,10 +551,10 @@ source) was commissioned to calibrate the claims above. Findings applied to the 
 ## Prior and concurrent reports (prior-detection sweep of 2026-10-18/19, `results/prior_search/PRIOR_SEARCH.md`)
 A documented sweep of 32 services (1,585 logged queries; 558,074 automated pipeline alerts scanned: 341,351 SPOC TCE rows and 216,723
 TESS-SPOC FFI DV targets; 101 GitHub repositories and 157 Zenodo records grepped by content) found:
-* **TIC 89247735**: no prior report of any kind. A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
+* **TIC 89247735**: no earlier matching report was found in the sources searched by this dated sweep; its coverage and indexing limits apply (wording corrected 2026-10-20). A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
   posted at github.com/alejandrozarco/tess-candidates-2026 on 2026-10-18 19:22 UTC, about twenty hours after this record's first public
   release (GitHub v1.0 2026-10-17 23:01 UTC; Zenodo 2026-10-17 23:05 UTC). It does not cite this record.
-* **TIC 80387959**: no human-reported candidate anywhere, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
+* **TIC 80387959**: no human-reported candidate found in the searched sources, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
   unpromoted threshold-crossing event at the same signal (P = 4.1905 ± 0.0012 d, 869 ± 107 ppm, 2.4 R⊕, MES 7.6), never a TOI or CTOI. Our
   known-signal cross-match had covered SPOC 2-min TCEs only; TESS-SPOC TCEs are now included.
 * **TIC 120444365**: **listed earlier** by an independent, pseudonymous, non-refereed search (github.com/eumemic/exoplanets, tier-C candidate at
@@ -578,7 +605,7 @@ transit at 12σ with a blind BLS returning the same period — and it is a blend
 SPOC aperture contains the same neighbour. Faint eclipsing binaries inside the large QLP apertures of bright stars are the dominant
 false-positive mode of this sample, and only the pixel test catches them; it now runs before `vet.py` on every survivor.
 
-### 12.3 Survivors after the external review (`results/external_review_allsky/REVIEW.md`; all frozen locally, **not deposited publicly**)
+### 12.3 Survivors after the external review (`results/external_review_allsky/REVIEW.md`; all frozen locally, **not deposited publicly**; *status 2026-10-20: several were deposited since, see README*)
 An independent review (same design as §9: outside data, own pixel code, TRICERATOPS, literature) returned SURVIVES / SURVIVES / WOUNDED and twelve
 corrections (REVIEW §6), all applied. Two cut across every candidate: (i) **cross-sector QLP depths are not an astrophysical test** — QLP normalises
 each sector separately and changed dilution system at Sector 94, so a fixed-aperture TESScut extraction is the right comparison; (ii) **the v1
@@ -595,14 +622,14 @@ test reaches a neighbour inside ≈ 0.35 px, and our per-sector centroid errors 
   early-vs-late 32 ± 73 ppm); the QLP (and raw SAP) per-sector values 712–961 ppm reflect QLP's per-sector apertures and normalisation. TESS-SPOC
   (S10/S36/S37/S63) 831 ± 53 ppm combined, blind period 4.19224 d. Pixel: loss position combined over six sectors 2.0 ± 1.1″ from the target;
   the G = 17.3 star at 7.6″ (needs 22–28 %) is excluded at ≈ 2.7σ (not the 4.8/2.8/4.3σ first quoted), the G = 14.0 star at 13.7″ at ≈ 4σ.
-  TRICERATOPS FPP 0.047, NFPP 0.010 (indicative; below the 0.015 / 10⁻³ validation thresholds). Gaia RVs exclude a stellar companion. Test of
+  TRICERATOPS FPP 0.047, NFPP 0.010, both above the validation thresholds FPP < 0.015 and NFPP < 10⁻³; these model-conditional results do not validate the candidate. Gaia DR3 summary diagnostics show no significant RV variability (RUWE 0.83); no companion-mass exclusion has been calibrated from them (both corrected 2026-10-20; earlier text said "below the validation thresholds" and "Gaia RVs exclude a stellar companion"). Test of
   record Sector 111 (7 predicted transits from 2026-11-27 21:13 UTC, formal σ ≈ 3 min, conservative ±20 min), then S112–S114.
 * **TIC 120444365** (K dwarf, Teff 4951 K; TIC v8.2 / Gaia radius 0.76 R☉, so Rp ≈ 2.2 R⊕, not the 2.45 from the QLP-header radius; Tmag 11.1).
   **Survives, cleanest of the three.** v2: P = 5.148171 ± 0.000005 d, T0 = BTJD 4218.97007 ± 2.1 min (7 sector times incl. S2 at 1800 s, S29
   QLP and SPOC 2-min; χ² 6.5/5; SHA 32b5e085…, 22:34:49 UTC; v1 P was 2.4σ low and placed the 2018–2023 transits 50–90 min early, harmless for
   S106). Isolated (nearest possible mimic 64″, 58 % needed). Pixel 0.03/0.19/0.04 px. Independent products at the corrected ephemeris: SPOC 2-min
-  S29 892 ± 129 ppm, TESS-SPOC S2/S29/S69 681/955/894, TARS 832–1008, fixed-aperture cutouts 674–1176 ppm; blind holdout 4 of 5 years (the 2018
-  holdout had no covered transit). TRICERATOPS FPP 0.041, **NFPP 0.000** — "likely planet" by the Giacalone et al. criteria, not validated. Gaia DR3
+  S29 892 ± 129 ppm, TESS-SPOC S2/S29/S69 681/955/894, TARS 832–1008, fixed-aperture cutouts 674–1176 ppm; retrospective holdout checks positive in 4 of 5 years (the 2018
+  holdout had no covered transit). TRICERATOPS FPP 0.041 (above the 0.015 validation threshold), NFPP 0.000 (structural in this setup); not validated (category label withdrawn 2026-10-20). Gaia DR3
   flags the star VARIABLE (rotation ≈ 13 d, not a harmonic of 5.148 d). Test of record Sector 106 (6 transits, 2026-07-12 to 08-07; QLP file absent
   from MAST at both freezes), expected late October 2026; no further coverage through S134.
 * A third signal (3.28 d, 0.8 ppt, crowded field) is real and stable but its host star cannot be assigned from TESS pixels (a star 4.2″ away
@@ -633,10 +660,10 @@ With all 57,835 stars searched and the known-signal table extended to the TESS-S
 P ≥ 3 d, depth ≤ 5 ppt, detected every year, odd/even < 3σ, not near the orbit cadence, no catalog entry, not previously vetted) were
 pixel-tested *first*: 95 are off-target blends (20–60″), 20 ambiguous (0.5–0.9 px) and 26 unique stars have the dip on the target
 (`results/allsky_classA_round2_outcomes.csv`). Full vetting and a grep of the prior-detection corpus (`scripts/prior_grep.py`: 101 cloned
-repositories and 157 Zenodo deposits) leave: **TIC 183374279** (P = 11.737984 ± 0.000025 d, ≈ 970 ppm, 2.5 R⊕, isolated K dwarf, blind 4/4,
-ρ 1.45×, SPOC 2-min Sector 29 1380 ± 235 ppm, nothing in the corpus; frozen v2 2026-10-19 11:44 UTC, SHA 069d8298…, test Sector 106 whose data
+repositories and 157 Zenodo deposits) leave: **TIC 183374279** (P = 11.737984 ± 0.000025 d, ≈ 970 ppm, 2.5 R⊕, isolated K dwarf, retrospective year checks 4/4,
+ρ 1.24× with the adopted TIC M/R (1.45× under the earlier convention), SPOC 2-min Sector 29 1380 ± 235 ppm, nothing in the corpus; frozen v2 2026-10-19 11:44 UTC, SHA 069d8298…, test Sector 106 whose data
 were not public at the freeze — corrected 2026-10-20: QLP light curves were not yet released, but other public S106 data products existed; see ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md) — deposited as v1.6; TIC 61310956 (isolated, no TESS revisit through S134; ground-based
-test only); and TIC 258006047 (10.022 d, 920 ppm, 2.3 R⊕), which passes every test but has a G = 15.95 star 2.6″ away that TESS cannot resolve
+test only; current values P = 16.5379656 d, raw-SAP depth ≈ 1334 ppm, SPOC known-ephemeris extraction ≈ 1068 ppm, baseline-sensitive odd/even; frozen 2.70-h scoring reference, 3.3-h planning duration); and TIC 258006047 (10.022 d, 920 ppm, 2.3 R⊕), which passes every test but has a G = 15.95 star 2.6″ away that TESS cannot resolve
 and was **listed earlier** (2026-10-08) in the candidate bundle of Zenodo record 23230562 (B. Murray) — an independent rediscovery, frozen as an
 ephemeris-only Sector-114 test. Eight further on-target stars are rediscoveries of eumemic/exoplanets listings (parked), four fail the
 stellar-density test (ρ 10–30× off), four fail odd/even, the rest are below SNR 9. The blend fraction among light-curve-clean candidates is
@@ -647,6 +674,6 @@ An adversarial referee review of the two candidate dossiers (`referee_round2/REF
 TIC 183374279 depth 1.0–1.4 ppt and radius 2.3–2.9 R⊕ (TIC v8.2 radius), third Sector-106 transit only half covered (dated addendum to the
 frozen record; hashed file unchanged); TIC 61310956's SPOC 2-min recovery is 4.5σ at the known ephemeris, not an independent 11σ detection, and
 its v2 ephemeris counted Sectors 22 and 45 twice (v3 frozen 2026-10-19 14:09 UTC, σ 28 min, ground-based outcome rules; `prereg_v2.py` now keeps
-one time per sector). The round-2 prior-detection sweep of all 26 on-target stars (`prior_search_round2/`) found no prior report for either
+one time per sector). The round-2 prior-detection sweep of all 26 on-target stars (`prior_search_round2/`) found no prior report for either in the searched sources
 candidate; seven of the 26 were listed earlier by B. Murray (Zenodo 23230562, 2026-10-08) and/or eumemic/exoplanets (2026-10-07 to 10-09).
 Release v1.7 publishes frozen predictions for 18 objects in four labelled tiers (README); only two are claimed as candidates.

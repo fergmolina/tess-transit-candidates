@@ -24,3 +24,11 @@ pre-registration tools write geocentric UTC directly.
 | TIC 317134140 | 4936 (first Sector-108 transit) | 2026-09-07 21:31 | 2026-09-07 21:31 | −1 min |
 
 Range of the shift over each file: TIC 89247735 −7.5 to +7.9 min; TIC 80387959 −5.4 to +5.5; TIC 120444365 −6.5 to +6.6; TIC 317134140 −1.2 to +5.7.
+
+**Correction 2026-10-20 (after an independent full-repository review).** The statement above that every old clock-time column was a
+time-scale-only conversion (`Time(BJD_TDB).utc`) is not universal. Some legacy producers wrote the BJD_TDB number directly as a calendar
+label, with neither the TDB-to-UTC change nor the light-travel correction. Examples: older `vet.py` and `final_ephemeris_317134140.py`
+output, and a public `prereg_candidate.py` that did only the time-scale step. For such labels the difference from geocentric UTC is not
+the `ltt_min` column alone. In the first row of `TIC317134140/predicted_transits_S108_S109_S110_utcfix.csv`, the actual correction from
+the displayed legacy seconds value is about +5.6 s, not about -1 min. Use only `tc_bjd_tdb`/`tc_BJD_TDB`, or the `utc_geocentric`
+columns. Frozen files are unchanged. The active producers are corrected in v1.12 (DECISIONS 100).

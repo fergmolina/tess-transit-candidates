@@ -4,7 +4,7 @@ import sys, os, json, argparse, warnings; sys.path.insert(0, "/Users/fernando/De
 import numpy as np, pandas as pd, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from tsearch import load_spoc_lc, detrend
 from search_pipeline import sector_files, year_of, bin_lc, load_lc, SOURCE
-OUT = "/Users/fernando/Desktop/NASA/results/triage" + ("" if SOURCE == "spoc" else "_qlp"); os.makedirs(OUT, exist_ok=True)
+SUFFIX = os.environ.get("TSEARCH_SUFFIX", "" if SOURCE == "spoc" else "_qlp"); OUT = "/Users/fernando/Desktop/NASA/results/triage" + SUFFIX; os.makedirs(OUT, exist_ok=True)
 
 def triage(tic, P, T0, dur_h, depth_ppm, tag=""):
     dur = dur_h / 24
@@ -63,7 +63,7 @@ def triage(tic, P, T0, dur_h, depth_ppm, tag=""):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--n", type=int, default=20); ap.add_argument("--min-sde", type=float, default=8.5); ap.add_argument("--tics", default="")
-    ap.add_argument("--csv", default="/Users/fernando/Desktop/NASA/results/candidates_physical" + ("" if SOURCE == "spoc" else "_qlp") + ".csv")
+    ap.add_argument("--csv", default="/Users/fernando/Desktop/NASA/results/candidates_physical" + SUFFIX + ".csv")
     a = ap.parse_args()
     df = pd.read_csv(a.csv)
     if a.tics: df = df[df.tic.isin([int(x) for x in a.tics.split(",")])]

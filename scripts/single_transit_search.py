@@ -15,7 +15,7 @@ import sys, os, glob, re, json, argparse, warnings, time, traceback; warnings.fi
 import numpy as np, pandas as pd
 from astropy.io import fits
 from wotan import flatten
-ROOT = "/Users/fernando/Desktop/NASA"; LC_DIR = f"{ROOT}/data/qlp"
+ROOT = "/Users/fernando/Desktop/NASA"; LC_DIR = os.environ.get("TSEARCH_LC_DIR") or f"{ROOT}/data/qlp"
 DROP_BITS = 2 | 4 | 8 | 32 | 128
 DURS_H = np.array([1.5, 2.0, 3.0, 4.0, 6.0, 8.0])
 _dumps = None; _known = None
@@ -161,7 +161,8 @@ def process(tic, out_dir, invert=False, keep_known=False):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--workers", type=int, default=12); ap.add_argument("--tics", type=int, nargs="*"); ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--invert", action="store_true"); ap.add_argument("--keep-known", action="store_true"); ap.add_argument("--out", default=""); ap.add_argument("--redo", action="store_true"); a = ap.parse_args()
+    ap.add_argument("--invert", action="store_true"); ap.add_argument("--keep-known", action="store_true"); ap.add_argument("--out", default=""); ap.add_argument("--redo", action="store_true"); ap.add_argument("--tics-file", default=""); a = ap.parse_args()
+    if a.tics_file: a.tics = [int(x) for x in open(a.tics_file).read().split()]
     out_dir = a.out or f"{ROOT}/results/single" + ("_inverted" if a.invert else ""); os.makedirs(out_dir, exist_ok=True)
     tics = a.tics or sorted({int(re.search(r"-(\d{16})_", f).group(1)) for f in glob.glob(f"{LC_DIR}/*.fits")})
     if a.limit: tics = tics[:a.limit]

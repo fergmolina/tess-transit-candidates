@@ -1,5 +1,5 @@
 """Injection-recovery test for the single-transit detector: inject batman transits (depth 1-20 ppt log-uniform, duration 2-8 h,
-b = 0.3, random mid-time anywhere in the sector INCLUDING flagged ramps) into the raw SAP flux of random Pool-B stars (one sector each),
+b = 0 (inc = 90 deg; this line said b = 0.3 until 2026-10-20, review F29), random mid-time anywhere in the sector INCLUDING flagged ramps) into the raw SAP flux of random Pool-B stars (one sector each),
 run the identical detector + event cuts, and record recovery vs expected SNR and vs time since orbit start.
 Usage: python -I single_injection.py --n 300 --workers 8"""
 import sys, os, glob, re, json, argparse, warnings; warnings.filterwarnings("ignore"); sys.path.insert(0, "/Users/fernando/Desktop/NASA/scripts")

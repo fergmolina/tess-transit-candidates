@@ -191,7 +191,7 @@
     All CC BY 4.0, linked to the concept DOI 10.5281/zenodo.23443244 and the v1.4 release. README updated with the links. v1.4 release
     (535519a) archives automatically. Token stored by the user in ~/.zenodo_token (never echo it). DDT proposal and the two e-mails remain
     with the user (ddt_80387959/README.md, zenodo_upload/EMAIL_zarco_draft.md, paper/COAUTHOR_OUTREACH.md).
-    **2026-10-19:** DDT proposal e-mailed by the user to tess-ddt@mit.edu (proposal.pdf + target_list.csv; TIC 80387959, S111-S114).
+    **2026-10-19:** DDT proposal e-mailed by the user to the TESS DDT office (proposal.pdf + target_list.csv; TIC 80387959, S111-S114).
     Courtesy notice to the concurrent TIC 89247735 author filed as GitHub issue
     https://github.com/alejandrozarco/tess-candidates-2026/issues/1 (no e-mail address exists for him). The prior-detection sweep agent was
     stopped by the user with its last background job (Zenodo content grep, 32 of 157 records) unfinished; PRIOR_SEARCH.md stands as written.
@@ -619,3 +619,60 @@
     DECISIONS public copy (items 1-96, withheld object masked); MANIFEST_v1.11.md; CITATION 1.11. Zenodo: the repository record
     versions automatically via the GitHub integration; the protocol record gets v1.4 (unchanged v1.3 PDF + erratum + governance +
     procedure) by script. Not in this release (pending a separate go): the dataset_v1 bundle and the two-candidate preprint.
+97. 2026-10-20 — v1.11 PUBLISHED. GitHub commit 655c229, tag and release v1.11
+    (https://github.com/fergmolina/tess-transit-candidates/releases/tag/v1.11); Zenodo repository version v1.11 10.5281/zenodo.23508798
+    (automatic GitHub integration); protocol record v1.4 10.5281/zenodo.23508864 (scripts/zenodo_newversion_staged.py: draft inspected,
+    then published; PDF and v1.3 bundle byte-identical to v1.3; added erratum, governance, procedure and conformance_v2.1.zip, built by
+    git archive of tag v1.11). Pre-publication checks: withheld TIC absent from the staged tree and the zip; every config, amendment and
+    published script carries evaluator SHA a864b07a...; prediction CSVs match their locks; no S106+ file of the seven targets anywhere.
+    The old (2026-10-18) Zenodo token was used; the author should revoke it now. Still pending (separate go): dataset_v1 bundle and the
+    two-candidate preprint. NEXT: score the seven S106 tests once QLP S106 is released (declared test; needs the author's go).
+98. 2026-10-20 — FULL-REPO REVIEW of v1.11 (results/REVIEW_full_repo_v1.11.md; external; verdict "corrections required"). All 56 public
+    prediction CSVs keep their first-committed bytes and the manifests verify; the v5 ephemeris reproduces. Findings:
+    - MASKING: the withheld object's query coordinates (ra/dec) remain in public prior_search/PRIOR_SEARCH.md:160 and
+      prior_search/query_log_all.csv (8 rows), public since v1.4 (2026-10-18) and in every repo release and Zenodo archive since. The
+      withheld rows in tables/allsky_testable_soon.csv and allsky_classA_outcomes.csv also carry period, depth and sectors (by the
+      earlier design). My v1.11 pre-release scans checked only the TIC number - an inadequate check; corrected practice: scan
+      withheld rows for coordinates and other identifiers.
+    - CODE: vet.py transit_model infers exposure from folded times (F3); per-event holdout numbers repeat the stacked value (F4);
+      legacy UTC producers (F5); freeze outputs can be overwritten (F14); public/local script drift, missing producers, absolute
+      paths, incomplete environments (F2, F6-F8); single_injection b docstring (F29).
+    - CLAIMS: withdrawn TIC 89247735 mass/localisation claims remain in README/REPORT/dataset (F9); the 4th event does not exclude the
+      2P EB (F10); TIC 80387959 FPP/NFPP are ABOVE the validation thresholds (F11); "single star"/RV mass exclusion unsupported (F12);
+      "before the test data exist" wording in note/dataset/protocol metadata (F13); superseded S104 clock certification in REPORT
+      (F17); "out-of-sample"/"blind" wording (F18); BLS log-grid fraction presented as a chance probability (F19); plus stale
+      observing plans, numbers, the novelty scope, document status, the CITATION DOI (it points at v1.1) and links (F20-F25, F28).
+    - PRIVACY: Claude session URLs in 25 commit messages and in the Zenodo v1.11 description (F26); a DDT recipient email in the
+      public DECISIONS.md (F27).
+    Awaiting the author's decisions on masking remediation and session links; a v1.12 corrections release is proposed.
+99. 2026-10-20 — Correction e-mailed by the author to the TESS DDT office for the TIC 80387959 proposal (wording reviewed by the
+    external agent): FPP/NFPP above the validation thresholds; no single-star or RV mass-exclusion claim; holdouts retrospective; the
+    neighbouring EB scenario remains open; the request is unchanged. Starting the v1.12 corrections (forward correction; no history
+    rewrite; nothing published before the author sees it).
+100. 2026-10-20 — v1.12 CORRECTIONS prepared locally (not published), after the full-repo review (item 98):
+    - F1 masking: the withheld object's coordinates, 2MASS/Gaia/UCAC4/APASS/WISE and extra AllWISE/SkyMapper/unWISE/GSC identifiers
+      are removed from public prior_search/ (260 object rows: query/URL/hits/note -> [withheld]; 13 other lines scrubbed); a dated
+      correction note heads PRIOR_SEARCH.md. The whole tracked tree was rescanned for aliases, decimal and sexagesimal coordinates: no
+      alias remains (the remaining short-digit matches are timestamps and unrelated numbers, checked in context). No history rewrite.
+    - F27: scripts/make_public_decisions.py writes the public log (withheld number masked; DDT e-mail -> "the TESS DDT office").
+    - F23: CITATION DOI -> concept 10.5281/zenodo.23443244.
+    - Claims (F9-F13, F15-F22, F24, F25, F28): REPORT gets a dated current-status block plus inline Superseded/Corrected markers;
+      README candidate summary, novelty, freeze-timestamp, reproduction limits and observing times corrected; dated clarifications
+      appended to TIC80387959/PREREGISTRATION_v2.md (FPP/NFPP above thresholds) and CORRECTION_UTC_2026-10-19.md (legacy raw-BJD
+      labels); note_allsky/note.tex corrected (validation, Gaia, retrospective checks, S106 data-availability wording; recompiled);
+      paper/README status (AJ draft not submitted; RNAAS submitted); dataset_v1/README notice prepared for a v1.1 dataset version.
+    - Code (F3, F4, F5, F14, F18, F29): vet.py per-point exposures from unfolded times (folded-time inference could give 0 s; synthetic
+      check: model within 110 ppm of a fine-supersampled reference vs 775 ppm before), per-event holdout depths (1000/3000/6000 ppm
+      recovered; previously 3333 each), geocentric UTC via scripts/time_utils.py in vet.py and final_ephemeris_317134140.py, training-shape
+      fallback recorded; prereg_v2.py/prereg_candidate.py refuse to overwrite a frozen version and dry runs write to _dryrun/ (not
+      executed end to end); single_injection docstring b = 0. None of this changes a frozen file. Affected exploratory outputs:
+      report.json "ephemeris" and retrospective holdout numbers; frozen v2 ephemerides use prereg_v2's own per-sector cadence model.
+    - F2/F6/F7: public scripts synced to the local versions that ran (10 files + time_utils.py); 4 missing producers published; the
+      end-to-end injection scorer was ad hoc and is not recoverable (stated); TRICERATOPS environment pinned.
+    - Not changed: absolute paths in code (F8) are disclosed, not refactored. Pending the author's go: session links (F26), Zenodo
+      metadata edits (v1.11 description; protocol v1.4 opening text, F13), new Zenodo versions of the dataset and the two-candidate
+      preprint, and publishing v1.12.
+101. 2026-10-20 — Author decisions: (1) no Claude session URLs in commits, release notes or Zenodo descriptions from now on (keep the
+    Co-Authored-By credit; history before v1.12 not rewritten); (2) publish v1.12; (3) edit Zenodo metadata: remove the session link
+    from the v1.11 repository description and correct the protocol record's "before the test data exist or are public" wording. New
+    Zenodo versions of the dataset and the two-candidate preprint remain pending.

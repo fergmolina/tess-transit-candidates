@@ -11,6 +11,7 @@ warnings.filterwarnings("ignore")
 import numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from scipy.optimize import least_squares, minimize
 from tsearch import load_spoc_lc, trim_edges
+from time_utils import geocentric_utc
 from search_pipeline import sector_files, year_of, bin_lc, load_lc, SOURCE
 import batman
 
@@ -54,13 +55,30 @@ def box_depth(t, f, P, T0, dur_d, phase=0.0):
     sig = np.std(f[oot]) if oot.sum() > 10 else np.std(f)
     return float(d), float(sig / np.sqrt(intr.sum())), int(intr.sum())
 
+def per_point_exposure(t):
+    """Per-cadence exposure (days) from the UNFOLDED time stamps: the smaller spacing to either neighbour, snapped to the TESS cadences
+    (120/200/600/1800 s) when within 20 % (v1.12, full-repo review F3: exposure must not be inferred from folded times)."""
+    o = np.argsort(t); ts = t[o]; d = np.diff(ts); e = np.empty(len(ts))
+    if len(ts) < 2: return np.full(len(t), 120 / 86400)
+    e[1:-1] = np.minimum(d[:-1], d[1:]); e[0] = d[0]; e[-1] = d[-1]
+    for c in (120, 200, 600, 1800):
+        near = np.abs(e * 86400 / c - 1) < 0.2; e[near] = c / 86400
+    out = np.empty(len(t)); out[o] = e; return out
+
 def transit_model(params, t, P, u=(0.4, 0.25), exp_time=None):
+    """batman model. exp_time: scalar (days), or a per-point array (evaluated per cadence group). If None, it is inferred from t, which is
+    valid ONLY for unfolded time stamps; callers passing folded or phase times must supply exp_time (v1.12, review F3)."""
     T0, rprs, ars, b = params
     if exp_time is None: exp_time = float(np.median(np.diff(np.sort(t)))) if len(t) > 3 else 120 / 86400   # real cadence (review 2026-10-18: 120 s was hard-coded for 200/600/1800-s QLP data)
     inc = np.degrees(np.arccos(np.clip(b / ars, 0, 1)))
     p = batman.TransitParams(); p.t0 = T0; p.per = P; p.rp = rprs; p.a = ars; p.inc = inc; p.ecc = 0; p.w = 90; p.u = list(u); p.limb_dark = "quadratic"
-    m = batman.TransitModel(p, t, supersample_factor=3, exp_time=exp_time)
-    return m.light_curve(p)
+    if np.ndim(exp_time) == 0:
+        return batman.TransitModel(p, t, supersample_factor=3, exp_time=float(exp_time)).light_curve(p)
+    exp_time = np.asarray(exp_time, float); out = np.empty(len(t))
+    for ex in np.unique(np.round(exp_time * 86400)):
+        s = np.round(exp_time * 86400) == ex
+        out[s] = batman.TransitModel(p, t[s], supersample_factor=max(3, int(round(ex / 120))), exp_time=ex / 86400).light_curve(p)
+    return out
 
 def fit_shape(t, f, fe, P, T0, dur_d, depth, ars_guess):
     # work only near transits for speed
@@ -100,7 +118,7 @@ def global_ephemeris(T, F, E, P, T0, dur_d, rprs, ars, b, dP_frac=0.002, nP=161,
     """Joint (P, T0) fit of a fixed-shape batman model to ALL data near transit (works for shallow signals where individual
     transits cannot be timed). Chi2 surface on a grid; 1-sigma from delta-chi2=1 profiles, inflated by sqrt(reduced chi2)."""
     ph = ((T - T0) / P + 0.5) % 1 - 0.5; near = np.abs(ph * P) < 2.5 * dur_d
-    tt, ff, ee = T[near], F[near], E[near]
+    tt, ff, ee = T[near], F[near], E[near]; ex = per_point_exposure(tt)   # exposures from UNFOLDED times (v1.12, review F3)
     Ps = P * (1 + np.linspace(-dP_frac, dP_frac, nP)); T0s = T0 + np.linspace(-0.6, 0.6, nT0) * dur_d
     chi = np.full((nP, nT0), np.inf)
     for i, Pi in enumerate(Ps):
@@ -108,7 +126,7 @@ def global_ephemeris(T, F, E, P, T0, dur_d, rprs, ars, b, dP_frac=0.002, nP=161,
             m = transit_model([T0j, rprs, ars, b], tt, Pi) if False else None
             # fast: fold at (Pi, T0j) and evaluate the model once per phase (model depends on phase only)
             phi = ((tt - T0j) / Pi + 0.5) % 1 - 0.5
-            mod = transit_model([0.0, rprs, ars, b], phi * Pi, Pi)
+            mod = transit_model([0.0, rprs, ars, b], phi * Pi, Pi, exp_time=ex)
             chi[i, j] = np.sum(((ff - mod) / ee)**2)
     i0, j0 = np.unravel_index(np.argmin(chi), chi.shape)
     cmin = chi[i0, j0]; dof = len(ff) - 2; infl = max(1.0, cmin / dof)
@@ -177,8 +195,8 @@ def blind_test(T, F, E, secs, P, T0, dur_d, rprs, ars, b, holdout_year):
     # (2) training-only shape + timing + ephemeris
     try:
         fit = fit_shape(Tr, Fr, Er, P_tr, T0_tr, dur_tr, max(pk["depth"], 1e-6), float(np.clip(P_tr / (np.pi * dur_tr), 2, 400)))
-        rprs_t, ars_t, b_t = fit["rprs"], fit["ars"], fit["b"]
-    except Exception: rprs_t, ars_t, b_t = rprs, ars, b
+        rprs_t, ars_t, b_t = fit["rprs"], fit["ars"], fit["b"]; shape_fallback = False
+    except Exception: rprs_t, ars_t, b_t = rprs, ars, b; shape_fallback = True   # training fit failed: all-data shape used (recorded, v1.12 review F18)
     eph = global_ephemeris(Tr, Fr, Er, P_tr, T0_tr, dur_tr, rprs_t, ars_t, b_t)
     tt_train = [x for x in time_transits(Tr, Fr, Er, eph["P"], eph["T0"], dur_tr, rprs_t, ars_t, b_t) if x["dchi2"] > 4]
     # (3) predict holdout
@@ -189,19 +207,20 @@ def blind_test(T, F, E, secs, P, T0, dur_d, rprs, ars, b, holdout_year):
         tc = eph["T0"] + n * eph["P"]; terr = np.sqrt(eph["T0_err"]**2 + (n * eph["P_err"])**2)
         intr = np.abs(Tt - tc) < dur_tr / 2
         if intr.sum() < 10: continue
-        d, de, nin = box_depth(Tt, Ft, eph["P"], tc, dur_tr)
+        loc = np.abs(Tt - tc) < 3.5 * dur_tr   # THIS event only (v1.12, review F4: box_depth on the whole holdout folds every event)
+        d, de, nin = box_depth(Tt[loc], Ft[loc], eph["P"], tc, dur_tr)
         preds.append(dict(epoch=n, tc_pred=float(tc), tc_pred_err_min=float(terr * 1440), depth=d, depth_err=de, n_in=nin, snr=float(d / de) if de > 0 else np.nan))
-    if not preds: return dict(ok=False, holdout_year=int(holdout_year), training_search=search, recovered_in_training=True, reason="no predicted transits covered in holdout")
+    if not preds: return dict(ok=False, holdout_year=int(holdout_year), training_search=search, shape_fallback=shape_fallback, recovered_in_training=True, reason="no predicted transits covered in holdout")
     worst = max(p["tc_pred_err_min"] for p in preds)
     if worst > 0.5 * dur_tr * 1440:
-        return dict(ok=False, holdout_year=int(holdout_year), training_search=search, recovered_in_training=True, train_ephemeris=eph, n_train_transits=len(tt_train), predicted=preds,
+        return dict(ok=False, holdout_year=int(holdout_year), training_search=search, shape_fallback=shape_fallback, recovered_in_training=True, train_ephemeris=eph, n_train_transits=len(tt_train), predicted=preds,
                     reason=f"training ephemeris too imprecise to predict holdout phase (1-sigma {worst:.0f} min > half duration); test inconclusive, not failed")
     d_stack, de_stack, nin = box_depth(Tt, Ft, eph["P"], eph["T0"], dur_tr)
     rng = np.random.default_rng(1)
     nulls = np.array([box_depth(Tt, Ft, eph["P"], eph["T0"] + eph["P"] * (0.1 + 0.8 * rng.random()), dur_tr)[0] for _ in range(1000)])
     nulls = nulls[np.isfinite(nulls)]
     pval = float(np.mean(nulls >= d_stack))
-    return dict(ok=True, holdout_year=int(holdout_year), training_search=search, recovered_in_training=True, train_ephemeris=eph, n_train_transits=len(tt_train),
+    return dict(ok=True, holdout_year=int(holdout_year), training_search=search, shape_fallback=shape_fallback, recovered_in_training=True, train_ephemeris=eph, n_train_transits=len(tt_train),
                 predicted=preds, stacked_depth=d_stack, stacked_err=de_stack, stacked_snr=float(d_stack / de_stack) if de_stack > 0 else np.nan,
                 null_p_value=pval, null_mean=float(np.mean(nulls)), null_std=float(np.std(nulls)), null_trials=int(len(nulls)),
                 # phase scan in the holdout: where is the deepest box within +-3 h of the prediction (diagnoses small ephemeris misses)
@@ -355,7 +374,7 @@ def future_transits(ra, dec, T0, P, T0_err, P_err, cov, n_days=450):
     for n in range(n0, n0 + int(n_days / P) + 1):
         tc = T0 + n * P + 2457000; var = cov[0, 0] + 2 * n * cov[0, 1] + n * n * cov[1, 1]
         sec = next((sc for sc in upcoming if sector_window_jd(sc)[0] <= tc <= sector_window_jd(sc)[1]), None)
-        preds.append(dict(epoch=n, tc_bjd_tdb=float(tc), utc=Time(tc, format="jd").iso[:16], sigma_min=float(np.sqrt(var) * 1440), tess_sector=sec,
+        preds.append(dict(epoch=n, tc_bjd_tdb=float(tc), utc=geocentric_utc(tc, ra, dec).iso[:16], sigma_min=float(np.sqrt(var) * 1440), tess_sector=sec,
                           in_science_orbit=in_orbit(sec, tc) if sec else None))
     return dict(now_jd=float(now_jd), tess_sectors_all=sectors, upcoming_sectors=upcoming, predictions=preds,
                 note="sector/orbit windows from tess.mit.edu TESS_orbit_times.csv (sectors <= 111); later sectors approximated; in_science_orbit=False means the time falls in the perigee data gap")

@@ -1,0 +1,72 @@
+You are an independent, adversarial reviewer doing a FULL REVIEW of a public research repository and the local project behind it.
+Work from /Users/fernando/Desktop/NASA. The public repository is public_release/ (a git clone of github.com/fergmolina/tess-transit-candidates,
+release v1.11, commit 655c229; Zenodo 10.5281/zenodo.23508798; protocol record 10.5281/zenodo.23508864). It is an independent
+researcher's TESS transit-candidate search with pre-registered (hash-frozen) transit predictions. Assume nothing is correct until you
+have checked it yourself from files, code or data.
+
+WHAT TO REVIEW, in priority order
+1) Integrity of the pre-registration record (highest priority).
+   - Every frozen prediction CSV under public_release/preregistration/TIC*/: does its SHA-256 match the hash quoted in its
+     PREREGISTRATION file, its final_ephemeris JSON (local results/vet_allsky/ and results/vet_qlp/), the manifests (MANIFEST_v1.9.md,
+     MANIFEST_v1.11.md), the protocol and the erratum manifest (preregistration/ERRATUM_S106_MANIFEST.csv)?
+   - Was any frozen CSV changed after its first commit? Use git history ("git log --follow" per file). Are corrections only dated
+     appended notes or new versions, as the README claims?
+   - Freeze times versus first public commit times: check the claims in README, DECISIONS.md and the S106 erratum against git history.
+   - Are UTC columns, BJD_TDB and the clock addenda (ADDENDUM_QLP_CLOCK_*, CORRECTION_UTC_*) mutually consistent? Recompute a sample.
+2) Code correctness of the pipeline (public_release/scripts/ and the local scripts/ they come from).
+   - Look for bugs, silent failures, unit/time-system errors, and mismatches between what a script does and what README/REPORT.md
+     say it does.
+   - Most important: search_pipeline.py, rank.py, the null/injection calibrations (null_*.py, single_*.py), the vetting chain
+     (local scripts/vet.py), the pixel/centroid tests (ffi_pixel_test.py, aperture_test.py), the ephemeris fits (final_ephemeris_*,
+     refit_*, prereg_v2.py, prereg_candidate.py), the clock code (qlp_clock_*.py), and the prior-search tooling.
+   - Check that public script copies equal the local versions that produced the published numbers, or that the differences are
+     disclosed.
+3) Script drift and reproducibility.
+   - Which published numbers cannot be regenerated from published code and data? Find unpublished scripts that published numbers
+     depend on.
+   - Check the environment files (environment/requirements_venv_locked.txt, and the empty requirements files in dataset_v1/ and
+     prereg_bundle/).
+   - Re-run a few cheap scripts or functions on in-sample data to confirm headline numbers (period, depth, SNR of the main candidates).
+4) Claims versus evidence.
+   - README.md, REPORT.md, the paper drafts (paper/, including paper/rnaas/note.tex, which is under review at RNAAS), note_allsky/,
+     ddt_80387959/proposal.tex, and dataset_v1/README.md.
+   - List every overstated, outdated, internally inconsistent or unsupported statement, with a corrected version. Pay attention to
+     novelty/priority wording, "validated"/"planet" language, significance language (Gaussian sigma vs empirical), and numbers that
+     disagree between documents.
+5) Consistency across documents. The same quantity (periods, T0, sigma, depths, dates, DOIs, version numbers) in README, REPORT,
+   STATUS.md (local), DECISIONS.md, registrations, CITATION.cff and the Zenodo descriptions (query the public Zenodo API read-only).
+   Report every disagreement.
+6) Masking and privacy. One object is deliberately withheld from all public text. Do NOT name it, and do not try to identify or
+   reconstruct it in your report. Report only whether any public file (including git history, tables, figures metadata, zips and
+   scripts) appears to leak an identifier of a withheld object, giving the file and line WITHOUT quoting the identifier. Also check
+   that no public file contains credentials, tokens, private URLs or personal data beyond the author's public ORCID/affiliation.
+7) Git hygiene. Large or binary files that should not be versioned, absolute local paths in published files (list them; some are
+   disclosed in conformance_v2.1/CONFORMANCE_PROCEDURE_v2.1.md section 7), broken internal links in Markdown, files referenced but
+   missing.
+
+ALREADY REVIEWED (do not re-review in depth; only check consistency with the rest):
+- conformance_v2.1/ (four external reviews in conformance_v2.1/reviews/; verdict: publish as declared procedure);
+- the dossier review (referee_round2/REFEREE_REPORT_dossiers_external.md);
+- the earlier referee reports (referee_89247735/, external_review*/).
+Note in one line if anything in those areas now conflicts with the rest of the repo.
+
+OUT OF SCOPE: third-party code and data under prior_search*/data/github_sweep/ (the authors' copies of others' repositories), .venv*/,
+data/ (raw light curves; read individual in-sample files only if a check needs them), results/prior_search*/data/.
+
+RULES (strict)
+- Edit nothing in the project except your report. Do not commit, push, publish, upload, open issues, or contact anyone. Write temporary
+  files only under /tmp.
+- Do NOT download, open or analyse any TESS Sector 106 (or later) photometry, TESScut cutouts or FFI data for TIC 183374279, 120444365,
+  70441745, 206620592, 122522485, 253931796 or 115692561. These are pending pre-registered tests. Use only sectors <= 105. Do not run
+  scripts/qlp_clock_test_sector.py with --declared-test. If a check would need such data, say so and skip it.
+- Do NOT read, print or use ~/.zenodo_token or any other credential file. Use only unauthenticated, read-only public APIs.
+- Every factual claim must say how you verified it (file:line, command, URL). If you cannot verify something, say so. Distinguish
+  demonstrated defects from code-inspection concerns.
+
+OUTPUT
+Write results/REVIEW_full_repo_v1.11.md with:
+- a verdict per area 1-7 (sound / needs corrections / serious problems);
+- one findings table sorted by severity (blocker / major / minor), each with: location, issue, evidence and how verified, exact fix;
+- a list of numbers you re-derived and whether they matched;
+- the limits of your review.
+When finished, print only the report path and a one-line verdict.

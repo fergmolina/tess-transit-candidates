@@ -124,9 +124,13 @@ if not prow:
         t = T0 + k * P; sig = np.sqrt(cov[0, 0] + k * k * cov[1, 1] + 2 * k * cov[0, 1]); jd = t + 2457000
         if jd >= 2461406.5: break   # through 2027-12-31
         prow.append(dict(epoch=int(e0 + k), tc_btjd=round(t, 5), tc_bjd_tdb=round(jd, 5), utc=geocentric_utc(jd, RA_DEG, DEC_DEG).iso[:16], utc_tdb_scale_only=Time(jd, format="jd", scale="tdb").utc.iso[:16], sigma_min=round(sig * 1440, 1), tess_sector=f"undated (future sectors {fut})", status=("retrodiction: before freeze, untested" if jd < freeze.jd else "prediction")))
-pdf = pd.DataFrame(prow); V = a.version; csv = f"{OUT}/predicted_transits_2026_2027_v{V}.csv"; pdf.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
+pdf = pd.DataFrame(prow); V = a.version; csv = f"{OUT}/predicted_transits_2026_2027_v{V}.csv"
+# v1.12 (review F14): never overwrite a frozen version; a run without --freeze writes only to OUT/_dryrun/
+if os.path.exists(f"{OUT}/PREREGISTRATION_v{V}.md") or (a.freeze and os.path.exists(csv)): raise SystemExit(f"refused: v{V} of TIC {TIC} is already frozen; use a new --version")
+if not a.freeze: os.makedirs(f"{OUT}/_dryrun", exist_ok=True); csv = f"{OUT}/_dryrun/predicted_transits_2026_2027_v{V}.csv"
+pdf.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
 show = pdf[pdf.status.str.startswith("prediction") & (pdf.tess_sector.astype(str).str.match(r"^\d+") | pdf.tess_sector.astype(str).str.startswith("none") | pdf.tess_sector.astype(str).str.startswith("undated"))]; print(show.to_string(index=False)); print("SHA-256", sha, "frozen", stamp)
-json.dump(dict(tic=TIC, version=V, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, bls_P=P0, bls_T0=T00, sector_times=df.to_dict("records"), sha256_csv=sha, frozen=stamp), open(f"{OUT}/final_ephemeris_v{V}.json", "w"), indent=1, default=float)
+json.dump(dict(tic=TIC, version=V, dry_run=not a.freeze, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, bls_P=P0, bls_T0=T00, sector_times=df.to_dict("records"), sha256_csv=sha, frozen=stamp), open(f"{OUT}/" + ("" if a.freeze else "_dryrun/") + f"final_ephemeris_v{V}.json", "w"), indent=1, default=float)
 if a.freeze:
     pd.options.display.float_format = "{:.5f}".format; ref_depth = rep.get("sap_depth", {}).get("depth_ppm", b0["depth_ppm"]); ref_T14 = rep.get("shape_mcmc", {}).get("T14_h", b0["duration_h"])
     open(f"{OUT}/PREREGISTRATION_v{V}.md", "w").write(f"""# Pre-registered transit predictions v{V} - TIC {TIC}
