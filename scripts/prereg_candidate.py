@@ -1,4 +1,4 @@
-"""Pre-registered transit predictions for an all-sky candidate (generic; first written for TIC 30832104, later rejected).
+"""LEGACY (v1 generator; refuses new freezes since 2026-10-20, re-check N5; historical rules kept for provenance). Pre-registered transit predictions for an all-sky candidate (generic; first written for TIC 30832104, later rejected).
 Transit times: (a) QLP S35/S36/S62/S89 per-transit times from results/vet_allsky/30832104/report.json (vet.py, fixed MCMC shape);
 (b) SPOC 2-min S8/S9 (2019) events re-timed here with the same shape on a 0.5-min grid with a local linear baseline (lightkurve cache).
 Weighted linear ephemeris (errors rescaled to reduced chi2 >= 1) -> predictions for Sectors 110 and 111 (orbit windows from
@@ -15,6 +15,7 @@ def geocentric_utc(jd_tdb, ra_deg, dec_deg):
     return (t - ltt).utc
 from vet import transit_model
 ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("--freeze", action="store_true"); ap.add_argument("--no-2min", action="store_true"); ap.add_argument("--depth-ppm", type=float, default=0); ap.add_argument("--desc", default=""); ap.add_argument("--unreleased-sectors", default="", help="comma list of sectors already observed whose data are not yet public (checked today)"); a = ap.parse_args()
+if a.freeze: raise SystemExit("prereg_candidate.py is the LEGACY v1 generator (historical rules and wording, kept for provenance); it refuses new freezes since v1.12-1. Use prereg_v2.py with a new --version.")   # re-check N5
 TIC = a.tic; OUT = f"/Users/fernando/Desktop/NASA/results/vet_allsky/{TIC}"; rep = json.load(open(f"{OUT}/report.json")); RA_DEG, DEC_DEG = rep["meta"]["ra"], rep["meta"]["dec"]
 P0, T00 = rep["ephemeris"]["P"], rep["ephemeris"]["T0"]; rprs, ars, b = rep["shape_mcmc"]["median"][1:4]; dur_d = rep["bls_refine"]["duration_h"] / 24
 times = [(x["epoch"], x["tc"], x["tc_err"], f"S{x['sector']} QLP") for x in rep["transit_times"] if x["dchi2"] > 4]

@@ -18,7 +18,11 @@ def geocentric_utc(jd_tdb, ra_deg, dec_deg):
 ROOT = "/Users/fernando/Desktop/NASA"
 ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("--freeze", action="store_true"); ap.add_argument("--no-2min", action="store_true"); ap.add_argument("--unreleased-sectors", default=""); ap.add_argument("--desc", default=""); ap.add_argument("--version", type=int, default=2, help="output version suffix (corrections are new versions; earlier files untouched)"); ap.add_argument("--reason", default="", help="required for --version > 2: why this version supersedes the previous one"); ap.add_argument("--clock", action="store_true", help="apply QLP S99+ barycentric clock corrections from results/qlp_clock_v2/<TIC>.json (qlp_clock_v2.py method 2)"); ap.add_argument("--ground", action="store_true", help="no TESS coverage: list every predicted transit through 2027-12 regardless of sector"); a = ap.parse_args()
 if a.version > 2 and not a.reason.strip(): raise SystemExit('--reason is required for --version > 2')
-TIC = a.tic; OUT = f"{ROOT}/results/vet_allsky/{TIC}"; rep = json.load(open(f"{OUT}/report.json")); RA_DEG, DEC_DEG = rep["meta"]["ra"], rep["meta"]["dec"]; b0 = rep["bls_refine"]
+TIC = a.tic; OUT = f"{ROOT}/results/vet_allsky/{TIC}"
+# v1.12-1 (re-check N5): refuse BEFORE any data access if ANY output member of this version already exists
+_V = a.version; _outs = [f"{OUT}/PREREGISTRATION_v{_V}.md", f"{OUT}/predicted_transits_2026_2027_v{_V}.csv", f"{OUT}/final_ephemeris_v{_V}.json"]
+if any(os.path.exists(x) for x in _outs) and a.freeze: raise SystemExit(f"refused: an output of v{_V} for TIC {TIC} already exists; use a new --version")
+rep = json.load(open(f"{OUT}/report.json")); RA_DEG, DEC_DEG = rep["meta"]["ra"], rep["meta"]["dec"]; b0 = rep["bls_refine"]
 P0, T00 = b0["period"], b0["T0"]; SPAN = []; rprs, ars, bimp = rep["shape_mcmc"]["median"][1:4]; dur_d = b0["duration_h"] / 24
 def model(t, tc, exp):
     inc = np.degrees(np.arccos(np.clip(bimp / ars, 0, 1))); p = batman.TransitParams(); p.t0 = tc; p.per = P0; p.rp = rprs; p.a = ars; p.inc = inc; p.ecc = 0; p.w = 90; p.u = [0.4, 0.25]; p.limb_dark = "quadratic"
@@ -126,7 +130,7 @@ if not prow:
         prow.append(dict(epoch=int(e0 + k), tc_btjd=round(t, 5), tc_bjd_tdb=round(jd, 5), utc=geocentric_utc(jd, RA_DEG, DEC_DEG).iso[:16], utc_tdb_scale_only=Time(jd, format="jd", scale="tdb").utc.iso[:16], sigma_min=round(sig * 1440, 1), tess_sector=f"undated (future sectors {fut})", status=("retrodiction: before freeze, untested" if jd < freeze.jd else "prediction")))
 pdf = pd.DataFrame(prow); V = a.version; csv = f"{OUT}/predicted_transits_2026_2027_v{V}.csv"
 # v1.12 (review F14): never overwrite a frozen version; a run without --freeze writes only to OUT/_dryrun/
-if os.path.exists(f"{OUT}/PREREGISTRATION_v{V}.md") or (a.freeze and os.path.exists(csv)): raise SystemExit(f"refused: v{V} of TIC {TIC} is already frozen; use a new --version")
+if a.freeze and any(os.path.exists(x) for x in (f"{OUT}/PREREGISTRATION_v{V}.md", csv, f"{OUT}/final_ephemeris_v{V}.json")): raise SystemExit(f"refused: v{V} of TIC {TIC} is already frozen; use a new --version")
 if not a.freeze: os.makedirs(f"{OUT}/_dryrun", exist_ok=True); csv = f"{OUT}/_dryrun/predicted_transits_2026_2027_v{V}.csv"
 pdf.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
 show = pdf[pdf.status.str.startswith("prediction") & (pdf.tess_sector.astype(str).str.match(r"^\d+") | pdf.tess_sector.astype(str).str.startswith("none") | pdf.tess_sector.astype(str).str.startswith("undated"))]; print(show.to_string(index=False)); print("SHA-256", sha, "frozen", stamp)

@@ -55,15 +55,21 @@ def box_depth(t, f, P, T0, dur_d, phase=0.0):
     sig = np.std(f[oot]) if oot.sum() > 10 else np.std(f)
     return float(d), float(sig / np.sqrt(intr.sum())), int(intr.sum())
 
-def per_point_exposure(t):
-    """Per-cadence exposure (days) from the UNFOLDED time stamps: the smaller spacing to either neighbour, snapped to the TESS cadences
-    (120/200/600/1800 s) when within 20 % (v1.12, full-repo review F3: exposure must not be inferred from folded times)."""
-    o = np.argsort(t); ts = t[o]; d = np.diff(ts); e = np.empty(len(ts))
-    if len(ts) < 2: return np.full(len(t), 120 / 86400)
-    e[1:-1] = np.minimum(d[:-1], d[1:]); e[0] = d[0]; e[-1] = d[-1]
+def per_point_exposure(t, half=5, gap_d=0.1):
+    """Per-cadence exposure (days) from UNFOLDED time stamps (v1.12-1, full-repo re-check N3). The series is split into segments at
+    gaps > gap_d (so sectors/cadences are not mixed); within a segment each point gets the median spacing over +-half neighbouring
+    cadences (robust to single missing cadences), snapped to 120/200/600/1800 s when within 20 %. Compute on the full series, then subset."""
+    t = np.asarray(t, float); n = len(t)
+    if n < 2: return np.full(n, 120 / 86400)
+    o = np.argsort(t); ts = t[o]; e = np.empty(n); cut = np.r_[0, np.where(np.diff(ts) > gap_d)[0] + 1, n]
+    for a, b in zip(cut[:-1], cut[1:]):
+        seg = ts[a:b]
+        if len(seg) < 3: e[a:b] = np.median(np.diff(ts[max(0, a - 1):b + 1])) if b - a >= 1 else 120 / 86400; continue
+        d = np.diff(seg); pad = np.r_[np.full(half, np.nan), d, np.full(half, np.nan)]
+        e[a:b] = np.nanmedian(np.lib.stride_tricks.sliding_window_view(pad, 2 * half), axis=1)
     for c in (120, 200, 600, 1800):
         near = np.abs(e * 86400 / c - 1) < 0.2; e[near] = c / 86400
-    out = np.empty(len(t)); out[o] = e; return out
+    out = np.empty(n); out[o] = e; return out
 
 def transit_model(params, t, P, u=(0.4, 0.25), exp_time=None):
     """batman model. exp_time: scalar (days), or a per-point array (evaluated per cadence group). If None, it is inferred from t, which is
@@ -84,10 +90,10 @@ def fit_shape(t, f, fe, P, T0, dur_d, depth, ars_guess):
     # work only near transits for speed
     ph = ((t - T0) / P + 0.5) % 1 - 0.5
     near = np.abs(ph * P) < 3 * dur_d
-    tt, ff, ee = t[near], f[near], fe[near]
+    tt, ff, ee = t[near], f[near], fe[near]; ex = per_point_exposure(t)[near]   # per-point exposures (re-check N3)
     x0 = [T0, float(np.clip(np.sqrt(max(depth, 1e-6)), 0.0015, 0.45)), float(np.clip(ars_guess, 2.0, 400.0)), 0.3]
     lo = [T0 - 0.1, 0.001, 1.5, 0.0]; hi = [T0 + 0.1, 0.5, 500, 1.2]
-    def resid(x): return (ff - transit_model(x, tt, P)) / ee
+    def resid(x): return (ff - transit_model(x, tt, P, exp_time=ex)) / ee
     r = least_squares(resid, x0, bounds=(lo, hi), x_scale=[0.001, 0.01, 1, 0.1])
     chi2 = np.sum(r.fun**2); dof = len(ff) - 4
     # box/null comparison
@@ -102,11 +108,11 @@ def mcmc_shape(t, f, fe, P, T0, dur_d, x_best, nwalk=32, nsteps=1500):
     import emcee
     ph = ((t - T0) / P + 0.5) % 1 - 0.5
     near = np.abs(ph * P) < 3 * dur_d
-    tt, ff, ee = t[near], f[near], fe[near]
+    tt, ff, ee = t[near], f[near], fe[near]; ex = per_point_exposure(t)[near]   # per-point exposures (re-check N3)
     def lnp(x):
         T0_, rprs, ars, b = x
         if not (0.0005 < rprs < 0.5 and 1.5 < ars < 500 and 0 <= b < 1 + rprs and abs(T0_ - T0) < 0.1): return -np.inf
-        m = transit_model(x, tt, P)
+        m = transit_model(x, tt, P, exp_time=ex)
         return -0.5 * np.sum(((ff - m) / ee)**2)
     p0 = np.array(x_best) + 1e-4 * np.random.randn(nwalk, 4); p0[:, 3] = np.abs(p0[:, 3])
     s = emcee.EnsembleSampler(nwalk, 4, lnp); s.run_mcmc(p0, nsteps, progress=False)
@@ -118,7 +124,7 @@ def global_ephemeris(T, F, E, P, T0, dur_d, rprs, ars, b, dP_frac=0.002, nP=161,
     """Joint (P, T0) fit of a fixed-shape batman model to ALL data near transit (works for shallow signals where individual
     transits cannot be timed). Chi2 surface on a grid; 1-sigma from delta-chi2=1 profiles, inflated by sqrt(reduced chi2)."""
     ph = ((T - T0) / P + 0.5) % 1 - 0.5; near = np.abs(ph * P) < 2.5 * dur_d
-    tt, ff, ee = T[near], F[near], E[near]; ex = per_point_exposure(tt)   # exposures from UNFOLDED times (v1.12, review F3)
+    tt, ff, ee = T[near], F[near], E[near]; ex = per_point_exposure(T)[near]   # exposures from the full UNFOLDED series (v1.12 F3, re-check N3)
     Ps = P * (1 + np.linspace(-dP_frac, dP_frac, nP)); T0s = T0 + np.linspace(-0.6, 0.6, nT0) * dur_d
     chi = np.full((nP, nT0), np.inf)
     for i, Pi in enumerate(Ps):
@@ -140,7 +146,7 @@ def global_ephemeris(T, F, E, P, T0, dur_d, rprs, ars, b, dP_frac=0.002, nP=161,
 
 def time_transits(T, F, E, P, T0, dur_d, rprs, ars, b, min_pts=15):
     """Fit each individual transit's mid-time with the fixed shape model; return list of (epoch, tc, err, depth_snr)."""
-    out = []
+    out = []; EXP_T = per_point_exposure(T)   # per-point exposures from the full series (re-check N3)
     n0 = int(np.floor((T.min() - T0) / P)); n1 = int(np.ceil((T.max() - T0) / P))
     for n in range(n0, n1 + 1):
         tc0 = T0 + n * P
@@ -148,9 +154,9 @@ def time_transits(T, F, E, P, T0, dur_d, rprs, ars, b, min_pts=15):
         intr = np.abs(T - tc0) < dur_d / 2
         cad = float(np.median(np.diff(T))) if len(T) > 3 else 120 / 86400; mp = max(4, min(min_pts, int(0.6 * dur_d / cad)))   # cadence-aware (review 2026-10-18: min_pts=15 dropped every 600/1800-s transit)
         if intr.sum() < mp or w.sum() < 3 * mp: continue
-        tt, ff, ee = T[w], F[w], E[w]
+        tt, ff, ee = T[w], F[w], E[w]; exw = EXP_T[w]
         grid = tc0 + np.linspace(-0.6 * dur_d, 0.6 * dur_d, 121)
-        chi = np.array([np.sum(((ff - transit_model([g, rprs, ars, b], tt, P)) / ee)**2) for g in grid])
+        chi = np.array([np.sum(((ff - transit_model([g, rprs, ars, b], tt, P, exp_time=exw)) / ee)**2) for g in grid])
         i = int(np.argmin(chi))
         # 1-sigma from delta chi2 = 1
         okk = chi < chi[i] + 1

@@ -623,7 +623,7 @@ test reaches a neighbour inside ≈ 0.35 px, and our per-sector centroid errors 
   (S10/S36/S37/S63) 831 ± 53 ppm combined, blind period 4.19224 d. Pixel: loss position combined over six sectors 2.0 ± 1.1″ from the target;
   the G = 17.3 star at 7.6″ (needs 22–28 %) is excluded at ≈ 2.7σ (not the 4.8/2.8/4.3σ first quoted), the G = 14.0 star at 13.7″ at ≈ 4σ.
   TRICERATOPS FPP 0.047, NFPP 0.010, both above the validation thresholds FPP < 0.015 and NFPP < 10⁻³; these model-conditional results do not validate the candidate. Gaia DR3 summary diagnostics show no significant RV variability (RUWE 0.83); no companion-mass exclusion has been calibrated from them (both corrected 2026-10-20; earlier text said "below the validation thresholds" and "Gaia RVs exclude a stellar companion"). Test of
-  record Sector 111 (7 predicted transits from 2026-11-27 21:13 UTC, formal σ ≈ 3 min, conservative ±20 min), then S112–S114.
+  record Sector 111 (7 predicted transits from v2 epoch 498, 2026-11-27 01:20 UTC geocentric (corrected 2026-10-20; earlier text said 21:13 UTC), formal σ ≈ 3 min, conservative ±20 min), then S112–S114.
 * **TIC 120444365** (K dwarf, Teff 4951 K; TIC v8.2 / Gaia radius 0.76 R☉, so Rp ≈ 2.2 R⊕, not the 2.45 from the QLP-header radius; Tmag 11.1).
   **Survives, cleanest of the three.** v2: P = 5.148171 ± 0.000005 d, T0 = BTJD 4218.97007 ± 2.1 min (7 sector times incl. S2 at 1800 s, S29
   QLP and SPOC 2-min; χ² 6.5/5; SHA 32b5e085…, 22:34:49 UTC; v1 P was 2.4σ low and placed the 2018–2023 transits 50–90 min early, harmless for

@@ -676,3 +676,40 @@
     Co-Authored-By credit; history before v1.12 not rewritten); (2) publish v1.12; (3) edit Zenodo metadata: remove the session link
     from the v1.11 repository description and correct the protocol record's "before the test data exist or are public" wording. New
     Zenodo versions of the dataset and the two-candidate preprint remain pending.
+102. 2026-10-20 — v1.12 PUBLISHED: GitHub 73ac202, release v1.12 (no session link in the commit or the notes); Zenodo repository version
+    v1.12 10.5281/zenodo.23510604 (automatic). Zenodo metadata edits (scripts/zenodo_edit_description.py; staged, inspected, published):
+    the session link was removed from the v1.11 description (23508798); a dated notice on S106 data availability was prepended to the
+    protocol record description (23508864; the historical paragraphs are kept). All three checked afterwards: no session links. Old
+    token used; the author should revoke it. Pending (separate go): new Zenodo versions of the dataset bundle (README notice prepared)
+    and the two-candidate preprint (note_allsky/note.tex corrected and recompiled).
+103. 2026-10-20 — Author reports the RNAAS licence form signed and the AI-disclosure request e-mailed to AAS (AAS82560).
+104. 2026-10-20 — RE-CHECK of v1.12 (results/REVIEW_full_repo_v1.12_recheck.md: "v1.12 needs further corrections; preprint needs wording
+    fixes; dataset must not be published as staged"). Fixes (v1.13, local, not published):
+    - N1 (blocker): the staged dataset still redistributed the withheld object's coordinates/aliases. Worse than reported: the
+      PUBLISHED dataset v1 zip (10.5281/zenodo.23462438, 2026-10-19) carries its coordinates in 15 external_review_allsky scripts and
+      aliases in the Gaia/VizieR outputs and prior-search copies (TIC number itself absent). New dataset_v1.1/ (v1 left intact): prior_search
+      replaced by the redacted v1.12 copies; every "[withheld]" entry in 27 external_review_allsky files replaced by a placeholder (one diff
+      hunk per file); whole-folder rescan clean.
+    - N2: dataset_v1.1 README notice in the reviewer's wording (legacy status, withdrawn claims, TESS or ground tests, target QLP light
+      curves, empty environments, 4.54-h T14, CTIO qualification); checksums regenerated (210 files, all verify, manifests excluded).
+    - N3: vet.per_point_exposure is now segment-aware (split at gaps > 0.1 d) with a +-5-cadence median, which is robust to missing
+      cadences; it is used in fit_shape, mcmc_shape, time_transits and global_ephemeris. Tests: mixed 600/200 s -> 600/200; 200 s with
+      every 7th cadence missing -> 200; 1800 then 120 s -> 1800/120; F3 probe still 1800. Old exploratory values are explicitly NOT
+      recomputed and are flagged in the README.
+    - N5: prereg_v2 refuses before any data access if any output member of the version exists (tested on a throwaway TIC with a JSON-only
+      sentinel: refused, sentinel intact, folder removed); prereg_candidate is marked LEGACY and refuses all freezes.
+    - N4: five preprint wording fixes (rules/evaluator vs conformance, repository scope, neighbour EB open, speckle wording, DDT
+      submitted + corrected); recompiled, 2 pages.
+    - N6-N8: README provenance sentence, observing wording, TIC 183 procedure now published, DOI badge/citation = concept DOI, version list;
+      REPORT TIC 803 first transit 01:20 UTC; STATUS header and TIC 613 row; RNAAS local source labels v1.9 as the analysis release
+      (as-submitted copy kept as paper/rnaas/note_as_submitted_AAS82560.tex; it differs only in the first-line comment).
+105. 2026-10-20 — Re-check of the v1.13 staging (results/REVIEW_v1.13_dataset_preprint_recheck.md: fixes needed on all three; N2, N4, N5,
+    N7, N8 resolved). Fixed: (1) dataset_v1.1 mast_products.json - six nested product URLs still encoded the withheld TIC as QLP path
+    components (filename masked, directories not); the object's whole entry and the six per-sector URL values are now [withheld], and the
+    split-path forms were added to the scan patterns (whole public tree, dataset and preprint rescanned clean); checksums regenerated
+    (210, all verify). (2) README exposure wording narrowed (spacing-based estimates unreliable for severely thinned or ambiguous
+    segments; cadence metadata needed). (3) Preprint: one sentence saying the quoted shape and retrospective-check summaries are historical,
+    not recomputed, and not precision constraints; recompiled, 2 pages. (4) README provenance wording ("current local copies"). Manifest refreshed.
+106. 2026-10-20 — Final re-check (results/REVIEW_v1.13_final_recheck.md): v1.13 yes, dataset v1.1 yes, preprint yes, no remaining fixes.
+    Publishing (author's standing instruction: publish when all three are cleared): GitHub v1.13; Zenodo dataset v1.1 (record 23462438);
+    preprint as v1.3 (the latest existing preprint version is v1.2, 23463582; I called it "v1.2" earlier by mistake).
