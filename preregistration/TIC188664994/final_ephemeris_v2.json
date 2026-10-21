@@ -1,0 +1,193 @@
+{
+ "tic": 188664994,
+ "version": 2,
+ "dry_run": false,
+ "T0_btjd": 3597.3936548323013,
+ "T0_err_d": 0.00570854271176541,
+ "P_d": 3.781805517434792,
+ "P_err_d": 2.1078095681871538e-05,
+ "epoch_ref": 484.0,
+ "chi2": 201.0630365883186,
+ "dof": 15,
+ "inflation": 3.661175008002382,
+ "bls_P": 3.7817837305953934,
+ "bls_T0": 1767.001557949122,
+ "sector_times": [
+  {
+   "sector": 17,
+   "source": "SPOC 2-min",
+   "mean_epoch": 2.6,
+   "tc": 1776.83169564867,
+   "tc_err": 0.003333333333333334,
+   "n_events": 5,
+   "depth_ppm": 421.6991292126604,
+   "oc_min": -1.1276503526096349
+  },
+  {
+   "sector": 20,
+   "source": "SPOC 2-min",
+   "mean_epoch": 23.0,
+   "tc": 1854.0059170861493,
+   "tc_err": 0.014166666666666668,
+   "n_events": 7,
+   "depth_ppm": 405.62443267901295,
+   "oc_min": 35.432339453691384
+  },
+  {
+   "sector": 23,
+   "source": "SPOC 2-min",
+   "mean_epoch": 46.6,
+   "tc": 1943.2410131282006,
+   "tc_err": 0.017916666666666664,
+   "n_events": 5,
+   "depth_ppm": 324.6497978336204,
+   "oc_min": 13.091935503398417
+  },
+  {
+   "sector": 24,
+   "source": "SPOC 2-min",
+   "mean_epoch": 52.833333333333336,
+   "tc": 1966.8132983822452,
+   "tc_err": 0.0024999999999999953,
+   "n_events": 6,
+   "depth_ppm": 567.9430372920735,
+   "oc_min": 11.69637683306064
+  },
+  {
+   "sector": 40,
+   "source": "QLP SAP",
+   "mean_epoch": 168.5,
+   "tc": 2404.237949887779,
+   "tc_err": 0.005416666666666667,
+   "n_events": 8,
+   "depth_ppm": 613.98595270723,
+   "oc_min": 5.667560862420942
+  },
+  {
+   "sector": 47,
+   "source": "QLP SAP",
+   "mean_epoch": 219.0,
+   "tc": 2595.212194949513,
+   "tc_err": 0.0037500000000000033,
+   "n_events": 7,
+   "depth_ppm": 565.8617817273185,
+   "oc_min": -4.316778098145733
+  },
+  {
+   "sector": 50,
+   "source": "QLP SAP",
+   "mean_epoch": 241.6,
+   "tc": 2680.6771739276355,
+   "tc_err": 0.005416666666666667,
+   "n_events": 5,
+   "depth_ppm": 549.232947063194,
+   "oc_min": -9.82580899988534
+  },
+  {
+   "sector": 51,
+   "source": "QLP SAP",
+   "mean_epoch": 248.5,
+   "tc": 2706.7589816687437,
+   "tc_err": 0.004583333333333328,
+   "n_events": 4,
+   "depth_ppm": 512.9134520356071,
+   "oc_min": -28.042283035974833
+  },
+  {
+   "sector": 52,
+   "source": "QLP SAP",
+   "mean_epoch": 255.6,
+   "tc": 2733.609646155971,
+   "tc_err": 0.004583333333333335,
+   "n_events": 5,
+   "depth_ppm": 490.30278828214875,
+   "oc_min": -28.265031682531117
+  },
+  {
+   "sector": 53,
+   "source": "QLP SAP",
+   "mean_epoch": 261.5,
+   "tc": 2755.932170166484,
+   "tc_err": 0.005416666666666667,
+   "n_events": 6,
+   "depth_ppm": 534.6972349192791,
+   "oc_min": -14.050132669508457
+  },
+  {
+   "sector": 54,
+   "source": "QLP SAP",
+   "mean_epoch": 269.0,
+   "tc": 2784.3013814792826,
+   "tc_err": 0.00875,
+   "n_events": 7,
+   "depth_ppm": 483.95986795513045,
+   "oc_min": -5.8854305354179814
+  },
+  {
+   "sector": 57,
+   "source": "QLP SAP",
+   "mean_epoch": 291.2,
+   "tc": 2868.2894802985,
+   "tc_err": 0.013333333333333336,
+   "n_events": 5,
+   "depth_ppm": 238.90961980539416,
+   "oc_min": 40.21808778263221
+  },
+  {
+   "sector": 60,
+   "source": "QLP SAP",
+   "mean_epoch": 312.8,
+   "tc": 2949.9476755460273,
+   "tc_err": 0.012916666666666667,
+   "n_events": 5,
+   "depth_ppm": 522.7926900774671,
+   "oc_min": -1.2595700701785972
+  },
+  {
+   "sector": 73,
+   "source": "QLP SAP",
+   "mean_epoch": 405.2,
+   "tc": 3299.390325586375,
+   "tc_err": 0.006666666666666668,
+   "n_events": 5,
+   "depth_ppm": 328.0713694854498,
+   "oc_min": 4.241560227092123
+  },
+  {
+   "sector": 80,
+   "source": "QLP SAP",
+   "mean_epoch": 456.0,
+   "tc": 3491.501605767288,
+   "tc_err": 0.0025000000000000022,
+   "n_events": 7,
+   "depth_ppm": 414.6761323088174,
+   "oc_min": -2.152190648703254
+  },
+  {
+   "sector": 81,
+   "source": "QLP SAP",
+   "mean_epoch": 463.5,
+   "tc": 3519.8558170800866,
+   "tc_err": 0.0025000000000000022,
+   "n_events": 6,
+   "depth_ppm": 605.0058091997915,
+   "oc_min": -15.587488514429424
+  },
+  {
+   "sector": 84,
+   "source": "QLP SAP",
+   "mean_epoch": 484.0,
+   "tc": 3597.434883557293,
+   "tc_err": 0.0037500000000000033,
+   "n_events": 6,
+   "depth_ppm": 320.67865932888793,
+   "oc_min": 59.3693639877165
+  }
+ ],
+ "sha256_csv": "0d450700afaa54f26ea80620681ebff98aaed03878ea8a7d75d3a1612a2a2dd4",
+ "frozen": "2026-10-21 01:57:29 UTC",
+ "excluded_sectors": [
+  26
+ ],
+ "exclude_reason": "QLP and SPOC S26 light curves of this star are corrupted (6-h-binned p1-p99 flux range: SPOC PDCSAP 112 % vs 0.4-0.8 % in S17-S24, QLP SAP 14.7 % vs 1.3-2.1 %; point-to-point scatter SPOC 9030 vs 1840-2050 ppm, QLP 1572 vs 597-683 ppm); the S26 dry-run depth was 12379 ppm vs 320-610 ppm elsewhere"
+}

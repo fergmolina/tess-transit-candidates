@@ -1,0 +1,63 @@
+Independent review of round 4 of the TESS all-sky search and of three new local pre-registrations. Nothing is published: the
+latest public release is v1.14 (public_release/, GitHub fergmolina/tess-transit-candidates). Work from /Users/fernando/Desktop/NASA and
+verify everything yourself. Background and chronology: logs/DECISIONS.md items 112-118; STATUS.md. Be adversarial: the authors want the
+problems found before anything is released.
+
+SCOPE
+1) Round-4 pipeline (DECISIONS 112-116). Pool: results/allsky_round4_primary.csv (182 signals, next TESS sector S112-S120) drawn from
+   results/allsky_testable_soon.csv with the filters in item 112. Prior-report check: results/allsky_round4_prior.csv (column
+   prior_strict), corpus results/prior_search_round4/data/20261020/ plus results/prior_search*/; NOTE the strict period-matched check
+   was run inline (no script file) and produced at least one false match (188664994 vs a neighbouring row of Nigraha
+   period_info-sec23.csv). Pixel tests: results/allsky_round4_pixel.csv (scripts/ffi_pixel_test.py, pixel_collect.py). Vetting:
+   results/vet_allsky/<TIC>/report.json (scripts/vet.py, unchanged since v1.13). Triage: scripts/triage_round4.py (claimed identical
+   to triage_round3.py except file paths) -> results/allsky_round4_triage.csv. TRICERATOPS: results/vet_allsky/<TIC>/triceratops.json.
+   Check:
+   a. The pool filters were applied as stated and no round 1-3 object leaked in or was dropped wrongly.
+   b. Re-run the strict prior check yourself for the four triage survivors (343298093, 188664994, 195343302, 151767028) and for any
+      other on-target signal you think may be a known object; check ExoFOP TOI/CTOI by TIC and by position (any TOI within 21 arcsec).
+   c. triage_round4.py really differs from triage_round3.py only in paths.
+   d. The 23 FAILs and 4 survivors are classified correctly from the report.json files.
+   e. The choice of three (author's cap) and the hold-back of 195343302 (NFPP 0.11) are stated honestly.
+2) The three frozen registrations (local, 2026-10-21 01:57 UTC; scripts/freeze_round4.sh):
+   results/vet_allsky/{151767028,343298093,188664994}/PREREGISTRATION_v2.md, predicted_transits_2026_2027_v2.csv,
+   final_ephemeris_v2.json; clock records results/qlp_clock_v2/{151767028,343298093}.json; logs/prereg_freeze_round4_<TIC>.log.
+   Check:
+   a. Each CSV hash equals the hash in its .md and .json; every row is a future-sector prediction; no sector >= 106 entered any fit.
+   b. Reproduce each ephemeris with a dry run (python -I scripts/prereg_v2.py TIC [same flags as freeze_round4.sh, without --freeze]
+      writes only to results/vet_allsky/TIC/_dryrun/; it must not touch the frozen files) and compare.
+   c. The clock corrections (S99 for 151767028; S100-S103 for 343298093) are sound, given they were computed from the dry-run
+      ephemerides (item 117c).
+   d. 188664994: is excluding S26 justified and free of outcome bias (it was decided after the dry run; S26 O-C was +12 min, not an
+      outlier)? Are the measured S26 quality numbers in the frozen text correct? Given chi2/dof 201/15 (inflation x3.66; S84 +59 min,
+      S51-S52 -28 min), is the frozen sigma credible, and is the caution in the text adequate? Should the reference depth (412 ppm,
+      from report.json sap_depth, which may include S26) be flagged?
+   e. The scoring statement in each text (conformance v2.1 rc4 general rules, per-object config locked before the sector is examined,
+      QLP SAP_FLUX v01, clock gate, sectors scored separately, first released sector = test of record, no TESScut): is it unambiguous,
+      enforceable with the published code (scripts/prereg_conformance.py, SHA a864b07a...; qlp_clock_test_sector.py;
+      make_conformance_configs.py, which was written for S106), and consistent with the generic outcome clause in the same text? List
+      anything that would still have to be decided later, because that must be fixed before the test data exist.
+   f. 151767028 is credited correctly as an independent rediscovery.
+   g. 188664994 lists only S117-S119 (no published dates for S122+). Is that stated clearly enough?
+3) Script changes since v1.14 (compare with public_release/scripts/): scripts/prereg_v2.py (prediction horizon fix JD 2461406.5 ->
+   2461771.5; TESScut wording removed from the outcome template; new --exclude-sectors/--exclude-reason, recorded in the text and JSON),
+   scripts/qlp_clock_v2.py (optional explicit ephemeris path), scripts/ffi_pixel_test.py (holdout guard). Check each change is correct,
+   complete and does not alter earlier frozen results.
+4) Impact of the horizon bug on existing frozen records (item 117a): the authors found 162304222 v3 truncated (no predictions after
+   2026-12-31, so S112 is partial and S113-S114 missing) and 53825235 without the v3 that item 68 required. Audit every frozen
+   PREREGISTRATION*.md/CSV produced by prereg_v2.py for truncation or missing test sectors, and say what must be disclosed and how
+   (dated notes, new versions) before the next release.
+
+RULES
+- Edit nothing except your report. Dry runs of prereg_v2.py (without --freeze) are allowed; they write only to _dryrun/.
+- Do not commit, push, publish, upload or contact anyone.
+- Temporary files only under /tmp.
+- Do NOT download, open or analyse any TESS Sector 106 (or later) photometry, TESScut cutouts or FFI data for TIC 183374279, 120444365,
+  70441745, 206620592, 122522485, 253931796 or 115692561; nor Sector 111 (or later) data for TIC 120517801 or TIC 80387959; nor
+  Sector 106 (or later) data for TIC 151767028, 343298093 or 188664994.
+- Do NOT read or use ~/.zenodo_token or any credential.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round4_freezes.md: findings ranked by severity, each with file:line evidence and an exact fix; a table per frozen
+object (valid as a pre-data registration: yes/no, with reasons); and a verdict: "ready to include in v1.15", "include after listed
+fixes", or "do not include". When finished, print only the report path and a one-line verdict.

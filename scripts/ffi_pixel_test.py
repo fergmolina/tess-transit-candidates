@@ -86,6 +86,9 @@ def run(tic, P, T0, dur_d, sector, size, ra, dec, gaia, out):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("period", type=float); ap.add_argument("t0", type=float); ap.add_argument("dur_h", type=float)
     ap.add_argument("--sectors", type=int, nargs="+", required=True); ap.add_argument("--size", type=int, default=11); a = ap.parse_args()
+    # holdout guard (2026-10-20, round 4): never touch pending-test sectors or protected test targets
+    PROTECTED = {183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561}
+    if a.tic in PROTECTED or any(x >= 106 for x in a.sectors): raise SystemExit(f"refused: protected TIC or sector >= 106 ({a.tic}, {a.sectors})")
     pool = pd.read_csv(os.environ.get("TSEARCH_PARAMS") or "/Users/fernando/Desktop/NASA/catalogs/qlp/s104_dwarf_pool.csv", usecols=["ID", "ra", "dec"], low_memory=False).set_index("ID")
     if a.tic not in pool.index: pool = pd.read_csv("/Users/fernando/Desktop/NASA/catalogs/allsky_targets.csv", usecols=["ID", "ra", "dec"]).set_index("ID")
     ra, dec = [float(x) for x in pool.loc[a.tic, ["ra", "dec"]]]

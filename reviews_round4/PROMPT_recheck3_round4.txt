@@ -1,0 +1,27 @@
+Third re-check. You wrote results/REVIEW_round4_recheck2.md ("No": clock-record binding, correction inventory, three minor points). The
+authors report the fixes in logs/DECISIONS.md item 125. Nothing is published; public_release/ is unchanged (v1.14). Work from
+/Users/fernando/Desktop/NASA and verify everything yourself.
+
+CHECK ONLY
+1) Binding: scripts/validate_round4_inputs.py (result output bound to the same clock file; fail-closed hashes; pre-clock outcomes) and
+   scripts/test_round4_configs.py (re-run it in a fresh directory; log logs/test_round4_configs_20261021c.log). Re-run your own binding
+   probes (other clock file with the same identity fields, removed clock_record, removed light-curve hashes). The addendum appended to the
+   three round-4 registrations.
+2) Inventory: the "Public locations to correct" section of results/ERRATUM_PRIOR_DETECTIONS_2026-10-21_DRAFT.md. Is it now complete for the
+   80387959, 249813122 and round-3 statements across the repository, the preprint and both dataset versions (dataset_v1/, dataset_v1.1/)?
+3) Minor points: the erratum's matcher citation; the dated clarification at the end of results/vet_allsky/3367979/PREREGISTRATION_v4.md;
+   the earlier no-predecessor refusal in scripts/prereg_v2.py.
+4) Frozen CSVs still match their hashes; the seven S106 configs still match their public copies.
+5) Verdict: ready to include in v1.15, yes or no? If no, give exact fixes.
+
+RULES
+- Edit nothing except your report. Dry runs of prereg_v2.py (without --freeze) write only to _dryrun/ and are allowed.
+- Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any TESS Sector 106 (or later) photometry, TESScut cutouts or FFI data for TIC 183374279, 120444365,
+  70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222, 53825235 or 3367979; nor Sector 111
+  (or later) data for TIC 120517801 or TIC 80387959.
+- Do NOT read or use ~/.zenodo_token or any credential.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round4_recheck3.md with a status table and the verdict. When finished, print only the report path and a one-line verdict.

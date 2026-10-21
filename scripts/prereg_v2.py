@@ -16,12 +16,14 @@ def geocentric_utc(jd_tdb, ra_deg, dec_deg):
     t = Time(jd_tdb, format="jd", scale="tdb"); ltt = t.light_travel_time(SkyCoord(ra_deg, dec_deg, unit="deg"), kind="barycentric", location=EarthLocation.from_geocentric(0, 0, 0, unit=u.m))
     return (t - ltt).utc
 ROOT = "/Users/fernando/Desktop/NASA"
-ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("--freeze", action="store_true"); ap.add_argument("--no-2min", action="store_true"); ap.add_argument("--unreleased-sectors", default=""); ap.add_argument("--desc", default=""); ap.add_argument("--version", type=int, default=2, help="output version suffix (corrections are new versions; earlier files untouched)"); ap.add_argument("--reason", default="", help="required for --version > 2: why this version supersedes the previous one"); ap.add_argument("--clock", action="store_true", help="apply QLP S99+ barycentric clock corrections from results/qlp_clock_v2/<TIC>.json (qlp_clock_v2.py method 2)"); ap.add_argument("--ground", action="store_true", help="no TESS coverage: list every predicted transit through 2027-12 regardless of sector"); a = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("tic", type=int); ap.add_argument("--freeze", action="store_true"); ap.add_argument("--no-2min", action="store_true"); ap.add_argument("--unreleased-sectors", default=""); ap.add_argument("--desc", default=""); ap.add_argument("--version", type=int, default=2, help="output version suffix (corrections are new versions; earlier files untouched)"); ap.add_argument("--reason", default="", help="required for --version > 2: why this version supersedes the previous one"); ap.add_argument("--clock", action="store_true", help="apply QLP S99+ barycentric clock corrections from results/qlp_clock_v2/<TIC>.json (qlp_clock_v2.py method 2)"); ap.add_argument("--exclude-sectors", default="", help="in-sample sectors dropped from the ephemeris fit for a stated data-quality reason (requires --exclude-reason); listed in the frozen text"); ap.add_argument("--exclude-reason", default=""); ap.add_argument("--ground-mmag", type=float, default=1.5, help="--ground: required photometric precision per 10-min bin in mmag (2026-10-21: object-specific; state the derivation in --desc)"); ap.add_argument("--ground", action="store_true", help="no TESS coverage: list every predicted transit through 2027-12 regardless of sector"); a = ap.parse_args()
 if a.version > 2 and not a.reason.strip(): raise SystemExit('--reason is required for --version > 2')
 TIC = a.tic; OUT = f"{ROOT}/results/vet_allsky/{TIC}"
 # v1.12-1 (re-check N5): refuse BEFORE any data access if ANY output member of this version already exists
 _V = a.version; _outs = [f"{OUT}/PREREGISTRATION_v{_V}.md", f"{OUT}/predicted_transits_2026_2027_v{_V}.csv", f"{OUT}/final_ephemeris_v{_V}.json"]
 if any(os.path.exists(x) for x in _outs) and a.freeze: raise SystemExit(f"refused: an output of v{_V} for TIC {TIC} already exists; use a new --version")
+# 2026-10-21 (re-check 2): a version > 2 needs an earlier v2+ record; refused here, before any data access or file write
+if _V > 2 and not any(os.path.exists(f"{OUT}/final_ephemeris_v{k}.json") for k in range(2, _V)): raise SystemExit(f"refused: --version {_V} but no earlier v2+ record exists for TIC {TIC}")
 rep = json.load(open(f"{OUT}/report.json")); RA_DEG, DEC_DEG = rep["meta"]["ra"], rep["meta"]["dec"]; b0 = rep["bls_refine"]
 P0, T00 = b0["period"], b0["T0"]; SPAN = []; rprs, ars, bimp = rep["shape_mcmc"]["median"][1:4]; dur_d = b0["duration_h"] / 24
 def model(t, tc, exp):
@@ -58,9 +60,12 @@ rows = []
 # are excluded BEFORE their files are opened or downloaded, for both QLP and SPOC products.
 TESTSECS = {int(x) for x in a.unreleased_sectors.split(",") if x.strip()} | {x for x in json.load(open(f"{ROOT}/catalogs/allsky_tic2sectors_future.json")).get(str(TIC), []) if x <= 134}
 def is_test(sec): return sec in TESTSECS or sec >= 106
+EXCL = {int(x) for x in a.exclude_sectors.split(",") if x.strip()}   # 2026-10-21: explicit data-quality exclusions (in-sample only)
+if EXCL and not a.exclude_reason.strip(): raise SystemExit("--exclude-reason is required with --exclude-sectors")
 for fpath in sorted(glob.glob(f"{ROOT}/data/qlp_allsky/*{TIC:016d}*.fits")):
     m_ = re.search(r"_s0*(\d+)-", os.path.basename(fpath)); fsec = int(m_.group(1)) if m_ else None
     if fsec is None or is_test(fsec): print(f"QLP {os.path.basename(fpath)} SKIPPED before reading (test sector or unparsable sector)"); continue
+    if fsec in EXCL: print(f"QLP S{fsec} EXCLUDED (--exclude-sectors: {a.exclude_reason})"); continue
     with fits.open(fpath, memmap=False) as h:
         d = h[1].data; sec = int(h[0].header["SECTOR"]); t = np.asarray(d["TIME"], float); f = np.asarray(d["SAP_FLUX"], float); q = np.asarray(d["QUALITY"], int)
     m = np.isfinite(t) & np.isfinite(f) & (q == 0); t, f = t[m], f[m]
@@ -79,6 +84,7 @@ if not a.no_2min:
     for lc in lcs:
         lc = lc.remove_nans(); qq = lc.quality == 0; t = lc.time.value[qq]; f = lc.flux.value[qq]; sec = int(lc.sector)
         if is_test(sec): raise SystemExit(f'holdout guard failed: S{sec} SPOC loaded')
+        if sec in EXCL: print(f"SPOC S{sec} EXCLUDED (--exclude-sectors: {a.exclude_reason})"); continue
         r = sector_offset(t, f, f"S{sec} SPOC 2-min")
         if r: rows[:] = [x for x in rows if x["sector"] != sec]; rows.append(dict(sector=sec, source="SPOC 2-min", mean_epoch=r[0], tc=r[1], tc_err=r[2], n_events=r[3], depth_ppm=r[4] * 1e6)) if r else None
 CLOCK = {}
@@ -116,7 +122,7 @@ fut = [x for x in json.load(open(f"{ROOT}/catalogs/allsky_tic2sectors_future.jso
 freeze = Time(datetime.datetime.now(datetime.UTC)); unrel = {int(x) for x in a.unreleased_sectors.split(",") if x.strip()}; prow = []
 for k in range(1, 200000):
     t = T0 + k * P; sig = np.sqrt(cov[0, 0] + k * k * cov[1, 1] + 2 * k * cov[0, 1]); jd = t + 2457000
-    if jd >= 2461406.5: break   # through 2027-12-31
+    if jd >= 2461771.5: break   # through 2027-12-31 (JD 2461771.5 = 2028-01-01 00:00 UTC; was 2461406.5 = 2027-01-01, fixed 2026-10-21)
     sec = next((s for s, ws in win.items() if any(x <= t <= y for x, y in ws)), None); isapprox = any((x, y) in approx_win for ws in win.values() for x, y in ws if x <= t <= y)
     insec = next((s for s, ws in win.items() if min(x for x, _ in ws) <= t <= max(y for _, y in ws)), None)
     if sec is None and insec is None and not a.ground: continue
@@ -126,7 +132,7 @@ if not prow:
     print("NOTE: no dated window for future sectors", fut, "- listing every transit; match to sector dates when they are published")
     for k in range(1, 200000):
         t = T0 + k * P; sig = np.sqrt(cov[0, 0] + k * k * cov[1, 1] + 2 * k * cov[0, 1]); jd = t + 2457000
-        if jd >= 2461406.5: break   # through 2027-12-31
+        if jd >= 2461771.5: break   # through 2027-12-31 (JD 2461771.5 = 2028-01-01 00:00 UTC; was 2461406.5 = 2027-01-01, fixed 2026-10-21)
         prow.append(dict(epoch=int(e0 + k), tc_btjd=round(t, 5), tc_bjd_tdb=round(jd, 5), utc=geocentric_utc(jd, RA_DEG, DEC_DEG).iso[:16], utc_tdb_scale_only=Time(jd, format="jd", scale="tdb").utc.iso[:16], sigma_min=round(sig * 1440, 1), tess_sector=f"undated (future sectors {fut})", status=("retrodiction: before freeze, untested" if jd < freeze.jd else "prediction")))
 pdf = pd.DataFrame(prow); V = a.version; csv = f"{OUT}/predicted_transits_2026_2027_v{V}.csv"
 # v1.12 (review F14): never overwrite a frozen version; a run without --freeze writes only to OUT/_dryrun/
@@ -134,22 +140,31 @@ if a.freeze and any(os.path.exists(x) for x in (f"{OUT}/PREREGISTRATION_v{V}.md"
 if not a.freeze: os.makedirs(f"{OUT}/_dryrun", exist_ok=True); csv = f"{OUT}/_dryrun/predicted_transits_2026_2027_v{V}.csv"
 pdf.to_csv(csv, index=False); sha = hashlib.sha256(open(csv, "rb").read()).hexdigest(); stamp = freeze.utc.iso[:19] + " UTC"
 show = pdf[pdf.status.str.startswith("prediction") & (pdf.tess_sector.astype(str).str.match(r"^\d+") | pdf.tess_sector.astype(str).str.startswith("none") | pdf.tess_sector.astype(str).str.startswith("undated"))]; print(show.to_string(index=False)); print("SHA-256", sha, "frozen", stamp)
-json.dump(dict(tic=TIC, version=V, dry_run=not a.freeze, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, bls_P=P0, bls_T0=T00, sector_times=df.to_dict("records"), sha256_csv=sha, frozen=stamp), open(f"{OUT}/" + ("" if a.freeze else "_dryrun/") + f"final_ephemeris_v{V}.json", "w"), indent=1, default=float)
+json.dump(dict(tic=TIC, version=V, dry_run=not a.freeze, T0_btjd=T0, T0_err_d=T0e, P_d=P, P_err_d=Pe, epoch_ref=e0, chi2=chi2, dof=dof, inflation=infl, bls_P=P0, bls_T0=T00, sector_times=df.to_dict("records"), sha256_csv=sha, frozen=stamp, excluded_sectors=sorted(EXCL), exclude_reason=a.exclude_reason), open(f"{OUT}/" + ("" if a.freeze else "_dryrun/") + f"final_ephemeris_v{V}.json", "w"), indent=1, default=float)
 if a.freeze:
     pd.options.display.float_format = "{:.5f}".format; ref_depth = rep.get("sap_depth", {}).get("depth_ppm", b0["depth_ppm"]); ref_T14 = rep.get("shape_mcmc", {}).get("T14_h", b0["duration_h"])
+    # 2026-10-21 (re-check R5): one consistent introduction, chosen from the requested version and the records that actually exist
+    _prev = [k for k in range(V - 1, 1, -1) if os.path.exists(f"{OUT}/final_ephemeris_v{k}.json")]
+    if V > 2:
+        if not _prev: raise SystemExit(f"refused: --version {V} but no earlier v2+ record exists for TIC {TIC}")
+        INTRO = (f"v{V} supersedes v{_prev[0]} (final_ephemeris_v{_prev[0]}.json, CSV SHA {json.load(open(f'{OUT}/final_ephemeris_v{_prev[0]}.json'))['sha256_csv'][:8]}...), "
+                 f"which is kept unchanged on record with all earlier versions; reason: {a.reason}")
+    elif os.path.exists(f"{OUT}/final_ephemeris.json"): INTRO = f"Supersedes v1 (PREREGISTRATION.md, SHA {v1['sha256_csv'][:8]}...), which is kept unchanged on record."
+    else: INTRO = "First freeze for this object (v2 tooling: all-sector ephemeris)."
     open(f"{OUT}/PREREGISTRATION_v{V}.md", "w").write(f"""# Pre-registered transit predictions v{V} - TIC {TIC}
 Frozen: {stamp}. Author: Fernando Molina (Independent researcher, ORCID 0009-0002-2872-3406). Analysis with Claude (Anthropic) under the author's direction.
-{('Supersedes v1 (PREREGISTRATION.md, SHA ' + v1['sha256_csv'][:8] + '...), which is kept unchanged on record.') if os.path.exists(f'{OUT}/final_ephemeris.json') else 'First freeze for this object (v2 tooling: all-sector ephemeris).'}{(' v' + str(V) + ' supersedes v2 (SHA of v2 CSV kept on record in final_ephemeris_v2.json); reason: ' + a.reason) if V > 2 else ''} Reason (external review 2026-10-18,
+{INTRO} Reason (external review 2026-10-18,
 results/external_review_allsky/REVIEW.md): v1 timed only the 200-s sectors (vet.py min_pts cut), ignoring 2018-2021 data; v2 fits one time offset per
 sector from ALL sectors (raw SAP flux, cadence-aware model, local baselines; SPOC 2-min sectors where they exist) on top of the all-data BLS ephemeris.
 Ephemeris: T0 = BTJD {T0:.5f} +- {T0e*1440:.1f} min (epoch {e0:.0f}), P = {P:.6f} +- {Pe:.6f} d (chi2/dof {chi2:.1f}/{dof}, inflation x{infl:.2f}); all-data BLS P = {P0:.6f}.
 Sector times used: {', '.join(f"S{int(r.sector)} {r.source} ({int(r.n_events)} ev, O-C {r.oc_min:+.1f} +- {r.tc_err*1440:.1f} min)" for r in df.itertuples())}.
 Depth per sector (fixed shape, local baseline, raw SAP): {', '.join(f"S{int(r.sector)} {r.depth_ppm:.0f}" for r in df.itertuples())} ppm.
 {a.desc}
+{('Sectors excluded from the ephemeris fit (data quality, decided before freezing): ' + ', '.join(f'S{x}' for x in sorted(EXCL)) + ' - ' + a.exclude_reason) if EXCL else ''}
 Reference values for the outcome clauses: depth {ref_depth:.0f} ppm (raw SAP, all sectors), T14 {ref_T14:.2f} h.
 SHA-256 of predicted_transits_2026_2027_v{V}.csv: {sha}
 **Test of record: {"ground-based photometry (no TESS coverage of this star through Sector 134); any observer may test any listed epoch" if a.ground else "next TESS sector(s)"}.** Predicted mid-transits (sigma_min = 1-sigma timing uncertainty at that epoch):
 {show[['epoch','tc_bjd_tdb','utc','sigma_min','tess_sector','status']].to_string(index=False)}
-{("Outcomes defined in advance (ground-based light curve, <= 1.5 mmag per 10-min bin, covering the predicted time +-3 sigma_min plus >= 1 h baseline on each side): (1) recovered - a dip of depth 0.5-1.5x and duration 0.7-1.3x the reference values within +-3 sigma_min of the predicted time on >= 2 epochs, each at SNR >= 4; (2) inconsistent - a comparable dip exists but its time differs by > 3 sigma_min from the prediction on >= 2 epochs; (3) excluded - no dip > 0.3x the reference depth (3 sigma) with >= 2 predicted windows fully covered at the required precision; (4) insufficient - fewer than 2 windows covered. " if a.ground else "Outcomes defined in advance (QLP or SPOC light curve of the test sector, or a TESScut fixed-aperture extraction, transit-masked biweight detrend): (1) recovered - a box of depth 0.5-1.5x and duration 0.7-1.3x the reference values at >= 2 covered predicted transit windows, stacked SNR >= 5, timing gate |sum(w_i dt_i)/sum(w_i)| <= max(3 mean(sigma_min,i), 30 min) with w_i = 1/depth_err_i^2 over the coverage-qualified windows (frozen evaluator; inverse depth-variance weights); duration and full-coverage criteria are assessed under the separately versioned conformance procedure (see CLARIFICATION_TIMING_RULE_2026-10-20.md); (2) inconsistent - a comparable dip exists but its times differ by > 30 min from every prediction; (3) excluded - stacked depth at the predicted phase < 0.3x at 3 sigma with >= 2 transits fully covered; (4) insufficient - fewer than 2 predicted transits covered. " + CLOCK_NOTE + "")}Generated by scripts/prereg_v2.py {TIC} --freeze --version {V}{" --ground" if a.ground else ""}.
+{(f"Outcomes defined in advance (ground-based light curve, <= {a.ground_mmag:g} mmag per 10-min bin, covering the predicted time +-3 sigma_min plus >= 1 h baseline on each side): (1) recovered - a dip of depth 0.5-1.5x and duration 0.7-1.3x the reference values within +-3 sigma_min of the predicted time on >= 2 epochs, each at SNR >= 4; (2) inconsistent - a comparable dip exists but its time differs by > 3 sigma_min from the prediction on >= 2 epochs; (3) excluded - no dip > 0.3x the reference depth (3 sigma) with >= 2 predicted windows fully covered at the required precision; (4) insufficient - fewer than 2 windows covered. " if a.ground else "Outcomes defined in advance (QLP or SPOC light curve of the test sector, transit-masked biweight detrend; no TESScut fallback - withdrawn 2026-10-20 in conformance v2.1): (1) recovered - a box of depth 0.5-1.5x and duration 0.7-1.3x the reference values at >= 2 covered predicted transit windows, stacked SNR >= 5, timing gate |sum(w_i dt_i)/sum(w_i)| <= max(3 mean(sigma_min,i), 30 min) with w_i = 1/depth_err_i^2 over the coverage-qualified windows (frozen evaluator; inverse depth-variance weights); duration and full-coverage criteria are assessed under the separately versioned conformance procedure (see CLARIFICATION_TIMING_RULE_2026-10-20.md); (2) inconsistent - a comparable dip exists but its times differ by > 30 min from every prediction; (3) excluded - stacked depth at the predicted phase < 0.3x at 3 sigma with >= 2 transits fully covered; (4) insufficient - fewer than 2 predicted transits covered. " + CLOCK_NOTE + "")}Generated by scripts/prereg_v2.py {TIC} --freeze --version {V}{" --ground" if a.ground else ""}.
 """)
     print(f"PREREGISTRATION_v{V}.md written")

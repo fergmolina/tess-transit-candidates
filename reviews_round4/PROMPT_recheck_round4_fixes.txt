@@ -1,0 +1,43 @@
+Re-check. You wrote results/REVIEW_round4_freezes.md ("include after listed fixes"; findings F1-F9). The authors report the fixes and the
+author's decisions in logs/DECISIONS.md items 120-121. Nothing is published; public_release/ is unchanged (v1.14). Work from
+/Users/fernando/Desktop/NASA and verify everything yourself.
+
+CHECK
+1) Each finding F1-F9: resolved / partially resolved / not resolved, with file:line evidence. In particular:
+   - F1/F6/F7/F8/F9: the dated amendments at the end of results/vet_allsky/{343298093,151767028,188664994}/PREREGISTRATION_v2.md
+     (appended; the frozen CSV hashes befcc2e8..., 4f14d1fe..., 0d450700... must be unchanged) and STATUS.md.
+   - F2/F4: configs/conformance/{151767028_S112-S114,343298093_S113-S114,188664994_S117-S119}.json made by
+     scripts/make_conformance_configs_round4.py (the seven S106 configs must be byte-identical to v1.14's public copies);
+     results/qlp_clock_v2/188664994.json (c0 from S84/S81); scripts/test_round4_configs.py (re-run it: it uses in-sample files only;
+     log logs/test_round4_configs_20261021.log). Is the primary-sector rule unambiguous and enforced by the configs? Is the TESScut
+     clock exception stated correctly? Is anything still left to decide before the test data exist?
+   - F3: results/ERRATUM_PREDICTION_HORIZON_2026-10-21.md against your audit; the new versions 162304222 v4, 53825235 v3, 3367979 v3
+     (scripts/freeze_horizon_fix.sh; claimed: identical ephemerides to the previous version, identical overlapping rows, honest
+     retrodiction labels for 53825235's S108-S109 epochs, dated corrections of the template's "First freeze"/"supersedes v2" errors).
+     Check the decision for 115692561 (frozen list scored as published, omission disclosed, no supplement) is stated correctly and
+     consistently with configs/conformance/115692561_S106.json and the published governance text.
+   - F5: scripts/prior_match.py and its output results/prior_match_20261021.csv (+ _text.csv; log logs/prior_match_20261021.log).
+     Does it implement a row/field-aware rule correctly? Run it, or a check of your own, at least for 183374279, 61310956, 89247735,
+     80387959 (published "first report" claims), the three round-4 objects and 195343302. DECISIONS 121 also reports a folder-name
+     check (TIC<id>_P<period> directories); verify it.
+1b) New since your review (DECISIONS 122): results/ERRATUM_PRIOR_DETECTIONS_2026-10-21_DRAFT.md. Verify each row against the primary RAVEN
+   tables (results/prior_search_round4/data/20261021_raven/, Zenodo 19661443) and the eumemic tables it cites; check the proposed
+   wording for TIC 80387959 (published as 'no human-reported candidate'; preprint v1.3 says 'no catalogued periodic signal') and say
+   whether any other public statement (README, REPORT, preprint note_allsky/note.tex, tables/allsky_round3_outcomes.csv, DDT proposal
+   ddt_80387959/proposal.tex) is now false or incomplete.
+2) Script changes since your review: scripts/prereg_v2.py (supersession wording), scripts/prior_match.py, scripts/qlp_clock_v2.py,
+   scripts/make_conformance_configs_round4.py, scripts/test_round4_configs.py. Earlier frozen CSVs must all still match their hashes.
+3) Verdict: ready to include in v1.15, yes or no? If no, give exact fixes.
+
+RULES
+- Edit nothing except your report. Dry runs of prereg_v2.py (without --freeze) write only to _dryrun/ and are allowed.
+- Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any TESS Sector 106 (or later) photometry, TESScut cutouts or FFI data for TIC 183374279, 120444365,
+  70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222, 53825235 or 3367979; nor Sector 111
+  (or later) data for TIC 120517801 or TIC 80387959.
+- Do NOT read or use ~/.zenodo_token or any credential.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round4_recheck.md with a status table per finding and the verdict. When finished, print only the report path and a
+one-line verdict.

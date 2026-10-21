@@ -1,0 +1,64 @@
+{
+ "c0_source": "control sectors",
+ "tic": 343298093,
+ "ephemeris_file": "results/vet_allsky/343298093/_dryrun/final_ephemeris_v2.json",
+ "ra": 265.655268323,
+ "dec": -76.3169690202,
+ "control": [
+  {
+   "sector": 93,
+   "mode": "elementwise",
+   "c0_min": [
+    0.03265563035853436,
+    0.03265313424227756,
+    0.03264342115569718,
+    0.03266120609658252,
+    0.03264338522115917,
+    0.03265432462099849
+   ]
+  },
+  {
+   "sector": 66,
+   "mode": "elementwise",
+   "c0_min": [
+    0.03261981493892119,
+    0.032644724939897785,
+    0.03264085079653434,
+    0.03263780763417312,
+    0.0326413769438858,
+    0.03263645439427609
+   ]
+  }
+ ],
+ "c0_min": 0.03264340318842818,
+ "sectors": {
+  "100": {
+   "mode": "elementwise",
+   "event_btjd": 4085.7373989461094,
+   "qlp_minus_spacecraft_min": -3.5803664422620414,
+   "target_ltt_min": -2.67834104384719,
+   "correction_min": 0.9346688016032796
+  },
+  "101": {
+   "mode": "elementwise",
+   "event_btjd": 4113.069597171106,
+   "qlp_minus_spacecraft_min": -3.5803664435317626,
+   "target_ltt_min": -0.4698963186664144,
+   "correction_min": 3.1431135280537763
+  },
+  "102": {
+   "mode": "gap-edge (2 gaps)",
+   "event_btjd": 4139.103575669522,
+   "qlp_minus_spacecraft_min": -0.03876309602092933,
+   "target_ltt_min": 1.7482692252055965,
+   "correction_min": 1.819675724414954
+  },
+  "103": {
+   "mode": "elementwise",
+   "event_btjd": 4164.567538899005,
+   "qlp_minus_spacecraft_min": -0.038429770615193266,
+   "target_ltt_min": 3.597114533843027,
+   "correction_min": 3.6681877076466485
+  }
+ }
+}

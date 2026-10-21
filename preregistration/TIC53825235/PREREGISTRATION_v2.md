@@ -17,3 +17,8 @@ Outcomes defined in advance (QLP or SPOC light curve of the test sector, or a TE
 
 
 **Addendum 2026-10-20 (timing rule):** the phrase "and in any case within +-30 min" above misstates the rule. The governing rule is the public protocol's (Zenodo 10.5281/zenodo.23462442): stacked timing offset within max(3 sigma_pred, 30 min), as implemented in the frozen evaluator scripts/prereg_test.py. No prediction, CSV or checksum is changed. See CLARIFICATION_TIMING_RULE_2026-10-20.md.
+
+**Dated note 2026-10-21 (appended; frozen CSV unchanged).** This list contains no future predictions: the generator then stopped after 399
+epochs (last listed transit 2025-08-23), so the S108-S110 test planned here never existed. The v3 that was noted as needed on 2026-10-20 was
+only made on 2026-10-21 (CSV 1408a7cd...; same ephemeris); in it S108 and S109 up to the freeze are retrodictions, not prospective tests.
+See ERRATUM_PREDICTION_HORIZON_2026-10-21.md.

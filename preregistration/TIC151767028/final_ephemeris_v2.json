@@ -1,0 +1,65 @@
+{
+ "tic": 151767028,
+ "version": 2,
+ "dry_run": false,
+ "T0_btjd": 4056.1089495902756,
+ "T0_err_d": 0.004614556572085204,
+ "P_d": 2.210401376442723,
+ "P_err_d": 1.1517236939567738e-05,
+ "epoch_ref": 1123.0,
+ "chi2": 13.388186524487491,
+ "dof": 2,
+ "inflation": 2.587294583584124,
+ "bls_P": 2.210391678813963,
+ "bls_T0": 1573.8340350491083,
+ "sector_times": [
+  {
+   "sector": 36,
+   "source": "QLP SAP",
+   "mean_epoch": 325.5,
+   "tc": 2293.3131931697194,
+   "tc_err": 0.0029166666666666716,
+   "n_events": 8,
+   "depth_ppm": 762.9423255041539,
+   "clock_correction_min": NaN,
+   "oc_min": -0.9485387783206534
+  },
+  {
+   "sector": 63,
+   "source": "QLP SAP",
+   "mean_epoch": 657.5,
+   "tc": 3027.1623972026223,
+   "tc_err": 0.004583333333333335,
+   "n_events": 12,
+   "depth_ppm": 545.6182407651186,
+   "clock_correction_min": NaN,
+   "oc_min": -6.784781134556397
+  },
+  {
+   "sector": 90,
+   "source": "QLP SAP",
+   "mean_epoch": 989.5,
+   "tc": 3761.0257679021915,
+   "tc_err": 0.00208333333333334,
+   "n_events": 12,
+   "depth_ppm": 542.1827266977134,
+   "clock_correction_min": NaN,
+   "oc_min": 7.778976508125197
+  },
+  {
+   "sector": 99,
+   "source": "QLP SAP",
+   "mean_epoch": 1123.0,
+   "tc": 4056.10305637641,
+   "tc_err": 0.0025000000000000022,
+   "n_events": 6,
+   "depth_ppm": 661.8234281685064,
+   "clock_correction_min": -0.0009323208609408606,
+   "oc_min": -8.486227966204751
+  }
+ ],
+ "sha256_csv": "befcc2e8d522cd252657a5cd4a09df1d6dd6d94b773e3e9b9f6bcd6fca9ba8a5",
+ "frozen": "2026-10-21 01:57:12 UTC",
+ "excluded_sectors": [],
+ "exclude_reason": ""
+}

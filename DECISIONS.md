@@ -742,3 +742,206 @@
       to the README and both registrations; VERDICTS "never in public copies" annotated.
     - 4.2" = about 0.20 TESS pixel (current prose); "our TESS analyses do not assign the eclipse to either star".
 110. 2026-10-20 — Final re-check (results/REVIEW_v1.14_final_recheck.md): ready to publish v1.14, all five findings resolved. Author: "go".
+111. 2026-10-20 — v1.14 PUBLISHED: GitHub 87984af, release v1.14 (no session link); Zenodo 10.5281/zenodo.23516414 (automatic). TIC 120517801 is now public (likely blend, host
+    unresolved, independent rediscovery; S111-S113 ephemeris test, scoring procedure to be stated before those data are examined).
+112. 2026-10-20 — ROUND 4 (user: "go 1"): mine the rest of the completed all-sky QLP run (57,835 stars). Pool definition, fixed before
+    any processing: from results/allsky_testable_soon.csv (SDE >= 9), minus everything taken into rounds 1-3; clean, no known source,
+    odd/even and secondary < 3 sigma, no period-cluster or shared-time flag, depth <= 5 ppt. Round 3 used the same filters but only next
+    sector S106-S111. The "transits in next-sector windows" filter is NOT applied, because orbit windows beyond S111 are approximate.
+    - Primary: next sector S112-S120 (results/allsky_round4_primary.csv); freeze before those sectors are observed (S112 starts about
+      2026-12-22).
+    - Secondary: S121-S134 (allsky_round4_secondary.csv).
+    - Ground-only subset deferred unless depth >= 1.5 ppt and SDE >= 12 (allsky_round4_ground.csv).
+    Expectation from round 3 (190 -> 84 on target -> 7 pass / 8 weak -> 1 candidate, 3 marginal, 5 credited rediscoveries): about 1-3
+    new candidates.
+    Order: refreshed prior-report grep FIRST; then pixel tests (runner refuses the seven S106 TICs and any cutout sector >= 106); then
+    vet.py with the v1.13 fixes (not comparable to the round 2-3 exploratory values); then triage_round3.py unchanged; then TRICERATOPS
+    with the corrected wording; then a prompt freeze with the template checked; then external review before release.
+113. 2026-10-20 — Round 4 step 2 (prior-report check, before pixel tests). Corpus refreshed 2026-10-20 (results/prior_search_round4/data/
+    20261020/: shallow clones of eumemic/exoplanets, ahrazzle/exoplanets, brahle/exoplanet-candidates, alejandrozarco/tess-candidates-2026,
+    killercatfish/tess-hunt, samsonmaximus/tess-three-candidates, paraschopra/tess-planet-candidates; ExoFOP TOI 8,151 / CTOI 5,138 rows),
+    plus the round 1-2 corpora. A bare TIC match is meaningless: the corpora hold target lists and our own published tables. So a hit
+    counts only with a period (or half/twice) quoted to >= 3 decimals within 0.1 % and 200 characters of the TIC; our own Zenodo
+    records (all 29 ids under the ORCID) and neighbour lists are excluded. Result: 29 of 303 have external period-matched mentions
+    (eumemic/ahrazzle 10, brahle 4, others), tagged as likely rediscoveries but kept; results/allsky_round4_prior.csv.
+    Step 3 launched: pixel tests on the 182 primary signals (two queues; results/allsky_round4_pixel_q{1,2}.csv). ffi_pixel_test.py now
+    refuses the seven S106 test TICs and any sector >= 106 (tested on both cases).
+114. 2026-10-21 — Round 4 pixel tests (pixel_collect.py, same thresholds as rounds 2-3: ON <= 0.5 px in all sectors, OFF >= 0.9 px):
+    182 -> ON_TARGET 27, OFF_TARGET 85, AMBIGUOUS 52, no 200-s sector 11, no data 7 (results/allsky_round4_pixel.csv). Shared-period
+    pairs among the on-target list (likely one source in neighbouring stars): 121201412/121201410 (1.13430 d), 276903941/331634064
+    (12.857 d). Step 4: vet.py (v1.13 fixes) on the 27, three in parallel.
+115. 2026-10-21 — Round 4 step 4-5. vet.py (v1.13) finished on all 27 on-target signals (logs/round4_vet.log, 01:06 UTC). Triage with
+    scripts/triage_round4.py = triage_round3.py with round-4 file paths only (diff checked; thresholds unchanged):
+    PASS 2, WEAK 2, FAIL 23 (results/allsky_round4_triage.csv). Survivors: 343298093 (P 0.766 d, SNR 9.1, PASS, no prior report),
+    188664994 (P 3.782 d, SNR 13.1, PASS), 195343302 (P 1.185 d, SNR 7.6, WEAK, density ratio 0.37), 151767028 (P 2.210 d, SNR 8.1,
+    WEAK; period-matched in eumemic/ahrazzle followup_kmdwarfs.csv -> likely rediscovery). Both shared-period pairs FAIL (121201412/410,
+    276903941/331634064). The "catalog" prior tag on 188664994 is a false match: the 3.7824 value lies in the neighbouring row of
+    Nigraha period_info-sec23.csv (TIC 207439389); Nigraha's own BLS periods for 188664994 are 4.25/10.0/11.9/12.4/13.2 d; prior_grep.py
+    gives 0 hits. No ExoFOP TOI/CTOI rows for any survivor. TRICERATOPS launched on the four (scripts/tri_runner_round4.sh, in-sample
+    local sectors only).
+116. 2026-10-21 — Round 4 TRICERATOPS (single run each, scripts/triceratops_qlp.py in .venv_tri, last 3 local in-sample QLP sectors,
+    no contrast curve; screening only, not validation): 343298093 FPP 0.065 NFPP 0.0010 (S101-103); 188664994 FPP 0.081 NFPP 0.0078
+    (S80,81,84); 195343302 FPP 0.156 NFPP 0.111 (S55,56,83); 151767028 FPP 0.113 NFPP 0.043 (S90,99,100). None meets the Giacalone+2021
+    validation threshold (FPP < 0.015 and NFPP < 0.001); all are FPP < 0.5. 195343302's NFPP (0.11) means a nearby-star origin is not
+    excluded. Awaiting the author's cap on how many go to pre-registration.
+117. 2026-10-21 — Author's go: "Do the 3" -> pre-register 343298093, 188664994, 151767028 (cap 3; 195343302 held back, NFPP 0.11).
+    Before freezing, three dated script changes (local; to be reviewed before any release):
+    (a) BUG FOUND in scripts/prereg_v2.py (present since the item-69 change, published in v1.10-v1.14): the prediction horizon
+        `if jd >= 2461406.5` stops at 2027-01-01, not 2027-12-31 as its comment and item 69 say. Fixed to JD 2461771.5 (2028-01-01).
+        Affected frozen record: 162304222 v3 (frozen 2026-10-20 02:03 UTC) lists S111 and S112 only to 2026-12-31; S112 after that date,
+        S113 and S114 have no predictions. Freezes made before item 69 used the older loop (range(1,400), JD 2461900) and are unaffected
+        by this bug. Also found: 53825235 never received the v3 that item 68 said was needed (its v2 has no future predictions; S108-S109
+        are now past). Both to be reported to the author; no record changed.
+    (b) prereg_v2.py outcome template: removed "or a TESScut fixed-aperture extraction" (fallback withdrawn 2026-10-20, conformance v2.1).
+    (c) scripts/qlp_clock_v2.py: optional argv[2] = explicit ephemeris JSON (e.g. the prereg_v2 dry run), because since v1.12 dry runs go to
+        _dryrun/ and first-time freezes had no ephemeris for the clock step. Only the uncorrected per-sector times are used, as in round 3.
+    Orbit table checked: tess.mit.edu TESS_orbit_times.csv regenerated 2026-10-20 is identical to ours (ends S111); S112+ windows are
+    "span only, gap unknown".
+118. 2026-10-21 01:57 UTC — Round-4 freezes (local, not published): scripts/freeze_round4.sh (prereg_v2.py v2 with the item-117 fixes).
+    - 151767028 v2: P 2.210401 +- 0.000012 d, T0 BTJD 4056.10895 +- 6.6 min; S36/S63/S90/S99 (S100 rejected, weak); --clock (S99 -0.00 min);
+      tests S112-S114 (38 predictions, sigma <= 9.1 min); ref 540 ppm / 1.00 h; CSV SHA befcc2e8...; credited as independent rediscovery
+      (eumemic/ahrazzle followup_kmdwarfs.csv).
+    - 343298093 v2: P 0.766143 +- 0.000007 d, T0 BTJD 4164.67665 +- 2.6 min; 7 QLP sector times; --clock (S100-S103: 0.93/3.14/1.82/3.67
+      min); tests S113-S114 (74 predictions, sigma <= 5.3 min); ref 302 ppm / 1.10 h; CSV SHA 4f14d1fe...
+    - 188664994 v2: P 3.781806 +- 0.000021 d, T0 BTJD 3597.39365 +- 8.2 min; 17 sector times (S26 excluded: corrupted QLP and SPOC light
+      curves, numbers in the frozen text); chi2/dof 201/15, inflation x3.66 (timing scatter flagged in the text); tests S117-S119 (21
+      predictions, sigma <= 15.4 min); S122-S132 not listed (no published dates; TESS_sector_dates_future.csv ends at S121) -> a later
+      version once dates exist; ref 412 ppm / 1.80 h; CSV SHA 0d450700...
+    Each text carries a scoring statement: conformance v2.1 rc4 (SHA a864b07a...) general rules, per-object config locked before the
+    sector is examined, QLP SAP_FLUX v01, clock gate, sectors scored separately in order, first released sector = test of record,
+    no TESScut; calibration only exists for the S106 objects. Clock records results/qlp_clock_v2/{151767028,343298093}.json were made
+    from the dry-run ephemerides (item 117c). Next: external review before any release (v1.15); publish only on the author's go.
+119. 2026-10-21 — Follow-up to 117a: item 68's third object, 408110117, is NOT truncated: its v2 CSV lists all 10 S108 transits
+    (2026-09-09 to 2026-10-03; S108 runs 2026-09-07 to 10-04), labelled "retrodiction: before freeze, untested" because S108 was observed
+    before the 2026-10-20 freeze. So of item 68's three objects: 408110117 covered; 162304222 v3 truncated by the horizon bug (S112
+    partial, S113-S114 missing); 53825235 has no future predictions and no v3. public_release/ working tree checked clean (git status
+    empty): no published file was changed by items 115-118.
+120. 2026-10-21 — Independent review of round 4 (results/REVIEW_round4_freezes.md): "include after listed fixes". Findings F1-F9 checked by us:
+    F1 confirmed (343298093 is in eumemic vetted_signals.csv.gz, P 0.7661376546 d, flagged "inconsistent transit SNRs", and in
+    all_signals.csv.gz; not in their candidate lists; our search never decompressed .gz tables). F3 confirmed (115692561 v2 S106 list
+    ends at epoch 3417; 3418-3419 are in S106 and S107 is absent; old 399-epoch cap; 3367979 v2 ground list also truncated). Corrects
+    items 115, 118 ("no prior report" for 343298093) and 117a/119 (the horizon audit was incomplete; item 117a's "unaffected" was true
+    only of the newer end-date bug).
+    Author's decisions (2026-10-21): (1) 115692561 S106 is scored on the frozen list as published, omission disclosed, no supplement;
+    (2) primary-sector rule adopted (S112 / S113 / S117 are the tests of record and stay so whatever their result; later sectors are
+    separate tests); (3) new versions for 162304222, 53825235, 3367979; (4) 343298093 kept among the three as an independent rediscovery.
+121. 2026-10-21 — Fixes applied (local; nothing published):
+    - scripts/prior_match.py: row/field-aware matcher (CSV, CSV.gz, tables in .zip; TIC and named period field in the same record;
+      P, P/2, 2P within 0.1 %; own records and neighbour/cone files excluded; provenance per record). Run on all 67 registered and
+      round-4 objects over results/prior_search*/ -> results/prior_match_20261021.csv (+ _text.csv). Separately, candidate folder
+      names TIC<id>_P<period> (eumemic/ahrazzle) were matched: hits only for objects already credited as rediscoveries (317134140,
+      120444365, 120517801, 115692561, 19119739, 3367979, 65575657, 366047768, 383617106, 333735955); none for 183374279, 61310956,
+      89247735, 80387959.
+    - results/qlp_clock_v2/188664994.json: c0 prior from control sectors S84/S81 (+0.032 min).
+    - scripts/make_conformance_configs_round4.py -> 8 locked configs configs/conformance/{151767028_S112-S114, 343298093_S113-S114,
+      188664994_S117-S119}.json (primary flag, primary rule, clock prior hash, evaluator SHA a864b07a..., future-data status). The seven
+      S106 configs are untouched. scripts/test_round4_configs.py: 56/56 refusal/config checks pass using in-sample files only
+      (logs/test_round4_configs_20261021.log).
+    - Dated amendments appended to the three round-4 registrations (343298093 priority correction and NFPP 0.00097; 151767028 RAVEN
+      nsfp09 credit; 188664994 timing-uncertainty caveat, reference-depth provenance 412 vs 420 +- 43 ppm without S26, 239-614 ppm range,
+      S117-S119 coverage; all three: primary-sector rule, config hashes, TESScut TIME/TIMECORR clock exception, generic paragraph secondary).
+    - New versions (scripts/freeze_horizon_fix.sh; ephemerides reproduced exactly by dry runs, overlapping rows identical):
+      162304222 v4 (CSV b4a26083...), 53825235 v3 (1408a7cd...; S108 and early S109 labelled retrodictions), 3367979 v3 (0e8f5ea1...).
+      The template wrongly wrote "First freeze for this object" / "v4 supersedes v2": dated corrections appended; template fixed.
+    - results/ERRATUM_PREDICTION_HORIZON_2026-10-21.md (two bugs, five records, handling as decided). STATUS corrected (v1.14 current
+      release; local vs public freezes; 343298093 and 151767028 credits).
+122. 2026-10-21 — Row-aware matcher results (results/prior_match_20261021.csv; 9,246 TIC records, 7,025 period matches across mirrored
+    corpora) and a primary-source check of RAVEN (Lafarga et al. 2026, MNRAS, arXiv 2603.22597; Zenodo 19661443 downloaded 2026-10-21 to
+    results/prior_search_round4/data/20261021_raven/). Earlier machine detections missed by our searches:
+    - TIC 80387959 (published as "no human-reported candidate"; preprint v1.3 says "no catalogued periodic signal"): RAVEN first-stage
+      nsfp09 candidate at P = 4.19222 d (prob_NSFP 0.98) plus a P/3 alias; NOT in RAVEN's vetted/validated tables. The preprint sentence is
+      false and needs a new version; README/REPORT need qualification.
+    - TIC 249813122 (README: prior "none"): RAVEN nsfp09 P = 4.17453 d. TIC 333661705 (brahle credit): also RAVEN. 151767028: also RAVEN.
+    - Round-3 table "none found": 122522485, 159033763, 162304222 appear in eumemic all_signals.csv.gz (public raw BLS output) at our
+      period; 196514928 and 283913390 appear in eumemic's false_alarm_classifier_table as label "real", class "offset".
+    - No earlier detection for 183374279, 61310956, 89247735, 188664994, 195343302 and 14 others (bounded search).
+    Draft: results/ERRATUM_PRIOR_DETECTIONS_2026-10-21_DRAFT.md. Awaiting the author before any public correction.
+123. 2026-10-21 — Re-check (results/REVIEW_round4_recheck.md): "No" until R1-R5. Fixes (local; nothing published):
+    - R1: item 121 and the erratum wrongly said 3367979 v3's 399 shared rows were identical: v3 omitted --ground, so its sector labels
+      changed and its text kept TESS clauses. Corrected; dated superseded notice appended to v3. 3367979 v4 frozen 2026-10-21 03:40:48
+      UTC with --ground --ground-mmag 0.6 (CSV b6c94c8e...; same ephemeris; all 399 shared rows identical in every field; 0.6 mmag per
+      10-min bin = SNR 4 per transit at 788 ppm / 1.30 h). prereg_v2.py gained --ground-mmag (the ground clause was a fixed 1.5 mmag).
+    - R2: prior_match.py now recognises pipeline-prefixed period columns (bls_per, juliet_per, tls_period, ...), excludes uncertainty
+      columns, records label/cls/prob fields and lists TIC-bearing tables without a period column as UNRESOLVED (*_unresolved.csv).
+      Regression tests scripts/test_prior_match.py (primary RAVEN tables, neighbouring-row case, gzip, unresolved): pass
+      (logs/test_prior_match_20261021.log). Full re-run -> results/prior_match_20261021b.csv.
+    - R3: configs/conformance/ROUND4_LOCK.json (SHA-256 of the 8 configs and their c0 priors; manifest SHA d7a20a59...);
+      scripts/validate_round4_inputs.py binds config, prediction CSV, evaluator and c0 prior before data access, the clock record to
+      that config and prior, and the evaluator output to that config and light curve. The pinned evaluator and clock tool are unchanged
+      (S106 tests keep their published code). scripts/test_round4_configs.py rewritten (fresh directory, required exit status, outputs
+      bound to their case; adds tampered prior bytes/path/hash and stale clock/result cases): 144/144 pass
+      (logs/test_round4_configs_20261021b.log). Dated note appended to the three round-4 registrations making the validator required.
+    - R4: the "first human(-vetted)" wording is withdrawn for 80387959; the reviewer's replacement text is adopted in the prior-detections
+      erratum and STATUS; the public-correction table now lists README, REPORT, prior_search/VERDICTS.md, the preprint, both outcome
+      tables and a dated correction file for the DDT proposal (sending anything to the DDT office is the author's decision). RAVEN dates
+      stated as paper 2026-03-23 / Zenodo displayed 2026-03-25, created 2026-04-20. 151767028: primary RAVEN confirmation appended.
+    - R5: prereg_v2.py writes one introduction chosen from the requested version and the records that exist ("vN supersedes vK" with
+      K = the latest earlier record; refuses --version > 2 without one).
+    Integrity: all 50 frozen prediction CSVs match their JSON and registration hashes; the seven S106 configs equal their v2.1 public copies.
+124. 2026-10-21 — Full matcher re-run with the R2 fixes (results/prior_match_20261021b.csv; 9,258 TIC records, 7,029 period matches):
+    the same 25 objects match as before, now including the primary RAVEN tables directly (bls_per). No match for 183374279, 61310956,
+    89247735, 188664994 or 195343302. 86 TIC-bearing tables without a period column are listed in results/prior_match_20261021b_unresolved.csv;
+    for the first-report objects and the round-4 three, the only such hits are Nigraha tic2file-sec*.csv light-curve index tables
+    (188664994: S17/S23/S24/S26; 61310956: S22), which are file lists, not reports. The prior-detections erratum is unchanged by the re-run.
+125. 2026-10-21 — Second re-check (results/REVIEW_round4_recheck2.md): "No" until the clock-record binding and the correction inventory
+    are fixed. Fixes (local; nothing published):
+    - validate_round4_inputs.py result stage now requires the evaluator output's clock_record.sha256 to equal the SHA-256 of the clock file
+      given, and every hash (config, evaluator, light curve, clock record; clock-stage prior/prediction/light-curve) to be present and a
+      well-formed SHA-256 (fail closed). An output without clock provenance is accepted only as a PRE-CLOCK outcome (INVALID_INPUT,
+      INSUFFICIENT, CLOCK_UNVERIFIED), never as clock-dependent scoring. test_round4_configs.py: positive fixture now a genuinely bound
+      scored output; new refusal cases (other clock file with identical identity fields but other corrections, science outcome without
+      clock provenance, missing/malformed hashes, other evaluator/config; clock record without light-curve hash); 200/200 pass
+      (logs/test_round4_configs_20261021c.log). Addendum appended to the three round-4 registrations.
+    - Prior-detections erratum: points to the corrected matcher run (20261021b); the correction inventory now covers every local copy found
+      by a text search: repository README/REPORT/VERDICTS/PRIOR_SEARCH and both outcome tables; the preprint; BOTH dataset versions
+      (v1.0 and the published v1.1, which the review did not list: README, REPORT, VERDICTS, PRIOR_SEARCH, documents/note.tex); local
+      working copies.
+    - 3367979 v4: dated clarification of the precision arithmetic (0.597 mmag; ideal SNR 3.98 at 0.6 mmag, 1.6 at 1.5 mmag).
+    - prereg_v2.py: the no-predecessor refusal for --version > 2 now runs before any data access or write (tested on 195343302: refused,
+      no file written).
+    Hash inventory, defined: 50 v2+ prediction CSVs under results/vet*/ match their final_ephemeris_v*.json hashes (the review's 46 are the
+    generator-produced registrations with CSV/JSON/Markdown; its 55 add v1 and other records). Seven S106 configs equal their published
+    copies; public_release/ unchanged.
+126. 2026-10-21 — Third re-check (results/REVIEW_round4_recheck3.md): "Yes — ready to include in v1.15 within the requested review
+    scope". It approves the corrections for release assembly, not an assembled release (which does not yet exist): the dated-notice plan in
+    the prior-detections erratum must be carried out, not the old claims re-exported. Operational note from the review, adopted: the
+    validator's result stage needs a clock file even for pre-clock outcomes, so an early INSUFFICIENT/INVALID_INPUT without a clock record
+    is refused (exit 2); such a refusal and the evaluator's original early outcome are reported as they are, and no clock record is ever
+    fabricated to obtain BOUND. Next: assemble v1.15 + preprint v1.4 + dataset v1.2 + DDT correction file, final re-check of the
+    assembled release, then the author's go to publish.
+127. 2026-10-21 — Author's go: assemble v1.15 + preprint v1.4 + dataset v1.2 + DDT correction (nothing published yet).
+    - Dated pointer notes appended to 162304222 v3, 53825235 v2, 115692561 v2 (omission disclosed; S106 test stays the frozen list),
+      3367979 v2 (generated without --ground; list truncated).
+    - public_release/ (uncommitted): preregistration/TIC151767028, TIC343298093, TIC188664994 (+ qlp_clock_v2 priors), TIC3367979 (v2-v4;
+      frozen 2026-10-19 but not published before), 162304222 v4, 53825235 v3, updated notes; preregistration/ERRATUM_PREDICTION_HORIZON_
+      2026-10-21.md; prior_search/ERRATUM_PRIOR_DETECTIONS_2026-10-21.md (final); conformance_round4/ (8 configs, lock, validator, config
+      maker, tests + log, README); tables/round4/ (pool, pixel, triage, old prior table, matcher runs and targets);
+      tables/NOTICE_PRIOR_REPORTS_2026-10-21.md; corrections/DDT_PROPOSAL_80387959_CORRECTION_2026-10-21.md (also ddt_80387959/);
+      reviews_round4/ (review, three re-checks, prompts); scripts updated/added; dated correction prepended to prior_search/VERDICTS.md and
+      PRIOR_SEARCH.md; README (date line, 80387959 paragraph and prior-report bullet, 249813122 row, 3367979 note, round-3 notes, new
+      round-4 and corrections block, Reproduce, Related Zenodo records); REPORT correction 9 and marker; CITATION 1.15; MANIFEST_v1.15.md.
+      The empty stray directory "preregistration/TIC122522485 206620592 ..." (untracked, never published) was removed.
+      conformance_v2.1/scripts/qlp_clock_v2.py is kept as hashed in that bundle (README says so). Checks: no previously public prediction
+      CSV changed; registrations append-only, VERDICTS/PRIOR_SEARCH prepend-only; no session links, secrets or e-mail addresses.
+    - Preprint v1.4: note_allsky/note.tex (v1.3 kept as note_v1.3.tex/.pdf) - prior-report paragraph replaced by the reviewed RAVEN
+      wording; tectonic, 2 pages; zenodo_upload/preprint_v1.4/ (md5 f8b44ce904036c58c877b08dc0e9378c).
+    - Dataset v1.2: dataset_v1.2/ = v1.1 + v1.2 README notice, REPORT notice and markers, dated corrections in VERDICTS/PRIOR_SEARCH,
+      preprint v1.4 in documents/, the erratum; checksums regenerated (211 files; only the declared files differ from v1.1);
+      zenodo_upload/supporting_data_and_code_v1.2.zip (213 entries, md5 fbf0fe5df994e42062023855068853e1 after the line-number label fix; checksums verify after unzip; scan clean).
+    Next: final re-check of the assembled release, then the author's go to publish.
+128. 2026-10-21 — Before the final check: (1) tables/round4/README.md marks allsky_round4_prior.csv as superseded (DECISIONS 113 inline
+    check; false 188664994 tag, missed 343298093). (2) Scan for this session's scratchpad paths: none in any new v1.15 file; already
+    published reviews from v1.10-v1.11 (conformance_v2.1/reviews/, reviews_2026-10-20/) and scripts/download_lcs.sh contain local
+    /tmp/claude-501/... paths with a session transcript id (not a session URL); left as published, reported to the author. (3) Publication
+    texts drafted for review: zenodo_upload/RELEASE_NOTES_v1.15.md, zenodo_upload/ZENODO_DESCRIPTIONS_2026-10-21.md, and
+    zenodo_upload/preprint_v1.4/description_v1.4.html. The preprint's Zenodo description (all versions) repeats "no human-reported
+    candidate", so v1.4 REPLACES the description (scripts/zenodo_newversion_staged.py gained "REPLACE:<file>"); earlier versions of the
+    preprint (23462434, 23462857, 23463582, 23512950) and dataset (23462438, 23512928) get a dated prepended notice. Erratum line numbers
+    labelled as v1.14 line numbers (all three copies); dataset v1.2 checksums and zip rebuilt.
+129. 2026-10-21 — Assembled-release review (results/REVIEW_v1.15_assembled.md): "No-go" for three documentation fixes; all numerical
+    artifacts, manifest, frozen records, dataset checksums/ZIP and the compiled preprint pass. Fixed: (1) the dataset v1.2 Zenodo note
+    now lists every changed file (README, REPORT, both prior-search files, note.tex/pdf, erratum, checksum lists) instead of "all other
+    files identical"; (2) the preprint v1.4 replacement description no longer says "blind holdout years" or "all code and data are public"
+    in its summary (retrospective leave-one-year-out consistency checks; repository scope and Reproduce limits), with a "Version history"
+    label; (3) README round-4 block lists the five truncated records (162304222 v2 and v3). Reviewer's judgment on DECISIONS 128(2): leave
+    the already-published scratchpad paths as published. Manifest and public DECISIONS regenerated.

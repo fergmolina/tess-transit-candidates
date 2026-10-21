@@ -26,6 +26,10 @@ Status line for every object in this report: **candidate pending confirmation; n
 >    summary → `CONTROL_TIC4206066.md`; pool-B recovery → `tables/poolb_known_recovery.csv`; duo grid →
 >    `tables/single_transit_search/duo_cut_grid.json`; prior-search summary → `prior_search/PRIOR_SEARCH.md`. Producers that are not
 >    published are listed in README "Reproduce".
+> 9. **Correction 2026-10-21 (v1.15).** TIC 80387959 was previously reported at P = 4.1922173881 d in the first-stage RAVEN candidate
+>    catalog of Lafarga et al. (2026, MNRAS); it is absent from their vetted and validated subsets. We do not claim first detection; the
+>    "no human-reported candidate" statements below are withdrawn. Further earlier machine detections (TIC 249813122, five round-3
+>    objects) are listed in `prior_search/ERRATUM_PRIOR_DETECTIONS_2026-10-21.md`.
 
 Outcome in one line: two candidates survive — TIC 317134140 (0.5719 d, ~185 ppm, §6; plausible but unproven, decisive test S108–S110) and
 TIC 89247735 (18.32 d, 1.0 %, §8; four unambiguous on-target transits in 2023/2025/2026; a giant planet or a brown dwarf, M₂ ≲ 25 M_Jup from Gaia RVs; not validatable without radial velocities). Everything else was rejected (§5, §7). *[Superseded 2026-10-20: see correction 1 above; the mass limit and the on-target conclusion are withdrawn.]*
@@ -554,7 +558,7 @@ TESS-SPOC FFI DV targets; 101 GitHub repositories and 157 Zenodo records grepped
 * **TIC 89247735**: no earlier matching report was found in the sources searched by this dated sweep; its coverage and indexing limits apply (wording corrected 2026-10-20). A **concurrent** independent analysis (same four transits, P = 18.323173 ± 0.000031 d) was
   posted at github.com/alejandrozarco/tess-candidates-2026 on 2026-10-18 19:22 UTC, about twenty hours after this record's first public
   release (GitHub v1.0 2026-10-17 23:01 UTC; Zenodo 2026-10-17 23:05 UTC). It does not cite this record.
-* **TIC 80387959**: no human-reported candidate found in the searched sources, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
+* **TIC 80387959** (*Corrected 2026-10-21: previously reported in the first-stage RAVEN catalog, Lafarga et al. 2026; see correction 9 above*): no human-reported candidate found in the searched sources, but the TESS-SPOC FFI pipeline's Sector 63 single-sector run produced an
   unpromoted threshold-crossing event at the same signal (P = 4.1905 ± 0.0012 d, 869 ± 107 ppm, 2.4 R⊕, MES 7.6), never a TOI or CTOI. Our
   known-signal cross-match had covered SPOC 2-min TCEs only; TESS-SPOC TCEs are now included.
 * **TIC 120444365**: **listed earlier** by an independent, pseudonymous, non-refereed search (github.com/eumemic/exoplanets, tier-C candidate at

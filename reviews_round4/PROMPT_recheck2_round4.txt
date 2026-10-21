@@ -1,0 +1,33 @@
+Second re-check. You wrote results/REVIEW_round4_recheck.md ("No"; remaining fixes R1-R5 plus the public-correction list). The authors
+report the fixes in logs/DECISIONS.md item 123. Nothing is published; public_release/ is unchanged (v1.14). Work from
+/Users/fernando/Desktop/NASA and verify everything yourself.
+
+CHECK ONLY
+1) R1: results/vet_allsky/3367979/PREREGISTRATION_v4.md and its CSV/JSON (made with --ground --ground-mmag 0.6; scripts/freeze_horizon_fix.sh,
+   last command): identical ephemeris to v2; all 399 rows shared with v2 identical in every field; ground test of record and ground outcome
+   clauses; the 0.6-mmag derivation. The dated superseded notice appended to v3; the corrected ERRATUM_PREDICTION_HORIZON_2026-10-21.md.
+2) R2: scripts/prior_match.py (period columns incl. bls_per, uncertainty columns excluded, label/cls/prob provenance, *_unresolved.csv for
+   TIC-bearing tables without a period column); scripts/test_prior_match.py (log logs/test_prior_match_20261021.log; re-run it in a fresh
+   directory); the full re-run results/prior_match_20261021b.csv (+ _text, _unresolved; log logs/prior_match_20261021b.log). Does the
+   re-run change any conclusion in ERRATUM_PRIOR_DETECTIONS_2026-10-21_DRAFT.md?
+3) R3: configs/conformance/ROUND4_LOCK.json; scripts/validate_round4_inputs.py (stages pre / clock / result); the rewritten
+   scripts/test_round4_configs.py (fresh directory required, exit status required, outputs bound to the case's config and light-curve
+   SHA-256; log logs/test_round4_configs_20261021b.log; re-run it). The dated note appended to the three round-4 registrations making the
+   validator a required step. Is the binding now enforced for every promise the configs make?
+4) R4: the 80387959 wording and the public-correction table in ERRATUM_PRIOR_DETECTIONS_2026-10-21_DRAFT.md; STATUS.md row; the
+   151767028 credit update. Is the list of public locations complete?
+5) R5: scripts/prereg_v2.py introduction logic (3367979 v4 is its first output).
+6) All frozen CSVs still match their hashes; the seven S106 configs still match their public copies.
+7) Verdict: ready to include in v1.15, yes or no? If no, give exact fixes.
+
+RULES
+- Edit nothing except your report. Dry runs of prereg_v2.py (without --freeze) write only to _dryrun/ and are allowed.
+- Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any TESS Sector 106 (or later) photometry, TESScut cutouts or FFI data for TIC 183374279, 120444365,
+  70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222, 53825235 or 3367979; nor Sector 111
+  (or later) data for TIC 120517801 or TIC 80387959.
+- Do NOT read or use ~/.zenodo_token or any credential.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round4_recheck2.md with a status table and the verdict. When finished, print only the report path and a one-line verdict.

@@ -1,0 +1,98 @@
+{
+ "tic": 343298093,
+ "version": 2,
+ "dry_run": false,
+ "T0_btjd": 4164.67665404304,
+ "T0_err_d": 0.0017952762160476114,
+ "P_d": 0.7661425368488064,
+ "P_err_d": 6.777486937526303e-06,
+ "epoch_ref": 3309.0,
+ "chi2": 29.240485579991102,
+ "dof": 5,
+ "inflation": 2.4182839196418233,
+ "bls_P": 0.7661412926805599,
+ "bls_T0": 1629.5078371660964,
+ "sector_times": [
+  {
+   "sector": 39,
+   "source": "QLP SAP",
+   "mean_epoch": 973.0344827586207,
+   "tc": 2375.0014002762127,
+   "tc_err": 0.00708333333333333,
+   "n_events": 29,
+   "depth_ppm": 352.77431444475775,
+   "clock_correction_min": NaN,
+   "oc_min": 10.502789497550111
+  },
+  {
+   "sector": 66,
+   "source": "QLP SAP",
+   "mean_epoch": 1933.6875,
+   "tc": 3110.962344723003,
+   "tc_err": 0.012916666666666667,
+   "n_events": 32,
+   "depth_ppm": 196.21641075146314,
+   "clock_correction_min": NaN,
+   "oc_min": -41.61831863450061
+  },
+  {
+   "sector": 93,
+   "source": "QLP SAP",
+   "mean_epoch": 2888.1724137931033,
+   "tc": 3842.2618170872106,
+   "tc_err": 0.003333333333333341,
+   "n_events": 29,
+   "depth_ppm": 457.1231673369143,
+   "clock_correction_min": NaN,
+   "oc_min": -1.328375977172982
+  },
+  {
+   "sector": 100,
+   "source": "QLP SAP",
+   "mean_epoch": 3205.9583333333335,
+   "tc": 4085.738048021666,
+   "tc_err": 0.0062500000000000056,
+   "n_events": 24,
+   "depth_ppm": 264.1402624066804,
+   "clock_correction_min": 0.9346688016032796,
+   "oc_min": 8.636946847691434
+  },
+  {
+   "sector": 101,
+   "source": "QLP SAP",
+   "mean_epoch": 3241.64,
+   "tc": 4113.071779888834,
+   "tc_err": 0.006249999999999999,
+   "n_events": 25,
+   "depth_ppm": 308.7269144070781,
+   "clock_correction_min": 3.1431135280537763,
+   "oc_min": 3.5814642181503586
+  },
+  {
+   "sector": 102,
+   "source": "QLP SAP",
+   "mean_epoch": 3275.625,
+   "tc": 4139.104839333219,
+   "tc_err": 0.0008333333333333318,
+   "n_events": 24,
+   "depth_ppm": 396.5711888470845,
+   "clock_correction_min": 1.819675724414954,
+   "oc_min": -2.6028611876245122
+  },
+  {
+   "sector": 103,
+   "source": "QLP SAP",
+   "mean_epoch": 3308.8518518518517,
+   "tc": 4164.57008625158,
+   "tc_err": 0.0016666666666666635,
+   "n_events": 27,
+   "depth_ppm": 353.35245525616835,
+   "clock_correction_min": 3.6681877076466485,
+   "oc_min": 9.986121492111124
+  }
+ ],
+ "sha256_csv": "4f14d1fe96b152eab1139e0bbcc55b9ab70095268ef67f954780284fb6dd06c1",
+ "frozen": "2026-10-21 01:57:22 UTC",
+ "excluded_sectors": [],
+ "exclude_reason": ""
+}

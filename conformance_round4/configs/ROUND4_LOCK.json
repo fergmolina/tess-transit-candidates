@@ -1,0 +1,79 @@
+{
+ "made_utc": "2026-10-21 03:42:33 UTC",
+ "note": "Round-4 lock manifest (re-check R3): the SHA-256 of every locked config and of the c0 prior each one names. scripts/validate_round4_inputs.py refuses any config, prior or clock record not bound to these values.",
+ "evaluator_sha256": "a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f",
+ "configs": {
+  "151767028_S112.json": {
+   "config_sha256": "27495b8da07491f28cf8d7a6c7d8682644abe91e74716e4accdaa3371eca0b99",
+   "tic": 151767028,
+   "sector": 112,
+   "primary": true,
+   "pred_sha256": "befcc2e8d522cd252657a5cd4a09df1d6dd6d94b773e3e9b9f6bcd6fca9ba8a5",
+   "clock_prior": "results/qlp_clock_v2/151767028.json",
+   "clock_prior_sha256": "fc86ccc7e07d22a98ebbf2b41c5fbe6cf738b2adc3ea2675339f6afca2c40ad0"
+  },
+  "151767028_S113.json": {
+   "config_sha256": "c71b4d676e30cc1f94d217a08435c1d1d43e1a8bcd311c5a1ff187713a338efa",
+   "tic": 151767028,
+   "sector": 113,
+   "primary": false,
+   "pred_sha256": "befcc2e8d522cd252657a5cd4a09df1d6dd6d94b773e3e9b9f6bcd6fca9ba8a5",
+   "clock_prior": "results/qlp_clock_v2/151767028.json",
+   "clock_prior_sha256": "fc86ccc7e07d22a98ebbf2b41c5fbe6cf738b2adc3ea2675339f6afca2c40ad0"
+  },
+  "151767028_S114.json": {
+   "config_sha256": "c8ffb5d991d2a3d4d7723cfcab2c8129d27a3919175520fe7bee4bd996820062",
+   "tic": 151767028,
+   "sector": 114,
+   "primary": false,
+   "pred_sha256": "befcc2e8d522cd252657a5cd4a09df1d6dd6d94b773e3e9b9f6bcd6fca9ba8a5",
+   "clock_prior": "results/qlp_clock_v2/151767028.json",
+   "clock_prior_sha256": "fc86ccc7e07d22a98ebbf2b41c5fbe6cf738b2adc3ea2675339f6afca2c40ad0"
+  },
+  "188664994_S117.json": {
+   "config_sha256": "82ceaf8d8a82b69ccf0b3c8cf58db6953805b3e6d7c55e92b45ab619fe2a1763",
+   "tic": 188664994,
+   "sector": 117,
+   "primary": true,
+   "pred_sha256": "0d450700afaa54f26ea80620681ebff98aaed03878ea8a7d75d3a1612a2a2dd4",
+   "clock_prior": "results/qlp_clock_v2/188664994.json",
+   "clock_prior_sha256": "4efd70b9576d4ba8731939b49ec88b6cbcca51f6cfdc79ac5beb524576a0c7e2"
+  },
+  "188664994_S118.json": {
+   "config_sha256": "9b8ee7757863801293dbd9db79c9ba1e749817bf1c0e8c4929282aa44a1fc11f",
+   "tic": 188664994,
+   "sector": 118,
+   "primary": false,
+   "pred_sha256": "0d450700afaa54f26ea80620681ebff98aaed03878ea8a7d75d3a1612a2a2dd4",
+   "clock_prior": "results/qlp_clock_v2/188664994.json",
+   "clock_prior_sha256": "4efd70b9576d4ba8731939b49ec88b6cbcca51f6cfdc79ac5beb524576a0c7e2"
+  },
+  "188664994_S119.json": {
+   "config_sha256": "7b2afa81be6fb0afe031fb34a1cb4626369170c1e4f31535c8d5943fdcbdfa95",
+   "tic": 188664994,
+   "sector": 119,
+   "primary": false,
+   "pred_sha256": "0d450700afaa54f26ea80620681ebff98aaed03878ea8a7d75d3a1612a2a2dd4",
+   "clock_prior": "results/qlp_clock_v2/188664994.json",
+   "clock_prior_sha256": "4efd70b9576d4ba8731939b49ec88b6cbcca51f6cfdc79ac5beb524576a0c7e2"
+  },
+  "343298093_S113.json": {
+   "config_sha256": "43eba5e3f6c4e59b3b31431cd92c31c5a035e2d4dd5021d2d1c9ac14c4e3ca0e",
+   "tic": 343298093,
+   "sector": 113,
+   "primary": true,
+   "pred_sha256": "4f14d1fe96b152eab1139e0bbcc55b9ab70095268ef67f954780284fb6dd06c1",
+   "clock_prior": "results/qlp_clock_v2/343298093.json",
+   "clock_prior_sha256": "c47666dd8c957d5f5fb231c330b4881ad118aeea7192d4c1929c9a047f2a18af"
+  },
+  "343298093_S114.json": {
+   "config_sha256": "1bf0d2a756600f706d984e3236a26ab4959a83d37b7bdb9df14058df25b15d26",
+   "tic": 343298093,
+   "sector": 114,
+   "primary": false,
+   "pred_sha256": "4f14d1fe96b152eab1139e0bbcc55b9ab70095268ef67f954780284fb6dd06c1",
+   "clock_prior": "results/qlp_clock_v2/343298093.json",
+   "clock_prior_sha256": "c47666dd8c957d5f5fb231c330b4881ad118aeea7192d4c1929c9a047f2a18af"
+  }
+ }
+}

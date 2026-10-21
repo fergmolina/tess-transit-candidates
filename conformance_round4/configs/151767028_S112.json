@@ -1,0 +1,31 @@
+{
+ "tic": 151767028,
+ "sector": 112,
+ "primary": true,
+ "test_of_record": "YES - primary sector of v2 (predicted_transits_2026_2027_v2.csv)",
+ "primary_rule": "The primary sector is the test of record. It stays the test of record whatever its result, including INSUFFICIENT, CLOCK_UNVERIFIED or INVALID_INPUT; it is never replaced by a later sector. Later listed sectors are scored separately with their own configs and reported as further tests, never pooled with the primary.",
+ "product": "QLP",
+ "flux_col": "SAP_FLUX",
+ "pred_csv": "/Users/fernando/Desktop/NASA/results/vet_allsky/151767028/predicted_transits_2026_2027_v2.csv",
+ "pred_sha256": "befcc2e8d522cd252657a5cd4a09df1d6dd6d94b773e3e9b9f6bcd6fca9ba8a5",
+ "ref_depth_ppm": 540.0,
+ "ref_dur_h": 1.0,
+ "reference_source": "PREREGISTRATION_v2.md reference-values line (frozen text)",
+ "timing_rule": "max(3 mean sigma_min, 30 min) (CLARIFICATION_TIMING_RULE_2026-10-20.md); min(3 sigma, 30 min) reading also reported",
+ "evaluator": "scripts/prereg_conformance.py (conformance-v2.1 rc4, general rules); frozen scripts/prereg_test.py literal outputs reported as secondary readouts",
+ "evaluator_sha256": "a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f",
+ "clock_prior": "results/qlp_clock_v2/151767028.json",
+ "clock_prior_sha256": "fc86ccc7e07d22a98ebbf2b41c5fbe6cf738b2adc3ea2675339f6afca2c40ad0",
+ "clock_note": "qlp_clock_test_sector.py reads TIME/TIMECORR of a TESScut cutout of the test sector (run with --declared-test only when this test is run); no TESScut flux is used or scored",
+ "frozen_evaluator_commands": [
+  "python -I scripts/prereg_test.py --lc <QLP S112 HLSP FITS> --flux-col SAP_FLUX --pred results/vet_allsky/151767028/predicted_transits_2026_2027_v2.csv --depth-ppm 540.0 --dur-h 1.0 --sector 112",
+  "python -I scripts/prereg_test.py --lc <QLP S112 HLSP FITS> --flux-col DET_FLUX --pred results/vet_allsky/151767028/predicted_transits_2026_2027_v2.csv --depth-ppm 540.0 --dur-h 1.0 --sector 112"
+ ],
+ "release_of_record": "v01",
+ "strict_epochs": null,
+ "object_specific_clauses": null,
+ "edge_rule": "drop 1.5 d after data start / resume (gap > 0.5 d) and 0.5 d before any gap > 0.1 d or data end (pooled rule; DECISIONS 76, 82, 86)",
+ "data_status": "future sector: not observed when the predictions were frozen (2026-10-21 01:57:12 UTC) nor when this config was locked",
+ "calibration": "none object-specific; the conformance false-recovery calibration was made on the S106 objects only",
+ "locked_utc": "2026-10-21 02:54:37 UTC"
+}

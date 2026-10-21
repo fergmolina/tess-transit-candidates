@@ -1,3 +1,10 @@
+> **Dated correction 2026-10-21.** The verdict below for TIC 80387959 ("no human-reported candidate anywhere"; "appears in no catalog,
+> paper, repository or deposit") is wrong. The signal (P = 4.1922173881 d) was previously reported in the first-stage RAVEN candidate
+> catalog of Lafarga et al. (2026, MNRAS, doi:10.1093/mnras/stag512); it is absent from their vetted and validated subsets. Our work is an
+> independent recovery; we do not claim first detection. This sweep did not read compressed tables or the RAVEN online material. Other
+> earlier machine detections found later (TIC 249813122 and five round-3 objects) are listed in
+> prior_search/ERRATUM_PRIOR_DETECTIONS_2026-10-21.md. The text below is kept as originally written.
+
 ## 1. Summary table (verdicts)
 
 Period matching convention: a catalogued period counts as a match if it equals P, 2P, P/2, 3P or P/3 within 1 %. "Prior detection" means any public record of a transit-like or periodic signal on the target TIC, or on any TIC/Gaia source within 60 arcsec, at a matching period, dated before this project's first public deposit (GitHub fergmolina/tess-transit-candidates, 2026-10-17 23:01 UTC; Zenodo 10.5281/zenodo.23443245, 2026-10-18). The author's own deposits (also Zenodo 23445705 and 23460915, 2026-10-18/19) were found by the Zenodo, OpenAlex, GitHub and web-search layers and are listed for completeness; they are not prior reports by others. Three classes of record were distinguished: (a) refereed literature and official catalogs (TOI/CTOI/TCE); (b) public, timestamped but non-refereed candidate lists (GitHub/Zenodo deposits by independent searchers); (c) incidental catalog rows (a star listed in a survey input table or with an unrelated variability class).

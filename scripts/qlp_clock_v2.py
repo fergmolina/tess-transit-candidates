@@ -51,6 +51,9 @@ def qlp_minus_sc(tic, s):
 def main():
     global tic
     tic = int(sys.argv[1]); eph = sorted(glob.glob(f"{ROOT}/results/vet*/{tic}/final_ephemeris_v*.json"))
+    # 2026-10-21 (round 4): optional argv[2] = explicit ephemeris JSON, e.g. a prereg_v2.py dry run (_dryrun/final_ephemeris_v2.json) for a
+    # first freeze; only its uncorrected per-sector times are used (interpolation point for the QLP - spacecraft offset and the LTT)
+    if len(sys.argv) > 2: eph = [sys.argv[2]]
     if tic == 89247735: eph = [f"{ROOT}/results/vet_qlp/89247735/final_ephemeris_v2.json"]   # the raw (uncorrected) QLP retimings
     eph = eph[-1]; d = json.load(open(eph)); rows = d.get("sector_times") or d["transit_times"]
     rep = json.load(open(glob.glob(f"{ROOT}/results/vet*/{tic}/report.json")[0])); ra, dec = rep["meta"]["ra"], rep["meta"]["dec"]

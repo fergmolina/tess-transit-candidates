@@ -1,3 +1,10 @@
+> **Dated correction 2026-10-21.** The verdict below for TIC 80387959 ("no human-reported candidate anywhere"; "appears in no catalog,
+> paper, repository or deposit") is wrong. The signal (P = 4.1922173881 d) was previously reported in the first-stage RAVEN candidate
+> catalog of Lafarga et al. (2026, MNRAS, doi:10.1093/mnras/stag512); it is absent from their vetted and validated subsets. Our work is an
+> independent recovery; we do not claim first detection. This sweep did not read compressed tables or the RAVEN online material. Other
+> earlier machine detections found later (TIC 249813122 and five round-3 objects) are listed in
+> prior_search/ERRATUM_PRIOR_DETECTIONS_2026-10-21.md. The text below is kept as originally written.
+
 # Prior-detection sweep for five TESS transit signals
 
 > **Correction 2026-10-20 (v1.12).** One object in this sweep was deliberately withheld. From v1.4 to v1.11 the rows about it in this
