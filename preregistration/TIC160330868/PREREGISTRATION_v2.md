@@ -21,3 +21,6 @@ Outcomes defined in advance (QLP or SPOC light curve of the test sector, or a TE
 
 
 **Erratum 2026-10-20 (data availability):** the status "data not public at freeze" above is incorrect. This sector had already been observed and public data products existed at the freeze (product-specific; target QLP light curves were not yet released). The authors attest that the target-sector photometry was not examined before the freeze. Read the status as "sector already observed; public data existed; authors attest target-sector photometry not examined before freeze". See ERRATUM_S106_DATA_AVAILABILITY_2026-10-20.md. Prediction CSV bytes and hashes are unchanged.
+
+---
+**Dated note 2026-10-23 (v1.16).** The original ON_TARGET label used only finite rounded offsets. The corrected screen is AMBIGUOUS_INCOMPLETE because sector S98 supplied no finite offset. The remaining finite offsets are S87: 0.1429 px. This is not a calibrated host assignment or neighbour exclusion. Frozen predictions and scoring rules are unchanged. See corrections/CORRECTION_TRICERATOPS_PIXEL_2026-10-22.md.

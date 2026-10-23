@@ -66,3 +66,6 @@ A refusal at any stage is reported as the result for that sector; a refused prim
 Addendum 2026-10-21 (after results/REVIEW_round4_recheck2.md). At the final stage the validator also requires that the evaluator output
 was scored with the SAME clock record (its clock_record SHA-256 equals that of the clock file), and every hash must be present and
 well-formed. An output without clock provenance counts only as a pre-clock outcome (INVALID_INPUT, INSUFFICIENT or CLOCK_UNVERIFIED).
+
+---
+**Dated note 2026-10-23 (v1.16).** The TRICERATOPS values quoted above (single screening run, scripts/triceratops_qlp.py) were computed on a light-curve fold of sectors 20, 24, 40, 47, 50, 51, 52, 53, 54, 57, 60, 73, 80, 81, 84 (recorded: 80, 81, 84); the saved record listed only the aperture sectors. The values are the original saved outputs; no probability was recomputed. The original ON_TARGET label used only finite rounded offsets. The corrected screen is AMBIGUOUS_INCOMPLETE because sector S80 supplied no finite offset. The remaining finite offsets are S81: 0.4952 px; S84: 0.0964 px. This is not a calibrated host assignment or neighbour exclusion. Frozen predictions and scoring rules are unchanged. See corrections/CORRECTION_TRICERATOPS_PIXEL_2026-10-22.md.

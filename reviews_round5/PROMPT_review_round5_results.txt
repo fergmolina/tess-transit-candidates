@@ -1,0 +1,34 @@
+Independent review of round 5 of the TESS all-sky search (send ONLY after the authors report round 5 complete in logs/DECISIONS.md).
+Nothing is published. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial. Background: round 4 and its
+reviews (public_release/reviews_round4/), DECISIONS 112-131 and the round-5 items after 131.
+
+SCOPE
+1) Pool and declaration: results/allsky_round4_secondary.csv (104 signals, next sector S121-S134) and DECISIONS 131, written before any
+   round-5 processing. Check the declaration precedes every round-5 output (file times, log order) and was followed.
+2) Prior-report check: scripts/prior_match.py on the corpora listed in DECISIONS 131 (refreshed 2026-10-21 under
+   results/prior_search_round5/; ExoFOP was down for maintenance, so the NASA Exoplanet Archive TOI table and the 2026-10-20 ExoFOP CTOI
+   snapshot were used - judge that substitution), plus the RAVEN primary tables and the folder-name check. Output
+   results/prior_match_round5.csv (+ _text, _unresolved). Re-run it, or your own check, for every survivor. Are credits complete and
+   correctly worded? Known self-reported miss (DECISIONS 136): DECISIONS 134 credited 240488148 only to eumemic/ahrazzle, although
+   row 1 of prior_match_round5.csv for that TIC is a dedicated report (github advaitpaliwal/TIC240488148, 2026-10-09, RNAAS note in
+   revision, public ephemeris to 2027-12-31). Check that the classification of every period match by source type was otherwise
+   complete, and that the round-5 refresh (8 repositories) did not drop other repositories already known to match.
+3) Pixel test (results/allsky_round5_pixel.csv), vetting (results/vet_allsky/<TIC>/report.json), triage (round-3 thresholds; path-only
+   script copy - verify by diff) and the per-sector data-quality check; TRICERATOPS for survivors. Reproduce the classifications.
+4) If frozen: each registration, CSV/JSON hash, dry-run reproduction, clock corrections, configs, lock and validator, amendments,
+   scoring statement and primary sector, exactly as you checked round 4. Note that dated TESS windows exist only through S121.
+5) Anything in round 5 that repeats a round-4 defect (compressed tables, neighbouring-row matches, truncated horizons, missing --ground,
+   unbound clock records, priority overstatement).
+6) Verdict: include in the next release / include after listed fixes / do not include.
+
+RULES
+- Edit nothing except your report. Dry runs of prereg_v2.py (without --freeze) write only to _dryrun/ and are allowed.
+- Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any protected test-sector data: TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796,
+  115692561, 151767028, 343298093, 188664994, 162304222, 53825235, 3367979 (Sector 106 or later); TIC 120517801, 80387959 (Sector 111 or
+  later); and any round-5 frozen star (its test sectors).
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round5_results.md: findings ranked by severity with file:line evidence and exact fixes, a table per frozen object,
+and the verdict. Print only the report path and a one-line verdict.

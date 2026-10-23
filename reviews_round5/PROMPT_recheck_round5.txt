@@ -1,0 +1,32 @@
+Re-check of the round-5 fixes (your report: results/REVIEW_round5_results.md, "Include after listed fixes"). Nothing is published or
+frozen. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial.
+
+CONTEXT: the author closed round 5 with NO freeze (DECISIONS 137). Our response and fixes: DECISIONS 136-138.
+
+CHECK
+1) R5-1, R5-3, R5-4, R5-7, R5-9: are the corrections in DECISIONS 137 complete and correctly worded (credit to eumemic/ahrazzle,
+   Paliwal and moosesteve21; withdrawn 13450993 FPP inference; null-margin caveat; chronology; refined periods; TLS)?
+2) R5-2, widened by us to all rounds: results/triceratops_qlp_sector_audit_20261022.json says 8 of 15 runs with
+   scripts/triceratops_qlp.py folded sectors other than those recorded. Reproduce the audit (file mtimes vs run time, 1000-point cut),
+   confirm no run used a sector >= 106, and check that the inventory of affected records is complete (rounds 3-4 and earlier
+   published values). Review scripts/triceratops_qlp_v2.py and scripts/test_triceratops_qlp_v2.py (guard before any file/TESScut access,
+   exact-path files, header check, vet.py edge rule, manifest). Do NOT run its TRICERATOPS part.
+3) R5-5, widened: scripts/pixel_collect_v2.py and results/*_pixel_v2.csv (rounds 2-5). Check the rule (non-finite or failed sector
+   -> not ON_TARGET), the log parsing of failed sectors, full-precision offsets, and the list of frozen objects affected (91617711,
+   253931796, 160330868, 188664994).
+4) R5-8: scripts/prior_match.py "tid" and the new fixture in scripts/test_prior_match.py (it must fail on the old matcher).
+5) results/CORRECTION_TRICERATOPS_PIXEL_2026-10-22_DRAFT.md: accurate, complete and suitable for the next release?
+6) Anything else in rounds 1-4 that the same two defects (unrecorded photometry sectors, ignored NaN/failed pixel sectors) could have
+   changed in a published claim.
+7) Verdict: fixes sufficient / sufficient after listed changes / not sufficient.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any protected test-sector data: TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796,
+  115692561, 151767028, 343298093, 188664994, 162304222, 53825235, 3367979 (Sector 106 or later); TIC 120517801, 80387959 (Sector 111 or
+  later). No new TESS downloads are needed.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_round5_recheck.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print only
+the report path and a one-line verdict.

@@ -1,0 +1,7 @@
+PASS --sectors required
+PASS --out directory created and joined
+PASS header refusal: wrong TICID | 0058-0000000013450993_tess_v01_llc.fits: TICID 999 SECTOR 58
+PASS header refusal: wrong SECTOR | 0000000013450993_tess_v01_llc.fits: TICID 13450993 SECTOR 59
+PASS matching synthetic header accepted
+PASS missing exact path refused (no globbing)
+25 pass, 0 fail

@@ -16,7 +16,8 @@ for r in ROOTS:
         if "records_index.json" in fn:
             for k, v in json.load(open(os.path.join(dp, "records_index.json"))).items():
                 if any("Molina, Fernando" in c for c in v.get("creators", [])): OWN.add(str(k).split(".")[-1]); OWN.add(v.get("doi", "").split(".")[-1])
-TICC = re.compile(r"^(tic|tic_?id|ticid|tic id|tic_number|target_tic|tess_id|id_tic)$", re.I); # 2026-10-21 (re-check R2): pipeline-prefixed names (bls_per, juliet_per, tls_period, ...) included; uncertainty columns excluded
+TICC = re.compile(r"^(tic|tic_?id|ticid|tic id|tic_number|target_tic|tess_id|id_tic|tid)$", re.I);  # 2026-10-22 (round-5 review R5-8): NASA Exoplanet Archive TOI table uses "tid"
+ # 2026-10-21 (re-check R2): pipeline-prefixed names (bls_per, juliet_per, tls_period, ...) included; uncertainty columns excluded
 PERC = re.compile(r"^((bls|tls|juliet|best|fit|orb|orbital|pl_orb|pl|koi|toi|tce)_?)?(period|per|p|orbper)(_?\(?(d|day|days)\)?)?$|^period \(days\)$", re.I)
 PERX = re.compile(r"(unc|err|sig|lower|upper|_lo$|_hi$|min$|max$)", re.I)
 FLAGC = re.compile(r"(flag|fail|status|disposition|known|comment|note|tier|verdict|class|^label$|^cls$|prob)", re.I)

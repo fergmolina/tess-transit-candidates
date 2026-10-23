@@ -112,3 +112,6 @@ A refusal at any stage is reported as the result for that sector; a refused prim
 Addendum 2026-10-21 (after results/REVIEW_round4_recheck2.md). At the final stage the validator also requires that the evaluator output
 was scored with the SAME clock record (its clock_record SHA-256 equals that of the clock file), and every hash must be present and
 well-formed. An output without clock provenance counts only as a pre-clock outcome (INVALID_INPUT, INSUFFICIENT or CLOCK_UNVERIFIED).
+
+---
+**Dated note 2026-10-23 (v1.16).** The TRICERATOPS values quoted above (single screening run, scripts/triceratops_qlp.py) were computed on a light-curve fold of sectors 13, 39, 66, 93, 100, 101, 102, 103 (recorded: 101, 102, 103); the saved record listed only the aperture sectors. The values are the original saved outputs; no probability was recomputed. Frozen predictions and scoring rules are unchanged. See corrections/CORRECTION_TRICERATOPS_PIXEL_2026-10-22.md.

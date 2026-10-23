@@ -945,3 +945,452 @@
     in its summary (retrospective leave-one-year-out consistency checks; repository scope and Reproduce limits), with a "Version history"
     label; (3) README round-4 block lists the five truncated records (162304222 v2 and v3). Reviewer's judgment on DECISIONS 128(2): leave
     the already-published scratchpad paths as published. Manifest and public DECISIONS regenerated.
+130. 2026-10-21 — PUBLISHED after the assembled-release re-check (results/REVIEW_v1.15_assembled_recheck.md: yes) and the author's go,
+    in the reviewed order: (1) preprint v1.4 10.5281/zenodo.23535541 (description replaced by the reviewed text, verified identical in
+    the draft; PDF md5 f8b44ce9...) and dataset v1.2 10.5281/zenodo.23535544 (v1.1 description + reviewed note, verified; zip md5
+    fbf0fe5d...); (2) GitHub commit 9a17efc, tag and release v1.15 (no session link; release notes + the two new DOIs), archived
+    automatically as Zenodo 10.5281/zenodo.23535575; (3) dated correction notice prepended to the descriptions of preprint v1.0-v1.3
+    (23462434, 23462857, 23463582, 23512950) and dataset v1.0-v1.1 (23462438, 23512928); each grew by exactly the notice; public API
+    check confirms all eight records. A first draft attempt failed with a TLS hostname error before any request was sent (nothing
+    created); the retry succeeded. The Zenodo token used is the one from 2026-10-18, so it has not been revoked yet.
+131. 2026-10-21 — ROUND 5 declared (author: "do first 1 and then 4"), before any round-5 processing. Pool: the 104 round-4 SECONDARY
+    signals (results/allsky_round4_secondary.csv; next TESS sector S121 25, S122 18, S123 19, S124 16, S125 8, S126 2, S127 1, S128 3,
+    S132 1, S134 11), selected by the item-112 filters; none is registered, protected or in the round-4 primary pool. Procedure = round 4
+    unchanged, with the review lessons applied:
+    1. Prior-report check FIRST with scripts/prior_match.py (row-aware, CSV.gz/zip, P/2-P-2P within 0.1 %), on a corpus refreshed
+       today (eumemic, ahrazzle, brahle and the other round-4 repositories; ExoFOP TOI/CTOI exports) plus the primary RAVEN tables
+       (Zenodo 19661443) and the earlier corpora; plus the TIC<id>_P<period> folder-name check. Matches are credited, not dropped.
+    2. Pixel test (ffi_pixel_test.py via pixel_runner2.sh; in-sample sectors only; guard refuses S106+ and the protected TICs);
+       classification by pixel_collect.py (ON <= 0.5 px all sectors, OFF >= 0.9 px).
+    3. vet.py (v1.13) on ON_TARGET; triage with the round-3 thresholds (a path-only copy, as triage_round4.py); data-quality check of every
+       sector used (round-4 lesson: 188664994 S26).
+    4. TRICERATOPS (single run, screening only) on survivors; the author sets the cap before freezing.
+    5. Freeze with prereg_v2.py (current version), configs + lock + validator as conformance_round4, before each primary sector is
+       observed (S121 starts about 2027-08-23; dated windows exist only to S121, so later sectors are listed when dates are published).
+    6. External review of the results before any release (prompt prepared at the end).
+132. 2026-10-21 — Round 5 started: corpus refreshed (results/prior_search_round5/data/20261021/: 8 GitHub repositories, shallow clones;
+    ExoFOP was down for maintenance - its export returned an HTML maintenance page, deleted - so the NASA Exoplanet Archive TOI table
+    (8,151 rows) is used, with the 2026-10-20 ExoFOP CTOI snapshot); prior_match.py launched on the 104 (results/prior_match_round5.csv);
+    pixel tests launched (two queues, results/allsky_round5_pixel_q{1,2}.csv).
+    Round 6 (author's option 4, "fainter M dwarfs, Tmag 11.5-13"): a documentation-only scoping check found that range already covered by
+    eumemic/exoplanets (4.04 million FGKM dwarfs, T < 13.5, Sectors 1-104, raw detections public) and RAVEN (2.2 million stars,
+    Sectors 1-55, P 0.5-16 d). Draft design results/DESIGN_round6_faint_M_dwarfs_DRAFT.md proposes 13.5 < T <= 16 M dwarfs within 100 pc
+    with TESS-SPOC/TGLC light curves; it needs the author's approval and a design review (results/PROMPT_review_round6_design.txt) before
+    any download. Round-5 results review prompt prepared: results/PROMPT_review_round5_results.txt (to send when round 5 is complete).
+133. 2026-10-21 — Round 5 prior check and pixel tests done. prior_match.py (results/prior_match_round5.csv; 5,168 TIC records, 2,511 period
+    matches across mirrored corpora): 10 of the 104 have a period-matched record somewhere (240488148, 240782253, 240910173, 252636793,
+    346079633, 372186355, 372343190, 427279177, 446131714, 743411589); each will be classified by source type (candidate list, raw search
+    output, classifier table, TCE/vetting table, RAVEN) only for survivors. Pixel tests (pixel_collect.py, unchanged thresholds): 104 ->
+    ON_TARGET 21, OFF_TARGET 54, AMBIGUOUS 19, no 200-s sector 8, no data 2 (results/allsky_round5_pixel.csv). No shared-period pair among
+    the 21. Eight of the 21 have P 12.4-18.4 d and depths 1.3-2.2 ppt, a pattern typical of orbit-period systematics; triage decides.
+    vet.py launched on the 21 (results/allsky_round5_vetlist.csv; logs/round5_vet.log).
+134. 2026-10-22 — Round 5 vetting and triage. vet.py on the 21 (logs/round5_vet.log, all exit 0). scripts/triage_round5.py = triage_round3.py
+    with round-5 paths only (diff checked): PASS 2, WEAK 1, FAIL 18 (results/allsky_round5_triage.csv; main fail reasons: inverted-null
+    margin 12, SNR 10, density 9). Survivors:
+    - 240488148: P 1.512529 d, ~440 ppm SAP, SNR 13.3, 1.4 R_E, 3/3 years; next S121. Independent rediscovery: eumemic/ahrazzle tier-B
+      candidate (results_public/candidates_allsky.csv, P 1.512519 d; their classifier label "real", class "clean"). S82 somewhat noisier
+      (6-h range 1.17 % vs ~0.35 %), not corrupt; kept.
+    - 372343190: P 1.202779 d, ~250 ppm, SNR 8.8 (WEAK), density ratio 0.63, 3/4 years; next S122. Only earlier record: Nigraha's raw
+      per-sector BLS table (period_info-sec17.csv, P = 0.60108 d = P/2) - a raw machine output, not a candidate report. Sectors uniform.
+    - 13450993: P 14.591174 d, ~2.5-2.8 ppt, 4.2 R_E, SNR 9.4; next S124; no earlier record. WEAK EVIDENCE despite PASS: one transit per
+      sector (S18, S58, S85, S86); the 2019 event has 4 in-transit points (30-min cadence), 2022 is not detected (SNR 1.1), 2024 carries
+      the signal; odd/even depths 892 vs 2851 ppm (passes only through large errors). The period is poorly constrained (aliases possible).
+    TRICERATOPS running (scripts/tri_runner_round5.sh).
+135. 2026-10-22 — Round 5 TRICERATOPS (single run each, screening only, last 3 local in-sample sectors): 240488148 FPP 0.101 / NFPP 0.037
+    (S56, S82, S83); 372343190 FPP 0.678 / NFPP 0.656 (S84-S86; folded depth used 151 ppm); 13450993 FPP 0.611 / NFPP 0.478 (S58, S85, S86;
+    folded depth used 105 ppm, far below the 2.5-2.8 ppt event depth - the fold over single-event sectors dilutes it). 372343190 and
+    13450993 exceed FPP 0.5 (a nearby or eclipsing-binary origin is more likely than a planet). Only 240488148 remains plausible; it is an
+    independent rediscovery. Awaiting the author's cap.
+136. 2026-10-22 — CORRECTION to item 134 and freeze PAUSED. The author answered "Freeze" (TIC 240488148). Before running prereg_v2.py,
+    the prior-match rows for 240488148 were re-read. Row 1 of results/prior_match_round5.csv (PERIOD_MATCH, rel. diff 7e-6) is
+    results/prior_search/data/github_sweep/advaitpaliwal__TIC240488148/data/search/autovet.csv: a repository dedicated to this
+    star (in our corpus since the 2026-10-18 sweep), which item 134 and our report to the author left out. Item 134 credited only the
+    eumemic/ahrazzle tier-B list.
+    The repository (github.com/advaitpaliwal/TIC240488148; read-only GitHub API check 2026-10-22, last commit b919f1b 2026-10-12) is a
+    human-vetted candidate report:
+    - discovered 2026-10-08, released 2026-10-09 (CITATION.cff v1.0);
+    - P 1.5125149 +- 0.0000029 d, T0 BJD_TDB 2460393.34348, 411 ppm, 1.41 h, 1.37 R_E;
+    - six TESS-SPOC sectors plus QLP, six-sector difference-image localisation;
+    - TRICERATOPS + MOLUSC FPP 0.020-0.024;
+    - an RNAAS research note in editorial revision (revision1/response.txt);
+    - a public ephemeris through 2027-12-31 at about 4-5 min, so it covers S121;
+    - a prepared but not uploaded ExoFOP CTOI row.
+    It is not in the 2026-10-20 ExoFOP CTOI/TOI snapshots or the 2026-10-21 NASA TOI table. Our P (1.512518 d) is the same signal.
+    The matcher found the record; the source-type classification promised in item 133 was not done row by row. Same class of error as
+    the 343298093 and 80387959 misses. The round-5 refresh (8 repositories) did not re-clone this repository; the older copy was still
+    scanned. Nothing was frozen, downloaded or published. The question goes back to the author: freeze as a replication test of our
+    pipeline's ephemeris, crediting Paliwal as discoverer, or close round 5 with no freeze. Round-5 review prompt updated to state the miss.
+137. 2026-10-22 — Round-5 results review (results/REVIEW_round5_results.md): "Include after listed fixes; no freeze or release approval".
+    Findings re-checked by us before acting. R5-1 confirmed:
+    - moosesteve21/PlanetCandidates/TIC240488148/README.md reports the same star, found 2026-10-12, P 1.5125120 d;
+    - it was already in our corpus (prior_search_round2 sweep).
+    R5-2 confirmed and wider than reported. scripts/triceratops_qlp.py (public since v1.12) folds every cached QLP file of the TIC, but
+    records only the three aperture sectors. Audit: results/triceratops_qlp_sector_audit_20261022.json. It lists the files present at run
+    time that passed the 1000-point cut. Photometry != recorded list for 8 of the 15 runs:
+    - 151767028 (+S36, S63)
+    - 160330868 (+S32)
+    - 183374279 (+S2, S29, S69)
+    - 188664994 (+12 sectors S20-S73; S26 not among them)
+    - 196514928 (+S34)
+    - 343298093 (+S13, S39, S66, S93, S100)
+    - 372343190 (+S52, S57, S58)
+    - 61310956 (photometry S45, S46, S72; S22 aperture only)
+    No run used a sector >= 106. Several of these values appear in published records (rounds 3-4, v1.15).
+    R5-3, R5-4, R5-9 confirmed from report.json (13450993: global real-top P 16.867 d, not the 14.591 d candidate).
+    R5-5 confirmed and wider. Re-classification of rounds 2-5 with scripts/pixel_collect_v2.py (outputs results/*_pixel_v2.csv; v1
+    tables unchanged): 40 ON_TARGET objects become AMBIGUOUS_INCOMPLETE (a NaN or failed sector). 321980862 (round 3, 0.5028 px) and
+    389029596 (round 5, 0.8970 px) change class through rounding. Four FROZEN objects were ON_TARGET with one non-finite sector: 91617711
+    (S71), 253931796 (S68), 160330868 (S98), 188664994 (S80). Their on-target label rests on 1-2 finite sectors. Their frozen predictions
+    are unaffected; the published wording needs a qualification.
+    Author's decisions (2026-10-22): (1) ROUND 5 CLOSED WITH NO FREEZE. 240488148 is a recovery of a previously reported candidate
+    (eumemic/ahrazzle P 1.512519 d; Advait Paliwal P 1.5125149 d, report 2026-10-09; moosesteve21 P 1.5125120 d, found 2026-10-12;
+    our refined P 1.5125181513 d). We claim no first discovery or validation. 372343190 and 13450993 stay unregistered (weak / not
+    resolved). (2) Go for the fixes (item 138).
+    Corrections to item 134/135, adopting the review's wording:
+    - periods are the refined 1.512518 d / 1.202785 d (1.512529 was the initial search value);
+    - Nigraha's record is a raw per-sector TLS search output, not BLS;
+    - 13450993 has sparse usable events and NO retained in-transit S85 points (not "one transit per sector");
+    - its triage PASS uses a global null margin from another period (16.867 d), not a candidate-period significance; the candidate is
+      deferred as weak, with possible aliases;
+    - the 13450993 TRICERATOPS run does not represent the vetted 2.5-2.8 ppt events; the "nearby/binary more likely" inference is
+      WITHDRAWN. No replacement FPP is quoted. The 372343190 run used six photometry sectors, not three.
+    - ON_TARGET means "passes the finite-offset pixel screen", not neighbour exclusion.
+    - Chronology: prior matching and pixel screening ran concurrently (03:14:57 / 03:15:03 UTC). The prior results existed before
+      vetting and survivor selection. This differs from item 131's "prior check FIRST". The decision log alone does not authenticate when
+      item 131 was written.
+138. 2026-10-22 — Fixes (local; nothing published, nothing frozen, no new data downloaded):
+    - scripts/triceratops_qlp_v2.py: explicit --sectors / --phot-sectors; holdout guard (sector <= 105 and no registered test target)
+      before any file or TESScut access; exact-path FITS with a TICID/SECTOR header check; vet.py edge rule; inputs + SHA-256 + per-sector
+      in-transit counts recorded. The v1 script and its outputs are kept unchanged for provenance. Tests: scripts/test_triceratops_qlp_v2.py
+      20/20 (logs/test_triceratops_qlp_v2_20261022.log). Not run: the review asks for no replacement FPP values.
+    - scripts/pixel_collect_v2.py:
+      - full-precision offsets from the per-sector JSON;
+      - attempted / finite / non-finite / failed sector counts;
+      - an object with a non-finite or failed sector cannot be ON_TARGET.
+      Applied to rounds 2-5 (item 137).
+    - scripts/prior_match.py recognises "tid" (NASA Exoplanet Archive TOI schema). The regression test gained a NASA-schema fixture; it
+      fails on the previous matcher and passes now (logs/test_prior_match_20261022.log). Direct join: no NASA TOI row for any of the 104.
+    - Not done: a candidate-period null statistic for 13450993 (optional; candidate deferred instead).
+    - Draft correction for the next release: results/CORRECTION_TRICERATOPS_PIXEL_2026-10-22_DRAFT.md.
+139. 2026-10-22 — Round-6 design revised after the design review (results/REVIEW_round6_design.md, R6-1 to R6-10; author's go):
+    results/DESIGN_round6_v2.md (SHA-256 417afa6c3413e4fd...; v1 draft kept unchanged).
+    - The reviewer's replacement title, premise, S0-authorization and holdout texts are adopted verbatim.
+    - Both samples (A: 11.5<T<=13.0, B: 13.5<T<=16.0) are carried through S0, with field-validity rules.
+    - Six S0 deliverables, with metadata-only guards.
+    - Proposed holdout default: S1-S105 for design/search; every sector >= S106 is test for the whole eligible pool, across all products.
+    - Later gates written for detrending, search grid, radius-dependent depth scope (0.8-6 R_E; no fixed 50 ppt), calibration
+      (n >= 2995, N*q), faint-star pixel vetting, TRICERATOPS and a product-specific freeze/scoring path.
+    - Round-5 lessons added (row-by-row prior adjudication).
+    Re-check prompt: results/PROMPT_recheck_round6_design.txt. No round-6 query or download yet; S0 starts only after the re-check and
+    the author's approval.
+140. 2026-10-22 — Round-5 re-check (results/REVIEW_round5_recheck.md): "Sufficient after listed changes". Applied (local only):
+    - C2: CORRECTION to item 137. Forty rows change class: 38 ON_TARGET rows become AMBIGUOUS_INCOMPLETE; TIC 321980862 goes from
+      ON_TARGET to AMBIGUOUS; TIC 389029596 goes from OFF_TARGET to AMBIGUOUS. Item 137 said "40 ON_TARGET objects".
+    - C1/C1b/C4: scripts/triceratops_qlp_v2.py.
+      - The docstring no longer claims vet.py event selection; it states the shared gap-edge mask, the separate preparation and the
+        status UNVALIDATED.
+      - The manifest adds the ephemeris values, the report.json hash, aperture sectors requested/used/failed, and cutout paths, hashes
+        and pixels. The cutout SECTOR and target position are checked before use.
+      - --out is a created Path directory.
+      - Tests: 25/25 (logs/test_triceratops_qlp_v2_20261022b.log); new cases are output join, TICID/SECTOR header refusal on synthetic
+        FITS, and no globbing.
+    - C3/C5: draft correction reworded. FPP values are the original saved single-run outputs; the old pixel screen used rounded
+      offsets. Claimed discovery dates are separated from the verified public dates. A placement list for the dated notes was added.
+    Round 5 is closed; the correction goes into the next release (author's go).
+141. 2026-10-22 — Round-6 design re-check (results/REVIEW_round6_design_recheck.md): "S0 may start, after the author's approval".
+    Author approved S0 ONLY (metadata). Conditions: lock the selection definitions and pass the wrapper's synthetic refusal tests before
+    the first query. No photometry retrieval, pilot or search is approved. Reviewer refinements adopted for S0:
+    - fail-closed allowlist wrapper with redirect checks;
+    - hashed selection specification (numerical absolute-magnitude band, missing-uncertainty and tie policies, alias-resolving
+      exclusion);
+    - folder-named-after-TIC wording;
+    - S106+ held out during S0;
+    - scope-table wording.
+142. 2026-10-22 15:11 UTC — Round-6 S0 preparation.
+    Pre-S0 orientation, before any S0 query: MAST documentation pages (archive.stsci.edu/hlsp/tess-spoc, /hlsp/tglc) and HTTP HEAD
+    size checks on manifests. No catalogue, metadata or photometry query.
+    Archive limits found:
+    - TESS-SPOC bulk target lists and dl-lc.sh scripts exist for S1-S85 only (S86-S105 return 404); later sectors must come from MAST
+      CAOM metadata.
+    - Example sizes: TESS-SPOC s0050 target list 8.0 MB, dl-lc.sh 47.9 MB; TGLC s0050 target list 99.5 MB, llc.sh 457 MB.
+    - TGLC covers S1-S55; its documentation states 1.3-12.7 million light curves per sector.
+    Design text v2.1 (results/DESIGN_round6_v2.1.md, SHA-256 101c169a...) adopts the re-check wording.
+143. 2026-10-22 15:12 UTC — S0 selection specification LOCKED before any S0 query:
+    results/round6_s0/SELECTION_SPEC_v1.0.json (SHA-256 12fb5bf7f9e747c5e5eafc858673f5e74d5c270803ad219323bcd0d18191df26).
+    - Distance: Gaia DR3, parallax >= 10 mas and parallax_over_error >= 5, no zero-point or extinction correction.
+    - Cuts: Teff <= 3900 K, R <= 0.6 R_sun, TIC lumclass DWARF, empty TIC disposition.
+    - Absolute-magnitude band: Pecaut & Mamajek dwarf locus (M_G vs BP-RP), -1.5 / +1.0 mag.
+    - Missing-value and missing-uncertainty rules, deterministic TIC-DR3 tie rule.
+    - Identity exclusion of the 42 registered/protected TICs by TIC id, DR2 id, DR3 id and 2" position.
+    - Holdout masking of report-table outcome columns: rows with sectors >= 106 or dated on/after 2026-07-11.
+    - Availability classes and sources.
+    Any change requires a dated item before the selection query.
+144. 2026-10-22 15:14 UTC — S0 wrapper scripts/s0_net.py (SHA-256 446511d9b8c8172f...) passes its synthetic refusal tests:
+    scripts/test_s0_net.py (SHA-256 2f5c251801182586...), 38/38, logs/test_s0_net_20261022.log. No network is used in the tests.
+    The wrapper is a fail-closed allowlist:
+    - allowed: VizieR/Gaia/NASA TAP, MAST invoke limited to Caom.Filtered and Catalogs TIC services, TESS-SPOC/TGLC target lists S1-S105
+      only, the TGLC readme, the Pecaut & Mamajek table, and the ExoFOP TOI/CTOI exports;
+    - refused: LC/FFI/TPF/cutout files, DV/TCE/plot endpoints and every byte-download manifest (dl-lc/dl-tp/dl-dv/llc);
+    - redirects are re-checked; content type and size are checked; manifest lines naming sector > 105 are dropped;
+    - holdout outcome columns are masked by substring match (one fix during testing: a prefix match missed pl_orbper; the safe side is
+      over-masking);
+    - guarded_open refuses data/ caches, FITS and the catalogs S106 manifests.
+    One test-driven code change before the first real request. The first real S0 request follows this entry.
+145. 2026-10-22 15:18 UTC — S0 wrapper change, test-driven. MAST serves the target-list CSVs as application/octet-stream,
+    which the wrapper refused (fail-closed, logged). Octet-stream is now accepted only for allowlisted .csv/.txt manifests, and only
+    after sniffing the first 4 kB: plain text required, no FITS header, no NUL bytes. Four new tests (FITS bytes, binary bytes,
+    octet-stream on TAP, plain-text manifest); 42/42 pass (logs/test_s0_net_20261022b.log).
+    Additions to the availability inventory (selection unchanged): CAOM also returns QLP, SPOC 2-min/20-s and TGLC (S1-S11) light-curve
+    records. They are kept for the product-hierarchy deliverable.
+146. 2026-10-22 15:26 UTC — S0 execution change, dated before the selection query (no cut changed).
+    - TIC source: the TIC v8.2 copy at MAST (Mast.Catalogs.Filtered.Tic, the TIC's home archive) replaces the VizieR copy IV/39/tic82.
+      VizieR timed out even on a 1-degree band (300 s) and on COUNT(*). Same catalogue and the same prefilter (11.5 < Tmag <= 16.0,
+      plx >= 7). MAST count: 451,657 rows. It is fetched in declination bands; the column mapping to the spec's field names is
+      recorded in the output.
+    - Gaia DR3: the single anonymous async job was aborted at the 60-s anonymous execution limit. The same query is run as 200
+      source_id slices (HEALPix-level-12 ranges), sync, about 10 s each, and concatenated; slice completeness is checked.
+    The registered/protected identities (42 TIC rows; DR3 ids via dr2_neighbourhood) were already fetched from VizieR (identical
+    catalogue) and are re-fetched from MAST for consistency.
+147. 2026-10-22 15:29 UTC — S0 wrapper fixes, test-driven; 45/45 tests pass (logs/test_s0_net_20261022c.log).
+    (1) guarded_open refused the published-table corpus results/prior_search*/data/ because the path contains "/data/". The refusal now
+        applies to the top-level data/ photometry caches only. Tests added: corpus readable; top-level data/ non-FITS file refused.
+    (2) The 2026-10-20 ExoFOP CTOI snapshot has no sector or date column. Its outcome columns are masked for ALL rows (membership
+        only), via mask_holdout(kw_all=True), with a test.
+    ExoFOP returned HTTP 503 (maintenance page) again. The fallback is the NASA Exoplanet Archive TOI table (8,151 rows; masked by
+    toi_created >= 2026-07-11) plus the CTOI snapshot (5,138 rows, fully masked). Fetched for the prior matrix: VizieR
+    J/AJ/165/265/table1 (Ment & Charbonneau 2023 targets) and J/A+A/710/A352 tables a2, a3, a4, c1 (Tschudi 2026). No public parent
+    lists were found in VizieR for NEMESIS I/II, Bryant et al. 2023 or GEMS; RAVEN publishes candidate tables only.
+148. 2026-10-22 16:26 UTC — S0 selection funnel (spec v1.0, SHA-256 12fb5bf7...). Run 2 is the result of record.
+    Implementation fixes made after run 1, both disclosed:
+    (a) Locus parser: the Pecaut & Mamajek header line starts with "#SpT"; the parser now reads the main dwarf table (62 rows).
+    (b) Order of operations: run 1 resolved TIC-to-DR3 ties BEFORE the spec's empty-disposition exclusion. A DUPLICATE/SPLIT twin
+        sharing a DR2 id then knocked out a valid TIC as an "ambiguous tie" (8,562 tie exclusions). The disposition exclusion now runs
+        first; no cut changed. Run-1 funnel kept as results/round6_s0/funnel_run1_tieorder_bug.json (A 34,482 / B 86,528).
+    Run 2 (results/round6_s0/funnel.json):
+    - inputs: Gaia DR3 506,246 sources (parallax >= 10, poe >= 5); TIC prefilter 451,653 rows; 20,186 TIC rows excluded by disposition;
+      1,979 genuine ties excluded and listed (two or more valid TICs on one DR3 source); 27 lost to a closer TIC;
+    - FINAL: sample A (11.5 < T <= 13.0) 34,547 stars; sample B (13.5 < T <= 16.0) 86,550 stars;
+    - registered/protected identity exclusion removed 0 (all 42 lie outside both magnitude ranges or failed earlier cuts).
+    Known incompleteness (to report, not fixed under spec v1.0): DR3 100-pc M-band stars with estimated T in range but no prefiltered
+    TIC row number about 5,132 (A) and 7,099 (B). In a random 300 checked against the full MAST TIC:
+    - about one third have no DR2 parallax in TIC, so the plx >= 7 prefilter dropped them;
+    - about two thirds have no TIC row under that DR2 id;
+    - 11 have a TIC Tmag just outside the range.
+    Any fix (e.g. prefilter "plx >= 7 OR plx missing") is a spec revision needing a dated decision.
+149. 2026-10-22 16:37 UTC — S0 holdout safeguard. A TIC-only run of scripts/prior_match.py over the corpus was stopped before
+    it wrote anything: that tool stores each matched record's period, and corpus tables could hold signals derived from S106+ data
+    for pool stars (the spec masks outcome fields before storage). It was replaced by scripts/s0_corpus_scan.py, which reads ONLY the
+    TIC column(s) of each table and stores (tic, file, has_period_column, n_rows), plus folder names TIC<id>. The prior-matrix
+    builder likewise reads only TIC columns from the eumemic, RAVEN, Ment, Tschudi and TOI/CTOI tables.
+    Availability runs launched: tess-point S1-S134; CAOM light-curve metadata (TESS-SPOC/QLP/SPOC/TGLC) for the 121,097 pool stars;
+    TESS-SPOC target lists S1-S85; TGLC target lists S1-S55 (about 5.5 GB of text, streamed and filtered, nothing stored but hits).
+150. 2026-10-22 17:11 UTC — Round-6 S0 COMPLETE (metadata only). Report: results/round6_s0/S0_REPORT.md (SHA-256 dab45526ab186428...).
+    Samples: A 34,547; B 86,550.
+    Availability (CAOM 303/303 chunks; TESS-SPOC target lists S1-S85; TGLC target lists S1-S55; tess-point to S134):
+    - B: 62,701 stars with LCs in >= 2 campaigns, 44,918 with TESS-SPOC in >= 2 campaigns, 59,606 with LCs in S56-S105;
+    - CAOM lists QLP LCs for 55,295 B stars (T > 13.5).
+    Prior matrix: 97.6 % of A is on eumemic's published faint-M searched-star lists (same Teff/R cuts, S1-S104); 0 % of B. RAVEN rule
+    G < 14 covers 38 B stars. NEMESIS/Bryant/GEMS overlap is rule-based only (lists not public). TOI/CTOI hosts: A 117/72, B 33/40.
+    New exposure finding: 299 pool stars (catalogs/s107_dwarf_targets.csv, our original 2026-10-17 search) have SPOC 2-min files in
+    data/lc for S106 (149 stars) and S107 (all 299). They were listed by filename only. They are to be treated as retrospective and
+    excluded from any prospective claim.
+    Request-log audit: 969 allowed requests (TAP 397, MAST 413, manifests 153, docs/tables 6); 0 allowed requests matching a product
+    pattern; refusals are test-suite cases plus the logged real ones (octet-stream; corpus path).
+    Proposals for the author (none authorized):
+    - drop A as a discovery sample;
+    - B toward a bounded P1 pilot, with TESS-SPOC first, QLP as a cross-check and TGLC S1-S55 as an independent extraction;
+    - S1-S105 design/search and S106+ test for the whole pool;
+    - optional spec v1.1 to recover about 7,100 B stars lost to the TIC parallax prefilter.
+    Review prompt: results/PROMPT_review_round6_S0.txt.
+151. 2026-10-22 17:14 UTC — S0 report revised (supersedes the hash in item 150). results/round6_s0/S0_REPORT.md is now
+    SHA-256 cf4f6720d025f1fa...
+    (1) New table, as the re-check required: status of S106+ as of 2026-10-22 (scripts/s0_holdout_status.py,
+        results/round6_s0/holdout_status.{csv,json}). Classes: (d) previously examined, (a) observed with a public LC, (b) observed
+        with no public LC yet, (c) in progress or future.
+        - B: (a) 2,406 stars, (b) 8,345, (c) 44,789, (d) 0.
+        - A: (d) 299, (a) 1,232, (b) 3,211, (c) 17,875.
+        Special sector 1751 (3I/ATLAS) is treated as a test sector (conservative).
+    (2) The 299 previously examined stars are confirmed SEARCHED, not just downloaded: search_pipeline.py loaded every SPOC 2-min
+        sector of each S107 target (DECISIONS 3, 5). All 299 are in sample A.
+    (3) NASA TOI table re-masked on max(toi_created, rowupdate) >= 2026-07-11: 884 rows masked, 87 before. Membership is unchanged
+        (A 117, B 33). The Tschudi and Ment tables got a holdout note in their meta files: both predate S106.
+152. 2026-10-22 17:38 UTC — Round-6 S0 review (results/REVIEW_round6_S0.md): "S0 is not complete". Findings S0-1 to S0-10
+    were checked by us. S0-1 is confirmed in our files: the combined raw/gaia.csv and raw/tic.csv store Gaia DR2 ids as floats
+    (e.g. 1153598151720704.0, scientific notation). The integer cast then shifts ids by up to 256, so the joins, ties and samples of
+    run 2 are wrong. The original slice/band files keep exact ids.
+    Run 2 is preserved unchanged as results/round6_s0/superseded_run2/ (with SHA256SUMS).
+    The repair stays within S0 (metadata only; the author's S0 approval):
+    - exact-ID rebuild with a regression test;
+    - positive-allowlist holdout masking;
+    - TGLC target lists counted as produced LCs and joined by exact Gaia DR3 id;
+    - GEMS parent list attempted (Zenodo 15738847);
+    - prior-cell wording;
+    - wrapper hardening (content type, byte cap, payload logging, test tagging);
+    - reproducible prefilter-loss diagnostic;
+    - exposure ledger;
+    - chronology and decision wording.
+    Nothing beyond metadata is authorized; no P1 work until the author says so.
+153. 2026-10-22 18:22 UTC — S0 repairs after the review (item 152); all metadata only.
+    Access layer (S0-7, S0-2, S0-5): scripts/s0_net.py (SHA-256 95dd57b5d638c897...).
+    - Refuses a missing content type. Every non-JSON body must look like text (UTF-8, at least 95 % printable, no FITS/NUL).
+    - Streamed bodies have a byte cap.
+    - POST payload hash, TAP query text and MAST service/columns/filter names are logged. Synthetic tests are tagged and write to
+      logs/round6_s0_requests_tests.log.
+    - Holdout masking is a POSITIVE allowlist (explicit keep columns; every other column of a held row is blanked).
+    - The GEMS Zenodo record (15738847) is allowed, as record JSON and .csv/.txt only.
+    - Tests: 58/58 (logs/test_s0_net_20261022d.log).
+    Identifiers (S0-1): scripts/s0_selection.py parses Gaia/TIC ids exactly from text (exact_ids, read_ids). Regression test
+    scripts/test_s0_ids.py: 6/6, ids 128/256 apart. Combined raw/gaia.csv and raw/tic.csv were rebuilt from the original slice/band
+    files. Registered DR3 aliases were re-fetched, because run 2 had queried rounded DR2 ids. The 2" identity match now propagates
+    Gaia positions to epoch 2000.0.
+    Snapshots (S0-2): the NASA TOI query now requests tid, toi and dates only; the CTOI snapshot keeps TIC ID and CTOI only. Earlier
+    S0 copies, including those in superseded_run2/prior/, were stripped to these columns; their original hashes are in
+    results/round6_s0/stripped_files_original_hashes.txt (superseded_run2/SHA256SUMS regenerated). EXPOSURE_LEDGER.md records what was
+    stored before.
+154. 2026-10-22 18:22 UTC — Round-6 S0 run 3 (result of record; runs 1-2 superseded). Report: results/round6_s0/S0_REPORT.md
+    (SHA-256 ed456ce3303b6107...).
+    - Funnel (exact ids): A 35,036, B 87,208; 0 ambiguous ties; 30 lost to a closer TIC. This matches the reviewer's independent
+      reconstruction.
+    - Prefilter diagnostic (seeded, unique sources): of 300 unmatched sources, 272 have no TIC parallax and 28 a TIC Tmag outside the
+      range. Run 2's "two thirds have no TIC row" was an artifact of the rounding.
+    - Availability: TGLC manifests count as produced LCs, resolved by exact DR3 id (901 rows re-assigned to pool stars). B: 81,618
+      stars with any LC, 70,681 with >= 2 campaigns, 45,063 with TESS-SPOC in >= 2 campaigns, 60,046 with LCs in S56-S105.
+    - Prior: GEMS parent list 72.5 % of A and 74.8 % of B; eumemic faint-M lists 97.6 % of A, 0 of B. RAVEN partial screen covers
+      0 B stars.
+    - Exposure: 307 A stars previously searched (S107 for all, S106 for 153); EXPOSURE_LEDGER.md. Corpus read errors: 7, all empty
+      files.
+    - Test-sector status for B: (a) 2,408, (b) 8,451, (c) 45,107 stars.
+    Proposals unchanged in kind: drop A; draft a P1 design for B for review only. Re-check prompt:
+    results/PROMPT_recheck_round6_S0.txt.
+155. 2026-10-22 18:25 UTC — Run-3 verification and spec-text notes.
+    (1) Star-for-star check: the run-3 samples equal the reviewer's independent exact-ID samples ([local temporary path redacted]
+        sample_exact_{A,B}.csv): A 35,036 = 35,036, B 87,208 = 87,208, no star in one set and not the other.
+    (2) Request-log audit of run 3 (entries after 17:38 UTC): 465 allowed requests (MAST 313, MAST archive manifests 140, Zenodo 9,
+        Gaia 1, NASA archive 1, ExoFOP 1); 0 allowed URLs matching a product pattern. Whole log: 1,436 allowed.
+    (3) No real manifest or GEMS line was dropped by the sector filter: the 4 REFUSED_LINES entries are synthetic test cases from
+        before tagging. GEMS counts are complete.
+    (4) Spec-text divergences, recorded here; neither is a cut change.
+        - SELECTION_SPEC_v1.0 lists masked_column_patterns; the implementation now uses a stricter positive allowlist.
+        - The spec says the 2" identity match is "at epoch 2016.0"; the implementation propagates Gaia positions to 2000.0, the TIC's
+          native epoch. This is an equivalent test at a common epoch.
+    Report SHA-256 after adding the audit total: da6bafff0492957e... (supersedes the hash in item 154).
+156. 2026-10-22 21:05 UTC — S0 re-check (results/REVIEW_round6_S0_recheck.md): "S0 complete after the listed changes"; a P1
+    design document may be drafted. Changes applied:
+    - RC1: the ExoFOP-success paths (scripts/s0_prior.py exofop_toi_membership / exofop_ctoi_membership) read identifier and date
+      columns only. The local CTOI snapshot is read with usecols. Caller-level synthetic tests: scripts/test_s0_prior_exofop.py, 4/4.
+    - RC2: GEMS file verified against the deposit: md5 3e9745b7bc79bcabdf98a83554ff79b0, 495,018,405 bytes. It holds 153,606 rows /
+      distinct ids, while the source description and paper state 149,316. It is labelled "deposited-table membership; final
+      analysed-sample membership not individually verified". Counts unchanged (B 65,268).
+    - RC3: s0_prefilter_loss.py saves the minimal TIC responses (prefilter_loss_tic_responses.csv), so the reasons can be recomputed
+      (rerun: 272 missing parallax / 28 out of range); the locus end convention is documented. The stale run-2 file
+      prefilter_loss_sample_tic.csv was removed from the run-3 directory; an identical copy is in superseded_run2/.
+    - RC4: ledger "not displayed" statements relabelled as author declarations.
+    - The stream-cap test now omits Content-Length; 58/58 pass.
+    - Correction to item 155(4): "equivalent test" overstates it. It is a declared common-epoch (2000.0) implementation, with no
+      exclusion in this run.
+    S0 COMPLETE. Report SHA-256 44758aab0f394329...
+    Author's decisions (2026-10-22):
+    (2) Sample A dropped as a discovery sample.
+    (3) Draft a P1 pilot DESIGN document for sample B, for review. Nothing executes.
+    (5) Spec v1.1 approved: measure what an enlarged parallax prefilter adds. It must be locked before its query.
+    (4) Asked for advice. Recommendation recorded: stars previously searched by this project are EXCLUDED from round-6 pools (all 307
+        are in A, which is dropped); the filename inventory is rerun for any star added by v1.1.
+157. 2026-10-22 21:06 UTC — Selection spec v1.1 LOCKED before its query: results/round6_s0/SELECTION_SPEC_v1.1.json
+    (SHA-256 1186dffe0796a050c72abeb2e5a2270943ca4d44b9cc78a550536c4de5c86d07).
+    - Sample B only; A dropped.
+    - TIC candidates = the v1.0 prefilter UNION TIC rows of any parallax matched by exact DR2 id to unmatched DR3 100-pc sources. A
+      query-volume screen of BP-RP >= 1.0 and 12.5 <= G <= 19.5 is applied (95,829 DR2 ids; >= 1 mag of margin beyond the v1.0 B
+      sample).
+    - Previously examined stars are excluded.
+    - All other cuts are unchanged.
+    The screen margins were set from the v1.0 sample's G/colour span and a count of query volume, not from any v1.1 result.
+158. 2026-10-22 23:04 UTC — Spec v1.1 result (sample B). The lookup (95,829 DR2 ids, 192 chunks, row counts checked; 2 read
+    timeouts retried) returned 98,195 extra TIC rows (raw/tic_v11_extra.csv).
+    Funnel (results/round6_s0/funnel_v11.json): 105,344 in the magnitude range, then 92,187 final.
+    - All 87,208 run-3 B stars are kept; 4,979 are added (T 13.5-16.0, median 14.39; median distance 81 pc).
+    - "Lost to a closer TIC" rises to 18,280, as expected: the lookup also returned TIC rows for secondary DR2 neighbours of DR3
+      sources that were already matched, and the locked closest-match rule discards them.
+    - 0 ties.
+    - Previously examined: 0 (filename inventory rerun on the v1.1 pool: exposure_inventory_v11.json).
+    - Registered/protected: 0; closest 6.2".
+    Availability and prior-matrix rows for the 4,979 added stars are not yet inventoried (metadata). They are to be done before any P1
+    draw, under the same S0 tools.
+    P1 pilot design drafted (document only): results/DESIGN_round6_P1_pilot_DRAFT.md; review prompt
+    results/PROMPT_review_round6_P1_design.txt. Nothing executes.
+159. 2026-10-22 23:38 UTC — P1 design review (results/REVIEW_round6_P1_design.md): "ready after listed changes"; P1-1 to P1-8
+    blocking/major. Author's go (2026-10-22): (a) the metadata inventory of the spec-v1.1 pool, and (b) a revision of the P1 design to
+    v2 for one more review. Pilot execution stays UNAPPROVED.
+    Stopping rule recorded (author agreed with the recommendation):
+    - if the v2 review still finds blocking issues, round 6 pauses;
+    - if an approved P1 fails its pre-declared criteria, round 6 closes with the measured limits.
+    The S106 scoring, the DDT reply and ground windows take priority over round 6.
+    (a) is run as a FULL inventory of the 92,187-star v1.1 pool into separate *_v11 outputs (S0 tools, selected with S0_POOL=v11), not
+    by patching run-3 files.
+160. 2026-10-23 00:00 UTC — (a) Metadata inventory of the spec-v1.1 pool (92,187 stars; S0 tools with S0_POOL=v11; outputs
+    availability_v11/, prior/*_v11*, holdout_status_v11.*, s0_stats_v11.json, s0_cost_v11.json).
+    - Completeness: CAOM 231/231 chunks, 0 failed; all 85 TESS-SPOC and 55 TGLC target-list sectors ok; pointing done.
+    - Corpus scan: 10,073 stars hit; 7 read errors, all empty files.
+    - Availability: any LC 86,125; >= 2 campaigns 74,605; TESS-SPOC >= 2 campaigns 45,322; S56-S105 63,305.
+    - Prior: GEMS deposited table 68,695 (74.5 %, as the reviewer computed independently); eumemic faint lists 0; RAVEN G < 14 screen 0;
+      unique known hosts 71 (36 TOI, 41 CTOI, 6 both).
+    - Test-sector status, B stars: (a) 2,432, (b) 8,963, (c) 47,810.
+    Allocation table (scripts/s0_p1_allocation.py; p1_allocation_v2.{csv,json}; no star drawn): search-eligible 74,336, after
+    excluding 71 K, 199 missing e_Rad and 17,581 with < 2 campaigns. 14 cells after 2 recorded merges; D 1,000 / C 3,000; about 733 D
+    stars in the targeted 2 R_E stratum (R* <= 0.3).
+    (b) P1 design v2: results/DESIGN_round6_P1_pilot_v2.md (SHA-256 36b99b53f64f5f93...), addressing P1-1 to P1-8. v1 is kept unchanged.
+    Review prompt: results/PROMPT_review_round6_P1_design_v2.txt. Execution stays UNAPPROVED; the stopping rule of item 159 applies.
+161. 2026-10-23 00:42 UTC — ROUND 6 PAUSED under the stopping rule of item 159. The P1 v2 review
+    (results/REVIEW_round6_P1_design_v2.md) says "not ready". Two blocking issues:
+    - B1: our QLP injection convention is wrong. QLP SAP_FLUX is deblended under the target-origin assumption (Huang et al. 2020,
+      Sec. II-III; DRN004: TGLC-based decontamination from S94), so the extra 1/(1 + contratio) factor would bias the product
+      comparison. This was our error.
+    - B2: the C gate (<= 1 trigger in 3,000) has no consistent estimand, given the weighted stratified sample, the single-product
+      trigger with no substitution (only about 1,816 C stars are expected to have two TESS-SPOC campaigns) and correlated sectors.
+    Resolved per the reviewer: P1-3, P1-5, P1-7 at design level; allocation feasibility (reproduced exactly).
+    Pre-run items noted for any reopening (not blocking on their own): P1 probability labels, the allocation rule and the approval
+    order; P2 a total order for (S, M) and the alias/inversion control flow; P3 N2 is a stress test (counterexample probability
+    0.0167), and the N1 wording is wrong; P4 the QLP clock policy and TGLC refusal policy; P5 C's machine-only real-orientation
+    comparator; P6 the eligibility order and denominators.
+    State at pause:
+    - S0 complete; spec v1.1 pool B = 92,187 with full metadata inventory; allocation table computed, no draw;
+    - no light curve was downloaded for round 6; D/C/K were never drawn.
+    Nothing is published. Reopening needs the author's explicit decision and a v3 addressing B1-B2, then review.
+    Priorities now: S106 scoring (on the author's go), the DDT reply, ground windows, and the next release with the round-5 corrections.
+162. 2026-10-23 01:34 UTC — Author's go (2026-10-23): "go 3 and 1".
+    (1) S106 scoring: QLP S106 is NOT yet released. https://archive.stsci.edu/hlsps/qlp/s0106/ returns 404; the QLP HLSP directory
+        ends at s0105; MAST CAOM has QLP records only through S104. Nothing was downloaded. A session-only twice-daily check (cron
+        94d49683, 7-day expiry) reports the release. Scoring then follows the locked conformance-v2.1 procedure under the author's
+        standing go, starting with a run plan logged here before the first S106 file is fetched.
+    (2) Release v1.16 ASSEMBLED LOCALLY (scripts/assemble_v1_16.py; nothing committed, pushed or uploaded):
+        - round 5: tables/round5/, reviews_round5/, README block;
+        - corrections/CORRECTION_TRICERATOPS_PIXEL_2026-10-22.md, with dated append-only notes in 6 registrations (151767028,
+          343298093, 188664994, 253931796, 160330868, 91617711), notes beside 3 triceratops.json, README inline markers (FPP 0.031,
+          0.020, 0.065-0.11; "All 26"), and REPORT correction 10;
+        - scripts: triceratops_qlp_v2 + tests, pixel_collect_v2, prior_match (tid) + test, triage_round5, tri_runner_round5;
+        - tables/pixel_v2/; CITATION 1.16; public DECISIONS regenerated; MANIFEST_v1.16.md;
+        - release notes zenodo_upload/RELEASE_NOTES_v1.16.md; draft Zenodo notice for the dataset records
+          (zenodo_upload/ZENODO_NOTICES_v1.16_DRAFT.md).
+        Checks: 70 prediction CSVs byte-identical; registrations and DECISIONS changed by appends only; no e-mail addresses, session
+        links or scratch paths in changed files.
+        Round 6 is not released (paused). Next: the assembled-release review (results/PROMPT_review_v1.16_assembled.txt), then the
+        author's go to publish.
+163. 2026-10-23 13:47 UTC — Assembled-release review of v1.16 (results/REVIEW_v1.16_assembled.md): "publish after listed
+    fixes". The author's go (2026-10-23) covers A1-A6, with A3 as the informational cross-reference.
+    CLARIFICATION to item 162: its statement "no scratch paths in changed files" was wrong. The two copied round-5 reviews contained 9
+    local temporary paths each, the public DECISIONS item 155 one, and the release-notes attribution an e-mail address (review A1).
+    Fixes:
+    - public review copies with paths redacted and labelled;
+    - scripts/make_public_decisions.py redacts temporary paths after the already-published prefix (items 1-130 stay byte-identical,
+      including the inherited published paths in items 86 and 128, disclosed here);
+    - plain-text attribution in the release notes.
+    A2: TIC 61310956's fold used S46 INSTEAD OF S22 (S45 and S72 common). Seven runs included additional sectors; the eighth was a
+    substitution. Wording corrected in README, its note, the release notes, the dataset notice and the assembly script.
+    A5: "70 prediction CSVs" should read "all 68 prediction CSVs unchanged; the two other registration-area CSVs also unchanged".
+    A4, A6: the historical pixel counts and the round-6 scope sentence are labelled.
+164. 2026-10-23 13:48 UTC — v1.16 fixes A1-A6 applied locally (scripts/fix_v1_16_review.py; assembly templates patched).
+    Checks:
+    - privacy scan clean, except the round-5 prompts' "do not read ~/.zenodo_token" instruction (a file name, not a credential);
+    - registrations and DECISIONS append-only (prefix byte-identical to HEAD);
+    - 68 prediction CSVs + 2 other registration-area CSVs unchanged;
+    - manifest 40 rows, all hashes correct.
+    Re-check prompt: results/PROMPT_recheck_v1.16_assembled.txt. Nothing is published.

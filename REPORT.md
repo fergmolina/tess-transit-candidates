@@ -30,6 +30,9 @@ Status line for every object in this report: **candidate pending confirmation; n
 >    catalog of Lafarga et al. (2026, MNRAS); it is absent from their vetted and validated subsets. We do not claim first detection; the
 >    "no human-reported candidate" statements below are withdrawn. Further earlier machine detections (TIC 249813122, five round-3
 >    objects) are listed in `prior_search/ERRATUM_PRIOR_DETECTIONS_2026-10-21.md`.
+> 10. **Correction 2026-10-23 (v1.16).** Several TRICERATOPS screening values in README and the registrations came from runs that folded more QLP
+>    sectors than they recorded, and the pixel test's "on target" label ignored failed or non-finite sectors. Values are unchanged and labelled;
+>    see `corrections/CORRECTION_TRICERATOPS_PIXEL_2026-10-22.md`.
 
 Outcome in one line: two candidates survive — TIC 317134140 (0.5719 d, ~185 ppm, §6; plausible but unproven, decisive test S108–S110) and
 TIC 89247735 (18.32 d, 1.0 %, §8; four unambiguous on-target transits in 2023/2025/2026; a giant planet or a brown dwarf, M₂ ≲ 25 M_Jup from Gaia RVs; not validatable without radial velocities). Everything else was rejected (§5, §7). *[Superseded 2026-10-20: see correction 1 above; the mass limit and the on-target conclusion are withdrawn.]*
@@ -685,6 +688,6 @@ An adversarial referee review of the two candidate dossiers (`referee_round2/REF
 TIC 183374279 depth 1.0–1.4 ppt and radius 2.3–2.9 R⊕ (TIC v8.2 radius), third Sector-106 transit only half covered (dated addendum to the
 frozen record; hashed file unchanged); TIC 61310956's SPOC 2-min recovery is 4.5σ at the known ephemeris, not an independent 11σ detection, and
 its v2 ephemeris counted Sectors 22 and 45 twice (v3 frozen 2026-10-19 14:09 UTC, σ 28 min, ground-based outcome rules; `prereg_v2.py` now keeps
-one time per sector). The round-2 prior-detection sweep of all 26 on-target stars (`prior_search_round2/`) found no prior report for either in the searched sources
+one time per sector). The round-2 prior-detection sweep of all 26 on-target stars *(historical v1 selection: four of these 26 are AMBIGUOUS_INCOMPLETE under corrected accounting; see correction 10 and the consolidated correction)* (`prior_search_round2/`) found no prior report for either in the searched sources
 candidate; seven of the 26 were listed earlier by B. Murray (Zenodo 23230562, 2026-10-08) and/or eumemic/exoplanets (2026-10-07 to 10-09).
 Release v1.7 publishes frozen predictions for 18 objects in four labelled tiers (README); only two are claimed as candidates.
