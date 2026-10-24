@@ -1,0 +1,43 @@
+Short second re-check of the TIC 317134140 scoring package (scorer v1.3, docstring revision "v1.3b"), after your
+results/RECHECK_317134140_v1.3.md (R1-R4). Nothing is published yet. Work from /Users/fernando/Desktop/NASA and verify everything
+yourself. Be adversarial. Scope: only R1-R4 and anything they touched. Report anything new you notice in passing, but keep it brief.
+
+MATERIALS
+- Decisions: logs/DECISIONS.md item 181. It maps R1-R4 to their fixes and appends the R3 and R4 corrections to item 179.
+- Changed: scripts/spoc_selection.py (new derive() and response_digest(), used by both select and the validator);
+  scripts/validate_nonclock_inputs.py (recomputed hash, re-derived summary, parsed timestamps, inclusive cutoff);
+  scripts/make_configs_317134140.py (unavailable_cutoff_utc, conditional no_product_rule, wording);
+  scripts/prereg_spoc_317134140.py (docstring only); scripts/amend_317134140_registration.py; scripts/test_317134140_lock.py (new
+  R1/R2 cases).
+- Current configs: configs/conformance/317134140_spoc_S108.json, _S109.json and _S110.json. Lock:
+  configs/conformance/LOCK_2026-10-24_317134140.json. The previous lock is archived in
+  configs/conformance/superseded_317134140_v1.3a_2026-10-24/.
+- Tests: logs/test_317134140_lock_20261024b.log (178/178).
+- Training index: results/conformance_317134140/README.md. Outputs at the new SHA: insample_v1.3b_S*.json.
+- Registration: results/vet/317134140/PREREGISTRATION.md (public copy: public_release/preregistration/TIC317134140/).
+
+CHECK
+1) R1. Re-run your binding probes (a)-(c) and the missing-dataURI case. Can a selection record whose summary, rows and hash disagree
+   still bind? Is one shared derive() the right design? Is INCOMPLETE (missing 'mast:' URI or observation row) handled correctly?
+2) R2. Re-run your 'zzz' and late-chain probes.
+   - Are the cutoffs exact and inclusive as stated?
+   - Is "a SELECTED record made by the cutoff permits later scoring; none by the cutoff -> UNAVAILABLE" enforced and worded
+     consistently in the configs, registration and DECISIONS?
+   - Is the monitoring obligation (weekly checks, plus a final check in the 24 h before the cutoff, all records kept) adequate and
+     clearly stated?
+3) R3/R4. Are the corrections accurate and complete everywhere the old wording appeared?
+4) Integrity. Config and lock hashes; the scorer diff from the reviewed v1.3 (cd21f1fc) is docstring-only; the training outputs at
+   f3f55c0d are identical; the registration's public prefix is intact; the prediction CSV is unchanged; the S111 registrations still
+   equal their public bytes.
+5) Verdict: publish as v1.18 / publish after listed changes / not ready.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry (QLP, SPOC, TESScut, FFI) of any frozen object. The full list is in
+  results/PROMPT_recheck_317134140_v1.3.txt; it includes TIC 317134140 in S108-S110.
+- Do NOT run 'spoc_selection.py select' or 'acquire' for any test sector.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/RECHECK2_317134140_v1.3b.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print
+only the report path and a one-line verdict.

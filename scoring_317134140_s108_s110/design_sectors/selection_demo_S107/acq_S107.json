@@ -1,0 +1,14 @@
+{
+ "record": "spoc_acquisition",
+ "version": "1.0",
+ "selection_file": "sel_S107.json",
+ "selection_sha256": "40c9c1baf5a4793b8b94e85923507fc264cce1cf9f7d1e77046dfc8d4b02c209",
+ "tic": 317134140,
+ "sector": 107,
+ "mode": "mast_download",
+ "data_uri": "mast:TESS/product/tess2026221103959-s0107-0000000317134140-0309-s_lc.fits",
+ "filename": "tess2026221103959-s0107-0000000317134140-0309-s_lc.fits",
+ "file_sha256": "ea04f63be84180f3d708e2b2e22bc465791be76cc054b0f438a930d43e088c0d",
+ "size": 2096640,
+ "download_utc": "2026-10-24T21:45:31.623013Z"
+}

@@ -189,6 +189,15 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Records:** dated amendments in the 14 registrations; review in `reviews_s107_s121/`.
 
 
+**Scoring locked for the TIC 317134140 S108-S110 test (2026-10-25 (v1.18)).**
+- **What is locked:** a dated operationalization of the frozen qualitative test, scored by a dedicated scorer on SPOC 2-min data, in
+  `scoring_317134140_s108_s110/`. It was locked before any S108-S110 photometry of this star was examined.
+- **Release of record:** a metadata-only selection record, then an acquisition record, both bound by the validator. Each sector has an
+  exact 120-day cutoff after which it is UNAVAILABLE.
+- **Advance expectation:** mostly PARTIAL under a real signal (training sectors: 1 PASS, 2 PARTIAL, 1 INCONCLUSIVE).
+- **Records:** dated amendment in the registration; review chain in `reviews_317134140/`.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

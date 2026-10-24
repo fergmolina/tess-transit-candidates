@@ -1,0 +1,220 @@
+{
+ "scorer_sha256": "cd21f1fc10ff43154938d0e8aa6556c39ade718617ebd9071b55d903c73b8533",
+ "injected_ppm": 185.0,
+ "noise_ppm": 2000.0,
+ "scope": "idealized white-noise fixtures; no bias detected here does not establish unbiased real-data depths or calibrated error rates",
+ "per_seed": [
+  {
+   "sector": 108,
+   "seed": 1000,
+   "depth_ppm": 192.31833787325402,
+   "sigma_ppm": 78.82703530769702,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1001,
+   "depth_ppm": 149.23910736941437,
+   "sigma_ppm": 58.5618550535679,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1002,
+   "depth_ppm": 248.2438376173457,
+   "sigma_ppm": 57.018884123369475,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1003,
+   "depth_ppm": 214.18138860318516,
+   "sigma_ppm": 61.10159455582024,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1004,
+   "depth_ppm": 253.08965145842689,
+   "sigma_ppm": 53.64784483074856,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1005,
+   "depth_ppm": 120.70253849516544,
+   "sigma_ppm": 76.40521801543392,
+   "n_eligible": 43,
+   "clause_a": "A_INCONCLUSIVE"
+  },
+  {
+   "sector": 108,
+   "seed": 1006,
+   "depth_ppm": 162.03464833375313,
+   "sigma_ppm": 52.397222479968605,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 108,
+   "seed": 1007,
+   "depth_ppm": 176.29020087306378,
+   "sigma_ppm": 61.57050701468542,
+   "n_eligible": 43,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1000,
+   "depth_ppm": 221.3988173755954,
+   "sigma_ppm": 84.03602604854022,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1001,
+   "depth_ppm": 146.00799923336626,
+   "sigma_ppm": 59.750576393121484,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1002,
+   "depth_ppm": 182.2231660417728,
+   "sigma_ppm": 55.4198530762484,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1003,
+   "depth_ppm": 240.81129520114874,
+   "sigma_ppm": 53.51994329871123,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1004,
+   "depth_ppm": 253.1103770118115,
+   "sigma_ppm": 51.08377807536243,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1005,
+   "depth_ppm": 72.7438418641757,
+   "sigma_ppm": 81.04663559637157,
+   "n_eligible": 42,
+   "clause_a": "A_INCONCLUSIVE"
+  },
+  {
+   "sector": 109,
+   "seed": 1006,
+   "depth_ppm": 186.01514591043423,
+   "sigma_ppm": 68.46684527037486,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 109,
+   "seed": 1007,
+   "depth_ppm": 200.7914738999528,
+   "sigma_ppm": 65.73006720929105,
+   "n_eligible": 42,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1000,
+   "depth_ppm": 205.40558930304263,
+   "sigma_ppm": 69.90038288387024,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1001,
+   "depth_ppm": 114.4141793055775,
+   "sigma_ppm": 57.33680967453914,
+   "n_eligible": 41,
+   "clause_a": "A_INCONCLUSIVE"
+  },
+  {
+   "sector": 110,
+   "seed": 1002,
+   "depth_ppm": 174.1696776107471,
+   "sigma_ppm": 50.45009662319048,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1003,
+   "depth_ppm": 288.21760091313206,
+   "sigma_ppm": 47.00472011183414,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1004,
+   "depth_ppm": 196.18182135505702,
+   "sigma_ppm": 47.480295162027744,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1005,
+   "depth_ppm": 88.1564619810149,
+   "sigma_ppm": 90.39577897100537,
+   "n_eligible": 41,
+   "clause_a": "A_INCONCLUSIVE"
+  },
+  {
+   "sector": 110,
+   "seed": 1006,
+   "depth_ppm": 192.32935267265992,
+   "sigma_ppm": 78.75091589726253,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  },
+  {
+   "sector": 110,
+   "seed": 1007,
+   "depth_ppm": 195.63743602024618,
+   "sigma_ppm": 72.21720649969538,
+   "n_eligible": 41,
+   "clause_a": "A_CONSISTENT"
+  }
+ ],
+ "summary": {
+  "108": {
+   "mean_depth_ppm": 189.51246382795108,
+   "seed_scatter_ppm": 46.895734621202635,
+   "mean_quoted_sigma_ppm": 62.44127017266139,
+   "mean_offset_in_standard_errors": 0.2721606814245818
+  },
+  "109": {
+   "mean_depth_ppm": 187.8877645672822,
+   "seed_scatter_ppm": 57.80758440189894,
+   "mean_quoted_sigma_ppm": 64.88171562100266,
+   "mean_offset_in_standard_errors": 0.1412934257068459
+  },
+  "110": {
+   "mean_depth_ppm": 181.81401489518467,
+   "seed_scatter_ppm": 60.66216708843754,
+   "mean_quoted_sigma_ppm": 64.19202572792813,
+   "mean_offset_in_standard_errors": -0.1485493697638542
+  }
+ }
+}

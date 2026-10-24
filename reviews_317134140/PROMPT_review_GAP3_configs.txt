@@ -1,0 +1,86 @@
+Independent review of the GAP3 scoring locks: a dedicated scorer for TIC 317134140 (S108-S110), and QLP + SPOC configs for TIC 80387959
+(S111-S114) and TIC 120517801 (S111-S113). This happens before any test-sector photometry of these stars is examined. Nothing is
+published yet. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial.
+URGENCY: SPOC S108 2-min light curves (observed 2026-09-07 to 10-05) may appear at MAST within weeks. The 317134140 lock must be
+reviewed and, ideally, published before then. S111 starts about 2026-11-26.
+
+MATERIALS
+- Decisions: logs/DECISIONS.md items 172-177. Precedent: public_release/conformance_s107_s121/ and public_release/reviews_s107_s121/.
+- TIC 317134140
+  - Frozen registration: results/vet/317134140/PREREGISTRATION.md (frozen 2026-10-17 18:30:15 UTC; two dated paragraphs appended
+    2026-10-24 at the end).
+  - Prediction CSV: predicted_transits_S108_S109_S110.csv (SHA-256 63e98fc8...).
+  - Scorer: scripts/prereg_spoc_317134140.py v1.2. It reuses scripts/tsearch.py (load_spoc_lc, detrend) and scripts/search_pipeline.py
+    (bin_lc, period_grid, bls_stats) unchanged.
+  - Training-sector mechanics checks: results/conformance_317134140/insample_S*.json (v1.0), insample_v1.1_S*.json,
+    insample_v1.1final_S*.json and insample_v1.2_S*.json (current).
+  - Superseded, never-published configs/locks (v1.1 and v1.2a): configs/conformance/superseded_gap3_v1.1_2026-10-24/ and superseded_gap3_v1.2a_2026-10-24/.
+- TIC 80387959 / 120517801
+  - Registrations: results/vet_allsky/<TIC>/PREREGISTRATION_v2.md (dated amendment at the end).
+  - SPOC evaluator variant: scripts/prereg_conformance_spoc.py, with its diff against the published v2.1 rc4 evaluator
+    scripts/prereg_conformance.py (unchanged) in results/conformance_317134140/prereg_conformance_v2.1_to_spoc1.diff.
+- Generator: scripts/make_conformance_configs_gap3.py.
+- Configs: configs/conformance/80387959_S11[1-4].json, 80387959_S11[1-4]_spoc.json, 120517801_S11[1-3].json,
+  120517801_S11[1-3]_spoc.json and 317134140_spoc_S10[8-10].json.
+- Locks: configs/conformance/LOCK_2026-10-24_GAP3_QLP.json (validator scripts/validate_round4_inputs.py, unchanged) and
+  LOCK_2026-10-24_GAP3_SPOC.json (new validator scripts/validate_nonclock_inputs.py).
+- Tests: scripts/test_locked_configs.py, log logs/test_locked_configs_GAP3_QLP_20261024c.log (182/182). New scripts/test_spoc_configs.py
+  uses artificial SPOC-format fixtures; log logs/test_spoc_configs_GAP3_20261024c.log (176/176).
+
+CHECK
+1) Fidelity to the frozen 317134140 test. The frozen text is: "stacked depth at predicted phase in each of S108/S109/S110 should be
+   ~185 +- 40 ppm; blind BLS of each sector should rank 0.5719 d near the top"; data used SPOC 2-min; TOI-2514.01 masked.
+   - Is clause A (eligibility, depth statistic, random-phase sigma, 1.96-sigma overlap with [145, 225] ppm, depth/sigma >= 2) a fair,
+     non-lenient reading?
+   - Is clause B (the original per-sector search, top 3 distinct peaks, +-0.1 %) the frozen "blind BLS"? Is "near the top = top 3"
+     justified by DECISIONS 12?
+   - Are the PASS / PARTIAL / FAIL / INCONCLUSIVE mappings sound, in particular FAIL = A_LOW whatever B says?
+   - Does anything in the scorer depart from the original search settings (search_pipeline.py / tsearch.py)?
+2) Design-sector history (DECISIONS 173-176).
+   - The v1.0 results were logged before any change. v1.1 widened the TOI mask on a hypothesis (leakage) that item 176 then disproved.
+   - v1.2 mirrors the registration's own preparation: TOI-2514.01 removed BEFORE detrending, wotan transit_mask with a 1.5 x 4.047 h
+     window (public scripts/blind_seasons_317134140.py:12). The candidate is NOT masked in detrending, unlike that script, so that
+     clause B stays blind. Clause A therefore uses unmasked detrending; any depth suppression by the 0.5-d biweight goes against PASS.
+   - No outcome changed across v1.0, v1.1 and v1.2. Is this sequence legitimate correctness and fidelity work, or tuning on training data?
+     Verify the "original order" claim yourself.
+   - The S98 6.3992-d peak lies 58.8 h from the TOI phase (item 176(1)). Check this.
+   - Is the advance expectation ("mostly PARTIAL under a real signal") honest and sufficiently prominent?
+   - Is the absence of a primary sector, with each of the three sectors reported separately, consistent with the frozen text? Is the
+     120-day UNAVAILABLE rule acceptable?
+   - Fixture bias check (item 176(3)): is it adequate?
+3) The SPOC evaluator variant. Read the diff. Confirm the only changes are the product branch and the absence of the QLP clock gate,
+   and that the QLP path behaves exactly as v2.1 rc4. Are SPOC times target-barycentric, so that no clock gate is needed? Is ORIGIN
+   NASA/Ames plus the file-name pattern sufficient product validation? Is "release of record = first MAST delivery, pipeline field
+   recorded" enforceable and adequate?
+4) The availability rule for 80387959 / 120517801 (DECISIONS 172, tightened in 176(4); the full text is in each config's
+   product_of_record_rule).
+   - Is it free of outcome-dependent choice?
+   - The "wait for SPOC up to 120 days if on the 2-min list" clause is my addition, pending the author's confirmation. Is it needed and
+     sound? What if the star is added by DDT after the target list is published?
+5) Reference values (generator rule: 726 ppm / 2.2 h and 830 ppm / 2.2 h), primary sector S111, and the test sectors: do they match
+   the "prediction" rows of the v2 CSVs?
+6) Validators and tests.
+   - Does validate_nonclock_inputs.py bind config, code (scorer + tsearch + search_pipeline, or the SPOC evaluator), prediction CSV
+     and light curve, and fail closed?
+   - Gaps in test coverage? The fixtures are artificial, so the tests say nothing about power on real data.
+7) Registration amendments: append-only and accurate. The previously published copies are in public_release/preregistration/ (TIC317134140/
+   PREREGISTRATION.md for 317134140).
+8) Verdict: locks sound / sound after listed changes / not sound. Also say whether the 317134140 lock should be published
+   before the S108 SPOC delivery, separately from the S111 material if needed.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry (QLP, SPOC, TESScut, FFI) of any frozen object. This includes:
+  - TIC 317134140 in S108, S109 and S110;
+  - TIC 80387959 and 120517801 in S111 or later;
+  - TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222,
+    53825235 and 3367979 in S106 or later;
+  - the 14 objects locked in v1.17 in S106 or later;
+  - every round-6 pool star in S106 or later.
+- MAST metadata queries (product lists, no file download) are allowed only if needed for check 4.
+- In-sample files of 317134140 in data/lc/ (S6, S87, S98, S107) may be read and re-scored with --insample-check.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_GAP3_configs.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print only
+the report path and a one-line verdict.

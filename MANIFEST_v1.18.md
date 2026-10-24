@@ -1,0 +1,66 @@
+# Release v1.18 manifest (2026-10-25)
+
+Files added or changed since v1.17, with SHA-256. Locked scoring for the TIC 317134140 S108-S110 test (scoring_317134140_s108_s110/), the dated registration amendment,
+and the review chain (reviews_317134140/, path-only redactions). All 68 prediction CSVs are unchanged; the 2 other tracked registration-area CSVs are also unchanged. The S111 material is not included.
+
+| SHA-256 | file |
+|---|---|
+| `7e99bfecc0ef06bfa0e27105b86b82c818ff9c47bad3a93d71c492f174663b2b` | CITATION.cff |
+| `088b9ccc6d6d9d9040805234d3db4fa55c0bba8ef2edecea364f87a05cd6bdeb` | DECISIONS.md |
+| `791c2410622271c763a5fa334ade8ccb90b8b7ab90e0a7f404bf4c06af2d561f` | README.md |
+| `10c2c520369ba667f04d203a8312ecbb0433dab0353694689d7c2054f191e1b1` | preregistration/TIC317134140/PREREGISTRATION.md |
+| `6b7b9dc2e400a9636ad2afb3791be6cf2044884cce3e659f1b62063be0fb774e` | reviews_317134140/PROMPT_recheck2_317134140_v1.3b.txt |
+| `d5ed438d2fcd00e2d4d275130b043cf982aa82283ea9894216f7e44254308b24` | reviews_317134140/PROMPT_recheck3_317134140.txt |
+| `bfb49a0ac24ce66503ecf4252e6652277a571fc73e655c944e71c20b2304c8a5` | reviews_317134140/PROMPT_recheck_317134140_v1.3.txt |
+| `eb6a1e483491adbf49a169806bea896a825aaa7312370fb6e62425088d517a9b` | reviews_317134140/PROMPT_review_GAP3_configs.txt |
+| `fcc633fc44ad72f0a930e79250d06f16065fe5c189c68a4ca1269c71dd249746` | reviews_317134140/RECHECK2_317134140_v1.3b.md |
+| `1a22451f7763b9805dba56c2225726f3991d49af5c73185fa842b28a270227fb` | reviews_317134140/RECHECK3_317134140.md |
+| `e8e2a51c8fffb843a901d34d9f0d1d4dd200d7d5a5be15fcbd432801104bcb5c` | reviews_317134140/RECHECK_317134140_v1.3.md |
+| `d68c6cf4ebe743baf830ba7fde17644f23a6df0aea4b57d45381316283468ddb` | reviews_317134140/REVIEW_GAP3_configs.md |
+| `ccf0a7e162f3bf69b1a3babcf7c48e8dd0cf22480ff405669c56501c277bb3d5` | scoring_317134140_s108_s110/README.md |
+| `b4f091bc63a595a2c78c3ddb9645ba846ba21e73d75aca55ca2db7e1acffb42b` | scoring_317134140_s108_s110/configs/317134140_spoc_S108.json |
+| `15ee54949875d1b6f5b8e9026916921d82d984d59649adc0db4cfe4f44e32ffd` | scoring_317134140_s108_s110/configs/317134140_spoc_S109.json |
+| `1370e4245052a48d1c641f06f0176cbfe20adbd36f5b5ffeb4d450ab00be0937` | scoring_317134140_s108_s110/configs/317134140_spoc_S110.json |
+| `58df364513d9d2bd3f2d0c7474d069b55737420614b10eb631cf82e4eba0db41` | scoring_317134140_s108_s110/configs/LOCK_2026-10-24_317134140.json |
+| `4f57f4f98de979047419968e1da0dc53171431062230aa9ed4dbcb43cfc72225` | scoring_317134140_s108_s110/design_sectors/README.md |
+| `51440d4b916ba032d9e00a2cceefff88835d94cde4741e59aef1b60326c6f796` | scoring_317134140_s108_s110/design_sectors/fixture_bias_check_v1.3.json |
+| `114cb321d481a986dc95588475b492ef83a1a1ec1ffd45919ad77ee027a718b3` | scoring_317134140_s108_s110/design_sectors/insample_S107.json |
+| `645625bfa5a02857c616c54267bbfd9e5a29361fc83412eeee72124ed27081f0` | scoring_317134140_s108_s110/design_sectors/insample_S6.json |
+| `e87a5c6c241436d206479a85508af366e961c7490e4f871ff679fa249d10ee11` | scoring_317134140_s108_s110/design_sectors/insample_S87.json |
+| `730722ade785b919269749ac44a3acf9483ea9b589cb915c9c6913db265fbaf0` | scoring_317134140_s108_s110/design_sectors/insample_S98.json |
+| `7df310227964c8e8687d85225274f35f6c8697519ca939e1c1d056bd94f61a67` | scoring_317134140_s108_s110/design_sectors/insample_v1.1_S107.json |
+| `4830aaac1781202340e663ae3a227abd43dc66164be03e8ed7bb59aa6c8210a7` | scoring_317134140_s108_s110/design_sectors/insample_v1.1_S6.json |
+| `17004548e14a12b7b1a8b8612edb3c2c91eba6d35feb7932e243609655120935` | scoring_317134140_s108_s110/design_sectors/insample_v1.1_S87.json |
+| `7a187bbce3e6082cb61a394b889eff2af821e9956d2922532e4561ad932dd09f` | scoring_317134140_s108_s110/design_sectors/insample_v1.1_S98.json |
+| `30f68e865b0a70a64941496556841bb92d071a6643d5dfbe7369c7e215a9644c` | scoring_317134140_s108_s110/design_sectors/insample_v1.1final_S107.json |
+| `38e1006432e14797f332c27bf83b258ecdced60802d6b40e435401293ab29593` | scoring_317134140_s108_s110/design_sectors/insample_v1.1final_S6.json |
+| `637267b95139af87cb7d9da57657f07dd4c2e65f5e79904c6822881ab4e3e685` | scoring_317134140_s108_s110/design_sectors/insample_v1.1final_S87.json |
+| `3cb99f8d47c177e2c3a2951471c585f244c52b51f3d58fb7fddff3dda438c927` | scoring_317134140_s108_s110/design_sectors/insample_v1.1final_S98.json |
+| `cff074cad5065b43357e7e3939042dfbaf860c809e9967b7e3e1f3b5a2c3bc42` | scoring_317134140_s108_s110/design_sectors/insample_v1.2_S107.json |
+| `f18a6ef355b6fd41951d334d8844a1fe197daaad73b7a8c5d486edbdbbf15f41` | scoring_317134140_s108_s110/design_sectors/insample_v1.2_S6.json |
+| `75ce781aed91ea1cf38047bd7c4ba67af5111d4723a1668a95b473a0424e0536` | scoring_317134140_s108_s110/design_sectors/insample_v1.2_S87.json |
+| `6a37459bb2149ac11d6b39afc703383bea0de778aaf1984a4a3710a6f90e5695` | scoring_317134140_s108_s110/design_sectors/insample_v1.2_S98.json |
+| `5f00041c6c95e3b702ba16aa1580db531d12b4f545276f1a7ff651c96e54cf29` | scoring_317134140_s108_s110/design_sectors/insample_v1.2final2_S98.json |
+| `a5218c5e9f9ee8900a4bfab277944019742c418fea62cdd985a08d0937288afc` | scoring_317134140_s108_s110/design_sectors/insample_v1.2final_S107.json |
+| `da8e27f30a3e9bad54fe60a2c728d71e8b7f4ca7c34ce69be7509fbc62727c64` | scoring_317134140_s108_s110/design_sectors/insample_v1.2final_S6.json |
+| `95935bcb396c6c3213bc8245c02c8e71f713ac4288a449eec983bbcfc7b36247` | scoring_317134140_s108_s110/design_sectors/insample_v1.2final_S87.json |
+| `4f12219252c1360cbcf5f5ffb73b5e1be4af338b81c3950e458a723de5231e82` | scoring_317134140_s108_s110/design_sectors/insample_v1.2final_S98.json |
+| `b9637da050c023dfbcf1092d76c4055449381081bbbf16ebd6fa49af2a49d4c7` | scoring_317134140_s108_s110/design_sectors/insample_v1.3_S107.json |
+| `fc793043c2e7541f44e714bade256625d28e49bb6bfdcf3ac3d94055bc63e118` | scoring_317134140_s108_s110/design_sectors/insample_v1.3_S6.json |
+| `cb1bf27cd56761274ce2af8125ad96faced4195615dd5758c1a718549cfbcf7a` | scoring_317134140_s108_s110/design_sectors/insample_v1.3_S87.json |
+| `b8950fa6486a727872c1c215a6284c1271ac474411b06b90a44e609545c0f286` | scoring_317134140_s108_s110/design_sectors/insample_v1.3_S98.json |
+| `741e71d1a4e602dc0d2fc2887175bea1421cb06dd82579a8288f734aa2ef7126` | scoring_317134140_s108_s110/design_sectors/insample_v1.3b_S107.json |
+| `80ed06de6545a3f2f6608def6448e560cede80c6b318ad352137f807d39604ea` | scoring_317134140_s108_s110/design_sectors/insample_v1.3b_S6.json |
+| `ee4a71a7119a85e4eb1afb6e212421bda82e8fb0dbc8cc9f799adaae6436366d` | scoring_317134140_s108_s110/design_sectors/insample_v1.3b_S87.json |
+| `2bdc368357e67a7f55ed27196f755454d230ad2ae61fb82a69bb6b07782548f0` | scoring_317134140_s108_s110/design_sectors/insample_v1.3b_S98.json |
+| `20ce0f70dcb390dbf0b3198ece0034ece2501e5958a2eb97d544823f0ef5d595` | scoring_317134140_s108_s110/design_sectors/selection_demo_S107/acq_S107.json |
+| `40c9c1baf5a4793b8b94e85923507fc264cce1cf9f7d1e77046dfc8d4b02c209` | scoring_317134140_s108_s110/design_sectors/selection_demo_S107/sel_S107.json |
+| `acfd7d34bb2844856d69cad2f181112b0363fb7030af66de5c6633b5349c0fd7` | scoring_317134140_s108_s110/design_sectors/superseded_scorers/prereg_spoc_317134140_v1.2.py |
+| `d9931ecc6b21ed2cd24f4c2315a0a8533bded51531d0d0564e3a3a64d1fba0de` | scoring_317134140_s108_s110/scripts/amend_317134140_registration.py |
+| `ba5b1d14a2ea08b6016415bde9d9332c3653aac6b51823c32ee06b20951414ed` | scoring_317134140_s108_s110/scripts/fixture_bias_check_317134140.py |
+| `de316a346b6caff264bf758668b2093b39046cb2f534af72ddc14f32abd34729` | scoring_317134140_s108_s110/scripts/make_configs_317134140.py |
+| `f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613` | scoring_317134140_s108_s110/scripts/prereg_spoc_317134140.py |
+| `600e9504a811ac14c10c8129324e9f5707c3103be85bd1d5961d47bafac4ac05` | scoring_317134140_s108_s110/scripts/spoc_selection.py |
+| `c576d5c63222e4553ff5f50d75f9d5309c49b491161edc89a83f35042e599c7f` | scoring_317134140_s108_s110/scripts/test_317134140_lock.py |
+| `f3bca6924c16216c9bbc745b4a5b4f169e525a45417645681d72ec250dca7e01` | scoring_317134140_s108_s110/scripts/validate_nonclock_inputs.py |
+| `1e4e9e28530cd8ff95d28e6947133b98d7740b7f25270063f46b15bf3bd8f1b8` | scoring_317134140_s108_s110/tests/test_317134140_lock_20261024c.log |

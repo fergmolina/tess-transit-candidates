@@ -1,0 +1,25 @@
+Targeted third check of the TIC 317134140 package, after results/RECHECK2_317134140_v1.3b.md. Scope: ONLY its two items and the hashes
+they touched. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Nothing is published yet.
+
+MATERIALS
+- logs/DECISIONS.md item 182.
+- scripts/spoc_selection.py: valid_id() and derive().
+- scripts/make_configs_317134140.py: monitoring_rule. Configs configs/conformance/317134140_spoc_S10[8-10].json; lock
+  configs/conformance/LOCK_2026-10-24_317134140.json (the previous one is archived in superseded_317134140_v1.3b_2026-10-24/).
+- results/vet/317134140/PREREGISTRATION.md (amendment regenerated).
+- Tests: scripts/test_317134140_lock.py, log logs/test_317134140_lock_20261024c.log (196/196).
+- results/conformance_317134140/README.md (bias-check label).
+
+CHECK
+1) Re-run your absent/null/empty-ID probes. Can any missing or placeholder observation identifier still establish an association?
+2) Is the prospective monitoring wording now accurate, including the S108 note, and is it consistent across the configs and the
+   registration?
+3) Integrity: config and lock hashes; scorer and validator unchanged since your second re-check (f3f55c0d...; validator SHA as in
+   the configs); public registration prefix intact; prediction CSV unchanged.
+4) Verdict: publish as v1.18 / publish after listed changes / not ready.
+
+RULES: as in results/PROMPT_recheck2_317134140_v1.3b.txt. No test-sector photometry of any frozen object; no live select/acquire
+for any test sector; no credentials; edit nothing but your report; temporary files only under /tmp.
+
+OUTPUT
+Write results/RECHECK3_317134140.md: findings with file:line evidence and the verdict. Print only the report path and a one-line verdict.

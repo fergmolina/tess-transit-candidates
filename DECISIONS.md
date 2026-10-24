@@ -1497,3 +1497,211 @@
     - reviews_s107_s121/ (review copy with path-only redactions; prompt);
     - README block; CITATION 1.17; DECISIONS regenerated; MANIFEST_v1.17.md.
     Not published: a re-check of the corrections comes first (author: hold v1.17 until checked).
+170. 2026-10-24 03:56 UTC — v1.17 PUBLISHED after the re-check (results/REVIEW_S107_S121_v1.17_recheck.md: "publish as
+    assembled") and the author's go for the reviewed files.
+    - Before commit: anchors matched (MANIFEST_v1.17.md 299b4f93..., lock a8731dfc..., RELEASE_NOTES_v1.17.md 302bd623...); 53 manifest
+      hashes passed; base cf556794.
+    - Published: commit 50377874 (no session link; Co-Authored-By trailer); tag and GitHub release v1.17; Zenodo 10.5281/zenodo.23609152.
+    The S107-S121 lock now has a public timestamp before any of those sectors' QLP data were released.
+    ENVIRONMENT PROBLEM found while fetching the DOI: Homebrew python@3.12 is no longer installed (system python3 is 3.15.0). The
+    project venv .venv points to the missing /opt/homebrew/opt/python@3.12 interpreter (pyvenv.cfg records 3.12.9, the version the venv was created with; Homebrew had since upgraded it in place to 3.12.15). .venv_tri (Anaconda) is unaffected. Every project
+    script, including the locked S106 scoring, cannot run until Python 3.12 is restored. The reviewer saw the same thing. No project
+    file is affected.
+171. 2026-10-24 04:16 UTC — Environment restored (author's go while away). Command: HOMEBREW_NO_AUTO_UPDATE=1
+    HOMEBREW_NO_INSTALL_CLEANUP=1 brew install python@3.12, so no other formula was upgraded or cleaned. .venv runs again: Python
+    3.12.15.
+    - Packages: all 79 installed distributions equal results/conformance_v21/requirements_venv_locked.txt (importlib.metadata, as the
+      record was made); 0 differences.
+    - Interpreter: patch level 3.12.15 against the record's 3.12.9. The record was taken 2026-10-20; Homebrew had upgraded the venv's
+      interpreter in place to 3.12.15 before 2026-10-21 (earlier tracebacks show 3.12.15). The rounds-5/6 and lock work ran on
+      3.12.15. To be reported with the S106 scoring as a disclosed environment difference.
+    - Checks: test_s0_ids 6/6; test_locked_configs on ROUND4_LOCK 200/200.
+172. 2026-10-24 14:12 UTC — Author's decisions (2026-10-24), before any of these sectors' data are examined:
+    (a) TIC 317134140 (S108-S110). It is on the 2-min target lists of S108, S109 and S110 (catalogs/target_lists/all_targets_S10{8,9}
+        and S110 _v1.csv). Its 2026-10-17 registration defines its own test: per-sector stacked depth at the predicted phase about
+        185 +- 40 ppm; blind BLS of each sector ranks 0.5719 d near the top. It will be scored by a DEDICATED SPOC scorer that implements
+        exactly that frozen test on SPOC 2-min PDCSAP_FLUX. Every operational choice ("near the top" = top 3, as in the blind tests of
+        item 12; window; detrending; error model) is fixed in a locked config before any S108 data, then reviewed and published.
+    (b) TIC 80387959 and 120517801 (S111-S114). Their registrations allow "QLP or SPOC". Product of record by AVAILABILITY, fixed now:
+        if a SPOC 2-min light curve exists for the sector at scoring time, it is the product of record, scored with a reviewed SPOC
+        procedure published before those data; otherwise QLP SAP_FLUX with the locked conformance v2.1 evaluator. The other product is
+        always reported as a secondary readout. This differs from the QLP-always rule of the 14 objects locked in v1.17; each rule is
+        declared before its data.
+    Gap found 2026-10-24: these three objects had no locked scoring configs (my omission when choosing the 14).
+173. 2026-10-24 14:15 UTC — TIC 317134140 dedicated scorer v1.0 draft (scripts/prereg_spoc_317134140.py, SHA-256 584f9bf6d87d549f...).
+    Design-sector mechanics check on its four TRAINING sectors (the signal is assumed present there; not independent;
+    results/conformance_317134140/insample_S*.json). Recorded BEFORE any change to the scorer:
+      S6:   clause A A_CONSISTENT, 127 +- 56 ppm, 31 eligible | B_NOT_TOP3 (0.9196, 5.1278, 3.3766) -> PARTIAL
+      S87:  A_INCONCLUSIVE, 139 +- 83 ppm, 32 eligible       | B_NOT_TOP3 (0.9114, 1.7238, 0.5327) -> INCONCLUSIVE
+      S98:  A_CONSISTENT, 208 +- 32 ppm, 53 eligible         | B_TOP3 (0.5717, 1.1428, 6.3992)    -> PASS
+      S107: A_CONSISTENT, 201 +- 56 ppm, 32 eligible         | B_NOT_TOP3 (1.4295, 0.8499, 7.1322) -> PARTIAL
+    The per-sector blind-rank clause (original search_pipeline per-sector BLS, top 3 distinct peaks) has low power at about 185 ppm.
+    The search method will NOT be swapped. Peaks at 6.3992 d (S98) and 7.1322 d (S107) suggest the TOI-2514.01 mask (+-1.5 x 4.047 h / 2)
+    leaks; widening it is a correctness fix to the registration's required mask. Any change is to be shown on these four sectors
+    before/after.
+174. 2026-10-24 14:15 UTC — TIC 317134140 scorer v1.1 (SHA-256 4c53a94be32f978a...): TOI-2514.01 mask widened from 1.5x to 2.5x of its half-duration;
+    cadences removed are recorded. Four training sectors before (v1.0) -> after (v1.1):
+      S6   PARTIAL -> PARTIAL       (127 +- 56 -> 118 +- 55 ppm; top 3 unchanged 0.9196, 5.1278, 3.3766)
+      S87  INCONCLUSIVE -> INCONCLUSIVE (139 +- 83 -> 140 +- 86; 0.9114, 1.7238, 0.5327 -> 0.9114, 1.7238, 1.6652)
+      S98  PASS -> PASS             (208 +- 32 -> 212 +- 34; 0.5717, 1.1428, 6.3992 -> 0.5717, 1.1434, 6.3992)
+      S107 PARTIAL -> PARTIAL       (201 +- 56 -> 188 +- 56; 1.4295, 0.8499, 7.1322 -> 0.8583, 7.1322, 10.4333)
+    The 6.3992-d and 7.1322-d peaks survive the wider mask, so they are not mask leakage (my hypothesis in item 173 is not supported).
+    No outcome changed. The 2.5x mask is kept as declared. The search method and the clause definitions are unchanged.
+    Pre-declared secondary readout (never the outcome): pooled S108-S110 depth = inverse-variance weighted mean of the per-sector
+    clause-A depths, with its 95 % interval compared with [145, 225] ppm.
+175. 2026-10-24 14:26 UTC — GAP3 locks (DECISIONS 172), before any test-sector data of these three stars. Not yet reviewed or published.
+    (1) TIC 317134140: scorer v1.1 final (SHA-256 4a188827ce05ae13...; the only change since item 174 is that the
+        light-curve hash is recorded first, so early refusals stay bindable; the four training outputs are re-run and identical).
+        Eligibility check (advisor fix 2): ineligible training events are mostly ones with no in-transit data (gaps, edge trim, TOI
+        mask: S6 5, S87 9, S98 33, S107 9). Only 2/1/7/4 per sector fail partial coverage or the out-of-transit count. The rule is kept.
+        Configs 317134140_spoc_S108/S109/S110.json; each sector is scored separately, with no primary and no pooling. The pooled depth
+        is a secondary readout only. Dated advance expectation and scoring amendment appended to results/vet/317134140/PREREGISTRATION.md.
+    (2) TIC 80387959 (S111-S114) and 120517801 (S111-S113): two configs per sector, QLP (v2.1 rc4 + clock gate) and SPOC
+        (scripts/prereg_conformance_spoc.py = conformance-v2.1-spoc1, SHA-256 c7e1b4cd43bac063...). It is v2.1 rc4 with only
+        a SPOC product branch: file name, ORIGIN NASA/Ames, PDCSAP_FLUX, no QLP clock gate. The diff against v2.1 is in
+        results/conformance_317134140/prereg_conformance_v2.1_to_spoc1.diff. The product of record is chosen by availability
+        (item 172). S111 is the primary for both. Reference values use the generator rule (726 ppm / 2.2 h; 830 ppm / 2.2 h). Dated
+        amendments are appended to both PREREGISTRATION_v2.md files.
+    (3) Locks: configs/conformance/LOCK_2026-10-24_GAP3_QLP.json (1df553d7482cfece...; 7 configs; validate_round4_inputs.py)
+        and LOCK_2026-10-24_GAP3_SPOC.json (ff565e9c08d7f126...; 10 configs; new
+        scripts/validate_nonclock_inputs.py 20f73edbb43ae85f...). Generator: scripts/make_conformance_configs_gap3.py.
+    (4) Tests: test_locked_configs.py on the QLP lock 182/182 (logs/test_locked_configs_GAP3_QLP_20261024.log); new
+        scripts/test_spoc_configs.py 176/176 on artificial SPOC-format fixtures (logs/test_spoc_configs_GAP3_20261024.log). On the
+        fixtures, 317134140's injected 185 ppm gives A_CONSISTENT in all three sectors and no signal gives FAIL.
+        The first SPOC run had 7 failures. The test wrongly expected the v2.1-derived evaluator to refuse an existing output path;
+        published v2.1 does not and relies on the result-stage binding. The check was restricted to the scorer.
+    Next: external review, then the author's go, then v1.18 before SPOC S108 data appear.
+176. 2026-10-24 14:38 UTC — TIC 317134140 scorer v1.2 (SHA-256 2e011c13aaa3ef69...) and the GAP3 locks regenerated. Not yet reviewed or published.
+    (1) The S98 6.399-d peak. The TOI-2514.01 dip sits at its ephemeris phase within +-2 h in S6, S98 and S107 (detrended, unmasked
+        profile), so the ephemeris and mask cover the TOI. The 6.3992-d BLS event (5 events, 2 h, 535 ppm) lies 58.8 h from the TOI
+        phase: it is not the TOI and not mask leakage. It is unexplained, in-sample only, and no claim is made. It is noted in the
+        advance expectation as an example of an unrelated peak that can occupy a clause-B slot.
+    (2) Fidelity fix. The registration's own preparation (public scripts/blind_seasons_317134140.py:12, final_ephemeris_317134140.py:20)
+        removes TOI-2514.01 cadences BEFORE detrending: trim_edges(t) & ~wotan.transit_mask(duration = 1.5 x 4.047 h), i.e. +-3.03 h.
+        v1.0/v1.1 detrended first. v1.2 mirrors the original order and width exactly; the candidate is not masked, so the search stays
+        blind. The 2.5x widening of item 174 is dropped: its motivation was disproven and it was not in the original.
+        Training sectors, v1.0 -> v1.1 -> v1.2:
+          S6 PARTIAL (127+-56 -> 118+-55 -> 127+-57), S87 INCONCLUSIVE (139+-83 -> 140+-86 -> 139+-81),
+          S98 PASS (208+-32 -> 212+-34 -> 210+-32), S107 PARTIAL (201+-56 -> 188+-56 -> 199+-56). No outcome changed in any version.
+          v1.2 top 3: S6 0.9196/5.1278/3.3766; S87 0.9114/1.7238/0.9347; S98 0.5717/1.1434/6.3992; S107 1.4295/0.8499/0.9891.
+    (3) Bias check on artificial fixtures (2000 ppm white noise, 185 ppm injected, 8 seeds per sector): mean recovered depth
+        190/188/182 ppm (S108/S109/S110), within 0.3 standard errors of 185. The quoted random-phase sigma (62-65 ppm) is slightly
+        above the seed scatter (47-61 ppm). There is no bias. The single S108 fixture at 344 ppm (+2.5 sigma) is noise.
+    (4) Availability rule tightened (advisor), now in every 80387959/120517801 config. The designation is made once per sector, at
+        the first scoring attempt, from a saved MAST product-list query (timestamp + SHA-256) made before any light curve is opened.
+        SPOC means a 2-min '*-s_lc.fits' (not TESS-SPOC FFI, not 20-s fast-lc). A later delivery of the other product is secondary only.
+        My addition, to be confirmed by the author: if the star is on the sector's 2-min target list, no scoring attempt is made
+        before the SPOC delivery or 120 days after the sector ends, whichever comes first. 317134140: no SPOC 2-min delivery within
+        120 days -> the sector is recorded as UNAVAILABLE, with no substitute product.
+    (5) The v1.1 configs and locks (never published) were moved to configs/conformance/superseded_gap3_v1.1_2026-10-24/ and their test
+        logs to logs/superseded/. New locks: LOCK_2026-10-24_GAP3_QLP.json 2d2763d07f15342d...,
+        LOCK_2026-10-24_GAP3_SPOC.json eb555d349c156b72....
+        Tests: 182/182 (logs/test_locked_configs_GAP3_QLP_20261024b.log) and 176/176 (logs/test_spoc_configs_GAP3_20261024b.log).
+        Today's unpublished amendment drafts were removed (the remaining text is byte-identical to the public copies) and re-appended
+        with the v1.2 hashes.
+177. 2026-10-24 14:44 UTC — Provenance before review (advisor). The 317134140 scorer now records version "1.2" and software versions (python,
+    numpy, scipy, astropy, wotan via package metadata) in every output, like the v2.1 evaluator. The docstring and configs now state
+    that every predicted row is a candidate event, the in_science_orbit column is not used, and eligibility is decided only by data
+    coverage. No logic change: the four training outputs are identical. Scorer SHA-256 acfd7d34bb284485...
+    Regenerated (unpublished v1.2a configs/locks archived in configs/conformance/superseded_gap3_v1.2a_2026-10-24/): LOCK_GAP3_QLP
+    4578b11c4d046495..., LOCK_GAP3_SPOC d800792e49e9a301.... Tests 182/182 and 176/176
+    (logs/*GAP3*20261024c.log). The amendments are written by scripts/amend_gap3_registrations.py, which resets each file to its
+    public copy (refusing on any difference) and re-appends; it must not be run once these paragraphs are published.
+    v1.18 assembly note: the superseded_gap3_* directories are not live configs. Bundle them only under a "superseded" label, or
+    exclude them and cite DECISIONS 176(5)/177.
+178. 2026-10-24 21:42 UTC — External review results/REVIEW_GAP3_configs.md: "locks sound after the listed changes; not ready to publish", with
+    G1-G5 open after a re-check. Author's decisions (question tool, 2026-10-24):
+    (a) G3, the product of record for 80387959 / 120517801: TARGET LIST AT SECTOR END. On each sector's end date, the sector's
+        published 2-min target lists, including DDT lists, are saved with hashes. If the TIC is listed, SPOC is the product of record;
+        otherwise QLP. If SPOC was designated but no SPOC 2-min light curve is delivered within 120 days of sector end, QLP becomes the
+        product of record, decided on that date without opening any light curve. If no product exists within 365 days, the sector is
+        UNAVAILABLE. This replaces the availability-at-first-attempt wording of items 172 and 176(4); the 120-day wait clause of
+        176(4) is superseded.
+    (b) Release split: v1.18 = the corrected TIC 317134140 package only, after a re-check and the author's go. The S111 material
+        follows as v1.19.
+179. 2026-10-24 21:50 UTC — Review G1-G5 addressed for TIC 317134140 (v1.18 package); the S111 material waits for v1.19 (item 178(b)).
+    Scorer v1.3 (SHA-256 cd21f1fc10ff4315...). The clauses, thresholds, mask and search are UNCHANGED; the four training outcomes and
+    depths are identical to v1.2 (results/conformance_317134140/insample_v1.3_S*.json, at the locked SHA).
+    G1 (input validation): full time-header checks (TIMESYS TDB, TIMEREF SOLARSYSTEM, TIMEUNIT d, BJDREFI 2457000, BJDREFF absent or
+        0); TICID/SECTOR parse errors, missing columns and unreadable files -> INVALID_INPUT; non-increasing or duplicate times ->
+        INVALID_INPUT; usable = QUALITY 0, finite, error > 0. INSUFFICIENT when fewer than 10 cadences remain at any preprocessing step,
+        when there are fewer than 10 eligible events or fewer than 100 usable random shifts, or when sigma is not finite and > 0. BLS
+        is not run on INSUFFICIENT. The output now also records helper hashes and the top-3 epochs.
+    G2 (release of record): new scripts/spoc_selection.py (c6685372fd8095ba...).
+        - 'select' is metadata-only. It saves a MAST product list, its hash and the UTC time; the status is SELECTED only with exactly
+          one SPOC 2-min s_lc.fits, otherwise AMBIGUOUS or NONE.
+        - 'acquire' downloads exactly the selected dataURI and records its hash.
+        - validate_nonclock_inputs.py (1933d8385acc8628...) gains a 'selection' stage. The 'result' stage
+          requires both records: a MAST-query selection made after the lock; an acquisition of exactly that record and that file,
+          made later; and the output from that file.
+        - Live check on the in-sample S107 product: one candidate, and the download is byte-identical to the training file
+          (results/conformance_317134140/selection_demo_S107/).
+        - Limitation, declared: MAST lists only the current version, so a reprocessing that replaced the first delivery before our
+          first check is undetectable. DATA_REL and the pipeline field are disclosed.
+    G3: decided by the author (item 178(a)); it applies to the S111 material (v1.19).
+    G4: the ordered outcome mapping is now written identically in the scorer, configs and registration. A complete truth-table test
+        covers A_LOW+B_TOP3 -> FAIL and A_HIGH+B_TOP3 -> PARTIAL.
+    G5: the scorer is now described as a dated operationalization of the qualitative frozen test, with its post-freeze numbers
+        listed. Clause A is described as compatibility plus positive-depth evidence; 1.96 is nominal, with no established coverage.
+        The registration text states that PARTIAL/INCONCLUSIVE are not confirmations and that FAIL is adverse evidence, not proof of
+        absence. The preprocessing differences from prep() are listed: no candidate mask, PDCSAP errors, MAD over all retained points.
+    CORRECTIONS (append-only):
+        - Item 176(3) said "There is no bias". Read instead: "No bias was detected in this small idealized white-noise fixture check;
+          it does not establish unbiased real-data depths or calibrated false-FAIL/PASS rates." Script and seed-level outputs are now
+          scripts/fixture_bias_check_317134140.py and results/conformance_317134140/fixture_bias_check_v1.3.json (same means:
+          189.5/187.9/181.8 ppm).
+        - Item 177 said "the four training outputs are identical" at the final SHA. They were run at ce29f0fe; only S98 was re-run at
+          acfd7d34. The SHA history is indexed in results/conformance_317134140/README.md.
+    Lock configs/conformance/LOCK_2026-10-24_317134140.json (5dc86db2830fd672...; generator
+    scripts/make_configs_317134140.py; UNAVAILABLE deadlines 2027-02-01 / 02-28 / 03-26). Tests scripts/test_317134140_lock.py:
+    151/151 (logs/test_317134140_lock_20261024.log; validator refusal reasons spot-checked).
+    Superseded and never published: all GAP3 v1.2a configs and locks, in configs/conformance/superseded_gap3_v1.2b_2026-10-24/.
+    make_conformance_configs_gap3.py and amend_gap3_registrations.py are marked superseded and refuse to run. The 80387959 and
+    120517801 registrations are reset to their public bytes until v1.19. Registration amendment: scripts/amend_317134140_registration.py.
+180. 2026-10-24 21:51 UTC — The reviewed v1.2 scorer bytes were reconstructed for diffing. The copy is
+    results/conformance_317134140/superseded_scorers/prereg_spoc_317134140_v1.2.py, and its SHA-256 equals the reviewed acfd7d34....
+    Re-check prompt: results/PROMPT_recheck_317134140_v1.3.txt -> results/RECHECK_317134140_v1.3.md.
+181. 2026-10-24 22:24 UTC — Re-check results/RECHECK_317134140_v1.3.md: "publish after listed changes" (R1-R4). Fixes:
+    R1: scripts/spoc_selection.py (ed019dfe23ec461d...) has a single derive() of candidates/status/selected from the saved MAST rows. SELECTED
+        needs exactly one candidate, a 'mast:' dataURI and its observation row; otherwise NONE, AMBIGUOUS or INCOMPLETE. The validator
+        (f3bca6924c16216c...) recomputes the response hash from the saved rows and re-derives the summary, refusing any
+        difference. The reviewer's cases are now tests: deleted rows with the old or a recomputed hash, two rows under a one-candidate
+        summary, a missing dataURI. The saved S107 demo record re-derives identically.
+    R2: timestamps are parsed strictly as UTC (malformed -> refused). Each config stores the exact cutoff, sector end + 120 days,
+        inclusive: S108 2027-02-01T20:30:00Z, S109 2027-02-28T18:55:00Z, S110 2027-03-26T04:15:00Z, matching the reviewer's table.
+        - A SELECTED record made at or before the cutoff permits scoring at any later time.
+        - If no SELECTED record exists by the cutoff, the sector is UNAVAILABLE; a later listing is secondary only.
+        - The validator refuses a first SELECTED record after the cutoff.
+        - Checks are made at least weekly from sector end until SELECTED, plus a final check in the 24 h before the cutoff; all
+          records, including NONE, are kept.
+        - Tests: exact-cutoff binds, cutoff + 1 microsecond refused, timely selection with acquisition in 2028 binds, malformed
+          query and download times refused.
+    R3 CORRECTION to item 179 ("the clauses, thresholds, mask and search are UNCHANGED"), read instead: "The depth-compatibility
+        boundaries, TOI mask and BLS search are unchanged. v1.3 tightens input/noise eligibility: at least 100 usable random shifts
+        instead of 11, positive errors, and a strictly positive finite sigma. These guards did not change the four saved training
+        outcomes." The training index (results/conformance_317134140/README.md) says the same.
+    R4 CORRECTION to item 179's "sigma not finite and > 0", read: "sigma is nonfinite or <= 0". Fixed in the scorer docstring,
+        generator, configs and registration. The release of record is described as "the eligible version listed at the first
+        recorded check; an earlier replaced delivery cannot be excluded".
+    Scorer docstring-only change: SHA-256 f3f55c0d74733f8a...; the training outputs are re-run at this SHA and identical
+        (insample_v1.3b_S*.json).
+    The first v1.3 lock and configs (never published) are archived in configs/conformance/superseded_317134140_v1.3a_2026-10-24/. New lock
+        LOCK_2026-10-24_317134140.json 6ef9583863141fb5.... Tests: 178/178 (logs/test_317134140_lock_20261024b.log;
+        no local paths); refusal reasons spot-checked. Registration amendment regenerated; the public prefix is intact.
+182. 2026-10-24 23:41 UTC — Second re-check results/RECHECK2_317134140_v1.3b.md: "publish after listed changes" (two small items). Fixes:
+    (1) spoc_selection.derive() (600e9504a811ac14...): a product-observation association needs a VALID obs_id (non-empty string, no
+        surrounding whitespace, not None/null/nan/--/n/a) on the product and exactly one observation row with the same valid id;
+        otherwise INCOMPLETE. Tests: absent, null, empty, whitespace, padded and 'None' ids on both rows, with the hash and summary
+        regenerated -> INCOMPLETE and refused. The saved S107 demo record still re-derives identically.
+    (2) Monitoring is now PROSPECTIVE (new config field monitoring_rule, repeated in the registration). It starts at the later of the
+        lock's effective time and the sector end. Checks are weekly until the first SELECTED record, plus a final check within 24 h
+        before the cutoff; every check is retained; the first eligible selected release is never replaced. It is periodic, not
+        continuous monitoring. S108 ended before the obligation: no selection record for it was made before this lock, and the
+        schedule is not claimed for that period. UNAVAILABLE means no SELECTED record by the cutoff, not that no archive product
+        ever existed.
+    (3) The training-index label for fixture_bias_check_v1.3.json now names its actual SHA, cd21f1fc, whose executable logic is
+        identical to the current f3f55c0d (passing note).
+    Scorer and validator are unchanged. The previous lock is archived in configs/conformance/superseded_317134140_v1.3b_2026-10-24/.
+    New lock LOCK_2026-10-24_317134140.json 58df364513d9d2bd.... Tests 196/196
+    (logs/test_317134140_lock_20261024c.log). Registration amendment regenerated; the public prefix is intact; the S111 registrations
+    are still at their public bytes.

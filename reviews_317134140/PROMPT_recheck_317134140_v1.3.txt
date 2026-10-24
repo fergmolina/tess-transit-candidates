@@ -1,0 +1,67 @@
+Re-check of the corrected TIC 317134140 scoring package (scorer v1.3, intended for release v1.18), after your review
+results/REVIEW_GAP3_configs.md (G1-G5). Nothing is published yet. Work from /Users/fernando/Desktop/NASA and verify everything yourself.
+Be adversarial. URGENCY: the SPOC S108 delivery could come at any time; S108 was observed 2026-09-07 to 10-05.
+
+SCOPE
+- Only the TIC 317134140 S108-S110 package.
+- The author has split the release (DECISIONS 178(b)). The S111 material for 80387959 / 120517801 is NOT in this package. It will
+  be regenerated for v1.19 under the author's G3 decision, DECISIONS 178(a), and reviewed separately.
+- All GAP3 configs and locks you reviewed are archived, never published, in configs/conformance/superseded_gap3_*. The two S111
+  registrations were reset to their public bytes.
+
+MATERIALS
+- Decisions: logs/DECISIONS.md items 178-179. Item 179 maps each finding to its fix and appends the two corrections you asked for.
+- Scorer: scripts/prereg_spoc_317134140.py v1.3.
+- Release-of-record tool: scripts/spoc_selection.py.
+- Validator: scripts/validate_nonclock_inputs.py (new 'selection' stage; 'result' stage requires both records).
+- Generator: scripts/make_configs_317134140.py. Configs: configs/conformance/317134140_spoc_S108.json, _S109.json and _S110.json.
+  Lock: configs/conformance/LOCK_2026-10-24_317134140.json.
+- Tests: scripts/test_317134140_lock.py, log logs/test_317134140_lock_20261024.log (151/151).
+- Registration: results/vet/317134140/PREREGISTRATION.md (public copy: public_release/preregistration/TIC317134140/). The dated
+  text is written by scripts/amend_317134140_registration.py.
+- Training-output index: results/conformance_317134140/README.md (SHA history).
+  - Bias check: scripts/fixture_bias_check_317134140.py and results/conformance_317134140/fixture_bias_check_v1.3.json.
+  - Release-record example on the in-sample S107 product: results/conformance_317134140/selection_demo_S107/.
+
+CHECK
+1) G1. Re-run your malformed-input probes against v1.3: TIMEUNIT, TIMEREF, BJDREFF, missing TICID, all-flagged QUALITY, constant flux,
+   and anything else you can think of (NaN-only flux, empty tables, extra HDUs, huge gaps, a sector with < 10 events). Every case must
+   end in a structured INVALID_INPUT or INSUFFICIENT, never a crash or a scientific label. Is the order of checks right?
+2) G2. Is the selection/acquisition design enforceable, and does it close the substitution path you found (pipeline 9999)?
+   - Can a record be forged or replayed past the validator in a way that matters?
+   - Is the "first check after listing" rule and its declared limitation (MAST lists the current version only) acceptable?
+   - Is refusing AMBIGUOUS or NONE, instead of choosing, correct?
+   - Note: tests stand in for the MAST query by editing the record's mode; the validator accepts only mast_query / mast_download.
+   - Stated design choice: unlike round 4, where the evaluator output names its clock record, the scorer output does not name the
+     selection or acquisition record. The chain is bound only in the validator, through the light-curve hash. Is validator-side
+     binding sufficient, or must the output name the records?
+3) G4. Is the ordered mapping identical in the scorer, configs and registration? Is the truth-table test complete?
+4) G5. Is the scope, uncertainty and operationalization wording now accurate and sufficient?
+   - Are the preprocessing differences from prep() fully listed?
+   - Are the corrections to items 176(3) and 177 adequate?
+5) No-change claim. Diff scripts/prereg_spoc_317134140.py against
+   results/conformance_317134140/superseded_scorers/prereg_spoc_317134140_v1.2.py. That copy is a byte-exact reconstruction of the
+   v1.2 you reviewed: SHA-256 acfd7d34bb2844856d69cad2f181112b0363fb7030af66de5c6633b5349c0fd7. Confirm that the clause logic,
+   thresholds, TOI mask and search are unchanged, and that the training outputs at the locked SHA cd21f1fc
+   (insample_v1.3_S*.json) equal the v1.2 ones.
+6) Unavailable rule. Are the UNAVAILABLE deadlines (120 days after each sector end, from catalogs/TESS_orbit_times.csv) correct and
+   adequate?
+7) Integrity. Config and lock hashes. Is the registration's public prefix byte-identical, and is the appended text accurate? Is the
+   prediction CSV unchanged?
+8) Verdict: publish as v1.18 / publish after listed changes / not ready.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry (QLP, SPOC, TESScut, FFI) of any frozen object. This includes:
+  - TIC 317134140 in S108, S109 and S110;
+  - TIC 80387959 and 120517801 in S111 or later;
+  - TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222,
+    53825235 and 3367979 in S106 or later;
+  - the 14 objects locked in v1.17 in S106 or later;
+  - every round-6 pool star in S106 or later.
+- Do NOT run 'spoc_selection.py select' or 'acquire' for any test sector. Running them for 317134140 S107 (in-sample) is allowed.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/RECHECK_317134140_v1.3.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print
+only the report path and a one-line verdict.

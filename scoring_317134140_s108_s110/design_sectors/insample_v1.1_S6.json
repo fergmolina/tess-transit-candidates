@@ -1,0 +1,44 @@
+{
+ "script_sha256": "4c53a94be32f978a49f1de7d38b8c3e7b422ac8d91a6fb1f06531aeff8199916",
+ "lc_file": "tess2018349182500-s0006-0000000317134140-0126-s_lc.fits",
+ "mode": "INSAMPLE_CHECK (training sector; predicted times generated from the frozen T0/P; NOT an outcome)",
+ "provenance": {
+  "ORIGIN": "NASA/Ames",
+  "TICID": 317134140,
+  "SECTOR": 6,
+  "TIMESYS": "TDB",
+  "BJDREFI": 2457000,
+  "PROCVER": "spoc-5.0.20-20201120",
+  "DATA_REL": 42,
+  "DATE": "2020-12-19"
+ },
+ "lc_sha256": "9c36fb8bc664843a878846fb27403aa6a07fb9bf170ae20bac291c26570a1535",
+ "depth_ppm": 118.18937903096405,
+ "sigma_ppm": 55.44909793487689,
+ "n_eligible": 30,
+ "n_predicted": 37,
+ "n_null": 200,
+ "clause_a": "A_CONSISTENT",
+ "clause_b": "B_NOT_TOP3",
+ "top3": [
+  {
+   "period": 0.9196101477819777,
+   "sde": 5.102244504792709,
+   "depth_ppm": 214.12651579898338
+  },
+  {
+   "period": 5.127829787341022,
+   "sde": 4.743718559748901,
+   "depth_ppm": 429.23697088207234
+  },
+  {
+   "period": 3.3765920710930777,
+   "sde": 4.052505907283265,
+   "depth_ppm": 522.6000828044689
+  }
+ ],
+ "alias_hits": [],
+ "n_cadences": 12773,
+ "toi_mask_removed": 911,
+ "outcome": "PARTIAL"
+}

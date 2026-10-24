@@ -6,8 +6,8 @@ authors:
     given-names: Fernando
     affiliation: Independent researcher
     orcid: "https://orcid.org/0009-0002-2872-3406"
-date-released: "2026-10-24"
-version: "1.17"
+date-released: "2026-10-25"
+version: "1.18"
 license: MIT
 doi: 10.5281/zenodo.23443244
 repository-code: "https://github.com/fergmolina/tess-transit-candidates"

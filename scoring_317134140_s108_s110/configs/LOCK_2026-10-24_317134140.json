@@ -1,0 +1,43 @@
+{
+ "made_utc": "2026-10-24 23:40:31 UTC",
+ "made_utc_iso": "2026-10-24T23:40:31.971213Z",
+ "note": "TIC 317134140 S108-S110 lock (scorer v1.3); use scripts/validate_nonclock_inputs.py --lock this file.",
+ "configs": {
+  "317134140_spoc_S108.json": {
+   "config_sha256": "b4f091bc63a595a2c78c3ddb9645ba846ba21e73d75aca55ca2db7e1acffb42b",
+   "tic": 317134140,
+   "sector": 108,
+   "primary": null,
+   "pred_sha256": "63e98fc87ebc6ce65198e066028d7f9ea58d24b51b35771d9fc551c41f59deb3",
+   "scoring_code": "prereg_spoc_317134140",
+   "prereg_spoc_317134140_code_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+   "tsearch_code_sha256": "3b691ffc47054cb898b199fa19f0e952a04c3574833de0154eb03ae9bbe54b05",
+   "search_pipeline_code_sha256": "34e56bb1016ac31c45c73aed4115301cdcbab46977363dbb57ab060178ef2415",
+   "spoc_selection_code_sha256": "600e9504a811ac14c10c8129324e9f5707c3103be85bd1d5961d47bafac4ac05"
+  },
+  "317134140_spoc_S109.json": {
+   "config_sha256": "15ee54949875d1b6f5b8e9026916921d82d984d59649adc0db4cfe4f44e32ffd",
+   "tic": 317134140,
+   "sector": 109,
+   "primary": null,
+   "pred_sha256": "63e98fc87ebc6ce65198e066028d7f9ea58d24b51b35771d9fc551c41f59deb3",
+   "scoring_code": "prereg_spoc_317134140",
+   "prereg_spoc_317134140_code_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+   "tsearch_code_sha256": "3b691ffc47054cb898b199fa19f0e952a04c3574833de0154eb03ae9bbe54b05",
+   "search_pipeline_code_sha256": "34e56bb1016ac31c45c73aed4115301cdcbab46977363dbb57ab060178ef2415",
+   "spoc_selection_code_sha256": "600e9504a811ac14c10c8129324e9f5707c3103be85bd1d5961d47bafac4ac05"
+  },
+  "317134140_spoc_S110.json": {
+   "config_sha256": "1370e4245052a48d1c641f06f0176cbfe20adbd36f5b5ffeb4d450ab00be0937",
+   "tic": 317134140,
+   "sector": 110,
+   "primary": null,
+   "pred_sha256": "63e98fc87ebc6ce65198e066028d7f9ea58d24b51b35771d9fc551c41f59deb3",
+   "scoring_code": "prereg_spoc_317134140",
+   "prereg_spoc_317134140_code_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+   "tsearch_code_sha256": "3b691ffc47054cb898b199fa19f0e952a04c3574833de0154eb03ae9bbe54b05",
+   "search_pipeline_code_sha256": "34e56bb1016ac31c45c73aed4115301cdcbab46977363dbb57ab060178ef2415",
+   "spoc_selection_code_sha256": "600e9504a811ac14c10c8129324e9f5707c3103be85bd1d5961d47bafac4ac05"
+  }
+ }
+}
