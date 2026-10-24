@@ -177,6 +177,18 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 5. **Round 6 (paused).** A comparison of nearby faint M dwarfs (13.5 < T ≤ 16) went through metadata-only scoping (S0) and two pilot-design reviews. It is paused under a pre-declared stopping rule (DECISIONS 159–161). No round-6 light curve was downloaded and nothing was frozen. Only the decision-history summary is included here. The round-6 catalogues, code, detailed review reports and working products are not released. The pilot remains paused and unapproved; this release contains no round-6 search or freeze.
 
 
+**Scoring locked for the S107-S121 tests (2026-10-24 (v1.17)).**
+- **What is locked:** 26 per-sector configs for 14 frozen objects, with tests from S107 to S121. They were locked on 2026-10-24 at
+  00:18 UTC, before any of these sectors' photometry was examined, in `conformance_s107_s121/` (same evaluator, validator and rules
+  as round 4).
+- **Rule:** the primary sector named in each config is the test of record and is never replaced.
+- **Five older registrations:** their reference values come from a dated generator-rule amendment.
+- **TIC 160330868:** its S107 primary is expected INSUFFICIENT under the declared edge rule, as stated in advance.
+- **Exposure:** S107 was already observed and S109 is being observed. The authors attest that no target-sector photometry of these
+  stars has been examined.
+- **Records:** dated amendments in the 14 registrations; review in `reviews_s107_s121/`.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

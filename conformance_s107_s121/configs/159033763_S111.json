@@ -1,0 +1,32 @@
+{
+ "tic": 159033763,
+ "sector": 111,
+ "primary": true,
+ "test_of_record": "YES - primary sector of v2 (predicted_transits_2026_2027_v2.csv)",
+ "primary_rule": "The primary sector is the test of record. It stays the test of record whatever its result, including INSUFFICIENT, CLOCK_UNVERIFIED or INVALID_INPUT; it is never replaced by a later sector. Later listed sectors are scored separately with their own configs and reported as further tests, never pooled with the primary.",
+ "product": "QLP",
+ "flux_col": "SAP_FLUX",
+ "pred_csv": "/Users/fernando/Desktop/NASA/results/vet_allsky/159033763/predicted_transits_2026_2027_v2.csv",
+ "pred_sha256": "c45eb808cb65ed1e7dcc3c57d11cf1391e00e779fd1f99f5da7ea082e3410d2f",
+ "ref_depth_ppm": 374.0,
+ "ref_dur_h": 0.9,
+ "reference_source": "PREREGISTRATION_v2.md reference-values line (frozen text)",
+ "timing_rule": "max(3 mean sigma_min, 30 min) (CLARIFICATION_TIMING_RULE_2026-10-20.md); min(3 sigma, 30 min) reading also reported",
+ "evaluator": "scripts/prereg_conformance.py (conformance-v2.1 rc4, general rules); frozen scripts/prereg_test.py literal outputs reported as secondary readouts",
+ "evaluator_sha256": "a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f",
+ "clock_prior": "results/qlp_clock_v2/159033763.json",
+ "clock_prior_sha256": "73da984209553a45a05e100db92f9ffd4a8a40b531128571c05d2602cb010a60",
+ "clock_note": "qlp_clock_test_sector.py reads TIME/TIMECORR of a TESScut cutout of the test sector (run with --declared-test only when this test is run); no TESScut flux is used or scored",
+ "frozen_evaluator_commands": [
+  "python -I scripts/prereg_test.py --lc <QLP S111 HLSP FITS> --flux-col SAP_FLUX --pred results/vet_allsky/159033763/predicted_transits_2026_2027_v2.csv --depth-ppm 374.0 --dur-h 0.9 --sector 111",
+  "python -I scripts/prereg_test.py --lc <QLP S111 HLSP FITS> --flux-col DET_FLUX --pred results/vet_allsky/159033763/predicted_transits_2026_2027_v2.csv --depth-ppm 374.0 --dur-h 0.9 --sector 111"
+ ],
+ "release_of_record": "v01",
+ "strict_epochs": null,
+ "object_specific_clauses": null,
+ "product_note": "QLP SAP_FLUX: the star is on no published 2-min target list for this sector at the lock (S107 manifest; S109/S110 lists; S111+ lists not yet published). If it later appears on one, QLP stays the product of record and SPOC PDCSAP is reported only as a secondary readout.",
+ "edge_rule": "drop 1.5 d after data start / resume (gap > 0.5 d) and 0.5 d before any gap > 0.1 d or data end (pooled rule; DECISIONS 76, 82, 86)",
+ "data_status": "future sector: not observed when the predictions were frozen (2026-10-20 00:43:55 UTC) nor when this config was locked",
+ "calibration": "none object-specific; the conformance false-recovery calibration was made on the S106 objects only",
+ "locked_utc": "2026-10-24 00:18:34 UTC"
+}

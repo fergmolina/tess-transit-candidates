@@ -1,0 +1,60 @@
+# Release v1.17 manifest (2026-10-24)
+
+Files added or changed since v1.16, with SHA-256. Locked scoring configs for the S107-S121 tests (conformance_s107_s121/), dated registration amendments,
+two new clock priors, the configs review (path-only redactions). All 68 prediction CSVs are unchanged; the 2 other tracked registration-area CSVs are also unchanged.
+
+| SHA-256 | file |
+|---|---|
+| `9c728de1ce21d8fbfa8922a13a1bf6ab46b5c5243a4064b38cb911579e89cb17` | CITATION.cff |
+| `1ab793f3f7c3b03a6f9caf14ab4e0c518da205b8cc6cdbabc000b6321c403a02` | DECISIONS.md |
+| `69f62eaca14a9d126ac5dd97d5b01fa4af5b756e47a616877779fac79fbf16c7` | README.md |
+| `09f2f69136eff1925304093a59c394a6ec085ef8b0b82415a1179082cf7c1f44` | conformance_s107_s121/README.md |
+| `1c8f6b5103627becaa6fa0ca3c9aff0a76b47997f42208531ee6f7ee2345a063` | conformance_s107_s121/configs/159033763_S111.json |
+| `c13438fae1bda769c7cbd6fac8dd0b168da550d8d7205cd604d24ba3b545acb9` | conformance_s107_s121/configs/160330868_S107.json |
+| `c1dddfdc8616d196ff16c63416bce45f7b558bfa95c4a3fd2344db90a8c7a5a8` | conformance_s107_s121/configs/160330868_S109.json |
+| `6e1c28eb31f57f24913a28019c8d034b807e7cb67dece0d3de1cf69a399f0d85` | conformance_s107_s121/configs/162304222_S111.json |
+| `deede21788f954835ec7c6716eb7e82cb8f91673785de284ce8c67aa2a72d9c2` | conformance_s107_s121/configs/162304222_S112.json |
+| `147b9b12ead6dd6be30f0c73ecde22eaa736ac128a002eb0815f11913dc314e5` | conformance_s107_s121/configs/162304222_S113.json |
+| `d3d4eba27579f3653fa02fc43c1bdfb7992a443dbcceedffd6944142d6ef0f02` | conformance_s107_s121/configs/162304222_S114.json |
+| `0d6148b9f62c9eec39911a736e2534b9ea9571047ce26a6e6874915dd6f5962c` | conformance_s107_s121/configs/19119739_S111.json |
+| `e99ffd2d2fb03e2f8ad25a6555b4a5fa2539dc528186dad8eb9a1dc07208aaf7` | conformance_s107_s121/configs/19119739_S112.json |
+| `b460454b93e56e9bf9878d8a02c6de9caec9478023e6e81b397c74f124a5cf20` | conformance_s107_s121/configs/196514928_S109.json |
+| `6a80b8ca514e1a07376eacd023a354b2e7ad451493764bde6939a802443a9c0a` | conformance_s107_s121/configs/196514928_S110.json |
+| `07dac49a027a93873f3b3f41b4c791fafda9791a87dd0cff5ea948d65e2bb037` | conformance_s107_s121/configs/196514928_S111.json |
+| `2f8f2bc7f7868335521dcc4efb03a83c2550744739ef56ea67c38916aef918e2` | conformance_s107_s121/configs/196514928_S112.json |
+| `50b047d567c871027845cd6ad124651cc8de96a4d5cc987b517223843c01af57` | conformance_s107_s121/configs/203381983_S115.json |
+| `d47ea1091848e0bc07133cdeca16d7c1dd4e5d25171aaa697d6014a41f8313ca` | conformance_s107_s121/configs/24526743_S107.json |
+| `b05689ec989e381fafe51448b956a66eabb10f85a412ea18124a0872f529ad4c` | conformance_s107_s121/configs/258006047_S114.json |
+| `33d247cb980a891358a764ec131013087ba5f293afb8690c896d1ecad0762122` | conformance_s107_s121/configs/283913390_S111.json |
+| `93154a14e85f6058864f118be1c5832a0595736883f4dc2479c9aaabc48dfcd2` | conformance_s107_s121/configs/333661705_S111.json |
+| `e6c485fee9041d3d1a0b2c17771247cbc4892d562d5e880d08402884726225e4` | conformance_s107_s121/configs/333661705_S112.json |
+| `982e2ad66faa14558b4ffd34ed771af3b3703d6eb87b8594d8352e86526c2c95` | conformance_s107_s121/configs/333661705_S113.json |
+| `b6b23507492a928461cf9c561affa46c8ebc00ba187a89a9f39afedb3160f71f` | conformance_s107_s121/configs/333661705_S114.json |
+| `0f307db494b65c0f3de68156c29a433231b758e5d0def98f8f304ecec059cd6b` | conformance_s107_s121/configs/333735955_S114.json |
+| `c94363970c8180cb0ab6fe60519cfad97b6f7eca9b0c61f201a18a4285e38435` | conformance_s107_s121/configs/366047768_S121.json |
+| `2c2ec1fd6ea125f28eb46c953f4623927304b874beeff4e6f79060f95f47a89c` | conformance_s107_s121/configs/467959906_S114.json |
+| `6521bfed1d6ed22f1fd512c5fa40046a519c7e60069b0d80b3d40b3498f0d123` | conformance_s107_s121/configs/53825235_S109.json |
+| `d3a896c5304229dc45d81ae904b14d3c457fc76bad8ad286522da4d17b78df8d` | conformance_s107_s121/configs/53825235_S110.json |
+| `a8731dfcb4a482f633b08fbfe26fbd398670c5616e791c3b3805c602837ef694` | conformance_s107_s121/configs/LOCK_2026-10-23_S107_S121.json |
+| `1155917c3a432bdcf93eabb2f002c01d681558f96d5cc611d41092804c2e137a` | conformance_s107_s121/scripts/make_conformance_configs_s107_s121.py |
+| `66171991ec48b019baadc226210312b8454ac60ac3f8d95c13aa19f9c2294ecb` | conformance_s107_s121/scripts/s0_exposure_inventory.py |
+| `18c0b4536a91fcb3783ac5e87e85c68d86ec7546bf2307122bfa5567c723be0e` | conformance_s107_s121/scripts/test_locked_configs.py |
+| `707c1185c1c4e849e52f5b64322f885062bb1ac6c56d3a582a546739de728e71` | conformance_s107_s121/tests/test_locked_configs_S107_S121_20261023b.log |
+| `e142e83913143a04673fdd1550d9b1a8e4077748b274b01c5585a4a8d8989f68` | preregistration/TIC159033763/PREREGISTRATION_v2.md |
+| `7f86ecb7212e6664d9b0195b169ff032da8b8bbd770abb692a9fe20d9f52b293` | preregistration/TIC160330868/PREREGISTRATION_v2.md |
+| `431499e4ecdfd81aeb9947db91cdfe863d20eaf6768099599a667040b52590b7` | preregistration/TIC162304222/PREREGISTRATION_v4.md |
+| `60c806cbbf1dbf5ee1ba6bad41b0ba4923172e3436e7989eb3e3bf9163d684a0` | preregistration/TIC19119739/PREREGISTRATION_v2.md |
+| `cea62fbc141c743810f756cade2d6b7dbdff1f883745d25ba03c168199d69f14` | preregistration/TIC196514928/PREREGISTRATION_v2.md |
+| `29490d054221598b56fb6a50f8f734e3a5218b3f0f0b28565e7e241e56a223e8` | preregistration/TIC203381983/PREREGISTRATION_v2.md |
+| `0e5b05f7f69925b2df7d2fa2cf6958532fba3eff862f516e309208b9249e282f` | preregistration/TIC24526743/PREREGISTRATION_v2.md |
+| `756625f35b265184777209d27b2cbaaaca6d4b23c001308fa9ed956d7b92ce1a` | preregistration/TIC258006047/PREREGISTRATION_v2.md |
+| `17c15917dce3c0c1ba0cc7d8f20b4d017350abf3098173e173750e22fa0e3f47` | preregistration/TIC283913390/PREREGISTRATION_v2.md |
+| `9b0228f1a276a1af870fb4c903d1c53e7f28aca3c2debfb74a07019a22996927` | preregistration/TIC333661705/PREREGISTRATION_v2.md |
+| `81a08263191d67072a8be5f23867556f615aab7dcb73aafea0add12ad7b47cec` | preregistration/TIC333735955/PREREGISTRATION_v2.md |
+| `845aba1d84f9840c0017bdd42b6bdb3f7119e10bcb2b177818c043a0bfe33282` | preregistration/TIC366047768/PREREGISTRATION_v2.md |
+| `13ad077930d310c874bb301b03c2bf8345dff2f1082cd0914eaf1ff704669bba` | preregistration/TIC467959906/PREREGISTRATION_v2.md |
+| `52904643ade08d40502609b4272678b2b8220acad04df2ffec4af968e3c80860` | preregistration/TIC53825235/PREREGISTRATION_v3.md |
+| `f95f9940ff9f6ab4125f64b49002a245ed3b21ad1f9791653358422a74cf2796` | preregistration/qlp_clock_v2/203381983.json |
+| `24a736a6c859850ed959c38bc278501ff2a4de593a39a0c0a11a29b13889d31b` | preregistration/qlp_clock_v2/366047768.json |
+| `2d644b1cfba3b0b73d715a6d0b5129df7e4da08755962c2811f392e06feb1995` | reviews_s107_s121/PROMPT_review_S107_S121_configs.txt |
+| `82fe3e526ff20463185116d950c11fbdd017b0a0bb7b5340dfd7c80ab3c9f931` | reviews_s107_s121/REVIEW_S107_S121_configs.md |

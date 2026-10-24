@@ -1,0 +1,241 @@
+{
+ "made_utc": "2026-10-24 00:18:34 UTC",
+ "note": "Lock manifest for the S107-S121 tests of 14 frozen objects (DECISIONS 166): the SHA-256 of every locked config and of the c0 prior each one names. scripts/validate_round4_inputs.py --lock <this file> refuses any config, prior or clock record not bound to these values.",
+ "evaluator_sha256": "a864b07ace8d3220a2d94a60513a488c8a5d87b54f41ebf510ff40ef1755311f",
+ "configs": {
+  "24526743_S107.json": {
+   "config_sha256": "d47ea1091848e0bc07133cdeca16d7c1dd4e5d25171aaa697d6014a41f8313ca",
+   "tic": 24526743,
+   "sector": 107,
+   "primary": true,
+   "pred_sha256": "5a39b787e00b3d22d686476c3ae1adfd7c760691b43f797086a7aff7762bf83f",
+   "clock_prior": "results/qlp_clock_v2/24526743.json",
+   "clock_prior_sha256": "37e502ed7ab5e7736b2082e26467d72abe4785ecc1c12931db62c6e9483df7d5"
+  },
+  "160330868_S107.json": {
+   "config_sha256": "c13438fae1bda769c7cbd6fac8dd0b168da550d8d7205cd604d24ba3b545acb9",
+   "tic": 160330868,
+   "sector": 107,
+   "primary": true,
+   "pred_sha256": "fa72f33be927e01156b60eb88da2d7a2be4636a82b79b40c324ed77dd01b79ca",
+   "clock_prior": "results/qlp_clock_v2/160330868.json",
+   "clock_prior_sha256": "f94514ea0e3c6d25de546fb729d00f0c1075f3d1eb0c0f3f4ea125d361a378e1"
+  },
+  "160330868_S109.json": {
+   "config_sha256": "c1dddfdc8616d196ff16c63416bce45f7b558bfa95c4a3fd2344db90a8c7a5a8",
+   "tic": 160330868,
+   "sector": 109,
+   "primary": false,
+   "pred_sha256": "fa72f33be927e01156b60eb88da2d7a2be4636a82b79b40c324ed77dd01b79ca",
+   "clock_prior": "results/qlp_clock_v2/160330868.json",
+   "clock_prior_sha256": "f94514ea0e3c6d25de546fb729d00f0c1075f3d1eb0c0f3f4ea125d361a378e1"
+  },
+  "196514928_S109.json": {
+   "config_sha256": "b460454b93e56e9bf9878d8a02c6de9caec9478023e6e81b397c74f124a5cf20",
+   "tic": 196514928,
+   "sector": 109,
+   "primary": true,
+   "pred_sha256": "1fa2a7e068d35809c1f51ed7b021ecbd11e39ade86476d31879371333b853017",
+   "clock_prior": "results/qlp_clock_v2/196514928.json",
+   "clock_prior_sha256": "a932676a275a367f29302e717bdd92e676cc6901efb87c0ac0a01d7d90f30c23"
+  },
+  "196514928_S110.json": {
+   "config_sha256": "6a80b8ca514e1a07376eacd023a354b2e7ad451493764bde6939a802443a9c0a",
+   "tic": 196514928,
+   "sector": 110,
+   "primary": false,
+   "pred_sha256": "1fa2a7e068d35809c1f51ed7b021ecbd11e39ade86476d31879371333b853017",
+   "clock_prior": "results/qlp_clock_v2/196514928.json",
+   "clock_prior_sha256": "a932676a275a367f29302e717bdd92e676cc6901efb87c0ac0a01d7d90f30c23"
+  },
+  "196514928_S111.json": {
+   "config_sha256": "07dac49a027a93873f3b3f41b4c791fafda9791a87dd0cff5ea948d65e2bb037",
+   "tic": 196514928,
+   "sector": 111,
+   "primary": false,
+   "pred_sha256": "1fa2a7e068d35809c1f51ed7b021ecbd11e39ade86476d31879371333b853017",
+   "clock_prior": "results/qlp_clock_v2/196514928.json",
+   "clock_prior_sha256": "a932676a275a367f29302e717bdd92e676cc6901efb87c0ac0a01d7d90f30c23"
+  },
+  "196514928_S112.json": {
+   "config_sha256": "2f8f2bc7f7868335521dcc4efb03a83c2550744739ef56ea67c38916aef918e2",
+   "tic": 196514928,
+   "sector": 112,
+   "primary": false,
+   "pred_sha256": "1fa2a7e068d35809c1f51ed7b021ecbd11e39ade86476d31879371333b853017",
+   "clock_prior": "results/qlp_clock_v2/196514928.json",
+   "clock_prior_sha256": "a932676a275a367f29302e717bdd92e676cc6901efb87c0ac0a01d7d90f30c23"
+  },
+  "53825235_S109.json": {
+   "config_sha256": "6521bfed1d6ed22f1fd512c5fa40046a519c7e60069b0d80b3d40b3498f0d123",
+   "tic": 53825235,
+   "sector": 109,
+   "primary": true,
+   "pred_sha256": "1408a7cda5e0d01a573ab9c36cb6159f05ebbc84bbc5bea3398ab16cecee4aab",
+   "clock_prior": "results/qlp_clock_v2/53825235.json",
+   "clock_prior_sha256": "c6214fc57c76c44bdeb15992ef320472ffea18d7bf5bb25545e4a2e003afd00f"
+  },
+  "53825235_S110.json": {
+   "config_sha256": "d3a896c5304229dc45d81ae904b14d3c457fc76bad8ad286522da4d17b78df8d",
+   "tic": 53825235,
+   "sector": 110,
+   "primary": false,
+   "pred_sha256": "1408a7cda5e0d01a573ab9c36cb6159f05ebbc84bbc5bea3398ab16cecee4aab",
+   "clock_prior": "results/qlp_clock_v2/53825235.json",
+   "clock_prior_sha256": "c6214fc57c76c44bdeb15992ef320472ffea18d7bf5bb25545e4a2e003afd00f"
+  },
+  "19119739_S111.json": {
+   "config_sha256": "0d6148b9f62c9eec39911a736e2534b9ea9571047ce26a6e6874915dd6f5962c",
+   "tic": 19119739,
+   "sector": 111,
+   "primary": true,
+   "pred_sha256": "5aafcdd96fd6ac1657489539790b0229855b5e94bcbc4cc0773651710dcac8d7",
+   "clock_prior": "results/qlp_clock_v2/19119739.json",
+   "clock_prior_sha256": "e02761a1a7bcc1a3c783021a0637cb4b8103a3817412592a064d79bed80a035d"
+  },
+  "19119739_S112.json": {
+   "config_sha256": "e99ffd2d2fb03e2f8ad25a6555b4a5fa2539dc528186dad8eb9a1dc07208aaf7",
+   "tic": 19119739,
+   "sector": 112,
+   "primary": false,
+   "pred_sha256": "5aafcdd96fd6ac1657489539790b0229855b5e94bcbc4cc0773651710dcac8d7",
+   "clock_prior": "results/qlp_clock_v2/19119739.json",
+   "clock_prior_sha256": "e02761a1a7bcc1a3c783021a0637cb4b8103a3817412592a064d79bed80a035d"
+  },
+  "159033763_S111.json": {
+   "config_sha256": "1c8f6b5103627becaa6fa0ca3c9aff0a76b47997f42208531ee6f7ee2345a063",
+   "tic": 159033763,
+   "sector": 111,
+   "primary": true,
+   "pred_sha256": "c45eb808cb65ed1e7dcc3c57d11cf1391e00e779fd1f99f5da7ea082e3410d2f",
+   "clock_prior": "results/qlp_clock_v2/159033763.json",
+   "clock_prior_sha256": "73da984209553a45a05e100db92f9ffd4a8a40b531128571c05d2602cb010a60"
+  },
+  "283913390_S111.json": {
+   "config_sha256": "33d247cb980a891358a764ec131013087ba5f293afb8690c896d1ecad0762122",
+   "tic": 283913390,
+   "sector": 111,
+   "primary": true,
+   "pred_sha256": "fe3ad4669d29c5a320aa63c56ff7e489bf0ce9d2278ca0d8ca0e8bb7addcd4bc",
+   "clock_prior": "results/qlp_clock_v2/283913390.json",
+   "clock_prior_sha256": "0bc2562e5f111913bc2238f5efae3c2a2253fc545722b2b8e55f48ee04e84e38"
+  },
+  "333661705_S111.json": {
+   "config_sha256": "93154a14e85f6058864f118be1c5832a0595736883f4dc2479c9aaabc48dfcd2",
+   "tic": 333661705,
+   "sector": 111,
+   "primary": true,
+   "pred_sha256": "e7752bf76ab70b924362d09f957bf2df2e541f34fc19e29d6a44a1f7ff177872",
+   "clock_prior": "results/qlp_clock_v2/333661705.json",
+   "clock_prior_sha256": "d97a36ea098178c7692e31848cbccda62ca32de15ed6fa9a281970484f1b5aa5"
+  },
+  "333661705_S112.json": {
+   "config_sha256": "e6c485fee9041d3d1a0b2c17771247cbc4892d562d5e880d08402884726225e4",
+   "tic": 333661705,
+   "sector": 112,
+   "primary": false,
+   "pred_sha256": "e7752bf76ab70b924362d09f957bf2df2e541f34fc19e29d6a44a1f7ff177872",
+   "clock_prior": "results/qlp_clock_v2/333661705.json",
+   "clock_prior_sha256": "d97a36ea098178c7692e31848cbccda62ca32de15ed6fa9a281970484f1b5aa5"
+  },
+  "333661705_S113.json": {
+   "config_sha256": "982e2ad66faa14558b4ffd34ed771af3b3703d6eb87b8594d8352e86526c2c95",
+   "tic": 333661705,
+   "sector": 113,
+   "primary": false,
+   "pred_sha256": "e7752bf76ab70b924362d09f957bf2df2e541f34fc19e29d6a44a1f7ff177872",
+   "clock_prior": "results/qlp_clock_v2/333661705.json",
+   "clock_prior_sha256": "d97a36ea098178c7692e31848cbccda62ca32de15ed6fa9a281970484f1b5aa5"
+  },
+  "333661705_S114.json": {
+   "config_sha256": "b6b23507492a928461cf9c561affa46c8ebc00ba187a89a9f39afedb3160f71f",
+   "tic": 333661705,
+   "sector": 114,
+   "primary": false,
+   "pred_sha256": "e7752bf76ab70b924362d09f957bf2df2e541f34fc19e29d6a44a1f7ff177872",
+   "clock_prior": "results/qlp_clock_v2/333661705.json",
+   "clock_prior_sha256": "d97a36ea098178c7692e31848cbccda62ca32de15ed6fa9a281970484f1b5aa5"
+  },
+  "162304222_S111.json": {
+   "config_sha256": "6e1c28eb31f57f24913a28019c8d034b807e7cb67dece0d3de1cf69a399f0d85",
+   "tic": 162304222,
+   "sector": 111,
+   "primary": true,
+   "pred_sha256": "b4a26083fd8ae387242157f69bf03013f34c1f149b5f65a6551592c17a2d70d8",
+   "clock_prior": "results/qlp_clock_v2/162304222.json",
+   "clock_prior_sha256": "a96c15119711308c67386147fd61aa6a6ca09ff155aa672268b22a45021fcc08"
+  },
+  "162304222_S112.json": {
+   "config_sha256": "deede21788f954835ec7c6716eb7e82cb8f91673785de284ce8c67aa2a72d9c2",
+   "tic": 162304222,
+   "sector": 112,
+   "primary": false,
+   "pred_sha256": "b4a26083fd8ae387242157f69bf03013f34c1f149b5f65a6551592c17a2d70d8",
+   "clock_prior": "results/qlp_clock_v2/162304222.json",
+   "clock_prior_sha256": "a96c15119711308c67386147fd61aa6a6ca09ff155aa672268b22a45021fcc08"
+  },
+  "162304222_S113.json": {
+   "config_sha256": "147b9b12ead6dd6be30f0c73ecde22eaa736ac128a002eb0815f11913dc314e5",
+   "tic": 162304222,
+   "sector": 113,
+   "primary": false,
+   "pred_sha256": "b4a26083fd8ae387242157f69bf03013f34c1f149b5f65a6551592c17a2d70d8",
+   "clock_prior": "results/qlp_clock_v2/162304222.json",
+   "clock_prior_sha256": "a96c15119711308c67386147fd61aa6a6ca09ff155aa672268b22a45021fcc08"
+  },
+  "162304222_S114.json": {
+   "config_sha256": "d3d4eba27579f3653fa02fc43c1bdfb7992a443dbcceedffd6944142d6ef0f02",
+   "tic": 162304222,
+   "sector": 114,
+   "primary": false,
+   "pred_sha256": "b4a26083fd8ae387242157f69bf03013f34c1f149b5f65a6551592c17a2d70d8",
+   "clock_prior": "results/qlp_clock_v2/162304222.json",
+   "clock_prior_sha256": "a96c15119711308c67386147fd61aa6a6ca09ff155aa672268b22a45021fcc08"
+  },
+  "258006047_S114.json": {
+   "config_sha256": "b05689ec989e381fafe51448b956a66eabb10f85a412ea18124a0872f529ad4c",
+   "tic": 258006047,
+   "sector": 114,
+   "primary": true,
+   "pred_sha256": "48805ca7e45c361f1a7c4092e145bce7c9c6e449edb768663d27efc3b1ba7e68",
+   "clock_prior": "results/qlp_clock_v2/258006047.json",
+   "clock_prior_sha256": "4b052b2e5d257baa9f14b4261c67680b146a5fc656212dcb6f3cc90e05c8c05b"
+  },
+  "333735955_S114.json": {
+   "config_sha256": "0f307db494b65c0f3de68156c29a433231b758e5d0def98f8f304ecec059cd6b",
+   "tic": 333735955,
+   "sector": 114,
+   "primary": true,
+   "pred_sha256": "c8551f9c33d0c02a7bd713cc5a2604072ce0fc16e7f259f84a11107ff635aba9",
+   "clock_prior": "results/qlp_clock_v2/333735955.json",
+   "clock_prior_sha256": "a137458c1bba9cce01d9fa73df5b28bc715726f3e06537ce9819b4326546dfa3"
+  },
+  "467959906_S114.json": {
+   "config_sha256": "2c2ec1fd6ea125f28eb46c953f4623927304b874beeff4e6f79060f95f47a89c",
+   "tic": 467959906,
+   "sector": 114,
+   "primary": true,
+   "pred_sha256": "58a25a2ea6f6d13f24712cff3f25242d3b2e93d74e6bdf8fc624016f91da39d2",
+   "clock_prior": "results/qlp_clock_v2/467959906.json",
+   "clock_prior_sha256": "b7c56228a630875a8f38a212fee8d5c2f17ca3c4815aaa90c63e889c839b9692"
+  },
+  "203381983_S115.json": {
+   "config_sha256": "50b047d567c871027845cd6ad124651cc8de96a4d5cc987b517223843c01af57",
+   "tic": 203381983,
+   "sector": 115,
+   "primary": true,
+   "pred_sha256": "6ff79f8e8c204567ff1c79a213891f922a86d0c8ad26d5e2e6048b3f1c4907c3",
+   "clock_prior": "results/qlp_clock_v2/203381983.json",
+   "clock_prior_sha256": "f95f9940ff9f6ab4125f64b49002a245ed3b21ad1f9791653358422a74cf2796"
+  },
+  "366047768_S121.json": {
+   "config_sha256": "c94363970c8180cb0ab6fe60519cfad97b6f7eca9b0c61f201a18a4285e38435",
+   "tic": 366047768,
+   "sector": 121,
+   "primary": true,
+   "pred_sha256": "1e246164f0070fed7606c4c9597e49bc7d138f05b912e6340f5048303c654671",
+   "clock_prior": "results/qlp_clock_v2/366047768.json",
+   "clock_prior_sha256": "24a736a6c859850ed959c38bc278501ff2a4de593a39a0c0a11a29b13889d31b"
+  }
+ }
+}

@@ -1,0 +1,44 @@
+Independent review of the locked scoring configs for 14 frozen objects with TESS tests in S107-S121, before any of these sectors'
+photometry is examined. Nothing is published yet. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial.
+URGENCY: QLP S107 could be released soon after S106, and the S107 tests (24526743, 160330868) need a sound, ideally published, lock
+before then.
+
+MATERIALS
+- Decisions: logs/DECISIONS.md items 166-167. Round-4 precedent: public_release/conformance_round4/ and public_release/reviews_round4/.
+- Generator: scripts/make_conformance_configs_s107_s121.py; 26 configs in configs/conformance/ (24526743_S107 ... 366047768_S121); lock
+  configs/conformance/LOCK_2026-10-23_S107_S121.json.
+- Validator (unchanged, takes --lock): scripts/validate_round4_inputs.py. Tests: scripts/test_locked_configs.py; logs
+  logs/test_locked_configs_S107_S121_20261023.log.
+- Registrations with dated scoring amendments: results/vet_allsky/<TIC>/PREREGISTRATION_<latest>.md for the 14 TICs.
+- New clock priors: results/qlp_clock_v2/203381983.json and 366047768.json. Exposure inventory:
+  results/round6_s0/exposure_inventory_tests14.json and previously_examined_tic_sectors_tests14.csv.
+- 2-min target lists used: catalogs/target_lists/all_targets_S109_v1.csv, _S110_v1.csv, and catalogs/tesscurl_sector_107_lc.sh.
+
+CHECK
+1) Test sectors: does each config set match the sectors of "prediction" rows in the object's latest prediction CSV? Are
+   retrodiction-only sectors correctly given no config? Do both evaluators really score only "prediction" rows?
+2) Primary-sector choice and rule. Is the earliest sector the right test of record for each object? Any object whose first sector is
+   unlikely to have eligible events (check against the frozen predictions and the published S107/S109/S110 orbit times; no photometry)?
+3) Reference values: frozen lines for 9 objects; the generator rule for 5 (report.json sap_depth, BLS duration_h). Is the generator
+   rule applied exactly as for TIC 70441745 in S106? Is labelling it a post-freeze amendment honest and sufficient?
+4) Product: QLP SAP_FLUX for all, with no star on a published 2-min list for its sector. Is the policy for a later 2-min listing (QLP
+   stays the product of record) acceptable?
+5) Data status: S107 observed, S109 being observed, both with public products. Is the "held-out check of already-observed data"
+   wording sufficient? Is the filename-only exposure inventory adequate evidence?
+6) Clock priors: the two new ones are made from in-sample controls only; the existing 12 are bound in the lock.
+7) The validator and tests: binding, refusals, test coverage; the generalised test file reproduces the round-4 suite (200/200).
+8) Registration amendments: append-only (compare with public_release/preregistration copies); accurate.
+9) Verdict: lock sound / sound after listed changes / not sound. Also: should these be published before any S107 data are seen?
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any S106-or-later photometry (QLP, SPOC, TESScut, FFI) for ANY of the frozen objects, including
+  these 14. In-sample files (<= S105) of these stars may be read only as the existing tests do (headers / refusal behaviour).
+- Protected test-sector data stay off limits: TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561,
+  151767028, 343298093, 188664994, 162304222, 53825235, 3367979 (Sector 106 or later); TIC 120517801, 80387959 (Sector 111 or later);
+  the 14 objects above (Sector 106 or later); and S106+ for every round-6 pool star.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_S107_S121_configs.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print
+only the report path and a one-line verdict.

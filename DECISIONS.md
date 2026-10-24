@@ -1394,3 +1394,106 @@
     - 68 prediction CSVs + 2 other registration-area CSVs unchanged;
     - manifest 40 rows, all hashes correct.
     Re-check prompt: results/PROMPT_recheck_v1.16_assembled.txt. Nothing is published.
+165. 2026-10-23 23:26 UTC — v1.16 PUBLISHED. The re-check (results/REVIEW_v1.16_assembled_recheck.md) said "publish as
+    assembled". The author's go covers the exact reviewed files, not a rebuild.
+    - Before commit: MANIFEST_v1.16.md 57ce05fb..., RELEASE_NOTES_v1.16.md fd8b90ab... and ZENODO_NOTICES_v1.16_DRAFT.md afb9d847... match
+      the review hashes; all 40 manifest hashes pass; HEAD was the reviewed base 9a17efc.
+    - GitHub: commit cf556794 (41 files, no session link, Co-Authored-By trailer), tag v1.16, release with the reviewed notes.
+      Archived automatically as Zenodo 10.5281/zenodo.23606533.
+    - Dataset notice (informational cross-reference, reviewed text with the release link filled in) prepended to 23535544, 23512928
+      and 23462438. Each deposited ZIP's md5 equals the local copy the reviewer inspected (fbf0fe5d / 665d8021 / 4d3a8086). Each
+      description grew by exactly the notice; verified on the public API. No preprint notice.
+    Non-blocking notes from the re-check, recorded:
+    - N1: the local rebuild scripts (assemble_v1_16.py + fix_v1_16_review.py) are inconsistent with each other. They must not be used
+      to rebuild v1.16; the published bytes are the record.
+    - N2: item 163's "9 local temporary paths each" counts affected lines. There were 11 and 13 occurrences, as the public-copy labels
+      state.
+    The Zenodo token of 2026-10-18 was used again and is still not revoked.
+166. 2026-10-24 00:17 UTC — Author's go (2026-10-23) to lock scoring configs for the frozen tests in S107-S121. This is
+    BEFORE any of these sectors' photometry is examined; the round-4 pattern applies. The author's "yes" adopts, for these 14 objects,
+    the primary-sector rule of item 120(2): the first listed sector with a released QLP v01 light curve is the test of record and is
+    never replaced; later sectors are separate tests.
+    Facts established first (metadata and own files only):
+    - Test sectors come from rows of the latest prediction CSV whose status starts with "prediction". Both evaluators score only
+      those rows (prereg_conformance.py:212-213, prereg_test.py:23). Retrodiction-only sectors get no config: S108 for 24526743,
+      53825235 and 160330868.
+    - 26 configs:
+      - 24526743 S107;
+      - 160330868 S107, S109;
+      - 196514928 S109-S112;
+      - 53825235 v3 S109-S110;
+      - 19119739 S111-S112;
+      - 159033763 S111;
+      - 283913390 S111;
+      - 333661705 S111-S114;
+      - 162304222 v4 S111-S114;
+      - 258006047 S114; 333735955 S114; 467959906 S114;
+      - 203381983 S115;
+      - 366047768 S121.
+      These match the monitoring agent's table.
+    - Product: none of the stars is on the 2-min list of its test sector where a list exists: S107 manifest (local); S109 and S110
+      target lists fetched (catalogs/target_lists/all_targets_S109_v1.csv sha 02319a02..., S110 8706361c...). S111+ lists are not yet
+      published. QLP SAP_FLUX is therefore locked for all 26. If a star later appears on a 2-min list, QLP stays the product of
+      record and SPOC is reported as a secondary readout only.
+    - Reference values:
+      - 9 registrations carry the frozen reference-values line;
+      - 5 round-2 registrations (258006047, 333735955, 467959906, 203381983, 366047768) predate it. For them, the generator rule is
+        applied as a dated amendment (S106 precedent, 70441745): report.json sap_depth, and the BLS duration_h because no shape-fit
+        T14_h exists.
+    - Exposure (filename-only inventory of data/, results/round6_s0/exposure_inventory_tests14.json): local files for these stars
+      reach S104 at most; none from S105 or later.
+    - Data status: S107 (and S108-S109) are already observed. Public products exist for S107 (FFIs; SPOC 2-min LCs of other stars).
+      The authors attest that no target-sector photometry of these stars has been examined. Those tests are held-out checks of
+      already-observed data (ERRATUM_S106 class), not prospective predictions. S110+ are future or in progress at the lock.
+    - Clock priors: 12 exist. New ones for 203381983 (controls S91, S64; c0 +0.032 min) and 366047768 (S83, S82; +0.033 min),
+      made by qlp_clock_v2.py from in-sample controls (56-98, excluding 74-79); neither star has an S99+ sector.
+    Next: generator (refuse-on-exists), lock file, a validator taking the lock as an argument, tests on in-sample files only, dated
+    scoring amendments in the 14 registrations, then external review.
+167. 2026-10-24 00:22 UTC — S107-S121 configs LOCKED (scripts/make_conformance_configs_s107_s121.py; refuse-on-exists).
+    - 26 configs in configs/conformance/; lock configs/conformance/LOCK_2026-10-23_S107_S121.json (SHA-256 a8731dfcb4a482f6...).
+      ROUND4_LOCK.json and the S106 configs are untouched.
+    - Primary sectors (tests of record):
+      - 24526743 S107; 160330868 S107; 196514928 S109; 53825235 S109;
+      - 19119739, 159033763, 283913390, 333661705, 162304222 S111;
+      - 258006047, 333735955, 467959906 S114;
+      - 203381983 S115; 366047768 S121.
+    - Generator-rule reference values (dated amendment): 258006047 1075 ppm / 2.7 h; 333735955 906 / 1.8; 467959906 289 / 1.65;
+      203381983 1616 / 1.35; 366047768 322 / 3.0 (report.json sap_depth; BLS duration_h).
+    Tests: scripts/test_locked_configs.py (generalised from test_round4_configs.py, which is unchanged) gives 655/655 on the new lock
+    (logs/test_locked_configs_S107_S121_20261023.log) and 200/200 on ROUND4_LOCK.json, identical to its published suite. Only
+    in-sample files (<= S105) and synthetic records were used.
+    Dated scoring amendments were appended to the 14 registrations (latest version of each). They give the configs and hashes, the
+    product, clock gate, primary rule, reference values and data status; S109 is worded as "being observed".
+    Sync: v1.16 had appended its notes directly to the public copies. The local copies of 151767028, 343298093, 188664994, 253931796
+    and 91617711 were updated to the public bytes, and 160330868 was rebuilt as public + amendment. All local registrations now
+    extend their public copies.
+    Next: external review of the lock (results/PROMPT_review_S107_S121_configs.txt); publication in the next release on the author's go.
+168. 2026-10-24 01:09 UTC — Configs review (results/REVIEW_S107_S121_configs.md): "lock sound after the listed changes".
+    v1.17 publication is held until the corrections are re-checked (author). Fixes:
+    - S1 (CLARIFICATION to item 166): the explicit primary sector named in each locked config is the test of record, irrespective of
+      release order or whether a QLP v01 product is eventually available. If it is unavailable, that status is recorded and no later
+      sector is promoted. The phrase "first listed sector with a released QLP v01 light curve" in item 166 does not authorize
+      replacement. The 14 primary flags are unchanged.
+    - Precision on item 166's data status: S107 was already observed; S109 was still being observed at the lock (2026-10-24 00:18 UTC;
+      partly public via TESScut through S109 orbit 1a); S110 had not started. The registrations already said so. The lock's UTC time is
+      2026-10-24 00:18:34; "2026-10-23" in the amendment titles is the author's local date.
+    - S2: advance statement appended to TIC 160330868 v2 (the reviewer's text). S107 primary is expected INSUFFICIENT (both events in the
+      edge trims); S109 has a single prediction-status event. No change of primary, no pooling, no promotion of the retrodiction.
+    - S3: scripts/s0_exposure_inventory.py also recognizes data/lk_cache/clockcheck/<TIC>/. Inventory: 122 paths (34 previously
+      unrecognized clock cutouts), still nothing after S104. The v1 snapshot is kept (*_snapshot_v1.*). It is described as recognized
+      filename evidence, not proof of non-examination; the authors' attestation stands.
+    - S4: provenance caveats for the public bundle: TIC 162304222's prior is the +0.033-min fallback (no clean control); TIC
+      366047768's S83 control samples include outliers (+0.148, -0.111, -0.355 min) beside a clean group. The locked median (+0.03265
+      min) is kept.
+    - S5: scripts/test_locked_configs.py now uses an artificial byte fixture instead of a real QLP file. 655/655 (new lock,
+      logs/test_locked_configs_S107_S121_20261023b.log) and 200/200 (round-4 lock). This does not cover valid FITS, timing alignment or
+      scoring.
+169. 2026-10-24 01:10 UTC — v1.17 assembled locally (scripts/assemble_v1_17.py; single pass, final text emitted directly;
+    refuses to run twice). Content:
+    - conformance_s107_s121/: 26 configs + lock, generator, generalized tests with the artificial fixture, inventory script, test log,
+      README with the S1 rule, the 160330868 expectation, reference-value provenance, data status, S4 prior caveats and S5 test limits;
+    - the 14 amended registrations;
+    - the two new clock priors in preregistration/qlp_clock_v2/; the other 12 are already published byte-identical to the lock;
+    - reviews_s107_s121/ (review copy with path-only redactions; prompt);
+    - README block; CITATION 1.17; DECISIONS regenerated; MANIFEST_v1.17.md.
+    Not published: a re-check of the corrections comes first (author: hold v1.17 until checked).
