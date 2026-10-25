@@ -1,0 +1,17 @@
+# DDT PI: Rahul Jayaraman
+# Cadence: 20s
+# Subject: OBA Stars with TESS
+# DDT: 053
+#
+# Original filename: oba_ddt_targets.csv
+# Created by: Rahul Jayaraman
+# Created on: 2021-12-17
+# Number of targets: 3
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+8262242,1, OBA;DDT053
+230065619,0.8, OBA;DDT053
+17668155,0.8, OBA;DDT053

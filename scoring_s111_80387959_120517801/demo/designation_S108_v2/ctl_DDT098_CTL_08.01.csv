@@ -1,0 +1,16 @@
+# DDT PI: E. Chickles
+# Cadence: 20s
+# Subject: Resolving the phase-localised ~7-min X-ray/optical reverberation lag in Cygnus X-1
+# Requested sectors: 119, 120, 121 (Cycle 9, 2027 Jul 3 - Sep 19; single-sector fallback = 120)
+# DDT: 098
+#
+# Original filename: cygx1_ddt_target_list.csv
+# Created by: E. Chickles
+# Created on: 2026-06-25  (rev 2026-07-02: sector windows + phase-localised claim)
+# Number of targets: 1
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+102604645,1.0,X-ray binary; black hole; reverberation lag; reprocessing; high mass; HDE 226868; wind-fed;DDT098

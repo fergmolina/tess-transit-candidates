@@ -1,0 +1,15 @@
+# DDT PI: Krista Lynne Smith
+# Cadence: 2m
+# Subject: A NICER-TESS Synergistic Look at QPOs in AGN
+# DDT: 051
+#
+# Original filename: TESS_DDT_Smith_REJ1034.csv
+# Created by: Krista Lynne Smith
+# Created on: 11/11/2021
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+10000525548,1,REJ1034+396;DDT051

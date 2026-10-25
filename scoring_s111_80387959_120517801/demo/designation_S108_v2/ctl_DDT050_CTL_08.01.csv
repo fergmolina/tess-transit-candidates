@@ -1,0 +1,16 @@
+# DDT PI: Melinda Soares-Furtado
+# Cadence: 2m
+# Subject: Asteroseismic Investigation of a Pulsating Blue Straggler in Open Cluster M67
+# DDT: 050
+#
+# Original filename: soares-furtado_ddt50.csv
+# Created by: Melinda Soares-Furtado
+# Created on: 09/02/2021
+# Number of targets: 1
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+#
+437039222,1.0,DDT050

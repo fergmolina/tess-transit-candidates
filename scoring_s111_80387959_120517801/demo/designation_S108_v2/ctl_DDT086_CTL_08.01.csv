@@ -1,0 +1,14 @@
+# DDT PI: Alexander Venner
+# Cadence: 20s
+# Subject: TESS Observations of a Unique Planet Candidate from K2
+# DDT: 086
+#
+# Original filename: HD137010_DDT.csv
+# Created by: Alexander Venner
+# Created on: 2025-02-27
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+428919267, 1, HD137010b;DDT086

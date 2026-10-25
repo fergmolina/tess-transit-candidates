@@ -1,0 +1,183 @@
+PASS 120517801_S111 prediction hash
+PASS 120517801_S111 evaluator SHA
+PASS 120517801_S111 reference source labelled as the generator-rule amendment
+PASS 120517801_S111 reference values = generator rule
+PASS 120517801_S111 clock tool refuses test sector without --declared-test
+PASS 120517801_S111 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 120517801_S111 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 120517801_S111 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 120517801_S111 validator binds the locked config
+PASS 120517801_S111 validator refuses changed clock_prior_sha256
+PASS 120517801_S111 validator refuses changed clock_prior
+PASS 120517801_S111 validator refuses altered prior bytes
+PASS 120517801_S111 clock-stage bound: exit 0 (want 0)
+PASS 120517801_S111 clock-stage other config: exit 2 (want 2)
+PASS 120517801_S111 clock-stage other prior: exit 2 (want 2)
+PASS 120517801_S111 clock-stage other sector: exit 2 (want 2)
+PASS 120517801_S111 clock-stage other prior path: exit 2 (want 2)
+PASS 120517801_S111 result-stage bound scored output: exit 0 (want 0)
+PASS 120517801_S111 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 120517801_S111 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 120517801_S111 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 120517801_S111 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 120517801_S111 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 120517801_S111 result-stage other evaluator: exit 2 (want 2)
+PASS 120517801_S111 result-stage other config: exit 2 (want 2)
+PASS 120517801_S111 clock-stage refuses a record without a light-curve hash
+PASS 120517801_S112 prediction hash
+PASS 120517801_S112 evaluator SHA
+PASS 120517801_S112 reference source labelled as the generator-rule amendment
+PASS 120517801_S112 reference values = generator rule
+PASS 120517801_S112 clock tool refuses test sector without --declared-test
+PASS 120517801_S112 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 120517801_S112 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 120517801_S112 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 120517801_S112 validator binds the locked config
+PASS 120517801_S112 validator refuses changed clock_prior_sha256
+PASS 120517801_S112 validator refuses changed clock_prior
+PASS 120517801_S112 validator refuses altered prior bytes
+PASS 120517801_S112 clock-stage bound: exit 0 (want 0)
+PASS 120517801_S112 clock-stage other config: exit 2 (want 2)
+PASS 120517801_S112 clock-stage other prior: exit 2 (want 2)
+PASS 120517801_S112 clock-stage other sector: exit 2 (want 2)
+PASS 120517801_S112 clock-stage other prior path: exit 2 (want 2)
+PASS 120517801_S112 result-stage bound scored output: exit 0 (want 0)
+PASS 120517801_S112 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 120517801_S112 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 120517801_S112 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 120517801_S112 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 120517801_S112 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 120517801_S112 result-stage other evaluator: exit 2 (want 2)
+PASS 120517801_S112 result-stage other config: exit 2 (want 2)
+PASS 120517801_S112 clock-stage refuses a record without a light-curve hash
+PASS 120517801_S113 prediction hash
+PASS 120517801_S113 evaluator SHA
+PASS 120517801_S113 reference source labelled as the generator-rule amendment
+PASS 120517801_S113 reference values = generator rule
+PASS 120517801_S113 clock tool refuses test sector without --declared-test
+PASS 120517801_S113 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 120517801_S113 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 120517801_S113 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 120517801_S113 validator binds the locked config
+PASS 120517801_S113 validator refuses changed clock_prior_sha256
+PASS 120517801_S113 validator refuses changed clock_prior
+PASS 120517801_S113 validator refuses altered prior bytes
+PASS 120517801_S113 clock-stage bound: exit 0 (want 0)
+PASS 120517801_S113 clock-stage other config: exit 2 (want 2)
+PASS 120517801_S113 clock-stage other prior: exit 2 (want 2)
+PASS 120517801_S113 clock-stage other sector: exit 2 (want 2)
+PASS 120517801_S113 clock-stage other prior path: exit 2 (want 2)
+PASS 120517801_S113 result-stage bound scored output: exit 0 (want 0)
+PASS 120517801_S113 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 120517801_S113 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 120517801_S113 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 120517801_S113 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 120517801_S113 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 120517801_S113 result-stage other evaluator: exit 2 (want 2)
+PASS 120517801_S113 result-stage other config: exit 2 (want 2)
+PASS 120517801_S113 clock-stage refuses a record without a light-curve hash
+PASS 80387959_S111 prediction hash
+PASS 80387959_S111 evaluator SHA
+PASS 80387959_S111 reference source labelled as the generator-rule amendment
+PASS 80387959_S111 reference values = generator rule
+PASS 80387959_S111 clock tool refuses test sector without --declared-test
+PASS 80387959_S111 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 80387959_S111 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 80387959_S111 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 80387959_S111 validator binds the locked config
+PASS 80387959_S111 validator refuses changed clock_prior_sha256
+PASS 80387959_S111 validator refuses changed clock_prior
+PASS 80387959_S111 validator refuses altered prior bytes
+PASS 80387959_S111 clock-stage bound: exit 0 (want 0)
+PASS 80387959_S111 clock-stage other config: exit 2 (want 2)
+PASS 80387959_S111 clock-stage other prior: exit 2 (want 2)
+PASS 80387959_S111 clock-stage other sector: exit 2 (want 2)
+PASS 80387959_S111 clock-stage other prior path: exit 2 (want 2)
+PASS 80387959_S111 result-stage bound scored output: exit 0 (want 0)
+PASS 80387959_S111 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 80387959_S111 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 80387959_S111 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 80387959_S111 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 80387959_S111 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 80387959_S111 result-stage other evaluator: exit 2 (want 2)
+PASS 80387959_S111 result-stage other config: exit 2 (want 2)
+PASS 80387959_S111 clock-stage refuses a record without a light-curve hash
+PASS 80387959_S112 prediction hash
+PASS 80387959_S112 evaluator SHA
+PASS 80387959_S112 reference source labelled as the generator-rule amendment
+PASS 80387959_S112 reference values = generator rule
+PASS 80387959_S112 clock tool refuses test sector without --declared-test
+PASS 80387959_S112 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 80387959_S112 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 80387959_S112 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 80387959_S112 validator binds the locked config
+PASS 80387959_S112 validator refuses changed clock_prior_sha256
+PASS 80387959_S112 validator refuses changed clock_prior
+PASS 80387959_S112 validator refuses altered prior bytes
+PASS 80387959_S112 clock-stage bound: exit 0 (want 0)
+PASS 80387959_S112 clock-stage other config: exit 2 (want 2)
+PASS 80387959_S112 clock-stage other prior: exit 2 (want 2)
+PASS 80387959_S112 clock-stage other sector: exit 2 (want 2)
+PASS 80387959_S112 clock-stage other prior path: exit 2 (want 2)
+PASS 80387959_S112 result-stage bound scored output: exit 0 (want 0)
+PASS 80387959_S112 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 80387959_S112 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 80387959_S112 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 80387959_S112 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 80387959_S112 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 80387959_S112 result-stage other evaluator: exit 2 (want 2)
+PASS 80387959_S112 result-stage other config: exit 2 (want 2)
+PASS 80387959_S112 clock-stage refuses a record without a light-curve hash
+PASS 80387959_S113 prediction hash
+PASS 80387959_S113 evaluator SHA
+PASS 80387959_S113 reference source labelled as the generator-rule amendment
+PASS 80387959_S113 reference values = generator rule
+PASS 80387959_S113 clock tool refuses test sector without --declared-test
+PASS 80387959_S113 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 80387959_S113 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 80387959_S113 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 80387959_S113 validator binds the locked config
+PASS 80387959_S113 validator refuses changed clock_prior_sha256
+PASS 80387959_S113 validator refuses changed clock_prior
+PASS 80387959_S113 validator refuses altered prior bytes
+PASS 80387959_S113 clock-stage bound: exit 0 (want 0)
+PASS 80387959_S113 clock-stage other config: exit 2 (want 2)
+PASS 80387959_S113 clock-stage other prior: exit 2 (want 2)
+PASS 80387959_S113 clock-stage other sector: exit 2 (want 2)
+PASS 80387959_S113 clock-stage other prior path: exit 2 (want 2)
+PASS 80387959_S113 result-stage bound scored output: exit 0 (want 0)
+PASS 80387959_S113 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 80387959_S113 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 80387959_S113 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 80387959_S113 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 80387959_S113 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 80387959_S113 result-stage other evaluator: exit 2 (want 2)
+PASS 80387959_S113 result-stage other config: exit 2 (want 2)
+PASS 80387959_S113 clock-stage refuses a record without a light-curve hash
+PASS 80387959_S114 prediction hash
+PASS 80387959_S114 evaluator SHA
+PASS 80387959_S114 reference source labelled as the generator-rule amendment
+PASS 80387959_S114 reference values = generator rule
+PASS 80387959_S114 clock tool refuses test sector without --declared-test
+PASS 80387959_S114 in-sample file refused: INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)
+PASS 80387959_S114 corrupted pred_sha256 refused: INVALID_INPUT (prediction CSV hash mismatch)
+PASS 80387959_S114 corrupted evaluator_sha256 refused: INVALID_INPUT (evaluator SHA-256 differs from the locked config)
+PASS 80387959_S114 validator binds the locked config
+PASS 80387959_S114 validator refuses changed clock_prior_sha256
+PASS 80387959_S114 validator refuses changed clock_prior
+PASS 80387959_S114 validator refuses altered prior bytes
+PASS 80387959_S114 clock-stage bound: exit 0 (want 0)
+PASS 80387959_S114 clock-stage other config: exit 2 (want 2)
+PASS 80387959_S114 clock-stage other prior: exit 2 (want 2)
+PASS 80387959_S114 clock-stage other sector: exit 2 (want 2)
+PASS 80387959_S114 clock-stage other prior path: exit 2 (want 2)
+PASS 80387959_S114 result-stage bound scored output: exit 0 (want 0)
+PASS 80387959_S114 result-stage output scored with another clock file (same identity, other corrections): exit 2 (want 2)
+PASS 80387959_S114 result-stage science outcome without clock provenance: exit 2 (want 2)
+PASS 80387959_S114 result-stage pre-clock INVALID_INPUT without clock provenance: exit 0 (want 0)
+PASS 80387959_S114 result-stage missing lc_sha256: exit 2 (want 2)
+PASS 80387959_S114 result-stage malformed clock_record hash: exit 2 (want 2)
+PASS 80387959_S114 result-stage other evaluator: exit 2 (want 2)
+PASS 80387959_S114 result-stage other config: exit 2 (want 2)
+PASS 80387959_S114 clock-stage refuses a record without a light-curve hash
+182/182 passed

@@ -1,0 +1,15 @@
+# DDT PI: Gerald Handler
+# Cadence: 20s
+# Subject: Asteroseismology of a peculiar triaxial pulsator
+# DDT: 095
+#
+# Original filename: tic080259373_ddt.csv
+# Created by: Gerald Handler
+# Created on: 03/11/2026
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+80259373,1,asteroseismology;DDT095

@@ -1,0 +1,37 @@
+Focused re-check of the S111+ package v1.19d, after your results/RECHECK_S111_package.md (R1-R5). Nothing is published. Work from
+/Users/fernando/Desktop/NASA and verify everything yourself. Scope: R1-R5 and anything they touched; report anything new briefly.
+
+MATERIALS
+- logs/DECISIONS.md item 197.
+- Changed:
+  - scripts/s111_ledger.py: on_spoc / on_qlp handlers; the pre-designation buffer; the secondary rule; mjd_utc; the replay
+    wrapper; append via a temporary candidate copy.
+  - scripts/target_list_designation.py: empty HTTP-200 bodies.
+  - scripts/make_configs_s111.py: docstring and rule/monitoring wording.
+  - scripts/test_s111_lock.py: new R1-R4 and empty-body cases.
+- Previous tool versions: results/conformance_s111/superseded_v1.19a/. Previous configs/locks:
+  configs/conformance/superseded_s111_v1.19c_2026-10-25/.
+- Current locks: configs/conformance/LOCK_2026-10-25_S111_QLP.json and _S111_SPOC.json.
+- Tests: logs/test_s111_lock_20261025d.log (196/196); logs/test_locked_configs_S111_QLP_20261025d.log (182/182).
+- Registrations: results/vet_allsky/80387959/PREREGISTRATION_v2.md and 120517801/PREREGISTRATION_v2.md (the published text must be an
+  exact prefix).
+
+CHECK
+1) Re-run your probes: amb_after_cert_route, acquire_after_amb, prior_spoc_ignored, prior_qlp_ignored, secondary_same_product_acq,
+   secondary_then_spoc_route, infinite_release_append (including the rollback), and the empty-200 snapshot. Does each now behave as
+   the adopted policy says?
+2) Any new path to a contrary history?
+   - Interleavings of pre-designation checks with a later PENDING / DESIGNATED snapshot.
+   - A certification, then UNRESOLVED, then a qualifying selection.
+   - Secondary acquisitions after a final fallback.
+   - Appends racing the candidate-copy validation.
+3) Wording: are the configs, amendments and docstrings now consistent with items 193-197 and with the code?
+4) Integrity: config and lock hashes, the registration prefixes, the prediction CSVs, the S108 demo.
+5) Verdict: publish as v1.19 / publish after listed changes / not ready.
+
+RULES: as in results/PROMPT_recheck_S111_package.txt. No test-sector photometry of any frozen object; no live select/acquire for any
+test sector; no credentials; edit nothing but your report; temporary files only under /tmp.
+
+OUTPUT
+Write results/RECHECK2_S111_package.md: findings with file:line evidence and exact fixes, and the verdict. Print only the report path and
+a one-line verdict.

@@ -1,0 +1,15 @@
+# DDT PI: Natalie Allen
+# Cadence: 20s
+# Subject: The multi-timescale multi-telescope view of stellar contamination in the WASP-19 system with JWST and TESS
+# DDT: 083
+#
+# Original filename: tess-ddt-w19.csv
+# Created by: Natalie Allen
+# Created on: 1/28/2025
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+35516889,1,exoplanet;transits;g-stars;DDT083

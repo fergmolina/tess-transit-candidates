@@ -1,0 +1,15 @@
+# DDT PI: Andrew Vanderburg
+# Cadence: 20s
+# Subject: 20s Observations of a single transit
+# DDT: 075
+#
+# Original filename: hd60779ddt.csv
+# Created by: Andrew Vanderburg
+# Created on: 07/31/2024
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+65672998, 1, HD 60779;DDT075

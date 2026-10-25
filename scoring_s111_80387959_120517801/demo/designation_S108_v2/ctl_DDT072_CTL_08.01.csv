@@ -1,0 +1,16 @@
+# DDT PI: Mia Sloth Lundkvist
+# Cadence: 20s
+# Subject: Granulation in M-dwarfs
+# DDT: 072
+#
+# Original filename: ddt-target-list-msl-mdwarfs.csv
+# Created by: Mia Sloth Lundkvist
+# Created on: 2024 March 24
+# Number of targets: 2
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+365670764, 0.9, Gaia DR3 2195886971653527168; HD 199305; sector 83; M1V;DDT072
+233193964, 1.0, Gaia DR3 1637645127018395776; HIP 86162; sector most of 2024; M3V;DDT072

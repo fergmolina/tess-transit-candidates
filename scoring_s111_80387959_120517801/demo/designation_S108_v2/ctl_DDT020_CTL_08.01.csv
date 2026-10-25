@@ -1,0 +1,47 @@
+# DDT: 020
+# DDT PI:  Veselin Kostov
+# Cadence: 2m
+# Subject: Stellar Multiples from TESS
+# Original filename: file-name.csv
+# Created by: Veselin Kostov
+# Created on: June 9, 2020
+# Number of targets: 32
+# Ecliptic latitude range: -23.14407 to -78.14634
+# Tmag range: 6.4553 to 13.2084
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+43488669,1.0,DDT020;accreting/debris/dipper 
+53901695,1.0,DDT020;triple
+73296637,1.0,DDT020;DDT020;quadruple
+79140936,1.0,DDT020;quadruple
+80914862,1.0,DDT020;quadruple
+139650665,1.0,DDT020;quadruple
+140659978,1.0,DDT020;eclipse timing variations
+141122198,1.0,DDT020;eclipse timing variations
+141811446,1.0,DDT020;eclipse timing variations
+146810480,1.0,DDT020;quadruple;beaming/ellipsoidal/reflection effects
+168789840,1.0,DDT020;sextuple;potential orbital motion in Gaia due to excess astrometry noise sigma (~28,000)
+178953404,1.0,DDT020;quadruple
+190895730,1.0,DDT020;quadruple
+209409435,1.0,DDT020;triple
+232087348,1.0,DDT020;quadruple
+255532033,1.0,DDT020;quadruple;heartbeat
+257776944,1.0,DDT020;quadruple
+278825952,1.0,DDT020;triple;pairs of tertiary eclipses and occultations;eclipse timing variations
+304030311,1.0,DDT020;eclipse timing variations
+307084982,1.0,DDT020;eclipse timing variations
+309025182,1.0,DDT020;quadruple
+311838201,1.0,DDT020;quadruple;orbital motion in Gaia due to excess astrometry noise sigma (~100,000)
+350479496,1.0,DDT020;eclipse timing variations
+370440624,1.0,DDT020;quadruple
+399492452,1.0,DDT020;quadruple
+404970655,1.0,DDT020;eclipse timing variations
+408147984,1.0,DDT020;quadruple
+439511833,1.0,DDT020;quadruple
+459841654,1.0,DDT020;triple;follow-up confirmed eclipses on target
+461614217,1.0,DDT020;quadruple
+97356407,1.0,DDT020;quadruple
+271186951,1.0,DDT020;quadruple;beaming/ellipsoidal/reflection effects

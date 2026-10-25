@@ -1,0 +1,16 @@
+# DDT PI: Dario Fritzewski
+# Cadence: 20s
+# Subject: TESS monitoring of flaring CHEOPS targets
+# DDT: 089
+#
+# Original filename: CHEOPS_TESS_DDT_targets.csv
+# Created by: Dario Fritzewski
+# Created on: 2025-07-16
+# Number of targets: 2
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+147455347,1,flares; stellar activity; CHEOPS; DDT089
+178969585,1,flares; stellar activity; CHEOPS; DDT089

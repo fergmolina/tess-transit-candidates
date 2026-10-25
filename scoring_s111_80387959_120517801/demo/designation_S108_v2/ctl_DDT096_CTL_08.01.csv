@@ -1,0 +1,15 @@
+# DDT PI: Bisi Bernard Ogunwale
+# Cadence: 20s
+# Subject: 20s Observations of ASASSN-15af
+# DDT: 096
+#
+# Original filename: asassn15af_tess_ddt_targets.csv
+# Created by: Bisi Bernard Ogunwale
+# Created on: 25 March 2026
+# Number of targets: 1
+#
+# Column 1: TIC
+# Column 2: Priority (floating point: 1)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+231050794,1.0,cataclysmic variable;eclipsing binary;dwarf nova;high-cadence;20-second cadence;DDT096

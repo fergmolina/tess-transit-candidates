@@ -1,0 +1,52 @@
+Review of the v1.19 S111+ scoring package for TIC 80387959 (S111-S114) and TIC 120517801 (S111-S113), before any S111 photometry exists.
+Nothing is published. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial. This closes the S111 items
+left open in your results/REVIEW_GAP3_configs.md (G3 is now decided by the author, DECISIONS 178(a); the SPOC variant diff; the dilution
+note). S111 starts 2026-11-26, and its 2-min target list may appear within weeks.
+
+MATERIALS
+- Decisions: logs/DECISIONS.md items 178 and 192.
+- Designation tool: scripts/target_list_designation.py. Live demo on S108: results/designation_records/demo_S108/ (TIC 317134140 SPOC,
+  24526743 QLP).
+- Generator: scripts/make_configs_s111.py. Configs: configs/conformance/80387959_S11[1-4].json and _spoc.json;
+  120517801_S11[1-3].json and _spoc.json. Locks: configs/conformance/LOCK_2026-10-25_S111_QLP.json and _S111_SPOC.json.
+- Validator: scripts/validate_s111_inputs.py (new). Unchanged and reused: scripts/validate_round4_inputs.py (QLP clock/result),
+  scripts/prereg_conformance.py (v2.1 rc4), scripts/prereg_conformance_spoc.py (spoc1; diff in
+  results/conformance_317134140/prereg_conformance_v2.1_to_spoc1.diff), scripts/spoc_selection.py (v1.18).
+- Tests: scripts/test_s111_lock.py (280/280, logs/test_s111_lock_20261025.log); test_locked_configs.py on the QLP lock (182/182,
+  logs/test_locked_configs_S111_QLP_20261025.log).
+- Registrations: results/vet_allsky/80387959/PREREGISTRATION_v2.md and 120517801/PREREGISTRATION_v2.md. Public copies:
+  public_release/preregistration/TIC<id>/; the published text must be an exact prefix.
+
+CHECK
+1) Designation rule fidelity to DECISIONS 178(a):
+   - Is "sector end = latest End of Orbit, accepted only when the table lists N+1" sound?
+   - Probing versions to the first 404 (the directory index returns 403): could a later version be missed, e.g. v1 removed and v2
+     present?
+   - CTL membership as a supplementary trigger, with the 120-day fallback as the correction.
+   - Is the designation outcome-independent? Is "first check on or after the sector end" tight enough?
+2) Fallback and unavailable: is a NONE spoc_selection record at or after end + 120 d adequate evidence? Is the 365-day UNAVAILABLE rule
+   (a dated log entry, no tool) adequate?
+3) Validator: does it bind config, code, designation (re-derived from saved bytes), fallback, selection, acquisition, light curve and
+   output, and fail closed? Can a designation be forged or replayed in a way that matters? Is splitting the QLP path between
+   validate_round4_inputs.py and validate_s111_inputs.py coherent?
+4) Fetching: the tool uses the system curl (TLS verified) because Python's OpenSSL with certifi fails on tess.mit.edu's chain. Is
+   that acceptable and disclosed? Is the HTTP status recorded per file?
+5) Reference values and dilution: 726 ppm / 2.2 h and 830 ppm / 2.2 h by the generator rule, the same for both products. Is the
+   dilution note adequate, given TIC 120517801's unresolved host? Is the primary S111 correct, and do the test sectors match the v2
+   CSV "prediction" rows?
+6) Monitoring rule: prospective, periodic, retained records. Adequate?
+7) Tests: coverage gaps; any case that passes for the wrong reason (one such case was found and fixed; look for others).
+8) Amendments: append-only and accurate.
+9) Verdict: publish as v1.19 / publish after listed changes / not ready.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry of any frozen object. This includes TIC 80387959 and 120517801 in S111
+  or later, and TIC 317134140 in S108-S110; the full list is in results/PROMPT_recheck_317134140_v1.3.txt.
+- Metadata-only fetches of public target lists, the orbit table and the DDT page are allowed. Do NOT run spoc_selection.py select or
+  acquire for any test sector.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_S111_package.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print only
+the report path and a one-line verdict.

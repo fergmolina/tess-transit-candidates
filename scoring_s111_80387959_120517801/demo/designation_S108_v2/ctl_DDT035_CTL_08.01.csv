@@ -1,0 +1,27 @@
+# DDT PI: Melinda Soares-Furtado
+# Cadence: 2m
+# Subject: Asteroseismic Investigation of Pulsating Blue Stragglers in NGC 6819
+# DDT: 035
+#
+# Original filename: tess-ddt-bss.csv
+# Created by: Melinda Soares-Furtado
+# Created on: 05/10/2021
+# Number of targets: 15
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+#
+1880383370,1.0,DDT035
+184010448,0.9,DDT035
+139109448,0.8,DDT035
+139109202,0.7,DDT035
+139153723,0.6,DDT035
+139154123,0.5,DDT035
+139109515,0.4,DDT035
+184010831,0.3,DDT035
+# 139109515,0.2,DDT035
+139153729,0.1,DDT035
+139154161,0.09,DDT035
+139153738,0.08,DDT035

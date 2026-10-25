@@ -1,0 +1,16 @@
+# DDT: 030
+# DDT PI: Krzysztof Helminiak
+# Cadence: 20s
+# Subject: Confirming a circumbinary planet with eclipse timing variations
+# Original filename: a071715_ddt_helminiak_target.csv
+# Created by: Krzysztof Helminiak
+# Created on: Oct 15 2020
+# Number of targets: 1
+# Ecliptic latitude range: -51.2009798 to -51.2009798
+# Tmag range: 8.67 to 8.67
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+66602813,1.0,eclipsing binary;circumbinary planet;timing;CD-29 4182;TYC 6549-2138-1;DDT030

@@ -1,0 +1,18 @@
+# DDT PI: Maximilian N. Günther
+# Cadence: 20s
+# Subject: Young Stellar Merger Remnant TYC 2597-735-1
+# DDT: 057
+#
+# Original filename: TESS_DDT_Proposal_Target_List_2020-03-07_MNGuenther
+# Created by: Maximilian N. Günther
+# Created on: 2020-03-07
+# Number of targets: 4
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low; 1=high)"
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+284856863,1,TYC 2597-735-1;young stellar merger;blue ring nebula;DDT057
+284856825,0.5,TYC 2597-1026-1;comparison star;DDT057
+17750577,0.5,TYC 2597-458-1;comparison star;DDT057
+219074951,0.5,TYC 2588-182-1;comparison star;DDT057

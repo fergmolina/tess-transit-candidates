@@ -1,0 +1,15 @@
+# DDT PI: Jonatan Rudrasingam
+# Cadence: 20s
+# Subject: High cadence observation of alpha Cen A for asteroseismology and simultaneous photometry and RV forward modelling
+# DDT: 092
+#
+# Original filename: ddt_jonatan_rudrasingam.csv
+# Created by: Jonatan Rudrasingam
+# Created on: 2025/12/09
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+471011145,1,AlphaCen;G_SPECIAL_APERTURE_1400_25;DDT092

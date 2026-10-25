@@ -1,0 +1,15 @@
+# DDT PI: Kovalev Mikhail
+# Cadence: 20s
+# Subject: DDT proposal for 20 s cadence observations of pulsations in TV Mon.
+# DDT: 097
+#
+# Original filename: ddt_proposal.csv
+# Created by: Kovalev Mikhail
+# Created on: 2026-06-03
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+234726486, 1, TV_MON;DDT097

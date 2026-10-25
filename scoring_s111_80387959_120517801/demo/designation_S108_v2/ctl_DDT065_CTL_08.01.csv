@@ -1,0 +1,19 @@
+# DDT PI: Michelle Kunimoto
+# Cadence: 2m
+# Subject: New TOIs from Nearby Planet Candidates
+# DDT: 065
+#
+# Original filename: npc_tois_year5.csv
+# Created by: Michelle Kunimoto
+# Created on: June 6 2023
+# Number of targets: 5
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+279740439,1,nearby;candidate;DDT065
+253917292,0.75,nearby;candidate;DDT065
+79395356,0.5,nearby;candidate;DDT065
+139285741,0.25,nearby;candidate;DDT065
+9032367,0,nearby;candidate;DDT065

@@ -1,0 +1,18 @@
+# DDT:  008
+# DDT PI:  Padi Boyd
+# Cadence:  2m
+# Subject:  Solar Siblings in Sectors 12 and 13
+# Original filename: Pboyd_ddt_CTL_07.01.csv
+# Created by: Roland Vanderspek for PBoyd
+# Created on: 2019-04-30 13:10
+# Number of targets: 2
+# Ecliptic latitude range: camera 4
+# Tmag range: +8 to +9
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# 
+#
+346066575,1,DDT008;HD126829
+396042448,1,DDT008;HD186302

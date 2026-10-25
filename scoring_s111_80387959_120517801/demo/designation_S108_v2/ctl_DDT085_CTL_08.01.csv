@@ -1,0 +1,15 @@
+# DDT PI: Zixin Zhang & Bo Ma
+# Cadence: 20s
+# Subject: Orbital Period Decay in WASP-107
+# DDT: 085
+#
+# Original filename: boma-list.csv
+# Created by: Bo Ma
+# Created on: 2025/02/25
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+429302040,1.0,WASP-107;DDT085

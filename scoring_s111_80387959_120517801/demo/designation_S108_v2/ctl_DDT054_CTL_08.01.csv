@@ -1,0 +1,15 @@
+# DDT PI: Nora Eisner
+# Cadence: 20s
+# Subject: Asteroseismic investigation of an evolved, bright planetary system
+# DDT: 054
+#
+# Original filename: ddt_target_eisner.csv
+# Created by: Nora Eisner
+# Created on: 2022-01-07
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+307958020,1, evolved;bright;asteroseismology;DDT054

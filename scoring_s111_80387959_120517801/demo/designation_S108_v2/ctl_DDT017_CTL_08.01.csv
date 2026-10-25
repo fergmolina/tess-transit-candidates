@@ -1,0 +1,16 @@
+# DDT: 017
+# DDT PI: Nicolas Crouzet
+# Cadence: 2m
+# Subject: Characterizing the XO-7 System
+# Original filename: XO7-ddt-target-list.csv
+# Created by: Nicolas Crouzet
+# Created on: April 11, 2020
+# Number of targets: 1
+# Ecliptic latitude range: 71.277234 to 71.277234
+# Tmag range: 10.05 to 10.05
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+268403451,1,DDT017;Exoplanets;Hot Jupiters;Transits;XO-7

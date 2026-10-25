@@ -1,0 +1,91 @@
+# DDT PI: Luke Bouma
+# Cadence: 2m
+# Subject: Complex Periodic Variables
+# DDT: 077
+#
+# Original filename:  ddt-lgb-20240928.csv
+# Created by: Luke Bouma
+# Created on: 09/28/2024
+# Number of targets: 77
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+66750314,1,literature;DDT077
+9669706,1,literature;DDT077
+67897871,1,literature;DDT077
+49072492,1,literature;DDT077
+49198167,1,literature;DDT077
+68502886,1,literature;DDT077
+49518818,1,literature;DDT077
+204792541,1,literature;DDT077
+205060766,1,literature;DDT077
+68045555,1,literature;DDT077
+68131578,1,literature;DDT077
+49165224,1,literature;DDT077
+391993423,1,literature;DDT077
+203444707,1,literature;DDT077
+175597010,1,literature;DDT077
+175861088,1,literature;DDT077
+12659333,1,literature;DDT077
+1259657177,1,literature;DDT077
+175594111,1,literature;DDT077
+322928171,1,literature;DDT077
+49072162,1,literature;DDT077
+49815071,1,literature;DDT077
+175743566,1,literature;DDT077
+98689067,1,literature;DDT077
+203822419,1,literature;DDT077
+48908525,1,literature;DDT077
+38820496,1,literature;DDT077
+177309964,1,literature;DDT077
+201789285,1,literature;DDT077
+206544316,1,literature;DDT077
+224283342,1,literature;DDT077
+234295610,1,literature;DDT077
+289840926,1,literature;DDT077
+425933644,1,literature;DDT077
+425937691,1,literature;DDT077
+402980664,1,literature;DDT077
+142173958,1,literature;DDT077
+201898222,1,literature;DDT077
+264767454,1,literature;DDT077
+2234692,1,literature;DDT077
+94088626,1,literature;DDT077
+264599508,1,literature;DDT077
+363963079,1,literature;DDT077
+193831684,1,literature;DDT077
+144486786,1,literature;DDT077
+89463560,1,literature;DDT077
+300651846,1,literature;DDT077
+294328887,1,literature;DDT077
+397791443,1,literature;DDT077
+160329609,1,literature;DDT077
+231058925,1,literature;DDT077
+5714469,1,literature;DDT077
+34850833,1,qlp;DDT077
+11075214,1,qlp;DDT077
+306900946,1,qlp;DDT077
+303653327,1,qlp;DDT077
+234284556,1,qlp;DDT077
+230395228,1,qlp;DDT077
+61124921,1,qlp;DDT077
+144980,1,qlp;DDT077
+4342429,1,qlp;DDT077
+22739419,1,qlp;DDT077
+34578030,1,qlp;DDT077
+61389781,1,qlp;DDT077
+61530691,1,qlp;DDT077
+101133930,1,qlp;DDT077
+101133932,1,qlp;DDT077
+162731723,1,qlp;DDT077
+169265855,1,qlp;DDT077
+220599904,1,qlp;DDT077
+260268310,1,qlp;DDT077
+289840928,1,qlp;DDT077
+308991387,1,qlp;DDT077
+349307342,1,qlp;DDT077
+360339486,1,qlp;DDT077
+365466012,1,qlp;DDT077
+397155236,1,qlp;DDT077

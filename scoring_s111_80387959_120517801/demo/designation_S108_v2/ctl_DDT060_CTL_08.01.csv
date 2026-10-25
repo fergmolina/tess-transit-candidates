@@ -1,0 +1,17 @@
+# DDT PI: Rahul Jayaraman
+# Cadence: 2m
+# Subject: Tidally Tilted Pulsators in Cycle 4
+# DDT: 060
+#
+# Original filename: ttp-cycle-4-target-list.csv
+# Created by: Rahul Jayaraman
+# Created on: 4-22-2022
+# Number of targets: 3
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+120684604,1,eccentric;DDT060
+163698651,1,new_2min;DDT060
+381011161,1,existing_candidate;DDT060

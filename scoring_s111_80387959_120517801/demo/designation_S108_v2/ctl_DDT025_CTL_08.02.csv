@@ -1,0 +1,41 @@
+# DDT: 025
+# DDT PI:  Isaac Lopez
+# Cadence:  2m
+# Subject:  Candidate Pulsating Low-Mass White Dwarfs from Gaia DR2
+# Original filename: ddt-Lopez-target-list.csv
+# Created by: Isaac Lopez
+# Created on: 2020-08-10
+# Number of targets: 26
+# Ecliptic latitude range: -61.775186 to   -6.041069
+# Tmag range: 13.67 to 17.05
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+1056271067,1,Candidate_ELMV_P1;DDT025
+429233827,1,Candidate_ELMV_P1;DDT025
+86149618,0.95,Candidate_ELMV_P2;DDT025
+337190387,0.95,Candidate_ELMV_P2;DDT025
+360573736,0.95,Candidate_ELMV_P2;DDT025
+53190694,0.95,Candidate_ELMV_P2;DDT025
+95785714,0.95,Candidate_ELMV_P2;DDT025
+178626010,0.95,Candidate_ELMV_P2;DDT025
+88860201,0.95,Candidate_ELMV_P2;DDT025
+122689116,0.95,Candidate_ELMV_P2;DDT025
+443169388,0.95,Candidate_ELMV_P2;DDT025
+24346296,0.95,Candidate_ELMV_P2;DDT025
+651363428,0.95,Candidate_ELMV_P2;DDT025
+226029368,0.9,Candidate_ELMV_P3;DDT025
+1131269081,0.9,Candidate_ELMV_P3;DDT025
+938779482,0.9,Candidate_ELMV_P3;DDT025
+3360044,0.9,Candidate_ELMV_P3;DDT025
+831031819,0.9,Candidate_ELMV_P3;DDT025
+751112148,0.9,Candidate_ELMV_P3;DDT025
+738204107,0.9,Candidate_ELMV_P3;DDT025
+632110509,0.9,Candidate_ELMV_P3;DDT025
+616695964,0.9,Candidate_ELMV_P3;DDT025
+17176751,0.85,Candidate_ELMV_P4;DDT025
+178538234,0.85,Candidate_ELMV_P4;DDT025
+245009817,0.85,Candidate_ELMV_P4;DDT025
+24980421,0.85,Candidate_ELMV_P4;DDT025

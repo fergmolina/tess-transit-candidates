@@ -1,0 +1,15 @@
+# DDT PI: Anne Dattilo
+# Cadence: 20s
+# Subject: 20s Observations of a Young, Near-Resonant Planetary System to Measure TTVs
+# DDT: 076
+#
+# Original filename: toi6109ddt.csv
+# Created by: Anne Dattilo
+# Created on: 08/02/2024
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keyword
+384984325, 1, TOI-6109;DDT076

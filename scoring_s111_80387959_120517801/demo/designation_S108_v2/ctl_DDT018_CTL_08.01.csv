@@ -1,0 +1,13 @@
+# DDT: 018
+# DDT PI:  Andrew Vanderburg
+# Cadence: 2m
+# Subject:  TIC 207425167, a system with a long-period Jupiter with only a single transit
+# Created by: Andrew Vanderburg
+# Created on: April 14, 2020
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+207425167,1,DDT018

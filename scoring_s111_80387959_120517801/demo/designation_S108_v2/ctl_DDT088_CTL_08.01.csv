@@ -1,0 +1,15 @@
+# DDT PI: Joshua Preston Pritchard
+# Cadence: 20s
+# Subject: Resolving flare activity from the radio pulsing ultracool dwarf SCR J18456357
+# DDT: 088
+#
+# Original filename: tess_sector_93-94_j1845.csv
+# Created by: Joshua Preston Pritchard
+# Created on: April 22, 2025
+# Number of targets: 1
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+464378628,1,scrj1845;DDT088

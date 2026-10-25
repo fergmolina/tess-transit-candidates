@@ -1,0 +1,16 @@
+# DDT: 009
+# DDT PI:  Colin Littlefield
+# Subject: TESS observations of erratic accretion onto the magnetized white dwarf in V496 UMa
+# Cadence:  2m
+# Original filename: V496_UMa_table.csv
+# Created by: Colin Littlefield
+# Created on: 2019 July 23
+# Number of targets: 1
+# Ecliptic latitude range: 57.016675 to 57.016675
+# Tmag range: 15.90 to 15.90
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+1001235444,1.0,DDT009;TMag is based on Vmag only;V496_UMa

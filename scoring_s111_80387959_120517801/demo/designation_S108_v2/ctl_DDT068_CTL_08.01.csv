@@ -1,0 +1,22 @@
+# DDT PI: Mikkel N. Lund
+# Cadence: 20s
+# Subject: Asteroseismology of Hyades and Preasepe Giants
+# DDT: 068
+#
+# Original filename: DDT_Lund.csv
+# Created by: Mikkel N. Lund
+# Created on: 9/1/2023
+# Number of targets: 8
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+17554529,1, Hyades; epsilon Tau;DDT068
+435926868,1, Hyades; delta1 Tau;DDT068
+245792850,1, Hyades; theta1 Tau;DDT068
+435911332,1, Hyades; gamma Tau;DDT068
+175262138,1, Praesepe; HD 73665;DDT068
+175239935,1, Praesepe; HD 73598;DDT068
+175262030,1, Praesepe; HD 73710;DDT068
+175290697,1, Praesepe; HD 73974;DDT068

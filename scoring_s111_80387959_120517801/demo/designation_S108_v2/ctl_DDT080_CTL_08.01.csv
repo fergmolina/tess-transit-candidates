@@ -1,0 +1,15 @@
+# DDT PI: Karen Pollard
+# Cadence: 20s
+# Subject: The most active exocometary host star known
+# DDT: 080
+#
+# Original filename: ddt_Pollard_betaPic.csv
+# Created by: Karen Pollard
+# Created on: 31 Oct 2024
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+270577175,1,beta Pic;exocomets;asteroseismology;pulsations;circumstellar disks;exoplanetary host;DDT080

@@ -1,0 +1,15 @@
+# DDT PI: Isaiah I. Tristan
+# Cadence: 20s
+# Subject: TESS and JWST observations of a K-dwarf System
+# DDT: 093
+#
+# Original filename: itristan-tess-ddt-list.csv
+# Created by: Isaiah I. Tristan
+# Created on: 2026-02-16
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+142206123,1,CC-Eri;K-stars;flare-stars;multiwavelength;DDT093

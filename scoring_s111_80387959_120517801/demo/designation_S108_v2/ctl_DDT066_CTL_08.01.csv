@@ -1,0 +1,15 @@
+# DDT PI: Donald Kurtz et al.
+# Cadence: 20s
+# Subject: Whatever happened to HD60435?
+# DDT: 066
+#
+# Original filename: hd60435.csv
+# Created by: Donald Kurtz
+# Created on: 14 June 2023,
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+340006157,1.0,HD60435;DDT066

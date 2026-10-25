@@ -1,0 +1,15 @@
+# DDT PI: Agnes Kospal
+# Cadence: 20s
+# Subject: Reverberation in DR Tau
+# DDT: 069
+#
+# Original filename: kospal_ddt.csv
+# Created by: Agnes Kospal
+# Created on: 2023 Sep 5
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+436614005,1,YSO;DDT069

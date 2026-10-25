@@ -1,0 +1,15 @@
+# DDT PI: Eder Martioli
+# Cadence: 2m
+# Subject: TESS planet candidates orbiting thick-disk stars
+# DDT: 062
+#
+# Original filename: ddt-Martioli-et-al-target-list.csv
+# Created by: Eder Martioli
+# Created on: 06-07-2022
+# Number of targets: 1
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+160390955,1,planetary systems; stellar activity; galactic population;DDT062

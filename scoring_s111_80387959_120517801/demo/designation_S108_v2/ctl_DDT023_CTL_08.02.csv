@@ -1,0 +1,34 @@
+# DDT: 023
+# DDT PI:  Andrew Vanderburg
+# Cadence:  2m
+# Subject:  Observations of New, High-Priority White Dwarfs with Circumstellar Dust
+# Original filename: vanderburg_ddt_white_dwarfs.csv
+# Created by: Andrew Vanderburg
+# Created on: July 2, 2020
+# Number of targets: 12
+# Ecliptic latitude range: -6.75 to -66.99
+# Tmag range: 15.5 to 17.1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+649946154,1,DDT023
+92755792,1,DDT023
+282397092,1,DDT023
+372608807,1,DDT023
+875856206,1,DDT023
+425593780,1,DDT023
+1690679387,1,DDT023
+280430674,0.5,DDT023
+1690333674,0.5,DDT023
+412252434,0.5,DDT023
+761212971,0.5,DDT023
+835742641,0.5,DDT023
+82574914,0.5,DDT023
+855828236,0.5,DDT023
+179299789,0.5,DDT023
+297549250,0.5,DDT023
+334129633,0.5,DDT023
+1176782124,0.5,DDT023
+294437848,0.5,DDT023

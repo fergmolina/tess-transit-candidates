@@ -1,0 +1,30 @@
+Focused third re-check of the S111+ package v1.19e, after your results/RECHECK2_S111_package.md. Scope: ONLY the append-transaction fix
+and the hashes it touched. Nothing is published. Work from /Users/fernando/Desktop/NASA and verify everything yourself.
+
+MATERIALS
+- logs/DECISIONS.md item 198.
+- scripts/s111_ledger.py: append() and _write_entry(). Previous version: results/conformance_s111/superseded_v1.19a/s111_ledger_v1.19d.py.
+- scripts/test_s111_lock.py, section T; log logs/test_s111_lock_20261025e.log (209/209); logs/test_locked_configs_S111_QLP_20261025e.log
+  (182/182).
+- Locks: configs/conformance/LOCK_2026-10-25_S111_QLP.json and _S111_SPOC.json (the previous ones are archived in
+  superseded_s111_v1.19d_2026-10-25/).
+- Registrations: results/vet_allsky/80387959/PREREGISTRATION_v2.md and 120517801/PREREGISTRATION_v2.md.
+
+CHECK
+1) Re-run your two-writer interleaving (race_A) against the current append().
+   - Does the second writer wait?
+   - Does the final history replay?
+   - Can a refused entry remain?
+   - Are the committed bytes the staged ones if the source changes after staging?
+2) Atomicity: is a reader ever able to see an entry whose record is missing or incomplete? Does an interruption between the record
+   rename and the ledger os.replace leave a usable history, with the leftover replaced by the next append?
+3) Is the opt-in test hook harmless when it is unset?
+4) Integrity: config and lock hashes; the registration prefixes; the amendments name the new lock hashes.
+5) Verdict: publish as v1.19 / publish after listed changes / not ready.
+
+RULES: as in results/PROMPT_recheck_S111_package.txt. No test-sector photometry of any frozen object; no live select/acquire for any
+test sector; no credentials; edit nothing but your report; temporary files only under /tmp.
+
+OUTPUT
+Write results/RECHECK3_S111_package.md: findings with file:line evidence and the verdict. Print only the report path and a one-line
+verdict.

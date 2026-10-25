@@ -1,0 +1,61 @@
+# DDT: 028
+# DDT PI:  Luke Bouma
+# Cadence: 2m
+# Subject: Complex Modulation of Rapidly Rotating Young M Dwarfs
+# Original filename: complex-rotators-ddt.csv,
+# Created by: Luke Bouma,
+# Created on: 2020/10/02,
+# Number of targets: 49,
+# Ecliptic latitude range: -10 to -87,
+# ,,
+# Column 1: TIC ID,,
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon),,
+# tic,priority,keywords
+176360842,0.5,complexrotator;DDT028
+231311328,1.0,complexrotator;DDT028
+43868252,1.0,complexrotator;DDT028
+248439004,1.0,complexrotator;DDT028
+262400835,1.0,complexrotator;DDT028
+397791443,1.0,complexrotator;DDT028
+300651846,1.0,complexrotator;DDT028
+135036669,0.5,complexrotator;DDT028
+268963753,1.0,complexrotator;DDT028
+238597707,0.8,complexrotator;DDT028
+80181457,1.0,complexrotator;DDT028
+405910546,1.0,complexrotator;DDT028
+411614400,0.8,complexrotator;DDT028
+405695928,0.8,complexrotator;DDT028
+400953317,0.8,complexrotator;DDT028
+312410638,1.0,complexrotator;DDT028
+243499565,0.5,complexrotator;DDT028
+5540661,0.8,complexrotator;DDT028
+158607566,0.5,complexrotator;DDT028
+167419371,0.5,complexrotator;DDT028
+255472458,1.0,complexrotator;DDT028
+264485692,0.8,complexrotator;DDT028
+408188366,1.0,complexrotator;DDT028
+427460117,1.0,complexrotator;DDT028
+427400471,0.8,complexrotator;DDT028
+142173958,1.0,complexrotator;DDT028
+144486786,1.0,complexrotator;DDT028
+146539195,1.0,complexrotator;DDT028
+177309964,1.0,complexrotator;DDT028
+22481474,0.8,complexrotator;DDT028
+24518895,1.0,complexrotator;DDT028
+248394276,1.0,complexrotator;DDT028
+259586708,0.5,complexrotator;DDT028
+264599508,1.0,complexrotator;DDT028
+264767454,0.8,complexrotator;DDT028
+276453848,1.0,complexrotator;DDT028
+280945693,0.8,complexrotator;DDT028
+294328887,0.5,complexrotator;DDT028
+359892714,0.5,complexrotator;DDT028
+363963079,1.0,complexrotator;DDT028
+404144841,1.0,complexrotator;DDT028
+405754448,0.5,complexrotator;DDT028
+410921432,0.5,complexrotator;DDT028
+442571495,0.8,complexrotator;DDT028
+77350951,0.5,complexrotator;DDT028
+89463560,0.8,complexrotator;DDT028
+264461976,0.8,complexrotator;DDT028

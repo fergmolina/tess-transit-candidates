@@ -1,0 +1,15 @@
+# DDT PI: Martina Veresvarska
+# Cadence: 20s
+# Subject: Accreting White Dwarfs as a Laboratory for Testing Accretion Flows
+# DDT: 084
+#
+# Original filename: TESS_DDT_table.csv
+# Created by: M Veresvarska
+# Created on: 2/20/25
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+382256692,1,Accretion;multiwavelength study;XMM Newton;accreting white dwarfs;BB Dor;DDT084

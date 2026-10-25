@@ -209,6 +209,15 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Unchanged:** the v1.18 lock and the frozen per-sector outcomes.
 
 
+**Scoring locked for the S111+ tests of TIC 80387959 and 120517801 (2026-10-25 (v1.19)).**
+- **What is locked:** QLP and SPOC configs for S111-S114 and S111-S113, with S111 as the primary sector, in
+  `scoring_s111_80387959_120517801/`. They were locked before any S111 data exist.
+- **Product of record:** set by the author's sector-end target-list rule, as refined (DECISIONS 178, 193, 194), with a release-date
+  fallback.
+- **Ledger:** every check and acquisition is recorded in a hash-chained ledger that the validator replays.
+- **Records:** dated amendments in both registrations; review chain in `reviews_s111/`.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

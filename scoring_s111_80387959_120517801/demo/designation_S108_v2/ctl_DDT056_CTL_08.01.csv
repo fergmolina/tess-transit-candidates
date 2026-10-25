@@ -1,0 +1,15 @@
+# DDT PI: Mia Sloth Lundkvist
+# Cadence: 20s
+# Subject: Asteroseismic observations of the Methuselah star
+# DDT: 056
+#
+# Original filename: ddt-20s-hd140283.csv
+# Created by: Mia Sloth Lundkvist
+# Created on: 2022:02:04
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+290565106, 1.0, hd140283;DDT056

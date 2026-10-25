@@ -1,0 +1,17 @@
+# DDT PI: Venkatessh Ramakrishnan
+# Cadence: 2m
+# Subject: TESS monitoring of quasar jets with standing shocks
+# DDT: 040
+#
+# Original filename: Ramakrishnan-ddt-target-list.csv
+# Created by: Venkatessh Ramakrishnan
+# Created on: June 09, 2021
+# Number of targets: 6
+# 
+# tic,priority,keywords (source name; TESS magnitude; black hole mass in units of solar mass
+219113011,1.0,1807+698;14.4;1E8-1E10;DDT040
+288432319,0.9,1803+784;15.1;1E9;DDT040
+389918371,0.9,1823+568;17.1;1E6-1E8;DDT040
+237125270,0.9,1828+487;16.4;6E9;DDT040
+1714135855,0.5,1901+319;17.1;1E9;DDT040
+416595004,0.7,1954+513;17.4;5E8;DDT040

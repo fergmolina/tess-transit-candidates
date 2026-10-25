@@ -1,0 +1,25 @@
+# DDT: 027
+# DDT PI: Veselin Kostov
+# Cadence: 2m
+# Subject: Stellar Multiples and Circumbinary Planets from TESS
+# DDT027, created 30 Sept 2020
+# Original filename: file-name.csv
+# Created by: Veselin Kostov
+# Created on: Sep 25, 2020
+# Number of targets: 12
+# Ecliptic latitude range: -8.079983 to -61.64774
+# Tmag range: 9.9 to 14.4
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+78568780,1.0,quadruple;potential orbital motion in Gaia due to excess astrometry noise sigma (~6500);DDT027
+89102329,1.0,triple or quadruple;DDT027
+139570309,1.0,triple or quadruple;DDT027
+139650665,1.0,quadruple;DDT027
+150413414,1.0,quadruple;DDT027
+269056004,1.0,circumbinary planet candidate;potential orbital motion in Gaia due to excess astrometry noise sigma (~335);DDT027
+274791367,1.0,quadruple;DDT027
+438226195,1.0,circumbinary planet candidate;potential orbital motion in Gaia due to excess astrometry noise sigma (~1700);DDT027
+454140642,1.0,quadruple;follow-up confirmed eclipses on target;DDT027

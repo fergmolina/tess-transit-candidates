@@ -1,0 +1,18 @@
+# DDT PI: Rahul Jayaraman
+# Cadence: 20s
+# Subject: Observations of Tria-Axial Pulsators
+# DDT: 073
+#
+# Original filename: triaxial_ddt_target_list.csv
+# Created by: Rahul Jayaraman
+# Created on: 7/12/2024
+# Number of targets: 4
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+435850195,1,tri-axial,pulsator;DDT073
+315323966,1,tri-axial,pulsator;DDT073
+28391714,1,X_Tri,tri-axial,pulsator;DDT073
+323292655,1,RS_Cha,tri-axial,pulsator;DDT073

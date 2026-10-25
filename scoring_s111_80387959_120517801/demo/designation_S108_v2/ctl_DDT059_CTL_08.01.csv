@@ -1,0 +1,15 @@
+# DDT PI: Daniella Gagliuffi
+# Cadence: 20s
+# Subject: A Search for Asteroseismic Oscillations in 14 Her
+# DDT: 059
+#
+# Original filename: ddt-template-target-list-3.csv
+# Created by: Daniella Gagliuffi
+# Created on: 2022:04:08
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+219483057,1,asteroseismic; oscillations;14 Her;DDT059

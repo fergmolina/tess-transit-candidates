@@ -1,0 +1,282 @@
+DESIGNATED  {'80387959': 'SPOC'}
+PASS A complete + listed -> SPOC
+DESIGNATED  {'80387959': 'QLP'}
+PASS A complete + unlisted -> QLP
+DESIGNATED  {'80387959': 'SPOC'}
+PASS A v1 404 + v2 200 listing the TIC -> SPOC (v2 found)
+DESIGNATED  {'80387959': 'QLP'}
+PASS A DDT page 503 does not affect the designation
+DESIGNATED  {'80387959': 'QLP'}
+PASS A DDT CTL 503 does not affect the designation
+DESIGNATED  {'80387959': 'QLP'}
+PASS A CTL-only listing -> QLP (DDT lists are context only)
+PENDING ['target-list version 1: HTTP 503 (not 200 or 404)'] {'80387959': 'PENDING'}
+PASS A l503 -> PENDING (version 1: HTTP 503)
+PENDING ['target-list version 3: HTTP 0 (not 200 or 404)'] {'80387959': 'PENDING'}
+PASS A curl0 -> PENDING (version 3: HTTP 0)
+PENDING ['target-list version 1 malformed: no TICID header line'] {'80387959': 'PENDING'}
+PASS A html200 -> PENDING (malformed: no TICID header line)
+PENDING ['target-list version 1 malformed: 1 non-integer rows'] {'80387959': 'PENDING'}
+PASS A nonint -> PENDING (non-integer rows)
+PENDING ['no 2-min target list published for sector 111 (v1-v9 all 404)'] {'80387959': 'PENDING'}
+PASS A all404 -> PENDING (all 404)
+PENDING ['orbit table not retrieved (HTTP 503)'] {'80387959': 'PENDING'}
+PASS A orb503 -> PENDING (orbit table not retrieved)
+PENDING ['orbit table header is not the expected four columns'] {'80387959': 'PENDING'}
+PASS A orbhdr -> PENDING (header)
+PENDING ['orbit table has no row for sector 112, so the end of sector 111 is not final'] {'80387959': 'PENDING'}
+PASS A orbnext -> PENDING (no row for sector 112)
+PENDING ['snapshot made before the sector end'] {'80387959': 'PENDING'}
+PASS A early -> PENDING (before the sector end)
+PASS A a saved list edited after hashing -> derive refuses
+PENDING ['orbit table has no row for sector 112, so the end of sector 111 is not final'] {'80387959': 'PENDING'}
+PASS 80387959 S111 B1 a PENDING snapshot is recorded
+PASS 80387959 S111 B1 route refused while only PENDING
+DESIGNATED  {'80387959': 'QLP'}
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B1 a later SPOC-listing snapshot is recorded
+PASS 80387959 S111 B1 route QLP binds the QLP config (the later snapshot is not operative)
+PASS 80387959 S111 B1 route refuses the SPOC config
+PASS 80387959 S111 B1 QLP NONE check recorded
+PASS 80387959 S111 B1 QLP acquisition before any QLP selection in the ledger is refused
+PASS 80387959 S111 B1 acquisition referencing another selection is refused
+PASS 80387959 S111 B1 QLP record acquisition appended
+PASS 80387959 S111 B1 QLP result binds and names the round-4 requirement
+PASS 80387959 S111 B1 result refuses another light curve
+PASS 80387959 S111 B tampered record bytes refused
+PASS 80387959 S111 B edited ledger line refused (hash chain)
+PASS 80387959 S111 B entry earlier than the previous one refused
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959 S111 B a ledger initialised against an edited lock copy is refused
+PASS 80387959 S111 B another TIC's ledger refused
+PENDING ['snapshot made before the sector end'] {'80387959': 'PENDING'}
+PASS 80387959 S111 B entry before the lock refused
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B2 a secondary acquisition is refused while the route is SPOC_PENDING
+PASS 80387959 S111 B2 acquisition before a qualifying selection refused (route SPOC_PENDING)
+PASS 80387959 S111 B2 route refused while SPOC_PENDING
+PASS 80387959 S111 B2 route SPOC binds the SPOC config
+PASS 80387959 S111 B2 route refuses the QLP config
+PASS 80387959 S111 B2 SPOC result binds
+PASS 80387959 S111 B2 a second record acquisition is refused
+PASS 80387959 S111 B2 a secondary QLP acquisition is accepted once the route is settled
+PASS 80387959 S111 B2 a secondary acquisition does not change the route
+PASS 80387959 S111 B2 result refuses output made by other code
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B2 result refuses another config's output (consistent S112 chain)
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B3 a late check finding a release dated before the cutoff -> SPOC
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B4 one clean check after the cutoff does not certify
+PASS 80387959 S111 B4 two clean checks >= 7 d apart certify the fallback
+PASS 80387959 S111 B4 fallback final after QLP acquisition; a later SPOC find stays secondary
+PASS 80387959 S111 B4 SPOC config refused after the fallback is final
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B5 a qualifying SPOC release before any QLP acquisition overturns the certified fallback
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B6 two clean checks < 7 d apart do not certify
+PASS 80387959 S111 B7 a SELECTED check with a release date after the cutoff counts as clean
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 B8 AMBIGUOUS after the cutoff -> UNRESOLVED
+PASS 80387959 S111 B8 acquisition refused while UNRESOLVED
+PASS 80387959 S111 B8 later clean checks resolve UNRESOLVED into a certified fallback
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959 S111 B10 UNAVAILABLE before end + 365 d refused
+PASS 80387959 S111 B10 UNAVAILABLE without a complete QLP check after the cutoff refused
+PASS 80387959 S111 B10 an AMBIGUOUS QLP check after end + 365 d does not allow UNAVAILABLE
+PASS 80387959 S111 B9 UNAVAILABLE recorded after a complete QLP check past end + 365 d
+PASS 80387959 S111 B9 acquisition after UNAVAILABLE refused
+PASS 80387959 S111 B9 route refused after UNAVAILABLE
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 R1 AMB after certification withdraws it (UNRESOLVED)
+PASS 80387959 S111 R1 AMB: QLP acquisition refused while UNRESOLVED
+PASS 80387959 S111 R1 AMB: a new two-check certification resolves it
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 R1 INC after certification withdraws it (UNRESOLVED)
+PASS 80387959 S111 R1 INC: QLP acquisition refused while UNRESOLVED
+PASS 80387959 S111 R1 INC: a new two-check certification resolves it
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 R2 a qualifying SPOC selection before the designation keeps SPOC despite later NONE checks
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959 S111 R2 a qualifying QLP selection before the designation blocks UNAVAILABLE
+PASS 80387959 S111 R2 the pre-designation QLP selection is the release of record
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 R3 a secondary acquisition of the route's own product (QLP under fallback) is refused
+PASS 80387959 S111 R3 a secondary acquisition without a selection in this ledger is refused
+PASS 80387959 S111 R3 after the QLP record acquisition a timely SPOC find cannot promote SPOC
+DESIGNATED  {'80387959': 'SPOC'}
+PASS 80387959 S111 R4 an infinite release date is accepted as unusable (not qualifying), no crash
+PASS 80387959 S111 R4 an out-of-range release date after the cutoff is unresolved
+PASS 80387959 S111 R4 an unparsable record is refused and the ledger bytes are unchanged
+PASS 80387959 S111 R4 a rule-refused append leaves the ledger bytes unchanged
+PENDING ['orbit table has no row for sector 112, so the end of sector 111 is not final'] {'120517801': 'PENDING'}
+PASS 120517801 S111 B1 a PENDING snapshot is recorded
+PASS 120517801 S111 B1 route refused while only PENDING
+DESIGNATED  {'120517801': 'QLP'}
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B1 a later SPOC-listing snapshot is recorded
+PASS 120517801 S111 B1 route QLP binds the QLP config (the later snapshot is not operative)
+PASS 120517801 S111 B1 route refuses the SPOC config
+PASS 120517801 S111 B1 QLP NONE check recorded
+PASS 120517801 S111 B1 QLP acquisition before any QLP selection in the ledger is refused
+PASS 120517801 S111 B1 acquisition referencing another selection is refused
+PASS 120517801 S111 B1 QLP record acquisition appended
+PASS 120517801 S111 B1 QLP result binds and names the round-4 requirement
+PASS 120517801 S111 B1 result refuses another light curve
+PASS 120517801 S111 B tampered record bytes refused
+PASS 120517801 S111 B edited ledger line refused (hash chain)
+PASS 120517801 S111 B entry earlier than the previous one refused
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801 S111 B a ledger initialised against an edited lock copy is refused
+PASS 120517801 S111 B another TIC's ledger refused
+PENDING ['snapshot made before the sector end'] {'120517801': 'PENDING'}
+PASS 120517801 S111 B entry before the lock refused
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B2 a secondary acquisition is refused while the route is SPOC_PENDING
+PASS 120517801 S111 B2 acquisition before a qualifying selection refused (route SPOC_PENDING)
+PASS 120517801 S111 B2 route refused while SPOC_PENDING
+PASS 120517801 S111 B2 route SPOC binds the SPOC config
+PASS 120517801 S111 B2 route refuses the QLP config
+PASS 120517801 S111 B2 SPOC result binds
+PASS 120517801 S111 B2 a second record acquisition is refused
+PASS 120517801 S111 B2 a secondary QLP acquisition is accepted once the route is settled
+PASS 120517801 S111 B2 a secondary acquisition does not change the route
+PASS 120517801 S111 B2 result refuses output made by other code
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B2 result refuses another config's output (consistent S112 chain)
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B3 a late check finding a release dated before the cutoff -> SPOC
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B4 one clean check after the cutoff does not certify
+PASS 120517801 S111 B4 two clean checks >= 7 d apart certify the fallback
+PASS 120517801 S111 B4 fallback final after QLP acquisition; a later SPOC find stays secondary
+PASS 120517801 S111 B4 SPOC config refused after the fallback is final
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B5 a qualifying SPOC release before any QLP acquisition overturns the certified fallback
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B6 two clean checks < 7 d apart do not certify
+PASS 120517801 S111 B7 a SELECTED check with a release date after the cutoff counts as clean
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 B8 AMBIGUOUS after the cutoff -> UNRESOLVED
+PASS 120517801 S111 B8 acquisition refused while UNRESOLVED
+PASS 120517801 S111 B8 later clean checks resolve UNRESOLVED into a certified fallback
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801 S111 B10 UNAVAILABLE before end + 365 d refused
+PASS 120517801 S111 B10 UNAVAILABLE without a complete QLP check after the cutoff refused
+PASS 120517801 S111 B10 an AMBIGUOUS QLP check after end + 365 d does not allow UNAVAILABLE
+PASS 120517801 S111 B9 UNAVAILABLE recorded after a complete QLP check past end + 365 d
+PASS 120517801 S111 B9 acquisition after UNAVAILABLE refused
+PASS 120517801 S111 B9 route refused after UNAVAILABLE
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 R1 AMB after certification withdraws it (UNRESOLVED)
+PASS 120517801 S111 R1 AMB: QLP acquisition refused while UNRESOLVED
+PASS 120517801 S111 R1 AMB: a new two-check certification resolves it
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 R1 INC after certification withdraws it (UNRESOLVED)
+PASS 120517801 S111 R1 INC: QLP acquisition refused while UNRESOLVED
+PASS 120517801 S111 R1 INC: a new two-check certification resolves it
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 R2 a qualifying SPOC selection before the designation keeps SPOC despite later NONE checks
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801 S111 R2 a qualifying QLP selection before the designation blocks UNAVAILABLE
+PASS 120517801 S111 R2 the pre-designation QLP selection is the release of record
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 R3 a secondary acquisition of the route's own product (QLP under fallback) is refused
+PASS 120517801 S111 R3 a secondary acquisition without a selection in this ledger is refused
+PASS 120517801 S111 R3 after the QLP record acquisition a timely SPOC find cannot promote SPOC
+DESIGNATED  {'120517801': 'SPOC'}
+PASS 120517801 S111 R4 an infinite release date is accepted as unusable (not qualifying), no crash
+PASS 120517801 S111 R4 an out-of-range release date after the cutoff is unresolved
+PASS 120517801 S111 R4 an unparsable record is refused and the ledger bytes are unchanged
+PASS 120517801 S111 R4 a rule-refused append leaves the ledger bytes unchanged
+PENDING ['target-list version 1 malformed: HTTP 200 with an empty body'] {'80387959': 'PENDING'}
+PASS A an HTTP 200 with an empty target-list body -> PENDING (empty body), no crash
+PENDING ['orbit table not retrieved (HTTP 200, empty body)'] {'80387959': 'PENDING'}
+PASS A an HTTP 200 with an empty orbit table -> PENDING, no crash
+DESIGNATED  {'80387959': 'QLP'}
+PASS T later_second: writer B waits while writer A holds the lock (both still running)
+PASS T later_second: nothing committed while A is paused
+PASS T later_second: A committed its STAGED bytes (SHA matches the pre-alteration record)
+PASS T later_second: the final history replays
+PASS T later_second: B committed after A, in event order
+PASS T later_second: no partial files left in the ledger
+DESIGNATED  {'80387959': 'QLP'}
+PASS T earlier_second: writer B waits while writer A holds the lock (both still running)
+PASS T earlier_second: nothing committed while A is paused
+PASS T earlier_second: A committed its STAGED bytes (SHA matches the pre-alteration record)
+PASS T earlier_second: the final history replays
+PASS T earlier_second: B (earlier event) refused after A's commit, nothing of B written
+PASS T earlier_second: no partial files left in the ledger
+DESIGNATED  {'80387959': 'QLP'}
+PASS T an unreferenced leftover of an interrupted commit is replaced under the lock
+PASS 120517801_S111.json pre binds
+PASS 120517801_S111.json pre refuses an edited config copy
+PASS 120517801_S111.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S111.json QLP-designated route binds
+PASS 120517801_S112.json pre binds
+PASS 120517801_S112.json pre refuses an edited config copy
+PASS 120517801_S112.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S112.json QLP-designated route binds
+PASS 120517801_S113.json pre binds
+PASS 120517801_S113.json pre refuses an edited config copy
+PASS 120517801_S113.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S113.json QLP-designated route binds
+PASS 80387959_S111.json pre binds
+PASS 80387959_S111.json pre refuses an edited config copy
+PASS 80387959_S111.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S111.json QLP-designated route binds
+PASS 80387959_S112.json pre binds
+PASS 80387959_S112.json pre refuses an edited config copy
+PASS 80387959_S112.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S112.json QLP-designated route binds
+PASS 80387959_S113.json pre binds
+PASS 80387959_S113.json pre refuses an edited config copy
+PASS 80387959_S113.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S113.json QLP-designated route binds
+PASS 80387959_S114.json pre binds
+PASS 80387959_S114.json pre refuses an edited config copy
+PASS 80387959_S114.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S114.json QLP-designated route binds
+PASS 120517801_S111_spoc.json pre binds
+PASS 120517801_S111_spoc.json pre refuses an edited config copy
+PASS 120517801_S111_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S111_spoc.json QLP-designated route refuses the SPOC config
+PASS 120517801_S112_spoc.json pre binds
+PASS 120517801_S112_spoc.json pre refuses an edited config copy
+PASS 120517801_S112_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S112_spoc.json QLP-designated route refuses the SPOC config
+PASS 120517801_S113_spoc.json pre binds
+PASS 120517801_S113_spoc.json pre refuses an edited config copy
+PASS 120517801_S113_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'120517801': 'QLP'}
+PASS 120517801_S113_spoc.json QLP-designated route refuses the SPOC config
+PASS 80387959_S111_spoc.json pre binds
+PASS 80387959_S111_spoc.json pre refuses an edited config copy
+PASS 80387959_S111_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S111_spoc.json QLP-designated route refuses the SPOC config
+PASS 80387959_S112_spoc.json pre binds
+PASS 80387959_S112_spoc.json pre refuses an edited config copy
+PASS 80387959_S112_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S112_spoc.json QLP-designated route refuses the SPOC config
+PASS 80387959_S113_spoc.json pre binds
+PASS 80387959_S113_spoc.json pre refuses an edited config copy
+PASS 80387959_S113_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S113_spoc.json QLP-designated route refuses the SPOC config
+PASS 80387959_S114_spoc.json pre binds
+PASS 80387959_S114_spoc.json pre refuses an edited config copy
+PASS 80387959_S114_spoc.json pre refuses a lock whose ledger-tool hash differs
+DESIGNATED  {'80387959': 'QLP'}
+PASS 80387959_S114_spoc.json QLP-designated route refuses the SPOC config
+209/209 passed

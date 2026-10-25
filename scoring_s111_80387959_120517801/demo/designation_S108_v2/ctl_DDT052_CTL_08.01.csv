@@ -1,0 +1,15 @@
+# DDT PI: Alexis M. S. Smith
+# Cadence: 2m
+# Subject: A unique chance to observe the transit of a planet in a 522-d orbit
+# DDT: 052
+#
+# Original filename: smith-k299-target-list.csv
+# Created by: Alexis Smith
+# Created on: 2021-11-29
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+176966903, 1, K2-99;DDT052

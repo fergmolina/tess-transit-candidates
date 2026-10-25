@@ -1,0 +1,15 @@
+# DDT PI: Gerald Handler
+# Cadence: 20s
+# Subject: The second Delta Scuti/roAp “hybrid” pulsator?
+# DDT: 074
+#
+# Original filename: file-name.csv
+# Created by: Gerald Handler
+# Created on: 07/17/2024
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+259462749,1,asteroseismology;DDT074

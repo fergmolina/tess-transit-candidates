@@ -1,0 +1,29 @@
+{
+ "record": "target_list_designation",
+ "version": "2.0",
+ "sector": 108,
+ "snapshot_utc": "2026-10-25T04:48:25.441356Z",
+ "snapshot_sha256": "fb815fb4073b58eb0b98fb4749d777cc413b12d3705f027bfc10e03f45d47a07",
+ "sector_end_utc": "2026-10-04T20:30:00Z",
+ "status": "DESIGNATED",
+ "n_valid_target_lists": 1,
+ "max_version_probed": 9,
+ "spoc_cutoff_utc": "2027-02-01T20:30:00Z",
+ "unavailable_cutoff_utc": "2027-10-04T20:30:00Z",
+ "ddt_context": {
+  "files_saved": 98,
+  "note": "context only; never affects the designation"
+ },
+ "per_tic": {
+  "317134140": {
+   "designation": "SPOC",
+   "in_target_lists": [
+    "all_targets_S108_v1.csv"
+   ]
+  },
+  "24526743": {
+   "designation": "QLP",
+   "in_target_lists": []
+  }
+ }
+}

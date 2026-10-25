@@ -1,0 +1,24 @@
+# DDT:  029
+# DDT PI:  Luke Bouma
+# Cadence: 20s
+# Subject:  Complex Modulation of Rapidly Rotating Young M Dwarfs
+# Original filename: complex-rotators-ddt-20s-subset.csv		
+# Created by: Luke Bouma		
+# Created on: 2020/10/14		
+# Number of targets: 10		
+# Ecliptic latitude range: they in the south		
+# 		
+# Column 1: TIC ID		
+# Column 2: Priority (float - 1.0 highest	 0.0 lowest)	
+# Column 3: Keywords (separated by semi-colon)		
+# tic	priority	keywords
+142173958,1.0,complexrotator;DDT029
+146539195,1.0,complexrotator;DDT029
+24518895,1.0,complexrotator;DDT029
+276453848,1.0,complexrotator;DDT029
+264599508,1.0,complexrotator;DDT029
+363963079,1.0,complexrotator;DDT029
+144486786,1.0,complexrotator;DDT029
+408188366,1.0,complexrotator;DDT029
+300651846,1.0,complexrotator;DDT029
+262400835,1.0,complexrotator;DDT029

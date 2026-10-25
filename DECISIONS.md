@@ -1837,3 +1837,165 @@
     (3) Non-blocking note taken: the structural-zero check now uses the exact interval test in the scorer's ratio direction. The
         diagnostics outputs are byte-identical (json fb7b9d40..., md 3d195858...), so the registration note's cited hash stands.
     Current script hashes: calibrate cde10a021d79c56b..., diagnostics b0a884bb4aa7b6f0....
+190. 2026-10-25 03:05 UTC — v1.18.1 ASSEMBLED LOCALLY by scripts/assemble_v1_18_1.py.
+    - Content: scoring_317134140_s108_s110/calibration/ (raw trials, descriptive diagnostics, the as-run calibration source, the log,
+      scripts, README; withdrawn/ holds the self-labelled LR draft and superseded scripts with a notice); the registration with the
+      dated calibration note; the calibration review and re-check, path-only redactions; the design-sector index; README block;
+      CITATION 1.18.1; public DECISIONS through item 189; MANIFEST_v1.18.1.md (23 files, verified).
+    - Asserted: the v1.18 configs and scorer are unchanged.
+    - The first attempt stopped on an over-strict path check: DECISIONS.md's published v1.15 prefix carries temporary paths that
+      were already disclosed. The partial changes were reverted file by file (the tree was clean at 1f81a4b), the check was limited
+      to the text after that prefix, and the assembly was re-run.
+    - Release notes: zenodo_upload/RELEASE_NOTES_v1.18.1.md. Nothing is committed, pushed or uploaded; this awaits the author's go.
+191. 2026-10-25 03:52 UTC — v1.18.1 PUBLISHED with the author's go for the assembled bytes (question tool).
+    - Anchors matched: MANIFEST_v1.18.1.md 9828bc59..., RELEASE_NOTES_v1.18.1.md 1d6b994b...; 23 manifest hashes passed.
+    - Published: commit f3233b31 (Co-Authored-By trailer, no session link); tag and GitHub release v1.18.1; Zenodo
+      10.5281/zenodo.23632740 (created 2026-10-25T03:51:39Z). The calibration and the withdrawal of the combined-LR draft are now
+      public before any S108-S110 data of this star.
+192. 2026-10-25 04:21 UTC — v1.19 S111+ package built for TIC 80387959 (S111-S114) and 120517801 (S111-S113). The author's "do it" was read
+    as this package, not as a ground-photometry procedure. Not yet reviewed or published.
+    - Designation tool scripts/target_list_designation.py (7fc6424788ed5a9f...), metadata only; the author's rule 178(a).
+        Snapshot: the official orbit table, every all_targets_S<N>_v<k>.csv (probed to the first 404, since the index is forbidden),
+          and the DDT page with every linked CTL, all with saved bytes and hashes.
+        Sector end: the latest End of Orbit of sector N, accepted only when the table also lists N+1; otherwise PENDING (the
+          current table lists only part of S111).
+        Designation: listed in any saved list or CTL -> SPOC, else QLP. A single derive() is re-run by the validator.
+        Fetching uses the system curl with TLS verified: the venv's Python OpenSSL plus certifi fails on tess.mit.edu's chain.
+        Live demo S108 (results/designation_records/demo_S108/): 317134140 -> SPOC, 24526743 -> QLP; end 2026-10-04T20:30Z; SPOC
+          cutoff 2027-02-01T20:30Z, equal to the v1.18 cutoff; re-derives identically.
+    - Configs (scripts/make_configs_s111.py): 7 QLP (published v2.1 rc4 evaluator, clock gate) + 7 SPOC (prereg_conformance_spoc.py,
+      unchanged at c7e1b4cd...). They carry the designation rule, a prospective monitoring rule and the dilution note (one reference
+      depth for both products; never rescaled). Reference values 726 ppm / 2.2 h and 830 ppm / 2.2 h; primary S111.
+      Locks: LOCK_2026-10-25_S111_QLP.json 561985662ebf9d68... and LOCK_2026-10-25_S111_SPOC.json 0ec46bcc3f6f2cc1....
+    - New validator scripts/validate_s111_inputs.py (ac58df5f44a9a4ba...), stages pre / designation / selection / result:
+        it re-derives the designation;
+        QLP by fallback needs a re-derived NONE selection record made at or after the SPOC cutoff;
+        the SPOC selection must be made by the cutoff.
+      validate_nonclock_inputs.py and prereg_conformance_spoc.py are untouched. QLP clock/result stay with validate_round4_inputs.py.
+    - Tests: scripts/test_s111_lock.py 280/280 (logs/test_s111_lock_20261025.log, artificial only); test_locked_configs.py 182/182 on
+      the QLP lock. Refusal reasons were spot-checked; one case that first passed for the wrong reason (old snapshot refused as
+      PENDING) was fixed in the fixture.
+    - Amendments appended to both PREREGISTRATION_v2.md files (scripts/amend_s111_registrations.py); published prefixes intact.
+    - Observation: the live DDT page (fetched 2026-10-25 ~04:00 UTC) lists DDT 001-099 only; DDT 100-102 reported by the monitoring
+      bot are not on it.
+193. 2026-10-25 04:39 UTC — Review results/REVIEW_S111_package.md: "publish after listed changes; hold v1.19" (S111-1 to S111-4 blocking:
+    failed metadata read as "unlisted"; version and DDT scope; fallback history; designation before acquisition; S111-5 a test defect).
+    Author's decisions (question tool, 2026-10-25), refining 178(a) after this review and before any S111 data exist:
+    (a) DDT SCOPE: only the sector's published 2-min target lists (all_targets_S<N>_v<k>.csv) decide listing. They already
+        concatenate the approved DDT targets. DDT target lists carry no sector and are saved as context only. This is the literal
+        reading of 178(a); the broader CTL trigger of item 192 is dropped.
+    (b) FALLBACK BASIS: SPOC stays the product of record if any retained check, including one after the cutoff, finds a SPOC 2-min
+        light curve whose MAST release date (t_obs_release) is on or before sector end + 120 d. Otherwise QLP. The first selected
+        qualifying release is irreversible. This replaces "delivered within 120 days" with the MAST release date, the only
+        observable delivery evidence.
+    (c) TIMING: the first successful, COMPLETE designation snapshot at or after the published sector end decides; checks are at least
+        weekly. Failed, malformed or incomplete fetches are retained as PENDING and retried, never read as "unlisted". The accepted
+        snapshot and its sector end are fixed before any flux of either product is acquired; later metadata cannot replace them.
+        This clarifies 178(a)'s "on the sector's end date".
+    Item 192's package is superseded before publication; it will be rebuilt as v1.19b and re-checked.
+194. 2026-10-25 04:43 UTC — Two further author decisions (question tool), before any S111 data and before the rebuild code is written:
+    (a) FALLBACK FINALITY: the QLP fallback is CERTIFIED by two complete SPOC checks made at or after the SPOC cutoff, at least 7 days
+        apart, both finding no qualifying release (no SPOC 2-min light curve with MAST release date <= end + 120 d). It becomes FINAL
+        when QLP flux is acquired under it (ledger order). A qualifying SPOC release found later is recorded and reported as a
+        secondary readout only, never a re-designation. Until QLP flux is acquired, a qualifying SPOC release found by any retained
+        check makes SPOC the product of record (item 193(b)).
+    (b) AMBIGUOUS / INCOMPLETE: if SPOC checks after the cutoff are AMBIGUOUS (two or more eligible files) or INCOMPLETE (no usable
+        dataURI, observation row or release date), the product of record is UNRESOLVED. It is reported with no outcome of record,
+        and both products are secondary readouts. A later complete check before any acquisition can resolve it, either by a
+        qualifying SELECTED or by contributing to the two-check fallback certification.
+    Declared conventions for the rebuild:
+    - The MAST release date is t_obs_release, read as MJD (MJD 0 = 1858-11-17 00:00 UTC). A missing or non-numeric value never
+      qualifies. Whether reprocessing changes t_obs_release is not established.
+    - The "final check within 24 h before the cutoff" clause is dropped; under the release-date rule it has no evidential role.
+    - No flux of either product is acquired before the route is settled.
+    - The same release-date logic applies to the 365-day rule. QLP v01 with release date <= end + 365 d is the product of record
+      on the QLP route. A complete QLP check at or after end + 365 d with none, recorded as a disposition entry, makes the sector
+      UNAVAILABLE, and that is final.
+195. 2026-10-25 04:53 UTC — v1.19b rebuild of the S111+ package after review S111-1 to S111-5, implementing items 193-194. Not yet re-checked
+    or published.
+    - Designation tool v2 scripts/target_list_designation.py (c66f3a774202e378...):
+        required sources are the orbit table and target-list versions v1-v9, ALL probed (bounded and declared);
+        any non-200/404 status, curl failure, malformed body, wrong orbit-table header, missing N+1 row, all-404 lists, or a
+        snapshot before the end gives PENDING with the reasons, never "unlisted";
+        DDT page and lists are context only.
+      The reviewed v1 is archived in results/conformance_s111/superseded_v1.19a/. S108 demo re-run with v2
+      (results/designation_records/demo_S108_v2/): same designations, end and cutoff; all nine versions probed.
+    - New scripts/qlp_selection.py (6c52378495fe8989...): the QLP counterpart of spoc_selection.py (unchanged), release of record
+      v01 with MAST t_obs_release. Live in-sample check (80387959 S100) SELECTED.
+    - New ledger scripts/s111_ledger.py (089f6c68fc5ad482...): append-only, hash-chained, per TIC/sector, with the entry types
+      designation_snapshot, spoc_check, qlp_check, acquisition and disposition. Forbidden entries are refused at append time.
+      replay() implements items 193-194:
+        the first DESIGNATED snapshot is operative, with frozen cutoffs;
+        the release-date rule (MJD) with the first qualifying selection irreversible;
+        two clean checks >= 7 d apart certify the fallback, and the QLP record acquisition makes it final;
+        AMBIGUOUS / INCOMPLETE after the cutoff -> UNRESOLVED;
+        UNAVAILABLE needs a complete QLP check after end + 365 d and is final;
+        no acquisition before a settled route.
+    - Validator v2 scripts/validate_s111_inputs.py (4b2312590e81647d...), stages pre / route / result, replays the ledger.
+      QLP results also need validate_round4_inputs.py, and the output says so.
+    - Configs regenerated with the item 193-194 rule text; the 24-hour final-check clause is dropped. The v1.19a configs and locks
+      (never published) are archived in configs/conformance/superseded_s111_v1.19a_2026-10-25/.
+      New locks: LOCK_2026-10-25_S111_QLP.json e0bd156031edafc3..., LOCK_2026-10-25_S111_SPOC.json 54f6aa2a00d2c893...; both bind the designation,
+      both selection tools and the ledger.
+    - Tests: scripts/test_s111_lock.py v2, 150/150 (logs/test_s111_lock_20261025b.log). It drives the real snapshot() with a mocked
+      fetch and clock, and every negative case asserts its refusal reason (S111-5). test_locked_configs.py on the QLP lock: 182/182.
+    - Registrations reset to their published bytes and re-amended (prefixes intact).
+196. 2026-10-25 04:57 UTC — Pre-review hardening of v1.19b (advisor), regenerated as the current package:
+    (1) Each ledger is now bound to BOTH locks by SHA-256. s111_ledger.py init takes --lock-qlp and --lock-spoc and records both hashes;
+        the validator requires this lock's hash. A ledger initialised against an edited lock copy is refused (tested).
+    (2) Replay allows at most ONE record acquisition per ledger. Secondary acquisitions are refused while the route is unsettled
+        and accepted after it settles. An AMBIGUOUS QLP check after end + 365 d does not allow UNAVAILABLE. All three are tested.
+    (3) Generator docstring: "--stage designation" corrected to route/result.
+    (4) Disclosure in the QLP release_rule and the amendments: only v01 is a release of record, so a v02-only listing leads to
+        UNAVAILABLE (as for the v1.17 locks).
+    Hashes: s111_ledger.py c444bca837a6d289..., validate_s111_inputs.py a2e78bded6072e16...; locks QLP 3f2000a626a8245d..., SPOC f3a1bc7bcbae5856....
+    The v1.19b configs and locks (never published) are archived in configs/conformance/superseded_s111_v1.19b_2026-10-25/.
+    Tests: 162/162 (logs/test_s111_lock_20261025c.log) and 182/182 (logs/test_locked_configs_S111_QLP_20261025c.log). Registrations
+    re-amended; prefixes intact. The S108 v2 demo still re-derives.
+197. 2026-10-25 13:52 UTC — Re-check results/RECHECK_S111_package.md: "publish after listed changes" (R1-R5). Fixes, regenerated as v1.19d (not published):
+    R1: an unresolved SPOC check (AMBIGUOUS, or INCOMPLETE including an unusable release date) at or after the cutoff now makes the
+        route UNRESOLVED even after certification, as item 194(b) says. A later qualifying selection or a new two-check certification
+        resolves it; only a final fallback is immune. The contrary docstring sentence is removed.
+    R2: checks recorded before the operative designation are kept and, once it fixes the cutoffs, evaluated in ledger order under
+        the same rules: a prior qualifying SPOC selection keeps SPOC, and a prior qualifying QLP selection blocks UNAVAILABLE and is
+        the release of record.
+    R3: a secondary acquisition must be of the OTHER product than the route's, and must reference a SELECTED check of that product in
+        the same ledger (same dataURI and file name). A same-product "secondary" can no longer avoid finality.
+    R4: release dates are usable only if finite and 0 < MJD < 200000; otherwise unusable, without a crash. replay() turns any parsing
+        failure into a refusal. append() validates on a temporary copy first, so refused appends leave the ledger bytes unchanged
+        (tested byte-exact). An HTTP 200 with an empty body (target list or orbit table) gives PENDING.
+    R5: the generator docstring now describes the current rule. The monitoring sentence uses the reviewer's wording ("A later check
+        can recognize a timely release if it remains listed ... earlier replaced deliveries cannot be excluded ...").
+    QLP receipt: kept as two BOUND outputs plus the identifiable artifacts (config, light curve, evaluator JSON, clock record, ledger
+    at its validated tip, lock and code hashes), which the reviewer judged sufficient.
+    Hashes: s111_ledger.py ab5373e900ce9d59..., target_list_designation.py f91b9be2174438e2..., validate_s111_inputs.py a2e78bded6072e16...; locks
+    QLP 3545a827b3191150..., SPOC 9b0095f6d47263f7....
+    The v1.19c configs and locks (never published) are archived in configs/conformance/superseded_s111_v1.19c_2026-10-25/; the previous
+    tool versions are in results/conformance_s111/superseded_v1.19a/.
+    Tests: 196/196 (logs/test_s111_lock_20261025d.log) and 182/182 (logs/test_locked_configs_S111_QLP_20261025d.log). Registrations
+    re-amended; prefixes intact. The S108 v2 demo still re-derives.
+198. 2026-10-25 15:15 UTC — Second re-check results/RECHECK2_S111_package.md: R1-R5 fixed; one blocker remained (concurrent appends could commit a
+    record validated against an older ledger state). Fix, regenerated as v1.19e (not published):
+    - s111_ledger.py append() is now a serialized transaction.
+      - Lock: an exclusive per-ledger writer lock (fcntl.flock on DIR/.writer.lock) is held from reading the history through the
+        commit; a second writer waits.
+      - Staging: the source record is staged ONCE, and the candidate history built from it is fully replayed. A refusal writes
+        nothing live.
+      - Commit: the validated bytes are placed under a temporary name and renamed, then ledger.jsonl is replaced atomically
+        (os.replace). Readers see the old or the new history only. An unreferenced leftover of an interrupted commit is replaced
+        under the lock.
+      - Test hook: an opt-in hook (S111_LEDGER_PAUSE_AFTER_STAGE), inactive unless set, schedules interleavings for the tests.
+    - Tests (scripts/test_s111_lock.py, section T), deterministic:
+      - a second writer waits while the first holds the lock;
+      - nothing is committed during the pause;
+      - the committed bytes are the staged ones even after the source file is altered;
+      - a later-dated second writer commits after the first;
+      - an earlier-dated second writer is refused cleanly, with nothing written;
+      - no partial files remain;
+      - an interrupted-commit leftover is replaced.
+      Suites: 209/209 (logs/test_s111_lock_20261025e.log) and 182/182 (logs/test_locked_configs_S111_QLP_20261025e.log).
+    - CORRECTION to item 197: "refused appends leave the ledger bytes unchanged" held only for sequential writers. It now holds for
+      concurrent writers as well, by serialization.
+    Hashes: s111_ledger.py 16b987ac0cc8b116...; locks QLP d3f2d0ed93e7db2c..., SPOC a88d676e745d247f....
+    The v1.19d configs and locks (never published) are archived in configs/conformance/superseded_s111_v1.19d_2026-10-25/; the v1.19d
+    ledger is in results/conformance_s111/superseded_v1.19a/s111_ledger_v1.19d.py. Registrations re-amended; prefixes intact.

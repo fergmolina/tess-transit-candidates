@@ -1,0 +1,24 @@
+# DDT PI: Michelle Kunimoto
+# Cadence: 20s
+# Subject: White Dwarf Exoplanets
+# DDT: 043
+#
+# Original filename: wd_exoplanets_20s.csv
+# Created by: Michelle Kunimoto
+# Created on: June 29, 2021
+# Number of targets: 10
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+356502320,1,WD;DDT043
+1201364356,0.888888888888889,WD;DDT043
+1716398518,0.777777777777778,WD;DDT043
+86408822,0.666666666666667,WD;DDT043
+1968420005,0.555555555555556,WD;DDT043
+289467229,0.444444444444445,WD;DDT043
+1001570405,0.333333333333334,WD;DDT043
+428404202,0.222222222222223,WD;DDT043
+1859153737,0.111111111111112,WD;DDT043
+1959621869,0,WD;DDT043

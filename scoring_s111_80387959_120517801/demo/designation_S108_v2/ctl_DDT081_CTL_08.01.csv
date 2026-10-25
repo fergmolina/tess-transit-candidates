@@ -1,0 +1,15 @@
+# DDT PI: Georgina Dransfield
+# Cadence: 2m
+# Subject: Multiplicity of TIC 192833836
+# DDT: 081
+#
+# Original filename: GD_DDT.csv
+# Created by: Georgina Dransfield
+# Created on: 2024/11/06
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+192833836,1,sub-neptune;super-earth;low-mass stars;exoplanet;DDT081

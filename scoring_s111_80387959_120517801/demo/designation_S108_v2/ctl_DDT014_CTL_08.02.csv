@@ -1,0 +1,16 @@
+# DDT: 014
+# DDT PI:  James Davenport
+# Cadence:  2m
+# Subject: QX Cas
+# Original filename: davenport_qxcas.csv
+# Created by: James Davenport
+# Created on: 2020-Feb-12
+# Number of targets: 1
+# Ecliptic latitude range: 61.27235
+# Tmag range: 9.98
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+326815804,1,QX_Cas;DDT014

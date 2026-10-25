@@ -1,0 +1,39 @@
+# DDT PI: Sam Grunblatt
+# Cadence: 2m
+# Subject: Hot Jupiters Around Evolved Stars
+# DDT: 033
+#
+# Original filename: file-name.csv
+# Created by: Sam Grunblatt
+# Created on: 2/2/21
+# Number of targets: <number of targets>
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+230001847,1,toi;DDT033
+176956893,0.8,toi;DDT033
+256722647,0.7,toi;DDT033
+348835438,0.6,ctoi;DDT033
+394918211,0.6,ctoi;DDT033
+420268415,0.5,ctoi;DDT033
+405788729,0.4,ctoi;DDT033
+334597566,0.4,ctoi;DDT033
+428962300,0.4,ctoi;DDT033
+388504644,0.5,ctoi;DDT033
+201175570,0.5,ctoi;DDT033
+431605129,0.4,ctoi;DDT033
+419523962,0.5,ctoi;DDT033
+133655284,0.5,ctoi;DDT033
+446370039,0.4,ctoi;DDT033
+407146536,0.4,ctoi;DDT033
+59183645,0.4,ctoi;DDT033
+219854519,0.4,ctoi;DDT033
+423025145,0.4,ctoi;DDT033
+234496405,0.4,ctoi;DDT033
+28799599,0.4,ctoi;DDT033
+139474683,0.4,ctoi;DDT033
+210441429,0.4,ctoi;DDT033
+97766057,0.4,ctoi;DDT033
+264221104,0.4,ctoi;DDT033

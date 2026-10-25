@@ -1,0 +1,17 @@
+# DDT: 015
+# DDT PI:  Jari Kajava
+# Cadence:  2m
+# Subject: Quasi-periodic eruptions from an active galactic nucleus
+# Original filename: TIC10001286249.csv
+# Created by: Jari Kajava
+# Created on: 2020/14/02
+# Number of targets: 1
+# Ecliptic latitude range: 31.446845 to 31.446845
+# Tmag range: 14.91 to 14.91
+# 
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+10001286249,1.0,RXJ1301.9+2747;DDT015
+#156422638,1.0,RXJ1301.9+2747_neighbor;DDT015

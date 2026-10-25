@@ -1,0 +1,15 @@
+# DDT PI: Maria Pia Di Mauro
+# Cadence: 20s
+# Subject: The characterization of the host star GJ504
+# DDT: 055
+#
+# Original filename: dimauro.csv
+# Created by: Maria Pia Di Mauro
+# Created on: 2022-02-15
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+397587084,1,GJ504;GJ504b;asteroseismology;oscillations;solar-type;interiors; exoplanet; magnetic activity; mass; age;DDT055

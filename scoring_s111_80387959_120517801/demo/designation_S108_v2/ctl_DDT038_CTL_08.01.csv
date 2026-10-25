@@ -1,0 +1,17 @@
+# DDT PI: Travis Metcalfe
+# Cadence: 20s
+# Subject: Asteroseismology of Spectropolarimetric Benchmark Stars
+# DDT: 038
+#
+# Original filename: spectropol.csv
+# Created by: Travis Metcalfe
+# Created on: 06/01/2021
+# Number of targets: 3
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+458494003,1.000,HD143761;S51;DDT038
+296740796,0.999,HD141004;S51;DDT038
+461297684,0.990,HD136202;S51;DDT038

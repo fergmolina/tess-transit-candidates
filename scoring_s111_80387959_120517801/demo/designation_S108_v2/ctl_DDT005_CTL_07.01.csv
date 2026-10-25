@@ -1,0 +1,35 @@
+# DDT: 005
+# DDT PI:  Christopher Burke
+# Subject: Discovered TOIs
+# Cadence:  2m
+# Original filename: toi_ddt_mastv9.txt
+# Created by: Christopher Burke
+# Created on: 03/11/2019
+# Number of targets: 20
+# Ecliptic latitude range: -60 to -90
+# Tmag range: 9.0 to 12.0
+#
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+0220435095,1.0,DDT_005;TOI-147.01;Tmag=11.8
+0260985861,1.0,DDT_005;TOI-149.01;Tmag=10.1
+0271893367,1.0,DDT_005;TOI-150.01;Tmag=10.9
+0382302241,1.0,DDT_005;TOI-151.01;Tmag=11.0
+0231081369,1.0,DDT_005;TOI-153.01;Tmag=11.7
+0140691463,1.0,DDT_005;TOI-157.01;Tmag=12.0
+0394657039,1.0,DDT_005;TOI-159.01;Tmag=10.5
+0348770361,1.0,DDT_005;TOI-161.01;Tmag=11.4
+0179317684,1.0,DDT_005;TOI-163.01;Tmag=10.8
+0149990841,1.0,DDT_005;TOI-167.01;Tmag=11.6
+0183120439,1.0,DDT_005;TOI-169.01;Tmag=11.7
+0394698182,1.0,DDT_005;TOI-170.01;Tmag=11.9
+0309257814,1.0,DDT_005;TOI-171.01;Tmag=11.5
+0237924601,1.0,DDT_005;TOI-252.01;Tmag=11.6
+0038696105,1.0,DDT_005;TOI-281.01;Tmag=10.5
+0055452495,1.0,DDT_005;TOI-336.01;Tmag=9.9
+0280097543,1.0,DDT_005;TOI-375.01;Tmag=10.4
+0220396259,1.0,DDT_005;TOI-379.01;Tmag=9.9
+0300810086,1.0,DDT_005;TOI-385.01;Tmag=9.0
+0238059180,1.0,DDT_005;TOI-386.01;Tmag=10.0

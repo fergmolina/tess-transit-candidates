@@ -1,0 +1,22 @@
+# DDT PI: Jeremy Schnittman
+# Cadence: 20s
+# Subject: triple eclipsing system
+# DDT: 070
+#
+# Original filename: target-list.csv
+# Created by: Jeremy Schnittman
+# Created on: Sep 26, 2023
+# Number of targets: 8
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+283539216, 1.0, triple;DDT070
+378275980, 0.9, triple;DDT070
+391244527, 0.5, triple;DDT070
+444555685, 0.9, triple;DDT070
+283839379, 0.9, triple;DDT070
+75751455, 0.8, triple;DDT070
+396201191, 0.8, triple;DDT070 
+451708707, 0.8, triple;DDT070

@@ -1,0 +1,15 @@
+# DDT PI: Rahul Jayaraman
+# Cadence: 20s
+# Subject: A Low-Temperature sdBV star in a Long-Period Binary
+# DDT: 046
+#
+# Original filename: ddt_5724661_target_list.csv
+# Created by: Rahul Jayaraman
+# Created on: July 5 2021
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+5724661,1.0,sdB;compact pulsator;long-period binary;delta Scuti;DDT046

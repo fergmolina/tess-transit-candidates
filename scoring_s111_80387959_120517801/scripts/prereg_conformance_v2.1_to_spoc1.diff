@@ -1,0 +1,33 @@
+70c70
+< VERSION = "conformance-v2.1-rc4 (2026-10-20; rc3 + second re-check fixes F1 F4; DECISIONS 74-91)"
+---
+> VERSION = "conformance-v2.1-spoc1 (v2.1 rc4 + SPOC 2-min product branch; 2026-10-24, DECISIONS 172/175)"
+74a75
+> SPOC_NAME = re.compile(r"^tess(\d{13})-s(\d{4})-(\d{16})-(\d{4})-s_lc\.fits$")   # spoc1: SPOC 2-min light curve
+192,199c193,209
+<         if product != "QLP": res["outcome"] = f"INVALID_INPUT (unsupported product '{product}')"; return finish(res, a)
+<         mname = QLP_NAME.match(os.path.basename(a.lc))
+<         if not mname or int(mname.group(1)) != cfg["sector"] or int(mname.group(2)) != cfg["tic"]: res["outcome"] = "INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)"; return finish(res, a)
+<         if cfg.get("release_of_record") and mname.group(3) != cfg["release_of_record"]: res["outcome"] = f"INVALID_INPUT (QLP release {mname.group(3)} is not the release of record {cfg['release_of_record']}; later releases are reported separately, never as the outcome of record)"; return finish(res, a)
+<         try: t, f, sector, tic, prov = load_lc(a.lc, cfg["flux_col"])
+<         except (ValueError, KeyError) as e: res["outcome"] = f"INVALID_INPUT ({e})"; return finish(res, a)
+<         res["lc_format"] = "FITS"; res["lc_provenance"] = prov
+<         if prov["ORIGIN"] != "MIT/QLP": res["outcome"] = f"INVALID_INPUT (header ORIGIN {prov['ORIGIN']!r} is not 'MIT/QLP')"; return finish(res, a)
+---
+>         if product not in ("QLP", "SPOC"): res["outcome"] = f"INVALID_INPUT (unsupported product '{product}')"; return finish(res, a)
+>         if product == "SPOC":   # spoc1: SPOC 2-min branch. Name pattern, ORIGIN NASA/Ames; release of record = first MAST delivery (pipeline field recorded); no QLP clock gate (SPOC times are target-barycentric)
+>             ms = SPOC_NAME.match(os.path.basename(a.lc))
+>             if not ms or int(ms.group(2)) != cfg["sector"] or int(ms.group(3)) != cfg["tic"]: res["outcome"] = "INVALID_INPUT (file name is not the SPOC 2-min name for this TIC/sector)"; return finish(res, a)
+>             res["spoc_pipeline_field"] = ms.group(4)
+>             try: t, f, sector, tic, prov = load_lc(a.lc, cfg["flux_col"])
+>             except (ValueError, KeyError) as e: res["outcome"] = f"INVALID_INPUT ({e})"; return finish(res, a)
+>             res["lc_format"] = "FITS"; res["lc_provenance"] = prov
+>             if prov["ORIGIN"] != "NASA/Ames": res["outcome"] = f"INVALID_INPUT (header ORIGIN {prov['ORIGIN']!r} is not 'NASA/Ames')"; return finish(res, a)
+>         if product == "QLP":   # spoc1: the v2.1 QLP checks, unchanged, now only for product QLP
+>             mname = QLP_NAME.match(os.path.basename(a.lc))
+>             if not mname or int(mname.group(1)) != cfg["sector"] or int(mname.group(2)) != cfg["tic"]: res["outcome"] = "INVALID_INPUT (file name is not the QLP HLSP name for this TIC/sector)"; return finish(res, a)
+>             if cfg.get("release_of_record") and mname.group(3) != cfg["release_of_record"]: res["outcome"] = f"INVALID_INPUT (QLP release {mname.group(3)} is not the release of record {cfg['release_of_record']}; later releases are reported separately, never as the outcome of record)"; return finish(res, a)
+>             try: t, f, sector, tic, prov = load_lc(a.lc, cfg["flux_col"])
+>             except (ValueError, KeyError) as e: res["outcome"] = f"INVALID_INPUT ({e})"; return finish(res, a)
+>             res["lc_format"] = "FITS"; res["lc_provenance"] = prov
+>             if prov["ORIGIN"] != "MIT/QLP": res["outcome"] = f"INVALID_INPUT (header ORIGIN {prov['ORIGIN']!r} is not 'MIT/QLP')"; return finish(res, a)

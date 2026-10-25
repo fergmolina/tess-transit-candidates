@@ -1,0 +1,17 @@
+# DDT PI: Elyse Incha
+# Cadence: 2m
+# Subject: Single-transit Planet Candidates from K2 Campaign 19E
+# DDT: 044
+#
+# Original filename: Incha_DDTTargetlist.csv
+# Created by: Elyse Incha
+# Created on: 7/1/21
+# Number of targets: 3
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+248050219,.8,EPIC_246251988 ;DDT044
+301132473,.9,EPIC_246191231;DDT044
+49592509,1.,EPIC_245978988;DDT044

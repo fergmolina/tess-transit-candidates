@@ -1,0 +1,15 @@
+# DDT PI: Nestor Espinoza
+# Cadence: 20s
+# Subject: Obtaining the best precision out of HAT-P-14b transit observations
+# DDT: 061
+#
+# Original filename: tess-ddt-hp14-sheet.csv
+# Created by: Nestor Espinoza
+# Created on: 05-16-2022
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+101721385,1,exoplanet;transits;f-stars;DDT061

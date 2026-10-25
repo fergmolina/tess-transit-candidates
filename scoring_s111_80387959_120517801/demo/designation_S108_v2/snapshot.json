@@ -1,0 +1,884 @@
+{
+ "record": "target_list_snapshot",
+ "version": "2.0",
+ "sector": 108,
+ "tics": [
+  317134140,
+  24526743
+ ],
+ "snapshot_utc": "2026-10-25T04:48:25.441356Z",
+ "files": [
+  {
+   "file": "TESS_orbit_times.csv",
+   "url": "https://tess.mit.edu/public/files/TESS_orbit_times.csv",
+   "http_status": 200,
+   "sha256": "e239f8bd6cdf09d51ea02005418c8b749d6024260a10e0f2b803c128778530eb",
+   "bytes": 15940,
+   "required": true
+  },
+  {
+   "file": "all_targets_S108_v1.csv",
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v1.csv",
+   "http_status": 200,
+   "sha256": "0f9e31c61c3bf4fdc808238672bf6b81a70c55534be2598b24486ad3f8c48e3d",
+   "bytes": 395049,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v2.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v3.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v4.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v5.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v6.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v7.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v8.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": null,
+   "url": "https://tess.mit.edu/public/target_lists/2m/all_targets_S108_v9.csv",
+   "http_status": 404,
+   "sha256": null,
+   "bytes": 0,
+   "required": true
+  },
+  {
+   "file": "DDT_list.html",
+   "url": "https://tess.mit.edu/public/DDTs/DDT_list.html",
+   "http_status": 200,
+   "sha256": "e3c37bc968f9400ae63f75dc9c3bfcfc4d190f074cf9985312efd82c2cf8dc02",
+   "bytes": 34053,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT099_CTL_09.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT099_CTL_09.01.csv",
+   "http_status": 200,
+   "sha256": "21e0369cf5a488a39fdee552fc717df2885080fbe4e50e676f915e1d1a522160",
+   "bytes": 552,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT098_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT098_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "cd16ae7e4292447eb7dabf40010068a746cf09ca8ec749fdbaa9878682ed87e5",
+   "bytes": 676,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT097_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT097_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "9a0fe203e3395f3e737c849d7bc6f76d0068fb728bf30cdc0c31399c8c2c669d",
+   "bytes": 423,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT096_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT096_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "d4d0cf984567bc100ae8c9573c737e1d3b52e747307b621c87cbbfcc4570ce61",
+   "bytes": 474,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT095_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT095_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "434ad750bacff24e877146c2edbc87a4a826e819d2c71bfa57d0fbe8231bc026",
+   "bytes": 413,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT094_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT094_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "d26f4eb019ea201a4040fd6b2868a6623635e44dddbc58e0cfc71e459cb69f27",
+   "bytes": 411,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT093_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT093_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "b5ab7623180d30f34921373f4550950a78957ec4380d70444bb161ada7063f00",
+   "bytes": 450,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT092_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT092_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "0cae57d6d6265b1a239ce463e0bbf0dda287dce263bb351de2631039586195b7",
+   "bytes": 515,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT091_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT091_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "f5e6fe719b59654f14b4bf62790f1797dbaf3d674d6e8aaf213c4838e60d5468",
+   "bytes": 406,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT090_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT090_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "45ac10f109d81e7fa8abfaa0e0839405df2777219036bde9567f1aa134054a82",
+   "bytes": 5618,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT089_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT089_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "3ba77419daac28a7d4ecb5b13d9e77371c97572178c7be8cb7700b40d6302692",
+   "bytes": 488,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT088_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT088_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "4eb26acb95ecae053ce519368a78166ebfeca31d507ac01cbd22eb484de8f9ac",
+   "bytes": 465,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT087_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT087_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "a31bdb471a8314dfce58a9c0e61f2e1dccaf93478e67f837297d85a8b00a1861",
+   "bytes": 15359,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT086_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT086_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "10ce8a16fbd03747326483cd28e850271155aa7f16db1a1f16695a0e3cb6248b",
+   "bytes": 391,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT085_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT085_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "f34d42844dc8b5d5b316b6dc86d7d20c6da89c1b42b78b29e36cb27bd1d749f9",
+   "bytes": 381,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT084_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT084_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "2374f427c81b105caa15e2c8bfcb5b84f43f52d7254b3be30fb572b0b68786a9",
+   "bytes": 487,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT083_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT083_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "7886bb143f9de940b103e8e09924a0712e765cad7722e4c702b07be6e20a9bde",
+   "bytes": 474,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT081_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT081_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "3d160323acf97d96dd0c5e6d71295115c35c8c96c71a5b633e941487083bddeb",
+   "bytes": 426,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT080_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT080_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "dc0da20b764003061251f5a9a94a0d8c91b29ed31d08c57f91ccd7964f886887",
+   "bytes": 478,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT079_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT079_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "9ec9d88ad84d677738228384f9d482b5cc58e2860398e00f4cadb11f1d8a2ae9",
+   "bytes": 409,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT078_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT078_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "485f69eb86da857f43b6937dd2964b328b3fcf22ba2bf530629d8db3137b58c4",
+   "bytes": 5457,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT077_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT077_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "66551e99832957f52256885bd08275e0d5cf1f8f29dabf2b4d70d9a20e1302f9",
+   "bytes": 2450,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT076_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT076_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "82f1f87ca4cf75e18657aea265ea33ffb5537c574506549e762f5a58457db9b4",
+   "bytes": 424,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT075_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT075_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "0a6fa0598a5f4989da65f8d97c31fd50734876f0a0d88898dfe82252f3a44cce",
+   "bytes": 395,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT074_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT074_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "200529d6f43fcc5f84c02143ab8de67d08b465f0af95ef828a576b71e1914689",
+   "bytes": 409,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT073_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT073_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "9c495d3df0382256b0b0b4681c8dd709c4490bba81979b39155b93040064536c",
+   "bytes": 539,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT072_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT072_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "56c62518c243a1e996bd89024262c03f6edd47de38588d2e15e786715d8ca861",
+   "bytes": 545,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT071_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT071_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "66bfc1cd6866ed2fb88539aeb0f0409595283fb3e0f120f9a78a6e581c44f9a4",
+   "bytes": 1010,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT070_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT070_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "44d2f6dedf115bfec7bdfa98ebe2bb4fad47fdd91e221fdb8760fa07e219aaf8",
+   "bytes": 596,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT069_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT069_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "f1c35401b2377e57fe3cc21f9ac61f1397310e921c8c32ae0e4cc8e6c29d62bf",
+   "bytes": 366,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT068_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT068_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "fce1212236c8eae382efd8e974aa195dc6d44f2ce668f35be60bf65e8ecb4f1b",
+   "bytes": 677,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT067_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT067_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "231bd0a30f83506090ff6dd809464fc8d0fd3b8bd09c36d947d99aab05d93ba1",
+   "bytes": 2207,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT066_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT066_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "083be3e8ce98ae1e3c1af51bc4e6e195c8335b6822206bb5d6362aa1269b69f4",
+   "bytes": 384,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT065_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT065_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "4ea698822c35194bc491f6076bac422895b56067bd4523020f98b36c7cab90e0",
+   "bytes": 556,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT064_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT064_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "e667953698ccfe719fb1b0aeeb193cd87d6e152945bcd13b51b94dd8c0bad4ba",
+   "bytes": 4464,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT063_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT063_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "1d476d17fddc8434400fcc85c76a40dbfa7395a9bf77d5d081895eb789cd3b1c",
+   "bytes": 2245,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT062_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT062_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "d27746011b6eaf54d4cf418d0823b05068cb8edcda4a43888360bd47e852eb62",
+   "bytes": 463,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT061_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT061_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "6860e37810a7c41c7d1e5b755c9bd30bfb4c217ee647f2f2bb3a8290a51ac8e0",
+   "bytes": 447,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT060_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT060_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "41e58d0cc86b76e711bbe70248f309e77e002e5a8bdc853d6977617c8e137ebe",
+   "bytes": 467,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT059_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT059_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "8a625d2d911f768508039a5f2016739a21640e4e072ad73aa766e19839cd6797",
+   "bytes": 451,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT058_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT058_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "579b8c7d6079ded38d6757e90836fb5083c20324fdd234710d944f9d5d79fa64",
+   "bytes": 406,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT057_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT057_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "5557c7eefe3c401ac31baba798e507cbc2380915feb2f28f7d42402252393d81",
+   "bytes": 648,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT056_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT056_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "3945252e1c6fbbab68cd37fac759fdfb4f729dd68d177a1d4dab0d118ec955ec",
+   "bytes": 421,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT055_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT055_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "77409a02e6465501584eaf22c00158a35e6feecbdf610f95f9c90cbdf75eaabf",
+   "bytes": 496,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT054_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT054_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "ed53691d751a014a41165a2a068d9525f1e5fe84666999bac5ffeda0f264f1c9",
+   "bytes": 443,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT053_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT053_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "e2ff089ad806300c319b31bcdb2abecc8955aa902ecf9d757b363207de801ef9",
+   "bytes": 422,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT052_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT052_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "fc0d20bc10b23f54928008474b0fec0b7ac1090f89af3c942a29635b8364f7c4",
+   "bytes": 431,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT051_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT051_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "9de08358f35dca4b215877a03a490f5f736114969335aaf0c323c3e82de070d8",
+   "bytes": 420,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT050_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT050_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "ca2a2dd9e3e1c01fcec4d69136be3c7a02a5677472e7b10792be9725f8ea5421",
+   "bytes": 448,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT049_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT049_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "08bf2d239ffe1e915d0504fa8317dd3a3ff8d855dc931ab518d8c4e82b22d52f",
+   "bytes": 2060,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT048_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT048_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "bd2cc2dbfae616119f1a2593812751675112e6a2ec930db100568f6a78667713",
+   "bytes": 14659,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT047_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT047_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "b9909af238d688dc7ecebde882144639285c7794a3ab346d89eccd2df404d76c",
+   "bytes": 70441,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT046_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT046_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "6f5d935749d00f4989e99c1d183dae4d5d8f0d29a97243d6b9507fe8610a6dd3",
+   "bytes": 462,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT045_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT045_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "51afb45f6a59a6f8d9eaeec07c20dc0e0318b8456c97459ceb018caa17060931",
+   "bytes": 16966,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT044_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT044_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "d29be867055166979fbb2c10268f5cb86436e7c027f9ab19ad7d9d890bde1f29",
+   "bytes": 480,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT043_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT043_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "c63821fba668dd73fe95ee9db68508badc604425b6fd7e5937aae0685275577d",
+   "bytes": 715,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT042_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT042_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "1e9c3855b94be8498726d238883650cc9af09839875c0c0361847a4d940bc6d4",
+   "bytes": 3138,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT041_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT041_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "a5d5376f735ecd2bdc2860036baf0e20490e5482f367c7c69957bd268fba181a",
+   "bytes": 535215,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT040_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT040_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "eca47ae28a5c43a37ec0ae650ef9bcd30858e6da0ae29ac1f931dcbe19f9084f",
+   "bytes": 607,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT039_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT039_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "4737016feb005b0677038946cfb541c8929dd38e4430a5590b8a3d6f40ab0882",
+   "bytes": 33425,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT038_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT038_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "9972a4975058807ab3ae474d44fd483421ddcc5d62ad868d4908f19ab8cd208e",
+   "bytes": 489,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT037_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT037_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "12a2c3164b862008f856f936f08ebce847a67bad51914ecf28dc01b8071a7a8e",
+   "bytes": 2726,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT036_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT036_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "01107c6b32cf9feb661a81a614afb3968b25531c33f8090eab1f08569a5d9d91",
+   "bytes": 394,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT035_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT035_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "484d5973f4e2500102d2c32e4be48ff83ea71aa29d0e4c9f2f73d7a56ab7394e",
+   "bytes": 668,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT034_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT034_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "f65a2ce9221258fb2ea240da9b0358e48263e75e8f18bf6401bf9c4a703627be",
+   "bytes": 1350,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT033_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT033_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "31e08a412808f370665f974eae4f5b12ca599cbfe24150df0fc5b4add37eb41d",
+   "bytes": 1009,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT032_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT032_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "bcf7fda1fc97bbc661385c43c55ffba1612c7302f195845080b84862a1563e81",
+   "bytes": 50560,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT031_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT031_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "94dc00b0d13d15ba3f9b92832516afe6364bb2d196c3f9ebbdaae42ad7ef0596",
+   "bytes": 444,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT030_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT030_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "41424a9e38ea275ada149547d628949aa55401edc977e9eba815406c3cd482b5",
+   "bytes": 588,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT029_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT029_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "c4257f61bd4bcea27b1dc80a16786c0682770b2ae1272627091731d310ebb996",
+   "bytes": 815,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT028_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT028_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "5eaca0611076aa8e9042949f21da256c7ad61308acecd6ed5777459ee0b464e9",
+   "bytes": 2114,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT027_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT027_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "2e378729f2df732fe3d1a6a90ad74f15ff7cc716f62fb868488cbd44b37264b6",
+   "bytes": 1093,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT026_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT026_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "a4cbb9f5c2dfbb28a7ba970e568a79f6d4f61265cb5e1cd1d9f39dc8633e9db4",
+   "bytes": 487,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT025_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT025_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "25b085fa94a46dcb0a12de435fb866e4a6cbbd7b393971b0ed4f6b5b4add7d07",
+   "bytes": 1487,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT024_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT024_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "7442be827a4081df11f7d8f3a226be6558131bbf0aa778601a368a28eed4ab4f",
+   "bytes": 2830,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT023_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT023_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "be92a122f959b235d96cd3934a0c97494948b173d4bd06fe4ecf6fa7f745f7fb",
+   "bytes": 880,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT022_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT022_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "d346eee3685f737bae16799ae5847f7a02e2cd04a68e114bb17d933ce22800fc",
+   "bytes": 115010,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT021_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT021_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "2a013375e54d4a9de25c33eb877d949e3b3607d0ebb5a4f669e8bc671599fa91",
+   "bytes": 1646,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT020_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT020_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "7cada4339bb4ecabf8740477fe90cb4606e950505cf8ac2f67079c5c1bdc86fe",
+   "bytes": 1891,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT019_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT019_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "5b9ca486f9292a3a53bb14e2f0e8774921b25e2e91279176884ec7df8e387e4d",
+   "bytes": 976,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT018_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT018_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "a0b02336d14211dfdf981d7897000f6c984c14c525ebbf1bbc41faeadc6b5fd0",
+   "bytes": 396,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT017_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT017_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "b812f2dd379c6c26376ffa4f53a2c80a129d3fe24a674d4860a0bfce21f046e4",
+   "bytes": 505,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT016_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT016_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "3b50ec601397c5b5e8818af7d270cb58a5332226c32611657b1813d594b6d224",
+   "bytes": 13729,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT015_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT015_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "74a63f41527fa92ccbde06230f48d13208d142856ea079b587be28d862c4e2fc",
+   "bytes": 543,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT014_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT014_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "fb8756f21e79e0548334279ce7554dcb7e0739d85d896c5d18738f79d552670d",
+   "bytes": 420,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT013_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT013_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "66cf6d1d603e2b95f4d059c69ab2b324d277abb4a79b9e8b30f7917af16cea6e",
+   "bytes": 1103,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT012_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT012_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "06f52861a9a1d6c45fad095b6a675f82a39555ab882661042ecfe13a5e036a1b",
+   "bytes": 1480,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT011_CTL_08.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT011_CTL_08.02.csv",
+   "http_status": 200,
+   "sha256": "82561c6fc39b28fed08028eeee7ce087463c163ea179682b54bc501eefcd2e72",
+   "bytes": 2025,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT010_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT010_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "3cc5d4fa6135a4580edd4005a7bf2dfdb8008b105b5fdc7b32970d5f49b8180c",
+   "bytes": 5398,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT009_CTL_08.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT009_CTL_08.01.csv",
+   "http_status": 200,
+   "sha256": "daa217c850277cffadacfb409290433ed3ad4ff3959c6084a0e95142e01ebc68",
+   "bytes": 557,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT008_CTL_07.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT008_CTL_07.01.csv",
+   "http_status": 200,
+   "sha256": "824a4459d1845935bed10d7f49daa50190719ecb0deedc283831699162e4d65d",
+   "bytes": 481,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT007_CTL_07.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT007_CTL_07.01.csv",
+   "http_status": 200,
+   "sha256": "1eff915d649acad1019b02eca7c594ca3d51b8448043ef80726f33356cbac125",
+   "bytes": 4733,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT006_CTL_07.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT006_CTL_07.02.csv",
+   "http_status": 200,
+   "sha256": "69e6f76e4d131ecdfe8de506311544cd6b33b0e1cbda1c4fb0495f4319f8a2ef",
+   "bytes": 22190,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT005_CTL_07.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT005_CTL_07.01.csv",
+   "http_status": 200,
+   "sha256": "1fcfaf6de139030dadd2c8ec4f06590f569e94cb4618e9d7609efeead7f365c2",
+   "bytes": 1291,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT004_CTL_07.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT004_CTL_07.02.csv",
+   "http_status": 200,
+   "sha256": "1900d05b47c5ce9c834cb2eb0eb34f55cce60d6551539cd53cd9c74681b9750c",
+   "bytes": 195386,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT003_CTL_07.01.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT003_CTL_07.01.csv",
+   "http_status": 200,
+   "sha256": "86712ba95401c7b6ba34d90cea0df2f10880827a4b9506ac5240fb6806fb932f",
+   "bytes": 3486,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT002_CTL_07.03.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT002_CTL_07.03.csv",
+   "http_status": 200,
+   "sha256": "68e7f5eabfc428e33e0211bc9299213a765b089c76fd0e318d9668c5200eab15",
+   "bytes": 69256,
+   "required": false
+  },
+  {
+   "file": "ctl_DDT001_CTL_07.02.csv",
+   "url": "https://tess.mit.edu/public/DDTs/ctls/DDT001_CTL_07.02.csv",
+   "http_status": 200,
+   "sha256": "4823dac5789a1caca232490a05ed416a4cdb44ec1d80eddb7ac7da3f1b3fd101",
+   "bytes": 57042,
+   "required": false
+  }
+ ]
+}

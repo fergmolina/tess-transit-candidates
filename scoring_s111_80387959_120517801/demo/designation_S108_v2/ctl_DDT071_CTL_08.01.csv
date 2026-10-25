@@ -1,0 +1,34 @@
+# DDT PI: Mikkel N. Lund
+# Cadence: 20s
+# Subject: Asteroseismology of bright stars
+# DDT: 071
+#
+# Original filename: DDT_Lund.csv
+# Created by: Mikkel N. Lund
+# Created on: 5/2/2024
+# Number of targets: 20
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+460067868, 1,    mu Her;DDT071
+375621179, 0.95, beta Aql;DDT071
+341873045, 0.9,  chi Dra;DDT071
+233121747, 0.85, 36 Dra;DDT071
+441813918, 0.8,  35 Dra;DDT071
+372682437, 0.75, eta Cep;DDT071
+353988778, 0.7,  HD 167042;DDT071
+459978312, 0.65, TOI-1487;DDT071
+356735065, 0.6,  HD 154319;DDT071
+367912480, 0.55, gamma Cep;DDT071
+279979429, 0.5,  eps Dra;DDT071
+157364190, 0.45, chi Herv;DDT071
+43255143,  0.4,  zeta Her;DDT071
+233623612, 0.35, HD 176598;DDT071
+232563914, 0.3,  HD 136064;DDT071
+233193585, 0.25, HD 160933;DDT071
+48194330,  0.2,  HD 175225;DDT071
+41195655,  0.15, b01 Cyg;DDT071
+293807888, 0.1,  HD 186760;DDT071
+421444084, 0,    Ups Cep;DDT071

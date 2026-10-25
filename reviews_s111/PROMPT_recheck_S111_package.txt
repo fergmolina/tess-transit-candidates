@@ -1,0 +1,51 @@
+Re-check of the rebuilt v1.19 S111+ package ("v1.19b") after your results/REVIEW_S111_package.md (S111-1 to S111-5). Nothing is
+published. Work from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial. S111 starts 2026-11-26.
+
+MATERIALS
+- logs/DECISIONS.md items 193-196.
+  - Items 193-194 are the author's refinements of 178(a), made after your review and before any S111 data:
+    - only the sector lists count; DDT lists are context;
+    - the SPOC fallback is decided by the MAST release date;
+    - the first complete snapshot after the end is operative; failures stay PENDING;
+    - fallback certification needs two clean checks >= 7 d apart, and becomes final with the QLP acquisition;
+    - AMBIGUOUS / INCOMPLETE -> UNRESOLVED;
+    - UNAVAILABLE is final.
+  - Item 195 is the rebuild; item 196 is pre-review hardening.
+- scripts/target_list_designation.py (v2). The reviewed v1 is in results/conformance_s111/superseded_v1.19a/. S108 demo with v2:
+  results/designation_records/demo_S108_v2/.
+- scripts/qlp_selection.py (new); scripts/s111_ledger.py (new); scripts/validate_s111_inputs.py (v2).
+- scripts/make_configs_s111.py (v2); configs/conformance/80387959_S11[1-4]{,_spoc}.json and 120517801_S11[1-3]{,_spoc}.json; locks
+  configs/conformance/LOCK_2026-10-25_S111_QLP.json and _S111_SPOC.json. The v1.19a material is archived in
+  configs/conformance/superseded_s111_v1.19a_2026-10-25/ and superseded_s111_v1.19b_2026-10-25/.
+- Tests: scripts/test_s111_lock.py (v2; 162/162, logs/test_s111_lock_20261025c.log); test_locked_configs.py on the QLP lock (182/182,
+  logs/test_locked_configs_S111_QLP_20261025c.log).
+- Registrations: results/vet_allsky/80387959/PREREGISTRATION_v2.md and 120517801/PREREGISTRATION_v2.md (the published text must be an
+  exact prefix).
+
+CHECK
+1) S111-1: re-run your probes (http503, html200, ddt_unfetched) and any others against the real snapshot(). Can a failed or malformed
+   fetch still yield a designation? Do the DDT failures stay non-blocking, as declared?
+2) S111-2: is the v1-v9 bounded discovery adequately declared? Does the rule now match items 178(a) and 193(a) exactly?
+3) S111-3: re-run your fallback probes. Can a later NONE certify a fallback despite an earlier qualifying selection? Can a late first
+   check reopen UNAVAILABLE? Is the two-check certification correct? Does finality on QLP acquisition hold? Is UNRESOLVED handled?
+4) S111-4: re-run result_acquired_before_designation. Can any acquisition precede the operative designation or a settled route? Can a
+   later snapshot replace the operative one? Is the QLP receipt (ledger + round-4) coherent?
+5) The ledger: integrity (hash chain, record bytes, event order, lock time); append-time refusals; is the replay rule set complete and
+   unambiguous? Edge cases: a fallback certified then an unresolved check; QLP checks before the designation; secondary acquisitions.
+6) Tests: does every negative case assert its reason? Is anything still passing for the wrong reason? Gaps?
+7) Wording: are the configs and amendments consistent with items 193-196 and with the tools? Is the v01-only disclosure adequate?
+   QLP receipt: the final result bundle will contain both BOUND outputs, from validate_s111_inputs.py and validate_round4_inputs.py.
+   Is that sufficient, or is a combined receipt file required?
+8) Verdict: publish as v1.19 / publish after listed changes / not ready.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry of any frozen object. This includes TIC 80387959 and 120517801 in S111
+  or later, and TIC 317134140 in S108-S110; the full list is in results/PROMPT_recheck_317134140_v1.3.txt.
+- Metadata-only fetches of public lists, the orbit table and the DDT page are allowed. Do NOT run spoc_selection.py or
+  qlp_selection.py select/acquire for any test sector.
+- Do NOT read or use ~/.zenodo_token or any credential. Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/RECHECK_S111_package.md: findings with file:line evidence and exact fixes, and the verdict. Print only the report path and
+a one-line verdict.

@@ -1,0 +1,16 @@
+# DDT: 031
+# DDT PI:  Jamie Tayar
+# Cadence: 20s
+# Subject: Digging Deep Into Massive Star Variability 
+# Original filename: Tayar_DDT.txt
+# Created by: Jamie Tayar
+# Created on: November 2020
+# Number of targets: 1
+# Ecliptic latitude range: dunno
+# Tmag range: 11.1
+#
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+425083410,1,HST;Tayar;DDT031

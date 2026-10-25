@@ -1,0 +1,15 @@
+# DDT PI: Robert Frazier
+# Cadence: 2m
+# Subject: Constraining the Optical and NUV Transit of HAT-P-70 b
+# DDT: 091
+#
+# Original filename:HAT-P-70.csv
+# Created by: JSV
+# Created on: 2025/09/28
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+399870368,1,HAT-P-70,NUV,XMM-Newton;DDT091

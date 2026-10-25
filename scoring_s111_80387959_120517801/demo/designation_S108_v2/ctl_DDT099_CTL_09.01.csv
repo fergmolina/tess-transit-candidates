@@ -1,0 +1,17 @@
+# DDT PI: Rahul Jayaraman
+# Cadence: 20s
+# Subject: Monitoring for LFBOT Flaring
+# DDT: 099
+#
+# Original filename: lfbot-ddt.csv
+# Created by: Rahul Jayaraman
+# Created on: 13 Sep 2026
+# Number of targets: 3
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low,1=high),
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+43471998,1.0,luminous fast blue optical transient;G_SPECIAL_APERTURE_21_21;DDT099
+135264228,1.0,luminous fast blue optical transient;DDT099
+302558949,1.0,luminous fast blue optical transient;DDT099

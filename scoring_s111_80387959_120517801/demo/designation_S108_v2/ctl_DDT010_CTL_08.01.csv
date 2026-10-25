@@ -1,0 +1,101 @@
+# DDT: 010
+# DDT PI:  Nobu Kawai
+# Subject:  X-ray sources observed by MAXI
+# Cadence:  2m
+# Original filename: DDT_MAXI.csv
+# Created by: Roland Vanderspek
+# Created on: 2019 August 9
+# Number of targets: 90
+# Column 1: TIC ID
+# Column 2: Priority (float - 1.0 highest, 0.0 lowest),
+# Column 3: Keywords (separated by semi-colon)
+16948107,1.0,DDT010;EXO_2030+375;0.019 arc-seconds away
+17032547,1.0,DDT010;Cyg_X-3;0.022 arc-seconds away
+22817261,1.0,DDT010;HR_5110;0.020 arc-seconds away
+29701408,1.0,DDT010;UX_Ari;0.007 arc-seconds away
+50518138,1.0,DDT010;Swift_J0243.6+6124;0.011 arc-seconds away
+52901460,1.0,DDT010;Sco_X-1;0.228 arc-seconds away
+54527515,1.0,DDT010;4U_0115+63;0.000 arc-seconds away
+75078662,1.0,DDT010;1A0535+262;0.014 arc-seconds away
+77422977,1.0,DDT010;VY_Ari;0.017 arc-seconds away
+829681.0,DDT010;1.0,DDT010;KS_1947+300;0.012 arc-seconds away
+94471007,1.0,DDT010;X_Per;0.015 arc-seconds away
+95286503,1.0,DDT010;Sigma_Gem;0.056 arc-seconds away
+98821494,1.0,DDT010;IGR_J18539+0727;2.961 arc-seconds away
+102604645,1.0,DDT010;Cyg_X-1;0.018 arc-seconds away
+108021111,1.0,DDT010;IGR_J17597-2201;4.968 arc-seconds away
+109900465,1.0,DDT010;GX9+1;5.357 arc-seconds away
+110490380,1.0,DDT010;GX_13+1;2.481 arc-seconds away
+111049710,1.0,DDT010;4U1812-12;5.084 arc-seconds away
+111931792,1.0,DDT010;GX_17+2;1.038 arc-seconds away
+113317197,1.0,DDT010;IGR_J18175-1530;2.767 arc-seconds away
+120028597,1.0,DDT010;UCAC4_525-061488;0.014 arc-seconds away
+131695265,1.0,DDT010;4U1822-000;7.455 arc-seconds away
+135530033,1.0,DDT010;HD_347929;0.013 arc-seconds away
+136874944,1.0,DDT010;GS_2023+338;0.233 arc-seconds away
+153880067,1.0,DDT010;MWC_656;0.011 arc-seconds away
+154101678,1.0,DDT010;EV_Lac;0.011 arc-seconds away
+157301793,1.0,DDT010;SAX_J1818.7+1424;4.142 arc-seconds away
+177377138,1.0,DDT010;4U_1901+03;0.041 arc-seconds away
+181319374,1.0,DDT010;Aql_X-1;0.278 arc-seconds away
+181547773,1.0,DDT010;SS_433;0.005 arc-seconds away
+181589861,1.0,DDT010;Wolf_630;0.129 arc-seconds away
+182129327,1.0,DDT010;GS_1843-02;4.380 arc-seconds away
+182640669,1.0,DDT010;EXO_1846-031;5.325 arc-seconds away
+185725020,1.0,DDT010;XTE_J1810-189;2.659 arc-seconds away
+195853989,1.0,DDT010;GRO_J2058+42;0.017 arc-seconds away
+209140669,1.0,DDT010;GRS_1915+105;0.168 arc-seconds away
+213251519,1.0,DDT010;SAX_J1828.5-1037;0.008 arc-seconds away
+227419825,1.0,DDT010;XTE_J1856+053;6.564 arc-seconds away
+228510348,1.0,DDT010;XTE_J1901+014;7.694 arc-seconds away
+239187696,1.0,DDT010;YY_Gem;0.017 arc-seconds away
+247985094,1.0,DDT010;EQ_Peg;0.058 arc-seconds away
+262590167,1.0,DDT010;SZ_Psc;0.009 arc-seconds away
+273066197,1.0,DDT010;SAX_J2103.5+4545;0.012 arc-seconds away
+297983610,1.0,DDT010;XTE_J1118+480;0.017 arc-seconds away
+316957239,1.0,DDT010;SAX_J2224.9+5421;7.367 arc-seconds away
+317984780,1.0,DDT010;MAXI_J1820+070;0.639 arc-seconds away
+341320747,1.0,DDT010;Cep_X-4;0.009 arc-seconds away
+341738544,1.0,DDT010;Her_X-1;0.014 arc-seconds away
+346783960,1.0,DDT010;Algol;0.031 arc-seconds away
+354185144,1.0,DDT010;V_0332+53;0.008 arc-seconds away
+365858559,1.0,DDT010;II_Peg;0.005 arc-seconds away
+370157152,1.0,DDT010;IGR_J19294+1816;0.049 arc-seconds away
+410336237,1.0,DDT010;LS_V_+44_17;0.009 arc-seconds away
+418090700,1.0,DDT010;XTE_J0421+560;0.014 arc-seconds away
+420116962,1.0,DDT010;AR_Lac;0.184 arc-seconds away
+431165750,1.0,DDT010;GX9+9;0.073 arc-seconds away
+451850608,1.0,DDT010;XTE_J1946+274;0.013 arc-seconds away
+4568321.0,DDT010;1.0,DDT010;IM_Peg;0.008 arc-seconds away
+468511196,1.0,DDT010;Cyg_X-2;1.092 arc-seconds away
+611582941,1.0,DDT010;FT_Psc;0.017 arc-seconds away
+661629261,1.0,DDT010;GRO_J0422+32;0.012 arc-seconds away
+802581442,1.0,DDT010;UGC_4305;0.017 arc-seconds away
+1001937122,1.0,DDT010;Swift_J1357.2-0933;0.004 arc-seconds away
+1302984863,1.0,DDT010;MAXI_J1659-152;3.082 arc-seconds away
+1447942738,1.0,DDT010;XTE_J1752-223;0.970 arc-seconds away
+1464205531,1.0,DDT010;EXO_1747-214;0.190 arc-seconds away
+1465485239,1.0,DDT010;4U1745-203;1.456 arc-seconds away
+1465485292,1.0,DDT010;SAX_J1748.9-2021;1.074 arc-seconds away
+1472081295,1.0,DDT010;MAXI_J1727-203;1.819 arc-seconds away
+1499950655,1.0,DDT010;Swift_J1753.5-0127;0.015 arc-seconds away
+1615189338,1.0,DDT010;SAX_J1806.5-2215;3.393 arc-seconds away
+1631410727,1.0,DDT010;MAXI_J1810-222;1.712 arc-seconds away
+1636118747,1.0,DDT010;MAXI_J1836-194;3.652 arc-seconds away
+1642159220,1.0,DDT010;XTE_J1812-182;6.421 arc-seconds away
+1662191214,1.0,DDT010;MAXI_J1813-095;0.513 arc-seconds away
+1672934715,1.0,DDT010;Ser_X-1;0.237 arc-seconds away
+1681493069,1.0,DDT010;MAXI_J1807+132;7.794 arc-seconds away
+1745900734,1.0,DDT010;Swift_J1842.5-1124;0.671 arc-seconds away
+1756133053,1.0,DDT010;Swift_J1858.6-0814;1.724 arc-seconds away
+1756263370,1.0,DDT010;4U1850-086;0.049 arc-seconds away
+1759548498,1.0,DDT010;MAXI_J1910-057;6.357 arc-seconds away
+1760206072,1.0,DDT010;4U1916-053;0.376 arc-seconds away
+1791265331,1.0,DDT010;XTE_J1908+094;5.023 arc-seconds away
+1813882985,1.0,DDT010;XTE_J1859+226;5.375 arc-seconds away
+1861582449,1.0,DDT010;Swift__J195509.6+261406;3.360 arc-seconds away
+1909750039,1.0,DDT010;4U1957+11;3.923 arc-seconds away
+1949287863,1.0,DDT010;GS_2000+25;1.012 arc-seconds away
+1967935922,1.0,DDT010;XTE_J2012+381;0.008 arc-seconds away
+2000204005,1.0,DDT010;4U2129+12;1.569 arc-seconds away
+2029417228,1.0,DDT010;XTE_J2123-058;15.00 arc-seconds away

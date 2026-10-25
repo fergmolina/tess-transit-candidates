@@ -1,0 +1,15 @@
+# DDT PI: Trevor David
+# Cadence: 2m
+# Subject: Weighing Newborn Planets in the V1298 Tau System
+# DDT: 036
+#
+# Original filename: ddt-tdavid.csv
+# Created by: Trevor David
+# Created on: 04/12/2021
+# Number of targets: 1
+# 
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+15756231,1,V1298Tau;DDT036
