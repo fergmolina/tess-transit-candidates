@@ -1705,3 +1705,135 @@
     New lock LOCK_2026-10-24_317134140.json 58df364513d9d2bd.... Tests 196/196
     (logs/test_317134140_lock_20261024c.log). Registration amendment regenerated; the public prefix is intact; the S111 registrations
     are still at their public bytes.
+183. 2026-10-24 23:54 UTC — Third check results/RECHECK3_317134140.md: "publish as v1.18" (317134140 package only). v1.18 ASSEMBLED
+    LOCALLY by scripts/assemble_v1_18.py (single pass; refuses to run twice).
+    - The reviewed bytes are asserted: lock 58df3645..., scorer f3f55c0d..., validator f3bca692..., selector 600e9504...;
+      tsearch.py, search_pipeline.py and blind_seasons_317134140.py are byte-identical to the published copies.
+    - Content: scoring_317134140_s108_s110/ (configs + lock, 7 scripts, test log, design-sector outputs with the training index and the
+      byte-exact v1.2 scorer, the S107 selection demo, README); the amended 317134140 registration; reviews_317134140/ (review + 3
+      re-checks with path-only redactions, 4 prompts); README block; CITATION 1.18; public DECISIONS through item 182; MANIFEST_v1.18.md
+      (59 files, all hashes verified).
+    - Excluded and checked: S111 material, the SPOC evaluator variant, superseded drafts.
+    - The 68 prediction CSVs and both S111 registrations are unchanged. No session link, job path or address appears in any changed
+      file.
+    - Release notes: zenodo_upload/RELEASE_NOTES_v1.18.md. Nothing is committed, pushed or uploaded; this waits for the author's go
+      on the assembled bytes.
+184. 2026-10-25 00:04 UTC — v1.18 PUBLISHED with the author's go for the assembled bytes (question tool: "Publish now as assembled").
+    - Before commit: anchors matched (MANIFEST_v1.18.md aad32fc7..., RELEASE_NOTES_v1.18.md 300a41f2...); 59 manifest hashes passed;
+      base 5037787.
+    - Published: commit 1f81a4b2 (Co-Authored-By trailer, no session link); tag and GitHub release v1.18; Zenodo 10.5281/zenodo.23629288
+      (GitHub integration, created 2026-10-24T23:57:36Z). The 317134140 S108-S110 lock now has a public timestamp.
+    - Monitoring obligation started (monitoring_rule). First S108 metadata-only check at 2026-10-25T00:04:12Z: status NONE (0
+      observations, 0 products), retained in results/selection_records/317134140/S108/. Next checks are due at least weekly. S109 checks
+      start at its sector end (2026-10-31 18:55 UTC) and S110 checks at 2026-11-26 04:15 UTC. Acquisition and scoring need the author's
+      go each time.
+185. 2026-10-25 02:20 UTC — Author asked for (1) a real-noise calibration of the locked 317134140 scorer and (2) an interpretation plan
+    for the S108-S110 outcomes. The INTERPRETATION RULE is fixed HERE, BEFORE ANY CALIBRATION TRIAL IS RUN (no calibration code
+    exists at this time). Nothing in the v1.18 lock changes, whatever the calibration shows; low power is reported as low power.
+    (a) Hypotheses. H1: a periodic ~185 ppm, 1.5-h dip at the frozen ephemeris is present in the test sector. H0: no such dip; only
+        this star's noise. H1 is satisfied equally by a planet and by a blended eclipsing binary. The plan concerns PERSISTENCE of
+        the signal, not its origin, and no outcome yields "validated" or "confirmed planet".
+    (b) Calibration that feeds the table, declared before it is run:
+        - Data: the training sectors with the real signal divided out using the registration's transit shape.
+        - H1 trials inject that shape at random periods P' in [0.53, 0.70] d (excluding |P'/P - 1| < 2 %, the P/2 and 2P aliases
+          and the TOI-2514.01 harmonics) and random phases. Depth is defined as clause A measures it: the noiseless model's mean
+          in-transit depth over +-0.75 h against the out-of-transit median equals 185 ppm. a/R* is scaled with P' to hold
+          T14 = 1.5 h.
+        - Scoring uses the locked v1.3 functions with the period constant set to P'.
+        - H0 trials are the same cleaned data with no injection, scored at random P' and phases.
+        - Trials: N >= 100 H1 trials per sector at 185 ppm (plus 50 each at 130 and 240 ppm, sensitivity only); N >= 2000 H0
+          trials per sector.
+        - Harness control: P' = P at the frozen phase on unsubtracted data must reproduce insample_v1.3b_S*.json field for field,
+          or the calibration is not used.
+    (c) Per-sector likelihood ratio for each outcome label L: LR(L) = P(L|H1) / P(L|H0), each estimated as (k + 1/2) / (N + 1).
+        The S108-S110 table pools the three single-sector training sectors (S6, S87, S107) at 185 ppm. S98 is two sectors long and is
+        reported separately, not used, because S108-S110 are single ~27-d sectors.
+    (d) Combination: the product of the per-sector LRs over S108, S109 and S110, treated as independent. INSUFFICIENT, UNAVAILABLE and
+        INVALID_INPUT contribute LR 1.
+    (e) Verbal conclusion on the combined LR:
+        - > 10: strong evidence that the signal persists;
+        - 3 to 10: moderate evidence that it persists;
+        - 1/3 to 3: inconclusive;
+        - 1/10 to 1/3: moderate evidence against persistence;
+        - < 1/10: strong evidence against persistence.
+        Boundaries belong to the less extreme category.
+    (f) The per-sector frozen outcomes remain the outcomes of record. The combined LR and its verbal conclusion are the declared
+        interpretation. The pooled depth stays a secondary readout and plays no part in it. The trials share one noise realization
+        per sector, so binomial uncertainties understate the true uncertainty; this is stated with the table.
+    (g) Publication needs the author's go: a small release (calibration, plan and its review), intended before any S108 data.
+186. 2026-10-25 02:31 UTC — Calibration run and interpretation plan written (rule DECISIONS 185, logged before any trial).
+    - Harness scripts/calibrate_317134140_scorer.py (63738417451a42d2...). It imports the locked v1.3 functions
+      (SHA asserted) and sets only the period constant per trial. All four controls (P' = P, frozen phase, unmodified file) reproduce
+      insample_v1.3b field for field.
+    - Real signal divided out with the registration shape (180.4 ppm by the clause-A measure). Residual at the true ephemeris: S6
+      -47 +- 62, S87 -38 +- 86, S98 +31 +- 25, S107 +20 +- 50 ppm.
+    - Output results/conformance_317134140/calibration_v1.3.json (d2c5b2ec162d9509...): 400 H1 trials at 185 ppm, 200 each at 130 and
+      240 ppm, 8000 H0 trials; log logs/calibrate_317134140_20261025.log; runtime about 9 min.
+    - Pooled table (S6 + S87 + S107, 185 ppm):
+        H1 (300 trials): PASS 93, PARTIAL 175, INCONCLUSIVE 30, FAIL 2.
+        H0 (6000 trials): PASS 0, PARTIAL 107, INCONCLUSIVE 846, FAIL 5047.
+        Per-sector LR: PASS 3.73e3 (a bound: zero H0 counts), PARTIAL 32.5, INCONCLUSIVE 0.718, FAIL 0.00987.
+        Of the 35 order-free combinations, 21 give strong support, 7 strong evidence against, 5 inconclusive and 2 moderate against.
+        S98 (not used): PASS 71 of 100.
+    - Depth sensitivity (reported, NOT used; added AFTER the calibration was seen, as disclosure only): at 130 ppm, H1 gives PASS 10,
+      PARTIAL 82, INCONCLUSIVE 37, FAIL 21 of 150, so LR(FAIL) = 0.169. Nine of the 35 combinations would change category, all with a
+      FAIL or several INCONCLUSIVE. The declared rule is NOT changed. Whether to adopt a depth-robust rule before S108 data is an author
+      decision.
+    - Table: scripts/interpret_317134140_table.py -> results/conformance_317134140/interpretation_table_v1.3.json / .md
+      (db092d38d9955345...).
+    - Registration: dated interpretation plan appended by scripts/amend_317134140_plan.py, which requires the v1.18 published bytes as
+      its prefix (verified).
+    - Not published; it awaits review and the author's go (a small release, intended before any S108 data).
+187. 2026-10-25 02:46 UTC — Review results/REVIEW_317134140_calibration_plan.md: "publish after listed changes". The author relayed it
+    as "no go as written; the calibration does not justify the combined strong-evidence claims". Accepted in full.
+    WITHDRAWN (dated, after seeing the calibration and its review; no test photometry examined): the formal combined interpretation
+    of item 185(c)-(e), i.e. the per-sector likelihood ratios, their product and the verbal "strong / moderate evidence" scale, and
+    the interpretation-table lookup built on them. Reason (review, major):
+    - The H0 design cannot produce PASS. Each sector's noise-only BLS top 3 was fixed, and no allowed trial period could hit it: S6
+      peaks 0.9196 / 5.2435 / 6.4131 d and S107 0.8499 / 1.1329 / 7.1361 d lie outside 0.53-0.70 d; S87's 0.5327 d lies in the
+      excluded TOI/12 band. So 0 PASS in 6000 is a structural zero, not an estimate, and the pseudocount ratio 3728 is neither
+      a bound nor a calibrated likelihood ratio.
+    - Combining pooled plug-in rates as known probabilities for independent future sectors is also unsupported.
+    The superseded table files (interpretation_table_v1.3.*) are retained as withdrawn history. The unpublished plan paragraph was
+    removed from the registration (reset to the v1.18 published bytes); scripts/amend_317134140_plan.py is marked superseded.
+    REPLACEMENT (descriptive only): the calibration is released as conditional injection/null DIAGNOSTICS of three selected training
+    noise realizations (plus S98, separately). The frozen per-sector outcomes remain the outcomes of record. For each test-sector
+    outcome we will report its conditional frequencies in these diagnostics at all three depths (130, 185 and 240 ppm). No
+    quantitative combined evidential-strength conclusion is adopted from this calibration. A predictive calibration (variation between
+    noise realizations, null BLS peaks able to hit) would need its own design, declared before it is run and before any test
+    photometry; none is planned now.
+    CORRECTIONS:
+    - Duration: a/R* proportional to P' only approximately holds the duration. The injected geometric T14 was 1.554-1.584 h; 1.5 h
+      is the scoring window, not the injected T14. Items 185(b) and 186 and the calibration docstring are corrected; the run is not
+      relabelled. The script that ran has SHA-256 63738417...; only its docstring changes now.
+    - Controls: the eleven listed scientific fields matched insample_v1.3b. This was not a complete equivalence of every output and
+      validation path.
+    - Chronology: the author logged the rule as fixed at 02:20 UTC (item 185). Local timestamps (calibration script created 02:21:08
+      UTC, output 02:30:23 UTC) are consistent with that account; the mutable log cannot itself prove when the item was inserted.
+    - Depth sensitivity of the withdrawn table, for completeness: 9 of 35 combinations change category at 130 ppm, 12 at 240 ppm;
+      19 of 35 agree at all three depths.
+    - INSUFFICIENT counting as LR 1 was a convention, not an established equality (moot after the withdrawal).
+188. 2026-10-25 02:48 UTC — Replacement material for item 187, not yet published:
+    - scripts/calibration_diagnostics_317134140.py (fb41795ecc55d4ac...) ->
+      results/conformance_317134140/calibration_diagnostics_v1.3.json (fb7b9d407263cd40...) / .md: conditional frequencies only.
+      The structural zero is checked explicitly: in none of S6, S87, S98, S107 can an allowed noise-only trial period reach a fixed
+      BLS peak. The injected T14 is 1.554-1.584 h, matching the reviewer's independent figures.
+    - The registration was reset to the v1.18 bytes, then scripts/amend_317134140_diagnostics.py appended the dated DESCRIPTIVE
+      calibration note, using the reviewer's suggested central wording. The v1.18 prefix is intact.
+    - The training index has a calibration section. Superseded and withdrawn: interpret_317134140_table.py and its outputs;
+      amend_317134140_plan.py (refuses to run).
+189. 2026-10-25 03:04 UTC — Re-check results/RECHECK_317134140_calibration.md: "publish after listed changes" (presentation only;
+    scientific corrections pass; all 240 counts and the structural zero reproduced exactly). Fixes:
+    (1) The withdrawn tables are now self-labelled. interpretation_table_v1.3.md has a WITHDRAWN header and title; the .json has
+        WITHDRAWN/status/replacement as leading keys. Both name DECISIONS 187, the replacement diagnostics and their original SHA-256
+        (md d5ec8f26..., json db092d38...). The historical numbers are kept.
+    (2) Calibration-script docstring, documentation-only:
+        - chronology: "the author logged the rule as fixed at 02:20 UTC; local timestamps are consistent with that account, but do not
+          independently prove insertion time";
+        - control: "for the eleven scientific fields listed in the control comparison"; the saved output's 'field for field' control
+          string overstates in the same way.
+        The non-docstring AST is identical to the as-run source (SHA-256 63738417...). The reviewer's byte-exact reconstruction is
+        kept as results/conformance_317134140/calibrate_317134140_scorer_as_run.py.
+    (3) Non-blocking note taken: the structural-zero check now uses the exact interval test in the scorer's ratio direction. The
+        diagnostics outputs are byte-identical (json fb7b9d40..., md 3d195858...), so the registration note's cited hash stands.
+    Current script hashes: calibrate cde10a021d79c56b..., diagnostics b0a884bb4aa7b6f0....

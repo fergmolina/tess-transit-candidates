@@ -1,4 +1,4 @@
-> Public copy (2026-10-25 (v1.18)): the line about the S111 evaluator diff was removed, because that material is not in this release. No other change.
+> Public copy (2026-10-25 (v1.18.1)): the line about the S111 evaluator diff was removed, because that material is not in this release; calibration files are in `../calibration/`. No other change.
 
 # TIC 317134140 scorer: design-sector (training) outputs and checks
 
@@ -29,3 +29,14 @@ Other files:
   code. The MAST query listed exactly one SPOC 2-min light curve. The downloaded file is byte-identical to the S107 file used in
   training.
 - `superseded_scorers/prereg_spoc_317134140_v1.2.py`: a byte-exact copy of the reviewed v1.2 scorer (SHA-256 `acfd7d34...`), for diffing.
+
+## Calibration (2026-10-25; DECISIONS 185-188)
+- `../calibration/calibration_v1.3.json`: raw trials from `scripts/calibrate_317134140_scorer.py` (the locked scorer on the training sectors, real
+  signal divided out; injections at 130/185/240 ppm, noise-only trials). The script's code is unchanged from the version that ran
+  (SHA-256 `63738417...`); its docstring was corrected on 2026-10-25.
+- `calibration_diagnostics_v1.3.md` / `.json`: the DESCRIPTIVE diagnostics (`scripts/calibration_diagnostics_317134140.py`). These are
+  conditional frequencies; the zero noise-only PASS count is a structural zero.
+- `interpretation_table_v1.3.md` / `.json`: WITHDRAWN before publication (DECISIONS 187). The combined likelihood-ratio interpretation
+  it encodes is not supported. Kept for history only. Both files carry their own WITHDRAWN label and original SHA-256 (DECISIONS 189).
+- `calibrate_317134140_scorer_as_run.py`: byte-exact source of the calibration script as it ran (SHA-256 `63738417...`); the current
+  script differs only in its docstring.

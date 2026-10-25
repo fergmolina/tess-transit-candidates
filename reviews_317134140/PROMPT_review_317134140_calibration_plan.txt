@@ -1,0 +1,51 @@
+Review of the TIC 317134140 real-noise calibration and interpretation plan, made after v1.18 (published; lock
+configs/conformance/LOCK_2026-10-24_317134140.json, unchanged). Nothing new is published. Work from /Users/fernando/Desktop/NASA and
+verify everything yourself. Be adversarial. S108 SPOC data could arrive any time; the plan is meant to go public before them.
+
+MATERIALS
+- logs/DECISIONS.md items 185-186. Item 185 fixes the interpretation rule. Check its position and wording: it was appended before
+  the calibration script existed (compare the file times of scripts/calibrate_317134140_scorer.py and the log).
+- scripts/calibrate_317134140_scorer.py; output results/conformance_317134140/calibration_v1.3.json; log
+  logs/calibrate_317134140_20261025.log.
+- scripts/interpret_317134140_table.py -> results/conformance_317134140/interpretation_table_v1.3.json / .md.
+- scripts/amend_317134140_plan.py; results/vet/317134140/PREREGISTRATION.md (the v1.18 published text must be a byte-exact prefix:
+  git -C public_release show v1.18:preregistration/TIC317134140/PREREGISTRATION.md).
+- Locked scorer: scripts/prereg_spoc_317134140.py (SHA-256 f3f55c0d...). Training outputs: results/conformance_317134140/insample_v1.3b_S*.json.
+
+CHECK
+1) Sequencing. Was the rule (hypotheses, estimator, pooling, combination, verbal scale) fixed before any trial? Does the table script
+   apply exactly that rule? The depth-sensitivity columns were added after the results were seen, as disclosure only. Are they
+   clearly labelled, and does the declared conclusion ignore them?
+2) Harness fidelity.
+   - Do the controls really prove that the harness equals the locked scorer?
+   - Is setting the module's period constant the only departure?
+   - Is writing a modified copy of the real FITS file (only PDCSAP_FLUX changed) sound?
+   - Is reusing the H0 preprocessing and BLS across trials valid, given that the data do not depend on (P', phase)?
+3) Injection model.
+   - Depth defined as clause A measures it; rp/R* solved accordingly; a/R* scaled to hold T14 = 1.5 h.
+   - Real-signal removal with the registration shape, and the residuals reported.
+   - Period range 0.53-0.70 d and its exclusions. Are injections at P' a fair proxy for a signal at P in a test sector?
+4) The likelihood ratios and the combination.
+   - Smoothing; PASS as a bound; treating the sectors as independent; INSUFFICIENT counting as 1.
+   - Pooling S6/S87/S107 and excluding S98.
+   - The shared-noise-realization caveat.
+   - Is the verbal scale reasonable? Are the "strong evidence" categories for mixed outcomes (e.g. PASS + FAIL + no data) defensible?
+5) Depth dependence. With 9 of 35 combinations changing category at 130 ppm, is the declared rule adequate as published with the
+   disclosure? Or should the author adopt, BEFORE any S108 data, a depth-robust rule (e.g. a conclusion only where the 130 / 185 /
+   240 ppm readings agree, otherwise "depth-dependent")? Give a recommendation, and say whether adopting one now, after seeing the
+   calibration but before any test data, would be legitimate.
+6) Wording. Is the registration paragraph accurate and sufficient? Is the H1-includes-blends statement clear, with no
+   "validated" implication?
+7) Verdict: publish as a small release / publish after listed changes / not ready.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry of any frozen object. This includes TIC 317134140 in S108-S110; the
+  full list is in results/PROMPT_recheck_317134140_v1.3.txt.
+- You MAY re-run the calibration or parts of it on the training sectors S6, S87, S98 and S107 (data/lc), with all outputs under /tmp.
+- Do NOT run spoc_selection.py select or acquire for any test sector. Do NOT read or use ~/.zenodo_token or any credential.
+  Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_317134140_calibration_plan.md: findings ranked by severity with file:line evidence and exact fixes, and the
+verdict. Print only the report path and a one-line verdict.

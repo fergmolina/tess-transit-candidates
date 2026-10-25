@@ -1,0 +1,25 @@
+S6: control OK; cleaned residual at true ephemeris -47 +- 62 ppm (A_LOW); 2 s
+S87: control OK; cleaned residual at true ephemeris -38 +- 86 ppm (A_LOW); 3 s
+S98: control OK; cleaned residual at true ephemeris 31 +- 25 ppm (A_LOW); 7 s
+S107: control OK; cleaned residual at true ephemeris 20 +- 50 ppm (A_LOW); 7 s
+H1 50/800 (12 s)
+H1 100/800 (14 s)
+H1 150/800 (17 s)
+H1 200/800 (20 s)
+H1 250/800 (30 s)
+H1 300/800 (38 s)
+H1 350/800 (41 s)
+H1 400/800 (44 s)
+H1 450/800 (46 s)
+H1 500/800 (48 s)
+H1 550/800 (51 s)
+H1 600/800 (53 s)
+H1 650/800 (64 s)
+H1 700/800 (72 s)
+H1 750/800 (74 s)
+H1 800/800 (77 s)
+H0 2000/8000 (147 s)
+H0 4000/8000 (215 s)
+H0 6000/8000 (424 s)
+H0 8000/8000 (497 s)
+written results/conformance_317134140/calibration_v1.3.json

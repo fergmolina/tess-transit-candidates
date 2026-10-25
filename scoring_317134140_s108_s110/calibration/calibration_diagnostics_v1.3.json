@@ -1,0 +1,455 @@
+{
+ "source": "calibration_v1.3.json",
+ "source_sha256": "d2c5b2ec162d9509afac677f55ece5a23ba544aaf4989f290d56a98d63d9c265",
+ "scorer_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+ "decisions": "187",
+ "h1": {
+  "185ppm": {
+   "pooled_S6_S87_S107": {
+    "n": 300,
+    "outcome": {
+     "PASS": 93,
+     "PARTIAL": 175,
+     "INCONCLUSIVE": 30,
+     "FAIL": 2,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 265,
+     "A_HIGH": 1,
+     "A_INCONCLUSIVE": 32,
+     "A_LOW": 2,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 96
+   },
+   "S6": {
+    "n": 100,
+    "outcome": {
+     "PASS": 44,
+     "PARTIAL": 49,
+     "INCONCLUSIVE": 6,
+     "FAIL": 1,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 91,
+     "A_HIGH": 1,
+     "A_INCONCLUSIVE": 7,
+     "A_LOW": 1,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 46
+   },
+   "S87": {
+    "n": 100,
+    "outcome": {
+     "PASS": 36,
+     "PARTIAL": 53,
+     "INCONCLUSIVE": 11,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 88,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 12,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 37
+   },
+   "S98": {
+    "n": 100,
+    "outcome": {
+     "PASS": 71,
+     "PARTIAL": 27,
+     "INCONCLUSIVE": 2,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 98,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 2,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 71
+   },
+   "S107": {
+    "n": 100,
+    "outcome": {
+     "PASS": 13,
+     "PARTIAL": 73,
+     "INCONCLUSIVE": 13,
+     "FAIL": 1,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 86,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 13,
+     "A_LOW": 1,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 13
+   }
+  },
+  "130ppm": {
+   "pooled_S6_S87_S107": {
+    "n": 150,
+    "outcome": {
+     "PASS": 10,
+     "PARTIAL": 82,
+     "INCONCLUSIVE": 37,
+     "FAIL": 21,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 92,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 37,
+     "A_LOW": 21,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 10
+   },
+   "S6": {
+    "n": 50,
+    "outcome": {
+     "PASS": 6,
+     "PARTIAL": 23,
+     "INCONCLUSIVE": 11,
+     "FAIL": 10,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 29,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 11,
+     "A_LOW": 10,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 6
+   },
+   "S87": {
+    "n": 50,
+    "outcome": {
+     "PASS": 2,
+     "PARTIAL": 27,
+     "INCONCLUSIVE": 14,
+     "FAIL": 7,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 29,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 14,
+     "A_LOW": 7,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 2
+   },
+   "S98": {
+    "n": 50,
+    "outcome": {
+     "PASS": 12,
+     "PARTIAL": 31,
+     "INCONCLUSIVE": 2,
+     "FAIL": 5,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 43,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 2,
+     "A_LOW": 5,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 12
+   },
+   "S107": {
+    "n": 50,
+    "outcome": {
+     "PASS": 2,
+     "PARTIAL": 32,
+     "INCONCLUSIVE": 12,
+     "FAIL": 4,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 34,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 12,
+     "A_LOW": 4,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 2
+   }
+  },
+  "240ppm": {
+   "pooled_S6_S87_S107": {
+    "n": 150,
+    "outcome": {
+     "PASS": 98,
+     "PARTIAL": 52,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 146,
+     "A_HIGH": 3,
+     "A_INCONCLUSIVE": 1,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 102
+   },
+   "S6": {
+    "n": 50,
+    "outcome": {
+     "PASS": 35,
+     "PARTIAL": 15,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 48,
+     "A_HIGH": 1,
+     "A_INCONCLUSIVE": 1,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 37
+   },
+   "S87": {
+    "n": 50,
+    "outcome": {
+     "PASS": 33,
+     "PARTIAL": 17,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 49,
+     "A_HIGH": 1,
+     "A_INCONCLUSIVE": 0,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 34
+   },
+   "S98": {
+    "n": 50,
+    "outcome": {
+     "PASS": 50,
+     "PARTIAL": 0,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 50,
+     "A_HIGH": 0,
+     "A_INCONCLUSIVE": 0,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 50
+   },
+   "S107": {
+    "n": 50,
+    "outcome": {
+     "PASS": 30,
+     "PARTIAL": 20,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    },
+    "clause_a": {
+     "A_CONSISTENT": 49,
+     "A_HIGH": 1,
+     "A_INCONCLUSIVE": 0,
+     "A_LOW": 0,
+     "INSUFFICIENT": 0
+    },
+    "b_top3": 31
+   }
+  }
+ },
+ "h0": {
+  "pooled_S6_S87_S107": {
+   "n": 6000,
+   "outcome": {
+    "PASS": 0,
+    "PARTIAL": 107,
+    "INCONCLUSIVE": 846,
+    "FAIL": 5047,
+    "INSUFFICIENT": 0
+   },
+   "clause_a": {
+    "A_CONSISTENT": 107,
+    "A_HIGH": 0,
+    "A_INCONCLUSIVE": 846,
+    "A_LOW": 5047,
+    "INSUFFICIENT": 0
+   },
+   "b_top3": 0
+  },
+  "S6": {
+   "n": 2000,
+   "outcome": {
+    "PASS": 0,
+    "PARTIAL": 27,
+    "INCONCLUSIVE": 283,
+    "FAIL": 1690,
+    "INSUFFICIENT": 0
+   },
+   "clause_a": {
+    "A_CONSISTENT": 27,
+    "A_HIGH": 0,
+    "A_INCONCLUSIVE": 283,
+    "A_LOW": 1690,
+    "INSUFFICIENT": 0
+   },
+   "b_top3": 0
+  },
+  "S87": {
+   "n": 2000,
+   "outcome": {
+    "PASS": 0,
+    "PARTIAL": 42,
+    "INCONCLUSIVE": 355,
+    "FAIL": 1603,
+    "INSUFFICIENT": 0
+   },
+   "clause_a": {
+    "A_CONSISTENT": 42,
+    "A_HIGH": 0,
+    "A_INCONCLUSIVE": 355,
+    "A_LOW": 1603,
+    "INSUFFICIENT": 0
+   },
+   "b_top3": 0
+  },
+  "S98": {
+   "n": 2000,
+   "outcome": {
+    "PASS": 0,
+    "PARTIAL": 11,
+    "INCONCLUSIVE": 36,
+    "FAIL": 1953,
+    "INSUFFICIENT": 0
+   },
+   "clause_a": {
+    "A_CONSISTENT": 11,
+    "A_HIGH": 0,
+    "A_INCONCLUSIVE": 36,
+    "A_LOW": 1953,
+    "INSUFFICIENT": 0
+   },
+   "b_top3": 0
+  },
+  "S107": {
+   "n": 2000,
+   "outcome": {
+    "PASS": 0,
+    "PARTIAL": 38,
+    "INCONCLUSIVE": 208,
+    "FAIL": 1754,
+    "INSUFFICIENT": 0
+   },
+   "clause_a": {
+    "A_CONSISTENT": 38,
+    "A_HIGH": 0,
+    "A_INCONCLUSIVE": 208,
+    "A_LOW": 1754,
+    "INSUFFICIENT": 0
+   },
+   "b_top3": 0
+  }
+ },
+ "structural_zero": {
+  "6": {
+   "noise_only_top3_periods_d": [
+    0.9196101477819777,
+    5.243470117373509,
+    6.413135621936172
+   ],
+   "peaks_reachable_by_allowed_trial_periods": [],
+   "pass_possible_under_h0": false
+  },
+  "87": {
+   "noise_only_top3_periods_d": [
+    0.911401146670982,
+    0.9346706284224511,
+    0.5326842799066899
+   ],
+   "peaks_reachable_by_allowed_trial_periods": [],
+   "pass_possible_under_h0": false
+  },
+  "98": {
+   "noise_only_top3_periods_d": [
+    6.404318124554404,
+    0.7989320073247806,
+    0.511909825529843
+   ],
+   "peaks_reachable_by_allowed_trial_periods": [],
+   "pass_possible_under_h0": false
+  },
+  "107": {
+   "noise_only_top3_periods_d": [
+    0.849851369648758,
+    1.1329166745780648,
+    7.136099374066236
+   ],
+   "peaks_reachable_by_allowed_trial_periods": [],
+   "pass_possible_under_h0": false
+  }
+ },
+ "injected_t14_h": {
+  "130.0": [
+   1.5535431796604,
+   1.5768015385485281
+  ],
+  "185.0": [
+   1.557573169249113,
+   1.5807973639490078
+  ],
+  "240.0": [
+   1.561280014477139,
+   1.584406761792264
+  ]
+ },
+ "scoring_window_h": 1.5,
+ "cleaning_residual": {
+  "6": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": -47.17716063940003,
+   "sigma_ppm": 61.73167774448288
+  },
+  "87": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": -37.873216234052265,
+   "sigma_ppm": 86.47625547525688
+  },
+  "98": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": 31.44836209612034,
+   "sigma_ppm": 25.414365012679315
+  },
+  "107": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": 20.125556608574513,
+   "sigma_ppm": 50.02758145559055
+  }
+ }
+}

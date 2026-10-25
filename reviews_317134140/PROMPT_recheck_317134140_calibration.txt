@@ -1,0 +1,30 @@
+Focused re-check of the TIC 317134140 calibration release material, after your results/REVIEW_317134140_calibration_plan.md
+("publish after listed changes"). Nothing new is published. Work from /Users/fernando/Desktop/NASA and verify everything yourself.
+
+MATERIALS
+- logs/DECISIONS.md items 187-188. Item 187 withdraws the combined-LR interpretation and records the corrections.
+- scripts/calibration_diagnostics_317134140.py -> results/conformance_317134140/calibration_diagnostics_v1.3.json / .md.
+- scripts/calibrate_317134140_scorer.py: docstring-only change. Check that undoing the two docstring edits reproduces the as-run
+  SHA-256 63738417451a42d2....
+- results/vet/317134140/PREREGISTRATION.md: the dated calibration note was appended by scripts/amend_317134140_diagnostics.py. The
+  v1.18 published text must remain a byte-exact prefix: git -C public_release show v1.18:preregistration/TIC317134140/PREREGISTRATION.md.
+- results/conformance_317134140/README.md, calibration section; withdrawn files are labelled.
+
+CHECK
+1) Is every listed change from your review addressed?
+   - Structural zero disclosed, and the PASS ratio no longer used.
+   - No combined evidential-strength claim anywhere in the release material.
+   - Bound wording removed.
+   - Both depth counts (9/35 and 12/35; 19/35 unanimous) recorded.
+   - T14 corrected; control and chronology wording corrected.
+   - INSUFFICIENT convention labelled.
+2) Are the diagnostics accurate? Recompute them from calibration_v1.3.json, including the structural-zero check for all four sectors.
+3) Is the registration note accurate and sufficient, with no implied evidential strength or validation?
+4) Verdict: publish as a small release / publish after listed changes / not ready.
+
+RULES: as in results/PROMPT_review_317134140_calibration_plan.txt. No test-sector photometry of any frozen object; no live
+select/acquire for any test sector; no credentials; edit nothing but your report; temporary files only under /tmp.
+
+OUTPUT
+Write results/RECHECK_317134140_calibration.md: findings with file:line evidence and the verdict. Print only the report path and a
+one-line verdict.

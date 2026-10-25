@@ -1,0 +1,711 @@
+{
+ "WITHDRAWN": "WITHDRAWN 2026-10-25 before publication (DECISIONS 187). This combined likelihood-ratio interpretation is NOT supported: its noise-only PASS count is a structural zero (fixed noise-only BLS peaks unreachable by the allowed trial periods), so the PASS ratio is neither a bound nor a calibrated likelihood ratio, and the 'declared conclusions' below are not current interpretations of anything. Kept for history only. Current material: calibration_diagnostics_v1.3.md / .json (descriptive conditional frequencies). Original bytes before this label: .md SHA-256 d5ec8f26d6375a16a9eff0251c2d5385b8af7e8050e653a59c8ade9cb3b09199, .json SHA-256 db092d38d9955345e6c0ba0ad86fae3486235885647601b6f580b6606ce99019.",
+ "status": "withdrawn; historical draft; not a current interpretation",
+ "replacement": "calibration_diagnostics_v1.3.json",
+ "rule": "DECISIONS 185",
+ "calibration_file": "calibration_v1.3.json",
+ "calibration_sha256": "d2c5b2ec162d9509afac677f55ece5a23ba544aaf4989f290d56a98d63d9c265",
+ "scorer_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+ "table_sectors": [
+  6,
+  87,
+  107
+ ],
+ "h1_185": {
+  "n": 300,
+  "counts": {
+   "PASS": 93,
+   "PARTIAL": 175,
+   "INCONCLUSIVE": 30,
+   "FAIL": 2,
+   "INSUFFICIENT": 0
+  }
+ },
+ "h0": {
+  "n": 6000,
+  "counts": {
+   "PASS": 0,
+   "PARTIAL": 107,
+   "INCONCLUSIVE": 846,
+   "FAIL": 5047,
+   "INSUFFICIENT": 0
+  }
+ },
+ "lr": {
+  "PASS": 3728.196013289036,
+  "PARTIAL": 32.54811094800278,
+  "INCONCLUSIVE": 0.7183399301010807,
+  "FAIL": 0.00987462955741058
+ },
+ "per_sector": {
+  "6": {
+   "h1_185": {
+    "n": 100,
+    "counts": {
+     "PASS": 44,
+     "PARTIAL": 49,
+     "INCONCLUSIVE": 6,
+     "FAIL": 1,
+     "INSUFFICIENT": 0
+    }
+   },
+   "h0": {
+    "n": 2000,
+    "counts": {
+     "PASS": 0,
+     "PARTIAL": 27,
+     "INCONCLUSIVE": 283,
+     "FAIL": 1690,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 1763.2574257425742,
+    "PARTIAL": 35.661386138613864,
+    "INCONCLUSIVE": 0.4542406621614542,
+    "FAIL": 0.01757930895130329
+   }
+  },
+  "87": {
+   "h1_185": {
+    "n": 100,
+    "counts": {
+     "PASS": 36,
+     "PARTIAL": 53,
+     "INCONCLUSIVE": 11,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    }
+   },
+   "h0": {
+    "n": 2000,
+    "counts": {
+     "PASS": 0,
+     "PARTIAL": 42,
+     "INCONCLUSIVE": 355,
+     "FAIL": 1603,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 1446.2673267326732,
+    "PARTIAL": 24.93966220151427,
+    "INCONCLUSIVE": 0.6408906713456156,
+    "FAIL": 0.006177699154386907
+   }
+  },
+  "98": {
+   "h1_185": {
+    "n": 100,
+    "counts": {
+     "PASS": 71,
+     "PARTIAL": 27,
+     "INCONCLUSIVE": 2,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    }
+   },
+   "h0": {
+    "n": 2000,
+    "counts": {
+     "PASS": 0,
+     "PARTIAL": 11,
+     "INCONCLUSIVE": 36,
+     "FAIL": 1953,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 2833.09900990099,
+    "PARTIAL": 47.37623762376238,
+    "INCONCLUSIVE": 1.3569781635697817,
+    "FAIL": 0.005070867977506734
+   }
+  },
+  "107": {
+   "h1_185": {
+    "n": 100,
+    "counts": {
+     "PASS": 13,
+     "PARTIAL": 73,
+     "INCONCLUSIVE": 13,
+     "FAIL": 1,
+     "INSUFFICIENT": 0
+    }
+   },
+   "h0": {
+    "n": 2000,
+    "counts": {
+     "PASS": 0,
+     "PARTIAL": 38,
+     "INCONCLUSIVE": 208,
+     "FAIL": 1754,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 534.920792079208,
+    "PARTIAL": 37.82268226822682,
+    "INCONCLUSIVE": 1.2827836740508582,
+    "FAIL": 0.016938057442107846
+   }
+  }
+ },
+ "sensitivity": {
+  "130.0": {
+   "h1": {
+    "n": 150,
+    "counts": {
+     "PASS": 10,
+     "PARTIAL": 82,
+     "INCONCLUSIVE": 37,
+     "FAIL": 21,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 834.5761589403972,
+    "PARTIAL": 30.499460957954717,
+    "INCONCLUSIVE": 1.7605606255598627,
+    "FAIL": 0.1692812322669737
+   }
+  },
+  "240.0": {
+   "h1": {
+    "n": 150,
+    "counts": {
+     "PASS": 98,
+     "PARTIAL": 52,
+     "INCONCLUSIVE": 0,
+     "FAIL": 0,
+     "INSUFFICIENT": 0
+    }
+   },
+   "lr": {
+    "PASS": 7829.119205298012,
+    "PARTIAL": 19.40874788233482,
+    "INCONCLUSIVE": 0.023474141674131505,
+    "FAIL": 0.003936772843417992
+   }
+  }
+ },
+ "cleaning": {
+  "6": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": -47.17716063940003,
+   "sigma_ppm": 61.73167774448288
+  },
+  "87": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": -37.873216234052265,
+   "sigma_ppm": 86.47625547525688
+  },
+  "98": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": 31.44836209612034,
+   "sigma_ppm": 25.414365012679315
+  },
+  "107": {
+   "outcome": "FAIL",
+   "clause_a": "A_LOW",
+   "depth_ppm": 20.125556608574513,
+   "sigma_ppm": 50.02758145559055
+  }
+ },
+ "combinations": [
+  {
+   "outcomes": [
+    "PASS",
+    "PASS",
+    "PASS"
+   ],
+   "combined_lr": 51819857350.37476,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 581296787.1768317,
+    "combined_lr_if_h1_240ppm": 479886703559.92834
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PASS",
+    "PARTIAL"
+   ],
+   "combined_lr": 452400694.68925613,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 21243404.182542026,
+    "combined_lr_if_h1_240ppm": 1189661288.485243
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PASS",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 13899445.513504261,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 696517.3650717072,
+    "combined_lr_if_h1_240ppm": 61295107.53076618
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PASS",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 9984526.71861443,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 1226261.047963952,
+    "combined_lr_if_h1_240ppm": 1438850.0381083302
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PARTIAL",
+    "PARTIAL"
+   ],
+   "combined_lr": 3949574.5264501665,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 776337.029926785,
+    "combined_lr_if_h1_240ppm": 2949225.2459202106
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PASS",
+    "FAIL"
+   ],
+   "combined_lr": 137251.87549926707,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 117907.31785468418,
+    "combined_lr_if_h1_240ppm": 241304.914761506
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PARTIAL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 121345.73747643319,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 25454.122976042458,
+    "combined_lr_if_h1_240ppm": 151953.40079637466
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PARTIAL",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 87167.48857688511,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 44813.526669778985,
+    "combined_lr_if_h1_240ppm": 3566.9756581601855
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "PARTIAL",
+    "PARTIAL"
+   ],
+   "combined_lr": 34480.80235751793,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 28371.12069499879,
+    "combined_lr_if_h1_240ppm": 7311.265513436952
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 3728.196013289036,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 834.5761589403972,
+    "combined_lr_if_h1_240ppm": 7829.119205298012
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "INCONCLUSIVE",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 2678.1120635891734,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 1469.3219244614531,
+    "combined_lr_if_h1_240ppm": 183.7818534088294
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "INCONCLUSIVE",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 1923.7948325615077,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 2586.8303264786773,
+    "combined_lr_if_h1_240ppm": 4.3141212640533295
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+   ],
+   "combined_lr": 1198.244205950572,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 4308.905303659555,
+    "combined_lr_if_h1_240ppm": 598.2060217201777
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "PARTIAL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 1059.3795262834983,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 930.2171187258041,
+    "combined_lr_if_h1_240ppm": 376.6994943600363
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "PARTIAL",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 760.9946148610042,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 1637.7036324503947,
+    "combined_lr_if_h1_240ppm": 8.842697299181193
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "FAIL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 36.8145545486442,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 141.27808060606813,
+    "combined_lr_if_h1_240ppm": 30.821463875299468
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 32.54811094800278,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 30.499460957954717,
+    "combined_lr_if_h1_240ppm": 19.40874788233482
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "INCONCLUSIVE",
+    "FAIL"
+   ],
+   "combined_lr": 26.445364541175497,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 248.72862596971603,
+    "combined_lr_if_h1_240ppm": 0.7235074096129059
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "INCONCLUSIVE",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 23.380607743310534,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 53.69615006337536,
+    "combined_lr_if_h1_240ppm": 0.45560369750742735
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "INCONCLUSIVE",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 16.795224132050475,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 94.53532754573239,
+    "combined_lr_if_h1_240ppm": 0.010694905742547504
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "PARTIAL",
+    "FAIL"
+   ],
+   "combined_lr": 10.460980382754652,
+   "conclusion": "strong evidence that the signal persists",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 157.4683001337379,
+    "combined_lr_if_h1_240ppm": 1.48298033952588
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 1.0,
+   "conclusion": "inconclusive",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 1.0,
+    "combined_lr_if_h1_240ppm": 1.0
+   },
+   "conclusion_if_130ppm_not_used": "inconclusive"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 0.7183399301010807,
+   "conclusion": "inconclusive",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 1.7605606255598627,
+    "combined_lr_if_h1_240ppm": 0.023474141674131505
+   },
+   "conclusion_if_130ppm_not_used": "inconclusive"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "INCONCLUSIVE",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 0.5160122551776255,
+   "conclusion": "inconclusive",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 3.099573716271735,
+    "combined_lr_if_h1_240ppm": 0.0005510353273371975
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "INCONCLUSIVE",
+    "INCONCLUSIVE"
+   ],
+   "combined_lr": 0.3706722073155965,
+   "conclusion": "inconclusive",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 5.456987440888274,
+    "combined_lr_if_h1_240ppm": 1.2935081341364802e-05
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PASS",
+    "FAIL",
+    "FAIL"
+   ],
+   "combined_lr": 0.3635300884889462,
+   "conclusion": "inconclusive",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 23.91572757730805,
+    "combined_lr_if_h1_240ppm": 0.12133710197866762
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "FAIL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 0.32140053840502714,
+   "conclusion": "moderate evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 5.162986334441029,
+    "combined_lr_if_h1_240ppm": 0.07640783158792218
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "INCONCLUSIVE",
+    "FAIL"
+   ],
+   "combined_lr": 0.2308748402923169,
+   "conclusion": "moderate evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 9.08975045072052,
+    "combined_lr_if_h1_240ppm": 0.0017936082637080657
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence that the signal persists"
+  },
+  {
+   "outcomes": [
+    "FAIL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 0.00987462955741058,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.1692812322669737,
+    "combined_lr_if_h1_240ppm": 0.003936772843417992
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence against persistence"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "FAIL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 0.007093340706044382,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.29802987217548765,
+    "combined_lr_if_h1_240ppm": 9.241236346526748e-05
+   },
+   "conclusion_if_130ppm_not_used": "moderate evidence against persistence"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "INCONCLUSIVE",
+    "FAIL"
+   ],
+   "combined_lr": 0.005095429866963072,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.5246996581928024,
+    "combined_lr_if_h1_240ppm": 2.169300912425023e-06
+   },
+   "conclusion_if_130ppm_not_used": "inconclusive"
+  },
+  {
+   "outcomes": [
+    "PARTIAL",
+    "FAIL",
+    "FAIL"
+   ],
+   "combined_lr": 0.0031737112563019554,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.8739966888717229,
+    "combined_lr_if_h1_240ppm": 0.0003008002764197875
+   },
+   "conclusion_if_130ppm_not_used": "inconclusive"
+  },
+  {
+   "outcomes": [
+    "FAIL",
+    "FAIL",
+    "INSUFFICIENT / UNAVAILABLE / INVALID_INPUT"
+   ],
+   "combined_lr": 9.750830889608668e-05,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.028656135597825098,
+    "combined_lr_if_h1_240ppm": 1.5498180420673386e-05
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence against persistence"
+  },
+  {
+   "outcomes": [
+    "INCONCLUSIVE",
+    "FAIL",
+    "FAIL"
+   ],
+   "combined_lr": 7.00441117966895e-05,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.05045086401423521,
+    "combined_lr_if_h1_240ppm": 3.6380648288613805e-07
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence against persistence"
+  },
+  {
+   "outcomes": [
+    "FAIL",
+    "FAIL",
+    "FAIL"
+   ],
+   "combined_lr": 9.628584291184186e-07,
+   "conclusion": "strong evidence against persistence",
+   "sensitivity_not_used": {
+    "combined_lr_if_h1_130ppm": 0.0048509459460093236,
+    "combined_lr_if_h1_240ppm": 6.101281580249942e-08
+   },
+   "conclusion_if_130ppm_not_used": "strong evidence against persistence"
+  }
+ ],
+ "caveat": "trials share one noise realization per sector; binomial uncertainties understate the true uncertainty"
+}

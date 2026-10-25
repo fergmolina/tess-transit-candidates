@@ -198,6 +198,17 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Records:** dated amendment in the registration; review chain in `reviews_317134140/`.
 
 
+**Calibration of the TIC 317134140 scorer, descriptive only (2026-10-25 (v1.18.1)).**
+- **Contents:** injection and noise-only runs of the locked scorer on the training sectors, in
+  `scoring_317134140_s108_s110/calibration/`.
+- **Injected signals, pooled single-sector training data:** PASS / PARTIAL / INCONCLUSIVE / FAIL = 7 / 55 / 25 / 14 % at 130 ppm,
+  31 / 58 / 10 / 1 % at 185 ppm and 65 / 35 / 0 / 0 % at 240 ppm.
+- **Noise only:** FAIL 84 %. Its zero PASS count is a structural zero of the design, not a false-PASS rate.
+- **Interpretation:** no combined evidential-strength conclusion is adopted. A combined likelihood-ratio draft was withdrawn before
+  publication after review.
+- **Unchanged:** the v1.18 lock and the frozen per-sector outcomes.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 
