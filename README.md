@@ -218,6 +218,20 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Records:** dated amendments in both registrations; review chain in `reviews_s111/`.
 
 
+**Sector 106 release notes and monitoring records (2026-11-10 (v1.19.1)).**
+- **Contents:** `monitoring/`, with the log entries since v1.19 (DECISIONS 199-210). Metadata and mission documents only; no
+  test-sector photometry of any frozen star has been opened.
+- **Sector 106:** the SPOC data release notes (DRN 144) report no timing problem, an unplanned data gap (2026-07-30 19:21 to
+  2026-08-02 09:51 UTC; 2.39 days of science data lost) and pointing excursions under a new attitude control system.
+- **Forecast, descriptive:** the published eligibility forecast was repeated with the gap. TIC 253931796 was already expected to be
+  INSUFFICIENT and still is. TIC 183374279 and TIC 70441745 are unchanged. TIC 120444365 loses one event. The three many-event
+  tests keep at least five events. QLP's handling of the pointing excursions is unknown. Written before any QLP Sector 106 light
+  curve exists.
+- **Other records:** five selection checks for TIC 317134140 in S108 and S109, all `NONE`. The orbit table now lists Sector 112, so
+  the Sector 111 end is published as 2026-12-22 08:30 UTC. The 2026-10-21 DDT correction was delivered on 2026-11-01.
+- **Unchanged:** every lock, config, evaluator, registration and prediction file.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

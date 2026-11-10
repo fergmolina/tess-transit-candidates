@@ -1,0 +1,12 @@
+TIC  115692561  pred 32  eligible nominal 28 -> with DRN gaps 24  newly lost [3408, 3409, 3410, 3412]  strict None
+TIC  120444365  pred  6  eligible nominal  4 -> with DRN gaps  3  newly lost [563]  strict None
+       [(559, 4234.415, 'out'), (560, 4239.563, 'out'), (561, 4244.711, 'kept'), (562, 4249.859, 'kept'), (563, 4255.007, 'out'), (564, 4260.155, 'kept')]
+TIC  122522485  pred 12  eligible nominal 11 -> with DRN gaps  9  newly lost [1235, 1236]  strict None
+TIC  183374279  pred  3  eligible nominal  2 -> with DRN gaps  2  newly lost []  strict [245, 246]
+       [(245, 4238.389, 'kept'), (246, 4250.127, 'kept'), (247, 4261.865, 'out')]
+TIC  206620592  pred 26  eligible nominal 23 -> with DRN gaps 20  newly lost [2017, 2018, 2020]  strict None
+TIC  253931796  pred  3  eligible nominal  2 -> with DRN gaps  2  newly lost []  strict None
+       [(172, 4235.087, 'kept'), (173, 4247.666, 'out'), (174, 4260.245, 'kept')]
+TIC   70441745  pred  2  eligible nominal  2 -> with DRN gaps  2  newly lost []  strict None
+       [(137, 4242.964, 'kept'), (138, 4258.815, 'kept')]
+kept (DRN): [(4234.925, 4239.545), (4240.254, 4247.364), (4248.074, 4251.807), (4256.411, 4261.375)]

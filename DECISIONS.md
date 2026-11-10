@@ -1999,3 +1999,142 @@
     Hashes: s111_ledger.py 16b987ac0cc8b116...; locks QLP d3f2d0ed93e7db2c..., SPOC a88d676e745d247f....
     The v1.19d configs and locks (never published) are archived in configs/conformance/superseded_s111_v1.19d_2026-10-25/; the v1.19d
     ledger is in results/conformance_s111/superseded_v1.19a/s111_ledger_v1.19d.py. Registrations re-amended; prefixes intact.
+199. 2026-10-25 15:26 UTC — Third re-check results/RECHECK3_S111_package.md: "publish as v1.19". The author's go is for the reviewed v1.19e
+    package. v1.19 is ASSEMBLED LOCALLY by scripts/assemble_v1_19.py.
+    - Asserted: the reviewed lock hashes (QLP d3f2d0ed..., SPOC a88d676e...) and every code hash named in them; the QLP evaluator is
+      identical to the published conformance_v2.1 copy.
+    - Content (145 files, manifest verified):
+      - scoring_s111_80387959_120517801/: 14 configs, 2 locks, the tools and the SPOC variant diff, test logs, the S108 v2 demo,
+        README;
+      - the two amended registrations;
+      - reviews_s111/ (review + 3 re-checks, temporary and reviewer-runtime paths redacted; 4 prompts);
+      - README block; CITATION 1.19; public DECISIONS through item 198; MANIFEST_v1.19.md.
+    - Excluded: superseded drafts. Release notes: zenodo_upload/RELEASE_NOTES_v1.19.md. Nothing is committed, pushed or uploaded;
+      this awaits the author's confirmation of the assembled bytes.
+200. 2026-10-25 15:29 UTC — v1.19 PUBLISHED with the author's go for the assembled bytes (question tool).
+    - Anchors matched: MANIFEST_v1.19.md 6dd2c523..., RELEASE_NOTES_v1.19.md 586fc84c...; 145 manifest hashes passed.
+    - Published: commit 5bc00daa (Co-Authored-By trailer, no session link); tag and GitHub release v1.19; Zenodo 10.5281/zenodo.23644746
+      (created 2026-10-25T15:28:21Z). The S111+ locks are public before S111 begins (2026-11-26).
+    - Every frozen TESS test now has a published scoring lock.
+    - Seven empty ledgers were initialised in results/s111_ledgers/<TIC>_S<N>/, bound to both published locks.
+    - Monitoring obligations now in force:
+      - designation snapshots at least weekly from each sector's published end, appended to its ledger;
+      - then SPOC or QLP checks per the rule;
+      - the weekly TIC 317134140 selection checks (v1.18) continue.
+201. 2026-10-29 15:39 UTC — Observation, metadata only. The S111 2-min target list all_targets_S111_v1.csv is now published (HTTP 200; header
+    "Full target list for orbit 233, sector 111 / Created Wed Oct 28 15:11:07 EDT 2026 / Concatenation of GI astero exo bright DDT
+    ppas spm1 GI2 exo2 lists"; 11,775 TICIDs; SHA-256 of the copy read a43c9962...).
+    - The monitoring bot reported it on 2026-10-29 12:31 UTC, and I checked it independently.
+    - TIC 80387959 IS listed (camera 4, CCD 3, Tmag 10.52). TIC 120517801 and the other six S111 test stars are not.
+    - The list does not say which programme (DDT or a GI list) added 80387959.
+    This does NOT yet designate anything. Under the v1.19 rule the operative designation is the first complete snapshot at or
+    after the S111 end, which needs the orbit table to list S112. If 80387959 is still listed then, SPOC becomes its product of
+    record for S111 (with the 120-day release-date fallback), and 120517801 stays QLP.
+    Correction to my 2026-10-25 note on the bot's DDT 100-102 reports: there are two pages. tess.mit.edu/public/DDTs/DDT_list.html (with
+    CTL files) ends at DDT 099. tess.mit.edu/science/ddt/ lists DDT 100-102. The bot was right about the second page. Neither names Molina
+    or 80387959. The v1.19 rule uses only the sector lists, so it is unaffected.
+202. 2026-10-29 15:41 UTC — Provenance of the S111 2-min listing of TIC 80387959, metadata only. The star was on NO earlier 2-min target list:
+    S10, S36, S37, S63, S90, S100 (its observed sectors) and S108-S110 were all checked. It is in no posted DDT CTL (DDT 001-099).
+    S111, the first sector of the author's DDT request (S111-S114; e-mailed 2026-10-18 local, corrected 2026-10-20), is its first
+    2-min listing, and the list was created 2026-10-28.
+    Very probably the author's DDT, but NOT confirmed: a Year-9 GI programme cannot be excluded.
+    Confirmation would come from the DDT office's reply, a DDT row naming the author, or listings on the S112-S114 lists.
+    No effect on the S111 rule (sector lists only).
+203. 2026-10-29 15:45 UTC — Addendum to item 202 (author's paste of the DDT science page, rows 087 and 097-102). None covers TIC 80387959.
+    - DDT 100: TIC 4206066. DDT 102: TIC 458191673.
+    - DDT 101: L 198-93 = TIC 264151965 (RA 217.33, Dec -58.77) and TYC 9078-80-1 = TIC 464547401 (RA 285.56, Dec -65.36), resolved
+      via the MAST TIC catalogue; 80387959 is at RA 165.31, Dec -48.61.
+    - DDT 097-099: specific non-planet targets at 20 s. DDT 087 (HWO, 659 targets): its posted CTL does not contain 80387959.
+    The S111 listing therefore remains unattributed. Most likely: the author's DDT, approved but not yet posted (it would get the
+    next number). A GI programme cannot be excluded.
+204. 2026-11-01 22:35 UTC — Monitoring, metadata only.
+    - TIC 317134140 weekly selection checks: S108 (second check) and S109 (first check, window open since 2026-10-31 18:55 UTC) both
+      NONE at 2026-11-01T22:32Z (no observations, no products; response SHA 5c44c2c8..., same as the empty 2026-10-25 response).
+      Records: results/selection_records/317134140/S108/sel_20261101T223201Z.json and .../S109/sel_20261101T223201Z.json.
+    - Official orbit table (checked independently after the bot's 2026-10-31 report): HTTP 200, Last-Modified 2026-11-01 04:08:11 GMT,
+      footer "Created 2026-11-01 by roland", SHA-256 2e5d357b.... Sector 111 now has all four segments (orbits 233-234); its latest
+      End of Orbit is 2026-12-22 08:30:00 (was 2026-12-15 20:30:00). Highest sector is still 111; no Sector 112 row. Under the
+      v1.19 rule the S111 end is not yet published (the table must list S112), so no designation snapshot is due yet.
+    - Bot reports of 2026-10-31 and 2026-11-01: QLP s0106-s0110 still 404; S107 SPOC manifest lists neither 24526743 nor 160330868;
+      S108-S114 manifests 404; all_targets_S111_v1.csv unchanged (80387959 listed, 120517801 not); DDT_list.html still ends at
+      DDT 099; science/ddt still ends at DDT 102; no new TOI/CTOI on the 42 TICs. The science/ddt page has no CTL links.
+205. 2026-11-01 22:44 UTC — DDT follow-up e-mailed by the author (reply on the 2026-10-20 correction thread), To: the two contacts named on the mission's DDT page,
+    CC: the TESS DDT office. It asks whether the S111 2-min listing of TIC 80387959 comes from the author's DDT request and whether
+    S112-S114 are covered. It re-attaches the unchanged 2026-10-18 proposal.pdf and target_list.csv.
+    It also delivers the 2026-10-21 correction (ddt_80387959/CORRECTION_2026-10-21.md), which had not been sent before: the same signal
+    is in the first-stage RAVEN catalogue (Lafarga et al. 2026), so ours is an independent recovery; there is also an unpromoted
+    TESS-SPOC FFI single-sector alert at the same period in S63; the request is unchanged.
+    Correction to my 2026-11-01 advice: I first said to attach "corrected" files. No revised files exist; the 2026-10-20 correction was
+    the text of an e-mail only.
+    No effect on any test (the S111 rule uses only the sector lists). Next: log the reply when it arrives (expected by about 12 Nov);
+    one further nudge only if there is nothing by about 16 Nov.
+206. 2026-11-08 03:20 UTC — Monitoring, metadata only.
+    - TIC 317134140 weekly selection checks: S108 and S109 both NONE at 2026-11-08T03:13-03:14Z (response SHA 5c44c2c8..., the same
+      empty response as before). Records: results/selection_records/317134140/S108/ and S109/sel_20261108T031352Z.json.
+    - QLP s0106: still 404. SPOC S108 manifest: still 404.
+    - Official orbit table: Last-Modified 2026-11-07 05:12:12 GMT, footer "Created 2026-11-07 by roland", SHA-256 abb6108a46ef9386....
+      It NOW LISTS SECTOR 112 (orbit 235, first segment 2026-12-22 13:30:00 to 2026-12-28 22:50:00). The latest Sector 111 End of Orbit is
+      unchanged at 2026-12-22 08:30:00.
+    - Effect under the v1.19 rule: the S111 end is now published (the table lists N+1), as 2026-12-22 08:30 UTC. A designation snapshot
+      only counts if it is taken at or after that time ("snapshot time >= sector end"), so the first S111 snapshot for 80387959 and
+      120517801 is due from 2026-12-22 08:30 UTC, and weekly after that. Nothing is designated now.
+      Derived (inference, to be recomputed from the saved table at snapshot time): spoc_cutoff = end + 120 d = 2027-04-21 08:30 UTC;
+      unavailable_cutoff = end + 365 d = 2027-12-22 08:30 UTC.
+207. 2026-11-09 13:40 UTC — Monitoring, metadata only (bot report 2026-11-09 13:30 UTC, confirmed independently at 13:34 UTC).
+    - Data release notes index https://archive.stsci.edu/tess/tess_drn.html (HTTP 200, "Last Modified: Oct 29, 2026 13:52") now lists
+      DRN 144 for Sector 106 (tess_sector_106_drn144_v01.pdf) and DRN 143 for Sector 105. The index page has no "clock" or "timing"
+      text. The bot's Nov 2 weekly check missed these rows, so they have probably been listed since about 29 Oct. The PDFs were NOT opened.
+    - Meaning: SPOC has finished processing Sector 106. The S106 tests are QLP-scored, and QLP s0106 is still 404. Nothing is available
+      to score.
+    - Orbit table listing Sector 112: already logged in item 206 (bot report confirms; footer now "Created 2026-11-09 by roland"; S111 end
+      unchanged at 2026-12-22 08:30 UTC).
+    - All other checks unchanged (QLP s0106-s0121 404; S107 manifest lacks 24526743 and 160330868; S108-S114 manifests 404; S111 v1
+      unchanged; DDT pages unchanged; no new TOI/CTOI on the 42 TICs).
+    - Open question for the author: whether to read DRN 144's text for S106 timing, clock or anomaly notes before S106 scoring.
+      DRN 144 is a sector-wide document, not photometry of any star.
+208. 2026-11-10 01:40 UTC — DRN 144 (Sector 106 data release notes) read with the author's go: text only (pdftotext), no figures, no
+    photometry. File tess_sector_106_drn144_v01.pdf, 1,680,677 B, Last-Modified 2026-10-28, SHA-256 3fc6c8f0...2889; dated September 03, 2026.
+    - Timing: the note has NO clock, time-stamp or barycentric-correction issue for S106.
+    - Data loss: the downlink between orbits 223 and 224 was lost (wildfires near the Madrid DSN complex). The recorder filled during orbit
+      224a and data collection paused: "SSR Overflow" 2026-07-30 19:21:09 UTC (TJD 4252.30716) until orbit 224b start 2026-08-02 09:51:09
+      UTC (TJD 4254.91132). 2.39 d of science data lost; 25.43 d collected. The orbit table does not show this gap (it lists 224a to
+      2026-08-02 05:00).
+    - Pointing: S106 is the first full sector on attitude control system ACS 5.11. Correlated pointing excursions (below the usual 7
+      arcsec limit) leave systematics in SAP light curves, mostly near the end of the first, second and fourth half-orbits. SPOC put
+      Manual Exclude (QUALITY bit 8) on 3.39 d: excursions > 3 arcsec, within 30 min of a reaction-wheel-1 frequency crossing, and wheel
+      1 above 15 Hz. This is SPOC's flagging; how QLP flags these cadences is unknown until QLP S106 exists.
+    - Other: 13,000 2-min targets, 2,121 20-s targets; 640 TCEs on 484 targets (aggregate numbers only).
+    Descriptive forecast, NOT a score and not a rule change (results/s106_drn144/s106_gap_check.py and .txt): frozen predicted times
+    against the DRN segment times under the locked edge rule (1.5 d after start/resume over a gap > 0.5 d; 0.5 d before a gap or data
+    end); barycentric correction ignored; QLP flags unknown. Eligible events, orbit-table segments -> DRN segments:
+      183374279 2 -> 2 (strict epochs 245 and 246 both kept); 70441745 2 -> 2; 253931796 2 -> 2; 120444365 4 -> 3 (563 lost);
+      122522485 11 -> 9; 206620592 23 -> 20; 115692561 28 -> 24.
+    No test becomes INSUFFICIENT from the SSR gap alone. Open risk: 183374279's addendum makes flagged cadences at epoch 245 or 246
+    INSUFFICIENT, and epoch 245 (TJD 4238.39) is 1.65 d before the end of the first half-orbit, where the ACS excursions cluster.
+    The locked rules, configs and evaluator are unchanged. The scorer uses the QLP file's own gaps and flags, not this forecast.
+209. 2026-11-10 02:50 UTC — CORRECTION to item 208's eligibility table, and the proper forecast. The quick check in item 208
+    (results/s106_drn144/s106_gap_check.py) counted an event as eligible when its reference duration fitted inside the kept intervals.
+    That is NOT the evaluator's rule: the locked evaluator also needs out-of-transit coverage on both sides (in-transit fraction >= 0.9,
+    left and right baselines >= 0.5 durations) and the published forecast models QLP's own gap patterns. The quick check is superseded;
+    its "before" and "after" counts must not be used. In particular "253931796 2 -> 2" and "183374279 2 -> 2" were too optimistic.
+    Proper forecast: scripts/conformance_s106_forecast_drn144.py -> results/s106_drn144/s106_forecast_drn144.{csv,txt}. It uses the same
+    seven gap templates as the published conformance-v2.1 forecast, the evaluator's own edge_trim and coverage, and the frozen predicted
+    times; case (a) reproduces the published forecast exactly (asserted for all 49 rows), case (b) also removes the DRN 144 SSR window,
+    case (c) uses the DRN 144 segment times alone (best case: no other gap). No S106 photometry is read. Eligible events as
+    min / median / max over the seven templates, published -> with the SSR gap, then the best case (c):
+      253931796: 0/1/1 -> 0/1/1; best case 1. Fewer than 2 eligible events in every case, so INSUFFICIENT is expected (it already was in the
+        published forecast: 7 of 7 templates).
+      183374279: 1/1/2 -> 1/1/2; best case 2. Unchanged: 5 of 7 templates give fewer than 2 (epoch 246 not eligible), as published.
+      70441745: 1/2/2 -> 1/2/2; best case 2. Unchanged: 1 of 7 templates gives fewer than 2.
+      120444365: 2/2/3 -> 1/2/2; best case 3. Epoch 563 (TJD 4255.007, inside the 1.5 d after the resume) is lost in every template; 1 of 7
+        templates now gives fewer than 2 (none did before).
+      122522485: 6/7/10 -> 5/6/8; best case 9.   206620592: 13/16/20 -> 12/13/17; best case 20.   115692561: 16/19/23 -> 15/17/19; best case 24.
+    Not modelled: QLP's flagging of the ACS 5.11 pointing excursions and any extra noise from them.
+    This is descriptive. The locked rules, configs and evaluator are unchanged, and the outcome of each test is whatever the locked
+    evaluator returns on the QLP v01 file.
+210. 2026-11-10 02:40 UTC — Two housekeeping notes before the v1.19.1 assembly.
+    - Time stamp of item 209: it was written at about 02:25 UTC (the forecast outputs were written at 02:24 UTC), not at 02:50 UTC. My
+      error; the text of item 209 is otherwise unchanged.
+    - Kept locally, outside the session's temporary directory: the orbit table read for item 206
+      (results/orbit_table_snapshots/TESS_orbit_times_lastmod_2026-11-07.csv, SHA-256 abb6108a46ef9386...), the DRN 144 PDF
+      (results/s106_drn144/tess_sector_106_drn144_v01.pdf, SHA-256 3fc6c8f0...2889) and its extracted text.

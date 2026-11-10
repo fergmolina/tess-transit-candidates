@@ -14,3 +14,7 @@ The Director's Discretionary Time proposal for 2-minute cadence on TIC 80387959 
 Neither earlier detection establishes a planet, and neither changes the request: 2-minute data in Sectors 111-114 would test the frozen
 predictions (preregistration/TIC80387959/). No separate message has been sent to the DDT office; this correction will be mentioned if the
 office replies.
+
+**Addendum, 2026-11-10 (v1.19.1):** this correction was delivered on 2026-11-01, in the author's follow-up e-mail to the two contacts named on the
+mission's DDT page, copied to the DDT office (DECISIONS 205). The sentence above saying that no message had been sent described the
+state on 2026-10-21.
