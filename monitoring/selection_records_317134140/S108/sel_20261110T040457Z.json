@@ -1,0 +1,23 @@
+{
+ "record": "spoc_selection",
+ "version": "1.0",
+ "tic": 317134140,
+ "sector": 108,
+ "product": "SPOC_2MIN_LC",
+ "mode": "mast_query",
+ "query_utc": "2026-11-10T04:04:57.741179Z",
+ "query": {
+  "obs_collection": "TESS",
+  "dataproduct_type": "timeseries",
+  "target_name": "317134140",
+  "sequence_number": 108
+ },
+ "astroquery": "0.4.11",
+ "observations": [],
+ "products": [],
+ "response_sha256": "5c44c2c80fbbdf1233b79a6a228e328591e3907d4c97bdf3e7f98c5c68080d36",
+ "candidates": [],
+ "status": "NONE",
+ "selected": null,
+ "rule": "first check after a SPOC 2-min s_lc.fits of this TIC and sector is listed at MAST; exactly one candidate required"
+}

@@ -232,6 +232,21 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Unchanged:** every lock, config, evaluator, registration and prediction file.
 
 
+**Corrections to v1.19.1 after an independent review (2026-11-10 (v1.19.2)).**
+- **What happened:** v1.19.1 was published without external review. A review made afterwards (`reviews_v1_19_1/`) reproduced the
+  eligibility forecast byte for byte and asked for seven corrections of wording and disclosure. They are in
+  `corrections/CORRECTION_v1.19.1_2026-11-10.md`, with dated notes appended to the affected files. v1.19.1 is preserved.
+- **Monitoring of TIC 317134140:** the first two Sector 108 checks were 7 days 22 h 28 min apart, over the locked seven-day
+  interval. Both say `NONE`, but this cannot exclude a product that was listed and replaced in between. The rule, the records and
+  the cutoff are unchanged. Later checks will be no more than seven days apart. Two more checks on 2026-11-10 say `NONE`.
+- **Scope of the data statements in the block above:** The work reported in v1.19.1 used mission documents, metadata and previously examined in-sample QLP files; it did not acquire or examine test-sector photometry. This statement does not supersede the earlier S106 data-availability erratum, including its disclosure of a downloaded, reportedly unopened TIC 206620592 S106 cutout. The log records QLP s0106 directory checks returning 404 on November 8 and November 9; no publication-time check was retained. These checks do not establish the first availability time of every QLP light curve. The authors' non-examination statement remains an attestation.
+- **Forecast:** These are conditional forecast counts, not scores or changes to eligibility. The locked evaluator, its required clock record, and the selected QLP v01 file determine the outcome of record. No test or event is discarded or replaced on the basis of this forecast. "TIC 120444365 loses one event" means that one predicted event was eligible in four of the
+  seven templates and is eligible in none with the gap.
+- **Log:** the time stamps of items 209 to 211 were estimates and wrong (items 212 and 215). The public copy of item 205 replaces
+  the names of two e-mail recipients by their role.
+- **Unchanged:** every lock, config, evaluator, registration, prediction file and forecast output.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

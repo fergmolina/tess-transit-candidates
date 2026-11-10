@@ -2138,3 +2138,98 @@
     - Kept locally, outside the session's temporary directory: the orbit table read for item 206
       (results/orbit_table_snapshots/TESS_orbit_times_lastmod_2026-11-07.csv, SHA-256 abb6108a46ef9386...), the DRN 144 PDF
       (results/s106_drn144/tess_sector_106_drn144_v01.pdf, SHA-256 3fc6c8f0...2889) and its extracted text.
+211. 2026-11-10 02:55 UTC — v1.19.1 ASSEMBLED LOCALLY by scripts/assemble_v1_19_1.py (nothing committed, pushed or uploaded). It awaits the
+    author's go for these exact bytes. It has NOT been reviewed by the external auditor.
+    - Content, 18 files: monitoring/ (the DRN 144 note NOTE_S106_DRN144_2026-11-10.md, the forecast script and its outputs, the
+      superseded quick check with a label, the five TIC 317134140 selection records, the orbit table that lists Sector 112); a dated
+      addendum to corrections/DDT_PROPOSAL_80387959_CORRECTION_2026-10-21.md; README block; CITATION 1.19.1; public DECISIONS through
+      item 210.
+    - Asserted by the assembler: public_release clean at 5bc00da before; pinned source hashes; the changed-file set is exactly the
+      expected 18 files (so no lock, config, evaluator or registration changed); all prediction CSVs unchanged; the v1.19 public log is
+      a byte prefix of the new one; no address, session link, job path or temporary path in any changed file.
+    - Public-log masking, new in this release: the names of the two people e-mailed in item 205 are replaced by "the two contacts
+      named on the mission's DDT page" (scripts/make_public_decisions.py).
+    - Self-check: 18 of 18 manifest hashes match; the note's table matches the forecast CSV row by row.
+    - Anchors: MANIFEST_v1.19.1.md be93520d9d74fbf0cb0294165d05466bdb7c2253aa5c87a876cc8804fc4eacf1;
+      zenodo_upload/RELEASE_NOTES_v1.19.1.md cd6189ab8bf244f4f13e787c11bac0b93fd8400dd1ae9b4b6c4240c84451702c.
+212. 2026-11-10 02:40 UTC — v1.19.1 PUBLISHED with the author's go for the assembled bytes (question tool; the author chose to publish before an
+    auditor review).
+    - Anchors matched before the commit: MANIFEST_v1.19.1.md be93520d..., RELEASE_NOTES_v1.19.1.md cd6189ab...; 18 of 18 manifest hashes passed.
+    - Published: commit a8493bfd (2026-11-10T02:38:49Z; Co-Authored-By trailer, no session link); tag and GitHub release v1.19.1
+      (2026-11-10T02:38:53Z); Zenodo 10.5281/zenodo.24096235 (created 2026-11-10T02:38:58Z, version v1.19.1).
+    - The Sector 106 note and forecast are public before any QLP Sector 106 light curve exists (QLP s0106 last checked 404 on 2026-11-08;
+      not re-checked at publication).
+    - CORRECTION of my time stamps, which I estimated instead of reading the clock. True times from file times: item 209 was written at
+      about 02:25 UTC (stamped 02:50); item 210 at about 02:28 UTC (stamped 02:40); item 211 at about 02:30 UTC (stamped 02:55). Items 209
+      and 210 are in the published log with stamps later than the commit that contains them (02:38:49Z). The commit and Zenodo times
+      are the public time stamps of record. The items are not edited; this correction goes into the next public log.
+      From now on every log stamp is taken from the system clock (date -u) at the time of writing.
+    - Not reviewed by the external auditor. A review prompt can be written if the author wants one.
+213. 2026-11-10 03:35 UTC — Post-publication review of v1.19.1 requested by the author. Prompt for the external auditor:
+    results/PROMPT_review_v1_19_1.txt (SHA-256 4750af6700ff1184...). Report expected at results/REVIEW_v1_19_1.md.
+214. 2026-11-10 04:06 UTC — Post-publication review of v1.19.1 received: results/REVIEW_v1_19_1.md (written 2026-11-10 about 04:01 UTC).
+    Verdict: "Needs a corrective release now: a documentation-only v1.19.2." The eligibility forecast was reproduced byte for byte
+    and stands; no lock, rule or frozen input is in question. I checked the main findings myself and they are right:
+    - F1: the first two S108 selection checks were 7 d 22:27:48 apart, over the locked "at least weekly" interval, and v1.19.1 did not say so.
+    - F2: "no test-sector photometry of any frozen star has been downloaded, opened or analysed" was unscoped (the 2026-10-20 erratum
+      discloses a downloaded, reportedly unopened S106 cutout of TIC 206620592); "no QLP S106 light curve existed" was stronger
+      than the recorded 404 checks; the README block lacked the sentence that the evaluator and QLP file decide.
+    - F3: the time-stamp correction of items 209-211 exists only in the local log, and file times support it only approximately.
+    - F4: case (a) reproduces counts and epoch lists, but 19 of 49 joint SNR values differ by 0.01 (recomputed from the rounded
+      per-event value), so "all rows reproduce" and "joint SNR carried over" were not literally true.
+    - F5: the name masking in item 205 was disclosed only in local item 211; item 211's "no temporary path in any changed file"
+      ignores the historical prefix (disclosed in item 163).
+    - F6: the note omitted DRN context (spurious detections from ACS systematics, two-transit false positives at 8-20 d, FFI flags)
+      and the limits of the forecast (ideal cadence, no clock correction, no strict flag veto; case c is not a bound).
+    - F7: superseded/README.md says the quick-check files are "hashed in DECISIONS 208"; item 208 gives no such hashes.
+    Monitoring done now, metadata only: S108 and S109 selection checks NONE at 2026-11-10T04:04:57Z and 04:04:58Z (response SHA
+    5c44c2c8...; records sel_20261110T040456Z.json in each sector directory). Next S108/S109 check due no later than 2026-11-17T04:04:57Z.
+    QLP s0106 directory: HTTP 404 at 2026-11-10 04:04:59 GMT (results/qlp_s0106_checks/); the reviewer saw 404 at 03:55:09 GMT.
+215. 2026-11-10 04:06 UTC — CORRECTIONS to v1.19.1 after the review (item 214), for publication as v1.19.2. Full text:
+    results/corrections/CORRECTION_v1.19.1_2026-11-10.md (C1-C7; quoted wording is the reviewer's). The three that the review asks to be
+    in the public log:
+    - C1, S108 monitoring:
+      The S108 monitoring schedule was not fully met. The checks at 2026-10-25T00:04:12.835692Z and 2026-11-01T22:32:01.307139Z
+      were 7 days 22:27:48.471447 apart, exceeding the locked seven-day interval by 22:27:48.471447. Both retained records are
+      NONE. This does not establish continuous unavailability or exclude an intervening replaced delivery. The original records,
+      selection rule and cutoff remain unchanged. Subsequent checks will be scheduled no more than seven days apart, with the
+      locked final check retained.
+      Follow-up: checks made 2026-11-10 (item 214). S110 checks start at 2026-11-26 04:15 UTC.
+    - C3, time stamps:
+      Items 209 and 210 in v1.19.1 carry estimated, erroneous timestamps of 02:50 and 02:40 UTC. Item 210 had already corrected
+      item 209 to approximately 02:25. The forecast output mtimes are 02:24:41 UTC and the assembled public log mtime is 02:29:18
+      UTC. These support approximate reconstruction, not exact entry-writing times. Local item 211's 02:55 timestamp is also
+      erroneous; the manifest was assembled at approximately 02:29:18 UTC. The containing commit is dated 02:38:49 UTC; GitHub
+      records release publication at 02:38:53 UTC and Zenodo records creation at 02:38:58.133488 UTC on 2026-11-10. The public
+      release anchors establish the existence of the released bytes. Original entries are preserved; no earlier public timestamp
+      is claimed.
+      Item 212's "true times from file times" is to be read with these limits. Item 212 groups "tag and GitHub release"; the tag was
+      created at 02:38:49 UTC and the GitHub release published at 02:38:53 UTC. Item 212's "QLP s0106 last checked 404 on 2026-11-08"
+      omits the 2026-11-09 check recorded in item 207.
+    - C5, redaction and scan scope:
+      In the public copy of item 205, the two private-email recipient names are replaced by "the two contacts named on the
+      mission's DDT page." This is a role redaction only; the reported action and date are unchanged. The v1.19 log remains a byte
+      prefix. Previously published temporary paths in the historical prefix remain as disclosed in item 163; no new temporary or
+      session path was introduced by this release. The forecast retains the existing absolute workspace-path convention.
+      Item 211's "no ... temporary path in any changed file" applies to the text after the historical prefix only.
+    Also corrected in the file: C2 (scope of the photometry and availability statements; the controlling-rule sentence), C4 (item 209's
+    "reproduces the published forecast exactly" holds for counts and epoch lists; 19 joint SNR values differ by 0.01), C6 (added
+    DRN context and forecast limits), C7 (quick-check hashes).
+    No forecast is regenerated, no lock or rule changes, no monitoring record is backfilled.
+216. 2026-11-10 04:07 UTC — v1.19.2, a documentation-only corrective release, prepared for local assembly by scripts/assemble_v1_19_2.py.
+    Nothing is published without the author's go for the exact bytes.
+    - Corrections to item 214: the two new selection records are named sel_20261110T040457Z.json (not ...456Z). The review file
+      was last written at 2026-11-10 04:02:03 UTC (file time). In item 215 the C5 quotation has plain quotation marks where the
+      review has typographic ones; the correction file carries the review's exact characters.
+    - Planned content, 12 files plus the manifest:
+      new: corrections/CORRECTION_v1.19.1_2026-11-10.md (C1-C7); reviews_v1_19_1/ (the review and its prompt);
+      the 2026-11-10 selection records for S108 and S109; monitoring/qlp_s0106_checks/ (response headers of the QLP s0106
+      directory, HTTP 404 at 2026-11-10 04:04:59 GMT; a status request, no data product);
+      changed: README (a v1.19.2 block after the v1.19.1 block), CITATION 1.19.2, the public log through this item, and dated
+      correction notes appended to monitoring/README.md, the Sector 106 note and superseded/README.md.
+    - Appended, not rewritten: the v1.19.1 text of each of those three files stays byte-identical above its note, and the v1.19.1
+      README block stays as published.
+    - Review copy: local temporary paths are redacted and counted in its header; nothing else changes. The prompt is copied unchanged.
+    - Not changed: any lock, config, evaluator, registration, prediction CSV, forecast script or output, or earlier selection record.
+    - The public log now carries items 211-216, with the name-masking disclosure (211, 215) and the time-stamp corrections (212, 215).
+    - The manifest and release-note hashes are logged after assembly, in the next item, so they are not in the v1.19.2 public log.

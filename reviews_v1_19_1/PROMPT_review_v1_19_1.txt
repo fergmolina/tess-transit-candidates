@@ -1,0 +1,68 @@
+Post-publication review of release v1.19.1 (published 2026-11-10; commit a8493bfd, tag v1.19.1, Zenodo 10.5281/zenodo.24096235).
+It was published WITHOUT external review, by the author's choice, to get a public time stamp before QLP Sector 106 appears. Work
+from /Users/fernando/Desktop/NASA and verify everything yourself. Be adversarial. The question is whether the release stands as
+published or needs dated corrections.
+
+MATERIALS
+- public_release/ (git; compare tags v1.19 and v1.19.1). New: monitoring/, MANIFEST_v1.19.1.md. Changed: README.md, CITATION.cff,
+  DECISIONS.md, corrections/DDT_PROPOSAL_80387959_CORRECTION_2026-10-21.md.
+- logs/DECISIONS.md items 199-212 (public copy ends at item 210; items 211-212 are local).
+- scripts/assemble_v1_19_1.py; scripts/make_public_decisions.py; zenodo_upload/RELEASE_NOTES_v1.19.1.md.
+- Sector 106 material: scripts/conformance_s106_forecast_drn144.py; results/s106_drn144/ (the note, forecast CSV and TXT, the
+  superseded quick check, the DRN 144 PDF tess_sector_106_drn144_v01.pdf with SHA-256 3fc6c8f0...2889, and its pdftotext output).
+- What the forecast builds on: scripts/conformance_s106_forecast.py, results/conformance_v21/s106_forecast.csv,
+  scripts/prereg_conformance.py (evaluator v2.1, SHA-256 a864b07a...), configs/conformance/*_S106.json,
+  public_release/conformance_v2.1/CONFORMANCE_PROCEDURE_v2.1.md.
+- results/selection_records/317134140/S108 and S109; public_release/scoring_317134140_s108_s110/README.md (the check schedule).
+- results/orbit_table_snapshots/TESS_orbit_times_lastmod_2026-11-07.csv; the v1.19 rule in
+  public_release/scoring_s111_80387959_120517801/README.md.
+
+CHECK
+1) Published bytes. Does tag v1.19.1 contain exactly the assembled files (all 18 manifest hashes)? Is the changed-file set between
+   v1.19 and v1.19.1 exactly those 18 files plus the manifest, with no lock, config, evaluator, registration or prediction CSV
+   touched? Does the Zenodo archive match the tag (the public record's file list and checksum are enough; no credential)?
+2) Release-note facts. Check every factual statement in NOTE_S106_DRN144_2026-11-10.md against the DRN 144 text: the absence of a
+   timing or clock issue, the gap times and durations, the segment table, the ACS 5.11 description and the 3.39 days flagged. Is
+   anything relevant to the seven S106 tests in the DRN but missing from the note?
+3) Forecast.
+   - Does case (a) really reproduce the published forecast for all 49 rows, and is the script otherwise the published method?
+   - Is the gap window applied correctly (time system, strict or inclusive bounds, interaction with the template gap at the same
+     orbit break)? Does the evaluator's edge rule then drop 1.5 days after the resume and 0.5 days before the overflow, as intended?
+   - Is eligibility computed exactly as the evaluator computes it (edge_trim, coverage, thresholds 0.9 / 0.5 / 0.5, the cadence)?
+   - Re-derive the note's table from the CSV. Check the per-object readings, above all TIC 253931796 ("expected INSUFFICIENT") and
+     TIC 183374279 (strict epochs 245 and 246; is the override read correctly from the locked config and evaluator?).
+   - Does the script open any Sector 106 or later file? It should open only in-sample QLP files of S68, S69, S96 and S105.
+   - Is case (c) fairly labelled as a best case?
+4) Integrity of the tests. Does publishing this forecast before the data weaken any S106 test, create a forking path, or read as a
+   rule change? Is "descriptive; the locked evaluator and the QLP file decide" stated wherever it needs to be (note, README block,
+   release notes, monitoring/README.md)? Is the superseded quick check labelled clearly enough, and does DECISIONS 209 correct
+   item 208 adequately?
+5) Selection records. Are the five public records byte-identical to the local ones, unedited, all NONE? Do their dates satisfy the
+   schedule in the v1.18 lock for S108 and S109? Is the statement about Sector 110 right?
+6) Sector 111 end. Does the saved orbit table list Sector 112, and is 2026-12-22 08:30 UTC the correct Sector 111 end under the
+   v1.19 rule? Are the derived cutoffs in DECISIONS 206 right? Is "nothing is designated yet" correct?
+7) Public log.
+   - Is the v1.19 public log a byte prefix of the v1.19.1 one?
+   - Is the new masking of two names in item 205 sound, complete and disclosed? Any e-mail address, session link, job path,
+     temporary path or private detail in any changed file?
+   - Time stamps: items 209 and 210 were published with estimated stamps later than the commit that contains them (item 212).
+     Verify the true times from file times and git. Is the local correction enough until the next release, or should a v1.19.2
+     with the correction be published now? Check the other stamps of items 204-212 against available evidence.
+8) DDT correction file. Is the published text above the addendum byte-identical to v1.19? Is the addendum accurate against
+   DECISIONS 205 and ddt_80387959/?
+9) README block, monitoring/README.md, release notes, CITATION: accurate, consistent with each other, no overstatement.
+10) Verdict: stands as published / stands with dated corrections (list each, with exact wording) / needs a corrective release now.
+
+RULES
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Do NOT download, open or analyse any test-sector photometry, TESScut cutout or FFI data of any frozen object: Sector 106 or later
+  for TIC 183374279, 120444365, 70441745, 206620592, 122522485, 253931796, 115692561, 151767028, 343298093, 188664994, 162304222,
+  53825235, 3367979, the 14 objects locked in v1.17 and every round-6 pool star; Sectors 108-110 for TIC 317134140; Sector 111 or
+  later for TIC 120517801 and TIC 80387959. If QLP Sector 106 has appeared, do not fetch it; say so in the report.
+- You MAY read the DRN 144 text and re-run the forecast script (it reads only in-sample QLP files), with outputs under /tmp.
+- Do NOT run spoc_selection.py, target_list_designation.py or s111_ledger.py. Do NOT read or use ~/.zenodo_token or any credential.
+- Every factual claim must say how you verified it.
+
+OUTPUT
+Write results/REVIEW_v1_19_1.md: findings ranked by severity with file:line evidence and exact fixes, and the verdict. Print only
+the report path and a one-line verdict.

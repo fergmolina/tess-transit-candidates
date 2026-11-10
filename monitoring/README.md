@@ -18,3 +18,36 @@ The log entries are DECISIONS 201-210.
 
 Also recorded in the log: the Sector 111 2-minute target list includes TIC 80387959 and not TIC 120517801 (DECISIONS 201-203; this
 does not yet designate anything), and the author's 2026-11-01 follow-up to the DDT office (DECISIONS 205).
+
+---
+
+## Corrections and new records, 2026-11-10 (v1.19.2)
+
+An independent review of v1.19.1 (`../reviews_v1_19_1/REVIEW_v1_19_1.md`) found two statements above that need correcting. The text
+above is kept as published. All corrections are in `../corrections/CORRECTION_v1.19.1_2026-11-10.md`. The wording in quotation
+blocks is the reviewer's.
+
+**The checks were not all weekly (C1).** This corrects "the weekly metadata-only checks" above.
+
+> The S108 monitoring schedule was not fully met. The checks at 2026-10-25T00:04:12.835692Z and 2026-11-01T22:32:01.307139Z were
+> 7 days 22:27:48.471447 apart, exceeding the locked seven-day interval by 22:27:48.471447. Both retained records are NONE. This
+> does not establish continuous unavailability or exclude an intervening replaced delivery. The original records, selection rule and
+> cutoff remain unchanged. Subsequent checks will be scheduled no more than seven days apart, with the locked final check retained.
+
+**Scope of the photometry statement (C2).** This replaces "No test-sector photometry of any frozen star has been downloaded, opened
+or analysed" above.
+
+> The work reported in v1.19.1 used mission documents, metadata and previously examined in-sample QLP files; it did not acquire or
+> examine test-sector photometry. This statement does not supersede the earlier S106 data-availability erratum, including its
+> disclosure of a downloaded, reportedly unopened TIC 206620592 S106 cutout. The log records QLP s0106 directory checks returning 404
+> on November 8 and November 9; no publication-time check was retained. These checks do not establish the first availability time of
+> every QLP light curve. The authors' non-examination statement remains an attestation.
+
+**New records.**
+- `selection_records_317134140/S108/sel_20261110T040457Z.json` and `selection_records_317134140/S109/sel_20261110T040457Z.json`: checks made at
+  2026-11-10 04:04:57 and 04:04:58 UTC. Both say `NONE`. The next check is due no later than 2026-11-17 04:04 UTC.
+- `qlp_s0106_checks/head_20261110T040457Z.txt`: status line and date of a header request to the QLP Sector 106 directory at MAST (HTTP 404 at
+  2026-11-10 04:04:59 GMT). It is a status request; no data product was requested.
+- Checks for Sector 110 start at 2026-11-26 04:15 UTC, the sector end in the lock.
+
+Log entries: DECISIONS 211-216.
