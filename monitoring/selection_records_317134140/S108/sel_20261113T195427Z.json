@@ -1,0 +1,91 @@
+{
+ "record": "spoc_selection",
+ "version": "1.0",
+ "tic": 317134140,
+ "sector": 108,
+ "product": "SPOC_2MIN_LC",
+ "mode": "mast_query",
+ "query_utc": "2026-11-13T19:54:28.012085Z",
+ "query": {
+  "obs_collection": "TESS",
+  "dataproduct_type": "timeseries",
+  "target_name": "317134140",
+  "sequence_number": 108
+ },
+ "astroquery": "0.4.11",
+ "observations": [
+  {
+   "obsid": "455173195",
+   "obs_id": "tess2026250081459-s0108-0000000317134140-0310-s",
+   "target_name": "317134140",
+   "sequence_number": "108",
+   "t_exptime": "120.0",
+   "t_obs_release": "61355.0",
+   "provenance_name": "SPOC",
+   "dataURL": "mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits"
+  }
+ ],
+ "products": [
+  {
+   "obsID": "455173195",
+   "obs_collection": "TESS",
+   "dataproduct_type": "timeseries",
+   "obs_id": "tess2026250081459-s0108-0000000317134140-0310-s",
+   "description": "Light curves",
+   "type": "S",
+   "dataURI": "mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+   "productType": "SCIENCE",
+   "productGroupDescription": "Minimum Recommended Products",
+   "productSubGroupDescription": "LC",
+   "productDocumentationURL": "--",
+   "project": "SPOC",
+   "prvversion": "spoc-6.1.1-20261030",
+   "proposal_id": "N/A",
+   "productFilename": "tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+   "size": "2001600",
+   "parent_obsid": "455173195",
+   "dataRights": "PUBLIC",
+   "calib_level": "3",
+   "filters": "TESS"
+  },
+  {
+   "obsID": "455173195",
+   "obs_collection": "TESS",
+   "dataproduct_type": "timeseries",
+   "obs_id": "tess2026250081459-s0108-0000000317134140-0310-s",
+   "description": "Target pixel files",
+   "type": "S",
+   "dataURI": "mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_tp.fits",
+   "productType": "SCIENCE",
+   "productGroupDescription": "Minimum Recommended Products",
+   "productSubGroupDescription": "TP",
+   "productDocumentationURL": "--",
+   "project": "SPOC",
+   "prvversion": "spoc-6.1.1-20261030",
+   "proposal_id": "N/A",
+   "productFilename": "tess2026250081459-s0108-0000000317134140-0310-s_tp.fits",
+   "size": "48268800",
+   "parent_obsid": "455173195",
+   "dataRights": "PUBLIC",
+   "calib_level": "2",
+   "filters": "TESS"
+  }
+ ],
+ "response_sha256": "5cc8e765853ea7af4f84334e787bb42204208b59c292112e93301510aaff4937",
+ "candidates": [
+  "tess2026250081459-s0108-0000000317134140-0310-s_lc.fits"
+ ],
+ "status": "SELECTED",
+ "selected": {
+  "filename": "tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+  "dataURI": "mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+  "obsID": "455173195",
+  "obs_id": "tess2026250081459-s0108-0000000317134140-0310-s",
+  "pipeline_field": "0310",
+  "size": "2001600",
+  "t_obs_release": [
+   "61355.0"
+  ]
+ },
+ "rule": "first check after a SPOC 2-min s_lc.fits of this TIC and sector is listed at MAST; exactly one candidate required"
+}

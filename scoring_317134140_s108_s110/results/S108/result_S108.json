@@ -1,0 +1,72 @@
+{
+ "version": "1.3",
+ "script_sha256": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+ "lc_file": "tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+ "lc_sha256": "cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0",
+ "helper_sha256": {
+  "tsearch": "3b691ffc47054cb898b199fa19f0e952a04c3574833de0154eb03ae9bbe54b05",
+  "search_pipeline": "34e56bb1016ac31c45c73aed4115301cdcbab46977363dbb57ab060178ef2415"
+ },
+ "software": {
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "astropy": "8.0.2",
+  "wotan": "2.0"
+ },
+ "spoc_pipeline_field": "0310",
+ "config_sha256": "b4f091bc63a595a2c78c3ddb9645ba846ba21e73d75aca55ca2db7e1acffb42b",
+ "sector": 108,
+ "provenance": {
+  "ORIGIN": "NASA/Ames",
+  "TICID": "317134140",
+  "SECTOR": "108",
+  "PROCVER": "spoc-6.1.1-20261030",
+  "DATA_REL": "146",
+  "DATE": "2026-11-07",
+  "CAMERA": "3",
+  "CCD": "4",
+  "TIMESYS": "TDB",
+  "TIMEREF": "SOLARSYSTEM",
+  "TIMEUNIT": "d",
+  "BJDREFI": "2457000",
+  "BJDREFF": "0.0"
+ },
+ "n_cadences": 11862,
+ "toi_mask_removed": 363,
+ "depth_ppm": 206.33598689023813,
+ "sigma_ppm": 54.98724022369697,
+ "n_eligible": 28,
+ "n_predicted": 48,
+ "n_null": 200,
+ "clause_a": "A_CONSISTENT",
+ "clause_b": "B_NOT_TOP3",
+ "top3": [
+  {
+   "period": 1.1467482565083589,
+   "t0": 4294.24740476184,
+   "duration_h": 1.0,
+   "n_transits": 13,
+   "sde": 7.071402562443457,
+   "depth_ppm": 451.0049228755831
+  },
+  {
+   "period": 8.022169864227612,
+   "t0": 4301.12240476184,
+   "duration_h": 1.0,
+   "n_transits": 3,
+   "sde": 6.247188402010623,
+   "depth_ppm": 914.2455391711887
+  },
+  {
+   "period": 0.9302391435162888,
+   "t0": 4294.25990476184,
+   "duration_h": 1.0,
+   "n_transits": 19,
+   "sde": 5.697226657153764,
+   "depth_ppm": 326.6315648333144
+  }
+ ],
+ "alias_hits": [],
+ "outcome": "PARTIAL"
+}

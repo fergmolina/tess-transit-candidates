@@ -1,0 +1,57 @@
+PRE-PUBLICATION CHECK: release v1.20 (first test result: TIC 317134140, Sector 108, outcome PARTIAL), assembled locally, NOT yet
+committed or published.
+
+The v1.18 lock (public_release/scoring_317134140_s108_s110/README.md) defines the test. On 2026-11-13 the Sector 108 SPOC 2-min
+light curve was listed at MAST. A SELECTED record was made, the author gave the go, the file was downloaded once and the locked
+scorer was run once. Check the conduct of that run and the exact bytes of the release before the author publishes them.
+
+MATERIALS (workspace ~/Desktop/NASA)
+- logs/DECISIONS.md items 223-228          local log (public log ends at item 227)
+- results/selection_records/317134140/     all selection records (S108: six; S109: five)
+- results/test_317134140/S108/             acquisition record, result, RESULT_S108.md, lc/ (the file of record; see RULES)
+- logs/score_317134140_S108_20261113.log, logs/test_317134140_lock_20261113_precheck.log
+- configs/conformance/LOCK_2026-10-24_317134140.json, 317134140_spoc_S108.json; scripts/prereg_spoc_317134140.py,
+  spoc_selection.py, validate_nonclock_inputs.py (all published in v1.18)
+- scripts/assemble_v1_20.py                the assembler (read it; do NOT run it: it refuses to run twice)
+- public_release/ working tree             HEAD 17a66414 (tag v1.19.2); `git status` and `git diff` show everything
+- public_release/MANIFEST_v1.20.md         expected SHA-256 6dccf567dd2e5a790935d84de41c0469a70084f7b634aa26883967fb24a00a78
+- zenodo_upload/RELEASE_NOTES_v1.20.md     expected SHA-256 2ef8377f23d74c330c35e100d602a8534df33a93491a3aa5d5255b97f78e5795
+
+CHECKS
+1. Conduct against the lock. Was the selection, acquisition and scoring sequence what the v1.18 lock prescribes? In particular:
+   the SELECTED record precedes the download and the cutoff; exactly one candidate; the downloaded file is the selected one (name,
+   size, SHA-256); config, scorer, helper, selection-tool and validator hashes equal the locked ones; no --insample-check; stages
+   pre, selection and result BOUND. Re-run the validator yourself (it hashes files; it does not analyse photometry).
+   Compare record times, file times and log items 224-226 and say what can and cannot be established about the order of events,
+   including whether the run plan (item 225) was written before the download.
+2. Monitoring. Are all intervals between consecutive S108 and S109 checks after 2026-11-01 under seven days? The first SELECTED
+   check was triggered by a daily metadata monitor's report rather than the weekly schedule: any problem under the lock? Is the
+   release-of-record limit ("an earlier, replaced delivery cannot be excluded"; header DATE 2026-11-07, previous check NONE on
+   2026-11-12) stated adequately?
+3. Outcome. From result_S108.json alone, re-derive clause A, clause B and the ordered outcome by the locked rules. Check every
+   number in RESULT_S108.md, the README block, the scoring README note, the registration note and the release notes against the
+   result, the records and calibration_diagnostics_v1.3.md.
+4. Interpretation. Is anything overstated or understated? Check in particular: "not a confirmation"; "agrees with [the advance
+   expectation] and does not test it"; the calibration frequencies (the registration's 2026-10-25 note requires reporting them
+   at all three depths) and whether presenting 2 % beside 35-58 % invites a likelihood ratio despite the disclaimer; the remark
+   that the first BLS peak is 0.26 % from 2P; "one sector of three is in, and it is neither a PASS nor a FAIL"; the undisclosed
+   reason for 20 ineligible events.
+5. Data statements. Are they scoped correctly and consistent with the 2026-10-20 erratum and correction C2 of v1.19.2?
+6. Bytes. All manifest hashes match. Changed set is exactly 6 modified + 10 new files + the manifest; nothing deleted. Every
+   prediction CSV, lock, config, scorer and validator is byte-identical to tag v1.19.2. The v1.19.2 blobs of monitoring/README.md,
+   scoring_317134140_s108_s110/README.md, the registration and DECISIONS.md are byte prefixes of the new files; README.md is
+   recovered by removing the new block; CITATION.cff differs only in version and date-released. The local registration
+   (results/vet/317134140/PREREGISTRATION.md) equals the public one. Was appending a dated result note to the registration proper?
+7. Log discipline. Items 217-227 in the public log: no address, recipient name, session link or temporary path. Item 221 says
+   "nothing was learned" and item 222 supersedes it; item 227 corrects wording in item 226. Any other inaccuracy?
+8. Re-run question. You are asked NOT to re-run the scorer on the S108 file (see RULES). Say whether you recommend an independent
+   re-run as a later, declared step, and with what wording.
+9. Verdict, one of: "publish these bytes as v1.20" / "fix first" (list exact edits; each fix means a rebuild and new hashes).
+   CITATION date-released is 2026-11-13: state that your verdict assumes publication on that UTC date, or say what to do otherwise.
+
+RULES
+- The S108 FITS in results/test_317134140/S108/lc/: you may hash it and pass it to validate_nonclock_inputs.py. Do NOT open it
+  with anything else, do not run the scorer on it, do not plot, fold or search it. Do not download any Sector 108, 109 or 110
+  data of TIC 317134140, or any test-sector data of any other frozen star.
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Write the report to results/REVIEW_v1_20.md.

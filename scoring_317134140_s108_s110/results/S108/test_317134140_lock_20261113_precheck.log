@@ -1,0 +1,197 @@
+PASS truth table A_CONSISTENT + B_NOT_TOP3 -> PARTIAL
+PASS truth table A_CONSISTENT + B_TOP3 -> PASS
+PASS truth table A_HIGH + B_NOT_TOP3 -> INCONCLUSIVE
+PASS truth table A_HIGH + B_TOP3 -> PARTIAL
+PASS truth table A_INCONCLUSIVE + B_NOT_TOP3 -> INCONCLUSIVE
+PASS truth table A_INCONCLUSIVE + B_TOP3 -> PARTIAL
+PASS truth table A_LOW + B_NOT_TOP3 -> FAIL
+PASS truth table A_LOW + B_TOP3 -> FAIL
+PASS truth table INSUFFICIENT + B_NOT_TOP3 -> INSUFFICIENT
+PASS truth table INSUFFICIENT + B_TOP3 -> INSUFFICIENT
+PASS 317134140_spoc_S108.json config and prediction CSV match the lock (48 predicted events)
+PASS 317134140_spoc_S108.json --stage pre binds
+PASS 317134140_spoc_S108.json --stage pre refuses an edited config copy
+PASS 317134140_spoc_S108.json --stage pre refuses a lock whose prereg_spoc_317134140 hash differs
+PASS 317134140_spoc_S108.json --stage pre refuses a lock whose spoc_selection hash differs
+PASS 317134140_spoc_S108.json injected 185 ppm: PASS / A_CONSISTENT (344 +- 62 ppm, TOI mask 738)
+PASS 317134140_spoc_S108.json null: FAIL
+PASS 317134140_spoc_S108.json TIMEUNIT s: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/s/24
+PASS 317134140_spoc_S108.json TIMEREF LOCAL: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/LOCAL/d/2457000/
+PASS 317134140_spoc_S108.json BJDREFF 0.5: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S108.json BJDREFI 2400000: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S108.json TIMESYS UTC: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = UTC/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S108.json TIMEUNIT missing: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/None
+PASS 317134140_spoc_S108.json TICID missing: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S108.json TICID malformed: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S108.json ORIGIN MIT/QLP: INVALID_INPUT (ORIGIN 'MIT/QLP' is not 'NASA/Ames')
+PASS 317134140_spoc_S108.json missing PDCSAP_FLUX_ERR: INVALID_INPUT (missing columns ['PDCSAP_FLUX_ERR'])
+PASS 317134140_spoc_S108.json header sector differs: INVALID_INPUT (header TICID/SECTOR 317134140/107 != 317134140/108)
+PASS 317134140_spoc_S108.json file sector differs: INVALID_INPUT (file sector 107 != config sector 108)
+PASS 317134140_spoc_S108.json unsorted times: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S108.json duplicate time: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S108.json all cadences flagged: INSUFFICIENT
+PASS 317134140_spoc_S108.json zero errors: INSUFFICIENT
+PASS 317134140_spoc_S108.json constant flux (sigma 0): INSUFFICIENT
+PASS 317134140_spoc_S108.json two days of data: INSUFFICIENT
+PASS 317134140_spoc_S108.json unreadable file: INVALID_INPUT (unreadable FITS (OSError))
+PASS 317134140_spoc_S108.json another TIC: INVALID_INPUT (file name is not a SPOC 2-min light curve of 
+PASS 317134140_spoc_S108.json changed scorer hash in config
+PASS 317134140_spoc_S108.json changed prediction hash in config
+PASS 317134140_spoc_S108.json --insample-check refuses a test sector
+PASS 317134140_spoc_S108.json refuses to overwrite an existing output
+PASS 317134140_spoc_S108.json selection stage binds a single-candidate MAST record
+PASS 317134140_spoc_S108.json result stage binds selection + acquisition + light curve + output
+PASS 317134140_spoc_S108.json refuses an AMBIGUOUS selection (two candidates)
+PASS 317134140_spoc_S108.json refuses a NONE selection
+PASS 317134140_spoc_S108.json refuses a candidate of another sector
+PASS 317134140_spoc_S108.json refuses a non-MAST (test-response) selection
+PASS 317134140_spoc_S108.json refuses a selection older than the lock
+PASS 317134140_spoc_S108.json refuses a substituted file (pipeline 9999) although it scores PASS
+PASS 317134140_spoc_S108.json refuses altered bytes under the selected name
+PASS 317134140_spoc_S108.json refuses an acquisition of another selection record
+PASS 317134140_spoc_S108.json refuses a non-download acquisition
+PASS 317134140_spoc_S108.json refuses an acquisition older than the selection
+PASS 317134140_spoc_S108.json refuses a missing acquisition record
+PASS 317134140_spoc_S108.json refuses a missing selection record
+PASS 317134140_spoc_S108.json refuses deleted product rows with the old response hash
+PASS 317134140_spoc_S108.json refuses deleted product rows with a recomputed hash but the old SELECTED summary
+PASS 317134140_spoc_S108.json refuses two eligible rows with a correct hash but a one-candidate SELECTED summary
+PASS 317134140_spoc_S108.json refuses a selected product without a dataURI
+PASS 317134140_spoc_S108.json absent obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json null obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json empty obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json space obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json padded obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json none_str obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S108.json refuses a malformed query_utc
+PASS 317134140_spoc_S108.json binds a SELECTED record made exactly at the cutoff 2027-02-01T20:30:00Z
+PASS 317134140_spoc_S108.json refuses a first SELECTED record made after the cutoff (UNAVAILABLE)
+PASS 317134140_spoc_S108.json refuses a malformed download_utc
+PASS 317134140_spoc_S108.json binds a timely selection acquired and scored long after the cutoff
+PASS 317134140_spoc_S108.json refuses the output under another config
+PASS 317134140_spoc_S108.json refuses output made by other code
+PASS 317134140_spoc_S109.json config and prediction CSV match the lock (47 predicted events)
+PASS 317134140_spoc_S109.json --stage pre binds
+PASS 317134140_spoc_S109.json --stage pre refuses an edited config copy
+PASS 317134140_spoc_S109.json --stage pre refuses a lock whose prereg_spoc_317134140 hash differs
+PASS 317134140_spoc_S109.json --stage pre refuses a lock whose spoc_selection hash differs
+PASS 317134140_spoc_S109.json injected 185 ppm: PARTIAL / A_CONSISTENT (140 +- 53 ppm, TOI mask 728)
+PASS 317134140_spoc_S109.json null: FAIL
+PASS 317134140_spoc_S109.json TIMEUNIT s: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/s/24
+PASS 317134140_spoc_S109.json TIMEREF LOCAL: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/LOCAL/d/2457000/
+PASS 317134140_spoc_S109.json BJDREFF 0.5: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S109.json BJDREFI 2400000: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S109.json TIMESYS UTC: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = UTC/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S109.json TIMEUNIT missing: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/None
+PASS 317134140_spoc_S109.json TICID missing: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S109.json TICID malformed: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S109.json ORIGIN MIT/QLP: INVALID_INPUT (ORIGIN 'MIT/QLP' is not 'NASA/Ames')
+PASS 317134140_spoc_S109.json missing PDCSAP_FLUX_ERR: INVALID_INPUT (missing columns ['PDCSAP_FLUX_ERR'])
+PASS 317134140_spoc_S109.json header sector differs: INVALID_INPUT (header TICID/SECTOR 317134140/108 != 317134140/109)
+PASS 317134140_spoc_S109.json file sector differs: INVALID_INPUT (file sector 108 != config sector 109)
+PASS 317134140_spoc_S109.json unsorted times: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S109.json duplicate time: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S109.json all cadences flagged: INSUFFICIENT
+PASS 317134140_spoc_S109.json zero errors: INSUFFICIENT
+PASS 317134140_spoc_S109.json constant flux (sigma 0): INSUFFICIENT
+PASS 317134140_spoc_S109.json two days of data: INSUFFICIENT
+PASS 317134140_spoc_S109.json unreadable file: INVALID_INPUT (unreadable FITS (OSError))
+PASS 317134140_spoc_S109.json another TIC: INVALID_INPUT (file name is not a SPOC 2-min light curve of 
+PASS 317134140_spoc_S109.json changed scorer hash in config
+PASS 317134140_spoc_S109.json changed prediction hash in config
+PASS 317134140_spoc_S109.json --insample-check refuses a test sector
+PASS 317134140_spoc_S109.json refuses to overwrite an existing output
+PASS 317134140_spoc_S109.json selection stage binds a single-candidate MAST record
+PASS 317134140_spoc_S109.json result stage binds selection + acquisition + light curve + output
+PASS 317134140_spoc_S109.json refuses an AMBIGUOUS selection (two candidates)
+PASS 317134140_spoc_S109.json refuses a NONE selection
+PASS 317134140_spoc_S109.json refuses a candidate of another sector
+PASS 317134140_spoc_S109.json refuses a non-MAST (test-response) selection
+PASS 317134140_spoc_S109.json refuses a selection older than the lock
+PASS 317134140_spoc_S109.json refuses a substituted file (pipeline 9999) although it scores PARTIAL
+PASS 317134140_spoc_S109.json refuses altered bytes under the selected name
+PASS 317134140_spoc_S109.json refuses an acquisition of another selection record
+PASS 317134140_spoc_S109.json refuses a non-download acquisition
+PASS 317134140_spoc_S109.json refuses an acquisition older than the selection
+PASS 317134140_spoc_S109.json refuses a missing acquisition record
+PASS 317134140_spoc_S109.json refuses a missing selection record
+PASS 317134140_spoc_S109.json refuses deleted product rows with the old response hash
+PASS 317134140_spoc_S109.json refuses deleted product rows with a recomputed hash but the old SELECTED summary
+PASS 317134140_spoc_S109.json refuses two eligible rows with a correct hash but a one-candidate SELECTED summary
+PASS 317134140_spoc_S109.json refuses a selected product without a dataURI
+PASS 317134140_spoc_S109.json absent obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json null obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json empty obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json space obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json padded obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json none_str obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S109.json refuses a malformed query_utc
+PASS 317134140_spoc_S109.json binds a SELECTED record made exactly at the cutoff 2027-02-28T18:55:00Z
+PASS 317134140_spoc_S109.json refuses a first SELECTED record made after the cutoff (UNAVAILABLE)
+PASS 317134140_spoc_S109.json refuses a malformed download_utc
+PASS 317134140_spoc_S109.json binds a timely selection acquired and scored long after the cutoff
+PASS 317134140_spoc_S109.json refuses the output under another config
+PASS 317134140_spoc_S109.json refuses output made by other code
+PASS 317134140_spoc_S110.json config and prediction CSV match the lock (44 predicted events)
+PASS 317134140_spoc_S110.json --stage pre binds
+PASS 317134140_spoc_S110.json --stage pre refuses an edited config copy
+PASS 317134140_spoc_S110.json --stage pre refuses a lock whose prereg_spoc_317134140 hash differs
+PASS 317134140_spoc_S110.json --stage pre refuses a lock whose spoc_selection hash differs
+PASS 317134140_spoc_S110.json injected 185 ppm: PASS / A_CONSISTENT (223 +- 53 ppm, TOI mask 546)
+PASS 317134140_spoc_S110.json null: FAIL
+PASS 317134140_spoc_S110.json TIMEUNIT s: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/s/24
+PASS 317134140_spoc_S110.json TIMEREF LOCAL: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/LOCAL/d/2457000/
+PASS 317134140_spoc_S110.json BJDREFF 0.5: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S110.json BJDREFI 2400000: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S110.json TIMESYS UTC: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = UTC/SOLARSYSTEM/d/24
+PASS 317134140_spoc_S110.json TIMEUNIT missing: INVALID_INPUT (time header TIMESYS/TIMEREF/TIMEUNIT/BJDREFI/BJDREFF = TDB/SOLARSYSTEM/None
+PASS 317134140_spoc_S110.json TICID missing: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S110.json TICID malformed: INVALID_INPUT (header TICID/SECTOR missing or malformed)
+PASS 317134140_spoc_S110.json ORIGIN MIT/QLP: INVALID_INPUT (ORIGIN 'MIT/QLP' is not 'NASA/Ames')
+PASS 317134140_spoc_S110.json missing PDCSAP_FLUX_ERR: INVALID_INPUT (missing columns ['PDCSAP_FLUX_ERR'])
+PASS 317134140_spoc_S110.json header sector differs: INVALID_INPUT (header TICID/SECTOR 317134140/109 != 317134140/110)
+PASS 317134140_spoc_S110.json file sector differs: INVALID_INPUT (file sector 109 != config sector 110)
+PASS 317134140_spoc_S110.json unsorted times: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S110.json duplicate time: INVALID_INPUT (cadence times are not strictly increasing)
+PASS 317134140_spoc_S110.json all cadences flagged: INSUFFICIENT
+PASS 317134140_spoc_S110.json zero errors: INSUFFICIENT
+PASS 317134140_spoc_S110.json constant flux (sigma 0): INSUFFICIENT
+PASS 317134140_spoc_S110.json two days of data: INSUFFICIENT
+PASS 317134140_spoc_S110.json unreadable file: INVALID_INPUT (unreadable FITS (OSError))
+PASS 317134140_spoc_S110.json another TIC: INVALID_INPUT (file name is not a SPOC 2-min light curve of 
+PASS 317134140_spoc_S110.json changed scorer hash in config
+PASS 317134140_spoc_S110.json changed prediction hash in config
+PASS 317134140_spoc_S110.json --insample-check refuses a test sector
+PASS 317134140_spoc_S110.json refuses to overwrite an existing output
+PASS 317134140_spoc_S110.json selection stage binds a single-candidate MAST record
+PASS 317134140_spoc_S110.json result stage binds selection + acquisition + light curve + output
+PASS 317134140_spoc_S110.json refuses an AMBIGUOUS selection (two candidates)
+PASS 317134140_spoc_S110.json refuses a NONE selection
+PASS 317134140_spoc_S110.json refuses a candidate of another sector
+PASS 317134140_spoc_S110.json refuses a non-MAST (test-response) selection
+PASS 317134140_spoc_S110.json refuses a selection older than the lock
+PASS 317134140_spoc_S110.json refuses a substituted file (pipeline 9999) although it scores PASS
+PASS 317134140_spoc_S110.json refuses altered bytes under the selected name
+PASS 317134140_spoc_S110.json refuses an acquisition of another selection record
+PASS 317134140_spoc_S110.json refuses a non-download acquisition
+PASS 317134140_spoc_S110.json refuses an acquisition older than the selection
+PASS 317134140_spoc_S110.json refuses a missing acquisition record
+PASS 317134140_spoc_S110.json refuses a missing selection record
+PASS 317134140_spoc_S110.json refuses deleted product rows with the old response hash
+PASS 317134140_spoc_S110.json refuses deleted product rows with a recomputed hash but the old SELECTED summary
+PASS 317134140_spoc_S110.json refuses two eligible rows with a correct hash but a one-candidate SELECTED summary
+PASS 317134140_spoc_S110.json refuses a selected product without a dataURI
+PASS 317134140_spoc_S110.json absent obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json null obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json empty obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json space obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json padded obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json none_str obs_id on both rows (hash and summary regenerated): derive -> INCOMPLETE, refused
+PASS 317134140_spoc_S110.json refuses a malformed query_utc
+PASS 317134140_spoc_S110.json binds a SELECTED record made exactly at the cutoff 2027-03-26T04:15:00Z
+PASS 317134140_spoc_S110.json refuses a first SELECTED record made after the cutoff (UNAVAILABLE)
+PASS 317134140_spoc_S110.json refuses a malformed download_utc
+PASS 317134140_spoc_S110.json binds a timely selection acquired and scored long after the cutoff
+PASS 317134140_spoc_S110.json refuses the output under another config
+PASS 317134140_spoc_S110.json refuses output made by other code
+196/196 passed

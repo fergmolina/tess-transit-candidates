@@ -51,3 +51,23 @@ or analysed" above.
 - Checks for Sector 110 start at 2026-11-26 04:15 UTC, the sector end in the lock.
 
 Log entries: DECISIONS 211-216.
+
+
+---
+
+## New records, 2026-11-13 (v1.20)
+
+- `selection_records_317134140/S108/sel_20261112T045349Z.json` and `S109/sel_20261112T045349Z.json`: checks at 2026-11-12 04:53:49
+  and 04:53:50 UTC. Both say `NONE`.
+- `selection_records_317134140/S108/sel_20261113T195427Z.json`: check at 2026-11-13 19:54:28 UTC. It says `SELECTED`, with exactly
+  one candidate. This is the first `SELECTED` record for Sector 108 and it ends the Sector 108 checks. It was made after a daily
+  metadata monitor reported that the Sector 108 light-curve manifest had appeared. The result is in
+  `../scoring_317134140_s108_s110/results/S108/`.
+- `selection_records_317134140/S109/sel_20261113T195427Z.json`: check at 2026-11-13 19:54:46 UTC. It says `NONE`. The next Sector 109
+  check is due no later than 2026-11-20 19:54 UTC.
+- `orbit_table/TESS_orbit_times_lastmod_2026-11-11.csv`: the mission's orbit table as re-issued on 2026-11-11. Compared with the
+  2026-11-07 copy only the comment line "# Created ..." changed; every data row is identical.
+- Intervals between consecutive checks since the last note: Sector 108, 2 d 0 h 49 min and 1 d 15 h 1 min; Sector 109, 2 d 0 h 49 min
+  and 1 d 15 h 1 min. All are under seven days.
+
+Log entries: DECISIONS 217-229.

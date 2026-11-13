@@ -59,3 +59,18 @@ version, the v1.0 results were logged before any change, and a byte-exact copy o
 Review chain: `reviews_317134140/`. The first review covered an earlier combined draft; its findings were resolved over three
 re-checks, the last of which recommends "publish as v1.18". Superseded drafts were never published and are not included (DECISIONS
 176-182). The S111 tests of TIC 80387959 and 120517801 are not in this release (v1.19).
+
+
+---
+
+## Results
+
+**Sector 108, 2026-11-13 (v1.20).** Sector 108 outcome: **PARTIAL**. Clause A `A_CONSISTENT` (depth 206.3 ppm, random-phase sigma 55.0 ppm, 28 of 48 predicted events eligible); clause B `B_NOT_TOP3` (top three blind BLS peaks 1.14675, 8.02217 and 0.93024 d). Only PASS meets both frozen clauses; PARTIAL is not a confirmation.
+- Record: `results/S108/RESULT_S108.md`, with the bound result, the acquisition record, the scoring log and the checks made before
+  the download. The selection records are in `../monitoring/selection_records_317134140/S108/`.
+- File of record: `tess2026250081459-s0108-0000000317134140-0310-s_lc.fits` (SHA-256 `cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0`), first recorded as
+  `SELECTED` at 2026-11-13 19:54:28 UTC, before the cutoff. One acquisition and one scoring run (author-reported; the retained
+  records are consistent with that account).
+- Review: `../reviews_v1_20/`. It checked the recorded outcome, the bindings and the release bytes, not the photometry analysis.
+- Sectors 109 and 110 are not scored yet. Sector 109 checks continue (last `NONE` at 2026-11-13 19:54:46 UTC); Sector 110 checks
+  start at 2026-11-26 04:15 UTC.

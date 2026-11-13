@@ -1,0 +1,29 @@
+acquire start 2026-11-13T19:58:41Z
+Downloading URL https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits to results/test_317134140/S108/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits ... [Done]
+acquired results/test_317134140/S108/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits
+acquire rc 0
+total 4224
+-rw-r--r--@ 1 fernando  staff  2001600 Nov 13 14:58 tess2026250081459-s0108-0000000317134140-0310-s_lc.fits
+cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0  results/test_317134140/S108/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits
+ff320218910b7e145ed956b8a263211ee5b88dad7c95d1a4bea4c9e53ec17d56  results/test_317134140/S108/acquisition_S108.json
+{
+ "record": "spoc_acquisition",
+ "version": "1.0",
+ "selection_file": "sel_20261113T195427Z.json",
+ "selection_sha256": "162f4d67a8ba2ebbfb0ddf5ef913434a27ceee1b92a7711b8d6c3be19cfbf9a1",
+ "tic": 317134140,
+ "sector": 108,
+ "mode": "mast_download",
+ "data_uri": "mast:TESS/product/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+ "filename": "tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+ "file_sha256": "cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0",
+ "size": 2001600,
+ "download_utc": "2026-11-13T19:58:47.778676Z"
+}
+score start 2026-11-13T19:58:52Z
+PARTIAL
+score rc 0
+bind start 2026-11-13T19:58:54Z
+BOUND: stage result, 317134140_spoc_S108.json (lock 58df364513d9d2bd)
+bind rc 0
+bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54  results/test_317134140/S108/result_S108.json

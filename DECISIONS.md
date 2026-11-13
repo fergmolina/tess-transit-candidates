@@ -2233,3 +2233,167 @@
     - Not changed: any lock, config, evaluator, registration, prediction CSV, forecast script or output, or earlier selection record.
     - The public log now carries items 211-216, with the name-masking disclosure (211, 215) and the time-stamp corrections (212, 215).
     - The manifest and release-note hashes are logged after assembly, in the next item, so they are not in the v1.19.2 public log.
+217. 2026-11-10 04:09 UTC — v1.19.2 ASSEMBLED LOCALLY by scripts/assemble_v1_19_2.py (nothing committed, pushed or uploaded). It awaits the
+    author's go for these exact bytes.
+    - Content: 6 changed files, 6 new files and the manifest, as planned in item 216. public_release was clean at a8493bfd before.
+    - Asserted by the assembler: pinned source hashes; all nine quotation blocks of the correction file are verbatim in the review;
+      the three annotated files keep their v1.19.1 text as a byte prefix; removing the new README block gives back the v1.19.1
+      README; the v1.19.1 public log is a byte prefix and the new one ends at item 216; the changed and new file sets are exactly
+      the expected ones and nothing is deleted; all prediction CSVs unchanged; no address, session link, job path, recipient name
+      or temporary path in any changed file (for the log: in the text after the v1.15 prefix).
+    - Self-check: 12 of 12 manifest hashes match; every tracked change is a pure addition except the CITATION version line.
+    - Anchors: MANIFEST_v1.19.2.md 22291c36b2b502c573512e712e774ca35050af69910b7a8dd587e5bf325eef48;
+      zenodo_upload/RELEASE_NOTES_v1.19.2.md 6177fbf5b1abe26d06d79a2418166bec61961a6d5ed30f9ed2430371c21bd15f.
+    - Not yet re-checked by the external auditor. A focused re-check prompt is ready: results/PROMPT_recheck_v1_19_2.txt
+      (SHA-256 cd2ffcc31e63e8c5...); report expected at results/RECHECK_v1_19_2.md.
+    - CITATION carries date-released 2026-11-10. If publication moves to another UTC date the release must be rebuilt.
+218. 2026-11-10 04:14 UTC — Author's decision (question tool): the external auditor re-checks the assembled v1.19.2 bytes before publication
+    (prompt results/PROMPT_recheck_v1_19_2.txt). Nothing is published until its verdict and the author's go.
+219. 2026-11-10 04:29 UTC — Auditor's pre-publication re-check of the assembled v1.19.2 received: results/RECHECK_v1_19_2.md (SHA-256
+    50f1cd01026ad050..., file time 2026-11-10 04:27:52 UTC). Verdict: "publish these bytes as v1.19.2." No blocking or material
+    finding; no edit or rebuild required. It verified both anchors (manifest 22291c36..., release notes 6177fbf5...), 12 of 12
+    manifest hashes, the exact changed set, append-only preservation, all quotation blocks verbatim, and F1-F7 resolved.
+    - Limits it states: file times show consistency, not proof, of clock-read stamps; the QLP status record holds only the status
+      line and server date, not the request; the verdict assumes publication on 2026-11-10 UTC and these exact bytes.
+    - Publication awaits the author's go.
+220. 2026-11-10 10:21 UTC — v1.19.2 PUBLISHED with the author's go for the re-checked bytes (question tool, after the auditor's verdict of item 219).
+    - Verified immediately before the commit: UTC date 2026-11-10; MANIFEST_v1.19.2.md 22291c36... and RELEASE_NOTES_v1.19.2.md
+      6177fbf5... match the re-checked anchors; 12 of 12 manifest hashes; the working tree held exactly those 12 files and the
+      manifest; local HEAD and origin/main at a8493bfd.
+    - Published: commit 17a66414f233f8cc7326197d50db00713e495122 and annotated tag v1.19.2 (both 2026-11-10T10:20:49Z;
+      Co-Authored-By trailer, no session link); GitHub release 2026-11-10T10:20:52Z; Zenodo 10.5281/zenodo.24104602 (record
+      24104602, created 2026-11-10T10:20:59Z, version v1.19.2; one ZIP, 10,759,732 bytes, md5 33df2c68b72c0d5b2bf9e4ebcf9c8fd7).
+      Times are from git, the GitHub API and the Zenodo API.
+    - public_release is clean at 17a66414. The public log ends at item 216; items 217-220 go into the next public log.
+    - Not checked after publication: the Zenodo ZIP was not downloaded and compared with the tag.
+    - Next selection checks for TIC 317134140 (S108, S109): no later than 2026-11-17T04:04:57Z.
+221. 2026-11-11 10:57 UTC — Author reports no reply yet to the 2026-11-01 DDT follow-up (item 205) and asks whether to write again. Advice
+    given: not yet; keep to item 205 (one short nudge if there is still nothing by about 16 Nov). No test depends on the reply.
+    I tried to read the S112/S113 2-min target lists and the mission's DDT page (metadata) at 2026-11-11 10:57 UTC; all three
+    requests to tess.mit.edu failed with a TLS certificate error (curl 60, system curl), so nothing was learned. Not bypassed.
+222. 2026-11-11 11:00 UTC — Follow-up to item 221. The author reports the tess.mit.edu pages load in a browser, so the certificate error
+    was on my side. On retry at 2026-11-11 10:59:52 UTC the system curl verified the certificate and the reads succeeded
+    (metadata only):
+    - S112 and S113 2-min target lists: HTTP 404 (not posted yet).
+    - S111 2-min target list: unchanged (SHA-256 a43c99620d421ec3..., as in item 201); TIC 80387959 still listed (camera 4, CCD 3).
+    - DDT page (tess.mit.edu/science/ddt/, copy read SHA-256 7524101b916e30ee...): highest row is still DDT 102; no row names the
+      author or TIC 80387959. DDT_list.html still ends at DDT 099.
+    - Observed with openssl: the server sends an intermediate certificate ("InCommon RSA Server CA 2") that is not the issuer of
+      its own certificate ("InCommon Intermediate CA - DVG2C"). Strict clients fail on this; that fits the known failure of the
+      .venv Python on this host. Why the system curl failed three times and then succeeded two minutes later is not established.
+    Nothing new on the DDT. The advice of item 221 stands.
+223. 2026-11-12 04:54 UTC — Monitoring, metadata only (author asked for news).
+    - TIC 317134140 selection checks: S108 NONE at 2026-11-12T04:53:49Z, S109 NONE at 2026-11-12T04:53:50Z (response SHA
+      5c44c2c8...; records sel_20261112T045349Z.json). Next due no later than 2026-11-19T04:53:49Z.
+    - QLP s0106 and s0107 directories: HTTP 404 at about 2026-11-12 04:53 UTC (status requests; the responses were not saved).
+    - S112 and S113 2-min target lists: HTTP 404. DDT page unchanged (copy SHA-256 7524101b916e30ee..., same as item 222): highest
+      row DDT 102, nothing naming the author or TIC 80387959.
+    - Orbit table: Last-Modified is now 2026-11-11 05:06:17 GMT. Compared with the 2026-11-07 snapshot, only the comment line
+      changed ("# Created 2026-11-11"); every data row is identical, so the S111 end stays 2026-12-22 08:30 UTC. Copy saved:
+      results/orbit_table_snapshots/TESS_orbit_times_lastmod_2026-11-11.csv (SHA-256 ba7e0e302c066215...).
+    - No DDT reply reported by the author since item 221.
+224. 2026-11-13 19:55 UTC — TIC 317134140, Sector 108: first SELECTED record (metadata only; no photometry downloaded or opened).
+    - Trigger: the author pasted the monitoring report of 2026-11-13 13:33:23 UTC (S108 SPOC light-curve manifest now exists and
+      lists 0000000317134140).
+    - Selection check at 2026-11-13T19:54:28.012085Z: status SELECTED, exactly one candidate,
+      tess2026250081459-s0108-0000000317134140-0310-s_lc.fits (obsID 455173195, pipeline field 0310, prvversion
+      spoc-6.1.1-20261030, size 2,001,600 bytes, t_obs_release 61355.0). Response SHA-256 5cc8e765853ea7af...; record
+      results/selection_records/317134140/S108/sel_20261113T195427Z.json (file SHA-256 162f4d67a8ba2ebb...).
+      This is the release of record under the v1.18 lock. It was made before the S108 cutoff (2027-02-01T20:30Z).
+    - Previous S108 record: NONE at 2026-11-12T04:53:49Z, so the product was listed between those two checks. An earlier,
+      replaced delivery cannot be excluded (as the lock states).
+    - Validation with the published lock (SHA-256 58df364513d9d2bd..., identical to the public copy): stage pre BOUND, stage
+      selection BOUND, config 317134140_spoc_S108.json (b4f091bc63a595a2...). Scorer SHA f3f55c0d74733f8a... as locked.
+    - Cross-check: the public manifest tesscurl_sector_108_lc.sh (HTTP 200, 10,799 lines) names the same file once.
+    - S109: NONE at 2026-11-13T19:54:46Z (response SHA 5c44c2c8...). Next S109 check due no later than 2026-11-20T19:54:46Z.
+      S108 monitoring ends with this record.
+    - Not done: acquisition and scoring. Both need the author's go (asked now).
+225. 2026-11-13 19:58 UTC — TIC 317134140 Sector 108: author's go, and run plan declared BEFORE the file is downloaded.
+    - The author answered "Go: acquire and score" (question tool). My first acquire command was then rejected at the permission
+      prompt before it ran (nothing was downloaded; results/test_317134140/ does not exist); the author then wrote "keep going
+      sorry". The go covers the S108 s_lc.fits only: not the target-pixel file, not S109, no publication.
+    - Environment: Python 3.12.15, numpy 2.5.4, scipy 1.18.1, astropy 8.0.2, wotan 2.0, astroquery 0.4.11 (the same versions as
+      recorded in the published design-sector outputs).
+    - Pre-checks on this machine, before any S108 data: scripts/test_317134140_lock.py 196/196
+      (logs/test_317134140_lock_20261113_precheck.log); --insample-check re-runs of training sectors S6, S87, S98, S107 written to
+      the scratchpad are identical, field for field, to the published insample_v1.3b_S*.json (PARTIAL, INCONCLUSIVE, PASS, PARTIAL).
+      Scorer f3f55c0d..., selection tool 600e9504..., validator f3bca692..., lock 58df3645... as locked.
+    - Plan, each step once:
+      (1) spoc_selection.py acquire --selection results/selection_records/317134140/S108/sel_20261113T195427Z.json
+          --out-dir results/test_317134140/S108/lc --record results/test_317134140/S108/acquisition_S108.json
+      (2) python -I scripts/prereg_spoc_317134140.py --config configs/conformance/317134140_spoc_S108.json --lc <that file>
+          --out results/test_317134140/S108/result_S108.json   (no --insample-check)
+      (3) validate_nonclock_inputs.py --lock configs/conformance/LOCK_2026-10-24_317134140.json --stage result with the config,
+          selection, acquisition, light curve and result.
+      Full output goes to logs/score_317134140_S108_20261113.log.
+    - Failure rule: the FITS is opened by nothing but the scorer until the result is bound. On an exception, INVALID_INPUT or
+      REFUSED at any step I stop, keep every file and report to the author; no re-run, edit or workaround.
+226. 2026-11-13 19:59 UTC — TIC 317134140 Sector 108 SCORED: outcome PARTIAL (locked scorer v1.3, one run, result bound). Local only; not published.
+    - Acquisition 2026-11-13T19:58:47Z: tess2026250081459-s0108-0000000317134140-0310-s_lc.fits, 2,001,600 bytes (as in the
+      selection record), SHA-256 cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0. Acquisition record
+      results/test_317134140/S108/acquisition_S108.json (ff320218910b7e14...). Header: PROCVER spoc-6.1.1-20261030, DATA_REL 146,
+      DATE 2026-11-07, camera 3, CCD 4.
+    - Scorer run started 19:58:52Z, once, without --insample-check. Result results/test_317134140/S108/result_S108.json
+      (SHA-256 bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54). validate_nonclock_inputs.py --stage result:
+      BOUND (lock 58df364513d9d2bd). Full output: logs/score_317134140_S108_20261113.log.
+    - Clause A: A_CONSISTENT. Depth 206.3 ppm, random-phase sigma 55.0 ppm (depth/sigma 3.75; nominal 1.96-sigma interval
+      98.6 to 314.1 ppm, overlapping the frozen band 145-225 ppm). 28 of 48 predicted events eligible; 200 shifts.
+      11,862 cadences after preprocessing; 363 removed by the TOI-2514.01 mask.
+    - Clause B: B_NOT_TOP3. Top 3 blind BLS peaks: 1.14675 d (SDE 7.07), 8.02217 d (SDE 6.25), 0.93024 d (SDE 5.70). None is
+      within 0.1 % of 0.5718634 d. alias_hits is empty: the first peak is 0.26 % from 2P (1.1437268 d), outside the locked
+      0.1 % tolerance, and aliases would not count in any case.
+    - Outcome by the ordered rule: PARTIAL (exactly one of A_CONSISTENT / B_TOP3). Per the lock: only PASS meets both frozen
+      clauses; PARTIAL is not a confirmation. It matches the advance expectation ("mostly PARTIAL expected under a real signal"),
+      which is a conditional extrapolation, not a calibrated probability. The 1.96-sigma interval has no established coverage.
+    - Data statement, scoped: for S108 of TIC 317134140, only the selected s_lc.fits was downloaded, and it was opened only by
+      the locked scorer and the validator. No target-pixel file. No S109 or S110 data of this star were downloaded or opened.
+      (The 2026-10-20 erratum on the unopened 206620592 S106 cutout is unaffected.)
+    - The result files and the light curve are set read-only. Nothing else has been run on the S108 file.
+    - Next: S109 selection check due no later than 2026-11-20T19:54:46Z; S110 checks from 2026-11-26 04:15 UTC. Publication of
+      the S108 result (with items 217-226) needs assembly, auditor check and the author's go.
+227. 2026-11-13 20:06 UTC — Author said "go" to assembling a release with the S108 result. Plan for v1.20 (LOCAL assembly; publication needs an
+    auditor check of the exact bytes and the author's go):
+    - New: scoring_317134140_s108_s110/results/S108/ (RESULT_S108.md, result_S108.json, acquisition_S108.json, the scoring log and
+      the pre-download test log); selection records of 2026-11-12 and 2026-11-13 for S108 and S109; the orbit-table copy of
+      2026-11-11 (comment line changed only; item 223).
+    - Dated notes appended (published text unchanged above each): the registration of TIC 317134140 (local and public copies),
+      scoring_317134140_s108_s110/README.md, monitoring/README.md. README block, CITATION 1.20, public log through this item.
+    - RESULT_S108.md reports the outcome with the calibration's conditional PARTIAL frequencies at 130/185/240 ppm and noise
+      only, as the registration's 2026-10-25 note requires, with no likelihood ratio.
+    - Unchanged: every lock, config, scorer, validator and prediction CSV. The S108 FITS is not copied (public at MAST; hash given).
+    - Not included: the 2026-11-12 QLP status requests (responses not saved; item 223).
+    - Correction to item 226: "matches the advance expectation" is better said as "agrees with it and does not test it".
+228. 2026-11-13 20:07 UTC — v1.20 ASSEMBLED locally (scripts/assemble_v1_20.py, one pass; public_release HEAD still 17a66414, nothing committed).
+    6 files changed, 10 new, plus MANIFEST_v1.20.md (SHA-256 6dccf567dd2e5a790935d84de41c0469a70084f7b634aa26883967fb24a00a78);
+    release notes zenodo_upload/RELEASE_NOTES_v1.20.md (2ef8377f23d74c330c35e100d602a8534df33a93491a3aa5d5255b97f78e5795).
+    The assembler checked the note's numbers against the bound result, re-bound the public copies with the public lock and
+    validator (BOUND), and checked the calibration cells against the published diagnostics. The public log ends at item 227.
+    CITATION date-released is 2026-11-13; if publication falls on a later UTC date that line is wrong and needs a rebuild.
+    Auditor prompt: results/PROMPT_review_v1_20.txt. The auditor is asked NOT to re-run the scorer on the S108 file, so that
+    "one scoring run" and "opened only by the scorer and the validator" stay true at publication. Waiting for the report.
+229. 2026-11-13 21:16 UTC — Auditor's pre-publication review of v1.20 received (results/REVIEW_v1_20.md, SHA-256 327c39fdf4cd0a00...).
+    Verdict "fix first". It confirms: PARTIAL is correct under the locked rules (re-derived from the saved result, not from flux);
+    stages pre, selection and result BOUND on its own validator runs; every number in the release text; all manifest hashes and
+    the append-only checks. It did not rerun the scorer or open the photometry. Four wording corrections (F1-F4) and one log
+    qualification are required. The first assembly (item 228) is discarded unpublished and v1.20 is rebuilt.
+    Dated clarifications of earlier items (the items stay as written):
+    - Item 224, "so the product was listed between those two checks": the retained query results changed from NONE to SELECTED
+      between those checks; they do not establish the first public availability time. (The selected observation's t_obs_release
+      61355.0, read as MJD, is 2026-11-11 00:00 UTC, yet the 2026-11-12 query returned NONE. Neither that field nor the header
+      DATE 2026-11-07 establishes when the file first became retrievable.)
+    - Items 225 and 226 (run plan before the download; one acquisition, one scoring run; "opened only by the locked scorer and
+      the validator"): this is the author-side account. The retained records are consistent with it; they do not independently
+      timestamp the insertion of the plan in this log or exclude unrecorded activity. "Opened by nothing else" was too broad:
+      the assembler and the reviewer also hashed the file (byte-integrity checks). Apart from byte-integrity checks and
+      validation, no additional photometric analysis is reported.
+    - Items 226 and 227 ("matches" / "agrees with it and does not test it"): the PARTIAL outcome is consistent with the
+      qualitative advance expectation; one outcome does not establish its frequency, calibrate its predictive accuracy, or
+      demonstrate a real signal.
+    - F1 also: the README's earlier sentence that Sectors 108-110 "decide the case" is qualified in the new block (the lock allows
+      PARTIAL, INCONCLUSIVE, INSUFFICIENT and UNAVAILABLE and has no combined decision rule). The abbreviated calibration
+      frequencies get the reviewer's sentence that they are not a Sector 108 false-alarm probability or calibrated odds.
+    - F3: the reproduction instructions were wrong. Editing embedded paths changes the hashes and the binding refuses. Replaced
+      by the reviewer's text.
+    - F4: the release names this review and states its limit (no independent rerun of the photometry analysis).
+    - The reviewer recommends a later, declared computational reproduction by an independent reviewer. Not decided; the
+      author's call. Nothing of the kind has been run.

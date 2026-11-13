@@ -247,6 +247,26 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
 - **Unchanged:** every lock, config, evaluator, registration, prediction file and forecast output.
 
 
+**First test result: TIC 317134140, Sector 108, PARTIAL (2026-11-13 (v1.20)).**
+- **Outcome:** PARTIAL under the scoring locked in v1.18. The stacked depth at the frozen times is 206 +- 55 ppm, compatible with
+  the frozen 185 +- 40 ppm (28 of 48 predicted events eligible). A blind BLS of the sector does not put 0.5719 d in its top three
+  peaks (1.1467, 8.0222, 0.9302 d).
+- **What it means:** only PASS meets both frozen clauses, so this is not a confirmation. PARTIAL was the outcome the lock expected
+  most often under a real signal; that expectation is not a calibrated probability. In the training-sector calibration, PARTIAL
+  occurred in 55 %, 58 % and 35 % of trials with injected 130, 185 and 240 ppm signals and in 2 % of noise-only trials.
+  These are descriptive frequencies in selected training noise realizations, not
+  a Sector 108 false-alarm probability or calibrated odds for a real signal.
+  No likelihood ratio is drawn from them.
+- **How it was run (author-reported):** first `SELECTED` record at 2026-11-13 19:54:28 UTC, then one download of exactly that file
+  and one run of the locked scorer, bound by the validator, with the run plan recorded before the download. The retained records
+  are consistent with that account; they do not independently timestamp the plan or exclude unrecorded activity. Apart from
+  byte-integrity checks and validation, no additional photometric analysis is reported.
+- **Review:** `reviews_v1_20/`. External review checked the recorded outcome, provenance bindings and release bytes; it did not independently rerun the S108 photometry analysis.
+- **Where:** `scoring_317134140_s108_s110/results/S108/RESULT_S108.md`.
+- **Unchanged:** every lock, config, scorer and prediction file. One of three sectors has been scored: PARTIAL, neither PASS nor FAIL. Sectors 109 and 110 remain separate prospective tests; their outcomes may also be inconclusive and do not by themselves identify the host or validate a planet.
+  This qualifies the earlier sentence above that those sectors "decide the case".
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 
