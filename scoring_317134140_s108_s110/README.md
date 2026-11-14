@@ -74,3 +74,8 @@ re-checks, the last of which recommends "publish as v1.18". Superseded drafts we
 - Review: `../reviews_v1_20/`. It checked the recorded outcome, the bindings and the release bytes, not the photometry analysis.
 - Sectors 109 and 110 are not scored yet. Sector 109 checks continue (last `NONE` at 2026-11-13 19:54:46 UTC); Sector 110 checks
   start at 2026-11-26 04:15 UTC.
+
+**Exploratory addendum for Sector 108, 2026-11-14 (v1.21).** After v1.20 the author made a post-outcome, exploratory analysis of the Sector 108
+light curve and target-pixel file: `exploratory/S108/` (start with its README). It is not a test result, not an independent
+reproduction, and it does not change PARTIAL. `results/S108/RESULT_S108.md` has a dated pointer; its v1.20 text is unchanged.
+Reviews: `../reviews_v1_21/`.

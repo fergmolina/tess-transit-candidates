@@ -111,3 +111,10 @@ Software as run: Python
 3.12.15, numpy 2.5.4, scipy 1.18.1, astropy 8.0.2, wotan 2.0.
 
 Log entries: DECISIONS 224-229.
+
+---
+
+**Dated exploratory update — 2026-11-14 (v1.21).** The statements above about unexamined event losses, no additional figures/centroid analysis and no target-pixel download describe the record at v1.20 publication. After that publication, the author performed an exploratory analysis of the same S108 light curve and the corresponding S108 target-pixel file under a locally recorded plan. Its outputs, methodological departures, limitations and review are provided at `../../exploratory/S108/`. This is not a new test outcome or an independent computational reproduction. The S108 outcome remains PARTIAL, with the original result file unchanged. The S109/S110 locks, predictions and scoring procedure remain unchanged.
+
+The same applies to "no additional photometric analysis is reported" above. Review of the exploratory work:
+`../../../reviews_v1_21/`. Log entries: DECISIONS 232-236.

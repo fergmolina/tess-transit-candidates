@@ -267,6 +267,23 @@ and `tables/NOTICE_PRIOR_REPORTS_2026-10-21.md`.
   This qualifies the earlier sentence above that those sectors "decide the case".
 
 
+**Exploratory addendum: Sector 108 of TIC 317134140 (2026-11-14 (v1.21)). PARTIAL unchanged.**
+- **What it is:** a post-outcome, exploratory look at the same Sector 108 data, made after v1.20. It is not a test result and
+  not an independent reproduction. The outcome of record stays PARTIAL.
+- **Dated statement:** the block above says "no additional photometric analysis is reported". That described the record at
+  v1.20 publication. Since then the Sector 108 light curve was analysed again and the Sector 108 target-pixel file was
+  downloaded and analysed. No Sector 109 or 110 data of this star have been downloaded or opened (author's attestation).
+- **Ineligible events:** Of 48 predicted events, 20 fail the locked eligibility rules. The dominant removal stages within ±3 h are nonfinite corrected flux or uncertainty (12), absent finite-time rows (3), edge trimming (3) and the TOI mask (2). Seventeen have no retained cadences in the ±0.75-h transit window; fifteen have none throughout ±3 h. These are consequences of both data availability and the fixed processing rules.
+- **Blind search:** The candidate-period grid summaries are below the three selected BLS peaks; these diagnostics do not establish that gaps caused the rank. The leading peak is 0.264% above 2P and overlaps odd-epoch phases for part of the baseline, but its origin and association with the candidate remain unresolved.
+- **Odd and even events:** 250 ppm and 167 ppm. No compelling parity contrast is established by this exploratory diagnostic.
+- **Position:** The position diagnostics do not localize the signal securely or exclude nearby blended sources.
+- **Review:** `reviews_v1_21/`. The first report was returned with ten findings ("fix first"). It is published unchanged
+  beside a corrections note that withdraws or qualifies several of its statements. The review did not open the photometry or
+  run the scripts.
+- **Where:** `scoring_317134140_s108_s110/exploratory/S108/README.md`.
+- **Unchanged:** every lock, config, scorer, prediction file and the result of record. Sectors 109 and 110 are not scored yet.
+
+
 Each `PREREGISTRATION.md` records the ephemeris, the freeze time (UTC) and the SHA-256 of its CSV of predicted transit times.
 Each version's public timestamp is its first public commit or archive. Frozen CSV bytes are preserved. Registration annotations are dated; numerical refinements receive new versions. *(Historical note: one generator-description sentence in `preregistration/TIC89247735/PREREGISTRATION_v3.md` was replaced on 2026-10-18; the numerical freeze did not change.)*
 

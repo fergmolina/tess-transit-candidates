@@ -2397,3 +2397,110 @@
     - F4: the release names this review and states its limit (no independent rerun of the photometry analysis).
     - The reviewer recommends a later, declared computational reproduction by an independent reviewer. Not decided; the
       author's call. Nothing of the kind has been run.
+230. 2026-11-13 21:17 UTC — v1.20 REBUILT locally with F1-F4 (scripts/assemble_v1_20.py, second build; HEAD still 17a66414, nothing committed).
+    6 files changed, 12 new, plus MANIFEST_v1.20.md (SHA-256 34336b1ece3c8c3de341d7f0fd52c5c80027d9f0175e8a8664e3cf7ac6d7f026);
+    release notes 25e00d0a23b944051fcdd99071b5463d30b292e221f1b8ca20cc39592b5a50d2. New against the first assembly: the reviewer's
+    sentences (checked verbatim against the review by the assembler) in RESULT_S108.md, the README block, the scoring README
+    note, the registration note and the release notes; reviews_v1_20/ with the review (2 temporary paths redacted) and prompt;
+    public log through item 229. The first run of the rebuilt assembler stopped at one of my own assertions before writing
+    anything (the check of the F4 sentence did not allow for the link that follows it); assertion corrected, tree was clean.
+    Re-check prompt: results/PROMPT_recheck_v1_20.txt. CITATION date-released is still 2026-11-13.
+231. 2026-11-13 21:49 UTC — v1.20 PUBLISHED (first test result: TIC 317134140 Sector 108, PARTIAL).
+    - Re-check results/RECHECK_v1_20.md (SHA-256 1c587bfb46edfa2d...): "publish these bytes as v1.20", F1-F4 resolved, 18/18
+      manifest hashes, verdict conditional on publication on 2026-11-13 UTC. Limits: no assembler, scorer or FITS access in the
+      re-check; author attestations not independently proven.
+    - Author's go by question tool ("Publish now"). Before the commit: UTC date 2026-11-13, manifest 34336b1e... and release
+      notes 25e00d0a... equal to the reviewed hashes, 18/18 manifest entries re-hashed, origin/main at 17a66414.
+    - Commit 896692ee58df80ff05bd552e155db379c0a8e04a (2026-11-13T21:49:10Z), tag v1.20, GitHub release published
+      2026-11-13T21:49:16Z. Zenodo archived it automatically: DOI 10.5281/zenodo.24208367 (record 24208367, created
+      2026-11-13T21:49:21Z; ZIP 10,799,643 bytes, md5 4d3246f47195071b9f4462079cd4e4bb). The Zenodo ZIP was not compared with the tag.
+    - Not in v1.20 (next public log / release): items 230-231 and the re-check report with its prompt.
+    - Open: S109 selection check due no later than 2026-11-20T19:54:46Z; S110 checks from 2026-11-26 04:15 UTC; the reviewer's
+      recommended later computational reproduction is undecided (author's call).
+232. 2026-11-13 21:53 UTC — Exploratory, post-outcome look at Sector 108 of TIC 317134140 DECLARED before any analysis.
+    - The author asked what can be done with what we have; I proposed (1) why 20 events were ineligible, (2) the 1.1467-d peak,
+      (3) an on-target check with the S108 target-pixel file. The author answered "go" and then "3 too" (explicit go for the
+      target-pixel download, S108 only).
+    - Plan file results/exploratory_317134140_S108/PLAN.md, SHA-256 07c490b3e9a69399eea0e3846da4bd318588775dc356940ee4cd03029cbf6b2e, written before
+      the light curve is opened again and before the target-pixel file is downloaded. It fixes the quantities, the frozen
+      ephemeris (no refit), a reproduction gate, and the sensitivity of the odd/even and centroid checks.
+    - The S108 outcome of record (PARTIAL) cannot change. No lock, config, scorer or prediction file changes. S109 and S110 stay
+      unexamined. This is not the independent reproduction the reviewer recommended.
+    - v1.20's "no additional photometric analysis is reported" was true at publication (2026-11-13T21:49Z) and is superseded
+      from this item on.
+233. 2026-11-13 21:56 UTC — Exploratory, post-outcome look at S108 of TIC 317134140 DONE (plan of item 232; local only, not reviewed).
+    Report results/exploratory_317134140_S108/REPORT.md; hashes in SHA256.txt there. Script scripts/exploratory_317134140_S108.py
+    (run started 2026-11-13 21:55 UTC, one run) plus a quality-flag addendum script.
+    - Gate: the locked functions reproduce the result of record exactly (11,862 cadences, 28/48, 206.336 +- 54.987 ppm, same
+      three BLS peaks). Same author and machine: not an independent reproduction.
+    - Item 1: 19,702 rows; 1,227 without time, 5,132 without corrected flux (QUALITY 4096: 3,507; 128: 648; 32768: 537; 0: 421),
+      1,118 edge-trimmed, 363 TOI mask; 60 % kept, with gaps of 1.9 d and 3.6 d. Of the 20 ineligible events 12 are dominated by
+      missing corrected flux, 3 by missing time stamps, 3 by edge trim, 2 by the TOI mask (30 would be eligible without it).
+    - Item 2: nearest grid point to P has SDE 4.68 (22nd of 5,541 grid points; best within 0.5 %: 5.24, 9th). At 2P: SDE 2.0.
+      The 1.1467-d peak's 21 transit times lie next to frozen ODD-epoch times, offset -0.21 h to +1.24 h across the sector.
+      Odd 250 +- 65 ppm, even 167 +- 63 ppm, difference 0.9 sigma: no parity difference detected.
+    - Item 3: S108 target-pixel file downloaded once (SHA-256 fd96a0c06789a693..., 48,268,800 bytes). Centroid shift 0.098 mpx,
+      1.5 sigma. Flux-loss centroid 0.56 px from the target (errors 0.15/0.17 px), within the on-target calibration range; not
+      evidence of an off-target source and not proof of on-target, as declared in advance.
+    - Deviations are listed in the report. Flag meanings were not looked up. The outcome of record is unchanged.
+    - Data statement, scoped: for S108 of this star the s_lc.fits and now the s_tp.fits have been downloaded and analysed. No S109
+      or S110 data of this star have been downloaded or opened.
+234. 2026-11-14 00:24 UTC — Exploratory S108 report sent for external review; no release assembled.
+    - After my summary of item 233 the author answered "Go". I had offered two courses (addendum in the next release after an
+      auditor check, or keep it local until Sector 109 is scored) and recommended the second. I read "Go" as: start the auditor
+      check, which both courses need. Whether and when to publish stays the author's decision.
+    - Self-check before the prompt: PLAN.md 07c490b3... as in item 232; the seven SHA256.txt entries match; scorer f3f55c0d...,
+      lock 58df3645..., S108 config b4f091bc..., result bc62b249..., acquisition ff320218... and the light curve cea2619b...
+      unchanged; public_release clean at 896692ee; no Sector 109 or 110 file of this star exists in the workspace.
+    - Prompt results/PROMPT_review_exploratory_S108.txt (SHA-256 28aef33eb2a05fe4306e90448182753250a2a1fcc43f55bf30702d16b8eadd05). The reviewer may hash the two
+      S108 FITS files but not open them or run the scripts: this is not the independent computational reproduction, which stays
+      undecided. The prompt asks how the three v1.20 statements now out of date (20 events unexamined; no fold or centroid
+      test; target-pixel file not downloaded) should be handled by dated appended notes.
+    - Correction to my chat summary (not to the report): I said 15 of the 20 lost events "fall in those two holes". The report
+      lists four runs without corrected flux, two of them outside the kept range; the tally is 12 no corrected flux, 3 no time
+      stamp, 3 edge trim, 2 TOI mask.
+    - No assembler for the next release is written until the review is back (the date is now 2026-11-14 UTC).
+235. 2026-11-14 01:56 UTC — Review of the exploratory S108 report received ("fix first", F1-F10); corrections note written; item 233 corrected.
+    - Review results/REVIEW_exploratory_S108.md (SHA-256 cdd0d385e8fad66f67ff4b115466d0328ec77f1e42c3a0bfbf59150619f452ba). It read sources,
+      saved outputs and figures and hashed the two FITS files; it ran no script and is not an independent computational
+      reproduction. It finds the gate, hashes, locks and the PARTIAL result of record unchanged, and says the addendum may be
+      published after the corrections and need not wait for Sector 109.
+    - Corrections note results/exploratory_317134140_S108/CORRECTIONS_AND_COMPLETION_2026-11-14.md (SHA-256
+      9ef32a244346a1fa54ba11f32fd0bff2443e9ee1a33f28e9ca632861280ac12a), written from the saved JSONs only; no photometry opened, no script run.
+      REPORT.md is unchanged (1e28db50...). I confirmed the reviewer's numbers against report.json and quality_addendum.json.
+    - Dated corrections to item 233 (the item itself stands as written):
+      - "the 20 ineligible events are data gaps" overstated it. They fail the locked eligibility rules through both data
+        availability and the fixed processing: dominant removal stage nonfinite corrected flux or uncertainty 12, no
+        finite-time rows 3, edge trim 3, TOI mask 2. 17 have no kept cadence within +-0.75 h, 15 none within +-3 h.
+      - "At 2P: SDE 2.0" is the grid point nearest 2P (1.143457 d, 0.024 % below 2P).
+      - "no parity difference detected" and "0.9 sigma": the 90 ppm is a quadrature approximation that neglects covariance;
+        the ratios are nominal. No compelling parity contrast is established.
+      - "errors 0.15/0.17 px" are x and y coordinate scatters from 200 independent-pixel Gaussian perturbations, not bootstrap
+        or radial errors; "within the on-target calibration range" is withdrawn (the earlier offsets are examples).
+      - Departure not listed in the report: edge trimming is applied after the finite/quality selection, not before as in
+        scripts/vet.py; equivalence was not established, so S108 position values are not strictly comparable with earlier ones.
+      - QUALITY values of the remaining 19 rows listed; flag meanings added from the reviewer's documentation lookup.
+      - Not retained by the script: the full periodogram arrays and the per-event counts without the TOI mask.
+    - Not done, each would need its own declaration and the author's go: a paired-shift odd/even null, a re-run testing the
+      trim order, the independent computational reproduction.
+    - Nothing assembled or published. Open decision for the author: publish the addendum now (v1.21, after an auditor re-check
+      of the exact bytes) or with the Sector 109 result.
+236. 2026-11-14 01:59 UTC — v1.21 PLAN (exploratory S108 addendum), written before the assembly. Local build only; nothing is published without the author's go.
+    - After item 235 the author wrote "So? Nothing else?". I read it as a wish to carry on, not as a publication decision. A
+      local build is reversible; the publish question will include "hold until Sector 109 (discard the build)".
+    - Contents, following the form recommended in results/REVIEW_exploratory_S108.md:
+      - scoring_317134140_s108_s110/exploratory/S108/: README, PLAN.md, REPORT.md (original bytes as prefix, SHA-256
+        1e28db50..., plus a dated status note), report.json, quality_addendum.json, both figures, run.log, SHA256.txt, the
+        corrections and completion note of 2026-11-14, and the two scripts as run. No FITS file.
+      - reviews_v1_21/: the review of the exploratory report and its prompt; the v1.20 re-check (one temporary path redacted)
+        and its prompt, which v1.20 could not carry.
+      - Dated notes appended to RESULT_S108.md (reviewer's paragraph; published v1.20 text stays a byte prefix; local copy
+        kept identical) and to the scoring README; a README block; CITATION 1.21 dated 2026-11-14; public log through this
+        item; manifest; release notes.
+    - Statements of v1.20 that are now dated and get a pointer: "why 20 ... has not been examined", "No figure, fold, centroid
+      test or other periodogram ... is reported", "the target-pixel file was not [downloaded]", and "no additional photometric
+      analysis is reported" (README block and RESULT). They were true at v1.20 publication.
+    - No lock, config, scorer, validator, prediction CSV or result of record changes (asserted by the assembler). scripts/vet.py
+      is already public and identical (65a81ff5...).
+    - Then: auditor re-check of the exact bytes, including an F1-F10 content check of the corrections note, with a verdict
+      conditional on publication on 2026-11-14 UTC.

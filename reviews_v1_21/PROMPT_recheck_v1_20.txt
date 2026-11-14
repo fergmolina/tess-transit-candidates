@@ -1,0 +1,33 @@
+FOCUSED RE-CHECK: release v1.20, REBUILT after your review results/REVIEW_v1_20.md ("fix first", F1-F4). Not committed or published.
+
+The first assembly was discarded. public_release/ was reset to tag v1.19.2 (17a66414) and scripts/assemble_v1_20.py was run again
+with your corrections. Check that the rebuild does what you asked and nothing else, before the author publishes these exact bytes.
+
+MATERIALS (workspace ~/Desktop/NASA)
+- scripts/assemble_v1_20.py              the assembler, second build (read it; do NOT run it)
+- public_release/ working tree           `git status` and `git diff` show everything
+- public_release/MANIFEST_v1.20.md       expected SHA-256 34336b1ece3c8c3de341d7f0fd52c5c80027d9f0175e8a8664e3cf7ac6d7f026
+- zenodo_upload/RELEASE_NOTES_v1.20.md   expected SHA-256 25e00d0a23b944051fcdd99071b5463d30b292e221f1b8ca20cc39592b5a50d2
+- results/test_317134140/S108/RESULT_S108.md   local source of the result note
+- logs/DECISIONS.md items 229-230        item 229 carries the dated clarifications of items 224-227; the public log ends at 229
+
+CHECKS
+1. F1-F4, the calibration sentence, "not a FAIL under the locked rule" and the item-224 qualification: each applied where you
+   asked (RESULT, README block, scoring README note, registration note, release notes, log)? Is your wording verbatim where it
+   is presented as the review's, and is any remaining sentence overstated? Note two additions of mine and say if you object:
+   RESULT's "First availability" and "Review" bullets (the latter says you recommend a later declared reproduction and that none
+   has been made or decided).
+2. Bytes. All 18 manifest hashes match. Changed set is exactly 6 modified + 12 new + the manifest; nothing deleted. Prediction
+   CSVs, locks, configs, scorer and validator identical to tag v1.19.2. Prefix/append checks as in your first review; the public
+   log ends at item 229; CITATION differs only in version and date-released. result_S108.json and acquisition_S108.json are the
+   same bytes you reviewed. Local and public registrations are equal.
+3. Public copy of your review (public_release/reviews_v1_20/): differs from results/REVIEW_v1_20.md only by the header line and
+   two redacted temporary paths. Say if you object to its publication in this form, or to the header's statement of what it covers.
+4. Verdict, one of: "publish these bytes as v1.20" / "fix first" (exact edits). State the UTC publication date your verdict
+   assumes (CITATION date-released is 2026-11-13) and what to do if publication falls on 2026-11-14 UTC.
+
+RULES (unchanged)
+- The S108 FITS: hash it or pass it to validate_nonclock_inputs.py only. Do not run the scorer on it or open it otherwise. No
+  download of any Sector 108-110 data of TIC 317134140 or test-sector data of any frozen star.
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Write the report to results/RECHECK_v1_20.md.

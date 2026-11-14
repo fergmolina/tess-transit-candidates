@@ -1,0 +1,66 @@
+REVIEW: exploratory, post-outcome look at Sector 108 of TIC 317134140. Local only, NOT published, no release assembled yet.
+
+Sector 108 was scored once under the v1.18 lock on 2026-11-13: PARTIAL, published in v1.20 (commit 896692ee, DOI
+10.5281/zenodo.24208367). After publication the author approved a declared exploratory look at the same sector: (1) why 20 of 48
+predicted events were not eligible, (2) what the 1.1467-d BLS peak is, (3) an on-target check with the Sector 108 target-pixel
+file. The plan was written and hashed before the analysis (DECISIONS 232); the results are in DECISIONS 233. The author is
+considering publishing this as a labelled exploratory addendum in the next release. Check it first.
+
+This review is NOT the independent computational reproduction recommended in REVIEW_v1_20.md. That remains undecided.
+
+MATERIALS (workspace ~/Desktop/NASA), with SHA-256
+- results/exploratory_317134140_S108/PLAN.md               07c490b3e9a69399eea0e3846da4bd318588775dc356940ee4cd03029cbf6b2e
+- results/exploratory_317134140_S108/REPORT.md             1e28db50d767de28509911eb3719cd069bed9e2aaed77663f2231fef3bb8b0e4
+- results/exploratory_317134140_S108/report.json           793f7b0f5ae1a7f3bd85815982682d44277e8b711d76457761d44ed9cce2d392
+- results/exploratory_317134140_S108/quality_addendum.json 9f40748c5b80d580e6d059410ad015a5f5810569067d68f45b6babaa3adbc2e3
+- results/exploratory_317134140_S108/fold_S108.png         702a6282f63ab17d62a9acc9ba8f9c69048e1bf4d972acdece730a45422a19f7
+- results/exploratory_317134140_S108/pixelmap_S108.png     35f1f328c3855df8225c55cf16713f0c05745319e756c77dc89fd00dab0d0767
+- results/exploratory_317134140_S108/run.log               814aef3c7368abdec8553544e726082a116dffdc7d515ab7462346f0099d0a6a
+- scripts/exploratory_317134140_S108.py                    1d65c38472d59a63855d121022778dc902049d97383d53f40b19d9d064fea9c9
+- scripts/exploratory_317134140_S108_quality.py            c41e79a48e84974289b619aff9c2ce2a40e506df2b2f0b4b320aaffada8a9674
+- scripts/vet.py (source of the centroid and pixel-map definitions)
+- scripts/prereg_spoc_317134140.py (locked scorer, f3f55c0d...), results/test_317134140/S108/ (result of record, RESULT_S108.md)
+- logs/DECISIONS.md items 231-234; public_release/ at tag v1.20 (clean tree)
+- Light curve of record (cea2619b6228e770...) and target-pixel file (fd96a0c06789a69346b573613e292d708f09bc6a25454406f14dc931f5d3b455,
+  under results/exploratory_317134140_S108/tpf/): see RULES.
+
+CHECKS
+1. Order and declaration. What can and cannot be established about the plan preceding the analysis (PLAN.md hash in item 232,
+   file times, run.log, the script)? Was a post-outcome look proper under the v1.18 lock and the v1.20 statements, and is "the
+   outcome of record cannot change" kept everywhere?
+2. Plan against report. Is every quantity the plan promised reported, including adverse ones? Are the listed deviations complete
+   (quality-flag addendum; unused BLS odd/even and aperture-weighted depth; grid-point ranks; nothing for P/2)? Anything in the
+   plan silently dropped (for example the 1 % windows, the 2P fold, the local grid step at 2P)?
+3. Numbers. Check every number in REPORT.md against report.json and quality_addendum.json, and the gate values against
+   result_S108.json. Check the cadence accounting adds up (19,702 rows to 11,862 kept) and the per-event tally sums to 20.
+4. Code, by reading only. Does the script import the locked `preprocess` and `clause_a` unmodified and use the frozen ephemeris
+   and prediction CSV with no refit? Is the odd/even split a fair use of the clause-A statistic? Do the centroid and pixel-map
+   functions keep the definitions of scripts/vet.py? Any analysis choice that could have been tuned after seeing the data?
+5. Interpretation. Is anything overstated or understated? In particular:
+   - "the losses are data gaps of the sector, not a property of the rule";
+   - the reading of the 1.1467-d peak: "compatible with the blind search latching onto every second event of the candidate in
+     gappy data, and equally with an unrelated fluctuation";
+   - odd/even: "no parity difference detected" at 0.9 sigma with a 90 ppm error, and the remark that even depth is 2.6 sigma
+     above zero;
+   - on-target: "not evidence of an off-target source ... not evidence that the signal is on the target either";
+   - the closing paragraph ("the candidate period is not a top peak mainly because its SDE in this gappy sector is about
+     4.7-5.2");
+   - the figures and their one-sentence descriptions (you may view the PNGs).
+   The QUALITY values 4096, 128 and 32768 were not looked up. Should their documented meanings be added as a dated addendum
+   (a documentation lookup, no photometry)?
+6. Effect on the remaining test. Could knowledge from this look bias the scoring of Sectors 109 and 110, given that the lock,
+   configs and scorer are hashed and the procedure is mechanical? Say what safeguard or statement, if any, is needed.
+7. How to publish, if at all. v1.20's RESULT_S108.md says the reason for the 20 ineligible events "has not been examined", that
+   "No figure, fold, centroid test or other periodogram of Sector 108 is reported", and that the target-pixel file "was not"
+   downloaded. Those were true at publication and are now out of date. Published bytes must not be edited. Recommend the exact
+   form: dated appended notes (where, and with what wording), where the exploratory files should sit in the release, how they
+   must be labelled, and whether REPORT.md's "Not reviewed. Not published." line should be handled by a dated note rather than
+   an edit. Or recommend holding it until Sector 109 is scored, and say why.
+8. Verdict, one of: "may be published as a labelled exploratory addendum" (list required edits or notes) / "fix first" / "hold".
+
+RULES
+- The two Sector 108 FITS files: you may hash them. Do NOT open them, do not run either exploratory script or the scorer, do not
+  plot, fold or search. Recomputing from the files would be the independent reproduction, which is not decided.
+- Do not download any Sector 108, 109 or 110 data of TIC 317134140, or any test-sector data of any other frozen star.
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Write the report to results/REVIEW_exploratory_S108.md.
