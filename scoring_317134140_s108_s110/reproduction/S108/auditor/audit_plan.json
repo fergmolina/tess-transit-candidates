@@ -1,0 +1,24 @@
+{
+  "declared_utc": "2026-11-19T15:36:44.686917+00:00",
+  "operator": "OpenAI Codex auditor",
+  "scope": "One computational reproduction, not a new observational test. Original outcome cannot change. No exploratory S108 analysis; no future-sector or other test-target photometry.",
+  "temp_directory": "[auditor temporary path redacted]",
+  "environment_plan": "Fresh Python 3.12.15 venv; exact recorded numpy/scipy/astropy/wotan pins; retain every setup/download attempt. If unavailable use existing .venv with disclosed limits.",
+  "download_plan": "Only the specified S108 SPOC 2-min file via MAST API, to a new lc directory, SHA must match before scoring. If network inaccessible use verified local file.",
+  "run_plan": "Exactly one locked scorer invocation to a new result_S108.json, then validator stage result. Retain any failure; no second scorer run. Compare every nested field and bytes with no exemptions.",
+  "hashes_before": {
+    "scripts/prereg_spoc_317134140.py": "f3f55c0d74733f8aa4ee6264b99c29c547990d885d5cfdd2c29c43c47baa1613",
+    "scripts/tsearch.py": "3b691ffc47054cb898b199fa19f0e952a04c3574833de0154eb03ae9bbe54b05",
+    "scripts/search_pipeline.py": "34e56bb1016ac31c45c73aed4115301cdcbab46977363dbb57ab060178ef2415",
+    "scripts/spoc_selection.py": "600e9504a811ac14c10c8129324e9f5707c3103be85bd1d5961d47bafac4ac05",
+    "scripts/validate_nonclock_inputs.py": "f3bca6924c16216c9bbc745b4a5b4f169e525a45417645681d72ec250dca7e01",
+    "configs/conformance/317134140_spoc_S108.json": "b4f091bc63a595a2c78c3ddb9645ba846ba21e73d75aca55ca2db7e1acffb42b",
+    "configs/conformance/LOCK_2026-10-24_317134140.json": "58df364513d9d2bd3f2d0c7474d069b55737420614b10eb631cf82e4eba0db41",
+    "results/vet/317134140/predicted_transits_S108_S109_S110.csv": "63e98fc87ebc6ce65198e066028d7f9ea58d24b51b35771d9fc551c41f59deb3",
+    "results/selection_records/317134140/S108/sel_20261113T195427Z.json": "162f4d67a8ba2ebbfb0ddf5ef913434a27ceee1b92a7711b8d6c3be19cfbf9a1",
+    "results/test_317134140/S108/RESULT_S108.md": "bbfc39bb5074ab17e27e1a56fb5336d7e753ae628e747a7ac6e064b5ca0eac6a",
+    "results/test_317134140/S108/acquisition_S108.json": "ff320218910b7e145ed956b8a263211ee5b88dad7c95d1a4bea4c9e53ec17d56",
+    "results/test_317134140/S108/result_S108.json": "bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54",
+    "results/test_317134140/S108/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits": "cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0"
+  }
+}

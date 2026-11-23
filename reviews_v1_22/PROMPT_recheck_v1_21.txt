@@ -1,0 +1,50 @@
+PRE-PUBLICATION CHECK: release v1.21 (exploratory, post-outcome addendum on Sector 108 of TIC 317134140; PARTIAL unchanged),
+assembled locally, NOT committed or published.
+
+Your review results/REVIEW_exploratory_S108.md ("fix first", F1-F10) asked for a dated correction/completion note and gave the
+publication form. The note was written from the saved JSONs only (no photometry opened, no script run) and the release was
+assembled as you recommended. You have not yet seen the note. Check its content and the exact bytes.
+
+MATERIALS (workspace ~/Desktop/NASA)
+- public_release/ working tree             HEAD 896692ee (tag v1.20); `git status` and `git diff` show everything
+- public_release/MANIFEST_v1.21.md         expected SHA-256 fa6c7d6a992b99cab48f7522c054965d06194639f00ec480becf675d4dd7f829
+- zenodo_upload/RELEASE_NOTES_v1.21.md     expected SHA-256 c51189e2a496d9dc79beda9384d813b324e5564cf50c837acf5bdd8eb7ff4539
+- scripts/assemble_v1_21.py                SHA-256 939bd0505993cf9ce35d0f6900f8758c2c8787d90ff7f858618a5659618cbae2 (read it; do NOT run it: it refuses to run twice)
+- public_release/scoring_317134140_s108_s110/exploratory/S108/   README, CORRECTIONS_AND_COMPLETION_2026-11-14.md
+  (SHA-256 9ef32a244346a1fa54ba11f32fd0bff2443e9ee1a33f28e9ca632861280ac12a), PLAN, REPORT (original + dated status note), JSONs, figures, run.log, SHA256.txt,
+  scripts_as_run/
+- public_release/reviews_v1_21/            your review and prompt; your v1.20 re-check (two temporary paths redacted) and prompt
+- results/exploratory_317134140_S108/, results/REVIEW_exploratory_S108.md, logs/DECISIONS.md items 230-237
+
+CHECKS
+1. Corrections note, finding by finding. For each of F1 to F10: is it resolved by CORRECTIONS_AND_COMPLETION_2026-11-14.md?
+   Check every number in the note against report.json and quality_addendum.json. Does the note introduce any new overstatement,
+   or misquote your suggested text? Is the QUALITY-flag supplement attributed and limited correctly? Is the "S98 (two sectors)"
+   withdrawal correct?
+2. New summary texts. The exploratory README, the README block, the appended notes in RESULT_S108.md and the scoring README, the
+   status note appended to REPORT.md and the release notes: is each consistent with the corrections note, and is anything from
+   the original report that the note withdraws repeated anywhere? Are "author-reported" and "not an independent reproduction"
+   stated where needed? Is it clear enough that the original REPORT.md is superseded where it differs?
+3. Dated statements of v1.20. Are all v1.20 statements that are now out of date covered by a dated pointer (unexamined event
+   losses; no figure, fold, centroid test or periodogram; target-pixel file not downloaded; "no additional photometric analysis
+   is reported" in RESULT_S108.md and in the README block)? Did I miss any elsewhere in the tree?
+4. Bytes. All manifest hashes match. Changed set is exactly 5 modified + 16 new files + the manifest; nothing deleted; no FITS
+   file. The v1.20 blobs of RESULT_S108.md, scoring_317134140_s108_s110/README.md and DECISIONS.md are byte prefixes of the new
+   files; README.md is recovered by removing the new block; CITATION.cff differs only in version and date-released. The first
+   bytes of the public REPORT.md hash to 1e28db50d767de28509911eb3719cd069bed9e2aaed77663f2231fef3bb8b0e4. PLAN, JSONs, PNGs, run.log, SHA256.txt and both
+   scripts are byte-identical to the files you reviewed. Every lock, config, scorer, validator, prediction CSV and
+   result_S108.json / acquisition_S108.json is byte-identical to tag v1.20. The local results/test_317134140/S108/RESULT_S108.md
+   equals the public one.
+5. Log discipline. Public log items 230-236: no address, recipient name, session link or temporary path; item 235's dated
+   corrections of item 233 adequate? Any inaccuracy? (Item 237 and your re-check go into the next public log.)
+6. Relative links in the new files resolve.
+7. Verdict, one of: "publish these bytes as v1.21" / "fix first" (list exact edits; each fix means a rebuild and new hashes).
+   CITATION date-released is 2026-11-14: state that your verdict assumes publication on that UTC date, or say what to do
+   otherwise.
+
+RULES
+- The two Sector 108 FITS files: hash only. Do NOT open them, do not run either exploratory script or the scorer, do not plot,
+  fold or search. Do not download any Sector 108, 109 or 110 data of TIC 317134140, or any test-sector data of any other frozen
+  star.
+- Edit nothing except your report. Do not commit, push, publish, upload or contact anyone. Temporary files only under /tmp.
+- Write the report to results/RECHECK_v1_21.md.

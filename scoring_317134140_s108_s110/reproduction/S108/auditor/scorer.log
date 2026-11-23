@@ -1,0 +1,5 @@
+COMMAND ["[auditor temporary path redacted]", "-I", "-B", "scripts/prereg_spoc_317134140.py", "--config", "configs/conformance/317134140_spoc_S108.json", "--lc", "/Users/fernando/Desktop/NASA/results/reproduction_317134140_S108_auditor/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits", "--out", "/Users/fernando/Desktop/NASA/results/reproduction_317134140_S108_auditor/result_S108.json"]
+START 2026-11-19T15:38:29.120853+00:00
+PARTIAL
+
+END 2026-11-19T15:38:55.182059+00:00 EXIT 0

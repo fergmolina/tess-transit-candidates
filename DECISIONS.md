@@ -2504,3 +2504,318 @@
       is already public and identical (65a81ff5...).
     - Then: auditor re-check of the exact bytes, including an F1-F10 content check of the corrections note, with a verdict
       conditional on publication on 2026-11-14 UTC.
+237. 2026-11-14 02:02 UTC — v1.21 ASSEMBLED locally (scripts/assemble_v1_21.py, SHA-256 939bd0505993cf9ce35d0f6900f8758c2c8787d90ff7f858618a5659618cbae2; HEAD still 896692ee, nothing committed).
+    - 5 files changed, 16 new, plus MANIFEST_v1.21.md (SHA-256 fa6c7d6a992b99cab48f7522c054965d06194639f00ec480becf675d4dd7f829); release notes
+      c51189e2a496d9dc79beda9384d813b324e5564cf50c837acf5bdd8eb7ff4539. Public log through item 236.
+    - The first run of the assembler stopped at one of my own assertions (I expected one temporary path in RECHECK_v1_20.md;
+      there are two). It had created only the two new untracked folders; no tracked file and no local file had been changed.
+      Removed with git clean, assertion corrected, second run completed. Self-check: appended notes are suffixes of the v1.20
+      text, relative links resolve, local and public RESULT_S108.md are identical (bbfc39bb...).
+    - Re-check prompt results/PROMPT_recheck_v1_21.txt (SHA-256 ed6b1e636e995afa4ec830b8955c6eb88850ec4f558187af6fe433308c36e32e): content check of the corrections
+      note against F1-F10 and the exact bytes; verdict conditional on publication on 2026-11-14 UTC.
+    - If the author decides to hold until Sector 109, the build is discarded (git checkout/clean; local RESULT_S108.md restored
+      from tag v1.20).
+238. 2026-11-14 03:16 UTC — v1.21 PUBLISHED (exploratory addendum, TIC 317134140 Sector 108; PARTIAL unchanged).
+    - Re-check results/RECHECK_v1_21.md (SHA-256 c3ccebd9a7189abbc1cc54246e8eaebe502398023ceb20fc940be0c162db795d): "publish these bytes as
+      v1.21", F1-F10 resolved by corrections, disclosures and withdrawals (not by new calibration or reproduction), 21/21
+      manifest hashes, verdict conditional on publication on 2026-11-14 UTC. Limits: no assembler, script, scorer or FITS access.
+    - Before the re-check arrived the author pasted the earlier "fix first" verdict again; no re-check file existed, so nothing
+      was done until the report was there.
+    - Author's go by question tool ("Publish now"). Before the commit: UTC date 2026-11-14, manifest fa6c7d6a... and release
+      notes c51189e2... equal to the reviewed hashes, 21/21 manifest entries re-hashed, origin/main and HEAD at 896692ee.
+    - Commit efc6b62818757edd24e13f34fe2a47eea60a18b8 (2026-11-14T03:15:46Z), tag v1.21, GitHub release published
+      2026-11-14T03:15:50Z. Zenodo archived it automatically: DOI 10.5281/zenodo.24211761 (record 24211761, created
+      2026-11-14T03:15:55Z; ZIP 10,928,845 bytes, md5 4dc1e94ece90f3a992bf5abe840c874a). The Zenodo ZIP was not compared with the tag.
+    - Minor imprecisions the re-check lists without requiring a rebuild, recorded here as dated qualifications:
+      - item 236 said "one temporary path redacted"; there are two (item 237).
+      - the corrections note's "Every number here comes from" the two JSONs is too sweeping: the 4,280 of Sector 98 comes from
+        the earlier vetting report, and the bin and perturbation counts are settings in the script.
+      - "error <= 0: none" counts removals at that stage of the ordered accounting, not all error values; the cluster rule
+        joins rows at most 0.05 d apart.
+      - the exploratory README's SDE "4.7 to 5.2" summarizes nearby grid points, not one measurement at fixed P.
+    - Not in v1.21 (next public log / release): items 237-238 and the re-check report with its prompt.
+    - Open: S109 selection check due no later than 2026-11-20T19:54:46Z; S110 checks from 2026-11-26 04:15 UTC; the independent
+      computational reproduction is undecided (author's call).
+239. 2026-11-14 15:04 UTC — S109 selection check for TIC 317134140: NONE.
+    - Asked for by the author ("run"). Record results/selection_records/317134140/S109/sel_20261114T150448Z.json (SHA-256
+      e664775728a30716352053aafe383adcae35db8e6644023272cb890628303d33), query 2026-11-14T15:04:48.752292Z, no observations, no products, status NONE.
+      Metadata query only; no photometry downloaded or opened.
+    - Interval since the previous S109 check (2026-11-13T19:54:46Z): 19 h 10 min. Next S109 check due no later than
+      2026-11-21T15:04:48Z. S110 checks start 2026-11-26 04:15 UTC.
+240. 2026-11-14 15:11 UTC — The auditor verified item 239 (message relayed by the author, no report file): the S109 record
+    sel_20261114T150448Z.json reports NONE at 15:04:48 UTC with no observations or products, its SHA-256 matches item 239, and
+    the next deadline is 2026-11-21T15:04:48Z. The auditor states it accessed no photometry.
+241. 2026-11-16 04:08 UTC — DDT REPLY for TIC 80387959, relayed by the author (text pasted; sender, date and DDT number not given).
+    - Content: the proposal was reviewed. The target "is to be observed during an additional 3 sectors (112-114) as requested".
+      It "had already been planned for inclusion in the Sector 111 targets based on prior analyses". TESS data are not
+      proprietary and the author is welcome to analyse any target.
+    - Consequences:
+      - 2-min cadence is granted for Sectors 112-114. With the existing Sector 111 listing, all four requested sectors are
+        covered.
+      - This settles the open question of items 202-203: the Sector 111 listing does NOT come from the author's DDT. The
+        mission had planned it already, "based on prior analyses" (not specified). My "very probably the author's DDT" of
+        item 202 was wrong.
+      - The reply names no DDT number and does not mention TIC 120517801, which was not in the request.
+    - Not verified independently: the S112-S114 2-min target lists are not posted yet (HTTP 404 at the last checks). Listing
+      is confirmed only when those lists appear; under the designation rule the published lists decide, not this message.
+    - Unchanged: no Sector 111 or later data of TIC 80387959 or 120517801 are downloaded or opened. The scoring of
+      TIC 80387959 for Sectors 111-114 is not locked yet; it should be frozen before any of those data exist at MAST.
+    - I contacted nobody. Whether to answer the office is the author's decision.
+242. 2026-11-16 04:13 UTC — Rest of the DDT reply (item 241), relayed by the author. It is signed by the mission's Principal Investigator.
+    - The office requests that any publication related to these observations acknowledge (1) the TESS mission and its DDT
+      program, and (2) the specific use of AI in developing the proposal and in the data analysis, "including the version
+      number and AI vendor's name".
+    - State of our public wording: releases say "Analysis with Claude (Anthropic) under the author's direction"; no model
+      version is given. That does not meet (2) for future publications on the Sector 111-114 data.
+    - Model identifiers recorded in the two local session files of this workspace (first entries 2026-10-17 and 2026-10-22):
+      claude-opus-5-5, claude-fable-5-1, claude-fable-5-2 (vendor Anthropic). The proposal was written within the first of
+      them (claude-opus-5-5 and claude-fable-5-1 recorded there). Not established from these files: which model wrote which
+      part; any work done outside this workspace; the version of the external auditor (OpenAI Codex) and of the monitoring bot.
+      The author must confirm those.
+    - Proposed, not done: an acknowledgement section for the next release and for the future S111-S114 lock and results.
+      Nothing published is edited.
+243. 2026-11-16 13:37 UTC — Monitoring report of 2026-11-16 (pasted by the author) and my own orbit-table check.
+    - Orbit table fetched 2026-11-16 13:37 UTC (HTTP 200, Last-Modified 2026-11-16 05:06:43 GMT), saved as
+      results/orbit_table_snapshots/TESS_orbit_times_lastmod_2026-11-16.csv (SHA-256
+      b15ae6e0dcbc28722312efdc464f734a7878886e268286cf0a6d5290048500ba). Against the 2026-11-11 copy the data rows differ by exactly one added row:
+      112,235,2026-12-29 03:50:00,2027-01-03 23:10:00 (orbit 235, second segment). The comment line now reads
+      "# Created 2026-11-16 by roland". Sector 111's last End of Orbit is still 2026-12-22 08:30:00; Sector 112 is the last
+      sector listed and only orbit 235 of it is listed, so the Sector 112 end is not published yet (the table must list
+      Sector 113). No designation snapshot is due before 2026-12-22 08:30 UTC.
+    - Reported by the bot, not re-checked by me: release note DRN 145 for Sector 107 is listed (tess_sector_107_drn145_v01.pdf,
+      page Last Modified 2026-11-12 14:39). Not downloaded or read; as with DRN 144 (items 207-208) reading it needs the
+      author's go. It is a sector-wide document, not photometry. It bears on TIC 24526743 and 160330868 (S107 tests).
+    - Also reported, no change: QLP S106-S121 404; SPOC S107 manifest without 24526743 or 160330868; S108 manifest unchanged;
+      S109-S114 manifests 404; S111 2-min list unchanged (80387959 listed); other target lists 404; DDT pages unchanged
+      (highest rows 099 and 102, no row naming the author or 80387959, although the office's reply of item 241 grants
+      S112-S114); TOI and CTOI unchanged for the watched TICs.
+    - The bot's statement that S108 "lists 317134140, light curve not retrieved" refers to the bot; the S108 files of this
+      star are held and scored here (items 224-238).
+244. 2026-11-16 15:51 UTC — DRN 145 (Sector 107 data release notes) read with the author's go ("Yes"): text only (pdftotext), no figures, no photometry.
+    File results/s107_drn145/tess_sector_107_drn145_v01.pdf, 1,848,885 B, Last-Modified 2026-11-11 14:25:21 GMT, SHA-256
+    0eb0a443508a67e7f2586f75f3949599762e62eed03c3eb9f42e4bf258180492; dated October 1, 2026; downloaded 2026-11-16 15:51 UTC.
+    - Timing: no clock, time-stamp or barycentric-correction issue is mentioned.
+    - Data loss: none beyond the routine downlink pauses (0.62 d in total). 28.07 d of science data collected. No recorder
+      overflow or safe mode is mentioned (Sector 106 lost 2.39 d).
+    - Segments (UTC / TJD): 225a 2026-08-09 14:01:09 (4262.08493) to 08-16 10:53:09 (4268.95437); 225b 08-16 15:55:09
+      (4269.16409) to 08-23 18:19:08 (4276.26409); 226a 08-23 23:21:08 (4276.47381) to 08-31 01:03:08 (4283.54464); 226b
+      08-31 05:55:08 (4283.74742) to 09-07 06:33:08 (4290.77381).
+    - Pointing: second full sector on ACS 5.11. Correlated pointing excursions near the end of each half-orbit. SPOC put
+      Manual Exclude (QUALITY bit 8) on 2.03 d: excursions > 3 arcsec and cadences within 30 min of a reaction-wheel-1
+      frequency crossing. This is less than in Sector 106 (3.39 d), where wheel speed above 15 Hz was also excluded. It is
+      SPOC's flagging; how QLP treats these cadences is unknown until QLP S107 exists.
+    - Other: 13,000 2-min and 2,159 20-s targets; 846 TCEs on 623 targets (aggregate numbers only). CBVs: CCD grouping on
+      cameras 1-3, per CCD on camera 4. The notes say the flagging approach "may continue to evolve".
+    - Bearing: the S107 tests of TIC 24526743 and 160330868 (QLP product; scoring needs the author's go). No forecast of
+      eligible events was made from these segment times; none was asked for. The locked rules and configs are unchanged, and
+      the scorer uses the QLP file's own gaps and flags.
+245. 2026-11-16 15:51 UTC — The author reports that the reply to the DDT office (items 241-242) has been sent. Time of sending, recipients
+    and final text not given to me; I sent nothing.
+    - My draft, offered earlier in this session: thanks; a commitment to acknowledge the TESS mission and its DDT program and
+      to state the AI use with vendor and model versions (Claude Opus 5.5, Claude Fable 5.1, Claude Fable 5.2, Anthropic);
+      two questions (the DDT program number to cite; whether Sectors 112-114 are at 2-minute cadence); and a sentence that the
+      scoring rules for these sectors will be fixed and published before the data are released. Whether the sent text equals
+      the draft is not known to me.
+    - If that last sentence was sent, it is a written commitment: the S111-S114 scoring lock of TIC 80387959 must be frozen
+      and published before those data exist at MAST (Sector 111 observations start 2026-11-26; SPOC light curve expected
+      about mid-January 2027).
+    - Awaited: the office's answer (DDT number, cadence).
+246. 2026-11-16 18:30 UTC — The author confirms ("yes") that the reply to the DDT office was sent as drafted, including the sentence that the
+    scoring rules for Sectors 111-114 will be fixed and published before the data are released. I also take the "yes" as the
+    go to start drafting the S111-S114 scoring lock for TIC 80387959 (local draft, for external review; nothing is frozen or
+    published without the author's go).
+247. 2026-11-16 18:30 UTC — CORRECTION to items 241, 245 and 246: the S111-S114 scoring of TIC 80387959 IS ALREADY LOCKED AND PUBLISHED.
+    - I wrote in items 241, 245 and 246 (and told the author, and put into the draft reply) that this scoring "is not locked
+      yet" and must still be frozen. That was wrong. It was locked on 2026-10-25 15:14:04 UTC and published in v1.19
+      (items 199-200; public_release/scoring_s111_80387959_120517801/; locks LOCK_2026-10-25_S111_QLP.json and
+      LOCK_2026-10-25_S111_SPOC.json; Zenodo 10.5281/zenodo.23644746), before any Sector 111 data exist. It also covers
+      TIC 120517801 (S111-S113). I found this when I looked for a template before drafting; no draft was started.
+    - Cause: I relied on a sentence in the 317134140 scoring README written at v1.18 ("The S111 tests ... are not in this
+      release") and on a session summary, and did not check the log or the release tree.
+    - The reply sent to the DDT office says the rules "will be fixed and published before the data are released". That
+      commitment is already met; the sentence understates what exists and is not false. No correction to the office is needed.
+    - What does remain for these sectors: the product of record is decided by the first complete designation snapshot after
+      each sector's published end (TIC on the 2-min list means SPOC, otherwise QLP), recorded in the hash-chained ledgers
+      results/s111_ledgers/. First S111 snapshot due from 2026-12-22 08:30 UTC. With the DDT grant, SPOC is the expected
+      route for S111-S114, to be confirmed by the published lists, not by the office's message.
+    - The acknowledgement requested in item 242 concerns publications; it does not touch the lock.
+248. 2026-11-16 18:55 UTC — The mission's DDT page now lists the author's programme as DDT 104 (checked at the author's request).
+    - tess.mit.edu/science/ddt/ fetched 2026-11-16 18:55:16 UTC (HTTP 200), copy results/ddt_page_snapshots/
+      science_ddt_20261116T185516Z.html, 159,985 B, SHA-256 26399c8b25b82e7bf4733c17b6f2a25067a507dc811b2d88617e4ff1eb3a1076.
+    - Row: DDT 104 | PI Fernando Molina | "Observation of TIC 80387959, a T=10.5 K dwarf with a 2.4 Re transiting-planet
+      candidate" | cadence 2m | 1 target | active: yes.
+    - The page now runs to DDT 107 (103 to 107 are new since the bot's check at 13:32 UTC today, when the highest was 102).
+    - This answers both questions of the reply sent today (item 245): the programme number is DDT 104 and the cadence is
+      2 minutes. The page gives no sectors; the office's message (item 241) says Sectors 112-114.
+    - Still to be confirmed by the published lists: the star on the S112-S114 2-min target lists (the designation rule uses
+      those lists only).
+249. 2026-11-19 15:12 UTC — Bot report of 2026-11-19 (relayed by the author): the public DDT list now carries DDT 104; I checked it.
+    - Bot (13:33-13:34 UTC): tess.mit.edu/public/DDTs/DDT_list.html runs to DDT 107 (was 099), footer "Last updated: Thu 19 Nov
+      2026 12:02:39 AM EST"; the DDT 104 target list lists TIC 80387959; no other DDT 100-107 list does. All other checks
+      unchanged: QLP S106-S110 absent; SPOC S107 manifest without 24526743 and 160330868; S108 manifest still lists 317134140;
+      S109-S114 manifests 404; S111 v1 2-min list unchanged (80387959 on it, 120517801 not); no new TOI or CTOI.
+    - My own fetch, 2026-11-19 15:11:39 UTC, metadata only, both HTTP 200:
+      results/ddt_page_snapshots/public_DDT_list_20261119T151139Z.html, 37,041 B,
+      SHA-256 4a4afa15fdb8091396cf184573095668af0fa434e8002fac47a7f0325862637c (same footer; row 104 | Fernando Molina | 2m | 1);
+      results/ddt_page_snapshots/public_DDT104_CTL_09.01_20261119T151139Z.csv, 522 B,
+      SHA-256 cdc865da49b17a714a5a59972fec2c6194cef051aa25fa1043ce26de4db5c1a1 (header: DDT 104, cadence 2m, 1 target; single
+      row TIC 80387959, priority 1.0).
+    - Effect on the locked S111+ scoring: none. Under the locked rule the DDT lists carry no sector and never affect the
+      designation; the product of record is decided only by the per-sector 2-min lists in the first complete snapshot after
+      each sector's published end. The DDT listing makes SPOC the expected route for S112-S114; it is not the record.
+    - Two points in the bot's text not taken over: it says the science-page rows were first seen on Nov 17, while my saved copy
+      shows DDT 104 on 2026-11-16 18:55 UTC (item 248); and its TOI line is garbled ("TIC 3172021-03-02"), read as
+      TOI-2514.01 on TIC 317134140, unchanged.
+250. 2026-11-19 15:12 UTC — Selection check, TIC 317134140 Sector 109: NONE.
+    - results/selection_records/317134140/S109/sel_20261119T151140Z.json, query 2026-11-19T15:11:40.436476Z, no observations,
+      no products, SHA-256 32fb9a73516d1973352716af7137fbcf0b4f481bb44930a23dd9b2f7a57b4b7d. Previous check 2026-11-14T15:04:48Z
+      (item 239), 5.0 days earlier. Metadata query only; no photometry accessed.
+    - Next S109 check due no later than 2026-11-26T15:11:40Z. Sector 110 checks start 2026-11-26 04:15 UTC.
+251. 2026-11-19 15:16 UTC — AI versions for the acknowledgement (item 242): the auditor's answer, relayed by the author.
+    - The auditor reports, each line marked "verified" by itself from its session metadata: vendor OpenAI; interface the Codex
+      agent in the ChatGPT desktop app, version 26.1103.60933 (build 25894); configured model ID gpt-6-astra at its latest turn;
+      earlier entries of the same session also record gpt-6-luna and gpt-6.1-sol; other sessions unknown; reasoning effort
+      high (global default xhigh). Local record: results/ai_versions/auditor_reported_2026-11-19.txt. Not checked by me.
+    - Still missing: the monitoring bot's answer. Which model wrote which review is not established by this answer.
+252. 2026-11-19 15:16 UTC — DECLARATION, before either job is run. The author asked (2026-11-19: "yes both") for (A) a computational
+    reproduction of the Sector 108 result of TIC 317134140 and (B) a Sector 107 eligibility forecast from DRN 145.
+    (A) Re-execution of the locked computation, by the same operator (me) on the same machine as the run of record. It is NOT
+        the independent reproduction recommended in results/REVIEW_v1_20.md section 5; that needs the auditor, and a prompt
+        results/PROMPT_reproduction_S108.txt will be written for it. It is a reproducibility check, not a second observational
+        test, and cannot replace the outcome of record (PARTIAL, results/test_317134140/S108/result_S108.json,
+        SHA-256 bc62b2495c66...).
+        - Inputs, unmodified, hashes checked today before this item (all equal to the lock and the result of record): scorer
+          f3f55c0d..., config b4f091bc..., lock 58df3645..., prediction CSV 63e98fc8..., validator f3bca692..., the local file
+          of record cea2619b... (no new download, no acquire). Environment as recorded: Python 3.12.15, numpy 2.5.4,
+          scipy 1.18.1, astropy 8.0.2 (wotan 2.0 to be confirmed by the scorer's own software field).
+        - One run: python -I scripts/prereg_spoc_317134140.py --config configs/conformance/317134140_spoc_S108.json
+          --lc <file of record> --out results/reproduction_317134140_S108/rerun_result_S108.json. Then the validator, stage
+          result, on the new output (it only reads). Nothing under results/test_317134140/S108/ is written.
+        - Comparison rule, fixed now: every field of the new JSON equal to result_S108.json, with no exempt field (the result
+          has no time or path field); file byte identity is also reported. Any difference, exception, INVALID_INPUT or REFUSED
+          is kept and reported as it is, with no second run. The in-sample re-scores and the 196 lock tests are not repeated.
+    (B) Descriptive forecast of eligible predicted events in Sector 107 for TIC 24526743 and TIC 160330868 (QLP tests,
+        configs <TIC>_S107.json). NO Sector 107 photometry is read; no rule, config or evaluator changes; the scorer will use
+        the QLP file's own gaps and flags. QLP s0107 does not exist yet: https://archive.stsci.edu/hlsps/qlp/s0107/ answered
+        HEAD 404 at 2026-11-19T15:15:58Z (s0105: 200); no local Sector 107 file of either star exists.
+        - New script scripts/conformance_s107_forecast_drn145.py, modelled on the published Sector 106 one (not edited): the
+          same seven gap templates (QLP QUALITY==0 gap patterns of S68, S69, S96, S105 of the Sector 106 test targets), the
+          evaluator's edge_trim and coverage, the frozen predicted times (status "prediction", sector 107), 200 s cadence.
+          Case a: each template mapped onto the Sector 107 orbit-table breaks. Case c: the DRN 145 segment times alone.
+          There is no case b (DRN 145 reports no gap inside a segment).
+        - Not modelled: the 2.03 d of SPOC Manual Exclude (DRN 145 places them "near the end of each half-orbit" without times;
+          QLP's treatment is unknown), barycentric correction, any clock or noise issue. No SNR is given: there is no published
+          Sector 107 noise figure and choosing a design sector now would be a new choice. Counts only.
+        - The result is compared with the published advance statement (item 166 S2: 160330868 S107 expected INSUFFICIENT);
+          agreement or disagreement is reported, nothing is changed.
+    Neither job is published now. Both go to the next release as dated notes after the auditor's check and the author's go.
+    RESULT_S108.md ("one locked scoring run", "none has been made or decided") keeps its bytes; a dated note will follow.
+253. 2026-11-19 15:18 UTC — Results of the two jobs declared in item 252. Nothing published.
+    (A) Re-execution of the locked S108 computation (same operator, same machine; NOT the independent reproduction): one run,
+        2026-11-19 15:16:36-15:16:38 UTC. Output results/reproduction_317134140_S108/rerun_result_S108.json is BYTE-IDENTICAL
+        to the result of record (SHA-256 bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54; 22 of 22 fields
+        equal; PARTIAL). Validator stage result: BOUND. No exception or refusal. Records: rerun.log (79a76a13...),
+        comparison.json (2032984f...), README.md. results/test_317134140/S108/ untouched (file times unchanged). It shows the
+        computation is deterministic here; it does not test code, environment or machine independently.
+        Prompt for the auditor's independent reproduction: results/PROMPT_reproduction_S108.txt (report expected in
+        results/REPRODUCTION_S108_auditor.md). Not sent by me.
+    (B) S107 eligibility forecast: scripts/conformance_s107_forecast_drn145.py (b06a31ca...), outputs
+        results/s107_drn145/s107_forecast_drn145.csv (05a9895e...) and .txt (02de5812...), note NOTE_S107_FORECAST_2026-11-19.md.
+        Orbit-table segments agree with DRN 145 to 0.008 d. Eligible events of 2 predicted:
+        - TIC 160330868: 0 with the DRN segments alone and 0 in 7 of 7 templates (epoch 187 is 0.49 d before the end of 225b,
+          epoch 188 is 0.07 d before the sector end). Agrees with the published advance statement (expected INSUFFICIENT).
+        - TIC 24526743: 2 with the DRN segments alone; templates 1/2/2 (min/median/max); in the three S105 templates epoch 192
+          is lost, which would give INSUFFICIENT. Template counts are not probabilities.
+        No S107 photometry read; no SNR given; SPOC's 2.03 d Manual Exclude not modelled.
+254. 2026-11-19 15:20 UTC — Wording corrections to the write-ups of item 253 (no new run, no output changed).
+    - Forecast note: the "2 of 2" of TIC 24526743 is fragile, not the expected case. Epochs 191 and 192 lie 0.85 d and 1.05 d
+      after the starts of segments 225b and 226b, inside the 1.5-d trim that applies after a gap longer than 0.5 d; the DRN
+      gaps there are 0.21 d and 0.20 d, so about 0.3 d more of unusable QLP data at either break removes that event and gives
+      INSUFFICIENT. The unmodelled Manual Exclude time sits near those breaks. No sensitivity case was run.
+    - Evaluator check: scripts/prereg_conformance.py has SHA-256 a864b07a..., equal to evaluator_sha256 in both S107 configs;
+      the 0.90 / 0.5 / 0.5 thresholds are its own (line 255).
+    - Order of item 252 and the run: item 252 is stamped 15:16 UTC and the re-execution started 15:16:36 UTC. That the
+      declaration was written first is author-reported; the stamps cannot show it. Both notes now say so.
+    - Re-execution README: "deterministic" and "rules out" replaced by "two executions gave identical bytes".
+    - Auditor prompt: full validator command added. The prompt permits the auditor a fresh MAST download of the scored S108
+      file of TIC 317134140 (same file as the record, to confirm the SHA); sending the prompt is the author's go for that.
+255. 2026-11-19 16:04 UTC — The auditor's independent reproduction of S108 (TIC 317134140): PARTIAL reproduced, NOT byte-identical.
+    - Report results/REPRODUCTION_S108_auditor.md (SHA-256 2d0d0534e33c0cca5601281924fdd33a9a6267abbd65ed67e2ca35783570f571),
+      records results/reproduction_317134140_S108_auditor/. The author sent the prompt (the go for the fresh download).
+    - The auditor reports: plan written 15:36:44 UTC; fresh MAST download of the file of record at 15:37:40 UTC, 2,001,600 B,
+      SHA-256 equal (cea2619b...); fresh virtual environment with the five recorded versions (not the project .venv), on the
+      same computer; one scorer run 15:38:29-15:38:55 UTC, outcome PARTIAL; validator BOUND. Two failed attempts before
+      (package install and download, DNS in its sandbox) are kept; no second scorer run.
+    - Comparison with the result of record: 20 of 22 top-level fields and 49 of 56 leaves exactly equal. Seven floating-point
+      leaves differ (sigma_ppm and the depth_ppm and sde of the three BLS peaks), by 8.6e-13 to 8.8e-12 in their units.
+      depth_ppm, all counts, the peak periods, both clauses and the outcome are exactly equal. Output SHA-256 7ad62764...
+      The declared exact comparison therefore does not pass; the published precision and the outcome are reproduced. I
+      re-derived the comparison from the two JSON files: same seven leaves, largest difference 8.8e-12.
+    - Possible leads named by the auditor, not a demonstrated cause: Numba 0.68.1 in its environment against 0.68.0 in the
+      project .venv, and a newer astropy-iers-data. The five-version record in the result is not a complete dependency lock.
+      Nobody decides which unrounded value is right; nothing is re-run to chase equality.
+    - The result of record is unchanged and remains the outcome of record. My re-execution (item 253) stays byte-identical;
+      that does not remove the auditor's seven differences.
+    - S107 forecast, the auditor's check: the eligibility counts are confirmed (DRN case recomputed with synthetic times;
+      template cases rebuilt from the rounded gap summaries only; the script itself was not run). Three wording corrections
+      requested and made in the note (new SHA-256 in the note's last section; first version adef4ab4...): "not the expected
+      case" replaced by "a fragile conditional scenario, not an established expectation"; timing basis named for the distances
+      to segment ends (epoch 188: 0.05987 d before the DRN end, 0.06811 d before the orbit-table end); orbit-table agreement
+      quoted as about 0.00824 d.
+    - CORRECTION to item 252(B): "there is no published Sector 107 noise figure" is false as written. DRN 145 includes SPOC
+      noise/precision figures. They do not establish target-specific QLP SAP noise for these two held-out tests, so this
+      forecast reports coverage only and no SNR.
+    - Nothing published. For the next release: both reproduction records, the forecast note, and dated pointers for the
+      historical "no reproduction made or decided" statements; the short account in the auditor's report is the wording to use.
+256. 2026-11-19 16:28 UTC — AI versions (item 242): the monitoring bot's answer, relayed by the author; acknowledgement drafted.
+    - The bot reports: it identifies itself as "Grok Bot" and cannot name a model vendor (self-reported); bot name "TESS Release
+      Watch" read from its own profile file (verified by it, 16:26 UTC); no app version, model name or ID, effort setting, or
+      history of earlier runs available to it. Local record: results/ai_versions/bot_reported_2026-11-19.txt.
+    - Claude side, from the two local session records: models claude-opus-5-5, claude-fable-5-1, claude-fable-5-2; Claude Code
+      application versions 2.1.299 to 2.1.328.
+    - Draft for the author's review: results/DRAFT_ACKNOWLEDGEMENTS_v1.22.md (TESS, DDT 104, the three AI systems with what is
+      and is not established). The bot's vendor is left for the author to confirm; I do not assert it. Not published.
+257. 2026-11-23 13:42 UTC — Bot report of 2026-11-23 (relayed by the author): one new orbit-table row; checked. S109 selection check: NONE.
+    - Bot (13:31-13:32 UTC): new row 112,236,2027-01-04 04:10:00,2027-01-10 18:00:00; Sector 111 end unchanged
+      (2026-12-22 08:30:00 UTC); Sector 113+ not listed. All else unchanged: QLP S106-S121 absent; SPOC S107 manifest without
+      24526743 and 160330868; S109-S114 manifests 404; S111 v1 2-min list unchanged (80387959 on it, 120517801 not); DDT 104
+      still listed; no new TOI or CTOI; no new data release note (latest DRN 145).
+    - My fetch of the orbit table, 2026-11-23 13:41:55 UTC, HTTP 200, 16,132 B:
+      results/orbit_table_snapshots/TESS_orbit_times_fetched_20261123T134155Z.csv, SHA-256
+      8ac731f4f63572c8a75e5c49b69dcaf5e0966e1af1b8bc4c9038b924125e1925. Against the 2026-11-16 copy: exactly one added data
+      row, as the bot says; footer "Created 2026-11-23". The Sector 112 end is not final yet (second segment of orbit 236
+      not listed). No locked cutoff changes: the S111 end is as before.
+    - Selection check, TIC 317134140 Sector 109: NONE. results/selection_records/317134140/S109/sel_20261123T134156Z.json,
+      query 2026-11-23T13:41:56.488457Z, SHA-256 2a6c80a857532f403320057c3796181d28a271a64446f3ad476e352e9350be11.
+      Previous check 2026-11-19T15:11:40Z (item 250), 3.9 days earlier. Metadata only.
+    - Next S109 check due no later than 2026-11-30T13:41:56Z. Sector 110 checks start 2026-11-26 04:15 UTC (sector end).
+258. 2026-11-23 13:45 UTC — The author states that the monitoring bot's vendor is "Grok Bot" and that nothing more is known. The draft
+    acknowledgement (results/DRAFT_ACKNOWLEDGEMENTS_v1.22.md) now gives that name as stated by the author and by the bot, with
+    model and version "not available". No company name is added by me.
+259. 2026-11-23 13:46 UTC — At the author's request ("models, vendors and that's it") the draft acknowledgement is shortened to the TESS/DDT 104
+    thanks and one table of use, vendor and models (results/DRAFT_ACKNOWLEDGEMENTS_v1.22.md). The longer draft is kept as
+    results/DRAFT_ACKNOWLEDGEMENTS_v1.22_long_superseded.md. Not published.
+260. 2026-11-23 13:50 UTC — Plan for release v1.22, written before assembly. The author found the short acknowledgement "fine now" (2026-11-23);
+    I take that as approval of that text and as the go to assemble LOCALLY. Nothing is committed, pushed or uploaded without the
+    author's explicit go after the auditor has checked the exact bytes.
+    - Content: (1) ACKNOWLEDGEMENTS.md, the approved text (TESS, DDT 104, AI vendors and models; item 242), with a README
+      pointer. (2) scoring_317134140_s108_s110/reproduction/S108/: my same-operator re-execution (byte-identical) and the
+      auditor's reproduction on the same host (PARTIAL, validator BOUND, not byte-identical: seven floating-point leaves
+      differ by at most 8.8e-12), with the auditor's report and records. The auditor's records are public copies: its
+      temporary directory paths are redacted and the downloaded FITS is not included. (3) Dated notes appended to
+      RESULT_S108.md, the scoring README, the exploratory README and a README block, for the published statements "one locked
+      scoring run", "one acquisition" and "none has been made or decided": three executions of the scorer now exist and the
+      file was downloaded a second time. (4) monitoring/: the Sector 107 eligibility forecast (note, the version the auditor
+      checked, script, outputs), three Sector 109 selection records (all NONE), two orbit-table copies, the DDT 104 target
+      list as served, and a status check of the QLP Sector 107 directory made at assembly (HTTP 404 at 2026-11-23 13:49:40
+      GMT, results/qlp_s0107_checks/head_20261123T134940Z.txt). (5) reviews_v1_22/: the v1.21 re-check with its prompt, and
+      the reproduction prompt. (6) CITATION 1.22, public log items 237-260, manifest, release notes.
+    - Forecast note: its last line wrongly called the version with SHA-256 adef4ab4... "the first version". It is the version
+      the auditor checked, after the item-254 edits; it was recovered by inverting the item-255 edits (hash confirmed) and is
+      published beside the current note. The draft before item 254 is not kept.
+    - Not changed (asserted by the assembler): every lock, config, scorer, validator, prediction CSV and the result of record.
+      Published text stays as a byte prefix; notes are appended and dated.
+    - The public log will carry items 241-246, which quote the DDT office's reply to the author. The signer is not named.
+      The author decides on this before publication.
+    - The bytes are dated 2026-11-23: the auditor's check and the publication must both happen on that UTC date, or the
+      release is rebuilt.

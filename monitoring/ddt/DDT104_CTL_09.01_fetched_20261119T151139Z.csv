@@ -1,0 +1,15 @@
+# DDT PI: Fernando Molina
+# Cadence: 2m
+# Subject: Observation of TIC 80387959, a T=10.5 K dwarf with a 2.4 Re transiting-planet candidate
+# DDT: 104
+#
+# Original filename: target_list.csv
+# Created by: Fernando Molina
+# Created on: 2026-10-18
+# Number of targets: 1
+#
+# Column 1: TIC ID
+# Column 2: Priority (floating point: 0=low, 1=high)
+# Column 3: Keywords (separated by semi-colon)
+# tic,priority,keywords
+80387959,1.0,TYC 8203-2056-1;Gaia DR3 5362389543781401216;sub-Neptune;K dwarf;pre-registered ephemeris;DDT104

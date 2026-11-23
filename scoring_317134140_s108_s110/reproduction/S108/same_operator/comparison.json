@@ -1,0 +1,15 @@
+{
+ "fields": 22,
+ "differing_fields": [],
+ "record_sha256": "bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54",
+ "rerun_sha256": "bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54",
+ "byte_identical": true,
+ "outcome_rerun": "PARTIAL",
+ "software_rerun": {
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "astropy": "8.0.2",
+  "wotan": "2.0"
+ }
+}

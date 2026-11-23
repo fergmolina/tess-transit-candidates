@@ -71,3 +71,37 @@ Log entries: DECISIONS 211-216.
   and 1 d 15 h 1 min. All are under seven days.
 
 Log entries: DECISIONS 217-229.
+
+
+---
+
+## New records, 2026-11-23 (v1.22)
+
+The work reported here used mission documents, metadata and previously examined in-sample QLP files. It did not acquire or examine
+test-sector photometry of the Sector 107 stars. This statement is limited to that work; it does not supersede the Sector 106
+data-availability erratum of 2026-10-20, and the authors' non-examination statement remains an attestation. (The Sector 108 light curve
+of TIC 317134140, already scored in v1.20, was re-executed; see `../scoring_317134140_s108_s110/reproduction/S108/`.)
+
+- `s107_drn145/`: an eligibility forecast for the Sector 107 tests of TIC 24526743 and TIC 160330868, from the segment times of the
+  Sector 107 data release notes (DRN 145). Start with `NOTE_S107_FORECAST_2026-11-19.md`. Result: TIC 160330868 has no eligible
+  event in any case, which agrees with the advance statement published with its lock (expected INSUFFICIENT). TIC 24526743 has two
+  eligible events with the release-note segments alone and in four of seven past gap patterns, and one in the other three; that
+  "2 of 2" is a fragile conditional scenario, not an established expectation. The forecast is descriptive: the locked evaluator and
+  the QLP file decide. The note names the script as `scripts/conformance_s107_forecast_drn145.py`; it is in this folder.
+  `NOTE_S107_FORECAST_2026-11-19_as_checked_by_auditor.md` is the version the auditor checked, before the wording corrections it
+  asked for. The auditor's check is in `../scoring_317134140_s108_s110/reproduction/S108/REPRODUCTION_S108_auditor.md`.
+- `qlp_s0107_checks/head_20261123T134940Z.txt`: status line and date of a header request to the QLP Sector 107 directory at MAST
+  (HTTP 404 at 2026-11-23 13:49:40 GMT), made when this release was assembled. It is a status request; no data product was
+  requested. It does not establish the first availability time of every QLP light curve.
+- `selection_records_317134140/S109/sel_20261114T150448Z.json`, `sel_20261119T151140Z.json` and `sel_20261123T134156Z.json`: checks at
+  2026-11-14 15:04:48, 2026-11-19 15:11:40 and 2026-11-23 13:41:56 UTC. All say `NONE`. Intervals between consecutive Sector 109
+  checks since the last note: 0 d 19 h 10 min, 5 d 0 h 6 min and 3 d 22 h 30 min; all are under seven days. The next check is due no later
+  than 2026-11-30 13:41 UTC. Checks for Sector 110 start at 2026-11-26 04:15 UTC.
+- `orbit_table/TESS_orbit_times_lastmod_2026-11-16.csv` and `TESS_orbit_times_fetched_20261123T134155Z.csv`: the mission's orbit table
+  as served on 2026-11-16 and 2026-11-23. Each adds one Sector 112 row to the copy before it. The end of Sector 111 is unchanged
+  (2026-12-22 08:30 UTC). The end of Sector 112 is not final.
+- `ddt/DDT104_CTL_09.01_fetched_20261119T151139Z.csv`: the target list of TESS DDT 104 as served by the mission on 2026-11-19. Its
+  single target is TIC 80387959, at 2-minute cadence. Under the v1.19 rule DDT lists never decide the product of record for
+  Sectors 111 to 114; only the per-sector 2-minute target lists do (`../scoring_s111_80387959_120517801/`).
+
+Log entries: DECISIONS 237-260.

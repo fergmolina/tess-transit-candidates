@@ -1,0 +1,19 @@
+{
+  "start_utc": "2026-11-19T15:37:40.612436+00:00",
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS%2Fproduct%2Ftess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+  "destination": "/Users/fernando/Desktop/NASA/results/reproduction_317134140_S108_auditor/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+  "attempt": 2,
+  "sandbox": "network escalation",
+  "http_status": 200,
+  "final_url": "https://stpubdata.s3.us-east-1.amazonaws.com/tess/public/tid/s0108/0000/0003/1713/4140/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits",
+  "headers": {
+    "Content-Type": "application/fits",
+    "Content-Length": "2001600",
+    "ETag": "\"b1349440ca0c92a38f31bd8e158d4ca4\"",
+    "Last-Modified": "Thu, 12 Nov 2026 21:26:01 GMT"
+  },
+  "bytes": 2001600,
+  "sha256": "cea2619b6228e770064ed39176ad446c02320311dbd3751e15cdc0876b4331a0",
+  "hash_matches_record": true,
+  "end_utc": "2026-11-19T15:37:41.421214+00:00"
+}

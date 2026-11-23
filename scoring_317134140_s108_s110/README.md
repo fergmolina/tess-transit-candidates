@@ -79,3 +79,9 @@ re-checks, the last of which recommends "publish as v1.18". Superseded drafts we
 light curve and target-pixel file: `exploratory/S108/` (start with its README). It is not a test result, not an independent
 reproduction, and it does not change PARTIAL. `results/S108/RESULT_S108.md` has a dated pointer; its v1.20 text is unchanged.
 Reviews: `../reviews_v1_21/`.
+
+**Re-executions of the Sector 108 computation, 2026-11-23 (v1.22).** "One acquisition and one scoring run" above describes the record at v1.20.
+Three executions of the locked scorer on this light curve now exist: the run of record (2026-11-13) and the two below (2026-11-19). The exploratory analysis of v1.21 also recomputed the gate through the scorer's functions. The file of record was downloaded a second time, by the auditor, with the same SHA-256. The same-operator run is byte-identical. The auditor's run, by a different operator on the same host, returned PARTIAL and
+`BOUND` but is not byte-identical: seven floating-point values differ by at most 8.8 × 10⁻¹² in their units, while the published
+precision and the outcome agree. Records: `reproduction/S108/` (start with its README). Not a new test result; PARTIAL is unchanged.
+Sector 109 checks continue (last `NONE` at 2026-11-23 13:41:56 UTC); Sector 110 checks start at 2026-11-26 04:15 UTC.

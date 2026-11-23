@@ -118,3 +118,15 @@ Log entries: DECISIONS 224-229.
 
 The same applies to "no additional photometric analysis is reported" above. Review of the exploratory work:
 `../../../reviews_v1_21/`. Log entries: DECISIONS 232-236.
+
+---
+
+**Dated reproduction update — 2026-11-23 (v1.22).** The statements above "one acquisition and one locked scoring run", "only the selected
+`s_lc.fits` was downloaded" and "none has been made or decided" describe the record at v1.20 publication. Three executions of the locked scorer on this light curve now exist: the run of record (2026-11-13) and the two below (2026-11-19). The exploratory analysis of v1.21 also recomputed the gate through the scorer's functions. The file of record was downloaded a second time, by the auditor, with the same SHA-256.
+
+- **Same operator, same machine (Claude, under the author's direction).** One run. The output is byte-identical to the result of record (22 of 22 fields; SHA-256 `bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54`), and the validator answered `BOUND`. Two executions gave identical bytes; that does not test the code, the environment or the machine independently.
+- **The auditor, a different operator on the same host (fresh environment, its own download).** In the auditor's words: "On 2026-11-19, the Codex auditor independently downloaded the same S108 SPOC light curve from MAST and verified its original SHA-256. One execution of the unchanged locked scorer in a fresh environment matching the five recorded software versions returned PARTIAL, and the binding validator returned BOUND. The output was not byte-identical: seven floating-point leaves differed by at most 8.8 × 10⁻¹² in their respective units, while the published precision and outcome agreed. All differences and attempts are retained. The original result remains the outcome of record. This is a computational reproduction on the same host, not another observational test or an independent implementation." The seven differing values are the random-phase sigma and the depth and SDE of the three BLS peaks. The stacked depth, all counts, the three peak periods, both clauses and the outcome are exactly equal. The declared exact comparison therefore does not pass. A possible lead named by the auditor, not a demonstrated cause, is a different Numba version (0.68.1 against 0.68.0); the five recorded software versions are not a complete dependency lock. Nobody decides which unrounded value is right, and nothing was re-run to obtain equality.
+
+Records: `../../reproduction/S108/` (start with its README). These are reproducibility checks, not a second observational test. The
+S108 outcome remains PARTIAL, with the original result file unchanged. The S109/S110 locks, predictions and scoring procedure remain
+unchanged. Log entries: DECISIONS 252-255.

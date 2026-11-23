@@ -46,3 +46,10 @@ plan for a post-outcome exploration, not an independently timed blind test.
   never pooled. Knowing Sector 108 can influence interpretation, so any further exploration stays separate and labelled.
 
 Log entries: DECISIONS 232-236.
+
+---
+
+**Dated note, 2026-11-23 (v1.22).** "It is not an independent computational reproduction; none has been made or decided" describes the record at
+v1.21. On 2026-11-19 the locked computation was re-executed twice: by the same operator (byte-identical) and by the auditor on the same
+host (PARTIAL reproduced, not byte-identical; seven floating-point values differ by at most 8.8 × 10⁻¹²). See `../../reproduction/S108/`.
+Nothing in this exploratory folder is changed.

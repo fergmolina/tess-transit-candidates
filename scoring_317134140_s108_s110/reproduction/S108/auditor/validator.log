@@ -1,0 +1,5 @@
+COMMAND ["[auditor temporary path redacted]", "-I", "-B", "scripts/validate_nonclock_inputs.py", "--lock", "configs/conformance/LOCK_2026-10-24_317134140.json", "--stage", "result", "--config", "configs/conformance/317134140_spoc_S108.json", "--selection", "/Users/fernando/Desktop/NASA/results/selection_records/317134140/S108/sel_20261113T195427Z.json", "--acquisition", "/Users/fernando/Desktop/NASA/results/test_317134140/S108/acquisition_S108.json", "--lc", "/Users/fernando/Desktop/NASA/results/reproduction_317134140_S108_auditor/lc/tess2026250081459-s0108-0000000317134140-0310-s_lc.fits", "--result", "/Users/fernando/Desktop/NASA/results/reproduction_317134140_S108_auditor/result_S108.json"]
+START 2026-11-19T15:38:55.182923+00:00
+BOUND: stage result, 317134140_spoc_S108.json (lock 58df364513d9d2bd)
+
+END 2026-11-19T15:38:55.227763+00:00 EXIT 0

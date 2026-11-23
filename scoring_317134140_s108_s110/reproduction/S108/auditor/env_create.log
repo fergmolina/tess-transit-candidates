@@ -1,0 +1,4 @@
+COMMAND ["/opt/homebrew/bin/python3.12", "-B", "-m", "venv", "[auditor temporary path redacted]"]
+START 2026-11-19T15:36:44.712764+00:00
+
+END 2026-11-19T15:36:46.484891+00:00 EXIT 0

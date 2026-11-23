@@ -1,0 +1,11 @@
+COMMAND ["[auditor temporary path redacted]", "-B", "-m", "pip", "--disable-pip-version-check", "--cache-dir", "[auditor temporary path redacted]", "install", "--index-url", "https://pypi.org/simple", "numpy==2.5.4", "scipy==1.18.1", "astropy==8.0.2", "wotan==2.0"]
+START 2026-11-19T15:36:46.485293+00:00
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/numpy/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/numpy/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/numpy/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/numpy/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='pypi.org', port=443): Failed to resolve 'pypi.org' ([Errno 8] nodename nor servname provided, or not known)")': /simple/numpy/
+ERROR: Could not find a version that satisfies the requirement numpy==2.5.4 (from versions: none)
+ERROR: No matching distribution found for numpy==2.5.4
+
+END 2026-11-19T15:36:54.245909+00:00 EXIT 1

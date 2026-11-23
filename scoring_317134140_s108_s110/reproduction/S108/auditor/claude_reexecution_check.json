@@ -1,0 +1,32 @@
+{
+  "fields": 22,
+  "equal_fields": [
+    "version",
+    "script_sha256",
+    "lc_file",
+    "lc_sha256",
+    "helper_sha256",
+    "software",
+    "spoc_pipeline_field",
+    "config_sha256",
+    "sector",
+    "provenance",
+    "n_cadences",
+    "toi_mask_removed",
+    "depth_ppm",
+    "sigma_ppm",
+    "n_eligible",
+    "n_predicted",
+    "n_null",
+    "clause_a",
+    "clause_b",
+    "top3",
+    "alias_hits",
+    "outcome"
+  ],
+  "differing_fields": [],
+  "byte_identical": true,
+  "record_sha256": "bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54",
+  "rerun_sha256": "bc62b2495c66d18c86ec5078f44abb14d965d9f2ff7dc3c02e2742d46d316b54",
+  "saved_comparison_consistent": true
+}

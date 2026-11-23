@@ -1,0 +1,28 @@
+S107 eligibility forecast from DRN 145 segment times (descriptive; no S107 photometry; counts only; DECISIONS 252).
+Orbit-table segments (BTJD TDB): [(np.float64(4262.09108), np.float64(4268.96261)), (np.float64(4269.17094), np.float64(4276.27163)), (np.float64(4276.47997), np.float64(4283.55288)), (np.float64(4283.75427), np.float64(4290.78205))]; max difference from DRN 145 times 0.00824 d.
+templates: S68cam1: start+0.06 end-3.31 gaps [(1, np.float64(2.79), np.float64(0.04))], S69cam2: start+2.01 end-1.48 gaps [(1, np.float64(1.58), np.float64(0.02))], S96cam1: start+2.20 end-0.38 gaps [(1, np.float64(0.44), np.float64(4.03))], S96cam2: start+0.86 end-0.03 gaps [(1, np.float64(0.03), np.float64(1.09))], S105cam2: start+0.88 end-0.52 gaps [(1, np.float64(0.4), np.float64(1.05)), (2, np.float64(1.48), np.float64(0.02))], S105cam3: start+1.25 end-0.76 gaps [(1, np.float64(0.4), np.float64(1.43)), (2, np.float64(1.48), np.float64(0.0))], S105cam4: start+2.48 end-0.76 gaps [(1, np.float64(0.4), np.float64(2.74)), (2, np.float64(1.71), np.float64(0.02))]
+
+                               n_pred  elig_min  elig_med  elig_max  frac_below_2
+tic       case                                                                   
+24526743  a_template                2         1       2.0         2         0.429
+          c_drn_segments_only       2         2       2.0         2         0.000
+160330868 a_template                2         0       0.0         0         1.000
+          c_drn_segments_only       2         0       0.0         0         1.000
+
+      tic                case template  n_pred  n_eligible eligible_epochs                coverage_in_left_right
+ 24526743          a_template  S68cam1       2           2         191 192 191:1.00/1.50/1.50 192:1.00/1.50/1.50
+ 24526743          a_template  S69cam2       2           2         191 192 191:1.00/1.50/1.50 192:1.00/1.50/1.50
+ 24526743          a_template  S96cam1       2           2         191 192 191:1.00/1.50/1.50 192:1.00/1.50/1.50
+ 24526743          a_template  S96cam2       2           2         191 192 191:1.00/1.50/1.50 192:1.00/1.50/1.50
+ 24526743          a_template S105cam2       2           1             191 191:1.00/1.50/1.50 192:0.00/0.00/0.00
+ 24526743          a_template S105cam3       2           1             191 191:1.00/1.50/1.50 192:0.00/0.00/0.00
+ 24526743          a_template S105cam4       2           1             191 191:1.00/1.50/1.50 192:0.00/0.00/0.00
+ 24526743 c_drn_segments_only   DRN145       2           2         191 192 191:1.00/1.50/1.50 192:1.00/1.50/1.50
+160330868          a_template  S68cam1       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868          a_template  S69cam2       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868          a_template  S96cam1       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868          a_template  S96cam2       2           0                 187:0.18/1.48/0.00 188:0.00/0.00/0.00
+160330868          a_template S105cam2       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868          a_template S105cam3       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868          a_template S105cam4       2           0                 187:0.00/0.00/0.00 188:0.00/0.00/0.00
+160330868 c_drn_segments_only   DRN145       2           0                 187:0.37/1.50/0.00 188:0.00/0.00/0.00
